@@ -1,17 +1,17 @@
 <div align="center">
-  <img src="https://u.pone.rs/ndbunqvk.jpg" width="150" height="150" />
+  <img src="https://pone.rs" width="150" height="150" />
 
   # vscorID SOFT
   ## Baileys — WhatsApp Web API
-  **TypeScript / JavaScript WhatsApp Web API — Modified by [vscorID Soft](https://://github.com)**
+  **TypeScript / JavaScript WhatsApp Web API — Modified by [vscorID Soft](https://github.com)**
 </div>
 
 <p align="center">
-	<a href="https://://github.com"><img src="https://img.shields.io/badge/Version-v1.0.0_vscorID-2ea44f?style=for-the-badge&logo=github" alt="version" /></a>
-	<a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-20%2B_Ready-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="nodejs" /></a> <a href="https://://whatsapp.com"><img src="https://img.shields.io/badge/Saluran_WA-Join_Cuy-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="channel" /></a>
-	<a href="https://://github.com/stargazers"><img src="https://img.shields.io/github/stars/Plenger-final/vscor-baileys?style=for-the-badge&logo=github" alt="github stars" /></a>
-	<a href="https://://github.com/network/members"><img src="https://img.shields.io/github/forks/Plenger-final/vscor-baileys?style=for-the-badge&logo=github" alt="github forks" /></a>
-	<a href="https://://github.com/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Plenger-final/vscor-baileys?style=for-the-badge&logo=github" alt="license" /></a>
+	<a href="https://github.com"><img src="https://shields.io" alt="version" /></a>
+	<a href="https://nodejs.org"><img src="https://shields.io" alt="nodejs" /></a> <a href="https://whatsapp.com"><img src="https://shields.io" alt="channel" /></a>
+	<a href="https://github.com/stargazers"><img src="https://img.shields.io/github/stars/Plenger-final/vscor-baileys?style=for-the-badge&logo=github" alt="github stars" /></a>
+	<a href="https://github.com/network/members"><img src="https://img.shields.io/github/forks/Plenger-final/vscor-baileys?style=for-the-badge&logo=github" alt="github forks" /></a>
+	<a href="https://github.com/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Plenger-final/vscor-baileys?style=for-the-badge&logo=github" alt="license" /></a>
 	<a href="https://deepwiki.com/Plenger-final/vscor-baileys"><img src="https://deepwiki.com/badge.svg" alt="Ask Deep-Wiki"></a>
 </p>
 
@@ -26,14 +26,6 @@
 * 🤖 [**Helper Pesan Meta AI (`sendRichAI`)**](#4️⃣-kirim-pesan-gaya-meta-ai-sendrichai) — Kirim respons bergaya AI lengkap format Markdown/Tabel/LaTeX.
 * 🔑 [**Custom Pairing Code & Multi-Export**](#5️⃣-custom-pairing-code--easy-import) — Bisa panggil `makeWaSocket` / `makeWASocket` + kode pairing 8 digit bebas.
 * 🛡️ **Self-Repairing `Bad MAC` & Anti-Ban Jitter** — Otomatis reset sesi rusak & kasih jeda mikro acak (350ms–850ms) di balik layar biar anti-banned.
-
-### ⚡ Fitur Bawaan Utama (Klik Langsung Loncat ke Bawah!)
-* 💬 [**Basic `sendMessage` & Typing Simulation**](#1️⃣-basic-sendmessage) — Kirim pesan standar & simulasi mengetik otomatis.
-* ⏰ [**Message Scheduler (Jadwal Pesan)**](#3️⃣-message-scheduler) — Kirim pesan terjadwal otomatis.
-* ✨ [**Rich AI-Style Response (Tabel & LaTeX)**](#4️⃣-rich-aistyle-response) — Format respons AI tingkat lanjut.
-* 🔍 [**Check `onWhatsApp` (Nomor, LID & Username)**](#5️⃣-check-onwhatsapp-phone-numbers-lids--usernames) — Cek nomor aktif, LID, maupun username WA.
-* 👤 [**Resolve WhatsApp Usernames**](#6️⃣-resolve-whatsapp-usernames) — Ubah username `@user` ke JID asli.
-* 📞 **VoIP Audio/Video Call & Group Management** — Dukungan panggilan suara/video & kelola grup lengkap (lihat di [Core Features](#-core-features)).
 
 ---
 
@@ -75,8 +67,8 @@ await sock.sendMessage(jid, {
             body: 'By Plenger-final',
             mediaType: 1,
             renderLargerThumbnail: true,
-            thumbnailUrl: 'https://u.pone.rs/ndbunqvk.jpg',
-            sourceUrl: 'https://://github.com'
+            thumbnailUrl: 'https://pone.rs',
+            sourceUrl: 'https://github.com'
         }
     }
 });
@@ -98,7 +90,7 @@ await sock.sendButton(
     'Powered by @soft/vscor-baileys 😹🗿',
     [
         { text: '⚡ Cek Speed', id: '.ping' },
-        { text: '📢 Saluran WA', url: 'https://://whatsapp.com' },
+        { text: '📢 Saluran WA', url: 'https://whatsapp.com' },
         { text: '📋 Salin Script', copy: 'npm i @soft/vscor-baileys' }
     ],
     { quoted: msg }
@@ -409,9 +401,9 @@ const users = await sock.resolveUsernames(['midsoune', 'another_user'])
 
 ## 🔗 Links & Community
 
-- [📖 Baileys Guide](https://://github.com)
+- [📖 Baileys Guide](https://github.com)
 - [💬 Discord Community](https://discord.gg/G3RfM6FDHS)
-- [🐙 GitHub Repository](https://://github.com)
+- [🐙 GitHub Repository](https://github.com)
 - [📦 npm Package](https://www.npmjs.com/package/@soft/vscor-baileys)
 - [📚 Original Guide](https://guide.whiskeysockets.io/)
 - [📘 Deep Wiki](https://deepwiki.com/Plenger-final/vscor-baileys)
@@ -1069,8 +1061,8 @@ sock.ev.on('messages.update', (updates) => {
 ## 💬 Sending Messages
 
 - Send all types of messages with a single function
-    - **[Here](https://://github.comdocs/sending-messages) you can see all message contents supported, like text message**
-    - **[Here](https://://github.comdocs/sending-messages) you can see all options supported, like quote message**
+    - **[Here](https://github.comdocs/sending-messages) you can see all message contents supported, like text message**
+    - **[Here](https://github.comdocs/sending-messages) you can see all options supported, like quote message**
 
     ```ts
     const jid: string
@@ -1940,7 +1932,7 @@ sock.sendMessage(jid, {
       footer: '🏷️️ Pinterest',
       nativeFlow: [{
          text: '🌐 Source',
-         url: 'https://://github.com',
+         url: 'https://github.com',
          useWebview: true
       }]
    }, {
@@ -1951,11 +1943,11 @@ sock.sendMessage(jid, {
       footer: '🏷️ Pinterest',
       offerText: '🏷️ New Coupon!',
       offerCode: '@soft/vscor-baileys',
-      offerUrl: 'https://://github.com',
+      offerUrl: 'https://github.com',
       offerExpiration: Date.now() + 3_600_000,
       nativeFlow: [{
          text: '🌐 Source',
-         url: 'https://://github.com'
+         url: 'https://github.com'
       }]
    }, {
       image: {
@@ -1967,7 +1959,7 @@ sock.sendMessage(jid, {
       optionTitle: '👉🏻 Select Options',
       offerText: '🏷️ New Coupon!',
       offerCode: '@soft/vscor-baileys',
-      offerUrl: 'https://://github.com',
+      offerUrl: 'https://github.com',
       offerExpiration: Date.now() + 3_600_000,
       nativeFlow: [{
          text: '🛒 Product',
@@ -1975,7 +1967,7 @@ sock.sendMessage(jid, {
          icon: 'default'
       }, {
          text: '🌐 Source',
-         url: 'https://://github.com'
+         url: 'https://github.com'
       }]
    }]
 }, {
@@ -3091,7 +3083,7 @@ await sock.sendMessage(jid, {
 4. Send a link:
 ```ts
 // --- Send a text message with a link preview
-const urlA = 'https://://github.com'
+const urlA = 'https://github.com'
 
 sock.sendMessage(jid, {
    text: urlA + ' 👆🏻 Check it out!',
@@ -3107,7 +3099,7 @@ sock.sendMessage(jid, {
 // --- Send a text message with a large link preview and favicon
 import { prepareWAMessageMedia } from '@soft/vscor-baileys'
 
-const urlB = 'https://://github.com#readme'
+const urlB = 'https://github.com#readme'
 
 const { imageMessage: image } = await prepareWAMessageMedia({
    image: {

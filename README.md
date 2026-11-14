@@ -1,19 +1,140 @@
 <div align="center">
   <img src="https://u.pone.rs/ndbunqvk.jpg" width="150" height="150" />
 
-  # wans_excel SOFT
+  # vscorID SOFT
   ## Baileys — WhatsApp Web API
-  **TypeScript / JavaScript WhatsApp Web API — Modified by [wans_excel Soft](https://://github.com)**
+  **TypeScript / JavaScript WhatsApp Web API — Modified by [vscorID Soft](https://://github.com)**
 </div>
 
 <p align="center">
-	<a href="https://://github.com"><img src="https://img.shields.io/badge/Version-v1.0.0_VSID-2ea44f?style=for-the-badge&logo=github" alt="version" /></a>
+	<a href="https://://github.com"><img src="https://img.shields.io/badge/Version-v1.0.0_vscorID-2ea44f?style=for-the-badge&logo=github" alt="version" /></a>
 	<a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-20%2B_Ready-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="nodejs" /></a> <a href="https://://whatsapp.com"><img src="https://img.shields.io/badge/Saluran_WA-Join_Cuy-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="channel" /></a>
-	<a href="https://://github.com/stargazers"><img src="https://img.shields.io/github/stars/Plenger-final/wanns-baileys?style=for-the-badge&logo=github" alt="github stars" /></a>
-	<a href="https://://github.com/network/members"><img src="https://img.shields.io/github/forks/Plenger-final/wanns-baileys?style=for-the-badge&logo=github" alt="github forks" /></a>
-	<a href="https://://github.com/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Plenger-final/wanns-baileys?style=for-the-badge&logo=github" alt="license" /></a>
-	<a href="https://deepwiki.com/Plenger-final/wanns-baileys"><img src="https://deepwiki.com/badge.svg" alt="Ask Deep-Wiki"></a>
+	<a href="https://://github.com/stargazers"><img src="https://img.shields.io/github/stars/Plenger-final/vscor-baileys?style=for-the-badge&logo=github" alt="github stars" /></a>
+	<a href="https://://github.com/network/members"><img src="https://img.shields.io/github/forks/Plenger-final/vscor-baileys?style=for-the-badge&logo=github" alt="github forks" /></a>
+	<a href="https://://github.com/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Plenger-final/vscor-baileys?style=for-the-badge&logo=github" alt="license" /></a>
+	<a href="https://deepwiki.com/Plenger-final/vscor-baileys"><img src="https://deepwiki.com/badge.svg" alt="Ask Deep-Wiki"></a>
 </p>
+
+---
+
+## 🧭 Daftar Fitur Lengkap (Klik Buat Loncat ke Contoh Kode! 👇) 😹🗿
+
+### 🔥 Fitur Baru & Oprekan Eksklusif (`vscorID` Edition)
+* 📊 [**MonitorV2 VSID Live Dashboard**](#1️⃣-monitorv2-vsid-live-dashboard-grafik-ram--cpu) — Grafik gelombang warna-warni (Hijau/Kuning/Merah) RAM (GB) & CPU (%) otomatis pas `npm start`.
+* 🖼️ [**Auto-Thumbnail URL to Buffer**](#2️⃣-kirim-thumbnail-url--saluran-muncul-di-semua-nomor-🖼️) — `thumbnailUrl` otomatis diubah jadi `Buffer`, dijamin muncul di HP penerima (bukan cuma HP bot!).
+* 🔘 [**Fix Tombol `<biz>` & Helper `sendButton`**](#3️⃣-kirim-tombol-interaktif-praktis-sendbutton) — Cegah duplikasi tag `<biz>` + kirim tombol cukup 1 baris kode.
+* 🤖 [**Helper Pesan Meta AI (`sendRichAI`)**](#4️⃣-kirim-pesan-gaya-meta-ai-sendrichai) — Kirim respons bergaya AI lengkap format Markdown/Tabel/LaTeX.
+* 🔑 [**Custom Pairing Code & Multi-Export**](#5️⃣-custom-pairing-code--easy-import) — Bisa panggil `makeWaSocket` / `makeWASocket` + kode pairing 8 digit bebas.
+* 🛡️ **Self-Repairing `Bad MAC` & Anti-Ban Jitter** — Otomatis reset sesi rusak & kasih jeda mikro acak (350ms–850ms) di balik layar biar anti-banned.
+
+### ⚡ Fitur Bawaan Utama (Klik Langsung Loncat ke Bawah!)
+* 💬 [**Basic `sendMessage` & Typing Simulation**](#1️⃣-basic-sendmessage) — Kirim pesan standar & simulasi mengetik otomatis.
+* ⏰ [**Message Scheduler (Jadwal Pesan)**](#3️⃣-message-scheduler) — Kirim pesan terjadwal otomatis.
+* ✨ [**Rich AI-Style Response (Tabel & LaTeX)**](#4️⃣-rich-aistyle-response) — Format respons AI tingkat lanjut.
+* 🔍 [**Check `onWhatsApp` (Nomor, LID & Username)**](#5️⃣-check-onwhatsapp-phone-numbers-lids--usernames) — Cek nomor aktif, LID, maupun username WA.
+* 👤 [**Resolve WhatsApp Usernames**](#6️⃣-resolve-whatsapp-usernames) — Ubah username `@user` ke JID asli.
+* 📞 **VoIP Audio/Video Call & Group Management** — Dukungan panggilan suara/video & kelola grup lengkap (lihat di [Core Features](#-core-features)).
+
+---
+
+## 🛠️ Contoh Kode Fitur Baru (`@params` Ready)
+
+#### 1️⃣ MonitorV2 VSID Live Dashboard (Grafik RAM & CPU)
+```javascript
+/**
+ * @function startMonitorV2
+ * @params {number} detik - Jeda refresh grafik gelombang dalam detik (default: 2)
+ * @params {string[]} extra - Array teks tambahan buat ditampilin di bawah info Linux
+ */
+sock.startMonitorV2(2, [
+    'Owner  : Plenger-final 🗿',
+    'Status : GASPOL TERUS 🔥'
+]);
+```
+
+#### 2️⃣ Kirim Thumbnail URL + Saluran (Muncul di Semua Nomor! 🖼️)
+```javascript
+/**
+ * @function sendMessage (Auto-Thumbnail & Newsletter Header)
+ * @params {string} jid - Tujuan chat / grup
+ * @params {Object} content - Payload pesan (thumbnailUrl otomatis diubah ke Buffer!)
+ * @params {Object} options - Set { noDelay: true } kalau mau kirim ngebut tanpa jeda anti-ban
+ */
+await sock.sendMessage(jid, {
+    text: 'Nih thumbnail-nya dijamin muncul di HP target, gak cuma di bot doang! 🗿🔥',
+    contextInfo: {
+        isForwarded: true,
+        forwardingScore: 999,
+        forwardedNewsletterMessageInfo: {
+            newsletterJid: '120363424315423886@newsletter',
+            newsletterName: 'vscorID Channel Official',
+            serverMessageId: 100
+        },
+        externalAdReply: {
+            title: 'vscorID Baileys v1.0.0',
+            body: 'By Plenger-final',
+            mediaType: 1,
+            renderLargerThumbnail: true,
+            thumbnailUrl: 'https://u.pone.rs/ndbunqvk.jpg',
+            sourceUrl: 'https://://github.com'
+        }
+    }
+});
+```
+
+#### 3️⃣ Kirim Tombol Interaktif Praktis (`sendButton`)
+```javascript
+/**
+ * @function sendButton
+ * @params {string} jid - Target nomor (628xxx@s.whatsapp.net) atau grup (123xxx@g.us)
+ * @params {string} text - Isi pesan utama yang mau dikirim
+ * @params {string} footer - Teks kecil di bagian bawah pesan
+ * @params {Array<Object>} buttons - Daftar tombol ({ text, id } | { text, url } | { text, copy })
+ * @params {Object} options - Opsi tambahan Baileys (misal: { quoted: msg, noDelay: true })
+ */
+await sock.sendButton(
+    jid,
+    'Halo cuy! Pilih menu di bawah ini 👇',
+    'Powered by @soft/vscor-baileys 😹🗿',
+    [
+        { text: '⚡ Cek Speed', id: '.ping' },
+        { text: '📢 Saluran WA', url: 'https://://whatsapp.com' },
+        { text: '📋 Salin Script', copy: 'npm i @soft/vscor-baileys' }
+    ],
+    { quoted: msg }
+);
+```
+
+#### 4️⃣ Kirim Pesan Gaya Meta AI (`sendRichAI`)
+```javascript
+/**
+ * @function sendRichAI
+ * @params {string} jid - Target chat / grup
+ * @params {string} text - Teks respons dengan format Markdown / Tabel / Kode
+ * @params {Object} options - Opsi tambahan pesan (contoh: { quoted: msg })
+ */
+await sock.sendRichAI(jid, 'Ini pesan **AI Rich** dari `@soft/vscor-baileys` 🤖✨', { quoted: msg });
+```
+
+#### 5️⃣ Custom Pairing Code & Easy Import
+```javascript
+/**
+ * @import makeWaSocket / makeWASocket / useMultiFileAuthState / jidNormalizedUser
+ * @function requestPairingCode
+ * @params {string} phoneNumber - Nomor WA bot awalan 62 (contoh: '628123456789')
+ * @params {string} customCode - Kode pairing custom wajib 8 huruf/angka kapital!
+ */
+const { makeWaSocket, useMultiFileAuthState, jidNormalizedUser } = require('@soft/vscor-baileys');
+
+if (!sock.authState.creds.registered) {
+    setTimeout(async () => {
+        const code = await sock.requestPairingCode('628123456789', 'VSID2026');
+        console.log('🔑 Kode Pairing Lu Mass:', code);
+    }, 3000);
+}
+```
+
+
 
 ---
 ## ⚠️ Important Notice
@@ -27,80 +148,6 @@ This library was originally a project for **CS-2362 at Ashoka University** and i
 > # **[Join the Discord](https://discord.gg/G3RfM6FDHS) and be a part of community**
 
 ---
-
-
----
-
-## 🔥 Fitur Baru & Dokumentasi (@soft/vscor-baileys) 😹🗿
-
-Tambahan fitur baru
-
-* 📊 **MonitorV2 VSID Live Dashboard** — Grafik (Hijau/Kuning/Merah) buat mantau **RAM (GB)** & **CPU (%)** real-time di terminal, lengkap info Device, Disk, NodeJS, dan Linux. Otomatis muncul pas`npm start`!
-* 🖼️ **Auto-Thumbnail URL to Buffer** — Kirim `thumbnailUrl` di `externalAdReply` otomatis diubah jadi `Buffer` di balik layar. Dijamin **muncul di nomer  semua orang**, bukan cuma nomer bot doang!
-* 🔘 **Fix Tombol `<biz>` Anti-Blokir** — Nyegah duplikasi node XML `<biz>` biar pesan tombol interaktif (`nativeFlow` / `buttons`) gak ditolak diam-diam sama server WA.
-* 🛡️ **Self-Repairing `Bad MAC`** — Kena error dekripsi sesi (`Bad MAC` / `SessionError`)? Sesi rusak langsung di-reset otomatis tanpa matiin bot.
-* ⚡ **Built-in Anti-Ban Jitter** — Otomatis ngasih jeda mikro acak (350ms–850ms) tiap kirim pesan biar nomor bot lu lebih awet dari incaran banned.
-* 🤖 **Helper Instan (`sendButton` & `sendRichAI`)** — Kirim tombol & pesan gaya Meta AI cukup 1 baris kode.
-
-### 🛠️ Contoh Kode & Dokumentasi `@params`
-
-```javascript
-/**
- * @function requestPairingCode
- * @params {string} phoneNumber - Nomor WA bot awalan 62 (contoh: '628123456789')
- * @params {string} customCode - Kode pairing custom wajib 8 huruf/angka kapital!
- */
-if (!sock.authState.creds.registered) {
-    setTimeout(async () => {
-        const code = await sock.requestPairingCode('628123456789', 'VSID2026');
-        console.log('🔑 Kode Pairing Lu Mass:', code);
-    }, 3000);
-}
-```
-
-```javascript
-/**
- * @function startMonitorV2
- * @params {number} detik - Jeda refresh grafik gelombang dalam detik (default: 2)
- * @params {string[]} extra - Array teks tambahan buat ditampilin di bawah info Linux
- */
-sock.startMonitorV2(2, [
-    'Owner  : Plenger-final 🗿',
-    'Status : GASPOL TERUS 🔥'
-]);
-```
-
-```javascript
-/**
- * @function sendButton
- * @params {string} jid - Target nomor (628xxx@s.whatsapp.net) atau grup (123xxx@g.us)
- * @params {string} text - Isi pesan utama
- * @params {string} footer - Teks kecil di bagian bawah pesan
- * @params {Array<Object>} buttons - Daftar tombol ({ text, id } | { text, url } | { text, copy })
- * @params {Object} options - Opsi tambahan Baileys (misal: { quoted: msg, noDelay: true })
- */
-await sock.sendButton(
-    '628123456789@s.whatsapp.net',
-    'Halo cuy! Pilih menu di bawah ini 👇',
-    'Powered by @soft/vscor-baileys 😹🗿',
-    [
-        { text: '⚡ Cek Speed', id: '.ping' },
-        { text: '📢 Saluran WA', url: 'https://://whatsapp.com' },
-        { text: '📋 Salin Script', copy: 'npm i @soft/vscor-baileys' }
-    ]
-);
-```
-
-```javascript
-/**
- * @function sendRichAI
- * @params {string} jid - Target chat / grup
- * @params {string} text - Teks respons dengan format Markdown / Tabel / Kode
- * @params {Object} options - Opsi tambahan pesan (contoh: { quoted: msg })
- */
-await sock.sendRichAI('628123456789@s.whatsapp.net', 'Ini pesan **AI Rich** dari `@soft/vscor-baileys` 🤖✨');
-```
-
 
 ## 🚀 Quick Start
 
@@ -364,10 +411,10 @@ const users = await sock.resolveUsernames(['midsoune', 'another_user'])
 
 - [📖 Baileys Guide](https://://github.com)
 - [💬 Discord Community](https://discord.gg/G3RfM6FDHS)
-- [🐙 GitHub Repository](https://github.com)
+- [🐙 GitHub Repository](https://://github.com)
 - [📦 npm Package](https://www.npmjs.com/package/@soft/vscor-baileys)
 - [📚 Original Guide](https://guide.whiskeysockets.io/)
-- [📘 Deep Wiki](https://deepwiki.com/Plenger-final/wanns-baileys)
+- [📘 Deep Wiki](https://deepwiki.com/Plenger-final/vscor-baileys)
 ---
 
 <details>
@@ -382,7 +429,7 @@ yarn add @soft/vscor-baileys
 
 Use the edge version (no guarantee of stability, but latest fixes + features)
 ```
-yarn add github:wanssoftspoken🗿/baileys
+yarn add github:Plenger-final/vscor-baileys
 ```
 
 Then import your code using:
@@ -622,7 +669,7 @@ const connectAuth = async() => {
     })
 }
   await client.connect()
-  const collection = client.db("@wanssoftspoken🗿n").collection("sessions")
+  const collection = client.db("@wannsn").collection("sessions")
   return collection
 }
 
@@ -646,7 +693,7 @@ sock.ev.on('creds.update', saveCreds)
 import pino from "pino"
 import { makeInMemoryStore, getAggregateVotesInPollMessage } from '@soft/vscor-baileys'
 
-const logger = pino({ timestamp: () => `,"time":"${new Date().toJSON()}"` }).child({ class: "@wanssoftspoken🗿n" })
+const logger = pino({ timestamp: () => `,"time":"${new Date().toJSON()}"` }).child({ class: "@wannsn" })
 logger.level = "fatal"
 const store = makeInMemoryStore({ logger })
 
@@ -857,7 +904,7 @@ The store also provides some simple functions such as `loadMessages` that utiliz
 - `getSenderPn`, get your own phone number info from creds
 
 ### JID Plotting & LID Support
-wanssoftspoken🗿 Baileys has advanced JID plotting utilities to handle WhatsApp's Linked IDs (LID).
+wanns Baileys has advanced JID plotting utilities to handle WhatsApp's Linked IDs (LID).
 
 ```ts
 import { parseJid, plotJid, normalizePhoneToJid } from '@soft/vscor-baileys'
@@ -1175,7 +1222,7 @@ await sock.sendMessage(
     id,
     { 
         contacts: { 
-            displayName: 'wanssoftspoken🗿n', 
+            displayName: 'wannsn', 
             contacts: [{ vcard }] 
         }
     }
@@ -1496,7 +1543,7 @@ await sock.sendMessage(
     {
         stickerPack: {
             name: 'Hiii', 
-            publisher: 'By wanssoftspoken🗿n', 
+            publisher: 'By wannsn', 
             description: 'Hello', 
             cover: Buffer, // Image buffer
             stickers: [{
@@ -1893,7 +1940,7 @@ sock.sendMessage(jid, {
       footer: '🏷️️ Pinterest',
       nativeFlow: [{
          text: '🌐 Source',
-         url: 'https://github.com',
+         url: 'https://://github.com',
          useWebview: true
       }]
    }, {
@@ -1904,11 +1951,11 @@ sock.sendMessage(jid, {
       footer: '🏷️ Pinterest',
       offerText: '🏷️ New Coupon!',
       offerCode: '@soft/vscor-baileys',
-      offerUrl: 'https://github.com',
+      offerUrl: 'https://://github.com',
       offerExpiration: Date.now() + 3_600_000,
       nativeFlow: [{
          text: '🌐 Source',
-         url: 'https://github.com'
+         url: 'https://://github.com'
       }]
    }, {
       image: {
@@ -1920,7 +1967,7 @@ sock.sendMessage(jid, {
       optionTitle: '👉🏻 Select Options',
       offerText: '🏷️ New Coupon!',
       offerCode: '@soft/vscor-baileys',
-      offerUrl: 'https://github.com',
+      offerUrl: 'https://://github.com',
       offerExpiration: Date.now() + 3_600_000,
       nativeFlow: [{
          text: '🛒 Product',
@@ -1928,7 +1975,7 @@ sock.sendMessage(jid, {
          icon: 'default'
       }, {
          text: '🌐 Source',
-         url: 'https://github.com'
+         url: 'https://://github.com'
       }]
    }]
 }, {
@@ -1957,8 +2004,8 @@ await sock.sendMessage(
                 name: 'cta_url',
                 buttonParamsJson: JSON.stringify({
                     display_text: 'Follow Me',
-                    url: 'https://whatsapp.com',
-                    merchant_url: 'https://whatsapp.com'
+                    url: 'https://whatsapp.com/channel/0029Vag9VSI2ZjCocqa2lB1y',
+                    merchant_url: 'https://whatsapp.com/channel/0029Vag9VSI2ZjCocqa2lB1y'
                 })
             },
             {
@@ -2011,7 +2058,7 @@ await sock.sendMessage(
                   title: 'Follow Me!',
                   link: {
                       in_app_webview: true, // or false
-                      url: 'https://whatsapp.com'
+                      url: 'https://whatsapp.com/channel/0029Vag9VSI2ZjCocqa2lB1y'
                   }
                })
             },
@@ -2041,7 +2088,7 @@ await sock.sendMessage(
                     flow_message_version: '3', 
                     flow_token: '1:1307913409923914:293680f87029f5a13d1ec5e35e718af3',
                     flow_id: '1307913409923914',
-                    flow_cta: 'wanssoftspoken🗿n kawaii >\\<', 
+                    flow_cta: 'wannsn kawaii >\\<', 
                     flow_action: 'navigate', 
                     flow_action_payload: {
                     	screen: 'QUESTION_ONE',
@@ -2204,7 +2251,7 @@ await sock.sendMessage(
             description: 'Description',
             currencyCode: 'IDR',
             priceAmount1000: '283xxx',
-            retailerId: 'wanssoftspoken🗿n',
+            retailerId: 'wannsn',
             url: 'https://example.com',
             productImageCount: 1
         },
@@ -2241,8 +2288,8 @@ await sock.sendMessage(
                 payment_settings: [{ 
                    type: "pix_static_code", 
                    pix_static_code:  { 
-                      merchant_name: 'wanssoftspoken🗿n kawaii >\\\\\\<', 
-                      key: 'example@wanssoftspoken🗿.com', 
+                      merchant_name: 'wannsn kawaii >\\\\\\<', 
+                      key: 'example@wanns.com', 
                       key_type: 'EMAIL' // PHONE || EMAIL || CPF || EVP 
                    } 
                }] 
@@ -2285,7 +2332,7 @@ await sock.sendMessage(
                     order_type: 'PAYMENT_REQUEST', 
                     items: [{
                         retailer_id: 'your_retailer_id', 
-                        name: 'wanssoftspoken🗿n Kawaii >\\\<', 
+                        name: 'wannsn Kawaii >\\\<', 
                         amount: {
                             value: '999999999', 
                             offset: '100'
@@ -2293,7 +2340,7 @@ await sock.sendMessage(
                         quantity: '1', 
                     }]
                 }, 
-                additional_note: 'wanssoftspoken🗿n Kawaii >\\\<', 
+                additional_note: 'wannsn Kawaii >\\\<', 
                 native_payment_methods: [], 
                 share_payment_status: false
             }) 
@@ -2784,7 +2831,7 @@ await sock.sendMessage(
             description: 'Description',
             currencyCode: 'IDR',
             priceAmount1000: '283xxx',
-            retailerId: 'wanssoftspoken🗿n',
+            retailerId: 'wannsn',
             url: 'https://example.com',
             productImageCount: 1
         },
@@ -2921,7 +2968,7 @@ await sock.sendMessage(
             description: 'Description',
             currencyCode: 'IDR',
             priceAmount1000: '283xxx',
-            retailerId: 'wanssoftspoken🗿n',
+            retailerId: 'wannsn',
             url: 'https://example.com',
             productImageCount: 1
         },
@@ -3044,7 +3091,7 @@ await sock.sendMessage(jid, {
 4. Send a link:
 ```ts
 // --- Send a text message with a link preview
-const urlA = 'https://github.com'
+const urlA = 'https://://github.com'
 
 sock.sendMessage(jid, {
    text: urlA + ' 👆🏻 Check it out!',
@@ -3060,7 +3107,7 @@ sock.sendMessage(jid, {
 // --- Send a text message with a large link preview and favicon
 import { prepareWAMessageMedia } from '@soft/vscor-baileys'
 
-const urlB = 'https://github.com#readme'
+const urlB = 'https://://github.com#readme'
 
 const { imageMessage: image } = await prepareWAMessageMedia({
    image: {
@@ -3229,7 +3276,7 @@ await sock.sendMessage(
     { 
         album: [{
         	image: {
-        		url: 'https://example.com/wanssoftspoken🗿.jpg'
+        		url: 'https://example.com/wanns.jpg'
         	}, 
         	caption: 'Hay'
         }, {
@@ -3237,7 +3284,7 @@ await sock.sendMessage(
         	caption: 'Hay'
         }, {
         	video: {
-        		url: 'https://example.com/wanssoftspoken🗿.mp4'
+        		url: 'https://example.com/wanns.mp4'
         	}, 
         	caption: 'Hay'
         }, {
@@ -4275,8 +4322,8 @@ await sock.sendMessage(jid, {
       text: '📃 Built manually from scratch using the raw WhatsApp proto structure',
       contextInfo: {
          externalAdReply: {
-            title: 'wanssoftspoken🗿',
-            thumbnail: fs.readFileSync('./Media/wanssoftspoken🗿.png'),
+            title: 'wanns',
+            thumbnail: fs.readFileSync('./Media/wanns.png'),
             sourceApp: 'whatsapp',
             showAdAttribution: true,
             mediaType: 1
@@ -4651,7 +4698,7 @@ const sock = makeWASocket({
 - [Original baileys](https://github.com/WhiskeySockets/baileys)
 - [VoIP WebAssembly Call Stack by SheIITear (baileys-caller)](https://github.com/SheIITear/baileys-caller)
 - [Special thanks to](https://github.com/Itsukichann/Baileys)
-- [Follow wans_excel Soft](https://facebook.com/wanssoftspoken🗿)
+- [Follow vscorID Soft](https://facebook.com/wanns)
 
 ---
 # Support the Project
@@ -4660,7 +4707,7 @@ const sock = makeWASocket({
 >
 > **This project is completely free and open-source. If it saved you time or helped your business, consider supporting us!**
 
-[![Support on Patreon](https://img.shields.io/badge/Support-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://patreon.com/wanssoftspoken🗿7)
+[![Support on Patreon](https://img.shields.io/badge/Support-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://patreon.com/wanns7)
 
 
 </details>
@@ -4671,7 +4718,7 @@ const sock = makeWASocket({
 
 - [Original Baileys](https://github.com/WhiskeySockets/baileys)
 - [Special thanks to](https://github.com/Itsukichann/Baileys)
-- [Follow wans_excel Soft](https://facebook.com/wanssoftspoken🗿)
+- [Follow vscorID Soft](https://facebook.com/wanns)
 
 ---
 
@@ -4681,6 +4728,6 @@ const sock = makeWASocket({
 >
 > **This project is completely free and open-source. If it saved you time or helped your business, consider supporting us!**
 
-[![Support on Patreon](https://img.shields.io/badge/Support-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://patreon.com/wanssoftspoken🗿7)
+[![Support on Patreon](https://img.shields.io/badge/Support-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://patreon.com/wanns7)
 
 ---

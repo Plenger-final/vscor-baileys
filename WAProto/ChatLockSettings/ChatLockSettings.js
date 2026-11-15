@@ -1,10 +1,11 @@
-/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
+/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-mixed-operators, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars, default-case, jsdoc/require-param*/
 "use strict";
 
 var $protobuf = require("protobufjs/minimal");
 
 // Common aliases
 var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
+var $Object = $util.global.Object, $undefined = $util.global.undefined, $Error = $util.global.Error, $RangeError = $util.global.RangeError, $TypeError = $util.global.TypeError, $Boolean = $util.global.Boolean, $Array = $util.global.Array, $String = $util.global.String;
 
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
@@ -22,26 +23,43 @@ $root.ChatLockSettings = (function() {
 
         /**
          * Properties of a ChatLockSettings.
+         * @typedef {Object} ChatLockSettings.ChatLockSettings.$Properties
+         * @property {boolean|null} [hideLockedChats] ChatLockSettings hideLockedChats
+         * @property {UserPassword.UserPassword.$Properties|null} [secretCode] ChatLockSettings secretCode
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a ChatLockSettings.
          * @memberof ChatLockSettings
          * @interface IChatLockSettings
-         * @property {boolean|null} [hideLockedChats] ChatLockSettings hideLockedChats
-         * @property {UserPassword.IUserPassword|null} [secretCode] ChatLockSettings secretCode
+         * @augments ChatLockSettings.ChatLockSettings.$Properties
+         * @deprecated Use ChatLockSettings.ChatLockSettings.$Properties instead.
+         */
+
+        /**
+         * Shape of a ChatLockSettings.
+         * @typedef {{
+         *   hideLockedChats?: boolean|null;
+         *   secretCode?: UserPassword.UserPassword.$Shape|null;
+         *   $unknowns?: Array.<Uint8Array>;
+         * }} ChatLockSettings.ChatLockSettings.$Shape
          */
 
         /**
          * Constructs a new ChatLockSettings.
          * @memberof ChatLockSettings
          * @classdesc Represents a ChatLockSettings.
-         * @implements IChatLockSettings
          * @constructor
-         * @param {ChatLockSettings.IChatLockSettings=} [properties] Properties to set
+         * @param {ChatLockSettings.ChatLockSettings.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function ChatLockSettings(properties) {
+        var ChatLockSettings = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * ChatLockSettings hideLockedChats.
@@ -53,7 +71,7 @@ $root.ChatLockSettings = (function() {
 
         /**
          * ChatLockSettings secretCode.
-         * @member {UserPassword.IUserPassword|null|undefined} secretCode
+         * @member {UserPassword.UserPassword.$Properties|null|undefined} secretCode
          * @memberof ChatLockSettings.ChatLockSettings
          * @instance
          */
@@ -63,13 +81,13 @@ $root.ChatLockSettings = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ChatLockSettings.prototype, "_hideLockedChats", {
+        $Object.defineProperty(ChatLockSettings.prototype, "_hideLockedChats", {
             get: $util.oneOfGetter($oneOfFields = ["hideLockedChats"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ChatLockSettings.prototype, "_secretCode", {
+        $Object.defineProperty(ChatLockSettings.prototype, "_secretCode", {
             get: $util.oneOfGetter($oneOfFields = ["secretCode"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -79,10 +97,14 @@ $root.ChatLockSettings = (function() {
          * @function create
          * @memberof ChatLockSettings.ChatLockSettings
          * @static
-         * @param {ChatLockSettings.IChatLockSettings=} [properties] Properties to set
+         * @param {ChatLockSettings.ChatLockSettings.$Properties=} [properties] Properties to set
          * @returns {ChatLockSettings.ChatLockSettings} ChatLockSettings instance
+         * @type {{
+         *   (properties: ChatLockSettings.ChatLockSettings.$Shape): ChatLockSettings.ChatLockSettings & ChatLockSettings.ChatLockSettings.$Shape;
+         *   (properties?: ChatLockSettings.ChatLockSettings.$Properties): ChatLockSettings.ChatLockSettings;
+         * }}
          */
-        ChatLockSettings.create = function create(properties) {
+        ChatLockSettings.create = function(properties) {
             return new ChatLockSettings(properties);
         };
 
@@ -91,17 +113,24 @@ $root.ChatLockSettings = (function() {
          * @function encode
          * @memberof ChatLockSettings.ChatLockSettings
          * @static
-         * @param {ChatLockSettings.IChatLockSettings} message ChatLockSettings message or plain object to encode
+         * @param {ChatLockSettings.ChatLockSettings.$Properties} message ChatLockSettings message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ChatLockSettings.encode = function encode(message, writer) {
+        ChatLockSettings.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.hideLockedChats != null && Object.hasOwnProperty.call(message, "hideLockedChats"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.hideLockedChats != null && $Object.hasOwnProperty.call(message, "hideLockedChats"))
                 writer.uint32(/* id 1, wireType 0 =*/8).bool(message.hideLockedChats);
-            if (message.secretCode != null && Object.hasOwnProperty.call(message, "secretCode"))
-                $root.UserPassword.UserPassword.encode(message.secretCode, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.secretCode != null && $Object.hasOwnProperty.call(message, "secretCode"))
+                $root.UserPassword.UserPassword.encode(message.secretCode, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -110,12 +139,12 @@ $root.ChatLockSettings = (function() {
          * @function encodeDelimited
          * @memberof ChatLockSettings.ChatLockSettings
          * @static
-         * @param {ChatLockSettings.IChatLockSettings} message ChatLockSettings message or plain object to encode
+         * @param {ChatLockSettings.ChatLockSettings.$Properties} message ChatLockSettings message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ChatLockSettings.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        ChatLockSettings.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -125,32 +154,65 @@ $root.ChatLockSettings = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ChatLockSettings.ChatLockSettings} ChatLockSettings
+         * @returns {ChatLockSettings.ChatLockSettings & ChatLockSettings.ChatLockSettings.$Shape} ChatLockSettings
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ChatLockSettings.decode = function decode(reader, length, error) {
+        ChatLockSettings.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ChatLockSettings.ChatLockSettings();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ChatLockSettings.ChatLockSettings();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.hideLockedChats = reader.bool();
-                        break;
-                    }
-                case 2: {
-                        message.secretCode = $root.UserPassword.UserPassword.decode(reader, reader.uint32());
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 0)
+                            break;
+                        message.hideLockedChats = reader.bool();
+                        message._hideLockedChats = "hideLockedChats";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.secretCode = $root.UserPassword.UserPassword.decode(reader, reader.size(), $undefined, _depth + 1, message.secretCode);
+                        message._secretCode = "secretCode";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -160,14 +222,14 @@ $root.ChatLockSettings = (function() {
          * @memberof ChatLockSettings.ChatLockSettings
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ChatLockSettings.ChatLockSettings} ChatLockSettings
+         * @returns {ChatLockSettings.ChatLockSettings & ChatLockSettings.ChatLockSettings.$Shape} ChatLockSettings
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ChatLockSettings.decodeDelimited = function decodeDelimited(reader) {
+        ChatLockSettings.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -178,19 +240,23 @@ $root.ChatLockSettings = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        ChatLockSettings.verify = function verify(message) {
+        ChatLockSettings.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.hideLockedChats != null && message.hasOwnProperty("hideLockedChats")) {
+            if (message.hideLockedChats != null && $Object.hasOwnProperty.call(message, "hideLockedChats")) {
                 properties._hideLockedChats = 1;
                 if (typeof message.hideLockedChats !== "boolean")
                     return "hideLockedChats: boolean expected";
             }
-            if (message.secretCode != null && message.hasOwnProperty("secretCode")) {
+            if (message.secretCode != null && $Object.hasOwnProperty.call(message, "secretCode")) {
                 properties._secretCode = 1;
                 {
-                    var error = $root.UserPassword.UserPassword.verify(message.secretCode);
+                    var error = $root.UserPassword.UserPassword.verify(message.secretCode, _depth + 1);
                     if (error)
                         return "secretCode." + error;
                 }
@@ -206,16 +272,22 @@ $root.ChatLockSettings = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ChatLockSettings.ChatLockSettings} ChatLockSettings
          */
-        ChatLockSettings.fromObject = function fromObject(object) {
+        ChatLockSettings.fromObject = function (object, _depth) {
             if (object instanceof $root.ChatLockSettings.ChatLockSettings)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ChatLockSettings.ChatLockSettings: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ChatLockSettings.ChatLockSettings();
             if (object.hideLockedChats != null)
-                message.hideLockedChats = Boolean(object.hideLockedChats);
+                message.hideLockedChats = $Boolean(object.hideLockedChats);
             if (object.secretCode != null) {
-                if (typeof object.secretCode !== "object")
-                    throw TypeError(".ChatLockSettings.ChatLockSettings.secretCode: object expected");
-                message.secretCode = $root.UserPassword.UserPassword.fromObject(object.secretCode);
+                if (!$util.isObject(object.secretCode))
+                    throw $TypeError(".ChatLockSettings.ChatLockSettings.secretCode: object expected");
+                message.secretCode = $root.UserPassword.UserPassword.fromObject(object.secretCode, _depth + 1);
             }
             return message;
         };
@@ -229,20 +301,18 @@ $root.ChatLockSettings = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        ChatLockSettings.toObject = function toObject(message, options) {
+        ChatLockSettings.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.hideLockedChats != null && message.hasOwnProperty("hideLockedChats")) {
+            if (message.hideLockedChats != null && $Object.hasOwnProperty.call(message, "hideLockedChats"))
                 object.hideLockedChats = message.hideLockedChats;
-                if (options.oneofs)
-                    object._hideLockedChats = "hideLockedChats";
-            }
-            if (message.secretCode != null && message.hasOwnProperty("secretCode")) {
-                object.secretCode = $root.UserPassword.UserPassword.toObject(message.secretCode, options);
-                if (options.oneofs)
-                    object._secretCode = "secretCode";
-            }
+            if (message.secretCode != null && $Object.hasOwnProperty.call(message, "secretCode"))
+                object.secretCode = $root.UserPassword.UserPassword.toObject(message.secretCode, options, _depth + 1);
             return object;
         };
 
@@ -253,23 +323,22 @@ $root.ChatLockSettings = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        ChatLockSettings.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        ChatLockSettings.prototype.toJSON = function() {
+            return ChatLockSettings.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for ChatLockSettings
+         * Gets the type url for ChatLockSettings
          * @function getTypeUrl
          * @memberof ChatLockSettings.ChatLockSettings
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        ChatLockSettings.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ChatLockSettings.ChatLockSettings";
+        ChatLockSettings.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ChatLockSettings.ChatLockSettings";
         };
 
         return ChatLockSettings;
@@ -291,29 +360,48 @@ $root.UserPassword = (function() {
 
         /**
          * Properties of a UserPassword.
-         * @memberof UserPassword
-         * @interface IUserPassword
+         * @typedef {Object} UserPassword.UserPassword.$Properties
          * @property {UserPassword.UserPassword.Encoding|null} [encoding] UserPassword encoding
          * @property {UserPassword.UserPassword.Transformer|null} [transformer] UserPassword transformer
-         * @property {Array.<UserPassword.UserPassword.ITransformerArg>|null} [transformerArg] UserPassword transformerArg
+         * @property {Array.<UserPassword.UserPassword.TransformerArg.$Properties>|null} [transformerArg] UserPassword transformerArg
          * @property {Uint8Array|null} [transformedData] UserPassword transformedData
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a UserPassword.
+         * @memberof UserPassword
+         * @interface IUserPassword
+         * @augments UserPassword.UserPassword.$Properties
+         * @deprecated Use UserPassword.UserPassword.$Properties instead.
+         */
+
+        /**
+         * Shape of a UserPassword.
+         * @typedef {{
+         *   encoding?: UserPassword.UserPassword.Encoding|null;
+         *   transformer?: UserPassword.UserPassword.Transformer|null;
+         *   transformerArg?: Array.<UserPassword.UserPassword.TransformerArg.$Shape>|null;
+         *   transformedData?: Uint8Array|null;
+         *   $unknowns?: Array.<Uint8Array>;
+         * }} UserPassword.UserPassword.$Shape
          */
 
         /**
          * Constructs a new UserPassword.
          * @memberof UserPassword
          * @classdesc Represents a UserPassword.
-         * @implements IUserPassword
          * @constructor
-         * @param {UserPassword.IUserPassword=} [properties] Properties to set
+         * @param {UserPassword.UserPassword.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function UserPassword(properties) {
+        var UserPassword = function (properties) {
             this.transformerArg = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * UserPassword encoding.
@@ -333,7 +421,7 @@ $root.UserPassword = (function() {
 
         /**
          * UserPassword transformerArg.
-         * @member {Array.<UserPassword.UserPassword.ITransformerArg>} transformerArg
+         * @member {Array.<UserPassword.UserPassword.TransformerArg.$Properties>} transformerArg
          * @memberof UserPassword.UserPassword
          * @instance
          */
@@ -351,19 +439,19 @@ $root.UserPassword = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(UserPassword.prototype, "_encoding", {
+        $Object.defineProperty(UserPassword.prototype, "_encoding", {
             get: $util.oneOfGetter($oneOfFields = ["encoding"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(UserPassword.prototype, "_transformer", {
+        $Object.defineProperty(UserPassword.prototype, "_transformer", {
             get: $util.oneOfGetter($oneOfFields = ["transformer"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(UserPassword.prototype, "_transformedData", {
+        $Object.defineProperty(UserPassword.prototype, "_transformedData", {
             get: $util.oneOfGetter($oneOfFields = ["transformedData"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -373,10 +461,14 @@ $root.UserPassword = (function() {
          * @function create
          * @memberof UserPassword.UserPassword
          * @static
-         * @param {UserPassword.IUserPassword=} [properties] Properties to set
+         * @param {UserPassword.UserPassword.$Properties=} [properties] Properties to set
          * @returns {UserPassword.UserPassword} UserPassword instance
+         * @type {{
+         *   (properties: UserPassword.UserPassword.$Shape): UserPassword.UserPassword & UserPassword.UserPassword.$Shape;
+         *   (properties?: UserPassword.UserPassword.$Properties): UserPassword.UserPassword;
+         * }}
          */
-        UserPassword.create = function create(properties) {
+        UserPassword.create = function(properties) {
             return new UserPassword(properties);
         };
 
@@ -385,22 +477,29 @@ $root.UserPassword = (function() {
          * @function encode
          * @memberof UserPassword.UserPassword
          * @static
-         * @param {UserPassword.IUserPassword} message UserPassword message or plain object to encode
+         * @param {UserPassword.UserPassword.$Properties} message UserPassword message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        UserPassword.encode = function encode(message, writer) {
+        UserPassword.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.encoding != null && Object.hasOwnProperty.call(message, "encoding"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.encoding != null && $Object.hasOwnProperty.call(message, "encoding"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.encoding);
-            if (message.transformer != null && Object.hasOwnProperty.call(message, "transformer"))
+            if (message.transformer != null && $Object.hasOwnProperty.call(message, "transformer"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.transformer);
             if (message.transformerArg != null && message.transformerArg.length)
                 for (var i = 0; i < message.transformerArg.length; ++i)
-                    $root.UserPassword.UserPassword.TransformerArg.encode(message.transformerArg[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-            if (message.transformedData != null && Object.hasOwnProperty.call(message, "transformedData"))
+                    $root.UserPassword.UserPassword.TransformerArg.encode(message.transformerArg[i], writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
+            if (message.transformedData != null && $Object.hasOwnProperty.call(message, "transformedData"))
                 writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.transformedData);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -409,12 +508,12 @@ $root.UserPassword = (function() {
          * @function encodeDelimited
          * @memberof UserPassword.UserPassword
          * @static
-         * @param {UserPassword.IUserPassword} message UserPassword message or plain object to encode
+         * @param {UserPassword.UserPassword.$Properties} message UserPassword message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        UserPassword.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        UserPassword.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -424,42 +523,80 @@ $root.UserPassword = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {UserPassword.UserPassword} UserPassword
+         * @returns {UserPassword.UserPassword & UserPassword.UserPassword.$Shape} UserPassword
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        UserPassword.decode = function decode(reader, length, error) {
+        UserPassword.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UserPassword.UserPassword();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message, value;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.UserPassword.UserPassword();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.encoding = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.transformer = reader.int32();
-                        break;
-                    }
-                case 3: {
-                        if (!(message.transformerArg && message.transformerArg.length))
-                            message.transformerArg = [];
-                        message.transformerArg.push($root.UserPassword.UserPassword.TransformerArg.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 4: {
-                        message.transformedData = reader.bytes();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 0)
+                            break;
+                        message.encoding = reader.int32();
+                        message._encoding = "encoding";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 0)
+                            break;
+                        message.transformer = reader.int32();
+                        message._transformer = "transformer";
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 2)
+                            break;
+                        if (!(message.transformerArg && message.transformerArg.length))
+                            message.transformerArg = [];
+                        message.transformerArg.push($root.UserPassword.UserPassword.TransformerArg.decode(reader, reader.size(), $undefined, _depth + 1));
+                        continue;
+                    }
+                case 4: {
+                        if (wireType !== 2)
+                            break;
+                        message.transformedData = reader.bytes();
+                        message._transformedData = "transformedData";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -469,14 +606,14 @@ $root.UserPassword = (function() {
          * @memberof UserPassword.UserPassword
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {UserPassword.UserPassword} UserPassword
+         * @returns {UserPassword.UserPassword & UserPassword.UserPassword.$Shape} UserPassword
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        UserPassword.decodeDelimited = function decodeDelimited(reader) {
+        UserPassword.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -487,41 +624,34 @@ $root.UserPassword = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        UserPassword.verify = function verify(message) {
+        UserPassword.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.encoding != null && message.hasOwnProperty("encoding")) {
+            if (message.encoding != null && $Object.hasOwnProperty.call(message, "encoding")) {
                 properties._encoding = 1;
-                switch (message.encoding) {
-                default:
+                if (typeof message.encoding !== "number" || (message.encoding | 0) !== message.encoding)
                     return "encoding: enum value expected";
-                case 0:
-                case 1:
-                    break;
-                }
             }
-            if (message.transformer != null && message.hasOwnProperty("transformer")) {
+            if (message.transformer != null && $Object.hasOwnProperty.call(message, "transformer")) {
                 properties._transformer = 1;
-                switch (message.transformer) {
-                default:
+                if (typeof message.transformer !== "number" || (message.transformer | 0) !== message.transformer)
                     return "transformer: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                    break;
-                }
             }
-            if (message.transformerArg != null && message.hasOwnProperty("transformerArg")) {
-                if (!Array.isArray(message.transformerArg))
+            if (message.transformerArg != null && $Object.hasOwnProperty.call(message, "transformerArg")) {
+                if (!$Array.isArray(message.transformerArg))
                     return "transformerArg: array expected";
                 for (var i = 0; i < message.transformerArg.length; ++i) {
-                    var error = $root.UserPassword.UserPassword.TransformerArg.verify(message.transformerArg[i]);
+                    var error = $root.UserPassword.UserPassword.TransformerArg.verify(message.transformerArg[i], _depth + 1);
                     if (error)
                         return "transformerArg." + error;
                 }
             }
-            if (message.transformedData != null && message.hasOwnProperty("transformedData")) {
+            if (message.transformedData != null && $Object.hasOwnProperty.call(message, "transformedData")) {
                 properties._transformedData = 1;
                 if (!(message.transformedData && typeof message.transformedData.length === "number" || $util.isString(message.transformedData)))
                     return "transformedData: buffer expected";
@@ -537,17 +667,17 @@ $root.UserPassword = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {UserPassword.UserPassword} UserPassword
          */
-        UserPassword.fromObject = function fromObject(object) {
+        UserPassword.fromObject = function (object, _depth) {
             if (object instanceof $root.UserPassword.UserPassword)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".UserPassword.UserPassword: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.UserPassword.UserPassword();
             switch (object.encoding) {
-            default:
-                if (typeof object.encoding === "number") {
-                    message.encoding = object.encoding;
-                    break;
-                }
-                break;
             case "UTF8":
             case 0:
                 message.encoding = 0;
@@ -556,14 +686,11 @@ $root.UserPassword = (function() {
             case 1:
                 message.encoding = 1;
                 break;
+            default:
+                if (typeof object.encoding === "number" && (object.encoding | 0) === object.encoding)
+                    message.encoding = object.encoding;
             }
             switch (object.transformer) {
-            default:
-                if (typeof object.transformer === "number") {
-                    message.transformer = object.transformer;
-                    break;
-                }
-                break;
             case "NONE":
             case 0:
                 message.transformer = 0;
@@ -576,15 +703,18 @@ $root.UserPassword = (function() {
             case 2:
                 message.transformer = 2;
                 break;
+            default:
+                if (typeof object.transformer === "number" && (object.transformer | 0) === object.transformer)
+                    message.transformer = object.transformer;
             }
             if (object.transformerArg) {
-                if (!Array.isArray(object.transformerArg))
-                    throw TypeError(".UserPassword.UserPassword.transformerArg: array expected");
-                message.transformerArg = [];
+                if (!$Array.isArray(object.transformerArg))
+                    throw $TypeError(".UserPassword.UserPassword.transformerArg: array expected");
+                message.transformerArg = $Array(object.transformerArg.length);
                 for (var i = 0; i < object.transformerArg.length; ++i) {
-                    if (typeof object.transformerArg[i] !== "object")
-                        throw TypeError(".UserPassword.UserPassword.transformerArg: object expected");
-                    message.transformerArg[i] = $root.UserPassword.UserPassword.TransformerArg.fromObject(object.transformerArg[i]);
+                    if (!$util.isObject(object.transformerArg[i]))
+                        throw $TypeError(".UserPassword.UserPassword.transformerArg: object expected");
+                    message.transformerArg[i] = $root.UserPassword.UserPassword.TransformerArg.fromObject(object.transformerArg[i], _depth + 1);
                 }
             }
             if (object.transformedData != null)
@@ -604,32 +734,27 @@ $root.UserPassword = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        UserPassword.toObject = function toObject(message, options) {
+        UserPassword.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
             if (options.arrays || options.defaults)
                 object.transformerArg = [];
-            if (message.encoding != null && message.hasOwnProperty("encoding")) {
-                object.encoding = options.enums === String ? $root.UserPassword.UserPassword.Encoding[message.encoding] === undefined ? message.encoding : $root.UserPassword.UserPassword.Encoding[message.encoding] : message.encoding;
-                if (options.oneofs)
-                    object._encoding = "encoding";
-            }
-            if (message.transformer != null && message.hasOwnProperty("transformer")) {
-                object.transformer = options.enums === String ? $root.UserPassword.UserPassword.Transformer[message.transformer] === undefined ? message.transformer : $root.UserPassword.UserPassword.Transformer[message.transformer] : message.transformer;
-                if (options.oneofs)
-                    object._transformer = "transformer";
-            }
+            if (message.encoding != null && $Object.hasOwnProperty.call(message, "encoding"))
+                object.encoding = options.enums === $String ? $root.UserPassword.UserPassword.Encoding[message.encoding] === $undefined ? message.encoding : $root.UserPassword.UserPassword.Encoding[message.encoding] : message.encoding;
+            if (message.transformer != null && $Object.hasOwnProperty.call(message, "transformer"))
+                object.transformer = options.enums === $String ? $root.UserPassword.UserPassword.Transformer[message.transformer] === $undefined ? message.transformer : $root.UserPassword.UserPassword.Transformer[message.transformer] : message.transformer;
             if (message.transformerArg && message.transformerArg.length) {
-                object.transformerArg = [];
+                object.transformerArg = $Array(message.transformerArg.length);
                 for (var j = 0; j < message.transformerArg.length; ++j)
-                    object.transformerArg[j] = $root.UserPassword.UserPassword.TransformerArg.toObject(message.transformerArg[j], options);
+                    object.transformerArg[j] = $root.UserPassword.UserPassword.TransformerArg.toObject(message.transformerArg[j], options, _depth + 1);
             }
-            if (message.transformedData != null && message.hasOwnProperty("transformedData")) {
-                object.transformedData = options.bytes === String ? $util.base64.encode(message.transformedData, 0, message.transformedData.length) : options.bytes === Array ? Array.prototype.slice.call(message.transformedData) : message.transformedData;
-                if (options.oneofs)
-                    object._transformedData = "transformedData";
-            }
+            if (message.transformedData != null && $Object.hasOwnProperty.call(message, "transformedData"))
+                object.transformedData = options.bytes === $String ? $util.base64.encode(message.transformedData, 0, message.transformedData.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.transformedData) : message.transformedData;
             return object;
         };
 
@@ -640,23 +765,22 @@ $root.UserPassword = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        UserPassword.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        UserPassword.prototype.toJSON = function() {
+            return UserPassword.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for UserPassword
+         * Gets the type url for UserPassword
          * @function getTypeUrl
          * @memberof UserPassword.UserPassword
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        UserPassword.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/UserPassword.UserPassword";
+        UserPassword.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/UserPassword.UserPassword";
         };
 
         /**
@@ -667,7 +791,7 @@ $root.UserPassword = (function() {
          * @property {number} UTF8_BROKEN=1 UTF8_BROKEN value
          */
         UserPassword.Encoding = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
+            var valuesById = $Object.create(null), values = $Object.create(valuesById);
             values[valuesById[0] = "UTF8"] = 0;
             values[valuesById[1] = "UTF8_BROKEN"] = 1;
             return values;
@@ -682,7 +806,7 @@ $root.UserPassword = (function() {
          * @property {number} PBKDF2_HMAC_SHA384=2 PBKDF2_HMAC_SHA384 value
          */
         UserPassword.Transformer = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
+            var valuesById = $Object.create(null), values = $Object.create(valuesById);
             values[valuesById[0] = "NONE"] = 0;
             values[valuesById[1] = "PBKDF2_HMAC_SHA512"] = 1;
             values[valuesById[2] = "PBKDF2_HMAC_SHA384"] = 2;
@@ -693,26 +817,43 @@ $root.UserPassword = (function() {
 
             /**
              * Properties of a TransformerArg.
+             * @typedef {Object} UserPassword.UserPassword.TransformerArg.$Properties
+             * @property {string|null} [key] TransformerArg key
+             * @property {UserPassword.UserPassword.TransformerArg.Value.$Properties|null} [value] TransformerArg value
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a TransformerArg.
              * @memberof UserPassword.UserPassword
              * @interface ITransformerArg
-             * @property {string|null} [key] TransformerArg key
-             * @property {UserPassword.UserPassword.TransformerArg.IValue|null} [value] TransformerArg value
+             * @augments UserPassword.UserPassword.TransformerArg.$Properties
+             * @deprecated Use UserPassword.UserPassword.TransformerArg.$Properties instead.
+             */
+
+            /**
+             * Shape of a TransformerArg.
+             * @typedef {{
+             *   key?: string|null;
+             *   value?: UserPassword.UserPassword.TransformerArg.Value.$Shape|null;
+             *   $unknowns?: Array.<Uint8Array>;
+             * }} UserPassword.UserPassword.TransformerArg.$Shape
              */
 
             /**
              * Constructs a new TransformerArg.
              * @memberof UserPassword.UserPassword
              * @classdesc Represents a TransformerArg.
-             * @implements ITransformerArg
              * @constructor
-             * @param {UserPassword.UserPassword.ITransformerArg=} [properties] Properties to set
+             * @param {UserPassword.UserPassword.TransformerArg.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function TransformerArg(properties) {
+            var TransformerArg = function (properties) {
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * TransformerArg key.
@@ -724,7 +865,7 @@ $root.UserPassword = (function() {
 
             /**
              * TransformerArg value.
-             * @member {UserPassword.UserPassword.TransformerArg.IValue|null|undefined} value
+             * @member {UserPassword.UserPassword.TransformerArg.Value.$Properties|null|undefined} value
              * @memberof UserPassword.UserPassword.TransformerArg
              * @instance
              */
@@ -734,13 +875,13 @@ $root.UserPassword = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(TransformerArg.prototype, "_key", {
+            $Object.defineProperty(TransformerArg.prototype, "_key", {
                 get: $util.oneOfGetter($oneOfFields = ["key"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(TransformerArg.prototype, "_value", {
+            $Object.defineProperty(TransformerArg.prototype, "_value", {
                 get: $util.oneOfGetter($oneOfFields = ["value"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -750,10 +891,14 @@ $root.UserPassword = (function() {
              * @function create
              * @memberof UserPassword.UserPassword.TransformerArg
              * @static
-             * @param {UserPassword.UserPassword.ITransformerArg=} [properties] Properties to set
+             * @param {UserPassword.UserPassword.TransformerArg.$Properties=} [properties] Properties to set
              * @returns {UserPassword.UserPassword.TransformerArg} TransformerArg instance
+             * @type {{
+             *   (properties: UserPassword.UserPassword.TransformerArg.$Shape): UserPassword.UserPassword.TransformerArg & UserPassword.UserPassword.TransformerArg.$Shape;
+             *   (properties?: UserPassword.UserPassword.TransformerArg.$Properties): UserPassword.UserPassword.TransformerArg;
+             * }}
              */
-            TransformerArg.create = function create(properties) {
+            TransformerArg.create = function(properties) {
                 return new TransformerArg(properties);
             };
 
@@ -762,17 +907,24 @@ $root.UserPassword = (function() {
              * @function encode
              * @memberof UserPassword.UserPassword.TransformerArg
              * @static
-             * @param {UserPassword.UserPassword.ITransformerArg} message TransformerArg message or plain object to encode
+             * @param {UserPassword.UserPassword.TransformerArg.$Properties} message TransformerArg message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            TransformerArg.encode = function encode(message, writer) {
+            TransformerArg.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.key != null && Object.hasOwnProperty.call(message, "key"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.key != null && $Object.hasOwnProperty.call(message, "key"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
-                if (message.value != null && Object.hasOwnProperty.call(message, "value"))
-                    $root.UserPassword.UserPassword.TransformerArg.Value.encode(message.value, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.value != null && $Object.hasOwnProperty.call(message, "value"))
+                    $root.UserPassword.UserPassword.TransformerArg.Value.encode(message.value, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -781,12 +933,12 @@ $root.UserPassword = (function() {
              * @function encodeDelimited
              * @memberof UserPassword.UserPassword.TransformerArg
              * @static
-             * @param {UserPassword.UserPassword.ITransformerArg} message TransformerArg message or plain object to encode
+             * @param {UserPassword.UserPassword.TransformerArg.$Properties} message TransformerArg message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            TransformerArg.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            TransformerArg.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -796,32 +948,65 @@ $root.UserPassword = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {UserPassword.UserPassword.TransformerArg} TransformerArg
+             * @returns {UserPassword.UserPassword.TransformerArg & UserPassword.UserPassword.TransformerArg.$Shape} TransformerArg
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            TransformerArg.decode = function decode(reader, length, error) {
+            TransformerArg.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UserPassword.UserPassword.TransformerArg();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.UserPassword.UserPassword.TransformerArg();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.key = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.value = $root.UserPassword.UserPassword.TransformerArg.Value.decode(reader, reader.uint32());
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 2)
+                                break;
+                            message.key = reader.stringVerify();
+                            message._key = "key";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 2)
+                                break;
+                            message.value = $root.UserPassword.UserPassword.TransformerArg.Value.decode(reader, reader.size(), $undefined, _depth + 1, message.value);
+                            message._value = "value";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -831,14 +1016,14 @@ $root.UserPassword = (function() {
              * @memberof UserPassword.UserPassword.TransformerArg
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {UserPassword.UserPassword.TransformerArg} TransformerArg
+             * @returns {UserPassword.UserPassword.TransformerArg & UserPassword.UserPassword.TransformerArg.$Shape} TransformerArg
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            TransformerArg.decodeDelimited = function decodeDelimited(reader) {
+            TransformerArg.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -849,19 +1034,23 @@ $root.UserPassword = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            TransformerArg.verify = function verify(message) {
+            TransformerArg.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message.key != null && message.hasOwnProperty("key")) {
+                if (message.key != null && $Object.hasOwnProperty.call(message, "key")) {
                     properties._key = 1;
                     if (!$util.isString(message.key))
                         return "key: string expected";
                 }
-                if (message.value != null && message.hasOwnProperty("value")) {
+                if (message.value != null && $Object.hasOwnProperty.call(message, "value")) {
                     properties._value = 1;
                     {
-                        var error = $root.UserPassword.UserPassword.TransformerArg.Value.verify(message.value);
+                        var error = $root.UserPassword.UserPassword.TransformerArg.Value.verify(message.value, _depth + 1);
                         if (error)
                             return "value." + error;
                     }
@@ -877,16 +1066,22 @@ $root.UserPassword = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {UserPassword.UserPassword.TransformerArg} TransformerArg
              */
-            TransformerArg.fromObject = function fromObject(object) {
+            TransformerArg.fromObject = function (object, _depth) {
                 if (object instanceof $root.UserPassword.UserPassword.TransformerArg)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".UserPassword.UserPassword.TransformerArg: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.UserPassword.UserPassword.TransformerArg();
                 if (object.key != null)
-                    message.key = String(object.key);
+                    message.key = $String(object.key);
                 if (object.value != null) {
-                    if (typeof object.value !== "object")
-                        throw TypeError(".UserPassword.UserPassword.TransformerArg.value: object expected");
-                    message.value = $root.UserPassword.UserPassword.TransformerArg.Value.fromObject(object.value);
+                    if (!$util.isObject(object.value))
+                        throw $TypeError(".UserPassword.UserPassword.TransformerArg.value: object expected");
+                    message.value = $root.UserPassword.UserPassword.TransformerArg.Value.fromObject(object.value, _depth + 1);
                 }
                 return message;
             };
@@ -900,20 +1095,18 @@ $root.UserPassword = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            TransformerArg.toObject = function toObject(message, options) {
+            TransformerArg.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
-                if (message.key != null && message.hasOwnProperty("key")) {
+                if (message.key != null && $Object.hasOwnProperty.call(message, "key"))
                     object.key = message.key;
-                    if (options.oneofs)
-                        object._key = "key";
-                }
-                if (message.value != null && message.hasOwnProperty("value")) {
-                    object.value = $root.UserPassword.UserPassword.TransformerArg.Value.toObject(message.value, options);
-                    if (options.oneofs)
-                        object._value = "value";
-                }
+                if (message.value != null && $Object.hasOwnProperty.call(message, "value"))
+                    object.value = $root.UserPassword.UserPassword.TransformerArg.Value.toObject(message.value, options, _depth + 1);
                 return object;
             };
 
@@ -924,49 +1117,68 @@ $root.UserPassword = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            TransformerArg.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            TransformerArg.prototype.toJSON = function() {
+                return TransformerArg.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for TransformerArg
+             * Gets the type url for TransformerArg
              * @function getTypeUrl
              * @memberof UserPassword.UserPassword.TransformerArg
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            TransformerArg.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/UserPassword.UserPassword.TransformerArg";
+            TransformerArg.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/UserPassword.UserPassword.TransformerArg";
             };
 
             TransformerArg.Value = (function() {
 
                 /**
                  * Properties of a Value.
-                 * @memberof UserPassword.UserPassword.TransformerArg
-                 * @interface IValue
+                 * @typedef {Object} UserPassword.UserPassword.TransformerArg.Value.$Properties
                  * @property {Uint8Array|null} [asBlob] Value asBlob
                  * @property {number|null} [asUnsignedInteger] Value asUnsignedInteger
+                 * @property {"asBlob"|"asUnsignedInteger"} [value] Value value
+                 * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+                 */
+
+                /**
+                 * Properties of a Value.
+                 * @memberof UserPassword.UserPassword.TransformerArg
+                 * @interface IValue
+                 * @augments UserPassword.UserPassword.TransformerArg.Value.$Properties
+                 * @deprecated Use UserPassword.UserPassword.TransformerArg.Value.$Properties instead.
+                 */
+
+                /**
+                 * Narrowed shape of a Value.
+                 * @typedef {{
+                 *   asBlob?: Uint8Array|null;
+                 *   asUnsignedInteger?: number|null;
+                 *   $unknowns?: Array.<Uint8Array>;
+                 * } & (
+                 *   ({ value?: undefined; asBlob?: null; asUnsignedInteger?: null }|{ value?: "asBlob"; asBlob: Uint8Array; asUnsignedInteger?: null }|{ value?: "asUnsignedInteger"; asBlob?: null; asUnsignedInteger: number })
+                 * )} UserPassword.UserPassword.TransformerArg.Value.$Shape
                  */
 
                 /**
                  * Constructs a new Value.
                  * @memberof UserPassword.UserPassword.TransformerArg
                  * @classdesc Represents a Value.
-                 * @implements IValue
                  * @constructor
-                 * @param {UserPassword.UserPassword.TransformerArg.IValue=} [properties] Properties to set
+                 * @param {UserPassword.UserPassword.TransformerArg.Value.$Properties=} [properties] Properties to set
+                 * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
                  */
-                function Value(properties) {
+                var Value = function (properties) {
                     if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
+                        for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null && keys[i] !== "__proto__")
                                 this[keys[i]] = properties[keys[i]];
-                }
+                };
 
                 /**
                  * Value asBlob.
@@ -993,7 +1205,7 @@ $root.UserPassword = (function() {
                  * @memberof UserPassword.UserPassword.TransformerArg.Value
                  * @instance
                  */
-                Object.defineProperty(Value.prototype, "value", {
+                $Object.defineProperty(Value.prototype, "value", {
                     get: $util.oneOfGetter($oneOfFields = ["asBlob", "asUnsignedInteger"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
@@ -1003,10 +1215,14 @@ $root.UserPassword = (function() {
                  * @function create
                  * @memberof UserPassword.UserPassword.TransformerArg.Value
                  * @static
-                 * @param {UserPassword.UserPassword.TransformerArg.IValue=} [properties] Properties to set
+                 * @param {UserPassword.UserPassword.TransformerArg.Value.$Properties=} [properties] Properties to set
                  * @returns {UserPassword.UserPassword.TransformerArg.Value} Value instance
+                 * @type {{
+                 *   (properties: UserPassword.UserPassword.TransformerArg.Value.$Shape): UserPassword.UserPassword.TransformerArg.Value & UserPassword.UserPassword.TransformerArg.Value.$Shape;
+                 *   (properties?: UserPassword.UserPassword.TransformerArg.Value.$Properties): UserPassword.UserPassword.TransformerArg.Value;
+                 * }}
                  */
-                Value.create = function create(properties) {
+                Value.create = function(properties) {
                     return new Value(properties);
                 };
 
@@ -1015,17 +1231,24 @@ $root.UserPassword = (function() {
                  * @function encode
                  * @memberof UserPassword.UserPassword.TransformerArg.Value
                  * @static
-                 * @param {UserPassword.UserPassword.TransformerArg.IValue} message Value message or plain object to encode
+                 * @param {UserPassword.UserPassword.TransformerArg.Value.$Properties} message Value message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                Value.encode = function encode(message, writer) {
+                Value.encode = function (message, writer, _depth) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.asBlob != null && Object.hasOwnProperty.call(message, "asBlob"))
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $util.recursionLimit)
+                        throw $Error("max depth exceeded");
+                    if (message.asBlob != null && $Object.hasOwnProperty.call(message, "asBlob"))
                         writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.asBlob);
-                    if (message.asUnsignedInteger != null && Object.hasOwnProperty.call(message, "asUnsignedInteger"))
+                    if (message.asUnsignedInteger != null && $Object.hasOwnProperty.call(message, "asUnsignedInteger"))
                         writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.asUnsignedInteger);
+                    if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                        for (var i = 0; i < message.$unknowns.length; ++i)
+                            writer.raw(message.$unknowns[i]);
                     return writer;
                 };
 
@@ -1034,12 +1257,12 @@ $root.UserPassword = (function() {
                  * @function encodeDelimited
                  * @memberof UserPassword.UserPassword.TransformerArg.Value
                  * @static
-                 * @param {UserPassword.UserPassword.TransformerArg.IValue} message Value message or plain object to encode
+                 * @param {UserPassword.UserPassword.TransformerArg.Value.$Properties} message Value message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                Value.encodeDelimited = function encodeDelimited(message, writer) {
-                    return this.encode(message, writer).ldelim();
+                Value.encodeDelimited = function(message, writer) {
+                    return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
                 };
 
                 /**
@@ -1049,32 +1272,65 @@ $root.UserPassword = (function() {
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {UserPassword.UserPassword.TransformerArg.Value} Value
+                 * @returns {UserPassword.UserPassword.TransformerArg.Value & UserPassword.UserPassword.TransformerArg.Value.$Shape} Value
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Value.decode = function decode(reader, length, error) {
+                Value.decode = function (reader, length, _end, _depth, _target) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UserPassword.UserPassword.TransformerArg.Value();
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $Reader.recursionLimit)
+                        throw $Error("max depth exceeded");
+                    var end, message;
+                    if (length === $undefined)
+                        end = reader.len;
+                    else {
+                        end = reader.pos + length;
+                        if (end > reader.len)
+                            throw $RangeError("index out of range");
+                        length = reader.len;
+                        reader.len = end;
+                    }
+                    message = _target || new $root.UserPassword.UserPassword.TransformerArg.Value();
                     while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        if (tag === error)
-                            break;
-                        switch (tag >>> 3) {
-                        case 1: {
-                                message.asBlob = reader.bytes();
-                                break;
-                            }
-                        case 2: {
-                                message.asUnsignedInteger = reader.uint32();
-                                break;
-                            }
-                        default:
-                            reader.skipType(tag & 7);
+                        var start = reader.pos;
+                        var tag = reader.tag();
+                        if (tag === _end) {
+                            _end = $undefined;
                             break;
                         }
+                        var wireType = tag & 7;
+                        switch (tag >>>= 3) {
+                        case 1: {
+                                if (wireType !== 2)
+                                    break;
+                                message.asBlob = reader.bytes();
+                                message.value = "asBlob";
+                                continue;
+                            }
+                        case 2: {
+                                if (wireType !== 0)
+                                    break;
+                                message.asUnsignedInteger = reader.uint32();
+                                message.value = "asUnsignedInteger";
+                                continue;
+                            }
+                        }
+                        reader.skipType(wireType, _depth, tag);
+                        if (!reader.discardUnknown) {
+                            $util.makeProp(message, "$unknowns", false);
+                            (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                        }
                     }
+                    if (length !== $undefined) {
+                        if (reader.pos !== end)
+                            throw $RangeError("index out of range");
+                        reader.len = length;
+                    }
+                    if (_end !== $undefined)
+                        throw $Error("missing end group");
                     return message;
                 };
 
@@ -1084,14 +1340,14 @@ $root.UserPassword = (function() {
                  * @memberof UserPassword.UserPassword.TransformerArg.Value
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {UserPassword.UserPassword.TransformerArg.Value} Value
+                 * @returns {UserPassword.UserPassword.TransformerArg.Value & UserPassword.UserPassword.TransformerArg.Value.$Shape} Value
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Value.decodeDelimited = function decodeDelimited(reader) {
+                Value.decodeDelimited = function(reader) {
                     if (!(reader instanceof $Reader))
                         reader = new $Reader(reader);
-                    return this.decode(reader, reader.uint32());
+                    return this.decode(reader, reader.size());
                 };
 
                 /**
@@ -1102,16 +1358,20 @@ $root.UserPassword = (function() {
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                Value.verify = function verify(message) {
+                Value.verify = function (message, _depth) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $util.recursionLimit)
+                        return "max depth exceeded";
                     var properties = {};
-                    if (message.asBlob != null && message.hasOwnProperty("asBlob")) {
+                    if (message.asBlob != null && $Object.hasOwnProperty.call(message, "asBlob")) {
                         properties.value = 1;
                         if (!(message.asBlob && typeof message.asBlob.length === "number" || $util.isString(message.asBlob)))
                             return "asBlob: buffer expected";
                     }
-                    if (message.asUnsignedInteger != null && message.hasOwnProperty("asUnsignedInteger")) {
+                    if (message.asUnsignedInteger != null && $Object.hasOwnProperty.call(message, "asUnsignedInteger")) {
                         if (properties.value === 1)
                             return "value: multiple values";
                         properties.value = 1;
@@ -1129,9 +1389,15 @@ $root.UserPassword = (function() {
                  * @param {Object.<string,*>} object Plain object
                  * @returns {UserPassword.UserPassword.TransformerArg.Value} Value
                  */
-                Value.fromObject = function fromObject(object) {
+                Value.fromObject = function (object, _depth) {
                     if (object instanceof $root.UserPassword.UserPassword.TransformerArg.Value)
                         return object;
+                    if (!$util.isObject(object))
+                        throw $TypeError(".UserPassword.UserPassword.TransformerArg.Value: object expected");
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $util.recursionLimit)
+                        throw $Error("max depth exceeded");
                     var message = new $root.UserPassword.UserPassword.TransformerArg.Value();
                     if (object.asBlob != null)
                         if (typeof object.asBlob === "string")
@@ -1152,16 +1418,20 @@ $root.UserPassword = (function() {
                  * @param {$protobuf.IConversionOptions} [options] Conversion options
                  * @returns {Object.<string,*>} Plain object
                  */
-                Value.toObject = function toObject(message, options) {
+                Value.toObject = function (message, options, _depth) {
                     if (!options)
                         options = {};
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $util.recursionLimit)
+                        throw $Error("max depth exceeded");
                     var object = {};
-                    if (message.asBlob != null && message.hasOwnProperty("asBlob")) {
-                        object.asBlob = options.bytes === String ? $util.base64.encode(message.asBlob, 0, message.asBlob.length) : options.bytes === Array ? Array.prototype.slice.call(message.asBlob) : message.asBlob;
+                    if (message.asBlob != null && $Object.hasOwnProperty.call(message, "asBlob")) {
+                        object.asBlob = options.bytes === $String ? $util.base64.encode(message.asBlob, 0, message.asBlob.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.asBlob) : message.asBlob;
                         if (options.oneofs)
                             object.value = "asBlob";
                     }
-                    if (message.asUnsignedInteger != null && message.hasOwnProperty("asUnsignedInteger")) {
+                    if (message.asUnsignedInteger != null && $Object.hasOwnProperty.call(message, "asUnsignedInteger")) {
                         object.asUnsignedInteger = message.asUnsignedInteger;
                         if (options.oneofs)
                             object.value = "asUnsignedInteger";
@@ -1176,23 +1446,22 @@ $root.UserPassword = (function() {
                  * @instance
                  * @returns {Object.<string,*>} JSON object
                  */
-                Value.prototype.toJSON = function toJSON() {
-                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                Value.prototype.toJSON = function() {
+                    return Value.toObject(this, $protobuf.util.toJSONOptions);
                 };
 
                 /**
-                 * Gets the default type url for Value
+                 * Gets the type url for Value
                  * @function getTypeUrl
                  * @memberof UserPassword.UserPassword.TransformerArg.Value
                  * @static
-                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns {string} The default type url
+                 * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+                 * @returns {string} The type url
                  */
-                Value.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                    if (typeUrlPrefix === undefined) {
-                        typeUrlPrefix = "type.googleapis.com";
-                    }
-                    return typeUrlPrefix + "/UserPassword.UserPassword.TransformerArg.Value";
+                Value.getTypeUrl = function(prefix) {
+                    if (prefix === $undefined)
+                        prefix = "type.googleapis.com";
+                    return prefix + "/UserPassword.UserPassword.TransformerArg.Value";
                 };
 
                 return Value;

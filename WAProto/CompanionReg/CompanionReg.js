@@ -1,10 +1,11 @@
-/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
+/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-mixed-operators, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars, default-case, jsdoc/require-param*/
 "use strict";
 
 var $protobuf = require("protobufjs/minimal");
 
 // Common aliases
 var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
+var $Object = $util.global.Object, $undefined = $util.global.undefined, $Error = $util.global.Error, $RangeError = $util.global.RangeError, $TypeError = $util.global.TypeError, $Boolean = $util.global.Boolean, $String = $util.global.String, $Array = $util.global.Array;
 
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
@@ -22,8 +23,7 @@ $root.CompanionReg = (function() {
 
         /**
          * Properties of a ClientPairingProps.
-         * @memberof CompanionReg
-         * @interface IClientPairingProps
+         * @typedef {Object} CompanionReg.ClientPairingProps.$Properties
          * @property {boolean|null} [isChatDbLidMigrated] ClientPairingProps isChatDbLidMigrated
          * @property {boolean|null} [isSyncdPureLidSession] ClientPairingProps isSyncdPureLidSession
          * @property {boolean|null} [isSyncdSnapshotRecoveryEnabled] ClientPairingProps isSyncdSnapshotRecoveryEnabled
@@ -31,22 +31,37 @@ $root.CompanionReg = (function() {
          * @property {Uint8Array|null} [subscriptionSyncPayload] ClientPairingProps subscriptionSyncPayload
          * @property {boolean|null} [isBotJidDbMigrated] ClientPairingProps isBotJidDbMigrated
          * @property {Uint8Array|null} [companionAddPeerPayload] ClientPairingProps companionAddPeerPayload
+         * @property {boolean|null} [isCompanionRegistrationFgsEnabled] ClientPairingProps isCompanionRegistrationFgsEnabled
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a ClientPairingProps.
+         * @memberof CompanionReg
+         * @interface IClientPairingProps
+         * @augments CompanionReg.ClientPairingProps.$Properties
+         * @deprecated Use CompanionReg.ClientPairingProps.$Properties instead.
+         */
+
+        /**
+         * Shape of a ClientPairingProps.
+         * @typedef {CompanionReg.ClientPairingProps.$Properties} CompanionReg.ClientPairingProps.$Shape
          */
 
         /**
          * Constructs a new ClientPairingProps.
          * @memberof CompanionReg
          * @classdesc Represents a ClientPairingProps.
-         * @implements IClientPairingProps
          * @constructor
-         * @param {CompanionReg.IClientPairingProps=} [properties] Properties to set
+         * @param {CompanionReg.ClientPairingProps.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function ClientPairingProps(properties) {
+        var ClientPairingProps = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * ClientPairingProps isChatDbLidMigrated.
@@ -104,48 +119,62 @@ $root.CompanionReg = (function() {
          */
         ClientPairingProps.prototype.companionAddPeerPayload = null;
 
+        /**
+         * ClientPairingProps isCompanionRegistrationFgsEnabled.
+         * @member {boolean|null|undefined} isCompanionRegistrationFgsEnabled
+         * @memberof CompanionReg.ClientPairingProps
+         * @instance
+         */
+        ClientPairingProps.prototype.isCompanionRegistrationFgsEnabled = null;
+
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPairingProps.prototype, "_isChatDbLidMigrated", {
+        $Object.defineProperty(ClientPairingProps.prototype, "_isChatDbLidMigrated", {
             get: $util.oneOfGetter($oneOfFields = ["isChatDbLidMigrated"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPairingProps.prototype, "_isSyncdPureLidSession", {
+        $Object.defineProperty(ClientPairingProps.prototype, "_isSyncdPureLidSession", {
             get: $util.oneOfGetter($oneOfFields = ["isSyncdPureLidSession"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPairingProps.prototype, "_isSyncdSnapshotRecoveryEnabled", {
+        $Object.defineProperty(ClientPairingProps.prototype, "_isSyncdSnapshotRecoveryEnabled", {
             get: $util.oneOfGetter($oneOfFields = ["isSyncdSnapshotRecoveryEnabled"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPairingProps.prototype, "_isHsThumbnailSyncEnabled", {
+        $Object.defineProperty(ClientPairingProps.prototype, "_isHsThumbnailSyncEnabled", {
             get: $util.oneOfGetter($oneOfFields = ["isHsThumbnailSyncEnabled"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPairingProps.prototype, "_subscriptionSyncPayload", {
+        $Object.defineProperty(ClientPairingProps.prototype, "_subscriptionSyncPayload", {
             get: $util.oneOfGetter($oneOfFields = ["subscriptionSyncPayload"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPairingProps.prototype, "_isBotJidDbMigrated", {
+        $Object.defineProperty(ClientPairingProps.prototype, "_isBotJidDbMigrated", {
             get: $util.oneOfGetter($oneOfFields = ["isBotJidDbMigrated"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPairingProps.prototype, "_companionAddPeerPayload", {
+        $Object.defineProperty(ClientPairingProps.prototype, "_companionAddPeerPayload", {
             get: $util.oneOfGetter($oneOfFields = ["companionAddPeerPayload"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(ClientPairingProps.prototype, "_isCompanionRegistrationFgsEnabled", {
+            get: $util.oneOfGetter($oneOfFields = ["isCompanionRegistrationFgsEnabled"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
@@ -154,10 +183,14 @@ $root.CompanionReg = (function() {
          * @function create
          * @memberof CompanionReg.ClientPairingProps
          * @static
-         * @param {CompanionReg.IClientPairingProps=} [properties] Properties to set
+         * @param {CompanionReg.ClientPairingProps.$Properties=} [properties] Properties to set
          * @returns {CompanionReg.ClientPairingProps} ClientPairingProps instance
+         * @type {{
+         *   (properties: CompanionReg.ClientPairingProps.$Shape): CompanionReg.ClientPairingProps & CompanionReg.ClientPairingProps.$Shape;
+         *   (properties?: CompanionReg.ClientPairingProps.$Properties): CompanionReg.ClientPairingProps;
+         * }}
          */
-        ClientPairingProps.create = function create(properties) {
+        ClientPairingProps.create = function(properties) {
             return new ClientPairingProps(properties);
         };
 
@@ -166,27 +199,36 @@ $root.CompanionReg = (function() {
          * @function encode
          * @memberof CompanionReg.ClientPairingProps
          * @static
-         * @param {CompanionReg.IClientPairingProps} message ClientPairingProps message or plain object to encode
+         * @param {CompanionReg.ClientPairingProps.$Properties} message ClientPairingProps message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ClientPairingProps.encode = function encode(message, writer) {
+        ClientPairingProps.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.isChatDbLidMigrated != null && Object.hasOwnProperty.call(message, "isChatDbLidMigrated"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.isChatDbLidMigrated != null && $Object.hasOwnProperty.call(message, "isChatDbLidMigrated"))
                 writer.uint32(/* id 1, wireType 0 =*/8).bool(message.isChatDbLidMigrated);
-            if (message.isSyncdPureLidSession != null && Object.hasOwnProperty.call(message, "isSyncdPureLidSession"))
+            if (message.isSyncdPureLidSession != null && $Object.hasOwnProperty.call(message, "isSyncdPureLidSession"))
                 writer.uint32(/* id 2, wireType 0 =*/16).bool(message.isSyncdPureLidSession);
-            if (message.isSyncdSnapshotRecoveryEnabled != null && Object.hasOwnProperty.call(message, "isSyncdSnapshotRecoveryEnabled"))
+            if (message.isSyncdSnapshotRecoveryEnabled != null && $Object.hasOwnProperty.call(message, "isSyncdSnapshotRecoveryEnabled"))
                 writer.uint32(/* id 3, wireType 0 =*/24).bool(message.isSyncdSnapshotRecoveryEnabled);
-            if (message.isHsThumbnailSyncEnabled != null && Object.hasOwnProperty.call(message, "isHsThumbnailSyncEnabled"))
+            if (message.isHsThumbnailSyncEnabled != null && $Object.hasOwnProperty.call(message, "isHsThumbnailSyncEnabled"))
                 writer.uint32(/* id 4, wireType 0 =*/32).bool(message.isHsThumbnailSyncEnabled);
-            if (message.subscriptionSyncPayload != null && Object.hasOwnProperty.call(message, "subscriptionSyncPayload"))
+            if (message.subscriptionSyncPayload != null && $Object.hasOwnProperty.call(message, "subscriptionSyncPayload"))
                 writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.subscriptionSyncPayload);
-            if (message.isBotJidDbMigrated != null && Object.hasOwnProperty.call(message, "isBotJidDbMigrated"))
+            if (message.isBotJidDbMigrated != null && $Object.hasOwnProperty.call(message, "isBotJidDbMigrated"))
                 writer.uint32(/* id 6, wireType 0 =*/48).bool(message.isBotJidDbMigrated);
-            if (message.companionAddPeerPayload != null && Object.hasOwnProperty.call(message, "companionAddPeerPayload"))
+            if (message.companionAddPeerPayload != null && $Object.hasOwnProperty.call(message, "companionAddPeerPayload"))
                 writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.companionAddPeerPayload);
+            if (message.isCompanionRegistrationFgsEnabled != null && $Object.hasOwnProperty.call(message, "isCompanionRegistrationFgsEnabled"))
+                writer.uint32(/* id 8, wireType 0 =*/64).bool(message.isCompanionRegistrationFgsEnabled);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -195,12 +237,12 @@ $root.CompanionReg = (function() {
          * @function encodeDelimited
          * @memberof CompanionReg.ClientPairingProps
          * @static
-         * @param {CompanionReg.IClientPairingProps} message ClientPairingProps message or plain object to encode
+         * @param {CompanionReg.ClientPairingProps.$Properties} message ClientPairingProps message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ClientPairingProps.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        ClientPairingProps.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -210,52 +252,107 @@ $root.CompanionReg = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {CompanionReg.ClientPairingProps} ClientPairingProps
+         * @returns {CompanionReg.ClientPairingProps & CompanionReg.ClientPairingProps.$Shape} ClientPairingProps
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ClientPairingProps.decode = function decode(reader, length, error) {
+        ClientPairingProps.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.ClientPairingProps();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.CompanionReg.ClientPairingProps();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.isChatDbLidMigrated = reader.bool();
-                        break;
-                    }
-                case 2: {
-                        message.isSyncdPureLidSession = reader.bool();
-                        break;
-                    }
-                case 3: {
-                        message.isSyncdSnapshotRecoveryEnabled = reader.bool();
-                        break;
-                    }
-                case 4: {
-                        message.isHsThumbnailSyncEnabled = reader.bool();
-                        break;
-                    }
-                case 5: {
-                        message.subscriptionSyncPayload = reader.bytes();
-                        break;
-                    }
-                case 6: {
-                        message.isBotJidDbMigrated = reader.bool();
-                        break;
-                    }
-                case 7: {
-                        message.companionAddPeerPayload = reader.bytes();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 0)
+                            break;
+                        message.isChatDbLidMigrated = reader.bool();
+                        message._isChatDbLidMigrated = "isChatDbLidMigrated";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 0)
+                            break;
+                        message.isSyncdPureLidSession = reader.bool();
+                        message._isSyncdPureLidSession = "isSyncdPureLidSession";
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 0)
+                            break;
+                        message.isSyncdSnapshotRecoveryEnabled = reader.bool();
+                        message._isSyncdSnapshotRecoveryEnabled = "isSyncdSnapshotRecoveryEnabled";
+                        continue;
+                    }
+                case 4: {
+                        if (wireType !== 0)
+                            break;
+                        message.isHsThumbnailSyncEnabled = reader.bool();
+                        message._isHsThumbnailSyncEnabled = "isHsThumbnailSyncEnabled";
+                        continue;
+                    }
+                case 5: {
+                        if (wireType !== 2)
+                            break;
+                        message.subscriptionSyncPayload = reader.bytes();
+                        message._subscriptionSyncPayload = "subscriptionSyncPayload";
+                        continue;
+                    }
+                case 6: {
+                        if (wireType !== 0)
+                            break;
+                        message.isBotJidDbMigrated = reader.bool();
+                        message._isBotJidDbMigrated = "isBotJidDbMigrated";
+                        continue;
+                    }
+                case 7: {
+                        if (wireType !== 2)
+                            break;
+                        message.companionAddPeerPayload = reader.bytes();
+                        message._companionAddPeerPayload = "companionAddPeerPayload";
+                        continue;
+                    }
+                case 8: {
+                        if (wireType !== 0)
+                            break;
+                        message.isCompanionRegistrationFgsEnabled = reader.bool();
+                        message._isCompanionRegistrationFgsEnabled = "isCompanionRegistrationFgsEnabled";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -265,14 +362,14 @@ $root.CompanionReg = (function() {
          * @memberof CompanionReg.ClientPairingProps
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {CompanionReg.ClientPairingProps} ClientPairingProps
+         * @returns {CompanionReg.ClientPairingProps & CompanionReg.ClientPairingProps.$Shape} ClientPairingProps
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ClientPairingProps.decodeDelimited = function decodeDelimited(reader) {
+        ClientPairingProps.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -283,44 +380,53 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        ClientPairingProps.verify = function verify(message) {
+        ClientPairingProps.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.isChatDbLidMigrated != null && message.hasOwnProperty("isChatDbLidMigrated")) {
+            if (message.isChatDbLidMigrated != null && $Object.hasOwnProperty.call(message, "isChatDbLidMigrated")) {
                 properties._isChatDbLidMigrated = 1;
                 if (typeof message.isChatDbLidMigrated !== "boolean")
                     return "isChatDbLidMigrated: boolean expected";
             }
-            if (message.isSyncdPureLidSession != null && message.hasOwnProperty("isSyncdPureLidSession")) {
+            if (message.isSyncdPureLidSession != null && $Object.hasOwnProperty.call(message, "isSyncdPureLidSession")) {
                 properties._isSyncdPureLidSession = 1;
                 if (typeof message.isSyncdPureLidSession !== "boolean")
                     return "isSyncdPureLidSession: boolean expected";
             }
-            if (message.isSyncdSnapshotRecoveryEnabled != null && message.hasOwnProperty("isSyncdSnapshotRecoveryEnabled")) {
+            if (message.isSyncdSnapshotRecoveryEnabled != null && $Object.hasOwnProperty.call(message, "isSyncdSnapshotRecoveryEnabled")) {
                 properties._isSyncdSnapshotRecoveryEnabled = 1;
                 if (typeof message.isSyncdSnapshotRecoveryEnabled !== "boolean")
                     return "isSyncdSnapshotRecoveryEnabled: boolean expected";
             }
-            if (message.isHsThumbnailSyncEnabled != null && message.hasOwnProperty("isHsThumbnailSyncEnabled")) {
+            if (message.isHsThumbnailSyncEnabled != null && $Object.hasOwnProperty.call(message, "isHsThumbnailSyncEnabled")) {
                 properties._isHsThumbnailSyncEnabled = 1;
                 if (typeof message.isHsThumbnailSyncEnabled !== "boolean")
                     return "isHsThumbnailSyncEnabled: boolean expected";
             }
-            if (message.subscriptionSyncPayload != null && message.hasOwnProperty("subscriptionSyncPayload")) {
+            if (message.subscriptionSyncPayload != null && $Object.hasOwnProperty.call(message, "subscriptionSyncPayload")) {
                 properties._subscriptionSyncPayload = 1;
                 if (!(message.subscriptionSyncPayload && typeof message.subscriptionSyncPayload.length === "number" || $util.isString(message.subscriptionSyncPayload)))
                     return "subscriptionSyncPayload: buffer expected";
             }
-            if (message.isBotJidDbMigrated != null && message.hasOwnProperty("isBotJidDbMigrated")) {
+            if (message.isBotJidDbMigrated != null && $Object.hasOwnProperty.call(message, "isBotJidDbMigrated")) {
                 properties._isBotJidDbMigrated = 1;
                 if (typeof message.isBotJidDbMigrated !== "boolean")
                     return "isBotJidDbMigrated: boolean expected";
             }
-            if (message.companionAddPeerPayload != null && message.hasOwnProperty("companionAddPeerPayload")) {
+            if (message.companionAddPeerPayload != null && $Object.hasOwnProperty.call(message, "companionAddPeerPayload")) {
                 properties._companionAddPeerPayload = 1;
                 if (!(message.companionAddPeerPayload && typeof message.companionAddPeerPayload.length === "number" || $util.isString(message.companionAddPeerPayload)))
                     return "companionAddPeerPayload: buffer expected";
+            }
+            if (message.isCompanionRegistrationFgsEnabled != null && $Object.hasOwnProperty.call(message, "isCompanionRegistrationFgsEnabled")) {
+                properties._isCompanionRegistrationFgsEnabled = 1;
+                if (typeof message.isCompanionRegistrationFgsEnabled !== "boolean")
+                    return "isCompanionRegistrationFgsEnabled: boolean expected";
             }
             return null;
         };
@@ -333,30 +439,38 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {CompanionReg.ClientPairingProps} ClientPairingProps
          */
-        ClientPairingProps.fromObject = function fromObject(object) {
+        ClientPairingProps.fromObject = function (object, _depth) {
             if (object instanceof $root.CompanionReg.ClientPairingProps)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".CompanionReg.ClientPairingProps: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.CompanionReg.ClientPairingProps();
             if (object.isChatDbLidMigrated != null)
-                message.isChatDbLidMigrated = Boolean(object.isChatDbLidMigrated);
+                message.isChatDbLidMigrated = $Boolean(object.isChatDbLidMigrated);
             if (object.isSyncdPureLidSession != null)
-                message.isSyncdPureLidSession = Boolean(object.isSyncdPureLidSession);
+                message.isSyncdPureLidSession = $Boolean(object.isSyncdPureLidSession);
             if (object.isSyncdSnapshotRecoveryEnabled != null)
-                message.isSyncdSnapshotRecoveryEnabled = Boolean(object.isSyncdSnapshotRecoveryEnabled);
+                message.isSyncdSnapshotRecoveryEnabled = $Boolean(object.isSyncdSnapshotRecoveryEnabled);
             if (object.isHsThumbnailSyncEnabled != null)
-                message.isHsThumbnailSyncEnabled = Boolean(object.isHsThumbnailSyncEnabled);
+                message.isHsThumbnailSyncEnabled = $Boolean(object.isHsThumbnailSyncEnabled);
             if (object.subscriptionSyncPayload != null)
                 if (typeof object.subscriptionSyncPayload === "string")
                     $util.base64.decode(object.subscriptionSyncPayload, message.subscriptionSyncPayload = $util.newBuffer($util.base64.length(object.subscriptionSyncPayload)), 0);
                 else if (object.subscriptionSyncPayload.length >= 0)
                     message.subscriptionSyncPayload = object.subscriptionSyncPayload;
             if (object.isBotJidDbMigrated != null)
-                message.isBotJidDbMigrated = Boolean(object.isBotJidDbMigrated);
+                message.isBotJidDbMigrated = $Boolean(object.isBotJidDbMigrated);
             if (object.companionAddPeerPayload != null)
                 if (typeof object.companionAddPeerPayload === "string")
                     $util.base64.decode(object.companionAddPeerPayload, message.companionAddPeerPayload = $util.newBuffer($util.base64.length(object.companionAddPeerPayload)), 0);
                 else if (object.companionAddPeerPayload.length >= 0)
                     message.companionAddPeerPayload = object.companionAddPeerPayload;
+            if (object.isCompanionRegistrationFgsEnabled != null)
+                message.isCompanionRegistrationFgsEnabled = $Boolean(object.isCompanionRegistrationFgsEnabled);
             return message;
         };
 
@@ -369,45 +483,30 @@ $root.CompanionReg = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        ClientPairingProps.toObject = function toObject(message, options) {
+        ClientPairingProps.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.isChatDbLidMigrated != null && message.hasOwnProperty("isChatDbLidMigrated")) {
+            if (message.isChatDbLidMigrated != null && $Object.hasOwnProperty.call(message, "isChatDbLidMigrated"))
                 object.isChatDbLidMigrated = message.isChatDbLidMigrated;
-                if (options.oneofs)
-                    object._isChatDbLidMigrated = "isChatDbLidMigrated";
-            }
-            if (message.isSyncdPureLidSession != null && message.hasOwnProperty("isSyncdPureLidSession")) {
+            if (message.isSyncdPureLidSession != null && $Object.hasOwnProperty.call(message, "isSyncdPureLidSession"))
                 object.isSyncdPureLidSession = message.isSyncdPureLidSession;
-                if (options.oneofs)
-                    object._isSyncdPureLidSession = "isSyncdPureLidSession";
-            }
-            if (message.isSyncdSnapshotRecoveryEnabled != null && message.hasOwnProperty("isSyncdSnapshotRecoveryEnabled")) {
+            if (message.isSyncdSnapshotRecoveryEnabled != null && $Object.hasOwnProperty.call(message, "isSyncdSnapshotRecoveryEnabled"))
                 object.isSyncdSnapshotRecoveryEnabled = message.isSyncdSnapshotRecoveryEnabled;
-                if (options.oneofs)
-                    object._isSyncdSnapshotRecoveryEnabled = "isSyncdSnapshotRecoveryEnabled";
-            }
-            if (message.isHsThumbnailSyncEnabled != null && message.hasOwnProperty("isHsThumbnailSyncEnabled")) {
+            if (message.isHsThumbnailSyncEnabled != null && $Object.hasOwnProperty.call(message, "isHsThumbnailSyncEnabled"))
                 object.isHsThumbnailSyncEnabled = message.isHsThumbnailSyncEnabled;
-                if (options.oneofs)
-                    object._isHsThumbnailSyncEnabled = "isHsThumbnailSyncEnabled";
-            }
-            if (message.subscriptionSyncPayload != null && message.hasOwnProperty("subscriptionSyncPayload")) {
-                object.subscriptionSyncPayload = options.bytes === String ? $util.base64.encode(message.subscriptionSyncPayload, 0, message.subscriptionSyncPayload.length) : options.bytes === Array ? Array.prototype.slice.call(message.subscriptionSyncPayload) : message.subscriptionSyncPayload;
-                if (options.oneofs)
-                    object._subscriptionSyncPayload = "subscriptionSyncPayload";
-            }
-            if (message.isBotJidDbMigrated != null && message.hasOwnProperty("isBotJidDbMigrated")) {
+            if (message.subscriptionSyncPayload != null && $Object.hasOwnProperty.call(message, "subscriptionSyncPayload"))
+                object.subscriptionSyncPayload = options.bytes === $String ? $util.base64.encode(message.subscriptionSyncPayload, 0, message.subscriptionSyncPayload.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.subscriptionSyncPayload) : message.subscriptionSyncPayload;
+            if (message.isBotJidDbMigrated != null && $Object.hasOwnProperty.call(message, "isBotJidDbMigrated"))
                 object.isBotJidDbMigrated = message.isBotJidDbMigrated;
-                if (options.oneofs)
-                    object._isBotJidDbMigrated = "isBotJidDbMigrated";
-            }
-            if (message.companionAddPeerPayload != null && message.hasOwnProperty("companionAddPeerPayload")) {
-                object.companionAddPeerPayload = options.bytes === String ? $util.base64.encode(message.companionAddPeerPayload, 0, message.companionAddPeerPayload.length) : options.bytes === Array ? Array.prototype.slice.call(message.companionAddPeerPayload) : message.companionAddPeerPayload;
-                if (options.oneofs)
-                    object._companionAddPeerPayload = "companionAddPeerPayload";
-            }
+            if (message.companionAddPeerPayload != null && $Object.hasOwnProperty.call(message, "companionAddPeerPayload"))
+                object.companionAddPeerPayload = options.bytes === $String ? $util.base64.encode(message.companionAddPeerPayload, 0, message.companionAddPeerPayload.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.companionAddPeerPayload) : message.companionAddPeerPayload;
+            if (message.isCompanionRegistrationFgsEnabled != null && $Object.hasOwnProperty.call(message, "isCompanionRegistrationFgsEnabled"))
+                object.isCompanionRegistrationFgsEnabled = message.isCompanionRegistrationFgsEnabled;
             return object;
         };
 
@@ -418,23 +517,22 @@ $root.CompanionReg = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        ClientPairingProps.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        ClientPairingProps.prototype.toJSON = function() {
+            return ClientPairingProps.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for ClientPairingProps
+         * Gets the type url for ClientPairingProps
          * @function getTypeUrl
          * @memberof CompanionReg.ClientPairingProps
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        ClientPairingProps.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/CompanionReg.ClientPairingProps";
+        ClientPairingProps.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/CompanionReg.ClientPairingProps";
         };
 
         return ClientPairingProps;
@@ -444,26 +542,39 @@ $root.CompanionReg = (function() {
 
         /**
          * Properties of an EncryptedPairingRequest.
-         * @memberof CompanionReg
-         * @interface IEncryptedPairingRequest
+         * @typedef {Object} CompanionReg.EncryptedPairingRequest.$Properties
          * @property {Uint8Array|null} [encryptedPayload] EncryptedPairingRequest encryptedPayload
          * @property {Uint8Array|null} [iv] EncryptedPairingRequest iv
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of an EncryptedPairingRequest.
+         * @memberof CompanionReg
+         * @interface IEncryptedPairingRequest
+         * @augments CompanionReg.EncryptedPairingRequest.$Properties
+         * @deprecated Use CompanionReg.EncryptedPairingRequest.$Properties instead.
+         */
+
+        /**
+         * Shape of an EncryptedPairingRequest.
+         * @typedef {CompanionReg.EncryptedPairingRequest.$Properties} CompanionReg.EncryptedPairingRequest.$Shape
          */
 
         /**
          * Constructs a new EncryptedPairingRequest.
          * @memberof CompanionReg
          * @classdesc Represents an EncryptedPairingRequest.
-         * @implements IEncryptedPairingRequest
          * @constructor
-         * @param {CompanionReg.IEncryptedPairingRequest=} [properties] Properties to set
+         * @param {CompanionReg.EncryptedPairingRequest.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function EncryptedPairingRequest(properties) {
+        var EncryptedPairingRequest = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * EncryptedPairingRequest encryptedPayload.
@@ -485,13 +596,13 @@ $root.CompanionReg = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(EncryptedPairingRequest.prototype, "_encryptedPayload", {
+        $Object.defineProperty(EncryptedPairingRequest.prototype, "_encryptedPayload", {
             get: $util.oneOfGetter($oneOfFields = ["encryptedPayload"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(EncryptedPairingRequest.prototype, "_iv", {
+        $Object.defineProperty(EncryptedPairingRequest.prototype, "_iv", {
             get: $util.oneOfGetter($oneOfFields = ["iv"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -501,10 +612,14 @@ $root.CompanionReg = (function() {
          * @function create
          * @memberof CompanionReg.EncryptedPairingRequest
          * @static
-         * @param {CompanionReg.IEncryptedPairingRequest=} [properties] Properties to set
+         * @param {CompanionReg.EncryptedPairingRequest.$Properties=} [properties] Properties to set
          * @returns {CompanionReg.EncryptedPairingRequest} EncryptedPairingRequest instance
+         * @type {{
+         *   (properties: CompanionReg.EncryptedPairingRequest.$Shape): CompanionReg.EncryptedPairingRequest & CompanionReg.EncryptedPairingRequest.$Shape;
+         *   (properties?: CompanionReg.EncryptedPairingRequest.$Properties): CompanionReg.EncryptedPairingRequest;
+         * }}
          */
-        EncryptedPairingRequest.create = function create(properties) {
+        EncryptedPairingRequest.create = function(properties) {
             return new EncryptedPairingRequest(properties);
         };
 
@@ -513,17 +628,24 @@ $root.CompanionReg = (function() {
          * @function encode
          * @memberof CompanionReg.EncryptedPairingRequest
          * @static
-         * @param {CompanionReg.IEncryptedPairingRequest} message EncryptedPairingRequest message or plain object to encode
+         * @param {CompanionReg.EncryptedPairingRequest.$Properties} message EncryptedPairingRequest message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        EncryptedPairingRequest.encode = function encode(message, writer) {
+        EncryptedPairingRequest.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.encryptedPayload != null && Object.hasOwnProperty.call(message, "encryptedPayload"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.encryptedPayload != null && $Object.hasOwnProperty.call(message, "encryptedPayload"))
                 writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.encryptedPayload);
-            if (message.iv != null && Object.hasOwnProperty.call(message, "iv"))
+            if (message.iv != null && $Object.hasOwnProperty.call(message, "iv"))
                 writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.iv);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -532,12 +654,12 @@ $root.CompanionReg = (function() {
          * @function encodeDelimited
          * @memberof CompanionReg.EncryptedPairingRequest
          * @static
-         * @param {CompanionReg.IEncryptedPairingRequest} message EncryptedPairingRequest message or plain object to encode
+         * @param {CompanionReg.EncryptedPairingRequest.$Properties} message EncryptedPairingRequest message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        EncryptedPairingRequest.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        EncryptedPairingRequest.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -547,32 +669,65 @@ $root.CompanionReg = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {CompanionReg.EncryptedPairingRequest} EncryptedPairingRequest
+         * @returns {CompanionReg.EncryptedPairingRequest & CompanionReg.EncryptedPairingRequest.$Shape} EncryptedPairingRequest
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        EncryptedPairingRequest.decode = function decode(reader, length, error) {
+        EncryptedPairingRequest.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.EncryptedPairingRequest();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.CompanionReg.EncryptedPairingRequest();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.encryptedPayload = reader.bytes();
-                        break;
-                    }
-                case 2: {
-                        message.iv = reader.bytes();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.encryptedPayload = reader.bytes();
+                        message._encryptedPayload = "encryptedPayload";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.iv = reader.bytes();
+                        message._iv = "iv";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -582,14 +737,14 @@ $root.CompanionReg = (function() {
          * @memberof CompanionReg.EncryptedPairingRequest
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {CompanionReg.EncryptedPairingRequest} EncryptedPairingRequest
+         * @returns {CompanionReg.EncryptedPairingRequest & CompanionReg.EncryptedPairingRequest.$Shape} EncryptedPairingRequest
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        EncryptedPairingRequest.decodeDelimited = function decodeDelimited(reader) {
+        EncryptedPairingRequest.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -600,16 +755,20 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        EncryptedPairingRequest.verify = function verify(message) {
+        EncryptedPairingRequest.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.encryptedPayload != null && message.hasOwnProperty("encryptedPayload")) {
+            if (message.encryptedPayload != null && $Object.hasOwnProperty.call(message, "encryptedPayload")) {
                 properties._encryptedPayload = 1;
                 if (!(message.encryptedPayload && typeof message.encryptedPayload.length === "number" || $util.isString(message.encryptedPayload)))
                     return "encryptedPayload: buffer expected";
             }
-            if (message.iv != null && message.hasOwnProperty("iv")) {
+            if (message.iv != null && $Object.hasOwnProperty.call(message, "iv")) {
                 properties._iv = 1;
                 if (!(message.iv && typeof message.iv.length === "number" || $util.isString(message.iv)))
                     return "iv: buffer expected";
@@ -625,9 +784,15 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {CompanionReg.EncryptedPairingRequest} EncryptedPairingRequest
          */
-        EncryptedPairingRequest.fromObject = function fromObject(object) {
+        EncryptedPairingRequest.fromObject = function (object, _depth) {
             if (object instanceof $root.CompanionReg.EncryptedPairingRequest)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".CompanionReg.EncryptedPairingRequest: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.CompanionReg.EncryptedPairingRequest();
             if (object.encryptedPayload != null)
                 if (typeof object.encryptedPayload === "string")
@@ -651,20 +816,18 @@ $root.CompanionReg = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        EncryptedPairingRequest.toObject = function toObject(message, options) {
+        EncryptedPairingRequest.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.encryptedPayload != null && message.hasOwnProperty("encryptedPayload")) {
-                object.encryptedPayload = options.bytes === String ? $util.base64.encode(message.encryptedPayload, 0, message.encryptedPayload.length) : options.bytes === Array ? Array.prototype.slice.call(message.encryptedPayload) : message.encryptedPayload;
-                if (options.oneofs)
-                    object._encryptedPayload = "encryptedPayload";
-            }
-            if (message.iv != null && message.hasOwnProperty("iv")) {
-                object.iv = options.bytes === String ? $util.base64.encode(message.iv, 0, message.iv.length) : options.bytes === Array ? Array.prototype.slice.call(message.iv) : message.iv;
-                if (options.oneofs)
-                    object._iv = "iv";
-            }
+            if (message.encryptedPayload != null && $Object.hasOwnProperty.call(message, "encryptedPayload"))
+                object.encryptedPayload = options.bytes === $String ? $util.base64.encode(message.encryptedPayload, 0, message.encryptedPayload.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.encryptedPayload) : message.encryptedPayload;
+            if (message.iv != null && $Object.hasOwnProperty.call(message, "iv"))
+                object.iv = options.bytes === $String ? $util.base64.encode(message.iv, 0, message.iv.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.iv) : message.iv;
             return object;
         };
 
@@ -675,23 +838,22 @@ $root.CompanionReg = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        EncryptedPairingRequest.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        EncryptedPairingRequest.prototype.toJSON = function() {
+            return EncryptedPairingRequest.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for EncryptedPairingRequest
+         * Gets the type url for EncryptedPairingRequest
          * @function getTypeUrl
          * @memberof CompanionReg.EncryptedPairingRequest
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        EncryptedPairingRequest.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/CompanionReg.EncryptedPairingRequest";
+        EncryptedPairingRequest.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/CompanionReg.EncryptedPairingRequest";
         };
 
         return EncryptedPairingRequest;
@@ -701,27 +863,40 @@ $root.CompanionReg = (function() {
 
         /**
          * Properties of a PairingRequest.
-         * @memberof CompanionReg
-         * @interface IPairingRequest
+         * @typedef {Object} CompanionReg.PairingRequest.$Properties
          * @property {Uint8Array|null} [companionPublicKey] PairingRequest companionPublicKey
          * @property {Uint8Array|null} [companionIdentityKey] PairingRequest companionIdentityKey
          * @property {Uint8Array|null} [advSecret] PairingRequest advSecret
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a PairingRequest.
+         * @memberof CompanionReg
+         * @interface IPairingRequest
+         * @augments CompanionReg.PairingRequest.$Properties
+         * @deprecated Use CompanionReg.PairingRequest.$Properties instead.
+         */
+
+        /**
+         * Shape of a PairingRequest.
+         * @typedef {CompanionReg.PairingRequest.$Properties} CompanionReg.PairingRequest.$Shape
          */
 
         /**
          * Constructs a new PairingRequest.
          * @memberof CompanionReg
          * @classdesc Represents a PairingRequest.
-         * @implements IPairingRequest
          * @constructor
-         * @param {CompanionReg.IPairingRequest=} [properties] Properties to set
+         * @param {CompanionReg.PairingRequest.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function PairingRequest(properties) {
+        var PairingRequest = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * PairingRequest companionPublicKey.
@@ -751,19 +926,19 @@ $root.CompanionReg = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(PairingRequest.prototype, "_companionPublicKey", {
+        $Object.defineProperty(PairingRequest.prototype, "_companionPublicKey", {
             get: $util.oneOfGetter($oneOfFields = ["companionPublicKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(PairingRequest.prototype, "_companionIdentityKey", {
+        $Object.defineProperty(PairingRequest.prototype, "_companionIdentityKey", {
             get: $util.oneOfGetter($oneOfFields = ["companionIdentityKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(PairingRequest.prototype, "_advSecret", {
+        $Object.defineProperty(PairingRequest.prototype, "_advSecret", {
             get: $util.oneOfGetter($oneOfFields = ["advSecret"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -773,10 +948,14 @@ $root.CompanionReg = (function() {
          * @function create
          * @memberof CompanionReg.PairingRequest
          * @static
-         * @param {CompanionReg.IPairingRequest=} [properties] Properties to set
+         * @param {CompanionReg.PairingRequest.$Properties=} [properties] Properties to set
          * @returns {CompanionReg.PairingRequest} PairingRequest instance
+         * @type {{
+         *   (properties: CompanionReg.PairingRequest.$Shape): CompanionReg.PairingRequest & CompanionReg.PairingRequest.$Shape;
+         *   (properties?: CompanionReg.PairingRequest.$Properties): CompanionReg.PairingRequest;
+         * }}
          */
-        PairingRequest.create = function create(properties) {
+        PairingRequest.create = function(properties) {
             return new PairingRequest(properties);
         };
 
@@ -785,19 +964,26 @@ $root.CompanionReg = (function() {
          * @function encode
          * @memberof CompanionReg.PairingRequest
          * @static
-         * @param {CompanionReg.IPairingRequest} message PairingRequest message or plain object to encode
+         * @param {CompanionReg.PairingRequest.$Properties} message PairingRequest message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        PairingRequest.encode = function encode(message, writer) {
+        PairingRequest.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.companionPublicKey != null && Object.hasOwnProperty.call(message, "companionPublicKey"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.companionPublicKey != null && $Object.hasOwnProperty.call(message, "companionPublicKey"))
                 writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.companionPublicKey);
-            if (message.companionIdentityKey != null && Object.hasOwnProperty.call(message, "companionIdentityKey"))
+            if (message.companionIdentityKey != null && $Object.hasOwnProperty.call(message, "companionIdentityKey"))
                 writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.companionIdentityKey);
-            if (message.advSecret != null && Object.hasOwnProperty.call(message, "advSecret"))
+            if (message.advSecret != null && $Object.hasOwnProperty.call(message, "advSecret"))
                 writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.advSecret);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -806,12 +992,12 @@ $root.CompanionReg = (function() {
          * @function encodeDelimited
          * @memberof CompanionReg.PairingRequest
          * @static
-         * @param {CompanionReg.IPairingRequest} message PairingRequest message or plain object to encode
+         * @param {CompanionReg.PairingRequest.$Properties} message PairingRequest message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        PairingRequest.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        PairingRequest.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -821,36 +1007,72 @@ $root.CompanionReg = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {CompanionReg.PairingRequest} PairingRequest
+         * @returns {CompanionReg.PairingRequest & CompanionReg.PairingRequest.$Shape} PairingRequest
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        PairingRequest.decode = function decode(reader, length, error) {
+        PairingRequest.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.PairingRequest();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.CompanionReg.PairingRequest();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.companionPublicKey = reader.bytes();
-                        break;
-                    }
-                case 2: {
-                        message.companionIdentityKey = reader.bytes();
-                        break;
-                    }
-                case 3: {
-                        message.advSecret = reader.bytes();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.companionPublicKey = reader.bytes();
+                        message._companionPublicKey = "companionPublicKey";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.companionIdentityKey = reader.bytes();
+                        message._companionIdentityKey = "companionIdentityKey";
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 2)
+                            break;
+                        message.advSecret = reader.bytes();
+                        message._advSecret = "advSecret";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -860,14 +1082,14 @@ $root.CompanionReg = (function() {
          * @memberof CompanionReg.PairingRequest
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {CompanionReg.PairingRequest} PairingRequest
+         * @returns {CompanionReg.PairingRequest & CompanionReg.PairingRequest.$Shape} PairingRequest
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        PairingRequest.decodeDelimited = function decodeDelimited(reader) {
+        PairingRequest.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -878,21 +1100,25 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        PairingRequest.verify = function verify(message) {
+        PairingRequest.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.companionPublicKey != null && message.hasOwnProperty("companionPublicKey")) {
+            if (message.companionPublicKey != null && $Object.hasOwnProperty.call(message, "companionPublicKey")) {
                 properties._companionPublicKey = 1;
                 if (!(message.companionPublicKey && typeof message.companionPublicKey.length === "number" || $util.isString(message.companionPublicKey)))
                     return "companionPublicKey: buffer expected";
             }
-            if (message.companionIdentityKey != null && message.hasOwnProperty("companionIdentityKey")) {
+            if (message.companionIdentityKey != null && $Object.hasOwnProperty.call(message, "companionIdentityKey")) {
                 properties._companionIdentityKey = 1;
                 if (!(message.companionIdentityKey && typeof message.companionIdentityKey.length === "number" || $util.isString(message.companionIdentityKey)))
                     return "companionIdentityKey: buffer expected";
             }
-            if (message.advSecret != null && message.hasOwnProperty("advSecret")) {
+            if (message.advSecret != null && $Object.hasOwnProperty.call(message, "advSecret")) {
                 properties._advSecret = 1;
                 if (!(message.advSecret && typeof message.advSecret.length === "number" || $util.isString(message.advSecret)))
                     return "advSecret: buffer expected";
@@ -908,9 +1134,15 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {CompanionReg.PairingRequest} PairingRequest
          */
-        PairingRequest.fromObject = function fromObject(object) {
+        PairingRequest.fromObject = function (object, _depth) {
             if (object instanceof $root.CompanionReg.PairingRequest)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".CompanionReg.PairingRequest: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.CompanionReg.PairingRequest();
             if (object.companionPublicKey != null)
                 if (typeof object.companionPublicKey === "string")
@@ -939,25 +1171,20 @@ $root.CompanionReg = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        PairingRequest.toObject = function toObject(message, options) {
+        PairingRequest.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.companionPublicKey != null && message.hasOwnProperty("companionPublicKey")) {
-                object.companionPublicKey = options.bytes === String ? $util.base64.encode(message.companionPublicKey, 0, message.companionPublicKey.length) : options.bytes === Array ? Array.prototype.slice.call(message.companionPublicKey) : message.companionPublicKey;
-                if (options.oneofs)
-                    object._companionPublicKey = "companionPublicKey";
-            }
-            if (message.companionIdentityKey != null && message.hasOwnProperty("companionIdentityKey")) {
-                object.companionIdentityKey = options.bytes === String ? $util.base64.encode(message.companionIdentityKey, 0, message.companionIdentityKey.length) : options.bytes === Array ? Array.prototype.slice.call(message.companionIdentityKey) : message.companionIdentityKey;
-                if (options.oneofs)
-                    object._companionIdentityKey = "companionIdentityKey";
-            }
-            if (message.advSecret != null && message.hasOwnProperty("advSecret")) {
-                object.advSecret = options.bytes === String ? $util.base64.encode(message.advSecret, 0, message.advSecret.length) : options.bytes === Array ? Array.prototype.slice.call(message.advSecret) : message.advSecret;
-                if (options.oneofs)
-                    object._advSecret = "advSecret";
-            }
+            if (message.companionPublicKey != null && $Object.hasOwnProperty.call(message, "companionPublicKey"))
+                object.companionPublicKey = options.bytes === $String ? $util.base64.encode(message.companionPublicKey, 0, message.companionPublicKey.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.companionPublicKey) : message.companionPublicKey;
+            if (message.companionIdentityKey != null && $Object.hasOwnProperty.call(message, "companionIdentityKey"))
+                object.companionIdentityKey = options.bytes === $String ? $util.base64.encode(message.companionIdentityKey, 0, message.companionIdentityKey.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.companionIdentityKey) : message.companionIdentityKey;
+            if (message.advSecret != null && $Object.hasOwnProperty.call(message, "advSecret"))
+                object.advSecret = options.bytes === $String ? $util.base64.encode(message.advSecret, 0, message.advSecret.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.advSecret) : message.advSecret;
             return object;
         };
 
@@ -968,23 +1195,22 @@ $root.CompanionReg = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        PairingRequest.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        PairingRequest.prototype.toJSON = function() {
+            return PairingRequest.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for PairingRequest
+         * Gets the type url for PairingRequest
          * @function getTypeUrl
          * @memberof CompanionReg.PairingRequest
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        PairingRequest.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/CompanionReg.PairingRequest";
+        PairingRequest.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/CompanionReg.PairingRequest";
         };
 
         return PairingRequest;
@@ -994,26 +1220,39 @@ $root.CompanionReg = (function() {
 
         /**
          * Properties of a PrimaryEphemeralIdentity.
-         * @memberof CompanionReg
-         * @interface IPrimaryEphemeralIdentity
+         * @typedef {Object} CompanionReg.PrimaryEphemeralIdentity.$Properties
          * @property {Uint8Array|null} [publicKey] PrimaryEphemeralIdentity publicKey
          * @property {Uint8Array|null} [nonce] PrimaryEphemeralIdentity nonce
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a PrimaryEphemeralIdentity.
+         * @memberof CompanionReg
+         * @interface IPrimaryEphemeralIdentity
+         * @augments CompanionReg.PrimaryEphemeralIdentity.$Properties
+         * @deprecated Use CompanionReg.PrimaryEphemeralIdentity.$Properties instead.
+         */
+
+        /**
+         * Shape of a PrimaryEphemeralIdentity.
+         * @typedef {CompanionReg.PrimaryEphemeralIdentity.$Properties} CompanionReg.PrimaryEphemeralIdentity.$Shape
          */
 
         /**
          * Constructs a new PrimaryEphemeralIdentity.
          * @memberof CompanionReg
          * @classdesc Represents a PrimaryEphemeralIdentity.
-         * @implements IPrimaryEphemeralIdentity
          * @constructor
-         * @param {CompanionReg.IPrimaryEphemeralIdentity=} [properties] Properties to set
+         * @param {CompanionReg.PrimaryEphemeralIdentity.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function PrimaryEphemeralIdentity(properties) {
+        var PrimaryEphemeralIdentity = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * PrimaryEphemeralIdentity publicKey.
@@ -1035,13 +1274,13 @@ $root.CompanionReg = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(PrimaryEphemeralIdentity.prototype, "_publicKey", {
+        $Object.defineProperty(PrimaryEphemeralIdentity.prototype, "_publicKey", {
             get: $util.oneOfGetter($oneOfFields = ["publicKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(PrimaryEphemeralIdentity.prototype, "_nonce", {
+        $Object.defineProperty(PrimaryEphemeralIdentity.prototype, "_nonce", {
             get: $util.oneOfGetter($oneOfFields = ["nonce"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -1051,10 +1290,14 @@ $root.CompanionReg = (function() {
          * @function create
          * @memberof CompanionReg.PrimaryEphemeralIdentity
          * @static
-         * @param {CompanionReg.IPrimaryEphemeralIdentity=} [properties] Properties to set
+         * @param {CompanionReg.PrimaryEphemeralIdentity.$Properties=} [properties] Properties to set
          * @returns {CompanionReg.PrimaryEphemeralIdentity} PrimaryEphemeralIdentity instance
+         * @type {{
+         *   (properties: CompanionReg.PrimaryEphemeralIdentity.$Shape): CompanionReg.PrimaryEphemeralIdentity & CompanionReg.PrimaryEphemeralIdentity.$Shape;
+         *   (properties?: CompanionReg.PrimaryEphemeralIdentity.$Properties): CompanionReg.PrimaryEphemeralIdentity;
+         * }}
          */
-        PrimaryEphemeralIdentity.create = function create(properties) {
+        PrimaryEphemeralIdentity.create = function(properties) {
             return new PrimaryEphemeralIdentity(properties);
         };
 
@@ -1063,17 +1306,24 @@ $root.CompanionReg = (function() {
          * @function encode
          * @memberof CompanionReg.PrimaryEphemeralIdentity
          * @static
-         * @param {CompanionReg.IPrimaryEphemeralIdentity} message PrimaryEphemeralIdentity message or plain object to encode
+         * @param {CompanionReg.PrimaryEphemeralIdentity.$Properties} message PrimaryEphemeralIdentity message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        PrimaryEphemeralIdentity.encode = function encode(message, writer) {
+        PrimaryEphemeralIdentity.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.publicKey != null && Object.hasOwnProperty.call(message, "publicKey"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.publicKey != null && $Object.hasOwnProperty.call(message, "publicKey"))
                 writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.publicKey);
-            if (message.nonce != null && Object.hasOwnProperty.call(message, "nonce"))
+            if (message.nonce != null && $Object.hasOwnProperty.call(message, "nonce"))
                 writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.nonce);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -1082,12 +1332,12 @@ $root.CompanionReg = (function() {
          * @function encodeDelimited
          * @memberof CompanionReg.PrimaryEphemeralIdentity
          * @static
-         * @param {CompanionReg.IPrimaryEphemeralIdentity} message PrimaryEphemeralIdentity message or plain object to encode
+         * @param {CompanionReg.PrimaryEphemeralIdentity.$Properties} message PrimaryEphemeralIdentity message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        PrimaryEphemeralIdentity.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        PrimaryEphemeralIdentity.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -1097,32 +1347,65 @@ $root.CompanionReg = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {CompanionReg.PrimaryEphemeralIdentity} PrimaryEphemeralIdentity
+         * @returns {CompanionReg.PrimaryEphemeralIdentity & CompanionReg.PrimaryEphemeralIdentity.$Shape} PrimaryEphemeralIdentity
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        PrimaryEphemeralIdentity.decode = function decode(reader, length, error) {
+        PrimaryEphemeralIdentity.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.PrimaryEphemeralIdentity();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.CompanionReg.PrimaryEphemeralIdentity();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.publicKey = reader.bytes();
-                        break;
-                    }
-                case 2: {
-                        message.nonce = reader.bytes();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.publicKey = reader.bytes();
+                        message._publicKey = "publicKey";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.nonce = reader.bytes();
+                        message._nonce = "nonce";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -1132,14 +1415,14 @@ $root.CompanionReg = (function() {
          * @memberof CompanionReg.PrimaryEphemeralIdentity
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {CompanionReg.PrimaryEphemeralIdentity} PrimaryEphemeralIdentity
+         * @returns {CompanionReg.PrimaryEphemeralIdentity & CompanionReg.PrimaryEphemeralIdentity.$Shape} PrimaryEphemeralIdentity
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        PrimaryEphemeralIdentity.decodeDelimited = function decodeDelimited(reader) {
+        PrimaryEphemeralIdentity.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -1150,16 +1433,20 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        PrimaryEphemeralIdentity.verify = function verify(message) {
+        PrimaryEphemeralIdentity.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.publicKey != null && message.hasOwnProperty("publicKey")) {
+            if (message.publicKey != null && $Object.hasOwnProperty.call(message, "publicKey")) {
                 properties._publicKey = 1;
                 if (!(message.publicKey && typeof message.publicKey.length === "number" || $util.isString(message.publicKey)))
                     return "publicKey: buffer expected";
             }
-            if (message.nonce != null && message.hasOwnProperty("nonce")) {
+            if (message.nonce != null && $Object.hasOwnProperty.call(message, "nonce")) {
                 properties._nonce = 1;
                 if (!(message.nonce && typeof message.nonce.length === "number" || $util.isString(message.nonce)))
                     return "nonce: buffer expected";
@@ -1175,9 +1462,15 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {CompanionReg.PrimaryEphemeralIdentity} PrimaryEphemeralIdentity
          */
-        PrimaryEphemeralIdentity.fromObject = function fromObject(object) {
+        PrimaryEphemeralIdentity.fromObject = function (object, _depth) {
             if (object instanceof $root.CompanionReg.PrimaryEphemeralIdentity)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".CompanionReg.PrimaryEphemeralIdentity: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.CompanionReg.PrimaryEphemeralIdentity();
             if (object.publicKey != null)
                 if (typeof object.publicKey === "string")
@@ -1201,20 +1494,18 @@ $root.CompanionReg = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        PrimaryEphemeralIdentity.toObject = function toObject(message, options) {
+        PrimaryEphemeralIdentity.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.publicKey != null && message.hasOwnProperty("publicKey")) {
-                object.publicKey = options.bytes === String ? $util.base64.encode(message.publicKey, 0, message.publicKey.length) : options.bytes === Array ? Array.prototype.slice.call(message.publicKey) : message.publicKey;
-                if (options.oneofs)
-                    object._publicKey = "publicKey";
-            }
-            if (message.nonce != null && message.hasOwnProperty("nonce")) {
-                object.nonce = options.bytes === String ? $util.base64.encode(message.nonce, 0, message.nonce.length) : options.bytes === Array ? Array.prototype.slice.call(message.nonce) : message.nonce;
-                if (options.oneofs)
-                    object._nonce = "nonce";
-            }
+            if (message.publicKey != null && $Object.hasOwnProperty.call(message, "publicKey"))
+                object.publicKey = options.bytes === $String ? $util.base64.encode(message.publicKey, 0, message.publicKey.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.publicKey) : message.publicKey;
+            if (message.nonce != null && $Object.hasOwnProperty.call(message, "nonce"))
+                object.nonce = options.bytes === $String ? $util.base64.encode(message.nonce, 0, message.nonce.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.nonce) : message.nonce;
             return object;
         };
 
@@ -1225,23 +1516,22 @@ $root.CompanionReg = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        PrimaryEphemeralIdentity.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        PrimaryEphemeralIdentity.prototype.toJSON = function() {
+            return PrimaryEphemeralIdentity.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for PrimaryEphemeralIdentity
+         * Gets the type url for PrimaryEphemeralIdentity
          * @function getTypeUrl
          * @memberof CompanionReg.PrimaryEphemeralIdentity
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        PrimaryEphemeralIdentity.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/CompanionReg.PrimaryEphemeralIdentity";
+        PrimaryEphemeralIdentity.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/CompanionReg.PrimaryEphemeralIdentity";
         };
 
         return PrimaryEphemeralIdentity;
@@ -1251,26 +1541,39 @@ $root.CompanionReg = (function() {
 
         /**
          * Properties of a ProloguePayload.
+         * @typedef {Object} CompanionReg.ProloguePayload.$Properties
+         * @property {Uint8Array|null} [companionEphemeralIdentity] ProloguePayload companionEphemeralIdentity
+         * @property {CompanionReg.CompanionCommitment.$Properties|null} [commitment] ProloguePayload commitment
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a ProloguePayload.
          * @memberof CompanionReg
          * @interface IProloguePayload
-         * @property {Uint8Array|null} [companionEphemeralIdentity] ProloguePayload companionEphemeralIdentity
-         * @property {CompanionReg.ICompanionCommitment|null} [commitment] ProloguePayload commitment
+         * @augments CompanionReg.ProloguePayload.$Properties
+         * @deprecated Use CompanionReg.ProloguePayload.$Properties instead.
+         */
+
+        /**
+         * Shape of a ProloguePayload.
+         * @typedef {CompanionReg.ProloguePayload.$Properties} CompanionReg.ProloguePayload.$Shape
          */
 
         /**
          * Constructs a new ProloguePayload.
          * @memberof CompanionReg
          * @classdesc Represents a ProloguePayload.
-         * @implements IProloguePayload
          * @constructor
-         * @param {CompanionReg.IProloguePayload=} [properties] Properties to set
+         * @param {CompanionReg.ProloguePayload.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function ProloguePayload(properties) {
+        var ProloguePayload = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * ProloguePayload companionEphemeralIdentity.
@@ -1282,7 +1585,7 @@ $root.CompanionReg = (function() {
 
         /**
          * ProloguePayload commitment.
-         * @member {CompanionReg.ICompanionCommitment|null|undefined} commitment
+         * @member {CompanionReg.CompanionCommitment.$Properties|null|undefined} commitment
          * @memberof CompanionReg.ProloguePayload
          * @instance
          */
@@ -1292,13 +1595,13 @@ $root.CompanionReg = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ProloguePayload.prototype, "_companionEphemeralIdentity", {
+        $Object.defineProperty(ProloguePayload.prototype, "_companionEphemeralIdentity", {
             get: $util.oneOfGetter($oneOfFields = ["companionEphemeralIdentity"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ProloguePayload.prototype, "_commitment", {
+        $Object.defineProperty(ProloguePayload.prototype, "_commitment", {
             get: $util.oneOfGetter($oneOfFields = ["commitment"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -1308,10 +1611,14 @@ $root.CompanionReg = (function() {
          * @function create
          * @memberof CompanionReg.ProloguePayload
          * @static
-         * @param {CompanionReg.IProloguePayload=} [properties] Properties to set
+         * @param {CompanionReg.ProloguePayload.$Properties=} [properties] Properties to set
          * @returns {CompanionReg.ProloguePayload} ProloguePayload instance
+         * @type {{
+         *   (properties: CompanionReg.ProloguePayload.$Shape): CompanionReg.ProloguePayload & CompanionReg.ProloguePayload.$Shape;
+         *   (properties?: CompanionReg.ProloguePayload.$Properties): CompanionReg.ProloguePayload;
+         * }}
          */
-        ProloguePayload.create = function create(properties) {
+        ProloguePayload.create = function(properties) {
             return new ProloguePayload(properties);
         };
 
@@ -1320,17 +1627,24 @@ $root.CompanionReg = (function() {
          * @function encode
          * @memberof CompanionReg.ProloguePayload
          * @static
-         * @param {CompanionReg.IProloguePayload} message ProloguePayload message or plain object to encode
+         * @param {CompanionReg.ProloguePayload.$Properties} message ProloguePayload message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ProloguePayload.encode = function encode(message, writer) {
+        ProloguePayload.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.companionEphemeralIdentity != null && Object.hasOwnProperty.call(message, "companionEphemeralIdentity"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.companionEphemeralIdentity != null && $Object.hasOwnProperty.call(message, "companionEphemeralIdentity"))
                 writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.companionEphemeralIdentity);
-            if (message.commitment != null && Object.hasOwnProperty.call(message, "commitment"))
-                $root.CompanionReg.CompanionCommitment.encode(message.commitment, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.commitment != null && $Object.hasOwnProperty.call(message, "commitment"))
+                $root.CompanionReg.CompanionCommitment.encode(message.commitment, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -1339,12 +1653,12 @@ $root.CompanionReg = (function() {
          * @function encodeDelimited
          * @memberof CompanionReg.ProloguePayload
          * @static
-         * @param {CompanionReg.IProloguePayload} message ProloguePayload message or plain object to encode
+         * @param {CompanionReg.ProloguePayload.$Properties} message ProloguePayload message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ProloguePayload.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        ProloguePayload.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -1354,32 +1668,65 @@ $root.CompanionReg = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {CompanionReg.ProloguePayload} ProloguePayload
+         * @returns {CompanionReg.ProloguePayload & CompanionReg.ProloguePayload.$Shape} ProloguePayload
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ProloguePayload.decode = function decode(reader, length, error) {
+        ProloguePayload.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.ProloguePayload();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.CompanionReg.ProloguePayload();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.companionEphemeralIdentity = reader.bytes();
-                        break;
-                    }
-                case 2: {
-                        message.commitment = $root.CompanionReg.CompanionCommitment.decode(reader, reader.uint32());
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.companionEphemeralIdentity = reader.bytes();
+                        message._companionEphemeralIdentity = "companionEphemeralIdentity";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.commitment = $root.CompanionReg.CompanionCommitment.decode(reader, reader.size(), $undefined, _depth + 1, message.commitment);
+                        message._commitment = "commitment";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -1389,14 +1736,14 @@ $root.CompanionReg = (function() {
          * @memberof CompanionReg.ProloguePayload
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {CompanionReg.ProloguePayload} ProloguePayload
+         * @returns {CompanionReg.ProloguePayload & CompanionReg.ProloguePayload.$Shape} ProloguePayload
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ProloguePayload.decodeDelimited = function decodeDelimited(reader) {
+        ProloguePayload.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -1407,19 +1754,23 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        ProloguePayload.verify = function verify(message) {
+        ProloguePayload.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.companionEphemeralIdentity != null && message.hasOwnProperty("companionEphemeralIdentity")) {
+            if (message.companionEphemeralIdentity != null && $Object.hasOwnProperty.call(message, "companionEphemeralIdentity")) {
                 properties._companionEphemeralIdentity = 1;
                 if (!(message.companionEphemeralIdentity && typeof message.companionEphemeralIdentity.length === "number" || $util.isString(message.companionEphemeralIdentity)))
                     return "companionEphemeralIdentity: buffer expected";
             }
-            if (message.commitment != null && message.hasOwnProperty("commitment")) {
+            if (message.commitment != null && $Object.hasOwnProperty.call(message, "commitment")) {
                 properties._commitment = 1;
                 {
-                    var error = $root.CompanionReg.CompanionCommitment.verify(message.commitment);
+                    var error = $root.CompanionReg.CompanionCommitment.verify(message.commitment, _depth + 1);
                     if (error)
                         return "commitment." + error;
                 }
@@ -1435,9 +1786,15 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {CompanionReg.ProloguePayload} ProloguePayload
          */
-        ProloguePayload.fromObject = function fromObject(object) {
+        ProloguePayload.fromObject = function (object, _depth) {
             if (object instanceof $root.CompanionReg.ProloguePayload)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".CompanionReg.ProloguePayload: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.CompanionReg.ProloguePayload();
             if (object.companionEphemeralIdentity != null)
                 if (typeof object.companionEphemeralIdentity === "string")
@@ -1445,9 +1802,9 @@ $root.CompanionReg = (function() {
                 else if (object.companionEphemeralIdentity.length >= 0)
                     message.companionEphemeralIdentity = object.companionEphemeralIdentity;
             if (object.commitment != null) {
-                if (typeof object.commitment !== "object")
-                    throw TypeError(".CompanionReg.ProloguePayload.commitment: object expected");
-                message.commitment = $root.CompanionReg.CompanionCommitment.fromObject(object.commitment);
+                if (!$util.isObject(object.commitment))
+                    throw $TypeError(".CompanionReg.ProloguePayload.commitment: object expected");
+                message.commitment = $root.CompanionReg.CompanionCommitment.fromObject(object.commitment, _depth + 1);
             }
             return message;
         };
@@ -1461,20 +1818,18 @@ $root.CompanionReg = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        ProloguePayload.toObject = function toObject(message, options) {
+        ProloguePayload.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.companionEphemeralIdentity != null && message.hasOwnProperty("companionEphemeralIdentity")) {
-                object.companionEphemeralIdentity = options.bytes === String ? $util.base64.encode(message.companionEphemeralIdentity, 0, message.companionEphemeralIdentity.length) : options.bytes === Array ? Array.prototype.slice.call(message.companionEphemeralIdentity) : message.companionEphemeralIdentity;
-                if (options.oneofs)
-                    object._companionEphemeralIdentity = "companionEphemeralIdentity";
-            }
-            if (message.commitment != null && message.hasOwnProperty("commitment")) {
-                object.commitment = $root.CompanionReg.CompanionCommitment.toObject(message.commitment, options);
-                if (options.oneofs)
-                    object._commitment = "commitment";
-            }
+            if (message.companionEphemeralIdentity != null && $Object.hasOwnProperty.call(message, "companionEphemeralIdentity"))
+                object.companionEphemeralIdentity = options.bytes === $String ? $util.base64.encode(message.companionEphemeralIdentity, 0, message.companionEphemeralIdentity.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.companionEphemeralIdentity) : message.companionEphemeralIdentity;
+            if (message.commitment != null && $Object.hasOwnProperty.call(message, "commitment"))
+                object.commitment = $root.CompanionReg.CompanionCommitment.toObject(message.commitment, options, _depth + 1);
             return object;
         };
 
@@ -1485,23 +1840,22 @@ $root.CompanionReg = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        ProloguePayload.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        ProloguePayload.prototype.toJSON = function() {
+            return ProloguePayload.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for ProloguePayload
+         * Gets the type url for ProloguePayload
          * @function getTypeUrl
          * @memberof CompanionReg.ProloguePayload
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        ProloguePayload.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/CompanionReg.ProloguePayload";
+        ProloguePayload.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/CompanionReg.ProloguePayload";
         };
 
         return ProloguePayload;
@@ -1511,25 +1865,38 @@ $root.CompanionReg = (function() {
 
         /**
          * Properties of a CompanionCommitment.
+         * @typedef {Object} CompanionReg.CompanionCommitment.$Properties
+         * @property {Uint8Array|null} [hash] CompanionCommitment hash
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a CompanionCommitment.
          * @memberof CompanionReg
          * @interface ICompanionCommitment
-         * @property {Uint8Array|null} [hash] CompanionCommitment hash
+         * @augments CompanionReg.CompanionCommitment.$Properties
+         * @deprecated Use CompanionReg.CompanionCommitment.$Properties instead.
+         */
+
+        /**
+         * Shape of a CompanionCommitment.
+         * @typedef {CompanionReg.CompanionCommitment.$Properties} CompanionReg.CompanionCommitment.$Shape
          */
 
         /**
          * Constructs a new CompanionCommitment.
          * @memberof CompanionReg
          * @classdesc Represents a CompanionCommitment.
-         * @implements ICompanionCommitment
          * @constructor
-         * @param {CompanionReg.ICompanionCommitment=} [properties] Properties to set
+         * @param {CompanionReg.CompanionCommitment.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function CompanionCommitment(properties) {
+        var CompanionCommitment = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * CompanionCommitment hash.
@@ -1543,7 +1910,7 @@ $root.CompanionReg = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(CompanionCommitment.prototype, "_hash", {
+        $Object.defineProperty(CompanionCommitment.prototype, "_hash", {
             get: $util.oneOfGetter($oneOfFields = ["hash"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -1553,10 +1920,14 @@ $root.CompanionReg = (function() {
          * @function create
          * @memberof CompanionReg.CompanionCommitment
          * @static
-         * @param {CompanionReg.ICompanionCommitment=} [properties] Properties to set
+         * @param {CompanionReg.CompanionCommitment.$Properties=} [properties] Properties to set
          * @returns {CompanionReg.CompanionCommitment} CompanionCommitment instance
+         * @type {{
+         *   (properties: CompanionReg.CompanionCommitment.$Shape): CompanionReg.CompanionCommitment & CompanionReg.CompanionCommitment.$Shape;
+         *   (properties?: CompanionReg.CompanionCommitment.$Properties): CompanionReg.CompanionCommitment;
+         * }}
          */
-        CompanionCommitment.create = function create(properties) {
+        CompanionCommitment.create = function(properties) {
             return new CompanionCommitment(properties);
         };
 
@@ -1565,15 +1936,22 @@ $root.CompanionReg = (function() {
          * @function encode
          * @memberof CompanionReg.CompanionCommitment
          * @static
-         * @param {CompanionReg.ICompanionCommitment} message CompanionCommitment message or plain object to encode
+         * @param {CompanionReg.CompanionCommitment.$Properties} message CompanionCommitment message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CompanionCommitment.encode = function encode(message, writer) {
+        CompanionCommitment.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.hash != null && Object.hasOwnProperty.call(message, "hash"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.hash != null && $Object.hasOwnProperty.call(message, "hash"))
                 writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.hash);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -1582,12 +1960,12 @@ $root.CompanionReg = (function() {
          * @function encodeDelimited
          * @memberof CompanionReg.CompanionCommitment
          * @static
-         * @param {CompanionReg.ICompanionCommitment} message CompanionCommitment message or plain object to encode
+         * @param {CompanionReg.CompanionCommitment.$Properties} message CompanionCommitment message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CompanionCommitment.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        CompanionCommitment.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -1597,28 +1975,58 @@ $root.CompanionReg = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {CompanionReg.CompanionCommitment} CompanionCommitment
+         * @returns {CompanionReg.CompanionCommitment & CompanionReg.CompanionCommitment.$Shape} CompanionCommitment
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CompanionCommitment.decode = function decode(reader, length, error) {
+        CompanionCommitment.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.CompanionCommitment();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.CompanionReg.CompanionCommitment();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.hash = reader.bytes();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.hash = reader.bytes();
+                        message._hash = "hash";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -1628,14 +2036,14 @@ $root.CompanionReg = (function() {
          * @memberof CompanionReg.CompanionCommitment
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {CompanionReg.CompanionCommitment} CompanionCommitment
+         * @returns {CompanionReg.CompanionCommitment & CompanionReg.CompanionCommitment.$Shape} CompanionCommitment
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CompanionCommitment.decodeDelimited = function decodeDelimited(reader) {
+        CompanionCommitment.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -1646,11 +2054,15 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CompanionCommitment.verify = function verify(message) {
+        CompanionCommitment.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.hash != null && message.hasOwnProperty("hash")) {
+            if (message.hash != null && $Object.hasOwnProperty.call(message, "hash")) {
                 properties._hash = 1;
                 if (!(message.hash && typeof message.hash.length === "number" || $util.isString(message.hash)))
                     return "hash: buffer expected";
@@ -1666,9 +2078,15 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {CompanionReg.CompanionCommitment} CompanionCommitment
          */
-        CompanionCommitment.fromObject = function fromObject(object) {
+        CompanionCommitment.fromObject = function (object, _depth) {
             if (object instanceof $root.CompanionReg.CompanionCommitment)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".CompanionReg.CompanionCommitment: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.CompanionReg.CompanionCommitment();
             if (object.hash != null)
                 if (typeof object.hash === "string")
@@ -1687,15 +2105,16 @@ $root.CompanionReg = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CompanionCommitment.toObject = function toObject(message, options) {
+        CompanionCommitment.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.hash != null && message.hasOwnProperty("hash")) {
-                object.hash = options.bytes === String ? $util.base64.encode(message.hash, 0, message.hash.length) : options.bytes === Array ? Array.prototype.slice.call(message.hash) : message.hash;
-                if (options.oneofs)
-                    object._hash = "hash";
-            }
+            if (message.hash != null && $Object.hasOwnProperty.call(message, "hash"))
+                object.hash = options.bytes === $String ? $util.base64.encode(message.hash, 0, message.hash.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.hash) : message.hash;
             return object;
         };
 
@@ -1706,23 +2125,22 @@ $root.CompanionReg = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CompanionCommitment.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        CompanionCommitment.prototype.toJSON = function() {
+            return CompanionCommitment.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for CompanionCommitment
+         * Gets the type url for CompanionCommitment
          * @function getTypeUrl
          * @memberof CompanionReg.CompanionCommitment
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        CompanionCommitment.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/CompanionReg.CompanionCommitment";
+        CompanionCommitment.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/CompanionReg.CompanionCommitment";
         };
 
         return CompanionCommitment;
@@ -1732,27 +2150,40 @@ $root.CompanionReg = (function() {
 
         /**
          * Properties of a CompanionEphemeralIdentity.
-         * @memberof CompanionReg
-         * @interface ICompanionEphemeralIdentity
+         * @typedef {Object} CompanionReg.CompanionEphemeralIdentity.$Properties
          * @property {Uint8Array|null} [publicKey] CompanionEphemeralIdentity publicKey
          * @property {CompanionReg.DeviceProps.PlatformType|null} [deviceType] CompanionEphemeralIdentity deviceType
          * @property {string|null} [ref] CompanionEphemeralIdentity ref
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a CompanionEphemeralIdentity.
+         * @memberof CompanionReg
+         * @interface ICompanionEphemeralIdentity
+         * @augments CompanionReg.CompanionEphemeralIdentity.$Properties
+         * @deprecated Use CompanionReg.CompanionEphemeralIdentity.$Properties instead.
+         */
+
+        /**
+         * Shape of a CompanionEphemeralIdentity.
+         * @typedef {CompanionReg.CompanionEphemeralIdentity.$Properties} CompanionReg.CompanionEphemeralIdentity.$Shape
          */
 
         /**
          * Constructs a new CompanionEphemeralIdentity.
          * @memberof CompanionReg
          * @classdesc Represents a CompanionEphemeralIdentity.
-         * @implements ICompanionEphemeralIdentity
          * @constructor
-         * @param {CompanionReg.ICompanionEphemeralIdentity=} [properties] Properties to set
+         * @param {CompanionReg.CompanionEphemeralIdentity.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function CompanionEphemeralIdentity(properties) {
+        var CompanionEphemeralIdentity = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * CompanionEphemeralIdentity publicKey.
@@ -1782,19 +2213,19 @@ $root.CompanionReg = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(CompanionEphemeralIdentity.prototype, "_publicKey", {
+        $Object.defineProperty(CompanionEphemeralIdentity.prototype, "_publicKey", {
             get: $util.oneOfGetter($oneOfFields = ["publicKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(CompanionEphemeralIdentity.prototype, "_deviceType", {
+        $Object.defineProperty(CompanionEphemeralIdentity.prototype, "_deviceType", {
             get: $util.oneOfGetter($oneOfFields = ["deviceType"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(CompanionEphemeralIdentity.prototype, "_ref", {
+        $Object.defineProperty(CompanionEphemeralIdentity.prototype, "_ref", {
             get: $util.oneOfGetter($oneOfFields = ["ref"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -1804,10 +2235,14 @@ $root.CompanionReg = (function() {
          * @function create
          * @memberof CompanionReg.CompanionEphemeralIdentity
          * @static
-         * @param {CompanionReg.ICompanionEphemeralIdentity=} [properties] Properties to set
+         * @param {CompanionReg.CompanionEphemeralIdentity.$Properties=} [properties] Properties to set
          * @returns {CompanionReg.CompanionEphemeralIdentity} CompanionEphemeralIdentity instance
+         * @type {{
+         *   (properties: CompanionReg.CompanionEphemeralIdentity.$Shape): CompanionReg.CompanionEphemeralIdentity & CompanionReg.CompanionEphemeralIdentity.$Shape;
+         *   (properties?: CompanionReg.CompanionEphemeralIdentity.$Properties): CompanionReg.CompanionEphemeralIdentity;
+         * }}
          */
-        CompanionEphemeralIdentity.create = function create(properties) {
+        CompanionEphemeralIdentity.create = function(properties) {
             return new CompanionEphemeralIdentity(properties);
         };
 
@@ -1816,19 +2251,26 @@ $root.CompanionReg = (function() {
          * @function encode
          * @memberof CompanionReg.CompanionEphemeralIdentity
          * @static
-         * @param {CompanionReg.ICompanionEphemeralIdentity} message CompanionEphemeralIdentity message or plain object to encode
+         * @param {CompanionReg.CompanionEphemeralIdentity.$Properties} message CompanionEphemeralIdentity message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CompanionEphemeralIdentity.encode = function encode(message, writer) {
+        CompanionEphemeralIdentity.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.publicKey != null && Object.hasOwnProperty.call(message, "publicKey"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.publicKey != null && $Object.hasOwnProperty.call(message, "publicKey"))
                 writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.publicKey);
-            if (message.deviceType != null && Object.hasOwnProperty.call(message, "deviceType"))
+            if (message.deviceType != null && $Object.hasOwnProperty.call(message, "deviceType"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.deviceType);
-            if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
+            if (message.ref != null && $Object.hasOwnProperty.call(message, "ref"))
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.ref);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -1837,12 +2279,12 @@ $root.CompanionReg = (function() {
          * @function encodeDelimited
          * @memberof CompanionReg.CompanionEphemeralIdentity
          * @static
-         * @param {CompanionReg.ICompanionEphemeralIdentity} message CompanionEphemeralIdentity message or plain object to encode
+         * @param {CompanionReg.CompanionEphemeralIdentity.$Properties} message CompanionEphemeralIdentity message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CompanionEphemeralIdentity.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        CompanionEphemeralIdentity.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -1852,36 +2294,72 @@ $root.CompanionReg = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {CompanionReg.CompanionEphemeralIdentity} CompanionEphemeralIdentity
+         * @returns {CompanionReg.CompanionEphemeralIdentity & CompanionReg.CompanionEphemeralIdentity.$Shape} CompanionEphemeralIdentity
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CompanionEphemeralIdentity.decode = function decode(reader, length, error) {
+        CompanionEphemeralIdentity.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.CompanionEphemeralIdentity();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message, value;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.CompanionReg.CompanionEphemeralIdentity();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.publicKey = reader.bytes();
-                        break;
-                    }
-                case 2: {
-                        message.deviceType = reader.int32();
-                        break;
-                    }
-                case 3: {
-                        message.ref = reader.string();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.publicKey = reader.bytes();
+                        message._publicKey = "publicKey";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 0)
+                            break;
+                        message.deviceType = reader.int32();
+                        message._deviceType = "deviceType";
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 2)
+                            break;
+                        message.ref = reader.stringVerify();
+                        message._ref = "ref";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -1891,14 +2369,14 @@ $root.CompanionReg = (function() {
          * @memberof CompanionReg.CompanionEphemeralIdentity
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {CompanionReg.CompanionEphemeralIdentity} CompanionEphemeralIdentity
+         * @returns {CompanionReg.CompanionEphemeralIdentity & CompanionReg.CompanionEphemeralIdentity.$Shape} CompanionEphemeralIdentity
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CompanionEphemeralIdentity.decodeDelimited = function decodeDelimited(reader) {
+        CompanionEphemeralIdentity.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -1909,55 +2387,25 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CompanionEphemeralIdentity.verify = function verify(message) {
+        CompanionEphemeralIdentity.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.publicKey != null && message.hasOwnProperty("publicKey")) {
+            if (message.publicKey != null && $Object.hasOwnProperty.call(message, "publicKey")) {
                 properties._publicKey = 1;
                 if (!(message.publicKey && typeof message.publicKey.length === "number" || $util.isString(message.publicKey)))
                     return "publicKey: buffer expected";
             }
-            if (message.deviceType != null && message.hasOwnProperty("deviceType")) {
+            if (message.deviceType != null && $Object.hasOwnProperty.call(message, "deviceType")) {
                 properties._deviceType = 1;
-                switch (message.deviceType) {
-                default:
+                if (typeof message.deviceType !== "number" || (message.deviceType | 0) !== message.deviceType)
                     return "deviceType: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                case 11:
-                case 12:
-                case 13:
-                case 14:
-                case 15:
-                case 16:
-                case 17:
-                case 18:
-                case 19:
-                case 20:
-                case 21:
-                case 22:
-                case 23:
-                case 24:
-                case 25:
-                case 26:
-                case 27:
-                case 28:
-                case 29:
-                case 30:
-                    break;
-                }
             }
-            if (message.ref != null && message.hasOwnProperty("ref")) {
+            if (message.ref != null && $Object.hasOwnProperty.call(message, "ref")) {
                 properties._ref = 1;
                 if (!$util.isString(message.ref))
                     return "ref: string expected";
@@ -1973,9 +2421,15 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {CompanionReg.CompanionEphemeralIdentity} CompanionEphemeralIdentity
          */
-        CompanionEphemeralIdentity.fromObject = function fromObject(object) {
+        CompanionEphemeralIdentity.fromObject = function (object, _depth) {
             if (object instanceof $root.CompanionReg.CompanionEphemeralIdentity)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".CompanionReg.CompanionEphemeralIdentity: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.CompanionReg.CompanionEphemeralIdentity();
             if (object.publicKey != null)
                 if (typeof object.publicKey === "string")
@@ -1983,12 +2437,6 @@ $root.CompanionReg = (function() {
                 else if (object.publicKey.length >= 0)
                     message.publicKey = object.publicKey;
             switch (object.deviceType) {
-            default:
-                if (typeof object.deviceType === "number") {
-                    message.deviceType = object.deviceType;
-                    break;
-                }
-                break;
             case "UNKNOWN":
             case 0:
                 message.deviceType = 0;
@@ -2113,9 +2561,12 @@ $root.CompanionReg = (function() {
             case 30:
                 message.deviceType = 30;
                 break;
+            default:
+                if (typeof object.deviceType === "number" && (object.deviceType | 0) === object.deviceType)
+                    message.deviceType = object.deviceType;
             }
             if (object.ref != null)
-                message.ref = String(object.ref);
+                message.ref = $String(object.ref);
             return message;
         };
 
@@ -2128,25 +2579,20 @@ $root.CompanionReg = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CompanionEphemeralIdentity.toObject = function toObject(message, options) {
+        CompanionEphemeralIdentity.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.publicKey != null && message.hasOwnProperty("publicKey")) {
-                object.publicKey = options.bytes === String ? $util.base64.encode(message.publicKey, 0, message.publicKey.length) : options.bytes === Array ? Array.prototype.slice.call(message.publicKey) : message.publicKey;
-                if (options.oneofs)
-                    object._publicKey = "publicKey";
-            }
-            if (message.deviceType != null && message.hasOwnProperty("deviceType")) {
-                object.deviceType = options.enums === String ? $root.CompanionReg.DeviceProps.PlatformType[message.deviceType] === undefined ? message.deviceType : $root.CompanionReg.DeviceProps.PlatformType[message.deviceType] : message.deviceType;
-                if (options.oneofs)
-                    object._deviceType = "deviceType";
-            }
-            if (message.ref != null && message.hasOwnProperty("ref")) {
+            if (message.publicKey != null && $Object.hasOwnProperty.call(message, "publicKey"))
+                object.publicKey = options.bytes === $String ? $util.base64.encode(message.publicKey, 0, message.publicKey.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.publicKey) : message.publicKey;
+            if (message.deviceType != null && $Object.hasOwnProperty.call(message, "deviceType"))
+                object.deviceType = options.enums === $String ? $root.CompanionReg.DeviceProps.PlatformType[message.deviceType] === $undefined ? message.deviceType : $root.CompanionReg.DeviceProps.PlatformType[message.deviceType] : message.deviceType;
+            if (message.ref != null && $Object.hasOwnProperty.call(message, "ref"))
                 object.ref = message.ref;
-                if (options.oneofs)
-                    object._ref = "ref";
-            }
             return object;
         };
 
@@ -2157,23 +2603,22 @@ $root.CompanionReg = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CompanionEphemeralIdentity.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        CompanionEphemeralIdentity.prototype.toJSON = function() {
+            return CompanionEphemeralIdentity.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for CompanionEphemeralIdentity
+         * Gets the type url for CompanionEphemeralIdentity
          * @function getTypeUrl
          * @memberof CompanionReg.CompanionEphemeralIdentity
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        CompanionEphemeralIdentity.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/CompanionReg.CompanionEphemeralIdentity";
+        CompanionEphemeralIdentity.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/CompanionReg.CompanionEphemeralIdentity";
         };
 
         return CompanionEphemeralIdentity;
@@ -2183,29 +2628,43 @@ $root.CompanionReg = (function() {
 
         /**
          * Properties of a DeviceProps.
-         * @memberof CompanionReg
-         * @interface IDeviceProps
+         * @typedef {Object} CompanionReg.DeviceProps.$Properties
          * @property {string|null} [os] DeviceProps os
-         * @property {CompanionReg.DeviceProps.IAppVersion|null} [version] DeviceProps version
+         * @property {CompanionReg.DeviceProps.AppVersion.$Properties|null} [version] DeviceProps version
          * @property {CompanionReg.DeviceProps.PlatformType|null} [platformType] DeviceProps platformType
          * @property {boolean|null} [requireFullSync] DeviceProps requireFullSync
-         * @property {CompanionReg.DeviceProps.IHistorySyncConfig|null} [historySyncConfig] DeviceProps historySyncConfig
+         * @property {CompanionReg.DeviceProps.HistorySyncConfig.$Properties|null} [historySyncConfig] DeviceProps historySyncConfig
+         * @property {string|null} [deviceName] DeviceProps deviceName
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a DeviceProps.
+         * @memberof CompanionReg
+         * @interface IDeviceProps
+         * @augments CompanionReg.DeviceProps.$Properties
+         * @deprecated Use CompanionReg.DeviceProps.$Properties instead.
+         */
+
+        /**
+         * Shape of a DeviceProps.
+         * @typedef {CompanionReg.DeviceProps.$Properties} CompanionReg.DeviceProps.$Shape
          */
 
         /**
          * Constructs a new DeviceProps.
          * @memberof CompanionReg
          * @classdesc Represents a DeviceProps.
-         * @implements IDeviceProps
          * @constructor
-         * @param {CompanionReg.IDeviceProps=} [properties] Properties to set
+         * @param {CompanionReg.DeviceProps.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function DeviceProps(properties) {
+        var DeviceProps = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * DeviceProps os.
@@ -2217,7 +2676,7 @@ $root.CompanionReg = (function() {
 
         /**
          * DeviceProps version.
-         * @member {CompanionReg.DeviceProps.IAppVersion|null|undefined} version
+         * @member {CompanionReg.DeviceProps.AppVersion.$Properties|null|undefined} version
          * @memberof CompanionReg.DeviceProps
          * @instance
          */
@@ -2241,42 +2700,56 @@ $root.CompanionReg = (function() {
 
         /**
          * DeviceProps historySyncConfig.
-         * @member {CompanionReg.DeviceProps.IHistorySyncConfig|null|undefined} historySyncConfig
+         * @member {CompanionReg.DeviceProps.HistorySyncConfig.$Properties|null|undefined} historySyncConfig
          * @memberof CompanionReg.DeviceProps
          * @instance
          */
         DeviceProps.prototype.historySyncConfig = null;
 
+        /**
+         * DeviceProps deviceName.
+         * @member {string|null|undefined} deviceName
+         * @memberof CompanionReg.DeviceProps
+         * @instance
+         */
+        DeviceProps.prototype.deviceName = null;
+
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(DeviceProps.prototype, "_os", {
+        $Object.defineProperty(DeviceProps.prototype, "_os", {
             get: $util.oneOfGetter($oneOfFields = ["os"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(DeviceProps.prototype, "_version", {
+        $Object.defineProperty(DeviceProps.prototype, "_version", {
             get: $util.oneOfGetter($oneOfFields = ["version"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(DeviceProps.prototype, "_platformType", {
+        $Object.defineProperty(DeviceProps.prototype, "_platformType", {
             get: $util.oneOfGetter($oneOfFields = ["platformType"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(DeviceProps.prototype, "_requireFullSync", {
+        $Object.defineProperty(DeviceProps.prototype, "_requireFullSync", {
             get: $util.oneOfGetter($oneOfFields = ["requireFullSync"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(DeviceProps.prototype, "_historySyncConfig", {
+        $Object.defineProperty(DeviceProps.prototype, "_historySyncConfig", {
             get: $util.oneOfGetter($oneOfFields = ["historySyncConfig"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(DeviceProps.prototype, "_deviceName", {
+            get: $util.oneOfGetter($oneOfFields = ["deviceName"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
@@ -2285,10 +2758,14 @@ $root.CompanionReg = (function() {
          * @function create
          * @memberof CompanionReg.DeviceProps
          * @static
-         * @param {CompanionReg.IDeviceProps=} [properties] Properties to set
+         * @param {CompanionReg.DeviceProps.$Properties=} [properties] Properties to set
          * @returns {CompanionReg.DeviceProps} DeviceProps instance
+         * @type {{
+         *   (properties: CompanionReg.DeviceProps.$Shape): CompanionReg.DeviceProps & CompanionReg.DeviceProps.$Shape;
+         *   (properties?: CompanionReg.DeviceProps.$Properties): CompanionReg.DeviceProps;
+         * }}
          */
-        DeviceProps.create = function create(properties) {
+        DeviceProps.create = function(properties) {
             return new DeviceProps(properties);
         };
 
@@ -2297,23 +2774,32 @@ $root.CompanionReg = (function() {
          * @function encode
          * @memberof CompanionReg.DeviceProps
          * @static
-         * @param {CompanionReg.IDeviceProps} message DeviceProps message or plain object to encode
+         * @param {CompanionReg.DeviceProps.$Properties} message DeviceProps message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        DeviceProps.encode = function encode(message, writer) {
+        DeviceProps.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.os != null && Object.hasOwnProperty.call(message, "os"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.os != null && $Object.hasOwnProperty.call(message, "os"))
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.os);
-            if (message.version != null && Object.hasOwnProperty.call(message, "version"))
-                $root.CompanionReg.DeviceProps.AppVersion.encode(message.version, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            if (message.platformType != null && Object.hasOwnProperty.call(message, "platformType"))
+            if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
+                $root.CompanionReg.DeviceProps.AppVersion.encode(message.version, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+            if (message.platformType != null && $Object.hasOwnProperty.call(message, "platformType"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.platformType);
-            if (message.requireFullSync != null && Object.hasOwnProperty.call(message, "requireFullSync"))
+            if (message.requireFullSync != null && $Object.hasOwnProperty.call(message, "requireFullSync"))
                 writer.uint32(/* id 4, wireType 0 =*/32).bool(message.requireFullSync);
-            if (message.historySyncConfig != null && Object.hasOwnProperty.call(message, "historySyncConfig"))
-                $root.CompanionReg.DeviceProps.HistorySyncConfig.encode(message.historySyncConfig, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+            if (message.historySyncConfig != null && $Object.hasOwnProperty.call(message, "historySyncConfig"))
+                $root.CompanionReg.DeviceProps.HistorySyncConfig.encode(message.historySyncConfig, writer.uint32(/* id 5, wireType 2 =*/42).fork(), _depth + 1).ldelim();
+            if (message.deviceName != null && $Object.hasOwnProperty.call(message, "deviceName"))
+                writer.uint32(/* id 6, wireType 2 =*/50).string(message.deviceName);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -2322,12 +2808,12 @@ $root.CompanionReg = (function() {
          * @function encodeDelimited
          * @memberof CompanionReg.DeviceProps
          * @static
-         * @param {CompanionReg.IDeviceProps} message DeviceProps message or plain object to encode
+         * @param {CompanionReg.DeviceProps.$Properties} message DeviceProps message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        DeviceProps.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        DeviceProps.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -2337,44 +2823,93 @@ $root.CompanionReg = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {CompanionReg.DeviceProps} DeviceProps
+         * @returns {CompanionReg.DeviceProps & CompanionReg.DeviceProps.$Shape} DeviceProps
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        DeviceProps.decode = function decode(reader, length, error) {
+        DeviceProps.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.DeviceProps();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message, value;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.CompanionReg.DeviceProps();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.os = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.version = $root.CompanionReg.DeviceProps.AppVersion.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 3: {
-                        message.platformType = reader.int32();
-                        break;
-                    }
-                case 4: {
-                        message.requireFullSync = reader.bool();
-                        break;
-                    }
-                case 5: {
-                        message.historySyncConfig = $root.CompanionReg.DeviceProps.HistorySyncConfig.decode(reader, reader.uint32());
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.os = reader.stringVerify();
+                        message._os = "os";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.version = $root.CompanionReg.DeviceProps.AppVersion.decode(reader, reader.size(), $undefined, _depth + 1, message.version);
+                        message._version = "version";
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 0)
+                            break;
+                        message.platformType = reader.int32();
+                        message._platformType = "platformType";
+                        continue;
+                    }
+                case 4: {
+                        if (wireType !== 0)
+                            break;
+                        message.requireFullSync = reader.bool();
+                        message._requireFullSync = "requireFullSync";
+                        continue;
+                    }
+                case 5: {
+                        if (wireType !== 2)
+                            break;
+                        message.historySyncConfig = $root.CompanionReg.DeviceProps.HistorySyncConfig.decode(reader, reader.size(), $undefined, _depth + 1, message.historySyncConfig);
+                        message._historySyncConfig = "historySyncConfig";
+                        continue;
+                    }
+                case 6: {
+                        if (wireType !== 2)
+                            break;
+                        message.deviceName = reader.stringVerify();
+                        message._deviceName = "deviceName";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -2384,14 +2919,14 @@ $root.CompanionReg = (function() {
          * @memberof CompanionReg.DeviceProps
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {CompanionReg.DeviceProps} DeviceProps
+         * @returns {CompanionReg.DeviceProps & CompanionReg.DeviceProps.$Shape} DeviceProps
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        DeviceProps.decodeDelimited = function decodeDelimited(reader) {
+        DeviceProps.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -2402,74 +2937,49 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        DeviceProps.verify = function verify(message) {
+        DeviceProps.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.os != null && message.hasOwnProperty("os")) {
+            if (message.os != null && $Object.hasOwnProperty.call(message, "os")) {
                 properties._os = 1;
                 if (!$util.isString(message.os))
                     return "os: string expected";
             }
-            if (message.version != null && message.hasOwnProperty("version")) {
+            if (message.version != null && $Object.hasOwnProperty.call(message, "version")) {
                 properties._version = 1;
                 {
-                    var error = $root.CompanionReg.DeviceProps.AppVersion.verify(message.version);
+                    var error = $root.CompanionReg.DeviceProps.AppVersion.verify(message.version, _depth + 1);
                     if (error)
                         return "version." + error;
                 }
             }
-            if (message.platformType != null && message.hasOwnProperty("platformType")) {
+            if (message.platformType != null && $Object.hasOwnProperty.call(message, "platformType")) {
                 properties._platformType = 1;
-                switch (message.platformType) {
-                default:
+                if (typeof message.platformType !== "number" || (message.platformType | 0) !== message.platformType)
                     return "platformType: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                case 11:
-                case 12:
-                case 13:
-                case 14:
-                case 15:
-                case 16:
-                case 17:
-                case 18:
-                case 19:
-                case 20:
-                case 21:
-                case 22:
-                case 23:
-                case 24:
-                case 25:
-                case 26:
-                case 27:
-                case 28:
-                case 29:
-                case 30:
-                    break;
-                }
             }
-            if (message.requireFullSync != null && message.hasOwnProperty("requireFullSync")) {
+            if (message.requireFullSync != null && $Object.hasOwnProperty.call(message, "requireFullSync")) {
                 properties._requireFullSync = 1;
                 if (typeof message.requireFullSync !== "boolean")
                     return "requireFullSync: boolean expected";
             }
-            if (message.historySyncConfig != null && message.hasOwnProperty("historySyncConfig")) {
+            if (message.historySyncConfig != null && $Object.hasOwnProperty.call(message, "historySyncConfig")) {
                 properties._historySyncConfig = 1;
                 {
-                    var error = $root.CompanionReg.DeviceProps.HistorySyncConfig.verify(message.historySyncConfig);
+                    var error = $root.CompanionReg.DeviceProps.HistorySyncConfig.verify(message.historySyncConfig, _depth + 1);
                     if (error)
                         return "historySyncConfig." + error;
                 }
+            }
+            if (message.deviceName != null && $Object.hasOwnProperty.call(message, "deviceName")) {
+                properties._deviceName = 1;
+                if (!$util.isString(message.deviceName))
+                    return "deviceName: string expected";
             }
             return null;
         };
@@ -2482,24 +2992,24 @@ $root.CompanionReg = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {CompanionReg.DeviceProps} DeviceProps
          */
-        DeviceProps.fromObject = function fromObject(object) {
+        DeviceProps.fromObject = function (object, _depth) {
             if (object instanceof $root.CompanionReg.DeviceProps)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".CompanionReg.DeviceProps: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.CompanionReg.DeviceProps();
             if (object.os != null)
-                message.os = String(object.os);
+                message.os = $String(object.os);
             if (object.version != null) {
-                if (typeof object.version !== "object")
-                    throw TypeError(".CompanionReg.DeviceProps.version: object expected");
-                message.version = $root.CompanionReg.DeviceProps.AppVersion.fromObject(object.version);
+                if (!$util.isObject(object.version))
+                    throw $TypeError(".CompanionReg.DeviceProps.version: object expected");
+                message.version = $root.CompanionReg.DeviceProps.AppVersion.fromObject(object.version, _depth + 1);
             }
             switch (object.platformType) {
-            default:
-                if (typeof object.platformType === "number") {
-                    message.platformType = object.platformType;
-                    break;
-                }
-                break;
             case "UNKNOWN":
             case 0:
                 message.platformType = 0;
@@ -2624,14 +3134,19 @@ $root.CompanionReg = (function() {
             case 30:
                 message.platformType = 30;
                 break;
+            default:
+                if (typeof object.platformType === "number" && (object.platformType | 0) === object.platformType)
+                    message.platformType = object.platformType;
             }
             if (object.requireFullSync != null)
-                message.requireFullSync = Boolean(object.requireFullSync);
+                message.requireFullSync = $Boolean(object.requireFullSync);
             if (object.historySyncConfig != null) {
-                if (typeof object.historySyncConfig !== "object")
-                    throw TypeError(".CompanionReg.DeviceProps.historySyncConfig: object expected");
-                message.historySyncConfig = $root.CompanionReg.DeviceProps.HistorySyncConfig.fromObject(object.historySyncConfig);
+                if (!$util.isObject(object.historySyncConfig))
+                    throw $TypeError(".CompanionReg.DeviceProps.historySyncConfig: object expected");
+                message.historySyncConfig = $root.CompanionReg.DeviceProps.HistorySyncConfig.fromObject(object.historySyncConfig, _depth + 1);
             }
+            if (object.deviceName != null)
+                message.deviceName = $String(object.deviceName);
             return message;
         };
 
@@ -2644,35 +3159,26 @@ $root.CompanionReg = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        DeviceProps.toObject = function toObject(message, options) {
+        DeviceProps.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.os != null && message.hasOwnProperty("os")) {
+            if (message.os != null && $Object.hasOwnProperty.call(message, "os"))
                 object.os = message.os;
-                if (options.oneofs)
-                    object._os = "os";
-            }
-            if (message.version != null && message.hasOwnProperty("version")) {
-                object.version = $root.CompanionReg.DeviceProps.AppVersion.toObject(message.version, options);
-                if (options.oneofs)
-                    object._version = "version";
-            }
-            if (message.platformType != null && message.hasOwnProperty("platformType")) {
-                object.platformType = options.enums === String ? $root.CompanionReg.DeviceProps.PlatformType[message.platformType] === undefined ? message.platformType : $root.CompanionReg.DeviceProps.PlatformType[message.platformType] : message.platformType;
-                if (options.oneofs)
-                    object._platformType = "platformType";
-            }
-            if (message.requireFullSync != null && message.hasOwnProperty("requireFullSync")) {
+            if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
+                object.version = $root.CompanionReg.DeviceProps.AppVersion.toObject(message.version, options, _depth + 1);
+            if (message.platformType != null && $Object.hasOwnProperty.call(message, "platformType"))
+                object.platformType = options.enums === $String ? $root.CompanionReg.DeviceProps.PlatformType[message.platformType] === $undefined ? message.platformType : $root.CompanionReg.DeviceProps.PlatformType[message.platformType] : message.platformType;
+            if (message.requireFullSync != null && $Object.hasOwnProperty.call(message, "requireFullSync"))
                 object.requireFullSync = message.requireFullSync;
-                if (options.oneofs)
-                    object._requireFullSync = "requireFullSync";
-            }
-            if (message.historySyncConfig != null && message.hasOwnProperty("historySyncConfig")) {
-                object.historySyncConfig = $root.CompanionReg.DeviceProps.HistorySyncConfig.toObject(message.historySyncConfig, options);
-                if (options.oneofs)
-                    object._historySyncConfig = "historySyncConfig";
-            }
+            if (message.historySyncConfig != null && $Object.hasOwnProperty.call(message, "historySyncConfig"))
+                object.historySyncConfig = $root.CompanionReg.DeviceProps.HistorySyncConfig.toObject(message.historySyncConfig, options, _depth + 1);
+            if (message.deviceName != null && $Object.hasOwnProperty.call(message, "deviceName"))
+                object.deviceName = message.deviceName;
             return object;
         };
 
@@ -2683,52 +3189,64 @@ $root.CompanionReg = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        DeviceProps.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        DeviceProps.prototype.toJSON = function() {
+            return DeviceProps.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for DeviceProps
+         * Gets the type url for DeviceProps
          * @function getTypeUrl
          * @memberof CompanionReg.DeviceProps
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        DeviceProps.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/CompanionReg.DeviceProps";
+        DeviceProps.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/CompanionReg.DeviceProps";
         };
 
         DeviceProps.AppVersion = (function() {
 
             /**
              * Properties of an AppVersion.
-             * @memberof CompanionReg.DeviceProps
-             * @interface IAppVersion
+             * @typedef {Object} CompanionReg.DeviceProps.AppVersion.$Properties
              * @property {number|null} [primary] AppVersion primary
              * @property {number|null} [secondary] AppVersion secondary
              * @property {number|null} [tertiary] AppVersion tertiary
              * @property {number|null} [quaternary] AppVersion quaternary
              * @property {number|null} [quinary] AppVersion quinary
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of an AppVersion.
+             * @memberof CompanionReg.DeviceProps
+             * @interface IAppVersion
+             * @augments CompanionReg.DeviceProps.AppVersion.$Properties
+             * @deprecated Use CompanionReg.DeviceProps.AppVersion.$Properties instead.
+             */
+
+            /**
+             * Shape of an AppVersion.
+             * @typedef {CompanionReg.DeviceProps.AppVersion.$Properties} CompanionReg.DeviceProps.AppVersion.$Shape
              */
 
             /**
              * Constructs a new AppVersion.
              * @memberof CompanionReg.DeviceProps
              * @classdesc Represents an AppVersion.
-             * @implements IAppVersion
              * @constructor
-             * @param {CompanionReg.DeviceProps.IAppVersion=} [properties] Properties to set
+             * @param {CompanionReg.DeviceProps.AppVersion.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function AppVersion(properties) {
+            var AppVersion = function (properties) {
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * AppVersion primary.
@@ -2774,31 +3292,31 @@ $root.CompanionReg = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(AppVersion.prototype, "_primary", {
+            $Object.defineProperty(AppVersion.prototype, "_primary", {
                 get: $util.oneOfGetter($oneOfFields = ["primary"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(AppVersion.prototype, "_secondary", {
+            $Object.defineProperty(AppVersion.prototype, "_secondary", {
                 get: $util.oneOfGetter($oneOfFields = ["secondary"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(AppVersion.prototype, "_tertiary", {
+            $Object.defineProperty(AppVersion.prototype, "_tertiary", {
                 get: $util.oneOfGetter($oneOfFields = ["tertiary"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(AppVersion.prototype, "_quaternary", {
+            $Object.defineProperty(AppVersion.prototype, "_quaternary", {
                 get: $util.oneOfGetter($oneOfFields = ["quaternary"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(AppVersion.prototype, "_quinary", {
+            $Object.defineProperty(AppVersion.prototype, "_quinary", {
                 get: $util.oneOfGetter($oneOfFields = ["quinary"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -2808,10 +3326,14 @@ $root.CompanionReg = (function() {
              * @function create
              * @memberof CompanionReg.DeviceProps.AppVersion
              * @static
-             * @param {CompanionReg.DeviceProps.IAppVersion=} [properties] Properties to set
+             * @param {CompanionReg.DeviceProps.AppVersion.$Properties=} [properties] Properties to set
              * @returns {CompanionReg.DeviceProps.AppVersion} AppVersion instance
+             * @type {{
+             *   (properties: CompanionReg.DeviceProps.AppVersion.$Shape): CompanionReg.DeviceProps.AppVersion & CompanionReg.DeviceProps.AppVersion.$Shape;
+             *   (properties?: CompanionReg.DeviceProps.AppVersion.$Properties): CompanionReg.DeviceProps.AppVersion;
+             * }}
              */
-            AppVersion.create = function create(properties) {
+            AppVersion.create = function(properties) {
                 return new AppVersion(properties);
             };
 
@@ -2820,23 +3342,30 @@ $root.CompanionReg = (function() {
              * @function encode
              * @memberof CompanionReg.DeviceProps.AppVersion
              * @static
-             * @param {CompanionReg.DeviceProps.IAppVersion} message AppVersion message or plain object to encode
+             * @param {CompanionReg.DeviceProps.AppVersion.$Properties} message AppVersion message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            AppVersion.encode = function encode(message, writer) {
+            AppVersion.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.primary != null && Object.hasOwnProperty.call(message, "primary"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.primary != null && $Object.hasOwnProperty.call(message, "primary"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.primary);
-                if (message.secondary != null && Object.hasOwnProperty.call(message, "secondary"))
+                if (message.secondary != null && $Object.hasOwnProperty.call(message, "secondary"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.secondary);
-                if (message.tertiary != null && Object.hasOwnProperty.call(message, "tertiary"))
+                if (message.tertiary != null && $Object.hasOwnProperty.call(message, "tertiary"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.tertiary);
-                if (message.quaternary != null && Object.hasOwnProperty.call(message, "quaternary"))
+                if (message.quaternary != null && $Object.hasOwnProperty.call(message, "quaternary"))
                     writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.quaternary);
-                if (message.quinary != null && Object.hasOwnProperty.call(message, "quinary"))
+                if (message.quinary != null && $Object.hasOwnProperty.call(message, "quinary"))
                     writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.quinary);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -2845,12 +3374,12 @@ $root.CompanionReg = (function() {
              * @function encodeDelimited
              * @memberof CompanionReg.DeviceProps.AppVersion
              * @static
-             * @param {CompanionReg.DeviceProps.IAppVersion} message AppVersion message or plain object to encode
+             * @param {CompanionReg.DeviceProps.AppVersion.$Properties} message AppVersion message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            AppVersion.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            AppVersion.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -2860,44 +3389,86 @@ $root.CompanionReg = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {CompanionReg.DeviceProps.AppVersion} AppVersion
+             * @returns {CompanionReg.DeviceProps.AppVersion & CompanionReg.DeviceProps.AppVersion.$Shape} AppVersion
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AppVersion.decode = function decode(reader, length, error) {
+            AppVersion.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.DeviceProps.AppVersion();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.CompanionReg.DeviceProps.AppVersion();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.primary = reader.uint32();
-                            break;
-                        }
-                    case 2: {
-                            message.secondary = reader.uint32();
-                            break;
-                        }
-                    case 3: {
-                            message.tertiary = reader.uint32();
-                            break;
-                        }
-                    case 4: {
-                            message.quaternary = reader.uint32();
-                            break;
-                        }
-                    case 5: {
-                            message.quinary = reader.uint32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 0)
+                                break;
+                            message.primary = reader.uint32();
+                            message._primary = "primary";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 0)
+                                break;
+                            message.secondary = reader.uint32();
+                            message._secondary = "secondary";
+                            continue;
+                        }
+                    case 3: {
+                            if (wireType !== 0)
+                                break;
+                            message.tertiary = reader.uint32();
+                            message._tertiary = "tertiary";
+                            continue;
+                        }
+                    case 4: {
+                            if (wireType !== 0)
+                                break;
+                            message.quaternary = reader.uint32();
+                            message._quaternary = "quaternary";
+                            continue;
+                        }
+                    case 5: {
+                            if (wireType !== 0)
+                                break;
+                            message.quinary = reader.uint32();
+                            message._quinary = "quinary";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -2907,14 +3478,14 @@ $root.CompanionReg = (function() {
              * @memberof CompanionReg.DeviceProps.AppVersion
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {CompanionReg.DeviceProps.AppVersion} AppVersion
+             * @returns {CompanionReg.DeviceProps.AppVersion & CompanionReg.DeviceProps.AppVersion.$Shape} AppVersion
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AppVersion.decodeDelimited = function decodeDelimited(reader) {
+            AppVersion.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -2925,31 +3496,35 @@ $root.CompanionReg = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            AppVersion.verify = function verify(message) {
+            AppVersion.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message.primary != null && message.hasOwnProperty("primary")) {
+                if (message.primary != null && $Object.hasOwnProperty.call(message, "primary")) {
                     properties._primary = 1;
                     if (!$util.isInteger(message.primary))
                         return "primary: integer expected";
                 }
-                if (message.secondary != null && message.hasOwnProperty("secondary")) {
+                if (message.secondary != null && $Object.hasOwnProperty.call(message, "secondary")) {
                     properties._secondary = 1;
                     if (!$util.isInteger(message.secondary))
                         return "secondary: integer expected";
                 }
-                if (message.tertiary != null && message.hasOwnProperty("tertiary")) {
+                if (message.tertiary != null && $Object.hasOwnProperty.call(message, "tertiary")) {
                     properties._tertiary = 1;
                     if (!$util.isInteger(message.tertiary))
                         return "tertiary: integer expected";
                 }
-                if (message.quaternary != null && message.hasOwnProperty("quaternary")) {
+                if (message.quaternary != null && $Object.hasOwnProperty.call(message, "quaternary")) {
                     properties._quaternary = 1;
                     if (!$util.isInteger(message.quaternary))
                         return "quaternary: integer expected";
                 }
-                if (message.quinary != null && message.hasOwnProperty("quinary")) {
+                if (message.quinary != null && $Object.hasOwnProperty.call(message, "quinary")) {
                     properties._quinary = 1;
                     if (!$util.isInteger(message.quinary))
                         return "quinary: integer expected";
@@ -2965,9 +3540,15 @@ $root.CompanionReg = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {CompanionReg.DeviceProps.AppVersion} AppVersion
              */
-            AppVersion.fromObject = function fromObject(object) {
+            AppVersion.fromObject = function (object, _depth) {
                 if (object instanceof $root.CompanionReg.DeviceProps.AppVersion)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".CompanionReg.DeviceProps.AppVersion: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.CompanionReg.DeviceProps.AppVersion();
                 if (object.primary != null)
                     message.primary = object.primary >>> 0;
@@ -2991,35 +3572,24 @@ $root.CompanionReg = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            AppVersion.toObject = function toObject(message, options) {
+            AppVersion.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
-                if (message.primary != null && message.hasOwnProperty("primary")) {
+                if (message.primary != null && $Object.hasOwnProperty.call(message, "primary"))
                     object.primary = message.primary;
-                    if (options.oneofs)
-                        object._primary = "primary";
-                }
-                if (message.secondary != null && message.hasOwnProperty("secondary")) {
+                if (message.secondary != null && $Object.hasOwnProperty.call(message, "secondary"))
                     object.secondary = message.secondary;
-                    if (options.oneofs)
-                        object._secondary = "secondary";
-                }
-                if (message.tertiary != null && message.hasOwnProperty("tertiary")) {
+                if (message.tertiary != null && $Object.hasOwnProperty.call(message, "tertiary"))
                     object.tertiary = message.tertiary;
-                    if (options.oneofs)
-                        object._tertiary = "tertiary";
-                }
-                if (message.quaternary != null && message.hasOwnProperty("quaternary")) {
+                if (message.quaternary != null && $Object.hasOwnProperty.call(message, "quaternary"))
                     object.quaternary = message.quaternary;
-                    if (options.oneofs)
-                        object._quaternary = "quaternary";
-                }
-                if (message.quinary != null && message.hasOwnProperty("quinary")) {
+                if (message.quinary != null && $Object.hasOwnProperty.call(message, "quinary"))
                     object.quinary = message.quinary;
-                    if (options.oneofs)
-                        object._quinary = "quinary";
-                }
                 return object;
             };
 
@@ -3030,23 +3600,22 @@ $root.CompanionReg = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            AppVersion.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            AppVersion.prototype.toJSON = function() {
+                return AppVersion.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for AppVersion
+             * Gets the type url for AppVersion
              * @function getTypeUrl
              * @memberof CompanionReg.DeviceProps.AppVersion
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            AppVersion.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/CompanionReg.DeviceProps.AppVersion";
+            AppVersion.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/CompanionReg.DeviceProps.AppVersion";
             };
 
             return AppVersion;
@@ -3056,8 +3625,7 @@ $root.CompanionReg = (function() {
 
             /**
              * Properties of a HistorySyncConfig.
-             * @memberof CompanionReg.DeviceProps
-             * @interface IHistorySyncConfig
+             * @typedef {Object} CompanionReg.DeviceProps.HistorySyncConfig.$Properties
              * @property {number|null} [fullSyncDaysLimit] HistorySyncConfig fullSyncDaysLimit
              * @property {number|null} [fullSyncSizeMbLimit] HistorySyncConfig fullSyncSizeMbLimit
              * @property {number|null} [storageQuotaMb] HistorySyncConfig storageQuotaMb
@@ -3085,23 +3653,37 @@ $root.CompanionReg = (function() {
              * @property {boolean|null} [supportNewsletter] HistorySyncConfig supportNewsletter
              * @property {boolean|null} [supportUniversalReachChat] HistorySyncConfig supportUniversalReachChat
              * @property {boolean|null} [supportOmittedConversationMetadata] HistorySyncConfig supportOmittedConversationMetadata
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a HistorySyncConfig.
+             * @memberof CompanionReg.DeviceProps
+             * @interface IHistorySyncConfig
+             * @augments CompanionReg.DeviceProps.HistorySyncConfig.$Properties
+             * @deprecated Use CompanionReg.DeviceProps.HistorySyncConfig.$Properties instead.
+             */
+
+            /**
+             * Shape of a HistorySyncConfig.
+             * @typedef {CompanionReg.DeviceProps.HistorySyncConfig.$Properties} CompanionReg.DeviceProps.HistorySyncConfig.$Shape
              */
 
             /**
              * Constructs a new HistorySyncConfig.
              * @memberof CompanionReg.DeviceProps
              * @classdesc Represents a HistorySyncConfig.
-             * @implements IHistorySyncConfig
              * @constructor
-             * @param {CompanionReg.DeviceProps.IHistorySyncConfig=} [properties] Properties to set
+             * @param {CompanionReg.DeviceProps.HistorySyncConfig.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function HistorySyncConfig(properties) {
+            var HistorySyncConfig = function (properties) {
                 this.supportedBotChannelFbids = [];
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * HistorySyncConfig fullSyncDaysLimit.
@@ -3323,157 +3905,157 @@ $root.CompanionReg = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_fullSyncDaysLimit", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_fullSyncDaysLimit", {
                 get: $util.oneOfGetter($oneOfFields = ["fullSyncDaysLimit"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_fullSyncSizeMbLimit", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_fullSyncSizeMbLimit", {
                 get: $util.oneOfGetter($oneOfFields = ["fullSyncSizeMbLimit"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_storageQuotaMb", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_storageQuotaMb", {
                 get: $util.oneOfGetter($oneOfFields = ["storageQuotaMb"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_inlineInitialPayloadInE2EeMsg", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_inlineInitialPayloadInE2EeMsg", {
                 get: $util.oneOfGetter($oneOfFields = ["inlineInitialPayloadInE2EeMsg"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_recentSyncDaysLimit", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_recentSyncDaysLimit", {
                 get: $util.oneOfGetter($oneOfFields = ["recentSyncDaysLimit"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportCallLogHistory", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportCallLogHistory", {
                 get: $util.oneOfGetter($oneOfFields = ["supportCallLogHistory"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportBotUserAgentChatHistory", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportBotUserAgentChatHistory", {
                 get: $util.oneOfGetter($oneOfFields = ["supportBotUserAgentChatHistory"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportCagReactionsAndPolls", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportCagReactionsAndPolls", {
                 get: $util.oneOfGetter($oneOfFields = ["supportCagReactionsAndPolls"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportBizHostedMsg", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportBizHostedMsg", {
                 get: $util.oneOfGetter($oneOfFields = ["supportBizHostedMsg"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportRecentSyncChunkMessageCountTuning", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportRecentSyncChunkMessageCountTuning", {
                 get: $util.oneOfGetter($oneOfFields = ["supportRecentSyncChunkMessageCountTuning"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportHostedGroupMsg", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportHostedGroupMsg", {
                 get: $util.oneOfGetter($oneOfFields = ["supportHostedGroupMsg"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportFbidBotChatHistory", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportFbidBotChatHistory", {
                 get: $util.oneOfGetter($oneOfFields = ["supportFbidBotChatHistory"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportAddOnHistorySyncMigration", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportAddOnHistorySyncMigration", {
                 get: $util.oneOfGetter($oneOfFields = ["supportAddOnHistorySyncMigration"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportMessageAssociation", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportMessageAssociation", {
                 get: $util.oneOfGetter($oneOfFields = ["supportMessageAssociation"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportGroupHistory", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportGroupHistory", {
                 get: $util.oneOfGetter($oneOfFields = ["supportGroupHistory"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_onDemandReady", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_onDemandReady", {
                 get: $util.oneOfGetter($oneOfFields = ["onDemandReady"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportGuestChat", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportGuestChat", {
                 get: $util.oneOfGetter($oneOfFields = ["supportGuestChat"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_completeOnDemandReady", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_completeOnDemandReady", {
                 get: $util.oneOfGetter($oneOfFields = ["completeOnDemandReady"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_thumbnailSyncDaysLimit", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_thumbnailSyncDaysLimit", {
                 get: $util.oneOfGetter($oneOfFields = ["thumbnailSyncDaysLimit"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_initialSyncMaxMessagesPerChat", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_initialSyncMaxMessagesPerChat", {
                 get: $util.oneOfGetter($oneOfFields = ["initialSyncMaxMessagesPerChat"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportManusHistory", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportManusHistory", {
                 get: $util.oneOfGetter($oneOfFields = ["supportManusHistory"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportHatchHistory", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportHatchHistory", {
                 get: $util.oneOfGetter($oneOfFields = ["supportHatchHistory"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportInlineContacts", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportInlineContacts", {
                 get: $util.oneOfGetter($oneOfFields = ["supportInlineContacts"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportNewsletter", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportNewsletter", {
                 get: $util.oneOfGetter($oneOfFields = ["supportNewsletter"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportUniversalReachChat", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportUniversalReachChat", {
                 get: $util.oneOfGetter($oneOfFields = ["supportUniversalReachChat"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(HistorySyncConfig.prototype, "_supportOmittedConversationMetadata", {
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportOmittedConversationMetadata", {
                 get: $util.oneOfGetter($oneOfFields = ["supportOmittedConversationMetadata"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -3483,10 +4065,14 @@ $root.CompanionReg = (function() {
              * @function create
              * @memberof CompanionReg.DeviceProps.HistorySyncConfig
              * @static
-             * @param {CompanionReg.DeviceProps.IHistorySyncConfig=} [properties] Properties to set
+             * @param {CompanionReg.DeviceProps.HistorySyncConfig.$Properties=} [properties] Properties to set
              * @returns {CompanionReg.DeviceProps.HistorySyncConfig} HistorySyncConfig instance
+             * @type {{
+             *   (properties: CompanionReg.DeviceProps.HistorySyncConfig.$Shape): CompanionReg.DeviceProps.HistorySyncConfig & CompanionReg.DeviceProps.HistorySyncConfig.$Shape;
+             *   (properties?: CompanionReg.DeviceProps.HistorySyncConfig.$Properties): CompanionReg.DeviceProps.HistorySyncConfig;
+             * }}
              */
-            HistorySyncConfig.create = function create(properties) {
+            HistorySyncConfig.create = function(properties) {
                 return new HistorySyncConfig(properties);
             };
 
@@ -3495,68 +4081,75 @@ $root.CompanionReg = (function() {
              * @function encode
              * @memberof CompanionReg.DeviceProps.HistorySyncConfig
              * @static
-             * @param {CompanionReg.DeviceProps.IHistorySyncConfig} message HistorySyncConfig message or plain object to encode
+             * @param {CompanionReg.DeviceProps.HistorySyncConfig.$Properties} message HistorySyncConfig message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            HistorySyncConfig.encode = function encode(message, writer) {
+            HistorySyncConfig.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.fullSyncDaysLimit != null && Object.hasOwnProperty.call(message, "fullSyncDaysLimit"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.fullSyncDaysLimit != null && $Object.hasOwnProperty.call(message, "fullSyncDaysLimit"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.fullSyncDaysLimit);
-                if (message.fullSyncSizeMbLimit != null && Object.hasOwnProperty.call(message, "fullSyncSizeMbLimit"))
+                if (message.fullSyncSizeMbLimit != null && $Object.hasOwnProperty.call(message, "fullSyncSizeMbLimit"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.fullSyncSizeMbLimit);
-                if (message.storageQuotaMb != null && Object.hasOwnProperty.call(message, "storageQuotaMb"))
+                if (message.storageQuotaMb != null && $Object.hasOwnProperty.call(message, "storageQuotaMb"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.storageQuotaMb);
-                if (message.inlineInitialPayloadInE2EeMsg != null && Object.hasOwnProperty.call(message, "inlineInitialPayloadInE2EeMsg"))
+                if (message.inlineInitialPayloadInE2EeMsg != null && $Object.hasOwnProperty.call(message, "inlineInitialPayloadInE2EeMsg"))
                     writer.uint32(/* id 4, wireType 0 =*/32).bool(message.inlineInitialPayloadInE2EeMsg);
-                if (message.recentSyncDaysLimit != null && Object.hasOwnProperty.call(message, "recentSyncDaysLimit"))
+                if (message.recentSyncDaysLimit != null && $Object.hasOwnProperty.call(message, "recentSyncDaysLimit"))
                     writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.recentSyncDaysLimit);
-                if (message.supportCallLogHistory != null && Object.hasOwnProperty.call(message, "supportCallLogHistory"))
+                if (message.supportCallLogHistory != null && $Object.hasOwnProperty.call(message, "supportCallLogHistory"))
                     writer.uint32(/* id 6, wireType 0 =*/48).bool(message.supportCallLogHistory);
-                if (message.supportBotUserAgentChatHistory != null && Object.hasOwnProperty.call(message, "supportBotUserAgentChatHistory"))
+                if (message.supportBotUserAgentChatHistory != null && $Object.hasOwnProperty.call(message, "supportBotUserAgentChatHistory"))
                     writer.uint32(/* id 7, wireType 0 =*/56).bool(message.supportBotUserAgentChatHistory);
-                if (message.supportCagReactionsAndPolls != null && Object.hasOwnProperty.call(message, "supportCagReactionsAndPolls"))
+                if (message.supportCagReactionsAndPolls != null && $Object.hasOwnProperty.call(message, "supportCagReactionsAndPolls"))
                     writer.uint32(/* id 8, wireType 0 =*/64).bool(message.supportCagReactionsAndPolls);
-                if (message.supportBizHostedMsg != null && Object.hasOwnProperty.call(message, "supportBizHostedMsg"))
+                if (message.supportBizHostedMsg != null && $Object.hasOwnProperty.call(message, "supportBizHostedMsg"))
                     writer.uint32(/* id 9, wireType 0 =*/72).bool(message.supportBizHostedMsg);
-                if (message.supportRecentSyncChunkMessageCountTuning != null && Object.hasOwnProperty.call(message, "supportRecentSyncChunkMessageCountTuning"))
+                if (message.supportRecentSyncChunkMessageCountTuning != null && $Object.hasOwnProperty.call(message, "supportRecentSyncChunkMessageCountTuning"))
                     writer.uint32(/* id 10, wireType 0 =*/80).bool(message.supportRecentSyncChunkMessageCountTuning);
-                if (message.supportHostedGroupMsg != null && Object.hasOwnProperty.call(message, "supportHostedGroupMsg"))
+                if (message.supportHostedGroupMsg != null && $Object.hasOwnProperty.call(message, "supportHostedGroupMsg"))
                     writer.uint32(/* id 11, wireType 0 =*/88).bool(message.supportHostedGroupMsg);
-                if (message.supportFbidBotChatHistory != null && Object.hasOwnProperty.call(message, "supportFbidBotChatHistory"))
+                if (message.supportFbidBotChatHistory != null && $Object.hasOwnProperty.call(message, "supportFbidBotChatHistory"))
                     writer.uint32(/* id 12, wireType 0 =*/96).bool(message.supportFbidBotChatHistory);
-                if (message.supportAddOnHistorySyncMigration != null && Object.hasOwnProperty.call(message, "supportAddOnHistorySyncMigration"))
+                if (message.supportAddOnHistorySyncMigration != null && $Object.hasOwnProperty.call(message, "supportAddOnHistorySyncMigration"))
                     writer.uint32(/* id 13, wireType 0 =*/104).bool(message.supportAddOnHistorySyncMigration);
-                if (message.supportMessageAssociation != null && Object.hasOwnProperty.call(message, "supportMessageAssociation"))
+                if (message.supportMessageAssociation != null && $Object.hasOwnProperty.call(message, "supportMessageAssociation"))
                     writer.uint32(/* id 14, wireType 0 =*/112).bool(message.supportMessageAssociation);
-                if (message.supportGroupHistory != null && Object.hasOwnProperty.call(message, "supportGroupHistory"))
+                if (message.supportGroupHistory != null && $Object.hasOwnProperty.call(message, "supportGroupHistory"))
                     writer.uint32(/* id 15, wireType 0 =*/120).bool(message.supportGroupHistory);
-                if (message.onDemandReady != null && Object.hasOwnProperty.call(message, "onDemandReady"))
+                if (message.onDemandReady != null && $Object.hasOwnProperty.call(message, "onDemandReady"))
                     writer.uint32(/* id 16, wireType 0 =*/128).bool(message.onDemandReady);
-                if (message.supportGuestChat != null && Object.hasOwnProperty.call(message, "supportGuestChat"))
+                if (message.supportGuestChat != null && $Object.hasOwnProperty.call(message, "supportGuestChat"))
                     writer.uint32(/* id 17, wireType 0 =*/136).bool(message.supportGuestChat);
-                if (message.completeOnDemandReady != null && Object.hasOwnProperty.call(message, "completeOnDemandReady"))
+                if (message.completeOnDemandReady != null && $Object.hasOwnProperty.call(message, "completeOnDemandReady"))
                     writer.uint32(/* id 18, wireType 0 =*/144).bool(message.completeOnDemandReady);
-                if (message.thumbnailSyncDaysLimit != null && Object.hasOwnProperty.call(message, "thumbnailSyncDaysLimit"))
+                if (message.thumbnailSyncDaysLimit != null && $Object.hasOwnProperty.call(message, "thumbnailSyncDaysLimit"))
                     writer.uint32(/* id 19, wireType 0 =*/152).uint32(message.thumbnailSyncDaysLimit);
-                if (message.initialSyncMaxMessagesPerChat != null && Object.hasOwnProperty.call(message, "initialSyncMaxMessagesPerChat"))
+                if (message.initialSyncMaxMessagesPerChat != null && $Object.hasOwnProperty.call(message, "initialSyncMaxMessagesPerChat"))
                     writer.uint32(/* id 20, wireType 0 =*/160).uint32(message.initialSyncMaxMessagesPerChat);
-                if (message.supportManusHistory != null && Object.hasOwnProperty.call(message, "supportManusHistory"))
+                if (message.supportManusHistory != null && $Object.hasOwnProperty.call(message, "supportManusHistory"))
                     writer.uint32(/* id 21, wireType 0 =*/168).bool(message.supportManusHistory);
-                if (message.supportHatchHistory != null && Object.hasOwnProperty.call(message, "supportHatchHistory"))
+                if (message.supportHatchHistory != null && $Object.hasOwnProperty.call(message, "supportHatchHistory"))
                     writer.uint32(/* id 22, wireType 0 =*/176).bool(message.supportHatchHistory);
                 if (message.supportedBotChannelFbids != null && message.supportedBotChannelFbids.length)
                     for (var i = 0; i < message.supportedBotChannelFbids.length; ++i)
                         writer.uint32(/* id 23, wireType 2 =*/186).string(message.supportedBotChannelFbids[i]);
-                if (message.supportInlineContacts != null && Object.hasOwnProperty.call(message, "supportInlineContacts"))
+                if (message.supportInlineContacts != null && $Object.hasOwnProperty.call(message, "supportInlineContacts"))
                     writer.uint32(/* id 24, wireType 0 =*/192).bool(message.supportInlineContacts);
-                if (message.supportNewsletter != null && Object.hasOwnProperty.call(message, "supportNewsletter"))
+                if (message.supportNewsletter != null && $Object.hasOwnProperty.call(message, "supportNewsletter"))
                     writer.uint32(/* id 25, wireType 0 =*/200).bool(message.supportNewsletter);
-                if (message.supportUniversalReachChat != null && Object.hasOwnProperty.call(message, "supportUniversalReachChat"))
+                if (message.supportUniversalReachChat != null && $Object.hasOwnProperty.call(message, "supportUniversalReachChat"))
                     writer.uint32(/* id 26, wireType 0 =*/208).bool(message.supportUniversalReachChat);
-                if (message.supportOmittedConversationMetadata != null && Object.hasOwnProperty.call(message, "supportOmittedConversationMetadata"))
+                if (message.supportOmittedConversationMetadata != null && $Object.hasOwnProperty.call(message, "supportOmittedConversationMetadata"))
                     writer.uint32(/* id 28, wireType 0 =*/224).bool(message.supportOmittedConversationMetadata);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -3565,12 +4158,12 @@ $root.CompanionReg = (function() {
              * @function encodeDelimited
              * @memberof CompanionReg.DeviceProps.HistorySyncConfig
              * @static
-             * @param {CompanionReg.DeviceProps.IHistorySyncConfig} message HistorySyncConfig message or plain object to encode
+             * @param {CompanionReg.DeviceProps.HistorySyncConfig.$Properties} message HistorySyncConfig message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            HistorySyncConfig.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            HistorySyncConfig.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -3580,134 +4173,241 @@ $root.CompanionReg = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {CompanionReg.DeviceProps.HistorySyncConfig} HistorySyncConfig
+             * @returns {CompanionReg.DeviceProps.HistorySyncConfig & CompanionReg.DeviceProps.HistorySyncConfig.$Shape} HistorySyncConfig
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            HistorySyncConfig.decode = function decode(reader, length, error) {
+            HistorySyncConfig.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.DeviceProps.HistorySyncConfig();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.CompanionReg.DeviceProps.HistorySyncConfig();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.fullSyncDaysLimit = reader.uint32();
-                            break;
-                        }
-                    case 2: {
-                            message.fullSyncSizeMbLimit = reader.uint32();
-                            break;
-                        }
-                    case 3: {
-                            message.storageQuotaMb = reader.uint32();
-                            break;
-                        }
-                    case 4: {
-                            message.inlineInitialPayloadInE2EeMsg = reader.bool();
-                            break;
-                        }
-                    case 5: {
-                            message.recentSyncDaysLimit = reader.uint32();
-                            break;
-                        }
-                    case 6: {
-                            message.supportCallLogHistory = reader.bool();
-                            break;
-                        }
-                    case 7: {
-                            message.supportBotUserAgentChatHistory = reader.bool();
-                            break;
-                        }
-                    case 8: {
-                            message.supportCagReactionsAndPolls = reader.bool();
-                            break;
-                        }
-                    case 9: {
-                            message.supportBizHostedMsg = reader.bool();
-                            break;
-                        }
-                    case 10: {
-                            message.supportRecentSyncChunkMessageCountTuning = reader.bool();
-                            break;
-                        }
-                    case 11: {
-                            message.supportHostedGroupMsg = reader.bool();
-                            break;
-                        }
-                    case 12: {
-                            message.supportFbidBotChatHistory = reader.bool();
-                            break;
-                        }
-                    case 13: {
-                            message.supportAddOnHistorySyncMigration = reader.bool();
-                            break;
-                        }
-                    case 14: {
-                            message.supportMessageAssociation = reader.bool();
-                            break;
-                        }
-                    case 15: {
-                            message.supportGroupHistory = reader.bool();
-                            break;
-                        }
-                    case 16: {
-                            message.onDemandReady = reader.bool();
-                            break;
-                        }
-                    case 17: {
-                            message.supportGuestChat = reader.bool();
-                            break;
-                        }
-                    case 18: {
-                            message.completeOnDemandReady = reader.bool();
-                            break;
-                        }
-                    case 19: {
-                            message.thumbnailSyncDaysLimit = reader.uint32();
-                            break;
-                        }
-                    case 20: {
-                            message.initialSyncMaxMessagesPerChat = reader.uint32();
-                            break;
-                        }
-                    case 21: {
-                            message.supportManusHistory = reader.bool();
-                            break;
-                        }
-                    case 22: {
-                            message.supportHatchHistory = reader.bool();
-                            break;
-                        }
-                    case 23: {
-                            if (!(message.supportedBotChannelFbids && message.supportedBotChannelFbids.length))
-                                message.supportedBotChannelFbids = [];
-                            message.supportedBotChannelFbids.push(reader.string());
-                            break;
-                        }
-                    case 24: {
-                            message.supportInlineContacts = reader.bool();
-                            break;
-                        }
-                    case 25: {
-                            message.supportNewsletter = reader.bool();
-                            break;
-                        }
-                    case 26: {
-                            message.supportUniversalReachChat = reader.bool();
-                            break;
-                        }
-                    case 28: {
-                            message.supportOmittedConversationMetadata = reader.bool();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 0)
+                                break;
+                            message.fullSyncDaysLimit = reader.uint32();
+                            message._fullSyncDaysLimit = "fullSyncDaysLimit";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 0)
+                                break;
+                            message.fullSyncSizeMbLimit = reader.uint32();
+                            message._fullSyncSizeMbLimit = "fullSyncSizeMbLimit";
+                            continue;
+                        }
+                    case 3: {
+                            if (wireType !== 0)
+                                break;
+                            message.storageQuotaMb = reader.uint32();
+                            message._storageQuotaMb = "storageQuotaMb";
+                            continue;
+                        }
+                    case 4: {
+                            if (wireType !== 0)
+                                break;
+                            message.inlineInitialPayloadInE2EeMsg = reader.bool();
+                            message._inlineInitialPayloadInE2EeMsg = "inlineInitialPayloadInE2EeMsg";
+                            continue;
+                        }
+                    case 5: {
+                            if (wireType !== 0)
+                                break;
+                            message.recentSyncDaysLimit = reader.uint32();
+                            message._recentSyncDaysLimit = "recentSyncDaysLimit";
+                            continue;
+                        }
+                    case 6: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportCallLogHistory = reader.bool();
+                            message._supportCallLogHistory = "supportCallLogHistory";
+                            continue;
+                        }
+                    case 7: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportBotUserAgentChatHistory = reader.bool();
+                            message._supportBotUserAgentChatHistory = "supportBotUserAgentChatHistory";
+                            continue;
+                        }
+                    case 8: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportCagReactionsAndPolls = reader.bool();
+                            message._supportCagReactionsAndPolls = "supportCagReactionsAndPolls";
+                            continue;
+                        }
+                    case 9: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportBizHostedMsg = reader.bool();
+                            message._supportBizHostedMsg = "supportBizHostedMsg";
+                            continue;
+                        }
+                    case 10: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportRecentSyncChunkMessageCountTuning = reader.bool();
+                            message._supportRecentSyncChunkMessageCountTuning = "supportRecentSyncChunkMessageCountTuning";
+                            continue;
+                        }
+                    case 11: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportHostedGroupMsg = reader.bool();
+                            message._supportHostedGroupMsg = "supportHostedGroupMsg";
+                            continue;
+                        }
+                    case 12: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportFbidBotChatHistory = reader.bool();
+                            message._supportFbidBotChatHistory = "supportFbidBotChatHistory";
+                            continue;
+                        }
+                    case 13: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportAddOnHistorySyncMigration = reader.bool();
+                            message._supportAddOnHistorySyncMigration = "supportAddOnHistorySyncMigration";
+                            continue;
+                        }
+                    case 14: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportMessageAssociation = reader.bool();
+                            message._supportMessageAssociation = "supportMessageAssociation";
+                            continue;
+                        }
+                    case 15: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportGroupHistory = reader.bool();
+                            message._supportGroupHistory = "supportGroupHistory";
+                            continue;
+                        }
+                    case 16: {
+                            if (wireType !== 0)
+                                break;
+                            message.onDemandReady = reader.bool();
+                            message._onDemandReady = "onDemandReady";
+                            continue;
+                        }
+                    case 17: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportGuestChat = reader.bool();
+                            message._supportGuestChat = "supportGuestChat";
+                            continue;
+                        }
+                    case 18: {
+                            if (wireType !== 0)
+                                break;
+                            message.completeOnDemandReady = reader.bool();
+                            message._completeOnDemandReady = "completeOnDemandReady";
+                            continue;
+                        }
+                    case 19: {
+                            if (wireType !== 0)
+                                break;
+                            message.thumbnailSyncDaysLimit = reader.uint32();
+                            message._thumbnailSyncDaysLimit = "thumbnailSyncDaysLimit";
+                            continue;
+                        }
+                    case 20: {
+                            if (wireType !== 0)
+                                break;
+                            message.initialSyncMaxMessagesPerChat = reader.uint32();
+                            message._initialSyncMaxMessagesPerChat = "initialSyncMaxMessagesPerChat";
+                            continue;
+                        }
+                    case 21: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportManusHistory = reader.bool();
+                            message._supportManusHistory = "supportManusHistory";
+                            continue;
+                        }
+                    case 22: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportHatchHistory = reader.bool();
+                            message._supportHatchHistory = "supportHatchHistory";
+                            continue;
+                        }
+                    case 23: {
+                            if (wireType !== 2)
+                                break;
+                            if (!(message.supportedBotChannelFbids && message.supportedBotChannelFbids.length))
+                                message.supportedBotChannelFbids = [];
+                            message.supportedBotChannelFbids.push(reader.stringVerify());
+                            continue;
+                        }
+                    case 24: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportInlineContacts = reader.bool();
+                            message._supportInlineContacts = "supportInlineContacts";
+                            continue;
+                        }
+                    case 25: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportNewsletter = reader.bool();
+                            message._supportNewsletter = "supportNewsletter";
+                            continue;
+                        }
+                    case 26: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportUniversalReachChat = reader.bool();
+                            message._supportUniversalReachChat = "supportUniversalReachChat";
+                            continue;
+                        }
+                    case 28: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportOmittedConversationMetadata = reader.bool();
+                            message._supportOmittedConversationMetadata = "supportOmittedConversationMetadata";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -3717,14 +4417,14 @@ $root.CompanionReg = (function() {
              * @memberof CompanionReg.DeviceProps.HistorySyncConfig
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {CompanionReg.DeviceProps.HistorySyncConfig} HistorySyncConfig
+             * @returns {CompanionReg.DeviceProps.HistorySyncConfig & CompanionReg.DeviceProps.HistorySyncConfig.$Shape} HistorySyncConfig
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            HistorySyncConfig.decodeDelimited = function decodeDelimited(reader) {
+            HistorySyncConfig.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -3735,143 +4435,147 @@ $root.CompanionReg = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            HistorySyncConfig.verify = function verify(message) {
+            HistorySyncConfig.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message.fullSyncDaysLimit != null && message.hasOwnProperty("fullSyncDaysLimit")) {
+                if (message.fullSyncDaysLimit != null && $Object.hasOwnProperty.call(message, "fullSyncDaysLimit")) {
                     properties._fullSyncDaysLimit = 1;
                     if (!$util.isInteger(message.fullSyncDaysLimit))
                         return "fullSyncDaysLimit: integer expected";
                 }
-                if (message.fullSyncSizeMbLimit != null && message.hasOwnProperty("fullSyncSizeMbLimit")) {
+                if (message.fullSyncSizeMbLimit != null && $Object.hasOwnProperty.call(message, "fullSyncSizeMbLimit")) {
                     properties._fullSyncSizeMbLimit = 1;
                     if (!$util.isInteger(message.fullSyncSizeMbLimit))
                         return "fullSyncSizeMbLimit: integer expected";
                 }
-                if (message.storageQuotaMb != null && message.hasOwnProperty("storageQuotaMb")) {
+                if (message.storageQuotaMb != null && $Object.hasOwnProperty.call(message, "storageQuotaMb")) {
                     properties._storageQuotaMb = 1;
                     if (!$util.isInteger(message.storageQuotaMb))
                         return "storageQuotaMb: integer expected";
                 }
-                if (message.inlineInitialPayloadInE2EeMsg != null && message.hasOwnProperty("inlineInitialPayloadInE2EeMsg")) {
+                if (message.inlineInitialPayloadInE2EeMsg != null && $Object.hasOwnProperty.call(message, "inlineInitialPayloadInE2EeMsg")) {
                     properties._inlineInitialPayloadInE2EeMsg = 1;
                     if (typeof message.inlineInitialPayloadInE2EeMsg !== "boolean")
                         return "inlineInitialPayloadInE2EeMsg: boolean expected";
                 }
-                if (message.recentSyncDaysLimit != null && message.hasOwnProperty("recentSyncDaysLimit")) {
+                if (message.recentSyncDaysLimit != null && $Object.hasOwnProperty.call(message, "recentSyncDaysLimit")) {
                     properties._recentSyncDaysLimit = 1;
                     if (!$util.isInteger(message.recentSyncDaysLimit))
                         return "recentSyncDaysLimit: integer expected";
                 }
-                if (message.supportCallLogHistory != null && message.hasOwnProperty("supportCallLogHistory")) {
+                if (message.supportCallLogHistory != null && $Object.hasOwnProperty.call(message, "supportCallLogHistory")) {
                     properties._supportCallLogHistory = 1;
                     if (typeof message.supportCallLogHistory !== "boolean")
                         return "supportCallLogHistory: boolean expected";
                 }
-                if (message.supportBotUserAgentChatHistory != null && message.hasOwnProperty("supportBotUserAgentChatHistory")) {
+                if (message.supportBotUserAgentChatHistory != null && $Object.hasOwnProperty.call(message, "supportBotUserAgentChatHistory")) {
                     properties._supportBotUserAgentChatHistory = 1;
                     if (typeof message.supportBotUserAgentChatHistory !== "boolean")
                         return "supportBotUserAgentChatHistory: boolean expected";
                 }
-                if (message.supportCagReactionsAndPolls != null && message.hasOwnProperty("supportCagReactionsAndPolls")) {
+                if (message.supportCagReactionsAndPolls != null && $Object.hasOwnProperty.call(message, "supportCagReactionsAndPolls")) {
                     properties._supportCagReactionsAndPolls = 1;
                     if (typeof message.supportCagReactionsAndPolls !== "boolean")
                         return "supportCagReactionsAndPolls: boolean expected";
                 }
-                if (message.supportBizHostedMsg != null && message.hasOwnProperty("supportBizHostedMsg")) {
+                if (message.supportBizHostedMsg != null && $Object.hasOwnProperty.call(message, "supportBizHostedMsg")) {
                     properties._supportBizHostedMsg = 1;
                     if (typeof message.supportBizHostedMsg !== "boolean")
                         return "supportBizHostedMsg: boolean expected";
                 }
-                if (message.supportRecentSyncChunkMessageCountTuning != null && message.hasOwnProperty("supportRecentSyncChunkMessageCountTuning")) {
+                if (message.supportRecentSyncChunkMessageCountTuning != null && $Object.hasOwnProperty.call(message, "supportRecentSyncChunkMessageCountTuning")) {
                     properties._supportRecentSyncChunkMessageCountTuning = 1;
                     if (typeof message.supportRecentSyncChunkMessageCountTuning !== "boolean")
                         return "supportRecentSyncChunkMessageCountTuning: boolean expected";
                 }
-                if (message.supportHostedGroupMsg != null && message.hasOwnProperty("supportHostedGroupMsg")) {
+                if (message.supportHostedGroupMsg != null && $Object.hasOwnProperty.call(message, "supportHostedGroupMsg")) {
                     properties._supportHostedGroupMsg = 1;
                     if (typeof message.supportHostedGroupMsg !== "boolean")
                         return "supportHostedGroupMsg: boolean expected";
                 }
-                if (message.supportFbidBotChatHistory != null && message.hasOwnProperty("supportFbidBotChatHistory")) {
+                if (message.supportFbidBotChatHistory != null && $Object.hasOwnProperty.call(message, "supportFbidBotChatHistory")) {
                     properties._supportFbidBotChatHistory = 1;
                     if (typeof message.supportFbidBotChatHistory !== "boolean")
                         return "supportFbidBotChatHistory: boolean expected";
                 }
-                if (message.supportAddOnHistorySyncMigration != null && message.hasOwnProperty("supportAddOnHistorySyncMigration")) {
+                if (message.supportAddOnHistorySyncMigration != null && $Object.hasOwnProperty.call(message, "supportAddOnHistorySyncMigration")) {
                     properties._supportAddOnHistorySyncMigration = 1;
                     if (typeof message.supportAddOnHistorySyncMigration !== "boolean")
                         return "supportAddOnHistorySyncMigration: boolean expected";
                 }
-                if (message.supportMessageAssociation != null && message.hasOwnProperty("supportMessageAssociation")) {
+                if (message.supportMessageAssociation != null && $Object.hasOwnProperty.call(message, "supportMessageAssociation")) {
                     properties._supportMessageAssociation = 1;
                     if (typeof message.supportMessageAssociation !== "boolean")
                         return "supportMessageAssociation: boolean expected";
                 }
-                if (message.supportGroupHistory != null && message.hasOwnProperty("supportGroupHistory")) {
+                if (message.supportGroupHistory != null && $Object.hasOwnProperty.call(message, "supportGroupHistory")) {
                     properties._supportGroupHistory = 1;
                     if (typeof message.supportGroupHistory !== "boolean")
                         return "supportGroupHistory: boolean expected";
                 }
-                if (message.onDemandReady != null && message.hasOwnProperty("onDemandReady")) {
+                if (message.onDemandReady != null && $Object.hasOwnProperty.call(message, "onDemandReady")) {
                     properties._onDemandReady = 1;
                     if (typeof message.onDemandReady !== "boolean")
                         return "onDemandReady: boolean expected";
                 }
-                if (message.supportGuestChat != null && message.hasOwnProperty("supportGuestChat")) {
+                if (message.supportGuestChat != null && $Object.hasOwnProperty.call(message, "supportGuestChat")) {
                     properties._supportGuestChat = 1;
                     if (typeof message.supportGuestChat !== "boolean")
                         return "supportGuestChat: boolean expected";
                 }
-                if (message.completeOnDemandReady != null && message.hasOwnProperty("completeOnDemandReady")) {
+                if (message.completeOnDemandReady != null && $Object.hasOwnProperty.call(message, "completeOnDemandReady")) {
                     properties._completeOnDemandReady = 1;
                     if (typeof message.completeOnDemandReady !== "boolean")
                         return "completeOnDemandReady: boolean expected";
                 }
-                if (message.thumbnailSyncDaysLimit != null && message.hasOwnProperty("thumbnailSyncDaysLimit")) {
+                if (message.thumbnailSyncDaysLimit != null && $Object.hasOwnProperty.call(message, "thumbnailSyncDaysLimit")) {
                     properties._thumbnailSyncDaysLimit = 1;
                     if (!$util.isInteger(message.thumbnailSyncDaysLimit))
                         return "thumbnailSyncDaysLimit: integer expected";
                 }
-                if (message.initialSyncMaxMessagesPerChat != null && message.hasOwnProperty("initialSyncMaxMessagesPerChat")) {
+                if (message.initialSyncMaxMessagesPerChat != null && $Object.hasOwnProperty.call(message, "initialSyncMaxMessagesPerChat")) {
                     properties._initialSyncMaxMessagesPerChat = 1;
                     if (!$util.isInteger(message.initialSyncMaxMessagesPerChat))
                         return "initialSyncMaxMessagesPerChat: integer expected";
                 }
-                if (message.supportManusHistory != null && message.hasOwnProperty("supportManusHistory")) {
+                if (message.supportManusHistory != null && $Object.hasOwnProperty.call(message, "supportManusHistory")) {
                     properties._supportManusHistory = 1;
                     if (typeof message.supportManusHistory !== "boolean")
                         return "supportManusHistory: boolean expected";
                 }
-                if (message.supportHatchHistory != null && message.hasOwnProperty("supportHatchHistory")) {
+                if (message.supportHatchHistory != null && $Object.hasOwnProperty.call(message, "supportHatchHistory")) {
                     properties._supportHatchHistory = 1;
                     if (typeof message.supportHatchHistory !== "boolean")
                         return "supportHatchHistory: boolean expected";
                 }
-                if (message.supportedBotChannelFbids != null && message.hasOwnProperty("supportedBotChannelFbids")) {
-                    if (!Array.isArray(message.supportedBotChannelFbids))
+                if (message.supportedBotChannelFbids != null && $Object.hasOwnProperty.call(message, "supportedBotChannelFbids")) {
+                    if (!$Array.isArray(message.supportedBotChannelFbids))
                         return "supportedBotChannelFbids: array expected";
                     for (var i = 0; i < message.supportedBotChannelFbids.length; ++i)
                         if (!$util.isString(message.supportedBotChannelFbids[i]))
                             return "supportedBotChannelFbids: string[] expected";
                 }
-                if (message.supportInlineContacts != null && message.hasOwnProperty("supportInlineContacts")) {
+                if (message.supportInlineContacts != null && $Object.hasOwnProperty.call(message, "supportInlineContacts")) {
                     properties._supportInlineContacts = 1;
                     if (typeof message.supportInlineContacts !== "boolean")
                         return "supportInlineContacts: boolean expected";
                 }
-                if (message.supportNewsletter != null && message.hasOwnProperty("supportNewsletter")) {
+                if (message.supportNewsletter != null && $Object.hasOwnProperty.call(message, "supportNewsletter")) {
                     properties._supportNewsletter = 1;
                     if (typeof message.supportNewsletter !== "boolean")
                         return "supportNewsletter: boolean expected";
                 }
-                if (message.supportUniversalReachChat != null && message.hasOwnProperty("supportUniversalReachChat")) {
+                if (message.supportUniversalReachChat != null && $Object.hasOwnProperty.call(message, "supportUniversalReachChat")) {
                     properties._supportUniversalReachChat = 1;
                     if (typeof message.supportUniversalReachChat !== "boolean")
                         return "supportUniversalReachChat: boolean expected";
                 }
-                if (message.supportOmittedConversationMetadata != null && message.hasOwnProperty("supportOmittedConversationMetadata")) {
+                if (message.supportOmittedConversationMetadata != null && $Object.hasOwnProperty.call(message, "supportOmittedConversationMetadata")) {
                     properties._supportOmittedConversationMetadata = 1;
                     if (typeof message.supportOmittedConversationMetadata !== "boolean")
                         return "supportOmittedConversationMetadata: boolean expected";
@@ -3887,9 +4591,15 @@ $root.CompanionReg = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {CompanionReg.DeviceProps.HistorySyncConfig} HistorySyncConfig
              */
-            HistorySyncConfig.fromObject = function fromObject(object) {
+            HistorySyncConfig.fromObject = function (object, _depth) {
                 if (object instanceof $root.CompanionReg.DeviceProps.HistorySyncConfig)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".CompanionReg.DeviceProps.HistorySyncConfig: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.CompanionReg.DeviceProps.HistorySyncConfig();
                 if (object.fullSyncDaysLimit != null)
                     message.fullSyncDaysLimit = object.fullSyncDaysLimit >>> 0;
@@ -3898,58 +4608,58 @@ $root.CompanionReg = (function() {
                 if (object.storageQuotaMb != null)
                     message.storageQuotaMb = object.storageQuotaMb >>> 0;
                 if (object.inlineInitialPayloadInE2EeMsg != null)
-                    message.inlineInitialPayloadInE2EeMsg = Boolean(object.inlineInitialPayloadInE2EeMsg);
+                    message.inlineInitialPayloadInE2EeMsg = $Boolean(object.inlineInitialPayloadInE2EeMsg);
                 if (object.recentSyncDaysLimit != null)
                     message.recentSyncDaysLimit = object.recentSyncDaysLimit >>> 0;
                 if (object.supportCallLogHistory != null)
-                    message.supportCallLogHistory = Boolean(object.supportCallLogHistory);
+                    message.supportCallLogHistory = $Boolean(object.supportCallLogHistory);
                 if (object.supportBotUserAgentChatHistory != null)
-                    message.supportBotUserAgentChatHistory = Boolean(object.supportBotUserAgentChatHistory);
+                    message.supportBotUserAgentChatHistory = $Boolean(object.supportBotUserAgentChatHistory);
                 if (object.supportCagReactionsAndPolls != null)
-                    message.supportCagReactionsAndPolls = Boolean(object.supportCagReactionsAndPolls);
+                    message.supportCagReactionsAndPolls = $Boolean(object.supportCagReactionsAndPolls);
                 if (object.supportBizHostedMsg != null)
-                    message.supportBizHostedMsg = Boolean(object.supportBizHostedMsg);
+                    message.supportBizHostedMsg = $Boolean(object.supportBizHostedMsg);
                 if (object.supportRecentSyncChunkMessageCountTuning != null)
-                    message.supportRecentSyncChunkMessageCountTuning = Boolean(object.supportRecentSyncChunkMessageCountTuning);
+                    message.supportRecentSyncChunkMessageCountTuning = $Boolean(object.supportRecentSyncChunkMessageCountTuning);
                 if (object.supportHostedGroupMsg != null)
-                    message.supportHostedGroupMsg = Boolean(object.supportHostedGroupMsg);
+                    message.supportHostedGroupMsg = $Boolean(object.supportHostedGroupMsg);
                 if (object.supportFbidBotChatHistory != null)
-                    message.supportFbidBotChatHistory = Boolean(object.supportFbidBotChatHistory);
+                    message.supportFbidBotChatHistory = $Boolean(object.supportFbidBotChatHistory);
                 if (object.supportAddOnHistorySyncMigration != null)
-                    message.supportAddOnHistorySyncMigration = Boolean(object.supportAddOnHistorySyncMigration);
+                    message.supportAddOnHistorySyncMigration = $Boolean(object.supportAddOnHistorySyncMigration);
                 if (object.supportMessageAssociation != null)
-                    message.supportMessageAssociation = Boolean(object.supportMessageAssociation);
+                    message.supportMessageAssociation = $Boolean(object.supportMessageAssociation);
                 if (object.supportGroupHistory != null)
-                    message.supportGroupHistory = Boolean(object.supportGroupHistory);
+                    message.supportGroupHistory = $Boolean(object.supportGroupHistory);
                 if (object.onDemandReady != null)
-                    message.onDemandReady = Boolean(object.onDemandReady);
+                    message.onDemandReady = $Boolean(object.onDemandReady);
                 if (object.supportGuestChat != null)
-                    message.supportGuestChat = Boolean(object.supportGuestChat);
+                    message.supportGuestChat = $Boolean(object.supportGuestChat);
                 if (object.completeOnDemandReady != null)
-                    message.completeOnDemandReady = Boolean(object.completeOnDemandReady);
+                    message.completeOnDemandReady = $Boolean(object.completeOnDemandReady);
                 if (object.thumbnailSyncDaysLimit != null)
                     message.thumbnailSyncDaysLimit = object.thumbnailSyncDaysLimit >>> 0;
                 if (object.initialSyncMaxMessagesPerChat != null)
                     message.initialSyncMaxMessagesPerChat = object.initialSyncMaxMessagesPerChat >>> 0;
                 if (object.supportManusHistory != null)
-                    message.supportManusHistory = Boolean(object.supportManusHistory);
+                    message.supportManusHistory = $Boolean(object.supportManusHistory);
                 if (object.supportHatchHistory != null)
-                    message.supportHatchHistory = Boolean(object.supportHatchHistory);
+                    message.supportHatchHistory = $Boolean(object.supportHatchHistory);
                 if (object.supportedBotChannelFbids) {
-                    if (!Array.isArray(object.supportedBotChannelFbids))
-                        throw TypeError(".CompanionReg.DeviceProps.HistorySyncConfig.supportedBotChannelFbids: array expected");
-                    message.supportedBotChannelFbids = [];
+                    if (!$Array.isArray(object.supportedBotChannelFbids))
+                        throw $TypeError(".CompanionReg.DeviceProps.HistorySyncConfig.supportedBotChannelFbids: array expected");
+                    message.supportedBotChannelFbids = $Array(object.supportedBotChannelFbids.length);
                     for (var i = 0; i < object.supportedBotChannelFbids.length; ++i)
-                        message.supportedBotChannelFbids[i] = String(object.supportedBotChannelFbids[i]);
+                        message.supportedBotChannelFbids[i] = $String(object.supportedBotChannelFbids[i]);
                 }
                 if (object.supportInlineContacts != null)
-                    message.supportInlineContacts = Boolean(object.supportInlineContacts);
+                    message.supportInlineContacts = $Boolean(object.supportInlineContacts);
                 if (object.supportNewsletter != null)
-                    message.supportNewsletter = Boolean(object.supportNewsletter);
+                    message.supportNewsletter = $Boolean(object.supportNewsletter);
                 if (object.supportUniversalReachChat != null)
-                    message.supportUniversalReachChat = Boolean(object.supportUniversalReachChat);
+                    message.supportUniversalReachChat = $Boolean(object.supportUniversalReachChat);
                 if (object.supportOmittedConversationMetadata != null)
-                    message.supportOmittedConversationMetadata = Boolean(object.supportOmittedConversationMetadata);
+                    message.supportOmittedConversationMetadata = $Boolean(object.supportOmittedConversationMetadata);
                 return message;
             };
 
@@ -3962,147 +4672,73 @@ $root.CompanionReg = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            HistorySyncConfig.toObject = function toObject(message, options) {
+            HistorySyncConfig.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
                 if (options.arrays || options.defaults)
                     object.supportedBotChannelFbids = [];
-                if (message.fullSyncDaysLimit != null && message.hasOwnProperty("fullSyncDaysLimit")) {
+                if (message.fullSyncDaysLimit != null && $Object.hasOwnProperty.call(message, "fullSyncDaysLimit"))
                     object.fullSyncDaysLimit = message.fullSyncDaysLimit;
-                    if (options.oneofs)
-                        object._fullSyncDaysLimit = "fullSyncDaysLimit";
-                }
-                if (message.fullSyncSizeMbLimit != null && message.hasOwnProperty("fullSyncSizeMbLimit")) {
+                if (message.fullSyncSizeMbLimit != null && $Object.hasOwnProperty.call(message, "fullSyncSizeMbLimit"))
                     object.fullSyncSizeMbLimit = message.fullSyncSizeMbLimit;
-                    if (options.oneofs)
-                        object._fullSyncSizeMbLimit = "fullSyncSizeMbLimit";
-                }
-                if (message.storageQuotaMb != null && message.hasOwnProperty("storageQuotaMb")) {
+                if (message.storageQuotaMb != null && $Object.hasOwnProperty.call(message, "storageQuotaMb"))
                     object.storageQuotaMb = message.storageQuotaMb;
-                    if (options.oneofs)
-                        object._storageQuotaMb = "storageQuotaMb";
-                }
-                if (message.inlineInitialPayloadInE2EeMsg != null && message.hasOwnProperty("inlineInitialPayloadInE2EeMsg")) {
+                if (message.inlineInitialPayloadInE2EeMsg != null && $Object.hasOwnProperty.call(message, "inlineInitialPayloadInE2EeMsg"))
                     object.inlineInitialPayloadInE2EeMsg = message.inlineInitialPayloadInE2EeMsg;
-                    if (options.oneofs)
-                        object._inlineInitialPayloadInE2EeMsg = "inlineInitialPayloadInE2EeMsg";
-                }
-                if (message.recentSyncDaysLimit != null && message.hasOwnProperty("recentSyncDaysLimit")) {
+                if (message.recentSyncDaysLimit != null && $Object.hasOwnProperty.call(message, "recentSyncDaysLimit"))
                     object.recentSyncDaysLimit = message.recentSyncDaysLimit;
-                    if (options.oneofs)
-                        object._recentSyncDaysLimit = "recentSyncDaysLimit";
-                }
-                if (message.supportCallLogHistory != null && message.hasOwnProperty("supportCallLogHistory")) {
+                if (message.supportCallLogHistory != null && $Object.hasOwnProperty.call(message, "supportCallLogHistory"))
                     object.supportCallLogHistory = message.supportCallLogHistory;
-                    if (options.oneofs)
-                        object._supportCallLogHistory = "supportCallLogHistory";
-                }
-                if (message.supportBotUserAgentChatHistory != null && message.hasOwnProperty("supportBotUserAgentChatHistory")) {
+                if (message.supportBotUserAgentChatHistory != null && $Object.hasOwnProperty.call(message, "supportBotUserAgentChatHistory"))
                     object.supportBotUserAgentChatHistory = message.supportBotUserAgentChatHistory;
-                    if (options.oneofs)
-                        object._supportBotUserAgentChatHistory = "supportBotUserAgentChatHistory";
-                }
-                if (message.supportCagReactionsAndPolls != null && message.hasOwnProperty("supportCagReactionsAndPolls")) {
+                if (message.supportCagReactionsAndPolls != null && $Object.hasOwnProperty.call(message, "supportCagReactionsAndPolls"))
                     object.supportCagReactionsAndPolls = message.supportCagReactionsAndPolls;
-                    if (options.oneofs)
-                        object._supportCagReactionsAndPolls = "supportCagReactionsAndPolls";
-                }
-                if (message.supportBizHostedMsg != null && message.hasOwnProperty("supportBizHostedMsg")) {
+                if (message.supportBizHostedMsg != null && $Object.hasOwnProperty.call(message, "supportBizHostedMsg"))
                     object.supportBizHostedMsg = message.supportBizHostedMsg;
-                    if (options.oneofs)
-                        object._supportBizHostedMsg = "supportBizHostedMsg";
-                }
-                if (message.supportRecentSyncChunkMessageCountTuning != null && message.hasOwnProperty("supportRecentSyncChunkMessageCountTuning")) {
+                if (message.supportRecentSyncChunkMessageCountTuning != null && $Object.hasOwnProperty.call(message, "supportRecentSyncChunkMessageCountTuning"))
                     object.supportRecentSyncChunkMessageCountTuning = message.supportRecentSyncChunkMessageCountTuning;
-                    if (options.oneofs)
-                        object._supportRecentSyncChunkMessageCountTuning = "supportRecentSyncChunkMessageCountTuning";
-                }
-                if (message.supportHostedGroupMsg != null && message.hasOwnProperty("supportHostedGroupMsg")) {
+                if (message.supportHostedGroupMsg != null && $Object.hasOwnProperty.call(message, "supportHostedGroupMsg"))
                     object.supportHostedGroupMsg = message.supportHostedGroupMsg;
-                    if (options.oneofs)
-                        object._supportHostedGroupMsg = "supportHostedGroupMsg";
-                }
-                if (message.supportFbidBotChatHistory != null && message.hasOwnProperty("supportFbidBotChatHistory")) {
+                if (message.supportFbidBotChatHistory != null && $Object.hasOwnProperty.call(message, "supportFbidBotChatHistory"))
                     object.supportFbidBotChatHistory = message.supportFbidBotChatHistory;
-                    if (options.oneofs)
-                        object._supportFbidBotChatHistory = "supportFbidBotChatHistory";
-                }
-                if (message.supportAddOnHistorySyncMigration != null && message.hasOwnProperty("supportAddOnHistorySyncMigration")) {
+                if (message.supportAddOnHistorySyncMigration != null && $Object.hasOwnProperty.call(message, "supportAddOnHistorySyncMigration"))
                     object.supportAddOnHistorySyncMigration = message.supportAddOnHistorySyncMigration;
-                    if (options.oneofs)
-                        object._supportAddOnHistorySyncMigration = "supportAddOnHistorySyncMigration";
-                }
-                if (message.supportMessageAssociation != null && message.hasOwnProperty("supportMessageAssociation")) {
+                if (message.supportMessageAssociation != null && $Object.hasOwnProperty.call(message, "supportMessageAssociation"))
                     object.supportMessageAssociation = message.supportMessageAssociation;
-                    if (options.oneofs)
-                        object._supportMessageAssociation = "supportMessageAssociation";
-                }
-                if (message.supportGroupHistory != null && message.hasOwnProperty("supportGroupHistory")) {
+                if (message.supportGroupHistory != null && $Object.hasOwnProperty.call(message, "supportGroupHistory"))
                     object.supportGroupHistory = message.supportGroupHistory;
-                    if (options.oneofs)
-                        object._supportGroupHistory = "supportGroupHistory";
-                }
-                if (message.onDemandReady != null && message.hasOwnProperty("onDemandReady")) {
+                if (message.onDemandReady != null && $Object.hasOwnProperty.call(message, "onDemandReady"))
                     object.onDemandReady = message.onDemandReady;
-                    if (options.oneofs)
-                        object._onDemandReady = "onDemandReady";
-                }
-                if (message.supportGuestChat != null && message.hasOwnProperty("supportGuestChat")) {
+                if (message.supportGuestChat != null && $Object.hasOwnProperty.call(message, "supportGuestChat"))
                     object.supportGuestChat = message.supportGuestChat;
-                    if (options.oneofs)
-                        object._supportGuestChat = "supportGuestChat";
-                }
-                if (message.completeOnDemandReady != null && message.hasOwnProperty("completeOnDemandReady")) {
+                if (message.completeOnDemandReady != null && $Object.hasOwnProperty.call(message, "completeOnDemandReady"))
                     object.completeOnDemandReady = message.completeOnDemandReady;
-                    if (options.oneofs)
-                        object._completeOnDemandReady = "completeOnDemandReady";
-                }
-                if (message.thumbnailSyncDaysLimit != null && message.hasOwnProperty("thumbnailSyncDaysLimit")) {
+                if (message.thumbnailSyncDaysLimit != null && $Object.hasOwnProperty.call(message, "thumbnailSyncDaysLimit"))
                     object.thumbnailSyncDaysLimit = message.thumbnailSyncDaysLimit;
-                    if (options.oneofs)
-                        object._thumbnailSyncDaysLimit = "thumbnailSyncDaysLimit";
-                }
-                if (message.initialSyncMaxMessagesPerChat != null && message.hasOwnProperty("initialSyncMaxMessagesPerChat")) {
+                if (message.initialSyncMaxMessagesPerChat != null && $Object.hasOwnProperty.call(message, "initialSyncMaxMessagesPerChat"))
                     object.initialSyncMaxMessagesPerChat = message.initialSyncMaxMessagesPerChat;
-                    if (options.oneofs)
-                        object._initialSyncMaxMessagesPerChat = "initialSyncMaxMessagesPerChat";
-                }
-                if (message.supportManusHistory != null && message.hasOwnProperty("supportManusHistory")) {
+                if (message.supportManusHistory != null && $Object.hasOwnProperty.call(message, "supportManusHistory"))
                     object.supportManusHistory = message.supportManusHistory;
-                    if (options.oneofs)
-                        object._supportManusHistory = "supportManusHistory";
-                }
-                if (message.supportHatchHistory != null && message.hasOwnProperty("supportHatchHistory")) {
+                if (message.supportHatchHistory != null && $Object.hasOwnProperty.call(message, "supportHatchHistory"))
                     object.supportHatchHistory = message.supportHatchHistory;
-                    if (options.oneofs)
-                        object._supportHatchHistory = "supportHatchHistory";
-                }
                 if (message.supportedBotChannelFbids && message.supportedBotChannelFbids.length) {
-                    object.supportedBotChannelFbids = [];
+                    object.supportedBotChannelFbids = $Array(message.supportedBotChannelFbids.length);
                     for (var j = 0; j < message.supportedBotChannelFbids.length; ++j)
                         object.supportedBotChannelFbids[j] = message.supportedBotChannelFbids[j];
                 }
-                if (message.supportInlineContacts != null && message.hasOwnProperty("supportInlineContacts")) {
+                if (message.supportInlineContacts != null && $Object.hasOwnProperty.call(message, "supportInlineContacts"))
                     object.supportInlineContacts = message.supportInlineContacts;
-                    if (options.oneofs)
-                        object._supportInlineContacts = "supportInlineContacts";
-                }
-                if (message.supportNewsletter != null && message.hasOwnProperty("supportNewsletter")) {
+                if (message.supportNewsletter != null && $Object.hasOwnProperty.call(message, "supportNewsletter"))
                     object.supportNewsletter = message.supportNewsletter;
-                    if (options.oneofs)
-                        object._supportNewsletter = "supportNewsletter";
-                }
-                if (message.supportUniversalReachChat != null && message.hasOwnProperty("supportUniversalReachChat")) {
+                if (message.supportUniversalReachChat != null && $Object.hasOwnProperty.call(message, "supportUniversalReachChat"))
                     object.supportUniversalReachChat = message.supportUniversalReachChat;
-                    if (options.oneofs)
-                        object._supportUniversalReachChat = "supportUniversalReachChat";
-                }
-                if (message.supportOmittedConversationMetadata != null && message.hasOwnProperty("supportOmittedConversationMetadata")) {
+                if (message.supportOmittedConversationMetadata != null && $Object.hasOwnProperty.call(message, "supportOmittedConversationMetadata"))
                     object.supportOmittedConversationMetadata = message.supportOmittedConversationMetadata;
-                    if (options.oneofs)
-                        object._supportOmittedConversationMetadata = "supportOmittedConversationMetadata";
-                }
                 return object;
             };
 
@@ -4113,23 +4749,22 @@ $root.CompanionReg = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            HistorySyncConfig.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            HistorySyncConfig.prototype.toJSON = function() {
+                return HistorySyncConfig.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for HistorySyncConfig
+             * Gets the type url for HistorySyncConfig
              * @function getTypeUrl
              * @memberof CompanionReg.DeviceProps.HistorySyncConfig
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            HistorySyncConfig.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/CompanionReg.DeviceProps.HistorySyncConfig";
+            HistorySyncConfig.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/CompanionReg.DeviceProps.HistorySyncConfig";
             };
 
             return HistorySyncConfig;
@@ -4172,7 +4807,7 @@ $root.CompanionReg = (function() {
          * @property {number} AUTOMOTIVE=30 AUTOMOTIVE value
          */
         DeviceProps.PlatformType = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
+            var valuesById = $Object.create(null), values = $Object.create(valuesById);
             values[valuesById[0] = "UNKNOWN"] = 0;
             values[valuesById[1] = "CHROME"] = 1;
             values[valuesById[2] = "FIREFOX"] = 2;

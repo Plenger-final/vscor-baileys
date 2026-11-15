@@ -1,39 +1,41 @@
 import * as $protobuf from "protobufjs";
 import Long = require("long");
+
 /** Namespace Cert. */
 export namespace Cert {
 
-    /** Properties of a CertChain. */
-    interface ICertChain {
-
-        /** CertChain leaf */
-        leaf?: (Cert.CertChain.INoiseCertificate|null);
-
-        /** CertChain intermediate */
-        intermediate?: (Cert.CertChain.INoiseCertificate|null);
+    /**
+     * Properties of a CertChain.
+     * @deprecated Use Cert.CertChain.$Properties instead.
+     */
+    interface ICertChain extends Cert.CertChain.$Properties {
     }
 
     /** Represents a CertChain. */
-    class CertChain implements ICertChain {
+    class CertChain {
 
         /**
          * Constructs a new CertChain.
          * @param [properties] Properties to set
          */
-        constructor(properties?: Cert.ICertChain);
+        constructor(properties?: Cert.CertChain.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** CertChain leaf. */
-        public leaf?: (Cert.CertChain.INoiseCertificate|null);
+        leaf?: (Cert.CertChain.NoiseCertificate.$Properties|null);
 
         /** CertChain intermediate. */
-        public intermediate?: (Cert.CertChain.INoiseCertificate|null);
+        intermediate?: (Cert.CertChain.NoiseCertificate.$Properties|null);
 
         /**
          * Creates a new CertChain instance using the specified properties.
          * @param [properties] Properties to set
          * @returns CertChain instance
          */
-        public static create(properties?: Cert.ICertChain): Cert.CertChain;
+        static create(properties: Cert.CertChain.$Shape): Cert.CertChain & Cert.CertChain.$Shape;
+        static create(properties?: Cert.CertChain.$Properties): Cert.CertChain;
 
         /**
          * Encodes the specified CertChain message. Does not implicitly {@link Cert.CertChain.verify|verify} messages.
@@ -41,7 +43,7 @@ export namespace Cert {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: Cert.ICertChain, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: Cert.CertChain.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified CertChain message, length delimited. Does not implicitly {@link Cert.CertChain.verify|verify} messages.
@@ -49,40 +51,40 @@ export namespace Cert {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: Cert.ICertChain, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: Cert.CertChain.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a CertChain message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CertChain
+         * @returns {Cert.CertChain & Cert.CertChain.$Shape} CertChain
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Cert.CertChain;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Cert.CertChain & Cert.CertChain.$Shape;
 
         /**
          * Decodes a CertChain message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CertChain
+         * @returns {Cert.CertChain & Cert.CertChain.$Shape} CertChain
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Cert.CertChain;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Cert.CertChain & Cert.CertChain.$Shape;
 
         /**
          * Verifies a CertChain message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a CertChain message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns CertChain
          */
-        public static fromObject(object: { [k: string]: any }): Cert.CertChain;
+        static fromObject(object: { [k: string]: any }): Cert.CertChain;
 
         /**
          * Creates a plain object from a CertChain message. Also converts values to other types if specified.
@@ -90,55 +92,72 @@ export namespace Cert {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: Cert.CertChain, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: Cert.CertChain, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this CertChain to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for CertChain
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for CertChain
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace CertChain {
 
-        /** Properties of a NoiseCertificate. */
-        interface INoiseCertificate {
+        /** Properties of a CertChain. */
+        interface $Properties {
 
-            /** NoiseCertificate details */
-            details?: (Uint8Array|null);
+            /** CertChain leaf */
+            leaf?: (Cert.CertChain.NoiseCertificate.$Properties|null);
 
-            /** NoiseCertificate signature */
-            signature?: (Uint8Array|null);
+            /** CertChain intermediate */
+            intermediate?: (Cert.CertChain.NoiseCertificate.$Properties|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a CertChain. */
+        type $Shape = Cert.CertChain.$Properties;
+
+        /**
+         * Properties of a NoiseCertificate.
+         * @deprecated Use Cert.CertChain.NoiseCertificate.$Properties instead.
+         */
+        interface INoiseCertificate extends Cert.CertChain.NoiseCertificate.$Properties {
         }
 
         /** Represents a NoiseCertificate. */
-        class NoiseCertificate implements INoiseCertificate {
+        class NoiseCertificate {
 
             /**
              * Constructs a new NoiseCertificate.
              * @param [properties] Properties to set
              */
-            constructor(properties?: Cert.CertChain.INoiseCertificate);
+            constructor(properties?: Cert.CertChain.NoiseCertificate.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** NoiseCertificate details. */
-            public details?: (Uint8Array|null);
+            details?: (Uint8Array|null);
 
             /** NoiseCertificate signature. */
-            public signature?: (Uint8Array|null);
+            signature?: (Uint8Array|null);
 
             /**
              * Creates a new NoiseCertificate instance using the specified properties.
              * @param [properties] Properties to set
              * @returns NoiseCertificate instance
              */
-            public static create(properties?: Cert.CertChain.INoiseCertificate): Cert.CertChain.NoiseCertificate;
+            static create(properties: Cert.CertChain.NoiseCertificate.$Shape): Cert.CertChain.NoiseCertificate & Cert.CertChain.NoiseCertificate.$Shape;
+            static create(properties?: Cert.CertChain.NoiseCertificate.$Properties): Cert.CertChain.NoiseCertificate;
 
             /**
              * Encodes the specified NoiseCertificate message. Does not implicitly {@link Cert.CertChain.NoiseCertificate.verify|verify} messages.
@@ -146,7 +165,7 @@ export namespace Cert {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: Cert.CertChain.INoiseCertificate, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: Cert.CertChain.NoiseCertificate.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified NoiseCertificate message, length delimited. Does not implicitly {@link Cert.CertChain.NoiseCertificate.verify|verify} messages.
@@ -154,40 +173,40 @@ export namespace Cert {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: Cert.CertChain.INoiseCertificate, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: Cert.CertChain.NoiseCertificate.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a NoiseCertificate message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns NoiseCertificate
+             * @returns {Cert.CertChain.NoiseCertificate & Cert.CertChain.NoiseCertificate.$Shape} NoiseCertificate
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Cert.CertChain.NoiseCertificate;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Cert.CertChain.NoiseCertificate & Cert.CertChain.NoiseCertificate.$Shape;
 
             /**
              * Decodes a NoiseCertificate message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns NoiseCertificate
+             * @returns {Cert.CertChain.NoiseCertificate & Cert.CertChain.NoiseCertificate.$Shape} NoiseCertificate
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Cert.CertChain.NoiseCertificate;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Cert.CertChain.NoiseCertificate & Cert.CertChain.NoiseCertificate.$Shape;
 
             /**
              * Verifies a NoiseCertificate message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a NoiseCertificate message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns NoiseCertificate
              */
-            public static fromObject(object: { [k: string]: any }): Cert.CertChain.NoiseCertificate;
+            static fromObject(object: { [k: string]: any }): Cert.CertChain.NoiseCertificate;
 
             /**
              * Creates a plain object from a NoiseCertificate message. Also converts values to other types if specified.
@@ -195,73 +214,81 @@ export namespace Cert {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: Cert.CertChain.NoiseCertificate, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: Cert.CertChain.NoiseCertificate, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this NoiseCertificate to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for NoiseCertificate
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for NoiseCertificate
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
         }
 
         namespace NoiseCertificate {
 
-            /** Properties of a Details. */
-            interface IDetails {
+            /** Properties of a NoiseCertificate. */
+            interface $Properties {
 
-                /** Details serial */
-                serial?: (number|null);
+                /** NoiseCertificate details */
+                details?: (Uint8Array|null);
 
-                /** Details issuerSerial */
-                issuerSerial?: (number|null);
+                /** NoiseCertificate signature */
+                signature?: (Uint8Array|null);
 
-                /** Details key */
-                key?: (Uint8Array|null);
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
 
-                /** Details notBefore */
-                notBefore?: (number|Long|null);
+            /** Shape of a NoiseCertificate. */
+            type $Shape = Cert.CertChain.NoiseCertificate.$Properties;
 
-                /** Details notAfter */
-                notAfter?: (number|Long|null);
+            /**
+             * Properties of a Details.
+             * @deprecated Use Cert.CertChain.NoiseCertificate.Details.$Properties instead.
+             */
+            interface IDetails extends Cert.CertChain.NoiseCertificate.Details.$Properties {
             }
 
             /** Represents a Details. */
-            class Details implements IDetails {
+            class Details {
 
                 /**
                  * Constructs a new Details.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: Cert.CertChain.NoiseCertificate.IDetails);
+                constructor(properties?: Cert.CertChain.NoiseCertificate.Details.$Properties);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
 
                 /** Details serial. */
-                public serial?: (number|null);
+                serial?: (number|null);
 
                 /** Details issuerSerial. */
-                public issuerSerial?: (number|null);
+                issuerSerial?: (number|null);
 
                 /** Details key. */
-                public key?: (Uint8Array|null);
+                key?: (Uint8Array|null);
 
                 /** Details notBefore. */
-                public notBefore?: (number|Long|null);
+                notBefore?: (number|Long|null);
 
                 /** Details notAfter. */
-                public notAfter?: (number|Long|null);
+                notAfter?: (number|Long|null);
 
                 /**
                  * Creates a new Details instance using the specified properties.
                  * @param [properties] Properties to set
                  * @returns Details instance
                  */
-                public static create(properties?: Cert.CertChain.NoiseCertificate.IDetails): Cert.CertChain.NoiseCertificate.Details;
+                static create(properties: Cert.CertChain.NoiseCertificate.Details.$Shape): Cert.CertChain.NoiseCertificate.Details & Cert.CertChain.NoiseCertificate.Details.$Shape;
+                static create(properties?: Cert.CertChain.NoiseCertificate.Details.$Properties): Cert.CertChain.NoiseCertificate.Details;
 
                 /**
                  * Encodes the specified Details message. Does not implicitly {@link Cert.CertChain.NoiseCertificate.Details.verify|verify} messages.
@@ -269,7 +296,7 @@ export namespace Cert {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: Cert.CertChain.NoiseCertificate.IDetails, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encode(message: Cert.CertChain.NoiseCertificate.Details.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Encodes the specified Details message, length delimited. Does not implicitly {@link Cert.CertChain.NoiseCertificate.Details.verify|verify} messages.
@@ -277,40 +304,40 @@ export namespace Cert {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: Cert.CertChain.NoiseCertificate.IDetails, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encodeDelimited(message: Cert.CertChain.NoiseCertificate.Details.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Decodes a Details message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns Details
+                 * @returns {Cert.CertChain.NoiseCertificate.Details & Cert.CertChain.NoiseCertificate.Details.$Shape} Details
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Cert.CertChain.NoiseCertificate.Details;
+                static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Cert.CertChain.NoiseCertificate.Details & Cert.CertChain.NoiseCertificate.Details.$Shape;
 
                 /**
                  * Decodes a Details message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns Details
+                 * @returns {Cert.CertChain.NoiseCertificate.Details & Cert.CertChain.NoiseCertificate.Details.$Shape} Details
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Cert.CertChain.NoiseCertificate.Details;
+                static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Cert.CertChain.NoiseCertificate.Details & Cert.CertChain.NoiseCertificate.Details.$Shape;
 
                 /**
                  * Verifies a Details message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
-                public static verify(message: { [k: string]: any }): (string|null);
+                static verify(message: { [k: string]: any }): (string|null);
 
                 /**
                  * Creates a Details message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
                  * @returns Details
                  */
-                public static fromObject(object: { [k: string]: any }): Cert.CertChain.NoiseCertificate.Details;
+                static fromObject(object: { [k: string]: any }): Cert.CertChain.NoiseCertificate.Details;
 
                 /**
                  * Creates a plain object from a Details message. Also converts values to other types if specified.
@@ -318,55 +345,84 @@ export namespace Cert {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: Cert.CertChain.NoiseCertificate.Details, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                static toObject(message: Cert.CertChain.NoiseCertificate.Details, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this Details to JSON.
                  * @returns JSON object
                  */
-                public toJSON(): { [k: string]: any };
+                toJSON(): { [k: string]: any };
 
                 /**
-                 * Gets the default type url for Details
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
+                 * Gets the type url for Details
+                 * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+                 * @returns The type url
                  */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
+                static getTypeUrl(prefix?: string): string;
+            }
+
+            namespace Details {
+
+                /** Properties of a Details. */
+                interface $Properties {
+
+                    /** Details serial */
+                    serial?: (number|null);
+
+                    /** Details issuerSerial */
+                    issuerSerial?: (number|null);
+
+                    /** Details key */
+                    key?: (Uint8Array|null);
+
+                    /** Details notBefore */
+                    notBefore?: (number|Long|null);
+
+                    /** Details notAfter */
+                    notAfter?: (number|Long|null);
+
+                    /** Unknown fields preserved while decoding when enabled */
+                    $unknowns?: Uint8Array[];
+                }
+
+                /** Shape of a Details. */
+                type $Shape = Cert.CertChain.NoiseCertificate.Details.$Properties;
             }
         }
     }
 
-    /** Properties of a NoiseCertificate. */
-    interface INoiseCertificate {
-
-        /** NoiseCertificate details */
-        details?: (Uint8Array|null);
-
-        /** NoiseCertificate signature */
-        signature?: (Uint8Array|null);
+    /**
+     * Properties of a NoiseCertificate.
+     * @deprecated Use Cert.NoiseCertificate.$Properties instead.
+     */
+    interface INoiseCertificate extends Cert.NoiseCertificate.$Properties {
     }
 
     /** Represents a NoiseCertificate. */
-    class NoiseCertificate implements INoiseCertificate {
+    class NoiseCertificate {
 
         /**
          * Constructs a new NoiseCertificate.
          * @param [properties] Properties to set
          */
-        constructor(properties?: Cert.INoiseCertificate);
+        constructor(properties?: Cert.NoiseCertificate.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** NoiseCertificate details. */
-        public details?: (Uint8Array|null);
+        details?: (Uint8Array|null);
 
         /** NoiseCertificate signature. */
-        public signature?: (Uint8Array|null);
+        signature?: (Uint8Array|null);
 
         /**
          * Creates a new NoiseCertificate instance using the specified properties.
          * @param [properties] Properties to set
          * @returns NoiseCertificate instance
          */
-        public static create(properties?: Cert.INoiseCertificate): Cert.NoiseCertificate;
+        static create(properties: Cert.NoiseCertificate.$Shape): Cert.NoiseCertificate & Cert.NoiseCertificate.$Shape;
+        static create(properties?: Cert.NoiseCertificate.$Properties): Cert.NoiseCertificate;
 
         /**
          * Encodes the specified NoiseCertificate message. Does not implicitly {@link Cert.NoiseCertificate.verify|verify} messages.
@@ -374,7 +430,7 @@ export namespace Cert {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: Cert.INoiseCertificate, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: Cert.NoiseCertificate.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified NoiseCertificate message, length delimited. Does not implicitly {@link Cert.NoiseCertificate.verify|verify} messages.
@@ -382,40 +438,40 @@ export namespace Cert {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: Cert.INoiseCertificate, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: Cert.NoiseCertificate.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a NoiseCertificate message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns NoiseCertificate
+         * @returns {Cert.NoiseCertificate & Cert.NoiseCertificate.$Shape} NoiseCertificate
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Cert.NoiseCertificate;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Cert.NoiseCertificate & Cert.NoiseCertificate.$Shape;
 
         /**
          * Decodes a NoiseCertificate message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns NoiseCertificate
+         * @returns {Cert.NoiseCertificate & Cert.NoiseCertificate.$Shape} NoiseCertificate
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Cert.NoiseCertificate;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Cert.NoiseCertificate & Cert.NoiseCertificate.$Shape;
 
         /**
          * Verifies a NoiseCertificate message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a NoiseCertificate message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns NoiseCertificate
          */
-        public static fromObject(object: { [k: string]: any }): Cert.NoiseCertificate;
+        static fromObject(object: { [k: string]: any }): Cert.NoiseCertificate;
 
         /**
          * Creates a plain object from a NoiseCertificate message. Also converts values to other types if specified.
@@ -423,73 +479,81 @@ export namespace Cert {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: Cert.NoiseCertificate, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: Cert.NoiseCertificate, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this NoiseCertificate to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for NoiseCertificate
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for NoiseCertificate
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace NoiseCertificate {
 
-        /** Properties of a Details. */
-        interface IDetails {
+        /** Properties of a NoiseCertificate. */
+        interface $Properties {
 
-            /** Details serial */
-            serial?: (number|null);
+            /** NoiseCertificate details */
+            details?: (Uint8Array|null);
 
-            /** Details issuer */
-            issuer?: (string|null);
+            /** NoiseCertificate signature */
+            signature?: (Uint8Array|null);
 
-            /** Details expires */
-            expires?: (number|Long|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
 
-            /** Details subject */
-            subject?: (string|null);
+        /** Shape of a NoiseCertificate. */
+        type $Shape = Cert.NoiseCertificate.$Properties;
 
-            /** Details key */
-            key?: (Uint8Array|null);
+        /**
+         * Properties of a Details.
+         * @deprecated Use Cert.NoiseCertificate.Details.$Properties instead.
+         */
+        interface IDetails extends Cert.NoiseCertificate.Details.$Properties {
         }
 
         /** Represents a Details. */
-        class Details implements IDetails {
+        class Details {
 
             /**
              * Constructs a new Details.
              * @param [properties] Properties to set
              */
-            constructor(properties?: Cert.NoiseCertificate.IDetails);
+            constructor(properties?: Cert.NoiseCertificate.Details.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** Details serial. */
-            public serial?: (number|null);
+            serial?: (number|null);
 
             /** Details issuer. */
-            public issuer?: (string|null);
+            issuer?: (string|null);
 
             /** Details expires. */
-            public expires?: (number|Long|null);
+            expires?: (number|Long|null);
 
             /** Details subject. */
-            public subject?: (string|null);
+            subject?: (string|null);
 
             /** Details key. */
-            public key?: (Uint8Array|null);
+            key?: (Uint8Array|null);
 
             /**
              * Creates a new Details instance using the specified properties.
              * @param [properties] Properties to set
              * @returns Details instance
              */
-            public static create(properties?: Cert.NoiseCertificate.IDetails): Cert.NoiseCertificate.Details;
+            static create(properties: Cert.NoiseCertificate.Details.$Shape): Cert.NoiseCertificate.Details & Cert.NoiseCertificate.Details.$Shape;
+            static create(properties?: Cert.NoiseCertificate.Details.$Properties): Cert.NoiseCertificate.Details;
 
             /**
              * Encodes the specified Details message. Does not implicitly {@link Cert.NoiseCertificate.Details.verify|verify} messages.
@@ -497,7 +561,7 @@ export namespace Cert {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: Cert.NoiseCertificate.IDetails, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: Cert.NoiseCertificate.Details.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified Details message, length delimited. Does not implicitly {@link Cert.NoiseCertificate.Details.verify|verify} messages.
@@ -505,40 +569,40 @@ export namespace Cert {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: Cert.NoiseCertificate.IDetails, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: Cert.NoiseCertificate.Details.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Details message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns Details
+             * @returns {Cert.NoiseCertificate.Details & Cert.NoiseCertificate.Details.$Shape} Details
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Cert.NoiseCertificate.Details;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Cert.NoiseCertificate.Details & Cert.NoiseCertificate.Details.$Shape;
 
             /**
              * Decodes a Details message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns Details
+             * @returns {Cert.NoiseCertificate.Details & Cert.NoiseCertificate.Details.$Shape} Details
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Cert.NoiseCertificate.Details;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Cert.NoiseCertificate.Details & Cert.NoiseCertificate.Details.$Shape;
 
             /**
              * Verifies a Details message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a Details message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns Details
              */
-            public static fromObject(object: { [k: string]: any }): Cert.NoiseCertificate.Details;
+            static fromObject(object: { [k: string]: any }): Cert.NoiseCertificate.Details;
 
             /**
              * Creates a plain object from a Details message. Also converts values to other types if specified.
@@ -546,20 +610,48 @@ export namespace Cert {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: Cert.NoiseCertificate.Details, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: Cert.NoiseCertificate.Details, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Details to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for Details
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for Details
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
+        }
+
+        namespace Details {
+
+            /** Properties of a Details. */
+            interface $Properties {
+
+                /** Details serial */
+                serial?: (number|null);
+
+                /** Details issuer */
+                issuer?: (string|null);
+
+                /** Details expires */
+                expires?: (number|Long|null);
+
+                /** Details subject */
+                subject?: (string|null);
+
+                /** Details key */
+                key?: (Uint8Array|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of a Details. */
+            type $Shape = Cert.NoiseCertificate.Details.$Properties;
         }
     }
 }

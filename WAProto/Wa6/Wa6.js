@@ -1,10 +1,11 @@
-/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
+/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-mixed-operators, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars, default-case, jsdoc/require-param*/
 "use strict";
 
 var $protobuf = require("protobufjs/minimal");
 
 // Common aliases
 var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
+var $Object = $util.global.Object, $undefined = $util.global.undefined, $Error = $util.global.Error, $RangeError = $util.global.RangeError, $Array = $util.global.Array, $TypeError = $util.global.TypeError, $parseInt = $util.global.parseInt, $Boolean = $util.global.Boolean, $String = $util.global.String, $BigInt = $util.global.BigInt, $Number = $util.global.Number;
 
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
@@ -22,22 +23,21 @@ $root.Wa6 = (function() {
 
         /**
          * Properties of a ClientPayload.
-         * @memberof Wa6
-         * @interface IClientPayload
+         * @typedef {Object} Wa6.ClientPayload.$Properties
          * @property {number|Long|null} [username] ClientPayload username
          * @property {boolean|null} [passive] ClientPayload passive
-         * @property {Wa6.ClientPayload.IUserAgent|null} [userAgent] ClientPayload userAgent
-         * @property {Wa6.ClientPayload.IWebInfo|null} [webInfo] ClientPayload webInfo
+         * @property {Wa6.ClientPayload.UserAgent.$Properties|null} [userAgent] ClientPayload userAgent
+         * @property {Wa6.ClientPayload.WebInfo.$Properties|null} [webInfo] ClientPayload webInfo
          * @property {string|null} [pushName] ClientPayload pushName
          * @property {number|null} [sessionId] ClientPayload sessionId
          * @property {boolean|null} [shortConnect] ClientPayload shortConnect
          * @property {Wa6.ClientPayload.ConnectType|null} [connectType] ClientPayload connectType
          * @property {Wa6.ClientPayload.ConnectReason|null} [connectReason] ClientPayload connectReason
          * @property {Array.<number>|null} [shards] ClientPayload shards
-         * @property {Wa6.ClientPayload.IDNSSource|null} [dnsSource] ClientPayload dnsSource
+         * @property {Wa6.ClientPayload.DNSSource.$Properties|null} [dnsSource] ClientPayload dnsSource
          * @property {number|null} [connectAttemptCount] ClientPayload connectAttemptCount
          * @property {number|null} [device] ClientPayload device
-         * @property {Wa6.ClientPayload.IDevicePairingRegistrationData|null} [devicePairingData] ClientPayload devicePairingData
+         * @property {Wa6.ClientPayload.DevicePairingRegistrationData.$Properties|null} [devicePairingData] ClientPayload devicePairingData
          * @property {Wa6.ClientPayload.Product|null} [product] ClientPayload product
          * @property {Uint8Array|null} [fbCat] ClientPayload fbCat
          * @property {Uint8Array|null} [fbUserAgent] ClientPayload fbUserAgent
@@ -50,7 +50,7 @@ $root.Wa6 = (function() {
          * @property {Uint8Array|null} [paddingBytes] ClientPayload paddingBytes
          * @property {number|null} [yearClass] ClientPayload yearClass
          * @property {number|null} [memClass] ClientPayload memClass
-         * @property {Wa6.ClientPayload.IInteropData|null} [interopData] ClientPayload interopData
+         * @property {Wa6.ClientPayload.InteropData.$Properties|null} [interopData] ClientPayload interopData
          * @property {Wa6.ClientPayload.TrafficAnonymization|null} [trafficAnonymization] ClientPayload trafficAnonymization
          * @property {boolean|null} [lidDbMigrated] ClientPayload lidDbMigrated
          * @property {Wa6.ClientPayload.AccountType|null} [accountType] ClientPayload accountType
@@ -61,24 +61,39 @@ $root.Wa6 = (function() {
          * @property {Array.<string>|null} [pairedPeripherals] ClientPayload pairedPeripherals
          * @property {Uint8Array|null} [testIsolationId] ClientPayload testIsolationId
          * @property {number|Long|null} [messageSts] ClientPayload messageSts
+         * @property {Wa6.ClientPayload.IntegrationAttestation.$Properties|null} [integrationAttestation] ClientPayload integrationAttestation
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a ClientPayload.
+         * @memberof Wa6
+         * @interface IClientPayload
+         * @augments Wa6.ClientPayload.$Properties
+         * @deprecated Use Wa6.ClientPayload.$Properties instead.
+         */
+
+        /**
+         * Shape of a ClientPayload.
+         * @typedef {Wa6.ClientPayload.$Properties} Wa6.ClientPayload.$Shape
          */
 
         /**
          * Constructs a new ClientPayload.
          * @memberof Wa6
          * @classdesc Represents a ClientPayload.
-         * @implements IClientPayload
          * @constructor
-         * @param {Wa6.IClientPayload=} [properties] Properties to set
+         * @param {Wa6.ClientPayload.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function ClientPayload(properties) {
+        var ClientPayload = function (properties) {
             this.shards = [];
             this.pairedPeripherals = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * ClientPayload username.
@@ -98,7 +113,7 @@ $root.Wa6 = (function() {
 
         /**
          * ClientPayload userAgent.
-         * @member {Wa6.ClientPayload.IUserAgent|null|undefined} userAgent
+         * @member {Wa6.ClientPayload.UserAgent.$Properties|null|undefined} userAgent
          * @memberof Wa6.ClientPayload
          * @instance
          */
@@ -106,7 +121,7 @@ $root.Wa6 = (function() {
 
         /**
          * ClientPayload webInfo.
-         * @member {Wa6.ClientPayload.IWebInfo|null|undefined} webInfo
+         * @member {Wa6.ClientPayload.WebInfo.$Properties|null|undefined} webInfo
          * @memberof Wa6.ClientPayload
          * @instance
          */
@@ -162,7 +177,7 @@ $root.Wa6 = (function() {
 
         /**
          * ClientPayload dnsSource.
-         * @member {Wa6.ClientPayload.IDNSSource|null|undefined} dnsSource
+         * @member {Wa6.ClientPayload.DNSSource.$Properties|null|undefined} dnsSource
          * @memberof Wa6.ClientPayload
          * @instance
          */
@@ -186,7 +201,7 @@ $root.Wa6 = (function() {
 
         /**
          * ClientPayload devicePairingData.
-         * @member {Wa6.ClientPayload.IDevicePairingRegistrationData|null|undefined} devicePairingData
+         * @member {Wa6.ClientPayload.DevicePairingRegistrationData.$Properties|null|undefined} devicePairingData
          * @memberof Wa6.ClientPayload
          * @instance
          */
@@ -290,7 +305,7 @@ $root.Wa6 = (function() {
 
         /**
          * ClientPayload interopData.
-         * @member {Wa6.ClientPayload.IInteropData|null|undefined} interopData
+         * @member {Wa6.ClientPayload.InteropData.$Properties|null|undefined} interopData
          * @memberof Wa6.ClientPayload
          * @instance
          */
@@ -376,216 +391,230 @@ $root.Wa6 = (function() {
          */
         ClientPayload.prototype.messageSts = null;
 
+        /**
+         * ClientPayload integrationAttestation.
+         * @member {Wa6.ClientPayload.IntegrationAttestation.$Properties|null|undefined} integrationAttestation
+         * @memberof Wa6.ClientPayload
+         * @instance
+         */
+        ClientPayload.prototype.integrationAttestation = null;
+
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_username", {
+        $Object.defineProperty(ClientPayload.prototype, "_username", {
             get: $util.oneOfGetter($oneOfFields = ["username"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_passive", {
+        $Object.defineProperty(ClientPayload.prototype, "_passive", {
             get: $util.oneOfGetter($oneOfFields = ["passive"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_userAgent", {
+        $Object.defineProperty(ClientPayload.prototype, "_userAgent", {
             get: $util.oneOfGetter($oneOfFields = ["userAgent"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_webInfo", {
+        $Object.defineProperty(ClientPayload.prototype, "_webInfo", {
             get: $util.oneOfGetter($oneOfFields = ["webInfo"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_pushName", {
+        $Object.defineProperty(ClientPayload.prototype, "_pushName", {
             get: $util.oneOfGetter($oneOfFields = ["pushName"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_sessionId", {
+        $Object.defineProperty(ClientPayload.prototype, "_sessionId", {
             get: $util.oneOfGetter($oneOfFields = ["sessionId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_shortConnect", {
+        $Object.defineProperty(ClientPayload.prototype, "_shortConnect", {
             get: $util.oneOfGetter($oneOfFields = ["shortConnect"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_connectType", {
+        $Object.defineProperty(ClientPayload.prototype, "_connectType", {
             get: $util.oneOfGetter($oneOfFields = ["connectType"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_connectReason", {
+        $Object.defineProperty(ClientPayload.prototype, "_connectReason", {
             get: $util.oneOfGetter($oneOfFields = ["connectReason"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_dnsSource", {
+        $Object.defineProperty(ClientPayload.prototype, "_dnsSource", {
             get: $util.oneOfGetter($oneOfFields = ["dnsSource"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_connectAttemptCount", {
+        $Object.defineProperty(ClientPayload.prototype, "_connectAttemptCount", {
             get: $util.oneOfGetter($oneOfFields = ["connectAttemptCount"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_device", {
+        $Object.defineProperty(ClientPayload.prototype, "_device", {
             get: $util.oneOfGetter($oneOfFields = ["device"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_devicePairingData", {
+        $Object.defineProperty(ClientPayload.prototype, "_devicePairingData", {
             get: $util.oneOfGetter($oneOfFields = ["devicePairingData"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_product", {
+        $Object.defineProperty(ClientPayload.prototype, "_product", {
             get: $util.oneOfGetter($oneOfFields = ["product"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_fbCat", {
+        $Object.defineProperty(ClientPayload.prototype, "_fbCat", {
             get: $util.oneOfGetter($oneOfFields = ["fbCat"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_fbUserAgent", {
+        $Object.defineProperty(ClientPayload.prototype, "_fbUserAgent", {
             get: $util.oneOfGetter($oneOfFields = ["fbUserAgent"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_oc", {
+        $Object.defineProperty(ClientPayload.prototype, "_oc", {
             get: $util.oneOfGetter($oneOfFields = ["oc"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_lc", {
+        $Object.defineProperty(ClientPayload.prototype, "_lc", {
             get: $util.oneOfGetter($oneOfFields = ["lc"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_iosAppExtension", {
+        $Object.defineProperty(ClientPayload.prototype, "_iosAppExtension", {
             get: $util.oneOfGetter($oneOfFields = ["iosAppExtension"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_fbAppId", {
+        $Object.defineProperty(ClientPayload.prototype, "_fbAppId", {
             get: $util.oneOfGetter($oneOfFields = ["fbAppId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_fbDeviceId", {
+        $Object.defineProperty(ClientPayload.prototype, "_fbDeviceId", {
             get: $util.oneOfGetter($oneOfFields = ["fbDeviceId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_pull", {
+        $Object.defineProperty(ClientPayload.prototype, "_pull", {
             get: $util.oneOfGetter($oneOfFields = ["pull"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_paddingBytes", {
+        $Object.defineProperty(ClientPayload.prototype, "_paddingBytes", {
             get: $util.oneOfGetter($oneOfFields = ["paddingBytes"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_yearClass", {
+        $Object.defineProperty(ClientPayload.prototype, "_yearClass", {
             get: $util.oneOfGetter($oneOfFields = ["yearClass"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_memClass", {
+        $Object.defineProperty(ClientPayload.prototype, "_memClass", {
             get: $util.oneOfGetter($oneOfFields = ["memClass"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_interopData", {
+        $Object.defineProperty(ClientPayload.prototype, "_interopData", {
             get: $util.oneOfGetter($oneOfFields = ["interopData"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_trafficAnonymization", {
+        $Object.defineProperty(ClientPayload.prototype, "_trafficAnonymization", {
             get: $util.oneOfGetter($oneOfFields = ["trafficAnonymization"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_lidDbMigrated", {
+        $Object.defineProperty(ClientPayload.prototype, "_lidDbMigrated", {
             get: $util.oneOfGetter($oneOfFields = ["lidDbMigrated"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_accountType", {
+        $Object.defineProperty(ClientPayload.prototype, "_accountType", {
             get: $util.oneOfGetter($oneOfFields = ["accountType"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_connectionSequenceInfo", {
+        $Object.defineProperty(ClientPayload.prototype, "_connectionSequenceInfo", {
             get: $util.oneOfGetter($oneOfFields = ["connectionSequenceInfo"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_paaLink", {
+        $Object.defineProperty(ClientPayload.prototype, "_paaLink", {
             get: $util.oneOfGetter($oneOfFields = ["paaLink"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_preacksCount", {
+        $Object.defineProperty(ClientPayload.prototype, "_preacksCount", {
             get: $util.oneOfGetter($oneOfFields = ["preacksCount"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_processingQueueSize", {
+        $Object.defineProperty(ClientPayload.prototype, "_processingQueueSize", {
             get: $util.oneOfGetter($oneOfFields = ["processingQueueSize"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_testIsolationId", {
+        $Object.defineProperty(ClientPayload.prototype, "_testIsolationId", {
             get: $util.oneOfGetter($oneOfFields = ["testIsolationId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ClientPayload.prototype, "_messageSts", {
+        $Object.defineProperty(ClientPayload.prototype, "_messageSts", {
             get: $util.oneOfGetter($oneOfFields = ["messageSts"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(ClientPayload.prototype, "_integrationAttestation", {
+            get: $util.oneOfGetter($oneOfFields = ["integrationAttestation"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
@@ -594,10 +623,14 @@ $root.Wa6 = (function() {
          * @function create
          * @memberof Wa6.ClientPayload
          * @static
-         * @param {Wa6.IClientPayload=} [properties] Properties to set
+         * @param {Wa6.ClientPayload.$Properties=} [properties] Properties to set
          * @returns {Wa6.ClientPayload} ClientPayload instance
+         * @type {{
+         *   (properties: Wa6.ClientPayload.$Shape): Wa6.ClientPayload & Wa6.ClientPayload.$Shape;
+         *   (properties?: Wa6.ClientPayload.$Properties): Wa6.ClientPayload;
+         * }}
          */
-        ClientPayload.create = function create(properties) {
+        ClientPayload.create = function(properties) {
             return new ClientPayload(properties);
         };
 
@@ -606,92 +639,97 @@ $root.Wa6 = (function() {
          * @function encode
          * @memberof Wa6.ClientPayload
          * @static
-         * @param {Wa6.IClientPayload} message ClientPayload message or plain object to encode
+         * @param {Wa6.ClientPayload.$Properties} message ClientPayload message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ClientPayload.encode = function encode(message, writer) {
+        ClientPayload.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.username != null && Object.hasOwnProperty.call(message, "username"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.username != null && $Object.hasOwnProperty.call(message, "username"))
                 writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.username);
-            if (message.passive != null && Object.hasOwnProperty.call(message, "passive"))
+            if (message.passive != null && $Object.hasOwnProperty.call(message, "passive"))
                 writer.uint32(/* id 3, wireType 0 =*/24).bool(message.passive);
-            if (message.userAgent != null && Object.hasOwnProperty.call(message, "userAgent"))
-                $root.Wa6.ClientPayload.UserAgent.encode(message.userAgent, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-            if (message.webInfo != null && Object.hasOwnProperty.call(message, "webInfo"))
-                $root.Wa6.ClientPayload.WebInfo.encode(message.webInfo, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-            if (message.pushName != null && Object.hasOwnProperty.call(message, "pushName"))
+            if (message.userAgent != null && $Object.hasOwnProperty.call(message, "userAgent"))
+                $root.Wa6.ClientPayload.UserAgent.encode(message.userAgent, writer.uint32(/* id 5, wireType 2 =*/42).fork(), _depth + 1).ldelim();
+            if (message.webInfo != null && $Object.hasOwnProperty.call(message, "webInfo"))
+                $root.Wa6.ClientPayload.WebInfo.encode(message.webInfo, writer.uint32(/* id 6, wireType 2 =*/50).fork(), _depth + 1).ldelim();
+            if (message.pushName != null && $Object.hasOwnProperty.call(message, "pushName"))
                 writer.uint32(/* id 7, wireType 2 =*/58).string(message.pushName);
-            if (message.sessionId != null && Object.hasOwnProperty.call(message, "sessionId"))
+            if (message.sessionId != null && $Object.hasOwnProperty.call(message, "sessionId"))
                 writer.uint32(/* id 9, wireType 5 =*/77).sfixed32(message.sessionId);
-            if (message.shortConnect != null && Object.hasOwnProperty.call(message, "shortConnect"))
+            if (message.shortConnect != null && $Object.hasOwnProperty.call(message, "shortConnect"))
                 writer.uint32(/* id 10, wireType 0 =*/80).bool(message.shortConnect);
-            if (message.connectType != null && Object.hasOwnProperty.call(message, "connectType"))
+            if (message.connectType != null && $Object.hasOwnProperty.call(message, "connectType"))
                 writer.uint32(/* id 12, wireType 0 =*/96).int32(message.connectType);
-            if (message.connectReason != null && Object.hasOwnProperty.call(message, "connectReason"))
+            if (message.connectReason != null && $Object.hasOwnProperty.call(message, "connectReason"))
                 writer.uint32(/* id 13, wireType 0 =*/104).int32(message.connectReason);
-            if (message.shards != null && message.shards.length) {
-                writer.uint32(/* id 14, wireType 2 =*/114).fork();
-                for (var i = 0; i < message.shards.length; ++i)
-                    writer.int32(message.shards[i]);
-                writer.ldelim();
-            }
-            if (message.dnsSource != null && Object.hasOwnProperty.call(message, "dnsSource"))
-                $root.Wa6.ClientPayload.DNSSource.encode(message.dnsSource, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
-            if (message.connectAttemptCount != null && Object.hasOwnProperty.call(message, "connectAttemptCount"))
+            if (message.shards != null && message.shards.length)
+                writer.uint32(/* id 14, wireType 2 =*/114).int32s(message.shards);
+            if (message.dnsSource != null && $Object.hasOwnProperty.call(message, "dnsSource"))
+                $root.Wa6.ClientPayload.DNSSource.encode(message.dnsSource, writer.uint32(/* id 15, wireType 2 =*/122).fork(), _depth + 1).ldelim();
+            if (message.connectAttemptCount != null && $Object.hasOwnProperty.call(message, "connectAttemptCount"))
                 writer.uint32(/* id 16, wireType 0 =*/128).uint32(message.connectAttemptCount);
-            if (message.device != null && Object.hasOwnProperty.call(message, "device"))
+            if (message.device != null && $Object.hasOwnProperty.call(message, "device"))
                 writer.uint32(/* id 18, wireType 0 =*/144).uint32(message.device);
-            if (message.devicePairingData != null && Object.hasOwnProperty.call(message, "devicePairingData"))
-                $root.Wa6.ClientPayload.DevicePairingRegistrationData.encode(message.devicePairingData, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
-            if (message.product != null && Object.hasOwnProperty.call(message, "product"))
+            if (message.devicePairingData != null && $Object.hasOwnProperty.call(message, "devicePairingData"))
+                $root.Wa6.ClientPayload.DevicePairingRegistrationData.encode(message.devicePairingData, writer.uint32(/* id 19, wireType 2 =*/154).fork(), _depth + 1).ldelim();
+            if (message.product != null && $Object.hasOwnProperty.call(message, "product"))
                 writer.uint32(/* id 20, wireType 0 =*/160).int32(message.product);
-            if (message.fbCat != null && Object.hasOwnProperty.call(message, "fbCat"))
+            if (message.fbCat != null && $Object.hasOwnProperty.call(message, "fbCat"))
                 writer.uint32(/* id 21, wireType 2 =*/170).bytes(message.fbCat);
-            if (message.fbUserAgent != null && Object.hasOwnProperty.call(message, "fbUserAgent"))
+            if (message.fbUserAgent != null && $Object.hasOwnProperty.call(message, "fbUserAgent"))
                 writer.uint32(/* id 22, wireType 2 =*/178).bytes(message.fbUserAgent);
-            if (message.oc != null && Object.hasOwnProperty.call(message, "oc"))
+            if (message.oc != null && $Object.hasOwnProperty.call(message, "oc"))
                 writer.uint32(/* id 23, wireType 0 =*/184).bool(message.oc);
-            if (message.lc != null && Object.hasOwnProperty.call(message, "lc"))
+            if (message.lc != null && $Object.hasOwnProperty.call(message, "lc"))
                 writer.uint32(/* id 24, wireType 0 =*/192).int32(message.lc);
-            if (message.iosAppExtension != null && Object.hasOwnProperty.call(message, "iosAppExtension"))
+            if (message.iosAppExtension != null && $Object.hasOwnProperty.call(message, "iosAppExtension"))
                 writer.uint32(/* id 30, wireType 0 =*/240).int32(message.iosAppExtension);
-            if (message.fbAppId != null && Object.hasOwnProperty.call(message, "fbAppId"))
+            if (message.fbAppId != null && $Object.hasOwnProperty.call(message, "fbAppId"))
                 writer.uint32(/* id 31, wireType 0 =*/248).uint64(message.fbAppId);
-            if (message.fbDeviceId != null && Object.hasOwnProperty.call(message, "fbDeviceId"))
+            if (message.fbDeviceId != null && $Object.hasOwnProperty.call(message, "fbDeviceId"))
                 writer.uint32(/* id 32, wireType 2 =*/258).bytes(message.fbDeviceId);
-            if (message.pull != null && Object.hasOwnProperty.call(message, "pull"))
+            if (message.pull != null && $Object.hasOwnProperty.call(message, "pull"))
                 writer.uint32(/* id 33, wireType 0 =*/264).bool(message.pull);
-            if (message.paddingBytes != null && Object.hasOwnProperty.call(message, "paddingBytes"))
+            if (message.paddingBytes != null && $Object.hasOwnProperty.call(message, "paddingBytes"))
                 writer.uint32(/* id 34, wireType 2 =*/274).bytes(message.paddingBytes);
-            if (message.yearClass != null && Object.hasOwnProperty.call(message, "yearClass"))
+            if (message.yearClass != null && $Object.hasOwnProperty.call(message, "yearClass"))
                 writer.uint32(/* id 36, wireType 0 =*/288).int32(message.yearClass);
-            if (message.memClass != null && Object.hasOwnProperty.call(message, "memClass"))
+            if (message.memClass != null && $Object.hasOwnProperty.call(message, "memClass"))
                 writer.uint32(/* id 37, wireType 0 =*/296).int32(message.memClass);
-            if (message.interopData != null && Object.hasOwnProperty.call(message, "interopData"))
-                $root.Wa6.ClientPayload.InteropData.encode(message.interopData, writer.uint32(/* id 38, wireType 2 =*/306).fork()).ldelim();
-            if (message.trafficAnonymization != null && Object.hasOwnProperty.call(message, "trafficAnonymization"))
+            if (message.interopData != null && $Object.hasOwnProperty.call(message, "interopData"))
+                $root.Wa6.ClientPayload.InteropData.encode(message.interopData, writer.uint32(/* id 38, wireType 2 =*/306).fork(), _depth + 1).ldelim();
+            if (message.trafficAnonymization != null && $Object.hasOwnProperty.call(message, "trafficAnonymization"))
                 writer.uint32(/* id 40, wireType 0 =*/320).int32(message.trafficAnonymization);
-            if (message.lidDbMigrated != null && Object.hasOwnProperty.call(message, "lidDbMigrated"))
+            if (message.lidDbMigrated != null && $Object.hasOwnProperty.call(message, "lidDbMigrated"))
                 writer.uint32(/* id 41, wireType 0 =*/328).bool(message.lidDbMigrated);
-            if (message.accountType != null && Object.hasOwnProperty.call(message, "accountType"))
+            if (message.accountType != null && $Object.hasOwnProperty.call(message, "accountType"))
                 writer.uint32(/* id 42, wireType 0 =*/336).int32(message.accountType);
-            if (message.connectionSequenceInfo != null && Object.hasOwnProperty.call(message, "connectionSequenceInfo"))
+            if (message.connectionSequenceInfo != null && $Object.hasOwnProperty.call(message, "connectionSequenceInfo"))
                 writer.uint32(/* id 43, wireType 5 =*/349).sfixed32(message.connectionSequenceInfo);
-            if (message.paaLink != null && Object.hasOwnProperty.call(message, "paaLink"))
+            if (message.paaLink != null && $Object.hasOwnProperty.call(message, "paaLink"))
                 writer.uint32(/* id 44, wireType 0 =*/352).bool(message.paaLink);
-            if (message.preacksCount != null && Object.hasOwnProperty.call(message, "preacksCount"))
+            if (message.preacksCount != null && $Object.hasOwnProperty.call(message, "preacksCount"))
                 writer.uint32(/* id 45, wireType 0 =*/360).int32(message.preacksCount);
-            if (message.processingQueueSize != null && Object.hasOwnProperty.call(message, "processingQueueSize"))
+            if (message.processingQueueSize != null && $Object.hasOwnProperty.call(message, "processingQueueSize"))
                 writer.uint32(/* id 46, wireType 0 =*/368).int32(message.processingQueueSize);
             if (message.pairedPeripherals != null && message.pairedPeripherals.length)
                 for (var i = 0; i < message.pairedPeripherals.length; ++i)
                     writer.uint32(/* id 47, wireType 2 =*/378).string(message.pairedPeripherals[i]);
-            if (message.testIsolationId != null && Object.hasOwnProperty.call(message, "testIsolationId"))
+            if (message.testIsolationId != null && $Object.hasOwnProperty.call(message, "testIsolationId"))
                 writer.uint32(/* id 48, wireType 2 =*/386).bytes(message.testIsolationId);
-            if (message.messageSts != null && Object.hasOwnProperty.call(message, "messageSts"))
+            if (message.messageSts != null && $Object.hasOwnProperty.call(message, "messageSts"))
                 writer.uint32(/* id 49, wireType 0 =*/392).int64(message.messageSts);
+            if (message.integrationAttestation != null && $Object.hasOwnProperty.call(message, "integrationAttestation"))
+                $root.Wa6.ClientPayload.IntegrationAttestation.encode(message.integrationAttestation, writer.uint32(/* id 50, wireType 2 =*/402).fork(), _depth + 1).ldelim();
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -700,12 +738,12 @@ $root.Wa6 = (function() {
          * @function encodeDelimited
          * @memberof Wa6.ClientPayload
          * @static
-         * @param {Wa6.IClientPayload} message ClientPayload message or plain object to encode
+         * @param {Wa6.ClientPayload.$Properties} message ClientPayload message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ClientPayload.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        ClientPayload.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -715,181 +753,325 @@ $root.Wa6 = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {Wa6.ClientPayload} ClientPayload
+         * @returns {Wa6.ClientPayload & Wa6.ClientPayload.$Shape} ClientPayload
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ClientPayload.decode = function decode(reader, length, error) {
+        ClientPayload.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message, value;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.Wa6.ClientPayload();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.username = reader.uint64();
-                        break;
-                    }
-                case 3: {
-                        message.passive = reader.bool();
-                        break;
-                    }
-                case 5: {
-                        message.userAgent = $root.Wa6.ClientPayload.UserAgent.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 6: {
-                        message.webInfo = $root.Wa6.ClientPayload.WebInfo.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 7: {
-                        message.pushName = reader.string();
-                        break;
-                    }
-                case 9: {
-                        message.sessionId = reader.sfixed32();
-                        break;
-                    }
-                case 10: {
-                        message.shortConnect = reader.bool();
-                        break;
-                    }
-                case 12: {
-                        message.connectType = reader.int32();
-                        break;
-                    }
-                case 13: {
-                        message.connectReason = reader.int32();
-                        break;
-                    }
-                case 14: {
-                        if (!(message.shards && message.shards.length))
-                            message.shards = [];
-                        if ((tag & 7) === 2) {
-                            var end2 = reader.uint32() + reader.pos;
-                            while (reader.pos < end2)
-                                message.shards.push(reader.int32());
-                        } else
-                            message.shards.push(reader.int32());
-                        break;
-                    }
-                case 15: {
-                        message.dnsSource = $root.Wa6.ClientPayload.DNSSource.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 16: {
-                        message.connectAttemptCount = reader.uint32();
-                        break;
-                    }
-                case 18: {
-                        message.device = reader.uint32();
-                        break;
-                    }
-                case 19: {
-                        message.devicePairingData = $root.Wa6.ClientPayload.DevicePairingRegistrationData.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 20: {
-                        message.product = reader.int32();
-                        break;
-                    }
-                case 21: {
-                        message.fbCat = reader.bytes();
-                        break;
-                    }
-                case 22: {
-                        message.fbUserAgent = reader.bytes();
-                        break;
-                    }
-                case 23: {
-                        message.oc = reader.bool();
-                        break;
-                    }
-                case 24: {
-                        message.lc = reader.int32();
-                        break;
-                    }
-                case 30: {
-                        message.iosAppExtension = reader.int32();
-                        break;
-                    }
-                case 31: {
-                        message.fbAppId = reader.uint64();
-                        break;
-                    }
-                case 32: {
-                        message.fbDeviceId = reader.bytes();
-                        break;
-                    }
-                case 33: {
-                        message.pull = reader.bool();
-                        break;
-                    }
-                case 34: {
-                        message.paddingBytes = reader.bytes();
-                        break;
-                    }
-                case 36: {
-                        message.yearClass = reader.int32();
-                        break;
-                    }
-                case 37: {
-                        message.memClass = reader.int32();
-                        break;
-                    }
-                case 38: {
-                        message.interopData = $root.Wa6.ClientPayload.InteropData.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 40: {
-                        message.trafficAnonymization = reader.int32();
-                        break;
-                    }
-                case 41: {
-                        message.lidDbMigrated = reader.bool();
-                        break;
-                    }
-                case 42: {
-                        message.accountType = reader.int32();
-                        break;
-                    }
-                case 43: {
-                        message.connectionSequenceInfo = reader.sfixed32();
-                        break;
-                    }
-                case 44: {
-                        message.paaLink = reader.bool();
-                        break;
-                    }
-                case 45: {
-                        message.preacksCount = reader.int32();
-                        break;
-                    }
-                case 46: {
-                        message.processingQueueSize = reader.int32();
-                        break;
-                    }
-                case 47: {
-                        if (!(message.pairedPeripherals && message.pairedPeripherals.length))
-                            message.pairedPeripherals = [];
-                        message.pairedPeripherals.push(reader.string());
-                        break;
-                    }
-                case 48: {
-                        message.testIsolationId = reader.bytes();
-                        break;
-                    }
-                case 49: {
-                        message.messageSts = reader.int64();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 0)
+                            break;
+                        message.username = reader.uint64();
+                        message._username = "username";
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 0)
+                            break;
+                        message.passive = reader.bool();
+                        message._passive = "passive";
+                        continue;
+                    }
+                case 5: {
+                        if (wireType !== 2)
+                            break;
+                        message.userAgent = $root.Wa6.ClientPayload.UserAgent.decode(reader, reader.size(), $undefined, _depth + 1, message.userAgent);
+                        message._userAgent = "userAgent";
+                        continue;
+                    }
+                case 6: {
+                        if (wireType !== 2)
+                            break;
+                        message.webInfo = $root.Wa6.ClientPayload.WebInfo.decode(reader, reader.size(), $undefined, _depth + 1, message.webInfo);
+                        message._webInfo = "webInfo";
+                        continue;
+                    }
+                case 7: {
+                        if (wireType !== 2)
+                            break;
+                        message.pushName = reader.stringVerify();
+                        message._pushName = "pushName";
+                        continue;
+                    }
+                case 9: {
+                        if (wireType !== 5)
+                            break;
+                        message.sessionId = reader.sfixed32();
+                        message._sessionId = "sessionId";
+                        continue;
+                    }
+                case 10: {
+                        if (wireType !== 0)
+                            break;
+                        message.shortConnect = reader.bool();
+                        message._shortConnect = "shortConnect";
+                        continue;
+                    }
+                case 12: {
+                        if (wireType !== 0)
+                            break;
+                        message.connectType = reader.int32();
+                        message._connectType = "connectType";
+                        continue;
+                    }
+                case 13: {
+                        if (wireType !== 0)
+                            break;
+                        message.connectReason = reader.int32();
+                        message._connectReason = "connectReason";
+                        continue;
+                    }
+                case 14: {
+                        if (wireType === 2) {
+                            if (!(message.shards && message.shards.length))
+                                message.shards = [];
+                            reader.int32s(message.shards);
+                            continue;
+                        }
+                        if (wireType !== 0)
+                            break;
+                        if (!(message.shards && message.shards.length))
+                            message.shards = [];
+                        message.shards.push(reader.int32());
+                        continue;
+                    }
+                case 15: {
+                        if (wireType !== 2)
+                            break;
+                        message.dnsSource = $root.Wa6.ClientPayload.DNSSource.decode(reader, reader.size(), $undefined, _depth + 1, message.dnsSource);
+                        message._dnsSource = "dnsSource";
+                        continue;
+                    }
+                case 16: {
+                        if (wireType !== 0)
+                            break;
+                        message.connectAttemptCount = reader.uint32();
+                        message._connectAttemptCount = "connectAttemptCount";
+                        continue;
+                    }
+                case 18: {
+                        if (wireType !== 0)
+                            break;
+                        message.device = reader.uint32();
+                        message._device = "device";
+                        continue;
+                    }
+                case 19: {
+                        if (wireType !== 2)
+                            break;
+                        message.devicePairingData = $root.Wa6.ClientPayload.DevicePairingRegistrationData.decode(reader, reader.size(), $undefined, _depth + 1, message.devicePairingData);
+                        message._devicePairingData = "devicePairingData";
+                        continue;
+                    }
+                case 20: {
+                        if (wireType !== 0)
+                            break;
+                        message.product = reader.int32();
+                        message._product = "product";
+                        continue;
+                    }
+                case 21: {
+                        if (wireType !== 2)
+                            break;
+                        message.fbCat = reader.bytes();
+                        message._fbCat = "fbCat";
+                        continue;
+                    }
+                case 22: {
+                        if (wireType !== 2)
+                            break;
+                        message.fbUserAgent = reader.bytes();
+                        message._fbUserAgent = "fbUserAgent";
+                        continue;
+                    }
+                case 23: {
+                        if (wireType !== 0)
+                            break;
+                        message.oc = reader.bool();
+                        message._oc = "oc";
+                        continue;
+                    }
+                case 24: {
+                        if (wireType !== 0)
+                            break;
+                        message.lc = reader.int32();
+                        message._lc = "lc";
+                        continue;
+                    }
+                case 30: {
+                        if (wireType !== 0)
+                            break;
+                        message.iosAppExtension = reader.int32();
+                        message._iosAppExtension = "iosAppExtension";
+                        continue;
+                    }
+                case 31: {
+                        if (wireType !== 0)
+                            break;
+                        message.fbAppId = reader.uint64();
+                        message._fbAppId = "fbAppId";
+                        continue;
+                    }
+                case 32: {
+                        if (wireType !== 2)
+                            break;
+                        message.fbDeviceId = reader.bytes();
+                        message._fbDeviceId = "fbDeviceId";
+                        continue;
+                    }
+                case 33: {
+                        if (wireType !== 0)
+                            break;
+                        message.pull = reader.bool();
+                        message._pull = "pull";
+                        continue;
+                    }
+                case 34: {
+                        if (wireType !== 2)
+                            break;
+                        message.paddingBytes = reader.bytes();
+                        message._paddingBytes = "paddingBytes";
+                        continue;
+                    }
+                case 36: {
+                        if (wireType !== 0)
+                            break;
+                        message.yearClass = reader.int32();
+                        message._yearClass = "yearClass";
+                        continue;
+                    }
+                case 37: {
+                        if (wireType !== 0)
+                            break;
+                        message.memClass = reader.int32();
+                        message._memClass = "memClass";
+                        continue;
+                    }
+                case 38: {
+                        if (wireType !== 2)
+                            break;
+                        message.interopData = $root.Wa6.ClientPayload.InteropData.decode(reader, reader.size(), $undefined, _depth + 1, message.interopData);
+                        message._interopData = "interopData";
+                        continue;
+                    }
+                case 40: {
+                        if (wireType !== 0)
+                            break;
+                        message.trafficAnonymization = reader.int32();
+                        message._trafficAnonymization = "trafficAnonymization";
+                        continue;
+                    }
+                case 41: {
+                        if (wireType !== 0)
+                            break;
+                        message.lidDbMigrated = reader.bool();
+                        message._lidDbMigrated = "lidDbMigrated";
+                        continue;
+                    }
+                case 42: {
+                        if (wireType !== 0)
+                            break;
+                        message.accountType = reader.int32();
+                        message._accountType = "accountType";
+                        continue;
+                    }
+                case 43: {
+                        if (wireType !== 5)
+                            break;
+                        message.connectionSequenceInfo = reader.sfixed32();
+                        message._connectionSequenceInfo = "connectionSequenceInfo";
+                        continue;
+                    }
+                case 44: {
+                        if (wireType !== 0)
+                            break;
+                        message.paaLink = reader.bool();
+                        message._paaLink = "paaLink";
+                        continue;
+                    }
+                case 45: {
+                        if (wireType !== 0)
+                            break;
+                        message.preacksCount = reader.int32();
+                        message._preacksCount = "preacksCount";
+                        continue;
+                    }
+                case 46: {
+                        if (wireType !== 0)
+                            break;
+                        message.processingQueueSize = reader.int32();
+                        message._processingQueueSize = "processingQueueSize";
+                        continue;
+                    }
+                case 47: {
+                        if (wireType !== 2)
+                            break;
+                        if (!(message.pairedPeripherals && message.pairedPeripherals.length))
+                            message.pairedPeripherals = [];
+                        message.pairedPeripherals.push(reader.stringVerify());
+                        continue;
+                    }
+                case 48: {
+                        if (wireType !== 2)
+                            break;
+                        message.testIsolationId = reader.bytes();
+                        message._testIsolationId = "testIsolationId";
+                        continue;
+                    }
+                case 49: {
+                        if (wireType !== 0)
+                            break;
+                        message.messageSts = reader.int64();
+                        message._messageSts = "messageSts";
+                        continue;
+                    }
+                case 50: {
+                        if (wireType !== 2)
+                            break;
+                        message.integrationAttestation = $root.Wa6.ClientPayload.IntegrationAttestation.decode(reader, reader.size(), $undefined, _depth + 1, message.integrationAttestation);
+                        message._integrationAttestation = "integrationAttestation";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -899,14 +1081,14 @@ $root.Wa6 = (function() {
          * @memberof Wa6.ClientPayload
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {Wa6.ClientPayload} ClientPayload
+         * @returns {Wa6.ClientPayload & Wa6.ClientPayload.$Shape} ClientPayload
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ClientPayload.decodeDelimited = function decodeDelimited(reader) {
+        ClientPayload.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -917,265 +1099,225 @@ $root.Wa6 = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        ClientPayload.verify = function verify(message) {
+        ClientPayload.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.username != null && message.hasOwnProperty("username")) {
+            if (message.username != null && $Object.hasOwnProperty.call(message, "username")) {
                 properties._username = 1;
                 if (!$util.isInteger(message.username) && !(message.username && $util.isInteger(message.username.low) && $util.isInteger(message.username.high)))
                     return "username: integer|Long expected";
             }
-            if (message.passive != null && message.hasOwnProperty("passive")) {
+            if (message.passive != null && $Object.hasOwnProperty.call(message, "passive")) {
                 properties._passive = 1;
                 if (typeof message.passive !== "boolean")
                     return "passive: boolean expected";
             }
-            if (message.userAgent != null && message.hasOwnProperty("userAgent")) {
+            if (message.userAgent != null && $Object.hasOwnProperty.call(message, "userAgent")) {
                 properties._userAgent = 1;
                 {
-                    var error = $root.Wa6.ClientPayload.UserAgent.verify(message.userAgent);
+                    var error = $root.Wa6.ClientPayload.UserAgent.verify(message.userAgent, _depth + 1);
                     if (error)
                         return "userAgent." + error;
                 }
             }
-            if (message.webInfo != null && message.hasOwnProperty("webInfo")) {
+            if (message.webInfo != null && $Object.hasOwnProperty.call(message, "webInfo")) {
                 properties._webInfo = 1;
                 {
-                    var error = $root.Wa6.ClientPayload.WebInfo.verify(message.webInfo);
+                    var error = $root.Wa6.ClientPayload.WebInfo.verify(message.webInfo, _depth + 1);
                     if (error)
                         return "webInfo." + error;
                 }
             }
-            if (message.pushName != null && message.hasOwnProperty("pushName")) {
+            if (message.pushName != null && $Object.hasOwnProperty.call(message, "pushName")) {
                 properties._pushName = 1;
                 if (!$util.isString(message.pushName))
                     return "pushName: string expected";
             }
-            if (message.sessionId != null && message.hasOwnProperty("sessionId")) {
+            if (message.sessionId != null && $Object.hasOwnProperty.call(message, "sessionId")) {
                 properties._sessionId = 1;
                 if (!$util.isInteger(message.sessionId))
                     return "sessionId: integer expected";
             }
-            if (message.shortConnect != null && message.hasOwnProperty("shortConnect")) {
+            if (message.shortConnect != null && $Object.hasOwnProperty.call(message, "shortConnect")) {
                 properties._shortConnect = 1;
                 if (typeof message.shortConnect !== "boolean")
                     return "shortConnect: boolean expected";
             }
-            if (message.connectType != null && message.hasOwnProperty("connectType")) {
+            if (message.connectType != null && $Object.hasOwnProperty.call(message, "connectType")) {
                 properties._connectType = 1;
-                switch (message.connectType) {
-                default:
+                if (typeof message.connectType !== "number" || (message.connectType | 0) !== message.connectType)
                     return "connectType: enum value expected";
-                case 0:
-                case 1:
-                case 100:
-                case 101:
-                case 102:
-                case 103:
-                case 104:
-                case 105:
-                case 106:
-                case 107:
-                case 108:
-                case 109:
-                case 110:
-                case 111:
-                case 112:
-                    break;
-                }
             }
-            if (message.connectReason != null && message.hasOwnProperty("connectReason")) {
+            if (message.connectReason != null && $Object.hasOwnProperty.call(message, "connectReason")) {
                 properties._connectReason = 1;
-                switch (message.connectReason) {
-                default:
+                if (typeof message.connectReason !== "number" || (message.connectReason | 0) !== message.connectReason)
                     return "connectReason: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                    break;
-                }
             }
-            if (message.shards != null && message.hasOwnProperty("shards")) {
-                if (!Array.isArray(message.shards))
+            if (message.shards != null && $Object.hasOwnProperty.call(message, "shards")) {
+                if (!$Array.isArray(message.shards))
                     return "shards: array expected";
                 for (var i = 0; i < message.shards.length; ++i)
                     if (!$util.isInteger(message.shards[i]))
                         return "shards: integer[] expected";
             }
-            if (message.dnsSource != null && message.hasOwnProperty("dnsSource")) {
+            if (message.dnsSource != null && $Object.hasOwnProperty.call(message, "dnsSource")) {
                 properties._dnsSource = 1;
                 {
-                    var error = $root.Wa6.ClientPayload.DNSSource.verify(message.dnsSource);
+                    var error = $root.Wa6.ClientPayload.DNSSource.verify(message.dnsSource, _depth + 1);
                     if (error)
                         return "dnsSource." + error;
                 }
             }
-            if (message.connectAttemptCount != null && message.hasOwnProperty("connectAttemptCount")) {
+            if (message.connectAttemptCount != null && $Object.hasOwnProperty.call(message, "connectAttemptCount")) {
                 properties._connectAttemptCount = 1;
                 if (!$util.isInteger(message.connectAttemptCount))
                     return "connectAttemptCount: integer expected";
             }
-            if (message.device != null && message.hasOwnProperty("device")) {
+            if (message.device != null && $Object.hasOwnProperty.call(message, "device")) {
                 properties._device = 1;
                 if (!$util.isInteger(message.device))
                     return "device: integer expected";
             }
-            if (message.devicePairingData != null && message.hasOwnProperty("devicePairingData")) {
+            if (message.devicePairingData != null && $Object.hasOwnProperty.call(message, "devicePairingData")) {
                 properties._devicePairingData = 1;
                 {
-                    var error = $root.Wa6.ClientPayload.DevicePairingRegistrationData.verify(message.devicePairingData);
+                    var error = $root.Wa6.ClientPayload.DevicePairingRegistrationData.verify(message.devicePairingData, _depth + 1);
                     if (error)
                         return "devicePairingData." + error;
                 }
             }
-            if (message.product != null && message.hasOwnProperty("product")) {
+            if (message.product != null && $Object.hasOwnProperty.call(message, "product")) {
                 properties._product = 1;
-                switch (message.product) {
-                default:
+                if (typeof message.product !== "number" || (message.product | 0) !== message.product)
                     return "product: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                    break;
-                }
             }
-            if (message.fbCat != null && message.hasOwnProperty("fbCat")) {
+            if (message.fbCat != null && $Object.hasOwnProperty.call(message, "fbCat")) {
                 properties._fbCat = 1;
                 if (!(message.fbCat && typeof message.fbCat.length === "number" || $util.isString(message.fbCat)))
                     return "fbCat: buffer expected";
             }
-            if (message.fbUserAgent != null && message.hasOwnProperty("fbUserAgent")) {
+            if (message.fbUserAgent != null && $Object.hasOwnProperty.call(message, "fbUserAgent")) {
                 properties._fbUserAgent = 1;
                 if (!(message.fbUserAgent && typeof message.fbUserAgent.length === "number" || $util.isString(message.fbUserAgent)))
                     return "fbUserAgent: buffer expected";
             }
-            if (message.oc != null && message.hasOwnProperty("oc")) {
+            if (message.oc != null && $Object.hasOwnProperty.call(message, "oc")) {
                 properties._oc = 1;
                 if (typeof message.oc !== "boolean")
                     return "oc: boolean expected";
             }
-            if (message.lc != null && message.hasOwnProperty("lc")) {
+            if (message.lc != null && $Object.hasOwnProperty.call(message, "lc")) {
                 properties._lc = 1;
                 if (!$util.isInteger(message.lc))
                     return "lc: integer expected";
             }
-            if (message.iosAppExtension != null && message.hasOwnProperty("iosAppExtension")) {
+            if (message.iosAppExtension != null && $Object.hasOwnProperty.call(message, "iosAppExtension")) {
                 properties._iosAppExtension = 1;
-                switch (message.iosAppExtension) {
-                default:
+                if (typeof message.iosAppExtension !== "number" || (message.iosAppExtension | 0) !== message.iosAppExtension)
                     return "iosAppExtension: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                    break;
-                }
             }
-            if (message.fbAppId != null && message.hasOwnProperty("fbAppId")) {
+            if (message.fbAppId != null && $Object.hasOwnProperty.call(message, "fbAppId")) {
                 properties._fbAppId = 1;
                 if (!$util.isInteger(message.fbAppId) && !(message.fbAppId && $util.isInteger(message.fbAppId.low) && $util.isInteger(message.fbAppId.high)))
                     return "fbAppId: integer|Long expected";
             }
-            if (message.fbDeviceId != null && message.hasOwnProperty("fbDeviceId")) {
+            if (message.fbDeviceId != null && $Object.hasOwnProperty.call(message, "fbDeviceId")) {
                 properties._fbDeviceId = 1;
                 if (!(message.fbDeviceId && typeof message.fbDeviceId.length === "number" || $util.isString(message.fbDeviceId)))
                     return "fbDeviceId: buffer expected";
             }
-            if (message.pull != null && message.hasOwnProperty("pull")) {
+            if (message.pull != null && $Object.hasOwnProperty.call(message, "pull")) {
                 properties._pull = 1;
                 if (typeof message.pull !== "boolean")
                     return "pull: boolean expected";
             }
-            if (message.paddingBytes != null && message.hasOwnProperty("paddingBytes")) {
+            if (message.paddingBytes != null && $Object.hasOwnProperty.call(message, "paddingBytes")) {
                 properties._paddingBytes = 1;
                 if (!(message.paddingBytes && typeof message.paddingBytes.length === "number" || $util.isString(message.paddingBytes)))
                     return "paddingBytes: buffer expected";
             }
-            if (message.yearClass != null && message.hasOwnProperty("yearClass")) {
+            if (message.yearClass != null && $Object.hasOwnProperty.call(message, "yearClass")) {
                 properties._yearClass = 1;
                 if (!$util.isInteger(message.yearClass))
                     return "yearClass: integer expected";
             }
-            if (message.memClass != null && message.hasOwnProperty("memClass")) {
+            if (message.memClass != null && $Object.hasOwnProperty.call(message, "memClass")) {
                 properties._memClass = 1;
                 if (!$util.isInteger(message.memClass))
                     return "memClass: integer expected";
             }
-            if (message.interopData != null && message.hasOwnProperty("interopData")) {
+            if (message.interopData != null && $Object.hasOwnProperty.call(message, "interopData")) {
                 properties._interopData = 1;
                 {
-                    var error = $root.Wa6.ClientPayload.InteropData.verify(message.interopData);
+                    var error = $root.Wa6.ClientPayload.InteropData.verify(message.interopData, _depth + 1);
                     if (error)
                         return "interopData." + error;
                 }
             }
-            if (message.trafficAnonymization != null && message.hasOwnProperty("trafficAnonymization")) {
+            if (message.trafficAnonymization != null && $Object.hasOwnProperty.call(message, "trafficAnonymization")) {
                 properties._trafficAnonymization = 1;
-                switch (message.trafficAnonymization) {
-                default:
+                if (typeof message.trafficAnonymization !== "number" || (message.trafficAnonymization | 0) !== message.trafficAnonymization)
                     return "trafficAnonymization: enum value expected";
-                case 0:
-                case 1:
-                    break;
-                }
             }
-            if (message.lidDbMigrated != null && message.hasOwnProperty("lidDbMigrated")) {
+            if (message.lidDbMigrated != null && $Object.hasOwnProperty.call(message, "lidDbMigrated")) {
                 properties._lidDbMigrated = 1;
                 if (typeof message.lidDbMigrated !== "boolean")
                     return "lidDbMigrated: boolean expected";
             }
-            if (message.accountType != null && message.hasOwnProperty("accountType")) {
+            if (message.accountType != null && $Object.hasOwnProperty.call(message, "accountType")) {
                 properties._accountType = 1;
-                switch (message.accountType) {
-                default:
+                if (typeof message.accountType !== "number" || (message.accountType | 0) !== message.accountType)
                     return "accountType: enum value expected";
-                case 0:
-                case 1:
-                    break;
-                }
             }
-            if (message.connectionSequenceInfo != null && message.hasOwnProperty("connectionSequenceInfo")) {
+            if (message.connectionSequenceInfo != null && $Object.hasOwnProperty.call(message, "connectionSequenceInfo")) {
                 properties._connectionSequenceInfo = 1;
                 if (!$util.isInteger(message.connectionSequenceInfo))
                     return "connectionSequenceInfo: integer expected";
             }
-            if (message.paaLink != null && message.hasOwnProperty("paaLink")) {
+            if (message.paaLink != null && $Object.hasOwnProperty.call(message, "paaLink")) {
                 properties._paaLink = 1;
                 if (typeof message.paaLink !== "boolean")
                     return "paaLink: boolean expected";
             }
-            if (message.preacksCount != null && message.hasOwnProperty("preacksCount")) {
+            if (message.preacksCount != null && $Object.hasOwnProperty.call(message, "preacksCount")) {
                 properties._preacksCount = 1;
                 if (!$util.isInteger(message.preacksCount))
                     return "preacksCount: integer expected";
             }
-            if (message.processingQueueSize != null && message.hasOwnProperty("processingQueueSize")) {
+            if (message.processingQueueSize != null && $Object.hasOwnProperty.call(message, "processingQueueSize")) {
                 properties._processingQueueSize = 1;
                 if (!$util.isInteger(message.processingQueueSize))
                     return "processingQueueSize: integer expected";
             }
-            if (message.pairedPeripherals != null && message.hasOwnProperty("pairedPeripherals")) {
-                if (!Array.isArray(message.pairedPeripherals))
+            if (message.pairedPeripherals != null && $Object.hasOwnProperty.call(message, "pairedPeripherals")) {
+                if (!$Array.isArray(message.pairedPeripherals))
                     return "pairedPeripherals: array expected";
                 for (var i = 0; i < message.pairedPeripherals.length; ++i)
                     if (!$util.isString(message.pairedPeripherals[i]))
                         return "pairedPeripherals: string[] expected";
             }
-            if (message.testIsolationId != null && message.hasOwnProperty("testIsolationId")) {
+            if (message.testIsolationId != null && $Object.hasOwnProperty.call(message, "testIsolationId")) {
                 properties._testIsolationId = 1;
                 if (!(message.testIsolationId && typeof message.testIsolationId.length === "number" || $util.isString(message.testIsolationId)))
                     return "testIsolationId: buffer expected";
             }
-            if (message.messageSts != null && message.hasOwnProperty("messageSts")) {
+            if (message.messageSts != null && $Object.hasOwnProperty.call(message, "messageSts")) {
                 properties._messageSts = 1;
                 if (!$util.isInteger(message.messageSts) && !(message.messageSts && $util.isInteger(message.messageSts.low) && $util.isInteger(message.messageSts.high)))
                     return "messageSts: integer|Long expected";
+            }
+            if (message.integrationAttestation != null && $Object.hasOwnProperty.call(message, "integrationAttestation")) {
+                properties._integrationAttestation = 1;
+                {
+                    var error = $root.Wa6.ClientPayload.IntegrationAttestation.verify(message.integrationAttestation, _depth + 1);
+                    if (error)
+                        return "integrationAttestation." + error;
+                }
             }
             return null;
         };
@@ -1188,44 +1330,44 @@ $root.Wa6 = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {Wa6.ClientPayload} ClientPayload
          */
-        ClientPayload.fromObject = function fromObject(object) {
+        ClientPayload.fromObject = function (object, _depth) {
             if (object instanceof $root.Wa6.ClientPayload)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".Wa6.ClientPayload: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.Wa6.ClientPayload();
             if (object.username != null)
                 if ($util.Long)
-                    (message.username = $util.Long.fromValue(object.username)).unsigned = true;
+                    message.username = $util.Long.fromValue(object.username, true);
                 else if (typeof object.username === "string")
-                    message.username = parseInt(object.username, 10);
+                    message.username = $parseInt(object.username, 10);
                 else if (typeof object.username === "number")
                     message.username = object.username;
                 else if (typeof object.username === "object")
                     message.username = new $util.LongBits(object.username.low >>> 0, object.username.high >>> 0).toNumber(true);
             if (object.passive != null)
-                message.passive = Boolean(object.passive);
+                message.passive = $Boolean(object.passive);
             if (object.userAgent != null) {
-                if (typeof object.userAgent !== "object")
-                    throw TypeError(".Wa6.ClientPayload.userAgent: object expected");
-                message.userAgent = $root.Wa6.ClientPayload.UserAgent.fromObject(object.userAgent);
+                if (!$util.isObject(object.userAgent))
+                    throw $TypeError(".Wa6.ClientPayload.userAgent: object expected");
+                message.userAgent = $root.Wa6.ClientPayload.UserAgent.fromObject(object.userAgent, _depth + 1);
             }
             if (object.webInfo != null) {
-                if (typeof object.webInfo !== "object")
-                    throw TypeError(".Wa6.ClientPayload.webInfo: object expected");
-                message.webInfo = $root.Wa6.ClientPayload.WebInfo.fromObject(object.webInfo);
+                if (!$util.isObject(object.webInfo))
+                    throw $TypeError(".Wa6.ClientPayload.webInfo: object expected");
+                message.webInfo = $root.Wa6.ClientPayload.WebInfo.fromObject(object.webInfo, _depth + 1);
             }
             if (object.pushName != null)
-                message.pushName = String(object.pushName);
+                message.pushName = $String(object.pushName);
             if (object.sessionId != null)
                 message.sessionId = object.sessionId | 0;
             if (object.shortConnect != null)
-                message.shortConnect = Boolean(object.shortConnect);
+                message.shortConnect = $Boolean(object.shortConnect);
             switch (object.connectType) {
-            default:
-                if (typeof object.connectType === "number") {
-                    message.connectType = object.connectType;
-                    break;
-                }
-                break;
             case "CELLULAR_UNKNOWN":
             case 0:
                 message.connectType = 0;
@@ -1286,14 +1428,11 @@ $root.Wa6 = (function() {
             case 112:
                 message.connectType = 112;
                 break;
+            default:
+                if (typeof object.connectType === "number" && (object.connectType | 0) === object.connectType)
+                    message.connectType = object.connectType;
             }
             switch (object.connectReason) {
-            default:
-                if (typeof object.connectReason === "number") {
-                    message.connectReason = object.connectReason;
-                    break;
-                }
-                break;
             case "PUSH":
             case 0:
                 message.connectReason = 0;
@@ -1322,35 +1461,32 @@ $root.Wa6 = (function() {
             case 6:
                 message.connectReason = 6;
                 break;
+            default:
+                if (typeof object.connectReason === "number" && (object.connectReason | 0) === object.connectReason)
+                    message.connectReason = object.connectReason;
             }
             if (object.shards) {
-                if (!Array.isArray(object.shards))
-                    throw TypeError(".Wa6.ClientPayload.shards: array expected");
-                message.shards = [];
+                if (!$Array.isArray(object.shards))
+                    throw $TypeError(".Wa6.ClientPayload.shards: array expected");
+                message.shards = $Array(object.shards.length);
                 for (var i = 0; i < object.shards.length; ++i)
                     message.shards[i] = object.shards[i] | 0;
             }
             if (object.dnsSource != null) {
-                if (typeof object.dnsSource !== "object")
-                    throw TypeError(".Wa6.ClientPayload.dnsSource: object expected");
-                message.dnsSource = $root.Wa6.ClientPayload.DNSSource.fromObject(object.dnsSource);
+                if (!$util.isObject(object.dnsSource))
+                    throw $TypeError(".Wa6.ClientPayload.dnsSource: object expected");
+                message.dnsSource = $root.Wa6.ClientPayload.DNSSource.fromObject(object.dnsSource, _depth + 1);
             }
             if (object.connectAttemptCount != null)
                 message.connectAttemptCount = object.connectAttemptCount >>> 0;
             if (object.device != null)
                 message.device = object.device >>> 0;
             if (object.devicePairingData != null) {
-                if (typeof object.devicePairingData !== "object")
-                    throw TypeError(".Wa6.ClientPayload.devicePairingData: object expected");
-                message.devicePairingData = $root.Wa6.ClientPayload.DevicePairingRegistrationData.fromObject(object.devicePairingData);
+                if (!$util.isObject(object.devicePairingData))
+                    throw $TypeError(".Wa6.ClientPayload.devicePairingData: object expected");
+                message.devicePairingData = $root.Wa6.ClientPayload.DevicePairingRegistrationData.fromObject(object.devicePairingData, _depth + 1);
             }
             switch (object.product) {
-            default:
-                if (typeof object.product === "number") {
-                    message.product = object.product;
-                    break;
-                }
-                break;
             case "WHATSAPP":
             case 0:
                 message.product = 0;
@@ -1371,6 +1507,9 @@ $root.Wa6 = (function() {
             case 4:
                 message.product = 4;
                 break;
+            default:
+                if (typeof object.product === "number" && (object.product | 0) === object.product)
+                    message.product = object.product;
             }
             if (object.fbCat != null)
                 if (typeof object.fbCat === "string")
@@ -1383,16 +1522,10 @@ $root.Wa6 = (function() {
                 else if (object.fbUserAgent.length >= 0)
                     message.fbUserAgent = object.fbUserAgent;
             if (object.oc != null)
-                message.oc = Boolean(object.oc);
+                message.oc = $Boolean(object.oc);
             if (object.lc != null)
                 message.lc = object.lc | 0;
             switch (object.iosAppExtension) {
-            default:
-                if (typeof object.iosAppExtension === "number") {
-                    message.iosAppExtension = object.iosAppExtension;
-                    break;
-                }
-                break;
             case "SHARE_EXTENSION":
             case 0:
                 message.iosAppExtension = 0;
@@ -1405,12 +1538,15 @@ $root.Wa6 = (function() {
             case 2:
                 message.iosAppExtension = 2;
                 break;
+            default:
+                if (typeof object.iosAppExtension === "number" && (object.iosAppExtension | 0) === object.iosAppExtension)
+                    message.iosAppExtension = object.iosAppExtension;
             }
             if (object.fbAppId != null)
                 if ($util.Long)
-                    (message.fbAppId = $util.Long.fromValue(object.fbAppId)).unsigned = true;
+                    message.fbAppId = $util.Long.fromValue(object.fbAppId, true);
                 else if (typeof object.fbAppId === "string")
-                    message.fbAppId = parseInt(object.fbAppId, 10);
+                    message.fbAppId = $parseInt(object.fbAppId, 10);
                 else if (typeof object.fbAppId === "number")
                     message.fbAppId = object.fbAppId;
                 else if (typeof object.fbAppId === "object")
@@ -1421,7 +1557,7 @@ $root.Wa6 = (function() {
                 else if (object.fbDeviceId.length >= 0)
                     message.fbDeviceId = object.fbDeviceId;
             if (object.pull != null)
-                message.pull = Boolean(object.pull);
+                message.pull = $Boolean(object.pull);
             if (object.paddingBytes != null)
                 if (typeof object.paddingBytes === "string")
                     $util.base64.decode(object.paddingBytes, message.paddingBytes = $util.newBuffer($util.base64.length(object.paddingBytes)), 0);
@@ -1432,17 +1568,11 @@ $root.Wa6 = (function() {
             if (object.memClass != null)
                 message.memClass = object.memClass | 0;
             if (object.interopData != null) {
-                if (typeof object.interopData !== "object")
-                    throw TypeError(".Wa6.ClientPayload.interopData: object expected");
-                message.interopData = $root.Wa6.ClientPayload.InteropData.fromObject(object.interopData);
+                if (!$util.isObject(object.interopData))
+                    throw $TypeError(".Wa6.ClientPayload.interopData: object expected");
+                message.interopData = $root.Wa6.ClientPayload.InteropData.fromObject(object.interopData, _depth + 1);
             }
             switch (object.trafficAnonymization) {
-            default:
-                if (typeof object.trafficAnonymization === "number") {
-                    message.trafficAnonymization = object.trafficAnonymization;
-                    break;
-                }
-                break;
             case "OFF":
             case 0:
                 message.trafficAnonymization = 0;
@@ -1451,16 +1581,13 @@ $root.Wa6 = (function() {
             case 1:
                 message.trafficAnonymization = 1;
                 break;
+            default:
+                if (typeof object.trafficAnonymization === "number" && (object.trafficAnonymization | 0) === object.trafficAnonymization)
+                    message.trafficAnonymization = object.trafficAnonymization;
             }
             if (object.lidDbMigrated != null)
-                message.lidDbMigrated = Boolean(object.lidDbMigrated);
+                message.lidDbMigrated = $Boolean(object.lidDbMigrated);
             switch (object.accountType) {
-            default:
-                if (typeof object.accountType === "number") {
-                    message.accountType = object.accountType;
-                    break;
-                }
-                break;
             case "DEFAULT":
             case 0:
                 message.accountType = 0;
@@ -1469,21 +1596,24 @@ $root.Wa6 = (function() {
             case 1:
                 message.accountType = 1;
                 break;
+            default:
+                if (typeof object.accountType === "number" && (object.accountType | 0) === object.accountType)
+                    message.accountType = object.accountType;
             }
             if (object.connectionSequenceInfo != null)
                 message.connectionSequenceInfo = object.connectionSequenceInfo | 0;
             if (object.paaLink != null)
-                message.paaLink = Boolean(object.paaLink);
+                message.paaLink = $Boolean(object.paaLink);
             if (object.preacksCount != null)
                 message.preacksCount = object.preacksCount | 0;
             if (object.processingQueueSize != null)
                 message.processingQueueSize = object.processingQueueSize | 0;
             if (object.pairedPeripherals) {
-                if (!Array.isArray(object.pairedPeripherals))
-                    throw TypeError(".Wa6.ClientPayload.pairedPeripherals: array expected");
-                message.pairedPeripherals = [];
+                if (!$Array.isArray(object.pairedPeripherals))
+                    throw $TypeError(".Wa6.ClientPayload.pairedPeripherals: array expected");
+                message.pairedPeripherals = $Array(object.pairedPeripherals.length);
                 for (var i = 0; i < object.pairedPeripherals.length; ++i)
-                    message.pairedPeripherals[i] = String(object.pairedPeripherals[i]);
+                    message.pairedPeripherals[i] = $String(object.pairedPeripherals[i]);
             }
             if (object.testIsolationId != null)
                 if (typeof object.testIsolationId === "string")
@@ -1492,13 +1622,18 @@ $root.Wa6 = (function() {
                     message.testIsolationId = object.testIsolationId;
             if (object.messageSts != null)
                 if ($util.Long)
-                    (message.messageSts = $util.Long.fromValue(object.messageSts)).unsigned = false;
+                    message.messageSts = $util.Long.fromValue(object.messageSts, false);
                 else if (typeof object.messageSts === "string")
-                    message.messageSts = parseInt(object.messageSts, 10);
+                    message.messageSts = $parseInt(object.messageSts, 10);
                 else if (typeof object.messageSts === "number")
                     message.messageSts = object.messageSts;
                 else if (typeof object.messageSts === "object")
                     message.messageSts = new $util.LongBits(object.messageSts.low >>> 0, object.messageSts.high >>> 0).toNumber();
+            if (object.integrationAttestation != null) {
+                if (!$util.isObject(object.integrationAttestation))
+                    throw $TypeError(".Wa6.ClientPayload.integrationAttestation: object expected");
+                message.integrationAttestation = $root.Wa6.ClientPayload.IntegrationAttestation.fromObject(object.integrationAttestation, _depth + 1);
+            }
             return message;
         };
 
@@ -1511,208 +1646,115 @@ $root.Wa6 = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        ClientPayload.toObject = function toObject(message, options) {
+        ClientPayload.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
             if (options.arrays || options.defaults) {
                 object.shards = [];
                 object.pairedPeripherals = [];
             }
-            if (message.username != null && message.hasOwnProperty("username")) {
-                if (typeof message.username === "number")
-                    object.username = options.longs === String ? String(message.username) : message.username;
+            if (message.username != null && $Object.hasOwnProperty.call(message, "username"))
+                if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
+                    object.username = typeof message.username === "number" ? $BigInt(message.username) : $util.Long.fromBits(message.username.low >>> 0, message.username.high >>> 0, true).toBigInt();
+                else if (typeof message.username === "number")
+                    object.username = options.longs === $String ? $String(message.username) : message.username;
                 else
-                    object.username = options.longs === String ? $util.Long.prototype.toString.call(message.username) : options.longs === Number ? new $util.LongBits(message.username.low >>> 0, message.username.high >>> 0).toNumber(true) : message.username;
-                if (options.oneofs)
-                    object._username = "username";
-            }
-            if (message.passive != null && message.hasOwnProperty("passive")) {
+                    object.username = options.longs === $String ? $util.Long.prototype.toString.call(message.username) : options.longs === $Number ? new $util.LongBits(message.username.low >>> 0, message.username.high >>> 0).toNumber(true) : message.username;
+            if (message.passive != null && $Object.hasOwnProperty.call(message, "passive"))
                 object.passive = message.passive;
-                if (options.oneofs)
-                    object._passive = "passive";
-            }
-            if (message.userAgent != null && message.hasOwnProperty("userAgent")) {
-                object.userAgent = $root.Wa6.ClientPayload.UserAgent.toObject(message.userAgent, options);
-                if (options.oneofs)
-                    object._userAgent = "userAgent";
-            }
-            if (message.webInfo != null && message.hasOwnProperty("webInfo")) {
-                object.webInfo = $root.Wa6.ClientPayload.WebInfo.toObject(message.webInfo, options);
-                if (options.oneofs)
-                    object._webInfo = "webInfo";
-            }
-            if (message.pushName != null && message.hasOwnProperty("pushName")) {
+            if (message.userAgent != null && $Object.hasOwnProperty.call(message, "userAgent"))
+                object.userAgent = $root.Wa6.ClientPayload.UserAgent.toObject(message.userAgent, options, _depth + 1);
+            if (message.webInfo != null && $Object.hasOwnProperty.call(message, "webInfo"))
+                object.webInfo = $root.Wa6.ClientPayload.WebInfo.toObject(message.webInfo, options, _depth + 1);
+            if (message.pushName != null && $Object.hasOwnProperty.call(message, "pushName"))
                 object.pushName = message.pushName;
-                if (options.oneofs)
-                    object._pushName = "pushName";
-            }
-            if (message.sessionId != null && message.hasOwnProperty("sessionId")) {
+            if (message.sessionId != null && $Object.hasOwnProperty.call(message, "sessionId"))
                 object.sessionId = message.sessionId;
-                if (options.oneofs)
-                    object._sessionId = "sessionId";
-            }
-            if (message.shortConnect != null && message.hasOwnProperty("shortConnect")) {
+            if (message.shortConnect != null && $Object.hasOwnProperty.call(message, "shortConnect"))
                 object.shortConnect = message.shortConnect;
-                if (options.oneofs)
-                    object._shortConnect = "shortConnect";
-            }
-            if (message.connectType != null && message.hasOwnProperty("connectType")) {
-                object.connectType = options.enums === String ? $root.Wa6.ClientPayload.ConnectType[message.connectType] === undefined ? message.connectType : $root.Wa6.ClientPayload.ConnectType[message.connectType] : message.connectType;
-                if (options.oneofs)
-                    object._connectType = "connectType";
-            }
-            if (message.connectReason != null && message.hasOwnProperty("connectReason")) {
-                object.connectReason = options.enums === String ? $root.Wa6.ClientPayload.ConnectReason[message.connectReason] === undefined ? message.connectReason : $root.Wa6.ClientPayload.ConnectReason[message.connectReason] : message.connectReason;
-                if (options.oneofs)
-                    object._connectReason = "connectReason";
-            }
+            if (message.connectType != null && $Object.hasOwnProperty.call(message, "connectType"))
+                object.connectType = options.enums === $String ? $root.Wa6.ClientPayload.ConnectType[message.connectType] === $undefined ? message.connectType : $root.Wa6.ClientPayload.ConnectType[message.connectType] : message.connectType;
+            if (message.connectReason != null && $Object.hasOwnProperty.call(message, "connectReason"))
+                object.connectReason = options.enums === $String ? $root.Wa6.ClientPayload.ConnectReason[message.connectReason] === $undefined ? message.connectReason : $root.Wa6.ClientPayload.ConnectReason[message.connectReason] : message.connectReason;
             if (message.shards && message.shards.length) {
-                object.shards = [];
+                object.shards = $Array(message.shards.length);
                 for (var j = 0; j < message.shards.length; ++j)
                     object.shards[j] = message.shards[j];
             }
-            if (message.dnsSource != null && message.hasOwnProperty("dnsSource")) {
-                object.dnsSource = $root.Wa6.ClientPayload.DNSSource.toObject(message.dnsSource, options);
-                if (options.oneofs)
-                    object._dnsSource = "dnsSource";
-            }
-            if (message.connectAttemptCount != null && message.hasOwnProperty("connectAttemptCount")) {
+            if (message.dnsSource != null && $Object.hasOwnProperty.call(message, "dnsSource"))
+                object.dnsSource = $root.Wa6.ClientPayload.DNSSource.toObject(message.dnsSource, options, _depth + 1);
+            if (message.connectAttemptCount != null && $Object.hasOwnProperty.call(message, "connectAttemptCount"))
                 object.connectAttemptCount = message.connectAttemptCount;
-                if (options.oneofs)
-                    object._connectAttemptCount = "connectAttemptCount";
-            }
-            if (message.device != null && message.hasOwnProperty("device")) {
+            if (message.device != null && $Object.hasOwnProperty.call(message, "device"))
                 object.device = message.device;
-                if (options.oneofs)
-                    object._device = "device";
-            }
-            if (message.devicePairingData != null && message.hasOwnProperty("devicePairingData")) {
-                object.devicePairingData = $root.Wa6.ClientPayload.DevicePairingRegistrationData.toObject(message.devicePairingData, options);
-                if (options.oneofs)
-                    object._devicePairingData = "devicePairingData";
-            }
-            if (message.product != null && message.hasOwnProperty("product")) {
-                object.product = options.enums === String ? $root.Wa6.ClientPayload.Product[message.product] === undefined ? message.product : $root.Wa6.ClientPayload.Product[message.product] : message.product;
-                if (options.oneofs)
-                    object._product = "product";
-            }
-            if (message.fbCat != null && message.hasOwnProperty("fbCat")) {
-                object.fbCat = options.bytes === String ? $util.base64.encode(message.fbCat, 0, message.fbCat.length) : options.bytes === Array ? Array.prototype.slice.call(message.fbCat) : message.fbCat;
-                if (options.oneofs)
-                    object._fbCat = "fbCat";
-            }
-            if (message.fbUserAgent != null && message.hasOwnProperty("fbUserAgent")) {
-                object.fbUserAgent = options.bytes === String ? $util.base64.encode(message.fbUserAgent, 0, message.fbUserAgent.length) : options.bytes === Array ? Array.prototype.slice.call(message.fbUserAgent) : message.fbUserAgent;
-                if (options.oneofs)
-                    object._fbUserAgent = "fbUserAgent";
-            }
-            if (message.oc != null && message.hasOwnProperty("oc")) {
+            if (message.devicePairingData != null && $Object.hasOwnProperty.call(message, "devicePairingData"))
+                object.devicePairingData = $root.Wa6.ClientPayload.DevicePairingRegistrationData.toObject(message.devicePairingData, options, _depth + 1);
+            if (message.product != null && $Object.hasOwnProperty.call(message, "product"))
+                object.product = options.enums === $String ? $root.Wa6.ClientPayload.Product[message.product] === $undefined ? message.product : $root.Wa6.ClientPayload.Product[message.product] : message.product;
+            if (message.fbCat != null && $Object.hasOwnProperty.call(message, "fbCat"))
+                object.fbCat = options.bytes === $String ? $util.base64.encode(message.fbCat, 0, message.fbCat.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.fbCat) : message.fbCat;
+            if (message.fbUserAgent != null && $Object.hasOwnProperty.call(message, "fbUserAgent"))
+                object.fbUserAgent = options.bytes === $String ? $util.base64.encode(message.fbUserAgent, 0, message.fbUserAgent.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.fbUserAgent) : message.fbUserAgent;
+            if (message.oc != null && $Object.hasOwnProperty.call(message, "oc"))
                 object.oc = message.oc;
-                if (options.oneofs)
-                    object._oc = "oc";
-            }
-            if (message.lc != null && message.hasOwnProperty("lc")) {
+            if (message.lc != null && $Object.hasOwnProperty.call(message, "lc"))
                 object.lc = message.lc;
-                if (options.oneofs)
-                    object._lc = "lc";
-            }
-            if (message.iosAppExtension != null && message.hasOwnProperty("iosAppExtension")) {
-                object.iosAppExtension = options.enums === String ? $root.Wa6.ClientPayload.IOSAppExtension[message.iosAppExtension] === undefined ? message.iosAppExtension : $root.Wa6.ClientPayload.IOSAppExtension[message.iosAppExtension] : message.iosAppExtension;
-                if (options.oneofs)
-                    object._iosAppExtension = "iosAppExtension";
-            }
-            if (message.fbAppId != null && message.hasOwnProperty("fbAppId")) {
-                if (typeof message.fbAppId === "number")
-                    object.fbAppId = options.longs === String ? String(message.fbAppId) : message.fbAppId;
+            if (message.iosAppExtension != null && $Object.hasOwnProperty.call(message, "iosAppExtension"))
+                object.iosAppExtension = options.enums === $String ? $root.Wa6.ClientPayload.IOSAppExtension[message.iosAppExtension] === $undefined ? message.iosAppExtension : $root.Wa6.ClientPayload.IOSAppExtension[message.iosAppExtension] : message.iosAppExtension;
+            if (message.fbAppId != null && $Object.hasOwnProperty.call(message, "fbAppId"))
+                if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
+                    object.fbAppId = typeof message.fbAppId === "number" ? $BigInt(message.fbAppId) : $util.Long.fromBits(message.fbAppId.low >>> 0, message.fbAppId.high >>> 0, true).toBigInt();
+                else if (typeof message.fbAppId === "number")
+                    object.fbAppId = options.longs === $String ? $String(message.fbAppId) : message.fbAppId;
                 else
-                    object.fbAppId = options.longs === String ? $util.Long.prototype.toString.call(message.fbAppId) : options.longs === Number ? new $util.LongBits(message.fbAppId.low >>> 0, message.fbAppId.high >>> 0).toNumber(true) : message.fbAppId;
-                if (options.oneofs)
-                    object._fbAppId = "fbAppId";
-            }
-            if (message.fbDeviceId != null && message.hasOwnProperty("fbDeviceId")) {
-                object.fbDeviceId = options.bytes === String ? $util.base64.encode(message.fbDeviceId, 0, message.fbDeviceId.length) : options.bytes === Array ? Array.prototype.slice.call(message.fbDeviceId) : message.fbDeviceId;
-                if (options.oneofs)
-                    object._fbDeviceId = "fbDeviceId";
-            }
-            if (message.pull != null && message.hasOwnProperty("pull")) {
+                    object.fbAppId = options.longs === $String ? $util.Long.prototype.toString.call(message.fbAppId) : options.longs === $Number ? new $util.LongBits(message.fbAppId.low >>> 0, message.fbAppId.high >>> 0).toNumber(true) : message.fbAppId;
+            if (message.fbDeviceId != null && $Object.hasOwnProperty.call(message, "fbDeviceId"))
+                object.fbDeviceId = options.bytes === $String ? $util.base64.encode(message.fbDeviceId, 0, message.fbDeviceId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.fbDeviceId) : message.fbDeviceId;
+            if (message.pull != null && $Object.hasOwnProperty.call(message, "pull"))
                 object.pull = message.pull;
-                if (options.oneofs)
-                    object._pull = "pull";
-            }
-            if (message.paddingBytes != null && message.hasOwnProperty("paddingBytes")) {
-                object.paddingBytes = options.bytes === String ? $util.base64.encode(message.paddingBytes, 0, message.paddingBytes.length) : options.bytes === Array ? Array.prototype.slice.call(message.paddingBytes) : message.paddingBytes;
-                if (options.oneofs)
-                    object._paddingBytes = "paddingBytes";
-            }
-            if (message.yearClass != null && message.hasOwnProperty("yearClass")) {
+            if (message.paddingBytes != null && $Object.hasOwnProperty.call(message, "paddingBytes"))
+                object.paddingBytes = options.bytes === $String ? $util.base64.encode(message.paddingBytes, 0, message.paddingBytes.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.paddingBytes) : message.paddingBytes;
+            if (message.yearClass != null && $Object.hasOwnProperty.call(message, "yearClass"))
                 object.yearClass = message.yearClass;
-                if (options.oneofs)
-                    object._yearClass = "yearClass";
-            }
-            if (message.memClass != null && message.hasOwnProperty("memClass")) {
+            if (message.memClass != null && $Object.hasOwnProperty.call(message, "memClass"))
                 object.memClass = message.memClass;
-                if (options.oneofs)
-                    object._memClass = "memClass";
-            }
-            if (message.interopData != null && message.hasOwnProperty("interopData")) {
-                object.interopData = $root.Wa6.ClientPayload.InteropData.toObject(message.interopData, options);
-                if (options.oneofs)
-                    object._interopData = "interopData";
-            }
-            if (message.trafficAnonymization != null && message.hasOwnProperty("trafficAnonymization")) {
-                object.trafficAnonymization = options.enums === String ? $root.Wa6.ClientPayload.TrafficAnonymization[message.trafficAnonymization] === undefined ? message.trafficAnonymization : $root.Wa6.ClientPayload.TrafficAnonymization[message.trafficAnonymization] : message.trafficAnonymization;
-                if (options.oneofs)
-                    object._trafficAnonymization = "trafficAnonymization";
-            }
-            if (message.lidDbMigrated != null && message.hasOwnProperty("lidDbMigrated")) {
+            if (message.interopData != null && $Object.hasOwnProperty.call(message, "interopData"))
+                object.interopData = $root.Wa6.ClientPayload.InteropData.toObject(message.interopData, options, _depth + 1);
+            if (message.trafficAnonymization != null && $Object.hasOwnProperty.call(message, "trafficAnonymization"))
+                object.trafficAnonymization = options.enums === $String ? $root.Wa6.ClientPayload.TrafficAnonymization[message.trafficAnonymization] === $undefined ? message.trafficAnonymization : $root.Wa6.ClientPayload.TrafficAnonymization[message.trafficAnonymization] : message.trafficAnonymization;
+            if (message.lidDbMigrated != null && $Object.hasOwnProperty.call(message, "lidDbMigrated"))
                 object.lidDbMigrated = message.lidDbMigrated;
-                if (options.oneofs)
-                    object._lidDbMigrated = "lidDbMigrated";
-            }
-            if (message.accountType != null && message.hasOwnProperty("accountType")) {
-                object.accountType = options.enums === String ? $root.Wa6.ClientPayload.AccountType[message.accountType] === undefined ? message.accountType : $root.Wa6.ClientPayload.AccountType[message.accountType] : message.accountType;
-                if (options.oneofs)
-                    object._accountType = "accountType";
-            }
-            if (message.connectionSequenceInfo != null && message.hasOwnProperty("connectionSequenceInfo")) {
+            if (message.accountType != null && $Object.hasOwnProperty.call(message, "accountType"))
+                object.accountType = options.enums === $String ? $root.Wa6.ClientPayload.AccountType[message.accountType] === $undefined ? message.accountType : $root.Wa6.ClientPayload.AccountType[message.accountType] : message.accountType;
+            if (message.connectionSequenceInfo != null && $Object.hasOwnProperty.call(message, "connectionSequenceInfo"))
                 object.connectionSequenceInfo = message.connectionSequenceInfo;
-                if (options.oneofs)
-                    object._connectionSequenceInfo = "connectionSequenceInfo";
-            }
-            if (message.paaLink != null && message.hasOwnProperty("paaLink")) {
+            if (message.paaLink != null && $Object.hasOwnProperty.call(message, "paaLink"))
                 object.paaLink = message.paaLink;
-                if (options.oneofs)
-                    object._paaLink = "paaLink";
-            }
-            if (message.preacksCount != null && message.hasOwnProperty("preacksCount")) {
+            if (message.preacksCount != null && $Object.hasOwnProperty.call(message, "preacksCount"))
                 object.preacksCount = message.preacksCount;
-                if (options.oneofs)
-                    object._preacksCount = "preacksCount";
-            }
-            if (message.processingQueueSize != null && message.hasOwnProperty("processingQueueSize")) {
+            if (message.processingQueueSize != null && $Object.hasOwnProperty.call(message, "processingQueueSize"))
                 object.processingQueueSize = message.processingQueueSize;
-                if (options.oneofs)
-                    object._processingQueueSize = "processingQueueSize";
-            }
             if (message.pairedPeripherals && message.pairedPeripherals.length) {
-                object.pairedPeripherals = [];
+                object.pairedPeripherals = $Array(message.pairedPeripherals.length);
                 for (var j = 0; j < message.pairedPeripherals.length; ++j)
                     object.pairedPeripherals[j] = message.pairedPeripherals[j];
             }
-            if (message.testIsolationId != null && message.hasOwnProperty("testIsolationId")) {
-                object.testIsolationId = options.bytes === String ? $util.base64.encode(message.testIsolationId, 0, message.testIsolationId.length) : options.bytes === Array ? Array.prototype.slice.call(message.testIsolationId) : message.testIsolationId;
-                if (options.oneofs)
-                    object._testIsolationId = "testIsolationId";
-            }
-            if (message.messageSts != null && message.hasOwnProperty("messageSts")) {
-                if (typeof message.messageSts === "number")
-                    object.messageSts = options.longs === String ? String(message.messageSts) : message.messageSts;
+            if (message.testIsolationId != null && $Object.hasOwnProperty.call(message, "testIsolationId"))
+                object.testIsolationId = options.bytes === $String ? $util.base64.encode(message.testIsolationId, 0, message.testIsolationId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.testIsolationId) : message.testIsolationId;
+            if (message.messageSts != null && $Object.hasOwnProperty.call(message, "messageSts"))
+                if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
+                    object.messageSts = typeof message.messageSts === "number" ? $BigInt(message.messageSts) : $util.Long.fromBits(message.messageSts.low >>> 0, message.messageSts.high >>> 0, false).toBigInt();
+                else if (typeof message.messageSts === "number")
+                    object.messageSts = options.longs === $String ? $String(message.messageSts) : message.messageSts;
                 else
-                    object.messageSts = options.longs === String ? $util.Long.prototype.toString.call(message.messageSts) : options.longs === Number ? new $util.LongBits(message.messageSts.low >>> 0, message.messageSts.high >>> 0).toNumber() : message.messageSts;
-                if (options.oneofs)
-                    object._messageSts = "messageSts";
-            }
+                    object.messageSts = options.longs === $String ? $util.Long.prototype.toString.call(message.messageSts) : options.longs === $Number ? new $util.LongBits(message.messageSts.low >>> 0, message.messageSts.high >>> 0).toNumber() : message.messageSts;
+            if (message.integrationAttestation != null && $Object.hasOwnProperty.call(message, "integrationAttestation"))
+                object.integrationAttestation = $root.Wa6.ClientPayload.IntegrationAttestation.toObject(message.integrationAttestation, options, _depth + 1);
             return object;
         };
 
@@ -1723,23 +1765,22 @@ $root.Wa6 = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        ClientPayload.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        ClientPayload.prototype.toJSON = function() {
+            return ClientPayload.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for ClientPayload
+         * Gets the type url for ClientPayload
          * @function getTypeUrl
          * @memberof Wa6.ClientPayload
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        ClientPayload.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Wa6.ClientPayload";
+        ClientPayload.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/Wa6.ClientPayload";
         };
 
         /**
@@ -1750,7 +1791,7 @@ $root.Wa6 = (function() {
          * @property {number} GUEST=1 GUEST value
          */
         ClientPayload.AccountType = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
+            var valuesById = $Object.create(null), values = $Object.create(valuesById);
             values[valuesById[0] = "DEFAULT"] = 0;
             values[valuesById[1] = "GUEST"] = 1;
             return values;
@@ -1769,7 +1810,7 @@ $root.Wa6 = (function() {
          * @property {number} UNKNOWN=6 UNKNOWN value
          */
         ClientPayload.ConnectReason = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
+            var valuesById = $Object.create(null), values = $Object.create(valuesById);
             values[valuesById[0] = "PUSH"] = 0;
             values[valuesById[1] = "USER_ACTIVATED"] = 1;
             values[valuesById[2] = "SCHEDULED"] = 2;
@@ -1801,7 +1842,7 @@ $root.Wa6 = (function() {
          * @property {number} CELLULAR_HSPAP=112 CELLULAR_HSPAP value
          */
         ClientPayload.ConnectType = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
+            var valuesById = $Object.create(null), values = $Object.create(valuesById);
             values[valuesById[0] = "CELLULAR_UNKNOWN"] = 0;
             values[valuesById[1] = "WIFI_UNKNOWN"] = 1;
             values[valuesById[100] = "CELLULAR_EDGE"] = 100;
@@ -1824,26 +1865,39 @@ $root.Wa6 = (function() {
 
             /**
              * Properties of a DNSSource.
-             * @memberof Wa6.ClientPayload
-             * @interface IDNSSource
+             * @typedef {Object} Wa6.ClientPayload.DNSSource.$Properties
              * @property {Wa6.ClientPayload.DNSSource.DNSResolutionMethod|null} [dnsMethod] DNSSource dnsMethod
              * @property {boolean|null} [appCached] DNSSource appCached
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a DNSSource.
+             * @memberof Wa6.ClientPayload
+             * @interface IDNSSource
+             * @augments Wa6.ClientPayload.DNSSource.$Properties
+             * @deprecated Use Wa6.ClientPayload.DNSSource.$Properties instead.
+             */
+
+            /**
+             * Shape of a DNSSource.
+             * @typedef {Wa6.ClientPayload.DNSSource.$Properties} Wa6.ClientPayload.DNSSource.$Shape
              */
 
             /**
              * Constructs a new DNSSource.
              * @memberof Wa6.ClientPayload
              * @classdesc Represents a DNSSource.
-             * @implements IDNSSource
              * @constructor
-             * @param {Wa6.ClientPayload.IDNSSource=} [properties] Properties to set
+             * @param {Wa6.ClientPayload.DNSSource.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function DNSSource(properties) {
+            var DNSSource = function (properties) {
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * DNSSource dnsMethod.
@@ -1865,13 +1919,13 @@ $root.Wa6 = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(DNSSource.prototype, "_dnsMethod", {
+            $Object.defineProperty(DNSSource.prototype, "_dnsMethod", {
                 get: $util.oneOfGetter($oneOfFields = ["dnsMethod"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(DNSSource.prototype, "_appCached", {
+            $Object.defineProperty(DNSSource.prototype, "_appCached", {
                 get: $util.oneOfGetter($oneOfFields = ["appCached"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -1881,10 +1935,14 @@ $root.Wa6 = (function() {
              * @function create
              * @memberof Wa6.ClientPayload.DNSSource
              * @static
-             * @param {Wa6.ClientPayload.IDNSSource=} [properties] Properties to set
+             * @param {Wa6.ClientPayload.DNSSource.$Properties=} [properties] Properties to set
              * @returns {Wa6.ClientPayload.DNSSource} DNSSource instance
+             * @type {{
+             *   (properties: Wa6.ClientPayload.DNSSource.$Shape): Wa6.ClientPayload.DNSSource & Wa6.ClientPayload.DNSSource.$Shape;
+             *   (properties?: Wa6.ClientPayload.DNSSource.$Properties): Wa6.ClientPayload.DNSSource;
+             * }}
              */
-            DNSSource.create = function create(properties) {
+            DNSSource.create = function(properties) {
                 return new DNSSource(properties);
             };
 
@@ -1893,17 +1951,24 @@ $root.Wa6 = (function() {
              * @function encode
              * @memberof Wa6.ClientPayload.DNSSource
              * @static
-             * @param {Wa6.ClientPayload.IDNSSource} message DNSSource message or plain object to encode
+             * @param {Wa6.ClientPayload.DNSSource.$Properties} message DNSSource message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            DNSSource.encode = function encode(message, writer) {
+            DNSSource.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.dnsMethod != null && Object.hasOwnProperty.call(message, "dnsMethod"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.dnsMethod != null && $Object.hasOwnProperty.call(message, "dnsMethod"))
                     writer.uint32(/* id 15, wireType 0 =*/120).int32(message.dnsMethod);
-                if (message.appCached != null && Object.hasOwnProperty.call(message, "appCached"))
+                if (message.appCached != null && $Object.hasOwnProperty.call(message, "appCached"))
                     writer.uint32(/* id 16, wireType 0 =*/128).bool(message.appCached);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -1912,12 +1977,12 @@ $root.Wa6 = (function() {
              * @function encodeDelimited
              * @memberof Wa6.ClientPayload.DNSSource
              * @static
-             * @param {Wa6.ClientPayload.IDNSSource} message DNSSource message or plain object to encode
+             * @param {Wa6.ClientPayload.DNSSource.$Properties} message DNSSource message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            DNSSource.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            DNSSource.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -1927,32 +1992,65 @@ $root.Wa6 = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {Wa6.ClientPayload.DNSSource} DNSSource
+             * @returns {Wa6.ClientPayload.DNSSource & Wa6.ClientPayload.DNSSource.$Shape} DNSSource
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DNSSource.decode = function decode(reader, length, error) {
+            DNSSource.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.DNSSource();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message, value;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.Wa6.ClientPayload.DNSSource();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 15: {
-                            message.dnsMethod = reader.int32();
-                            break;
-                        }
-                    case 16: {
-                            message.appCached = reader.bool();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 15: {
+                            if (wireType !== 0)
+                                break;
+                            message.dnsMethod = reader.int32();
+                            message._dnsMethod = "dnsMethod";
+                            continue;
+                        }
+                    case 16: {
+                            if (wireType !== 0)
+                                break;
+                            message.appCached = reader.bool();
+                            message._appCached = "appCached";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -1962,14 +2060,14 @@ $root.Wa6 = (function() {
              * @memberof Wa6.ClientPayload.DNSSource
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {Wa6.ClientPayload.DNSSource} DNSSource
+             * @returns {Wa6.ClientPayload.DNSSource & Wa6.ClientPayload.DNSSource.$Shape} DNSSource
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DNSSource.decodeDelimited = function decodeDelimited(reader) {
+            DNSSource.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -1980,27 +2078,20 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            DNSSource.verify = function verify(message) {
+            DNSSource.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message.dnsMethod != null && message.hasOwnProperty("dnsMethod")) {
+                if (message.dnsMethod != null && $Object.hasOwnProperty.call(message, "dnsMethod")) {
                     properties._dnsMethod = 1;
-                    switch (message.dnsMethod) {
-                    default:
+                    if (typeof message.dnsMethod !== "number" || (message.dnsMethod | 0) !== message.dnsMethod)
                         return "dnsMethod: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                    case 7:
-                        break;
-                    }
                 }
-                if (message.appCached != null && message.hasOwnProperty("appCached")) {
+                if (message.appCached != null && $Object.hasOwnProperty.call(message, "appCached")) {
                     properties._appCached = 1;
                     if (typeof message.appCached !== "boolean")
                         return "appCached: boolean expected";
@@ -2016,17 +2107,17 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {Wa6.ClientPayload.DNSSource} DNSSource
              */
-            DNSSource.fromObject = function fromObject(object) {
+            DNSSource.fromObject = function (object, _depth) {
                 if (object instanceof $root.Wa6.ClientPayload.DNSSource)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".Wa6.ClientPayload.DNSSource: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.Wa6.ClientPayload.DNSSource();
                 switch (object.dnsMethod) {
-                default:
-                    if (typeof object.dnsMethod === "number") {
-                        message.dnsMethod = object.dnsMethod;
-                        break;
-                    }
-                    break;
                 case "SYSTEM":
                 case 0:
                     message.dnsMethod = 0;
@@ -2059,9 +2150,12 @@ $root.Wa6 = (function() {
                 case 7:
                     message.dnsMethod = 7;
                     break;
+                default:
+                    if (typeof object.dnsMethod === "number" && (object.dnsMethod | 0) === object.dnsMethod)
+                        message.dnsMethod = object.dnsMethod;
                 }
                 if (object.appCached != null)
-                    message.appCached = Boolean(object.appCached);
+                    message.appCached = $Boolean(object.appCached);
                 return message;
             };
 
@@ -2074,20 +2168,18 @@ $root.Wa6 = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            DNSSource.toObject = function toObject(message, options) {
+            DNSSource.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
-                if (message.dnsMethod != null && message.hasOwnProperty("dnsMethod")) {
-                    object.dnsMethod = options.enums === String ? $root.Wa6.ClientPayload.DNSSource.DNSResolutionMethod[message.dnsMethod] === undefined ? message.dnsMethod : $root.Wa6.ClientPayload.DNSSource.DNSResolutionMethod[message.dnsMethod] : message.dnsMethod;
-                    if (options.oneofs)
-                        object._dnsMethod = "dnsMethod";
-                }
-                if (message.appCached != null && message.hasOwnProperty("appCached")) {
+                if (message.dnsMethod != null && $Object.hasOwnProperty.call(message, "dnsMethod"))
+                    object.dnsMethod = options.enums === $String ? $root.Wa6.ClientPayload.DNSSource.DNSResolutionMethod[message.dnsMethod] === $undefined ? message.dnsMethod : $root.Wa6.ClientPayload.DNSSource.DNSResolutionMethod[message.dnsMethod] : message.dnsMethod;
+                if (message.appCached != null && $Object.hasOwnProperty.call(message, "appCached"))
                     object.appCached = message.appCached;
-                    if (options.oneofs)
-                        object._appCached = "appCached";
-                }
                 return object;
             };
 
@@ -2098,23 +2190,22 @@ $root.Wa6 = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            DNSSource.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            DNSSource.prototype.toJSON = function() {
+                return DNSSource.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for DNSSource
+             * Gets the type url for DNSSource
              * @function getTypeUrl
              * @memberof Wa6.ClientPayload.DNSSource
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            DNSSource.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/Wa6.ClientPayload.DNSSource";
+            DNSSource.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/Wa6.ClientPayload.DNSSource";
             };
 
             /**
@@ -2131,7 +2222,7 @@ $root.Wa6 = (function() {
              * @property {number} SOCKS_PROXY=7 SOCKS_PROXY value
              */
             DNSSource.DNSResolutionMethod = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
+                var valuesById = $Object.create(null), values = $Object.create(valuesById);
                 values[valuesById[0] = "SYSTEM"] = 0;
                 values[valuesById[1] = "GOOGLE"] = 1;
                 values[valuesById[2] = "HARDCODED"] = 2;
@@ -2150,8 +2241,7 @@ $root.Wa6 = (function() {
 
             /**
              * Properties of a DevicePairingRegistrationData.
-             * @memberof Wa6.ClientPayload
-             * @interface IDevicePairingRegistrationData
+             * @typedef {Object} Wa6.ClientPayload.DevicePairingRegistrationData.$Properties
              * @property {Uint8Array|null} [eRegid] DevicePairingRegistrationData eRegid
              * @property {Uint8Array|null} [eKeytype] DevicePairingRegistrationData eKeytype
              * @property {Uint8Array|null} [eIdent] DevicePairingRegistrationData eIdent
@@ -2160,22 +2250,36 @@ $root.Wa6 = (function() {
              * @property {Uint8Array|null} [eSkeySig] DevicePairingRegistrationData eSkeySig
              * @property {Uint8Array|null} [buildHash] DevicePairingRegistrationData buildHash
              * @property {Uint8Array|null} [deviceProps] DevicePairingRegistrationData deviceProps
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a DevicePairingRegistrationData.
+             * @memberof Wa6.ClientPayload
+             * @interface IDevicePairingRegistrationData
+             * @augments Wa6.ClientPayload.DevicePairingRegistrationData.$Properties
+             * @deprecated Use Wa6.ClientPayload.DevicePairingRegistrationData.$Properties instead.
+             */
+
+            /**
+             * Shape of a DevicePairingRegistrationData.
+             * @typedef {Wa6.ClientPayload.DevicePairingRegistrationData.$Properties} Wa6.ClientPayload.DevicePairingRegistrationData.$Shape
              */
 
             /**
              * Constructs a new DevicePairingRegistrationData.
              * @memberof Wa6.ClientPayload
              * @classdesc Represents a DevicePairingRegistrationData.
-             * @implements IDevicePairingRegistrationData
              * @constructor
-             * @param {Wa6.ClientPayload.IDevicePairingRegistrationData=} [properties] Properties to set
+             * @param {Wa6.ClientPayload.DevicePairingRegistrationData.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function DevicePairingRegistrationData(properties) {
+            var DevicePairingRegistrationData = function (properties) {
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * DevicePairingRegistrationData eRegid.
@@ -2245,49 +2349,49 @@ $root.Wa6 = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(DevicePairingRegistrationData.prototype, "_eRegid", {
+            $Object.defineProperty(DevicePairingRegistrationData.prototype, "_eRegid", {
                 get: $util.oneOfGetter($oneOfFields = ["eRegid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(DevicePairingRegistrationData.prototype, "_eKeytype", {
+            $Object.defineProperty(DevicePairingRegistrationData.prototype, "_eKeytype", {
                 get: $util.oneOfGetter($oneOfFields = ["eKeytype"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(DevicePairingRegistrationData.prototype, "_eIdent", {
+            $Object.defineProperty(DevicePairingRegistrationData.prototype, "_eIdent", {
                 get: $util.oneOfGetter($oneOfFields = ["eIdent"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(DevicePairingRegistrationData.prototype, "_eSkeyId", {
+            $Object.defineProperty(DevicePairingRegistrationData.prototype, "_eSkeyId", {
                 get: $util.oneOfGetter($oneOfFields = ["eSkeyId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(DevicePairingRegistrationData.prototype, "_eSkeyVal", {
+            $Object.defineProperty(DevicePairingRegistrationData.prototype, "_eSkeyVal", {
                 get: $util.oneOfGetter($oneOfFields = ["eSkeyVal"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(DevicePairingRegistrationData.prototype, "_eSkeySig", {
+            $Object.defineProperty(DevicePairingRegistrationData.prototype, "_eSkeySig", {
                 get: $util.oneOfGetter($oneOfFields = ["eSkeySig"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(DevicePairingRegistrationData.prototype, "_buildHash", {
+            $Object.defineProperty(DevicePairingRegistrationData.prototype, "_buildHash", {
                 get: $util.oneOfGetter($oneOfFields = ["buildHash"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(DevicePairingRegistrationData.prototype, "_deviceProps", {
+            $Object.defineProperty(DevicePairingRegistrationData.prototype, "_deviceProps", {
                 get: $util.oneOfGetter($oneOfFields = ["deviceProps"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -2297,10 +2401,14 @@ $root.Wa6 = (function() {
              * @function create
              * @memberof Wa6.ClientPayload.DevicePairingRegistrationData
              * @static
-             * @param {Wa6.ClientPayload.IDevicePairingRegistrationData=} [properties] Properties to set
+             * @param {Wa6.ClientPayload.DevicePairingRegistrationData.$Properties=} [properties] Properties to set
              * @returns {Wa6.ClientPayload.DevicePairingRegistrationData} DevicePairingRegistrationData instance
+             * @type {{
+             *   (properties: Wa6.ClientPayload.DevicePairingRegistrationData.$Shape): Wa6.ClientPayload.DevicePairingRegistrationData & Wa6.ClientPayload.DevicePairingRegistrationData.$Shape;
+             *   (properties?: Wa6.ClientPayload.DevicePairingRegistrationData.$Properties): Wa6.ClientPayload.DevicePairingRegistrationData;
+             * }}
              */
-            DevicePairingRegistrationData.create = function create(properties) {
+            DevicePairingRegistrationData.create = function(properties) {
                 return new DevicePairingRegistrationData(properties);
             };
 
@@ -2309,29 +2417,36 @@ $root.Wa6 = (function() {
              * @function encode
              * @memberof Wa6.ClientPayload.DevicePairingRegistrationData
              * @static
-             * @param {Wa6.ClientPayload.IDevicePairingRegistrationData} message DevicePairingRegistrationData message or plain object to encode
+             * @param {Wa6.ClientPayload.DevicePairingRegistrationData.$Properties} message DevicePairingRegistrationData message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            DevicePairingRegistrationData.encode = function encode(message, writer) {
+            DevicePairingRegistrationData.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.eRegid != null && Object.hasOwnProperty.call(message, "eRegid"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.eRegid != null && $Object.hasOwnProperty.call(message, "eRegid"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.eRegid);
-                if (message.eKeytype != null && Object.hasOwnProperty.call(message, "eKeytype"))
+                if (message.eKeytype != null && $Object.hasOwnProperty.call(message, "eKeytype"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.eKeytype);
-                if (message.eIdent != null && Object.hasOwnProperty.call(message, "eIdent"))
+                if (message.eIdent != null && $Object.hasOwnProperty.call(message, "eIdent"))
                     writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.eIdent);
-                if (message.eSkeyId != null && Object.hasOwnProperty.call(message, "eSkeyId"))
+                if (message.eSkeyId != null && $Object.hasOwnProperty.call(message, "eSkeyId"))
                     writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.eSkeyId);
-                if (message.eSkeyVal != null && Object.hasOwnProperty.call(message, "eSkeyVal"))
+                if (message.eSkeyVal != null && $Object.hasOwnProperty.call(message, "eSkeyVal"))
                     writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.eSkeyVal);
-                if (message.eSkeySig != null && Object.hasOwnProperty.call(message, "eSkeySig"))
+                if (message.eSkeySig != null && $Object.hasOwnProperty.call(message, "eSkeySig"))
                     writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.eSkeySig);
-                if (message.buildHash != null && Object.hasOwnProperty.call(message, "buildHash"))
+                if (message.buildHash != null && $Object.hasOwnProperty.call(message, "buildHash"))
                     writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.buildHash);
-                if (message.deviceProps != null && Object.hasOwnProperty.call(message, "deviceProps"))
+                if (message.deviceProps != null && $Object.hasOwnProperty.call(message, "deviceProps"))
                     writer.uint32(/* id 8, wireType 2 =*/66).bytes(message.deviceProps);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -2340,12 +2455,12 @@ $root.Wa6 = (function() {
              * @function encodeDelimited
              * @memberof Wa6.ClientPayload.DevicePairingRegistrationData
              * @static
-             * @param {Wa6.ClientPayload.IDevicePairingRegistrationData} message DevicePairingRegistrationData message or plain object to encode
+             * @param {Wa6.ClientPayload.DevicePairingRegistrationData.$Properties} message DevicePairingRegistrationData message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            DevicePairingRegistrationData.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            DevicePairingRegistrationData.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -2355,56 +2470,107 @@ $root.Wa6 = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {Wa6.ClientPayload.DevicePairingRegistrationData} DevicePairingRegistrationData
+             * @returns {Wa6.ClientPayload.DevicePairingRegistrationData & Wa6.ClientPayload.DevicePairingRegistrationData.$Shape} DevicePairingRegistrationData
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DevicePairingRegistrationData.decode = function decode(reader, length, error) {
+            DevicePairingRegistrationData.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.DevicePairingRegistrationData();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.Wa6.ClientPayload.DevicePairingRegistrationData();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.eRegid = reader.bytes();
-                            break;
-                        }
-                    case 2: {
-                            message.eKeytype = reader.bytes();
-                            break;
-                        }
-                    case 3: {
-                            message.eIdent = reader.bytes();
-                            break;
-                        }
-                    case 4: {
-                            message.eSkeyId = reader.bytes();
-                            break;
-                        }
-                    case 5: {
-                            message.eSkeyVal = reader.bytes();
-                            break;
-                        }
-                    case 6: {
-                            message.eSkeySig = reader.bytes();
-                            break;
-                        }
-                    case 7: {
-                            message.buildHash = reader.bytes();
-                            break;
-                        }
-                    case 8: {
-                            message.deviceProps = reader.bytes();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 2)
+                                break;
+                            message.eRegid = reader.bytes();
+                            message._eRegid = "eRegid";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 2)
+                                break;
+                            message.eKeytype = reader.bytes();
+                            message._eKeytype = "eKeytype";
+                            continue;
+                        }
+                    case 3: {
+                            if (wireType !== 2)
+                                break;
+                            message.eIdent = reader.bytes();
+                            message._eIdent = "eIdent";
+                            continue;
+                        }
+                    case 4: {
+                            if (wireType !== 2)
+                                break;
+                            message.eSkeyId = reader.bytes();
+                            message._eSkeyId = "eSkeyId";
+                            continue;
+                        }
+                    case 5: {
+                            if (wireType !== 2)
+                                break;
+                            message.eSkeyVal = reader.bytes();
+                            message._eSkeyVal = "eSkeyVal";
+                            continue;
+                        }
+                    case 6: {
+                            if (wireType !== 2)
+                                break;
+                            message.eSkeySig = reader.bytes();
+                            message._eSkeySig = "eSkeySig";
+                            continue;
+                        }
+                    case 7: {
+                            if (wireType !== 2)
+                                break;
+                            message.buildHash = reader.bytes();
+                            message._buildHash = "buildHash";
+                            continue;
+                        }
+                    case 8: {
+                            if (wireType !== 2)
+                                break;
+                            message.deviceProps = reader.bytes();
+                            message._deviceProps = "deviceProps";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -2414,14 +2580,14 @@ $root.Wa6 = (function() {
              * @memberof Wa6.ClientPayload.DevicePairingRegistrationData
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {Wa6.ClientPayload.DevicePairingRegistrationData} DevicePairingRegistrationData
+             * @returns {Wa6.ClientPayload.DevicePairingRegistrationData & Wa6.ClientPayload.DevicePairingRegistrationData.$Shape} DevicePairingRegistrationData
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DevicePairingRegistrationData.decodeDelimited = function decodeDelimited(reader) {
+            DevicePairingRegistrationData.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -2432,46 +2598,50 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            DevicePairingRegistrationData.verify = function verify(message) {
+            DevicePairingRegistrationData.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message.eRegid != null && message.hasOwnProperty("eRegid")) {
+                if (message.eRegid != null && $Object.hasOwnProperty.call(message, "eRegid")) {
                     properties._eRegid = 1;
                     if (!(message.eRegid && typeof message.eRegid.length === "number" || $util.isString(message.eRegid)))
                         return "eRegid: buffer expected";
                 }
-                if (message.eKeytype != null && message.hasOwnProperty("eKeytype")) {
+                if (message.eKeytype != null && $Object.hasOwnProperty.call(message, "eKeytype")) {
                     properties._eKeytype = 1;
                     if (!(message.eKeytype && typeof message.eKeytype.length === "number" || $util.isString(message.eKeytype)))
                         return "eKeytype: buffer expected";
                 }
-                if (message.eIdent != null && message.hasOwnProperty("eIdent")) {
+                if (message.eIdent != null && $Object.hasOwnProperty.call(message, "eIdent")) {
                     properties._eIdent = 1;
                     if (!(message.eIdent && typeof message.eIdent.length === "number" || $util.isString(message.eIdent)))
                         return "eIdent: buffer expected";
                 }
-                if (message.eSkeyId != null && message.hasOwnProperty("eSkeyId")) {
+                if (message.eSkeyId != null && $Object.hasOwnProperty.call(message, "eSkeyId")) {
                     properties._eSkeyId = 1;
                     if (!(message.eSkeyId && typeof message.eSkeyId.length === "number" || $util.isString(message.eSkeyId)))
                         return "eSkeyId: buffer expected";
                 }
-                if (message.eSkeyVal != null && message.hasOwnProperty("eSkeyVal")) {
+                if (message.eSkeyVal != null && $Object.hasOwnProperty.call(message, "eSkeyVal")) {
                     properties._eSkeyVal = 1;
                     if (!(message.eSkeyVal && typeof message.eSkeyVal.length === "number" || $util.isString(message.eSkeyVal)))
                         return "eSkeyVal: buffer expected";
                 }
-                if (message.eSkeySig != null && message.hasOwnProperty("eSkeySig")) {
+                if (message.eSkeySig != null && $Object.hasOwnProperty.call(message, "eSkeySig")) {
                     properties._eSkeySig = 1;
                     if (!(message.eSkeySig && typeof message.eSkeySig.length === "number" || $util.isString(message.eSkeySig)))
                         return "eSkeySig: buffer expected";
                 }
-                if (message.buildHash != null && message.hasOwnProperty("buildHash")) {
+                if (message.buildHash != null && $Object.hasOwnProperty.call(message, "buildHash")) {
                     properties._buildHash = 1;
                     if (!(message.buildHash && typeof message.buildHash.length === "number" || $util.isString(message.buildHash)))
                         return "buildHash: buffer expected";
                 }
-                if (message.deviceProps != null && message.hasOwnProperty("deviceProps")) {
+                if (message.deviceProps != null && $Object.hasOwnProperty.call(message, "deviceProps")) {
                     properties._deviceProps = 1;
                     if (!(message.deviceProps && typeof message.deviceProps.length === "number" || $util.isString(message.deviceProps)))
                         return "deviceProps: buffer expected";
@@ -2487,9 +2657,15 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {Wa6.ClientPayload.DevicePairingRegistrationData} DevicePairingRegistrationData
              */
-            DevicePairingRegistrationData.fromObject = function fromObject(object) {
+            DevicePairingRegistrationData.fromObject = function (object, _depth) {
                 if (object instanceof $root.Wa6.ClientPayload.DevicePairingRegistrationData)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".Wa6.ClientPayload.DevicePairingRegistrationData: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.Wa6.ClientPayload.DevicePairingRegistrationData();
                 if (object.eRegid != null)
                     if (typeof object.eRegid === "string")
@@ -2543,50 +2719,30 @@ $root.Wa6 = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            DevicePairingRegistrationData.toObject = function toObject(message, options) {
+            DevicePairingRegistrationData.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
-                if (message.eRegid != null && message.hasOwnProperty("eRegid")) {
-                    object.eRegid = options.bytes === String ? $util.base64.encode(message.eRegid, 0, message.eRegid.length) : options.bytes === Array ? Array.prototype.slice.call(message.eRegid) : message.eRegid;
-                    if (options.oneofs)
-                        object._eRegid = "eRegid";
-                }
-                if (message.eKeytype != null && message.hasOwnProperty("eKeytype")) {
-                    object.eKeytype = options.bytes === String ? $util.base64.encode(message.eKeytype, 0, message.eKeytype.length) : options.bytes === Array ? Array.prototype.slice.call(message.eKeytype) : message.eKeytype;
-                    if (options.oneofs)
-                        object._eKeytype = "eKeytype";
-                }
-                if (message.eIdent != null && message.hasOwnProperty("eIdent")) {
-                    object.eIdent = options.bytes === String ? $util.base64.encode(message.eIdent, 0, message.eIdent.length) : options.bytes === Array ? Array.prototype.slice.call(message.eIdent) : message.eIdent;
-                    if (options.oneofs)
-                        object._eIdent = "eIdent";
-                }
-                if (message.eSkeyId != null && message.hasOwnProperty("eSkeyId")) {
-                    object.eSkeyId = options.bytes === String ? $util.base64.encode(message.eSkeyId, 0, message.eSkeyId.length) : options.bytes === Array ? Array.prototype.slice.call(message.eSkeyId) : message.eSkeyId;
-                    if (options.oneofs)
-                        object._eSkeyId = "eSkeyId";
-                }
-                if (message.eSkeyVal != null && message.hasOwnProperty("eSkeyVal")) {
-                    object.eSkeyVal = options.bytes === String ? $util.base64.encode(message.eSkeyVal, 0, message.eSkeyVal.length) : options.bytes === Array ? Array.prototype.slice.call(message.eSkeyVal) : message.eSkeyVal;
-                    if (options.oneofs)
-                        object._eSkeyVal = "eSkeyVal";
-                }
-                if (message.eSkeySig != null && message.hasOwnProperty("eSkeySig")) {
-                    object.eSkeySig = options.bytes === String ? $util.base64.encode(message.eSkeySig, 0, message.eSkeySig.length) : options.bytes === Array ? Array.prototype.slice.call(message.eSkeySig) : message.eSkeySig;
-                    if (options.oneofs)
-                        object._eSkeySig = "eSkeySig";
-                }
-                if (message.buildHash != null && message.hasOwnProperty("buildHash")) {
-                    object.buildHash = options.bytes === String ? $util.base64.encode(message.buildHash, 0, message.buildHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.buildHash) : message.buildHash;
-                    if (options.oneofs)
-                        object._buildHash = "buildHash";
-                }
-                if (message.deviceProps != null && message.hasOwnProperty("deviceProps")) {
-                    object.deviceProps = options.bytes === String ? $util.base64.encode(message.deviceProps, 0, message.deviceProps.length) : options.bytes === Array ? Array.prototype.slice.call(message.deviceProps) : message.deviceProps;
-                    if (options.oneofs)
-                        object._deviceProps = "deviceProps";
-                }
+                if (message.eRegid != null && $Object.hasOwnProperty.call(message, "eRegid"))
+                    object.eRegid = options.bytes === $String ? $util.base64.encode(message.eRegid, 0, message.eRegid.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.eRegid) : message.eRegid;
+                if (message.eKeytype != null && $Object.hasOwnProperty.call(message, "eKeytype"))
+                    object.eKeytype = options.bytes === $String ? $util.base64.encode(message.eKeytype, 0, message.eKeytype.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.eKeytype) : message.eKeytype;
+                if (message.eIdent != null && $Object.hasOwnProperty.call(message, "eIdent"))
+                    object.eIdent = options.bytes === $String ? $util.base64.encode(message.eIdent, 0, message.eIdent.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.eIdent) : message.eIdent;
+                if (message.eSkeyId != null && $Object.hasOwnProperty.call(message, "eSkeyId"))
+                    object.eSkeyId = options.bytes === $String ? $util.base64.encode(message.eSkeyId, 0, message.eSkeyId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.eSkeyId) : message.eSkeyId;
+                if (message.eSkeyVal != null && $Object.hasOwnProperty.call(message, "eSkeyVal"))
+                    object.eSkeyVal = options.bytes === $String ? $util.base64.encode(message.eSkeyVal, 0, message.eSkeyVal.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.eSkeyVal) : message.eSkeyVal;
+                if (message.eSkeySig != null && $Object.hasOwnProperty.call(message, "eSkeySig"))
+                    object.eSkeySig = options.bytes === $String ? $util.base64.encode(message.eSkeySig, 0, message.eSkeySig.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.eSkeySig) : message.eSkeySig;
+                if (message.buildHash != null && $Object.hasOwnProperty.call(message, "buildHash"))
+                    object.buildHash = options.bytes === $String ? $util.base64.encode(message.buildHash, 0, message.buildHash.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.buildHash) : message.buildHash;
+                if (message.deviceProps != null && $Object.hasOwnProperty.call(message, "deviceProps"))
+                    object.deviceProps = options.bytes === $String ? $util.base64.encode(message.deviceProps, 0, message.deviceProps.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.deviceProps) : message.deviceProps;
                 return object;
             };
 
@@ -2597,23 +2753,22 @@ $root.Wa6 = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            DevicePairingRegistrationData.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            DevicePairingRegistrationData.prototype.toJSON = function() {
+                return DevicePairingRegistrationData.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for DevicePairingRegistrationData
+             * Gets the type url for DevicePairingRegistrationData
              * @function getTypeUrl
              * @memberof Wa6.ClientPayload.DevicePairingRegistrationData
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            DevicePairingRegistrationData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/Wa6.ClientPayload.DevicePairingRegistrationData";
+            DevicePairingRegistrationData.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/Wa6.ClientPayload.DevicePairingRegistrationData";
             };
 
             return DevicePairingRegistrationData;
@@ -2628,38 +2783,366 @@ $root.Wa6 = (function() {
          * @property {number} INTENTS_EXTENSION=2 INTENTS_EXTENSION value
          */
         ClientPayload.IOSAppExtension = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
+            var valuesById = $Object.create(null), values = $Object.create(valuesById);
             values[valuesById[0] = "SHARE_EXTENSION"] = 0;
             values[valuesById[1] = "SERVICE_EXTENSION"] = 1;
             values[valuesById[2] = "INTENTS_EXTENSION"] = 2;
             return values;
         })();
 
+        ClientPayload.IntegrationAttestation = (function() {
+
+            /**
+             * Properties of an IntegrationAttestation.
+             * @typedef {Object} Wa6.ClientPayload.IntegrationAttestation.$Properties
+             * @property {string|null} [staticUnbound] IntegrationAttestation staticUnbound
+             * @property {string|null} [onlineSigned] IntegrationAttestation onlineSigned
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of an IntegrationAttestation.
+             * @memberof Wa6.ClientPayload
+             * @interface IIntegrationAttestation
+             * @augments Wa6.ClientPayload.IntegrationAttestation.$Properties
+             * @deprecated Use Wa6.ClientPayload.IntegrationAttestation.$Properties instead.
+             */
+
+            /**
+             * Shape of an IntegrationAttestation.
+             * @typedef {Wa6.ClientPayload.IntegrationAttestation.$Properties} Wa6.ClientPayload.IntegrationAttestation.$Shape
+             */
+
+            /**
+             * Constructs a new IntegrationAttestation.
+             * @memberof Wa6.ClientPayload
+             * @classdesc Represents an IntegrationAttestation.
+             * @constructor
+             * @param {Wa6.ClientPayload.IntegrationAttestation.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+            var IntegrationAttestation = function (properties) {
+                if (properties)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
+                            this[keys[i]] = properties[keys[i]];
+            };
+
+            /**
+             * IntegrationAttestation staticUnbound.
+             * @member {string|null|undefined} staticUnbound
+             * @memberof Wa6.ClientPayload.IntegrationAttestation
+             * @instance
+             */
+            IntegrationAttestation.prototype.staticUnbound = null;
+
+            /**
+             * IntegrationAttestation onlineSigned.
+             * @member {string|null|undefined} onlineSigned
+             * @memberof Wa6.ClientPayload.IntegrationAttestation
+             * @instance
+             */
+            IntegrationAttestation.prototype.onlineSigned = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
+            $Object.defineProperty(IntegrationAttestation.prototype, "_staticUnbound", {
+                get: $util.oneOfGetter($oneOfFields = ["staticUnbound"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            $Object.defineProperty(IntegrationAttestation.prototype, "_onlineSigned", {
+                get: $util.oneOfGetter($oneOfFields = ["onlineSigned"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new IntegrationAttestation instance using the specified properties.
+             * @function create
+             * @memberof Wa6.ClientPayload.IntegrationAttestation
+             * @static
+             * @param {Wa6.ClientPayload.IntegrationAttestation.$Properties=} [properties] Properties to set
+             * @returns {Wa6.ClientPayload.IntegrationAttestation} IntegrationAttestation instance
+             * @type {{
+             *   (properties: Wa6.ClientPayload.IntegrationAttestation.$Shape): Wa6.ClientPayload.IntegrationAttestation & Wa6.ClientPayload.IntegrationAttestation.$Shape;
+             *   (properties?: Wa6.ClientPayload.IntegrationAttestation.$Properties): Wa6.ClientPayload.IntegrationAttestation;
+             * }}
+             */
+            IntegrationAttestation.create = function(properties) {
+                return new IntegrationAttestation(properties);
+            };
+
+            /**
+             * Encodes the specified IntegrationAttestation message. Does not implicitly {@link Wa6.ClientPayload.IntegrationAttestation.verify|verify} messages.
+             * @function encode
+             * @memberof Wa6.ClientPayload.IntegrationAttestation
+             * @static
+             * @param {Wa6.ClientPayload.IntegrationAttestation.$Properties} message IntegrationAttestation message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            IntegrationAttestation.encode = function (message, writer, _depth) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.staticUnbound != null && $Object.hasOwnProperty.call(message, "staticUnbound"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.staticUnbound);
+                if (message.onlineSigned != null && $Object.hasOwnProperty.call(message, "onlineSigned"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.onlineSigned);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified IntegrationAttestation message, length delimited. Does not implicitly {@link Wa6.ClientPayload.IntegrationAttestation.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof Wa6.ClientPayload.IntegrationAttestation
+             * @static
+             * @param {Wa6.ClientPayload.IntegrationAttestation.$Properties} message IntegrationAttestation message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            IntegrationAttestation.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
+            };
+
+            /**
+             * Decodes an IntegrationAttestation message from the specified reader or buffer.
+             * @function decode
+             * @memberof Wa6.ClientPayload.IntegrationAttestation
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {Wa6.ClientPayload.IntegrationAttestation & Wa6.ClientPayload.IntegrationAttestation.$Shape} IntegrationAttestation
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            IntegrationAttestation.decode = function (reader, length, _end, _depth, _target) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.Wa6.ClientPayload.IntegrationAttestation();
+                while (reader.pos < end) {
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
+                        break;
+                    }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 2)
+                                break;
+                            message.staticUnbound = reader.stringVerify();
+                            message._staticUnbound = "staticUnbound";
+                            continue;
+                        }
+                    case 3: {
+                            if (wireType !== 2)
+                                break;
+                            message.onlineSigned = reader.stringVerify();
+                            message._onlineSigned = "onlineSigned";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
+                }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
+                return message;
+            };
+
+            /**
+             * Decodes an IntegrationAttestation message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof Wa6.ClientPayload.IntegrationAttestation
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {Wa6.ClientPayload.IntegrationAttestation & Wa6.ClientPayload.IntegrationAttestation.$Shape} IntegrationAttestation
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            IntegrationAttestation.decodeDelimited = function(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.size());
+            };
+
+            /**
+             * Verifies an IntegrationAttestation message.
+             * @function verify
+             * @memberof Wa6.ClientPayload.IntegrationAttestation
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            IntegrationAttestation.verify = function (message, _depth) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
+                var properties = {};
+                if (message.staticUnbound != null && $Object.hasOwnProperty.call(message, "staticUnbound")) {
+                    properties._staticUnbound = 1;
+                    if (!$util.isString(message.staticUnbound))
+                        return "staticUnbound: string expected";
+                }
+                if (message.onlineSigned != null && $Object.hasOwnProperty.call(message, "onlineSigned")) {
+                    properties._onlineSigned = 1;
+                    if (!$util.isString(message.onlineSigned))
+                        return "onlineSigned: string expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates an IntegrationAttestation message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof Wa6.ClientPayload.IntegrationAttestation
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {Wa6.ClientPayload.IntegrationAttestation} IntegrationAttestation
+             */
+            IntegrationAttestation.fromObject = function (object, _depth) {
+                if (object instanceof $root.Wa6.ClientPayload.IntegrationAttestation)
+                    return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".Wa6.ClientPayload.IntegrationAttestation: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var message = new $root.Wa6.ClientPayload.IntegrationAttestation();
+                if (object.staticUnbound != null)
+                    message.staticUnbound = $String(object.staticUnbound);
+                if (object.onlineSigned != null)
+                    message.onlineSigned = $String(object.onlineSigned);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an IntegrationAttestation message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof Wa6.ClientPayload.IntegrationAttestation
+             * @static
+             * @param {Wa6.ClientPayload.IntegrationAttestation} message IntegrationAttestation
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            IntegrationAttestation.toObject = function (message, options, _depth) {
+                if (!options)
+                    options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var object = {};
+                if (message.staticUnbound != null && $Object.hasOwnProperty.call(message, "staticUnbound"))
+                    object.staticUnbound = message.staticUnbound;
+                if (message.onlineSigned != null && $Object.hasOwnProperty.call(message, "onlineSigned"))
+                    object.onlineSigned = message.onlineSigned;
+                return object;
+            };
+
+            /**
+             * Converts this IntegrationAttestation to JSON.
+             * @function toJSON
+             * @memberof Wa6.ClientPayload.IntegrationAttestation
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            IntegrationAttestation.prototype.toJSON = function() {
+                return IntegrationAttestation.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the type url for IntegrationAttestation
+             * @function getTypeUrl
+             * @memberof Wa6.ClientPayload.IntegrationAttestation
+             * @static
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
+             */
+            IntegrationAttestation.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/Wa6.ClientPayload.IntegrationAttestation";
+            };
+
+            return IntegrationAttestation;
+        })();
+
         ClientPayload.InteropData = (function() {
+
+            /**
+             * Properties of an InteropData.
+             * @typedef {Object} Wa6.ClientPayload.InteropData.$Properties
+             * @property {number|Long|null} [accountId] InteropData accountId
+             * @property {Uint8Array|null} [token] InteropData token
+             * @property {boolean|null} [enableReadReceipts] InteropData enableReadReceipts
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
 
             /**
              * Properties of an InteropData.
              * @memberof Wa6.ClientPayload
              * @interface IInteropData
-             * @property {number|Long|null} [accountId] InteropData accountId
-             * @property {Uint8Array|null} [token] InteropData token
-             * @property {boolean|null} [enableReadReceipts] InteropData enableReadReceipts
+             * @augments Wa6.ClientPayload.InteropData.$Properties
+             * @deprecated Use Wa6.ClientPayload.InteropData.$Properties instead.
+             */
+
+            /**
+             * Shape of an InteropData.
+             * @typedef {Wa6.ClientPayload.InteropData.$Properties} Wa6.ClientPayload.InteropData.$Shape
              */
 
             /**
              * Constructs a new InteropData.
              * @memberof Wa6.ClientPayload
              * @classdesc Represents an InteropData.
-             * @implements IInteropData
              * @constructor
-             * @param {Wa6.ClientPayload.IInteropData=} [properties] Properties to set
+             * @param {Wa6.ClientPayload.InteropData.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function InteropData(properties) {
+            var InteropData = function (properties) {
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * InteropData accountId.
@@ -2689,19 +3172,19 @@ $root.Wa6 = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(InteropData.prototype, "_accountId", {
+            $Object.defineProperty(InteropData.prototype, "_accountId", {
                 get: $util.oneOfGetter($oneOfFields = ["accountId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(InteropData.prototype, "_token", {
+            $Object.defineProperty(InteropData.prototype, "_token", {
                 get: $util.oneOfGetter($oneOfFields = ["token"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(InteropData.prototype, "_enableReadReceipts", {
+            $Object.defineProperty(InteropData.prototype, "_enableReadReceipts", {
                 get: $util.oneOfGetter($oneOfFields = ["enableReadReceipts"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -2711,10 +3194,14 @@ $root.Wa6 = (function() {
              * @function create
              * @memberof Wa6.ClientPayload.InteropData
              * @static
-             * @param {Wa6.ClientPayload.IInteropData=} [properties] Properties to set
+             * @param {Wa6.ClientPayload.InteropData.$Properties=} [properties] Properties to set
              * @returns {Wa6.ClientPayload.InteropData} InteropData instance
+             * @type {{
+             *   (properties: Wa6.ClientPayload.InteropData.$Shape): Wa6.ClientPayload.InteropData & Wa6.ClientPayload.InteropData.$Shape;
+             *   (properties?: Wa6.ClientPayload.InteropData.$Properties): Wa6.ClientPayload.InteropData;
+             * }}
              */
-            InteropData.create = function create(properties) {
+            InteropData.create = function(properties) {
                 return new InteropData(properties);
             };
 
@@ -2723,19 +3210,26 @@ $root.Wa6 = (function() {
              * @function encode
              * @memberof Wa6.ClientPayload.InteropData
              * @static
-             * @param {Wa6.ClientPayload.IInteropData} message InteropData message or plain object to encode
+             * @param {Wa6.ClientPayload.InteropData.$Properties} message InteropData message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            InteropData.encode = function encode(message, writer) {
+            InteropData.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.accountId != null && Object.hasOwnProperty.call(message, "accountId"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.accountId != null && $Object.hasOwnProperty.call(message, "accountId"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.accountId);
-                if (message.token != null && Object.hasOwnProperty.call(message, "token"))
+                if (message.token != null && $Object.hasOwnProperty.call(message, "token"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.token);
-                if (message.enableReadReceipts != null && Object.hasOwnProperty.call(message, "enableReadReceipts"))
+                if (message.enableReadReceipts != null && $Object.hasOwnProperty.call(message, "enableReadReceipts"))
                     writer.uint32(/* id 3, wireType 0 =*/24).bool(message.enableReadReceipts);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -2744,12 +3238,12 @@ $root.Wa6 = (function() {
              * @function encodeDelimited
              * @memberof Wa6.ClientPayload.InteropData
              * @static
-             * @param {Wa6.ClientPayload.IInteropData} message InteropData message or plain object to encode
+             * @param {Wa6.ClientPayload.InteropData.$Properties} message InteropData message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            InteropData.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            InteropData.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -2759,36 +3253,72 @@ $root.Wa6 = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {Wa6.ClientPayload.InteropData} InteropData
+             * @returns {Wa6.ClientPayload.InteropData & Wa6.ClientPayload.InteropData.$Shape} InteropData
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            InteropData.decode = function decode(reader, length, error) {
+            InteropData.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.InteropData();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.Wa6.ClientPayload.InteropData();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.accountId = reader.uint64();
-                            break;
-                        }
-                    case 2: {
-                            message.token = reader.bytes();
-                            break;
-                        }
-                    case 3: {
-                            message.enableReadReceipts = reader.bool();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 0)
+                                break;
+                            message.accountId = reader.uint64();
+                            message._accountId = "accountId";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 2)
+                                break;
+                            message.token = reader.bytes();
+                            message._token = "token";
+                            continue;
+                        }
+                    case 3: {
+                            if (wireType !== 0)
+                                break;
+                            message.enableReadReceipts = reader.bool();
+                            message._enableReadReceipts = "enableReadReceipts";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -2798,14 +3328,14 @@ $root.Wa6 = (function() {
              * @memberof Wa6.ClientPayload.InteropData
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {Wa6.ClientPayload.InteropData} InteropData
+             * @returns {Wa6.ClientPayload.InteropData & Wa6.ClientPayload.InteropData.$Shape} InteropData
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            InteropData.decodeDelimited = function decodeDelimited(reader) {
+            InteropData.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -2816,21 +3346,25 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            InteropData.verify = function verify(message) {
+            InteropData.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message.accountId != null && message.hasOwnProperty("accountId")) {
+                if (message.accountId != null && $Object.hasOwnProperty.call(message, "accountId")) {
                     properties._accountId = 1;
                     if (!$util.isInteger(message.accountId) && !(message.accountId && $util.isInteger(message.accountId.low) && $util.isInteger(message.accountId.high)))
                         return "accountId: integer|Long expected";
                 }
-                if (message.token != null && message.hasOwnProperty("token")) {
+                if (message.token != null && $Object.hasOwnProperty.call(message, "token")) {
                     properties._token = 1;
                     if (!(message.token && typeof message.token.length === "number" || $util.isString(message.token)))
                         return "token: buffer expected";
                 }
-                if (message.enableReadReceipts != null && message.hasOwnProperty("enableReadReceipts")) {
+                if (message.enableReadReceipts != null && $Object.hasOwnProperty.call(message, "enableReadReceipts")) {
                     properties._enableReadReceipts = 1;
                     if (typeof message.enableReadReceipts !== "boolean")
                         return "enableReadReceipts: boolean expected";
@@ -2846,15 +3380,21 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {Wa6.ClientPayload.InteropData} InteropData
              */
-            InteropData.fromObject = function fromObject(object) {
+            InteropData.fromObject = function (object, _depth) {
                 if (object instanceof $root.Wa6.ClientPayload.InteropData)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".Wa6.ClientPayload.InteropData: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.Wa6.ClientPayload.InteropData();
                 if (object.accountId != null)
                     if ($util.Long)
-                        (message.accountId = $util.Long.fromValue(object.accountId)).unsigned = true;
+                        message.accountId = $util.Long.fromValue(object.accountId, true);
                     else if (typeof object.accountId === "string")
-                        message.accountId = parseInt(object.accountId, 10);
+                        message.accountId = $parseInt(object.accountId, 10);
                     else if (typeof object.accountId === "number")
                         message.accountId = object.accountId;
                     else if (typeof object.accountId === "object")
@@ -2865,7 +3405,7 @@ $root.Wa6 = (function() {
                     else if (object.token.length >= 0)
                         message.token = object.token;
                 if (object.enableReadReceipts != null)
-                    message.enableReadReceipts = Boolean(object.enableReadReceipts);
+                    message.enableReadReceipts = $Boolean(object.enableReadReceipts);
                 return message;
             };
 
@@ -2878,28 +3418,25 @@ $root.Wa6 = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            InteropData.toObject = function toObject(message, options) {
+            InteropData.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
-                if (message.accountId != null && message.hasOwnProperty("accountId")) {
-                    if (typeof message.accountId === "number")
-                        object.accountId = options.longs === String ? String(message.accountId) : message.accountId;
+                if (message.accountId != null && $Object.hasOwnProperty.call(message, "accountId"))
+                    if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
+                        object.accountId = typeof message.accountId === "number" ? $BigInt(message.accountId) : $util.Long.fromBits(message.accountId.low >>> 0, message.accountId.high >>> 0, true).toBigInt();
+                    else if (typeof message.accountId === "number")
+                        object.accountId = options.longs === $String ? $String(message.accountId) : message.accountId;
                     else
-                        object.accountId = options.longs === String ? $util.Long.prototype.toString.call(message.accountId) : options.longs === Number ? new $util.LongBits(message.accountId.low >>> 0, message.accountId.high >>> 0).toNumber(true) : message.accountId;
-                    if (options.oneofs)
-                        object._accountId = "accountId";
-                }
-                if (message.token != null && message.hasOwnProperty("token")) {
-                    object.token = options.bytes === String ? $util.base64.encode(message.token, 0, message.token.length) : options.bytes === Array ? Array.prototype.slice.call(message.token) : message.token;
-                    if (options.oneofs)
-                        object._token = "token";
-                }
-                if (message.enableReadReceipts != null && message.hasOwnProperty("enableReadReceipts")) {
+                        object.accountId = options.longs === $String ? $util.Long.prototype.toString.call(message.accountId) : options.longs === $Number ? new $util.LongBits(message.accountId.low >>> 0, message.accountId.high >>> 0).toNumber(true) : message.accountId;
+                if (message.token != null && $Object.hasOwnProperty.call(message, "token"))
+                    object.token = options.bytes === $String ? $util.base64.encode(message.token, 0, message.token.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.token) : message.token;
+                if (message.enableReadReceipts != null && $Object.hasOwnProperty.call(message, "enableReadReceipts"))
                     object.enableReadReceipts = message.enableReadReceipts;
-                    if (options.oneofs)
-                        object._enableReadReceipts = "enableReadReceipts";
-                }
                 return object;
             };
 
@@ -2910,23 +3447,22 @@ $root.Wa6 = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            InteropData.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            InteropData.prototype.toJSON = function() {
+                return InteropData.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for InteropData
+             * Gets the type url for InteropData
              * @function getTypeUrl
              * @memberof Wa6.ClientPayload.InteropData
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            InteropData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/Wa6.ClientPayload.InteropData";
+            InteropData.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/Wa6.ClientPayload.InteropData";
             };
 
             return InteropData;
@@ -2943,7 +3479,7 @@ $root.Wa6 = (function() {
          * @property {number} WHATSAPP_LID=4 WHATSAPP_LID value
          */
         ClientPayload.Product = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
+            var valuesById = $Object.create(null), values = $Object.create(valuesById);
             values[valuesById[0] = "WHATSAPP"] = 0;
             values[valuesById[1] = "MESSENGER"] = 1;
             values[valuesById[2] = "INTEROP"] = 2;
@@ -2960,7 +3496,7 @@ $root.Wa6 = (function() {
          * @property {number} STANDARD=1 STANDARD value
          */
         ClientPayload.TrafficAnonymization = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
+            var valuesById = $Object.create(null), values = $Object.create(valuesById);
             values[valuesById[0] = "OFF"] = 0;
             values[valuesById[1] = "STANDARD"] = 1;
             return values;
@@ -2970,10 +3506,9 @@ $root.Wa6 = (function() {
 
             /**
              * Properties of a UserAgent.
-             * @memberof Wa6.ClientPayload
-             * @interface IUserAgent
+             * @typedef {Object} Wa6.ClientPayload.UserAgent.$Properties
              * @property {Wa6.ClientPayload.UserAgent.Platform|null} [platform] UserAgent platform
-             * @property {Wa6.ClientPayload.UserAgent.IAppVersion|null} [appVersion] UserAgent appVersion
+             * @property {Wa6.ClientPayload.UserAgent.AppVersion.$Properties|null} [appVersion] UserAgent appVersion
              * @property {string|null} [mcc] UserAgent mcc
              * @property {string|null} [mnc] UserAgent mnc
              * @property {string|null} [osVersion] UserAgent osVersion
@@ -2989,22 +3524,36 @@ $root.Wa6 = (function() {
              * @property {Wa6.ClientPayload.UserAgent.DeviceType|null} [deviceType] UserAgent deviceType
              * @property {string|null} [deviceModelType] UserAgent deviceModelType
              * @property {Wa6.ClientPayload.UserAgent.DistributionChannel|null} [distributionChannel] UserAgent distributionChannel
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a UserAgent.
+             * @memberof Wa6.ClientPayload
+             * @interface IUserAgent
+             * @augments Wa6.ClientPayload.UserAgent.$Properties
+             * @deprecated Use Wa6.ClientPayload.UserAgent.$Properties instead.
+             */
+
+            /**
+             * Shape of a UserAgent.
+             * @typedef {Wa6.ClientPayload.UserAgent.$Properties} Wa6.ClientPayload.UserAgent.$Shape
              */
 
             /**
              * Constructs a new UserAgent.
              * @memberof Wa6.ClientPayload
              * @classdesc Represents a UserAgent.
-             * @implements IUserAgent
              * @constructor
-             * @param {Wa6.ClientPayload.IUserAgent=} [properties] Properties to set
+             * @param {Wa6.ClientPayload.UserAgent.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function UserAgent(properties) {
+            var UserAgent = function (properties) {
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * UserAgent platform.
@@ -3016,7 +3565,7 @@ $root.Wa6 = (function() {
 
             /**
              * UserAgent appVersion.
-             * @member {Wa6.ClientPayload.UserAgent.IAppVersion|null|undefined} appVersion
+             * @member {Wa6.ClientPayload.UserAgent.AppVersion.$Properties|null|undefined} appVersion
              * @memberof Wa6.ClientPayload.UserAgent
              * @instance
              */
@@ -3146,103 +3695,103 @@ $root.Wa6 = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_platform", {
+            $Object.defineProperty(UserAgent.prototype, "_platform", {
                 get: $util.oneOfGetter($oneOfFields = ["platform"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_appVersion", {
+            $Object.defineProperty(UserAgent.prototype, "_appVersion", {
                 get: $util.oneOfGetter($oneOfFields = ["appVersion"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_mcc", {
+            $Object.defineProperty(UserAgent.prototype, "_mcc", {
                 get: $util.oneOfGetter($oneOfFields = ["mcc"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_mnc", {
+            $Object.defineProperty(UserAgent.prototype, "_mnc", {
                 get: $util.oneOfGetter($oneOfFields = ["mnc"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_osVersion", {
+            $Object.defineProperty(UserAgent.prototype, "_osVersion", {
                 get: $util.oneOfGetter($oneOfFields = ["osVersion"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_manufacturer", {
+            $Object.defineProperty(UserAgent.prototype, "_manufacturer", {
                 get: $util.oneOfGetter($oneOfFields = ["manufacturer"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_device", {
+            $Object.defineProperty(UserAgent.prototype, "_device", {
                 get: $util.oneOfGetter($oneOfFields = ["device"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_osBuildNumber", {
+            $Object.defineProperty(UserAgent.prototype, "_osBuildNumber", {
                 get: $util.oneOfGetter($oneOfFields = ["osBuildNumber"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_phoneId", {
+            $Object.defineProperty(UserAgent.prototype, "_phoneId", {
                 get: $util.oneOfGetter($oneOfFields = ["phoneId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_releaseChannel", {
+            $Object.defineProperty(UserAgent.prototype, "_releaseChannel", {
                 get: $util.oneOfGetter($oneOfFields = ["releaseChannel"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_localeLanguageIso6391", {
+            $Object.defineProperty(UserAgent.prototype, "_localeLanguageIso6391", {
                 get: $util.oneOfGetter($oneOfFields = ["localeLanguageIso6391"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_localeCountryIso31661Alpha2", {
+            $Object.defineProperty(UserAgent.prototype, "_localeCountryIso31661Alpha2", {
                 get: $util.oneOfGetter($oneOfFields = ["localeCountryIso31661Alpha2"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_deviceBoard", {
+            $Object.defineProperty(UserAgent.prototype, "_deviceBoard", {
                 get: $util.oneOfGetter($oneOfFields = ["deviceBoard"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_deviceExpId", {
+            $Object.defineProperty(UserAgent.prototype, "_deviceExpId", {
                 get: $util.oneOfGetter($oneOfFields = ["deviceExpId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_deviceType", {
+            $Object.defineProperty(UserAgent.prototype, "_deviceType", {
                 get: $util.oneOfGetter($oneOfFields = ["deviceType"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_deviceModelType", {
+            $Object.defineProperty(UserAgent.prototype, "_deviceModelType", {
                 get: $util.oneOfGetter($oneOfFields = ["deviceModelType"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(UserAgent.prototype, "_distributionChannel", {
+            $Object.defineProperty(UserAgent.prototype, "_distributionChannel", {
                 get: $util.oneOfGetter($oneOfFields = ["distributionChannel"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -3252,10 +3801,14 @@ $root.Wa6 = (function() {
              * @function create
              * @memberof Wa6.ClientPayload.UserAgent
              * @static
-             * @param {Wa6.ClientPayload.IUserAgent=} [properties] Properties to set
+             * @param {Wa6.ClientPayload.UserAgent.$Properties=} [properties] Properties to set
              * @returns {Wa6.ClientPayload.UserAgent} UserAgent instance
+             * @type {{
+             *   (properties: Wa6.ClientPayload.UserAgent.$Shape): Wa6.ClientPayload.UserAgent & Wa6.ClientPayload.UserAgent.$Shape;
+             *   (properties?: Wa6.ClientPayload.UserAgent.$Properties): Wa6.ClientPayload.UserAgent;
+             * }}
              */
-            UserAgent.create = function create(properties) {
+            UserAgent.create = function(properties) {
                 return new UserAgent(properties);
             };
 
@@ -3264,47 +3817,54 @@ $root.Wa6 = (function() {
              * @function encode
              * @memberof Wa6.ClientPayload.UserAgent
              * @static
-             * @param {Wa6.ClientPayload.IUserAgent} message UserAgent message or plain object to encode
+             * @param {Wa6.ClientPayload.UserAgent.$Properties} message UserAgent message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            UserAgent.encode = function encode(message, writer) {
+            UserAgent.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.platform != null && Object.hasOwnProperty.call(message, "platform"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.platform != null && $Object.hasOwnProperty.call(message, "platform"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.platform);
-                if (message.appVersion != null && Object.hasOwnProperty.call(message, "appVersion"))
-                    $root.Wa6.ClientPayload.UserAgent.AppVersion.encode(message.appVersion, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.mcc != null && Object.hasOwnProperty.call(message, "mcc"))
+                if (message.appVersion != null && $Object.hasOwnProperty.call(message, "appVersion"))
+                    $root.Wa6.ClientPayload.UserAgent.AppVersion.encode(message.appVersion, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+                if (message.mcc != null && $Object.hasOwnProperty.call(message, "mcc"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.mcc);
-                if (message.mnc != null && Object.hasOwnProperty.call(message, "mnc"))
+                if (message.mnc != null && $Object.hasOwnProperty.call(message, "mnc"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.mnc);
-                if (message.osVersion != null && Object.hasOwnProperty.call(message, "osVersion"))
+                if (message.osVersion != null && $Object.hasOwnProperty.call(message, "osVersion"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.osVersion);
-                if (message.manufacturer != null && Object.hasOwnProperty.call(message, "manufacturer"))
+                if (message.manufacturer != null && $Object.hasOwnProperty.call(message, "manufacturer"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.manufacturer);
-                if (message.device != null && Object.hasOwnProperty.call(message, "device"))
+                if (message.device != null && $Object.hasOwnProperty.call(message, "device"))
                     writer.uint32(/* id 7, wireType 2 =*/58).string(message.device);
-                if (message.osBuildNumber != null && Object.hasOwnProperty.call(message, "osBuildNumber"))
+                if (message.osBuildNumber != null && $Object.hasOwnProperty.call(message, "osBuildNumber"))
                     writer.uint32(/* id 8, wireType 2 =*/66).string(message.osBuildNumber);
-                if (message.phoneId != null && Object.hasOwnProperty.call(message, "phoneId"))
+                if (message.phoneId != null && $Object.hasOwnProperty.call(message, "phoneId"))
                     writer.uint32(/* id 9, wireType 2 =*/74).string(message.phoneId);
-                if (message.releaseChannel != null && Object.hasOwnProperty.call(message, "releaseChannel"))
+                if (message.releaseChannel != null && $Object.hasOwnProperty.call(message, "releaseChannel"))
                     writer.uint32(/* id 10, wireType 0 =*/80).int32(message.releaseChannel);
-                if (message.localeLanguageIso6391 != null && Object.hasOwnProperty.call(message, "localeLanguageIso6391"))
+                if (message.localeLanguageIso6391 != null && $Object.hasOwnProperty.call(message, "localeLanguageIso6391"))
                     writer.uint32(/* id 11, wireType 2 =*/90).string(message.localeLanguageIso6391);
-                if (message.localeCountryIso31661Alpha2 != null && Object.hasOwnProperty.call(message, "localeCountryIso31661Alpha2"))
+                if (message.localeCountryIso31661Alpha2 != null && $Object.hasOwnProperty.call(message, "localeCountryIso31661Alpha2"))
                     writer.uint32(/* id 12, wireType 2 =*/98).string(message.localeCountryIso31661Alpha2);
-                if (message.deviceBoard != null && Object.hasOwnProperty.call(message, "deviceBoard"))
+                if (message.deviceBoard != null && $Object.hasOwnProperty.call(message, "deviceBoard"))
                     writer.uint32(/* id 13, wireType 2 =*/106).string(message.deviceBoard);
-                if (message.deviceExpId != null && Object.hasOwnProperty.call(message, "deviceExpId"))
+                if (message.deviceExpId != null && $Object.hasOwnProperty.call(message, "deviceExpId"))
                     writer.uint32(/* id 14, wireType 2 =*/114).string(message.deviceExpId);
-                if (message.deviceType != null && Object.hasOwnProperty.call(message, "deviceType"))
+                if (message.deviceType != null && $Object.hasOwnProperty.call(message, "deviceType"))
                     writer.uint32(/* id 15, wireType 0 =*/120).int32(message.deviceType);
-                if (message.deviceModelType != null && Object.hasOwnProperty.call(message, "deviceModelType"))
+                if (message.deviceModelType != null && $Object.hasOwnProperty.call(message, "deviceModelType"))
                     writer.uint32(/* id 16, wireType 2 =*/130).string(message.deviceModelType);
-                if (message.distributionChannel != null && Object.hasOwnProperty.call(message, "distributionChannel"))
+                if (message.distributionChannel != null && $Object.hasOwnProperty.call(message, "distributionChannel"))
                     writer.uint32(/* id 17, wireType 0 =*/136).int32(message.distributionChannel);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -3313,12 +3873,12 @@ $root.Wa6 = (function() {
              * @function encodeDelimited
              * @memberof Wa6.ClientPayload.UserAgent
              * @static
-             * @param {Wa6.ClientPayload.IUserAgent} message UserAgent message or plain object to encode
+             * @param {Wa6.ClientPayload.UserAgent.$Properties} message UserAgent message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            UserAgent.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            UserAgent.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -3328,92 +3888,170 @@ $root.Wa6 = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {Wa6.ClientPayload.UserAgent} UserAgent
+             * @returns {Wa6.ClientPayload.UserAgent & Wa6.ClientPayload.UserAgent.$Shape} UserAgent
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            UserAgent.decode = function decode(reader, length, error) {
+            UserAgent.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.UserAgent();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message, value;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.Wa6.ClientPayload.UserAgent();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.platform = reader.int32();
-                            break;
-                        }
-                    case 2: {
-                            message.appVersion = $root.Wa6.ClientPayload.UserAgent.AppVersion.decode(reader, reader.uint32());
-                            break;
-                        }
-                    case 3: {
-                            message.mcc = reader.string();
-                            break;
-                        }
-                    case 4: {
-                            message.mnc = reader.string();
-                            break;
-                        }
-                    case 5: {
-                            message.osVersion = reader.string();
-                            break;
-                        }
-                    case 6: {
-                            message.manufacturer = reader.string();
-                            break;
-                        }
-                    case 7: {
-                            message.device = reader.string();
-                            break;
-                        }
-                    case 8: {
-                            message.osBuildNumber = reader.string();
-                            break;
-                        }
-                    case 9: {
-                            message.phoneId = reader.string();
-                            break;
-                        }
-                    case 10: {
-                            message.releaseChannel = reader.int32();
-                            break;
-                        }
-                    case 11: {
-                            message.localeLanguageIso6391 = reader.string();
-                            break;
-                        }
-                    case 12: {
-                            message.localeCountryIso31661Alpha2 = reader.string();
-                            break;
-                        }
-                    case 13: {
-                            message.deviceBoard = reader.string();
-                            break;
-                        }
-                    case 14: {
-                            message.deviceExpId = reader.string();
-                            break;
-                        }
-                    case 15: {
-                            message.deviceType = reader.int32();
-                            break;
-                        }
-                    case 16: {
-                            message.deviceModelType = reader.string();
-                            break;
-                        }
-                    case 17: {
-                            message.distributionChannel = reader.int32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 0)
+                                break;
+                            message.platform = reader.int32();
+                            message._platform = "platform";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 2)
+                                break;
+                            message.appVersion = $root.Wa6.ClientPayload.UserAgent.AppVersion.decode(reader, reader.size(), $undefined, _depth + 1, message.appVersion);
+                            message._appVersion = "appVersion";
+                            continue;
+                        }
+                    case 3: {
+                            if (wireType !== 2)
+                                break;
+                            message.mcc = reader.stringVerify();
+                            message._mcc = "mcc";
+                            continue;
+                        }
+                    case 4: {
+                            if (wireType !== 2)
+                                break;
+                            message.mnc = reader.stringVerify();
+                            message._mnc = "mnc";
+                            continue;
+                        }
+                    case 5: {
+                            if (wireType !== 2)
+                                break;
+                            message.osVersion = reader.stringVerify();
+                            message._osVersion = "osVersion";
+                            continue;
+                        }
+                    case 6: {
+                            if (wireType !== 2)
+                                break;
+                            message.manufacturer = reader.stringVerify();
+                            message._manufacturer = "manufacturer";
+                            continue;
+                        }
+                    case 7: {
+                            if (wireType !== 2)
+                                break;
+                            message.device = reader.stringVerify();
+                            message._device = "device";
+                            continue;
+                        }
+                    case 8: {
+                            if (wireType !== 2)
+                                break;
+                            message.osBuildNumber = reader.stringVerify();
+                            message._osBuildNumber = "osBuildNumber";
+                            continue;
+                        }
+                    case 9: {
+                            if (wireType !== 2)
+                                break;
+                            message.phoneId = reader.stringVerify();
+                            message._phoneId = "phoneId";
+                            continue;
+                        }
+                    case 10: {
+                            if (wireType !== 0)
+                                break;
+                            message.releaseChannel = reader.int32();
+                            message._releaseChannel = "releaseChannel";
+                            continue;
+                        }
+                    case 11: {
+                            if (wireType !== 2)
+                                break;
+                            message.localeLanguageIso6391 = reader.stringVerify();
+                            message._localeLanguageIso6391 = "localeLanguageIso6391";
+                            continue;
+                        }
+                    case 12: {
+                            if (wireType !== 2)
+                                break;
+                            message.localeCountryIso31661Alpha2 = reader.stringVerify();
+                            message._localeCountryIso31661Alpha2 = "localeCountryIso31661Alpha2";
+                            continue;
+                        }
+                    case 13: {
+                            if (wireType !== 2)
+                                break;
+                            message.deviceBoard = reader.stringVerify();
+                            message._deviceBoard = "deviceBoard";
+                            continue;
+                        }
+                    case 14: {
+                            if (wireType !== 2)
+                                break;
+                            message.deviceExpId = reader.stringVerify();
+                            message._deviceExpId = "deviceExpId";
+                            continue;
+                        }
+                    case 15: {
+                            if (wireType !== 0)
+                                break;
+                            message.deviceType = reader.int32();
+                            message._deviceType = "deviceType";
+                            continue;
+                        }
+                    case 16: {
+                            if (wireType !== 2)
+                                break;
+                            message.deviceModelType = reader.stringVerify();
+                            message._deviceModelType = "deviceModelType";
+                            continue;
+                        }
+                    case 17: {
+                            if (wireType !== 0)
+                                break;
+                            message.distributionChannel = reader.int32();
+                            message._distributionChannel = "distributionChannel";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -3423,14 +4061,14 @@ $root.Wa6 = (function() {
              * @memberof Wa6.ClientPayload.UserAgent
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {Wa6.ClientPayload.UserAgent} UserAgent
+             * @returns {Wa6.ClientPayload.UserAgent & Wa6.ClientPayload.UserAgent.$Shape} UserAgent
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            UserAgent.decodeDelimited = function decodeDelimited(reader) {
+            UserAgent.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -3441,166 +4079,101 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            UserAgent.verify = function verify(message) {
+            UserAgent.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message.platform != null && message.hasOwnProperty("platform")) {
+                if (message.platform != null && $Object.hasOwnProperty.call(message, "platform")) {
                     properties._platform = 1;
-                    switch (message.platform) {
-                    default:
+                    if (typeof message.platform !== "number" || (message.platform | 0) !== message.platform)
                         return "platform: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                    case 7:
-                    case 8:
-                    case 9:
-                    case 10:
-                    case 11:
-                    case 12:
-                    case 13:
-                    case 14:
-                    case 15:
-                    case 16:
-                    case 17:
-                    case 18:
-                    case 19:
-                    case 20:
-                    case 21:
-                    case 22:
-                    case 23:
-                    case 24:
-                    case 25:
-                    case 26:
-                    case 27:
-                    case 28:
-                    case 29:
-                    case 30:
-                    case 31:
-                    case 32:
-                    case 33:
-                    case 34:
-                    case 35:
-                    case 36:
-                    case 37:
-                    case 38:
-                    case 39:
-                    case 40:
-                    case 41:
-                        break;
-                    }
                 }
-                if (message.appVersion != null && message.hasOwnProperty("appVersion")) {
+                if (message.appVersion != null && $Object.hasOwnProperty.call(message, "appVersion")) {
                     properties._appVersion = 1;
                     {
-                        var error = $root.Wa6.ClientPayload.UserAgent.AppVersion.verify(message.appVersion);
+                        var error = $root.Wa6.ClientPayload.UserAgent.AppVersion.verify(message.appVersion, _depth + 1);
                         if (error)
                             return "appVersion." + error;
                     }
                 }
-                if (message.mcc != null && message.hasOwnProperty("mcc")) {
+                if (message.mcc != null && $Object.hasOwnProperty.call(message, "mcc")) {
                     properties._mcc = 1;
                     if (!$util.isString(message.mcc))
                         return "mcc: string expected";
                 }
-                if (message.mnc != null && message.hasOwnProperty("mnc")) {
+                if (message.mnc != null && $Object.hasOwnProperty.call(message, "mnc")) {
                     properties._mnc = 1;
                     if (!$util.isString(message.mnc))
                         return "mnc: string expected";
                 }
-                if (message.osVersion != null && message.hasOwnProperty("osVersion")) {
+                if (message.osVersion != null && $Object.hasOwnProperty.call(message, "osVersion")) {
                     properties._osVersion = 1;
                     if (!$util.isString(message.osVersion))
                         return "osVersion: string expected";
                 }
-                if (message.manufacturer != null && message.hasOwnProperty("manufacturer")) {
+                if (message.manufacturer != null && $Object.hasOwnProperty.call(message, "manufacturer")) {
                     properties._manufacturer = 1;
                     if (!$util.isString(message.manufacturer))
                         return "manufacturer: string expected";
                 }
-                if (message.device != null && message.hasOwnProperty("device")) {
+                if (message.device != null && $Object.hasOwnProperty.call(message, "device")) {
                     properties._device = 1;
                     if (!$util.isString(message.device))
                         return "device: string expected";
                 }
-                if (message.osBuildNumber != null && message.hasOwnProperty("osBuildNumber")) {
+                if (message.osBuildNumber != null && $Object.hasOwnProperty.call(message, "osBuildNumber")) {
                     properties._osBuildNumber = 1;
                     if (!$util.isString(message.osBuildNumber))
                         return "osBuildNumber: string expected";
                 }
-                if (message.phoneId != null && message.hasOwnProperty("phoneId")) {
+                if (message.phoneId != null && $Object.hasOwnProperty.call(message, "phoneId")) {
                     properties._phoneId = 1;
                     if (!$util.isString(message.phoneId))
                         return "phoneId: string expected";
                 }
-                if (message.releaseChannel != null && message.hasOwnProperty("releaseChannel")) {
+                if (message.releaseChannel != null && $Object.hasOwnProperty.call(message, "releaseChannel")) {
                     properties._releaseChannel = 1;
-                    switch (message.releaseChannel) {
-                    default:
+                    if (typeof message.releaseChannel !== "number" || (message.releaseChannel | 0) !== message.releaseChannel)
                         return "releaseChannel: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                        break;
-                    }
                 }
-                if (message.localeLanguageIso6391 != null && message.hasOwnProperty("localeLanguageIso6391")) {
+                if (message.localeLanguageIso6391 != null && $Object.hasOwnProperty.call(message, "localeLanguageIso6391")) {
                     properties._localeLanguageIso6391 = 1;
                     if (!$util.isString(message.localeLanguageIso6391))
                         return "localeLanguageIso6391: string expected";
                 }
-                if (message.localeCountryIso31661Alpha2 != null && message.hasOwnProperty("localeCountryIso31661Alpha2")) {
+                if (message.localeCountryIso31661Alpha2 != null && $Object.hasOwnProperty.call(message, "localeCountryIso31661Alpha2")) {
                     properties._localeCountryIso31661Alpha2 = 1;
                     if (!$util.isString(message.localeCountryIso31661Alpha2))
                         return "localeCountryIso31661Alpha2: string expected";
                 }
-                if (message.deviceBoard != null && message.hasOwnProperty("deviceBoard")) {
+                if (message.deviceBoard != null && $Object.hasOwnProperty.call(message, "deviceBoard")) {
                     properties._deviceBoard = 1;
                     if (!$util.isString(message.deviceBoard))
                         return "deviceBoard: string expected";
                 }
-                if (message.deviceExpId != null && message.hasOwnProperty("deviceExpId")) {
+                if (message.deviceExpId != null && $Object.hasOwnProperty.call(message, "deviceExpId")) {
                     properties._deviceExpId = 1;
                     if (!$util.isString(message.deviceExpId))
                         return "deviceExpId: string expected";
                 }
-                if (message.deviceType != null && message.hasOwnProperty("deviceType")) {
+                if (message.deviceType != null && $Object.hasOwnProperty.call(message, "deviceType")) {
                     properties._deviceType = 1;
-                    switch (message.deviceType) {
-                    default:
+                    if (typeof message.deviceType !== "number" || (message.deviceType | 0) !== message.deviceType)
                         return "deviceType: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                        break;
-                    }
                 }
-                if (message.deviceModelType != null && message.hasOwnProperty("deviceModelType")) {
+                if (message.deviceModelType != null && $Object.hasOwnProperty.call(message, "deviceModelType")) {
                     properties._deviceModelType = 1;
                     if (!$util.isString(message.deviceModelType))
                         return "deviceModelType: string expected";
                 }
-                if (message.distributionChannel != null && message.hasOwnProperty("distributionChannel")) {
+                if (message.distributionChannel != null && $Object.hasOwnProperty.call(message, "distributionChannel")) {
                     properties._distributionChannel = 1;
-                    switch (message.distributionChannel) {
-                    default:
+                    if (typeof message.distributionChannel !== "number" || (message.distributionChannel | 0) !== message.distributionChannel)
                         return "distributionChannel: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                        break;
-                    }
                 }
                 return null;
             };
@@ -3613,17 +4186,17 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {Wa6.ClientPayload.UserAgent} UserAgent
              */
-            UserAgent.fromObject = function fromObject(object) {
+            UserAgent.fromObject = function (object, _depth) {
                 if (object instanceof $root.Wa6.ClientPayload.UserAgent)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".Wa6.ClientPayload.UserAgent: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.Wa6.ClientPayload.UserAgent();
                 switch (object.platform) {
-                default:
-                    if (typeof object.platform === "number") {
-                        message.platform = object.platform;
-                        break;
-                    }
-                    break;
                 case "ANDROID":
                 case 0:
                     message.platform = 0;
@@ -3792,33 +4365,30 @@ $root.Wa6 = (function() {
                 case 41:
                     message.platform = 41;
                     break;
+                default:
+                    if (typeof object.platform === "number" && (object.platform | 0) === object.platform)
+                        message.platform = object.platform;
                 }
                 if (object.appVersion != null) {
-                    if (typeof object.appVersion !== "object")
-                        throw TypeError(".Wa6.ClientPayload.UserAgent.appVersion: object expected");
-                    message.appVersion = $root.Wa6.ClientPayload.UserAgent.AppVersion.fromObject(object.appVersion);
+                    if (!$util.isObject(object.appVersion))
+                        throw $TypeError(".Wa6.ClientPayload.UserAgent.appVersion: object expected");
+                    message.appVersion = $root.Wa6.ClientPayload.UserAgent.AppVersion.fromObject(object.appVersion, _depth + 1);
                 }
                 if (object.mcc != null)
-                    message.mcc = String(object.mcc);
+                    message.mcc = $String(object.mcc);
                 if (object.mnc != null)
-                    message.mnc = String(object.mnc);
+                    message.mnc = $String(object.mnc);
                 if (object.osVersion != null)
-                    message.osVersion = String(object.osVersion);
+                    message.osVersion = $String(object.osVersion);
                 if (object.manufacturer != null)
-                    message.manufacturer = String(object.manufacturer);
+                    message.manufacturer = $String(object.manufacturer);
                 if (object.device != null)
-                    message.device = String(object.device);
+                    message.device = $String(object.device);
                 if (object.osBuildNumber != null)
-                    message.osBuildNumber = String(object.osBuildNumber);
+                    message.osBuildNumber = $String(object.osBuildNumber);
                 if (object.phoneId != null)
-                    message.phoneId = String(object.phoneId);
+                    message.phoneId = $String(object.phoneId);
                 switch (object.releaseChannel) {
-                default:
-                    if (typeof object.releaseChannel === "number") {
-                        message.releaseChannel = object.releaseChannel;
-                        break;
-                    }
-                    break;
                 case "RELEASE":
                 case 0:
                     message.releaseChannel = 0;
@@ -3835,22 +4405,19 @@ $root.Wa6 = (function() {
                 case 3:
                     message.releaseChannel = 3;
                     break;
+                default:
+                    if (typeof object.releaseChannel === "number" && (object.releaseChannel | 0) === object.releaseChannel)
+                        message.releaseChannel = object.releaseChannel;
                 }
                 if (object.localeLanguageIso6391 != null)
-                    message.localeLanguageIso6391 = String(object.localeLanguageIso6391);
+                    message.localeLanguageIso6391 = $String(object.localeLanguageIso6391);
                 if (object.localeCountryIso31661Alpha2 != null)
-                    message.localeCountryIso31661Alpha2 = String(object.localeCountryIso31661Alpha2);
+                    message.localeCountryIso31661Alpha2 = $String(object.localeCountryIso31661Alpha2);
                 if (object.deviceBoard != null)
-                    message.deviceBoard = String(object.deviceBoard);
+                    message.deviceBoard = $String(object.deviceBoard);
                 if (object.deviceExpId != null)
-                    message.deviceExpId = String(object.deviceExpId);
+                    message.deviceExpId = $String(object.deviceExpId);
                 switch (object.deviceType) {
-                default:
-                    if (typeof object.deviceType === "number") {
-                        message.deviceType = object.deviceType;
-                        break;
-                    }
-                    break;
                 case "PHONE":
                 case 0:
                     message.deviceType = 0;
@@ -3879,16 +4446,17 @@ $root.Wa6 = (function() {
                 case 6:
                     message.deviceType = 6;
                     break;
+                case "AGENT":
+                case 7:
+                    message.deviceType = 7;
+                    break;
+                default:
+                    if (typeof object.deviceType === "number" && (object.deviceType | 0) === object.deviceType)
+                        message.deviceType = object.deviceType;
                 }
                 if (object.deviceModelType != null)
-                    message.deviceModelType = String(object.deviceModelType);
+                    message.deviceModelType = $String(object.deviceModelType);
                 switch (object.distributionChannel) {
-                default:
-                    if (typeof object.distributionChannel === "number") {
-                        message.distributionChannel = object.distributionChannel;
-                        break;
-                    }
-                    break;
                 case "APPSTORE":
                 case 0:
                     message.distributionChannel = 0;
@@ -3905,6 +4473,9 @@ $root.Wa6 = (function() {
                 case 3:
                     message.distributionChannel = 3;
                     break;
+                default:
+                    if (typeof object.distributionChannel === "number" && (object.distributionChannel | 0) === object.distributionChannel)
+                        message.distributionChannel = object.distributionChannel;
                 }
                 return message;
             };
@@ -3918,95 +4489,48 @@ $root.Wa6 = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            UserAgent.toObject = function toObject(message, options) {
+            UserAgent.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
-                if (message.platform != null && message.hasOwnProperty("platform")) {
-                    object.platform = options.enums === String ? $root.Wa6.ClientPayload.UserAgent.Platform[message.platform] === undefined ? message.platform : $root.Wa6.ClientPayload.UserAgent.Platform[message.platform] : message.platform;
-                    if (options.oneofs)
-                        object._platform = "platform";
-                }
-                if (message.appVersion != null && message.hasOwnProperty("appVersion")) {
-                    object.appVersion = $root.Wa6.ClientPayload.UserAgent.AppVersion.toObject(message.appVersion, options);
-                    if (options.oneofs)
-                        object._appVersion = "appVersion";
-                }
-                if (message.mcc != null && message.hasOwnProperty("mcc")) {
+                if (message.platform != null && $Object.hasOwnProperty.call(message, "platform"))
+                    object.platform = options.enums === $String ? $root.Wa6.ClientPayload.UserAgent.Platform[message.platform] === $undefined ? message.platform : $root.Wa6.ClientPayload.UserAgent.Platform[message.platform] : message.platform;
+                if (message.appVersion != null && $Object.hasOwnProperty.call(message, "appVersion"))
+                    object.appVersion = $root.Wa6.ClientPayload.UserAgent.AppVersion.toObject(message.appVersion, options, _depth + 1);
+                if (message.mcc != null && $Object.hasOwnProperty.call(message, "mcc"))
                     object.mcc = message.mcc;
-                    if (options.oneofs)
-                        object._mcc = "mcc";
-                }
-                if (message.mnc != null && message.hasOwnProperty("mnc")) {
+                if (message.mnc != null && $Object.hasOwnProperty.call(message, "mnc"))
                     object.mnc = message.mnc;
-                    if (options.oneofs)
-                        object._mnc = "mnc";
-                }
-                if (message.osVersion != null && message.hasOwnProperty("osVersion")) {
+                if (message.osVersion != null && $Object.hasOwnProperty.call(message, "osVersion"))
                     object.osVersion = message.osVersion;
-                    if (options.oneofs)
-                        object._osVersion = "osVersion";
-                }
-                if (message.manufacturer != null && message.hasOwnProperty("manufacturer")) {
+                if (message.manufacturer != null && $Object.hasOwnProperty.call(message, "manufacturer"))
                     object.manufacturer = message.manufacturer;
-                    if (options.oneofs)
-                        object._manufacturer = "manufacturer";
-                }
-                if (message.device != null && message.hasOwnProperty("device")) {
+                if (message.device != null && $Object.hasOwnProperty.call(message, "device"))
                     object.device = message.device;
-                    if (options.oneofs)
-                        object._device = "device";
-                }
-                if (message.osBuildNumber != null && message.hasOwnProperty("osBuildNumber")) {
+                if (message.osBuildNumber != null && $Object.hasOwnProperty.call(message, "osBuildNumber"))
                     object.osBuildNumber = message.osBuildNumber;
-                    if (options.oneofs)
-                        object._osBuildNumber = "osBuildNumber";
-                }
-                if (message.phoneId != null && message.hasOwnProperty("phoneId")) {
+                if (message.phoneId != null && $Object.hasOwnProperty.call(message, "phoneId"))
                     object.phoneId = message.phoneId;
-                    if (options.oneofs)
-                        object._phoneId = "phoneId";
-                }
-                if (message.releaseChannel != null && message.hasOwnProperty("releaseChannel")) {
-                    object.releaseChannel = options.enums === String ? $root.Wa6.ClientPayload.UserAgent.ReleaseChannel[message.releaseChannel] === undefined ? message.releaseChannel : $root.Wa6.ClientPayload.UserAgent.ReleaseChannel[message.releaseChannel] : message.releaseChannel;
-                    if (options.oneofs)
-                        object._releaseChannel = "releaseChannel";
-                }
-                if (message.localeLanguageIso6391 != null && message.hasOwnProperty("localeLanguageIso6391")) {
+                if (message.releaseChannel != null && $Object.hasOwnProperty.call(message, "releaseChannel"))
+                    object.releaseChannel = options.enums === $String ? $root.Wa6.ClientPayload.UserAgent.ReleaseChannel[message.releaseChannel] === $undefined ? message.releaseChannel : $root.Wa6.ClientPayload.UserAgent.ReleaseChannel[message.releaseChannel] : message.releaseChannel;
+                if (message.localeLanguageIso6391 != null && $Object.hasOwnProperty.call(message, "localeLanguageIso6391"))
                     object.localeLanguageIso6391 = message.localeLanguageIso6391;
-                    if (options.oneofs)
-                        object._localeLanguageIso6391 = "localeLanguageIso6391";
-                }
-                if (message.localeCountryIso31661Alpha2 != null && message.hasOwnProperty("localeCountryIso31661Alpha2")) {
+                if (message.localeCountryIso31661Alpha2 != null && $Object.hasOwnProperty.call(message, "localeCountryIso31661Alpha2"))
                     object.localeCountryIso31661Alpha2 = message.localeCountryIso31661Alpha2;
-                    if (options.oneofs)
-                        object._localeCountryIso31661Alpha2 = "localeCountryIso31661Alpha2";
-                }
-                if (message.deviceBoard != null && message.hasOwnProperty("deviceBoard")) {
+                if (message.deviceBoard != null && $Object.hasOwnProperty.call(message, "deviceBoard"))
                     object.deviceBoard = message.deviceBoard;
-                    if (options.oneofs)
-                        object._deviceBoard = "deviceBoard";
-                }
-                if (message.deviceExpId != null && message.hasOwnProperty("deviceExpId")) {
+                if (message.deviceExpId != null && $Object.hasOwnProperty.call(message, "deviceExpId"))
                     object.deviceExpId = message.deviceExpId;
-                    if (options.oneofs)
-                        object._deviceExpId = "deviceExpId";
-                }
-                if (message.deviceType != null && message.hasOwnProperty("deviceType")) {
-                    object.deviceType = options.enums === String ? $root.Wa6.ClientPayload.UserAgent.DeviceType[message.deviceType] === undefined ? message.deviceType : $root.Wa6.ClientPayload.UserAgent.DeviceType[message.deviceType] : message.deviceType;
-                    if (options.oneofs)
-                        object._deviceType = "deviceType";
-                }
-                if (message.deviceModelType != null && message.hasOwnProperty("deviceModelType")) {
+                if (message.deviceType != null && $Object.hasOwnProperty.call(message, "deviceType"))
+                    object.deviceType = options.enums === $String ? $root.Wa6.ClientPayload.UserAgent.DeviceType[message.deviceType] === $undefined ? message.deviceType : $root.Wa6.ClientPayload.UserAgent.DeviceType[message.deviceType] : message.deviceType;
+                if (message.deviceModelType != null && $Object.hasOwnProperty.call(message, "deviceModelType"))
                     object.deviceModelType = message.deviceModelType;
-                    if (options.oneofs)
-                        object._deviceModelType = "deviceModelType";
-                }
-                if (message.distributionChannel != null && message.hasOwnProperty("distributionChannel")) {
-                    object.distributionChannel = options.enums === String ? $root.Wa6.ClientPayload.UserAgent.DistributionChannel[message.distributionChannel] === undefined ? message.distributionChannel : $root.Wa6.ClientPayload.UserAgent.DistributionChannel[message.distributionChannel] : message.distributionChannel;
-                    if (options.oneofs)
-                        object._distributionChannel = "distributionChannel";
-                }
+                if (message.distributionChannel != null && $Object.hasOwnProperty.call(message, "distributionChannel"))
+                    object.distributionChannel = options.enums === $String ? $root.Wa6.ClientPayload.UserAgent.DistributionChannel[message.distributionChannel] === $undefined ? message.distributionChannel : $root.Wa6.ClientPayload.UserAgent.DistributionChannel[message.distributionChannel] : message.distributionChannel;
                 return object;
             };
 
@@ -4017,52 +4541,64 @@ $root.Wa6 = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            UserAgent.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            UserAgent.prototype.toJSON = function() {
+                return UserAgent.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for UserAgent
+             * Gets the type url for UserAgent
              * @function getTypeUrl
              * @memberof Wa6.ClientPayload.UserAgent
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            UserAgent.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/Wa6.ClientPayload.UserAgent";
+            UserAgent.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/Wa6.ClientPayload.UserAgent";
             };
 
             UserAgent.AppVersion = (function() {
 
                 /**
                  * Properties of an AppVersion.
-                 * @memberof Wa6.ClientPayload.UserAgent
-                 * @interface IAppVersion
+                 * @typedef {Object} Wa6.ClientPayload.UserAgent.AppVersion.$Properties
                  * @property {number|null} [primary] AppVersion primary
                  * @property {number|null} [secondary] AppVersion secondary
                  * @property {number|null} [tertiary] AppVersion tertiary
                  * @property {number|null} [quaternary] AppVersion quaternary
                  * @property {number|null} [quinary] AppVersion quinary
+                 * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+                 */
+
+                /**
+                 * Properties of an AppVersion.
+                 * @memberof Wa6.ClientPayload.UserAgent
+                 * @interface IAppVersion
+                 * @augments Wa6.ClientPayload.UserAgent.AppVersion.$Properties
+                 * @deprecated Use Wa6.ClientPayload.UserAgent.AppVersion.$Properties instead.
+                 */
+
+                /**
+                 * Shape of an AppVersion.
+                 * @typedef {Wa6.ClientPayload.UserAgent.AppVersion.$Properties} Wa6.ClientPayload.UserAgent.AppVersion.$Shape
                  */
 
                 /**
                  * Constructs a new AppVersion.
                  * @memberof Wa6.ClientPayload.UserAgent
                  * @classdesc Represents an AppVersion.
-                 * @implements IAppVersion
                  * @constructor
-                 * @param {Wa6.ClientPayload.UserAgent.IAppVersion=} [properties] Properties to set
+                 * @param {Wa6.ClientPayload.UserAgent.AppVersion.$Properties=} [properties] Properties to set
+                 * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
                  */
-                function AppVersion(properties) {
+                var AppVersion = function (properties) {
                     if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
+                        for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null && keys[i] !== "__proto__")
                                 this[keys[i]] = properties[keys[i]];
-                }
+                };
 
                 /**
                  * AppVersion primary.
@@ -4108,31 +4644,31 @@ $root.Wa6 = (function() {
                 var $oneOfFields;
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(AppVersion.prototype, "_primary", {
+                $Object.defineProperty(AppVersion.prototype, "_primary", {
                     get: $util.oneOfGetter($oneOfFields = ["primary"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(AppVersion.prototype, "_secondary", {
+                $Object.defineProperty(AppVersion.prototype, "_secondary", {
                     get: $util.oneOfGetter($oneOfFields = ["secondary"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(AppVersion.prototype, "_tertiary", {
+                $Object.defineProperty(AppVersion.prototype, "_tertiary", {
                     get: $util.oneOfGetter($oneOfFields = ["tertiary"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(AppVersion.prototype, "_quaternary", {
+                $Object.defineProperty(AppVersion.prototype, "_quaternary", {
                     get: $util.oneOfGetter($oneOfFields = ["quaternary"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(AppVersion.prototype, "_quinary", {
+                $Object.defineProperty(AppVersion.prototype, "_quinary", {
                     get: $util.oneOfGetter($oneOfFields = ["quinary"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
@@ -4142,10 +4678,14 @@ $root.Wa6 = (function() {
                  * @function create
                  * @memberof Wa6.ClientPayload.UserAgent.AppVersion
                  * @static
-                 * @param {Wa6.ClientPayload.UserAgent.IAppVersion=} [properties] Properties to set
+                 * @param {Wa6.ClientPayload.UserAgent.AppVersion.$Properties=} [properties] Properties to set
                  * @returns {Wa6.ClientPayload.UserAgent.AppVersion} AppVersion instance
+                 * @type {{
+                 *   (properties: Wa6.ClientPayload.UserAgent.AppVersion.$Shape): Wa6.ClientPayload.UserAgent.AppVersion & Wa6.ClientPayload.UserAgent.AppVersion.$Shape;
+                 *   (properties?: Wa6.ClientPayload.UserAgent.AppVersion.$Properties): Wa6.ClientPayload.UserAgent.AppVersion;
+                 * }}
                  */
-                AppVersion.create = function create(properties) {
+                AppVersion.create = function(properties) {
                     return new AppVersion(properties);
                 };
 
@@ -4154,23 +4694,30 @@ $root.Wa6 = (function() {
                  * @function encode
                  * @memberof Wa6.ClientPayload.UserAgent.AppVersion
                  * @static
-                 * @param {Wa6.ClientPayload.UserAgent.IAppVersion} message AppVersion message or plain object to encode
+                 * @param {Wa6.ClientPayload.UserAgent.AppVersion.$Properties} message AppVersion message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                AppVersion.encode = function encode(message, writer) {
+                AppVersion.encode = function (message, writer, _depth) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.primary != null && Object.hasOwnProperty.call(message, "primary"))
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $util.recursionLimit)
+                        throw $Error("max depth exceeded");
+                    if (message.primary != null && $Object.hasOwnProperty.call(message, "primary"))
                         writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.primary);
-                    if (message.secondary != null && Object.hasOwnProperty.call(message, "secondary"))
+                    if (message.secondary != null && $Object.hasOwnProperty.call(message, "secondary"))
                         writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.secondary);
-                    if (message.tertiary != null && Object.hasOwnProperty.call(message, "tertiary"))
+                    if (message.tertiary != null && $Object.hasOwnProperty.call(message, "tertiary"))
                         writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.tertiary);
-                    if (message.quaternary != null && Object.hasOwnProperty.call(message, "quaternary"))
+                    if (message.quaternary != null && $Object.hasOwnProperty.call(message, "quaternary"))
                         writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.quaternary);
-                    if (message.quinary != null && Object.hasOwnProperty.call(message, "quinary"))
+                    if (message.quinary != null && $Object.hasOwnProperty.call(message, "quinary"))
                         writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.quinary);
+                    if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                        for (var i = 0; i < message.$unknowns.length; ++i)
+                            writer.raw(message.$unknowns[i]);
                     return writer;
                 };
 
@@ -4179,12 +4726,12 @@ $root.Wa6 = (function() {
                  * @function encodeDelimited
                  * @memberof Wa6.ClientPayload.UserAgent.AppVersion
                  * @static
-                 * @param {Wa6.ClientPayload.UserAgent.IAppVersion} message AppVersion message or plain object to encode
+                 * @param {Wa6.ClientPayload.UserAgent.AppVersion.$Properties} message AppVersion message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                AppVersion.encodeDelimited = function encodeDelimited(message, writer) {
-                    return this.encode(message, writer).ldelim();
+                AppVersion.encodeDelimited = function(message, writer) {
+                    return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
                 };
 
                 /**
@@ -4194,44 +4741,86 @@ $root.Wa6 = (function() {
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {Wa6.ClientPayload.UserAgent.AppVersion} AppVersion
+                 * @returns {Wa6.ClientPayload.UserAgent.AppVersion & Wa6.ClientPayload.UserAgent.AppVersion.$Shape} AppVersion
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                AppVersion.decode = function decode(reader, length, error) {
+                AppVersion.decode = function (reader, length, _end, _depth, _target) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.UserAgent.AppVersion();
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $Reader.recursionLimit)
+                        throw $Error("max depth exceeded");
+                    var end, message;
+                    if (length === $undefined)
+                        end = reader.len;
+                    else {
+                        end = reader.pos + length;
+                        if (end > reader.len)
+                            throw $RangeError("index out of range");
+                        length = reader.len;
+                        reader.len = end;
+                    }
+                    message = _target || new $root.Wa6.ClientPayload.UserAgent.AppVersion();
                     while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        if (tag === error)
-                            break;
-                        switch (tag >>> 3) {
-                        case 1: {
-                                message.primary = reader.uint32();
-                                break;
-                            }
-                        case 2: {
-                                message.secondary = reader.uint32();
-                                break;
-                            }
-                        case 3: {
-                                message.tertiary = reader.uint32();
-                                break;
-                            }
-                        case 4: {
-                                message.quaternary = reader.uint32();
-                                break;
-                            }
-                        case 5: {
-                                message.quinary = reader.uint32();
-                                break;
-                            }
-                        default:
-                            reader.skipType(tag & 7);
+                        var start = reader.pos;
+                        var tag = reader.tag();
+                        if (tag === _end) {
+                            _end = $undefined;
                             break;
                         }
+                        var wireType = tag & 7;
+                        switch (tag >>>= 3) {
+                        case 1: {
+                                if (wireType !== 0)
+                                    break;
+                                message.primary = reader.uint32();
+                                message._primary = "primary";
+                                continue;
+                            }
+                        case 2: {
+                                if (wireType !== 0)
+                                    break;
+                                message.secondary = reader.uint32();
+                                message._secondary = "secondary";
+                                continue;
+                            }
+                        case 3: {
+                                if (wireType !== 0)
+                                    break;
+                                message.tertiary = reader.uint32();
+                                message._tertiary = "tertiary";
+                                continue;
+                            }
+                        case 4: {
+                                if (wireType !== 0)
+                                    break;
+                                message.quaternary = reader.uint32();
+                                message._quaternary = "quaternary";
+                                continue;
+                            }
+                        case 5: {
+                                if (wireType !== 0)
+                                    break;
+                                message.quinary = reader.uint32();
+                                message._quinary = "quinary";
+                                continue;
+                            }
+                        }
+                        reader.skipType(wireType, _depth, tag);
+                        if (!reader.discardUnknown) {
+                            $util.makeProp(message, "$unknowns", false);
+                            (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                        }
                     }
+                    if (length !== $undefined) {
+                        if (reader.pos !== end)
+                            throw $RangeError("index out of range");
+                        reader.len = length;
+                    }
+                    if (_end !== $undefined)
+                        throw $Error("missing end group");
                     return message;
                 };
 
@@ -4241,14 +4830,14 @@ $root.Wa6 = (function() {
                  * @memberof Wa6.ClientPayload.UserAgent.AppVersion
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {Wa6.ClientPayload.UserAgent.AppVersion} AppVersion
+                 * @returns {Wa6.ClientPayload.UserAgent.AppVersion & Wa6.ClientPayload.UserAgent.AppVersion.$Shape} AppVersion
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                AppVersion.decodeDelimited = function decodeDelimited(reader) {
+                AppVersion.decodeDelimited = function(reader) {
                     if (!(reader instanceof $Reader))
                         reader = new $Reader(reader);
-                    return this.decode(reader, reader.uint32());
+                    return this.decode(reader, reader.size());
                 };
 
                 /**
@@ -4259,31 +4848,35 @@ $root.Wa6 = (function() {
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                AppVersion.verify = function verify(message) {
+                AppVersion.verify = function (message, _depth) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $util.recursionLimit)
+                        return "max depth exceeded";
                     var properties = {};
-                    if (message.primary != null && message.hasOwnProperty("primary")) {
+                    if (message.primary != null && $Object.hasOwnProperty.call(message, "primary")) {
                         properties._primary = 1;
                         if (!$util.isInteger(message.primary))
                             return "primary: integer expected";
                     }
-                    if (message.secondary != null && message.hasOwnProperty("secondary")) {
+                    if (message.secondary != null && $Object.hasOwnProperty.call(message, "secondary")) {
                         properties._secondary = 1;
                         if (!$util.isInteger(message.secondary))
                             return "secondary: integer expected";
                     }
-                    if (message.tertiary != null && message.hasOwnProperty("tertiary")) {
+                    if (message.tertiary != null && $Object.hasOwnProperty.call(message, "tertiary")) {
                         properties._tertiary = 1;
                         if (!$util.isInteger(message.tertiary))
                             return "tertiary: integer expected";
                     }
-                    if (message.quaternary != null && message.hasOwnProperty("quaternary")) {
+                    if (message.quaternary != null && $Object.hasOwnProperty.call(message, "quaternary")) {
                         properties._quaternary = 1;
                         if (!$util.isInteger(message.quaternary))
                             return "quaternary: integer expected";
                     }
-                    if (message.quinary != null && message.hasOwnProperty("quinary")) {
+                    if (message.quinary != null && $Object.hasOwnProperty.call(message, "quinary")) {
                         properties._quinary = 1;
                         if (!$util.isInteger(message.quinary))
                             return "quinary: integer expected";
@@ -4299,9 +4892,15 @@ $root.Wa6 = (function() {
                  * @param {Object.<string,*>} object Plain object
                  * @returns {Wa6.ClientPayload.UserAgent.AppVersion} AppVersion
                  */
-                AppVersion.fromObject = function fromObject(object) {
+                AppVersion.fromObject = function (object, _depth) {
                     if (object instanceof $root.Wa6.ClientPayload.UserAgent.AppVersion)
                         return object;
+                    if (!$util.isObject(object))
+                        throw $TypeError(".Wa6.ClientPayload.UserAgent.AppVersion: object expected");
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $util.recursionLimit)
+                        throw $Error("max depth exceeded");
                     var message = new $root.Wa6.ClientPayload.UserAgent.AppVersion();
                     if (object.primary != null)
                         message.primary = object.primary >>> 0;
@@ -4325,35 +4924,24 @@ $root.Wa6 = (function() {
                  * @param {$protobuf.IConversionOptions} [options] Conversion options
                  * @returns {Object.<string,*>} Plain object
                  */
-                AppVersion.toObject = function toObject(message, options) {
+                AppVersion.toObject = function (message, options, _depth) {
                     if (!options)
                         options = {};
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $util.recursionLimit)
+                        throw $Error("max depth exceeded");
                     var object = {};
-                    if (message.primary != null && message.hasOwnProperty("primary")) {
+                    if (message.primary != null && $Object.hasOwnProperty.call(message, "primary"))
                         object.primary = message.primary;
-                        if (options.oneofs)
-                            object._primary = "primary";
-                    }
-                    if (message.secondary != null && message.hasOwnProperty("secondary")) {
+                    if (message.secondary != null && $Object.hasOwnProperty.call(message, "secondary"))
                         object.secondary = message.secondary;
-                        if (options.oneofs)
-                            object._secondary = "secondary";
-                    }
-                    if (message.tertiary != null && message.hasOwnProperty("tertiary")) {
+                    if (message.tertiary != null && $Object.hasOwnProperty.call(message, "tertiary"))
                         object.tertiary = message.tertiary;
-                        if (options.oneofs)
-                            object._tertiary = "tertiary";
-                    }
-                    if (message.quaternary != null && message.hasOwnProperty("quaternary")) {
+                    if (message.quaternary != null && $Object.hasOwnProperty.call(message, "quaternary"))
                         object.quaternary = message.quaternary;
-                        if (options.oneofs)
-                            object._quaternary = "quaternary";
-                    }
-                    if (message.quinary != null && message.hasOwnProperty("quinary")) {
+                    if (message.quinary != null && $Object.hasOwnProperty.call(message, "quinary"))
                         object.quinary = message.quinary;
-                        if (options.oneofs)
-                            object._quinary = "quinary";
-                    }
                     return object;
                 };
 
@@ -4364,23 +4952,22 @@ $root.Wa6 = (function() {
                  * @instance
                  * @returns {Object.<string,*>} JSON object
                  */
-                AppVersion.prototype.toJSON = function toJSON() {
-                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                AppVersion.prototype.toJSON = function() {
+                    return AppVersion.toObject(this, $protobuf.util.toJSONOptions);
                 };
 
                 /**
-                 * Gets the default type url for AppVersion
+                 * Gets the type url for AppVersion
                  * @function getTypeUrl
                  * @memberof Wa6.ClientPayload.UserAgent.AppVersion
                  * @static
-                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns {string} The default type url
+                 * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+                 * @returns {string} The type url
                  */
-                AppVersion.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                    if (typeUrlPrefix === undefined) {
-                        typeUrlPrefix = "type.googleapis.com";
-                    }
-                    return typeUrlPrefix + "/Wa6.ClientPayload.UserAgent.AppVersion";
+                AppVersion.getTypeUrl = function(prefix) {
+                    if (prefix === $undefined)
+                        prefix = "type.googleapis.com";
+                    return prefix + "/Wa6.ClientPayload.UserAgent.AppVersion";
                 };
 
                 return AppVersion;
@@ -4397,9 +4984,10 @@ $root.Wa6 = (function() {
              * @property {number} VR=4 VR value
              * @property {number} SMART_DISPLAY=5 SMART_DISPLAY value
              * @property {number} SMART_SPEAKER=6 SMART_SPEAKER value
+             * @property {number} AGENT=7 AGENT value
              */
             UserAgent.DeviceType = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
+                var valuesById = $Object.create(null), values = $Object.create(valuesById);
                 values[valuesById[0] = "PHONE"] = 0;
                 values[valuesById[1] = "TABLET"] = 1;
                 values[valuesById[2] = "DESKTOP"] = 2;
@@ -4407,6 +4995,7 @@ $root.Wa6 = (function() {
                 values[valuesById[4] = "VR"] = 4;
                 values[valuesById[5] = "SMART_DISPLAY"] = 5;
                 values[valuesById[6] = "SMART_SPEAKER"] = 6;
+                values[valuesById[7] = "AGENT"] = 7;
                 return values;
             })();
 
@@ -4420,7 +5009,7 @@ $root.Wa6 = (function() {
              * @property {number} INTERNAL=3 INTERNAL value
              */
             UserAgent.DistributionChannel = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
+                var valuesById = $Object.create(null), values = $Object.create(valuesById);
                 values[valuesById[0] = "APPSTORE"] = 0;
                 values[valuesById[1] = "WEBSITE"] = 1;
                 values[valuesById[2] = "TESTFLIGHT"] = 2;
@@ -4476,7 +5065,7 @@ $root.Wa6 = (function() {
              * @property {number} AUTOMOTIVE=41 AUTOMOTIVE value
              */
             UserAgent.Platform = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
+                var valuesById = $Object.create(null), values = $Object.create(valuesById);
                 values[valuesById[0] = "ANDROID"] = 0;
                 values[valuesById[1] = "IOS"] = 1;
                 values[valuesById[2] = "WINDOWS_PHONE"] = 2;
@@ -4532,7 +5121,7 @@ $root.Wa6 = (function() {
              * @property {number} DEBUG=3 DEBUG value
              */
             UserAgent.ReleaseChannel = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
+                var valuesById = $Object.create(null), values = $Object.create(valuesById);
                 values[valuesById[0] = "RELEASE"] = 0;
                 values[valuesById[1] = "BETA"] = 1;
                 values[valuesById[2] = "ALPHA"] = 2;
@@ -4547,30 +5136,43 @@ $root.Wa6 = (function() {
 
             /**
              * Properties of a WebInfo.
-             * @memberof Wa6.ClientPayload
-             * @interface IWebInfo
+             * @typedef {Object} Wa6.ClientPayload.WebInfo.$Properties
              * @property {string|null} [refToken] WebInfo refToken
              * @property {string|null} [version] WebInfo version
-             * @property {Wa6.ClientPayload.WebInfo.IWebdPayload|null} [webdPayload] WebInfo webdPayload
+             * @property {Wa6.ClientPayload.WebInfo.WebdPayload.$Properties|null} [webdPayload] WebInfo webdPayload
              * @property {Wa6.ClientPayload.WebInfo.WebSubPlatform|null} [webSubPlatform] WebInfo webSubPlatform
              * @property {string|null} [browser] WebInfo browser
              * @property {string|null} [browserVersion] WebInfo browserVersion
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a WebInfo.
+             * @memberof Wa6.ClientPayload
+             * @interface IWebInfo
+             * @augments Wa6.ClientPayload.WebInfo.$Properties
+             * @deprecated Use Wa6.ClientPayload.WebInfo.$Properties instead.
+             */
+
+            /**
+             * Shape of a WebInfo.
+             * @typedef {Wa6.ClientPayload.WebInfo.$Properties} Wa6.ClientPayload.WebInfo.$Shape
              */
 
             /**
              * Constructs a new WebInfo.
              * @memberof Wa6.ClientPayload
              * @classdesc Represents a WebInfo.
-             * @implements IWebInfo
              * @constructor
-             * @param {Wa6.ClientPayload.IWebInfo=} [properties] Properties to set
+             * @param {Wa6.ClientPayload.WebInfo.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function WebInfo(properties) {
+            var WebInfo = function (properties) {
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * WebInfo refToken.
@@ -4590,7 +5192,7 @@ $root.Wa6 = (function() {
 
             /**
              * WebInfo webdPayload.
-             * @member {Wa6.ClientPayload.WebInfo.IWebdPayload|null|undefined} webdPayload
+             * @member {Wa6.ClientPayload.WebInfo.WebdPayload.$Properties|null|undefined} webdPayload
              * @memberof Wa6.ClientPayload.WebInfo
              * @instance
              */
@@ -4624,37 +5226,37 @@ $root.Wa6 = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(WebInfo.prototype, "_refToken", {
+            $Object.defineProperty(WebInfo.prototype, "_refToken", {
                 get: $util.oneOfGetter($oneOfFields = ["refToken"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(WebInfo.prototype, "_version", {
+            $Object.defineProperty(WebInfo.prototype, "_version", {
                 get: $util.oneOfGetter($oneOfFields = ["version"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(WebInfo.prototype, "_webdPayload", {
+            $Object.defineProperty(WebInfo.prototype, "_webdPayload", {
                 get: $util.oneOfGetter($oneOfFields = ["webdPayload"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(WebInfo.prototype, "_webSubPlatform", {
+            $Object.defineProperty(WebInfo.prototype, "_webSubPlatform", {
                 get: $util.oneOfGetter($oneOfFields = ["webSubPlatform"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(WebInfo.prototype, "_browser", {
+            $Object.defineProperty(WebInfo.prototype, "_browser", {
                 get: $util.oneOfGetter($oneOfFields = ["browser"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(WebInfo.prototype, "_browserVersion", {
+            $Object.defineProperty(WebInfo.prototype, "_browserVersion", {
                 get: $util.oneOfGetter($oneOfFields = ["browserVersion"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -4664,10 +5266,14 @@ $root.Wa6 = (function() {
              * @function create
              * @memberof Wa6.ClientPayload.WebInfo
              * @static
-             * @param {Wa6.ClientPayload.IWebInfo=} [properties] Properties to set
+             * @param {Wa6.ClientPayload.WebInfo.$Properties=} [properties] Properties to set
              * @returns {Wa6.ClientPayload.WebInfo} WebInfo instance
+             * @type {{
+             *   (properties: Wa6.ClientPayload.WebInfo.$Shape): Wa6.ClientPayload.WebInfo & Wa6.ClientPayload.WebInfo.$Shape;
+             *   (properties?: Wa6.ClientPayload.WebInfo.$Properties): Wa6.ClientPayload.WebInfo;
+             * }}
              */
-            WebInfo.create = function create(properties) {
+            WebInfo.create = function(properties) {
                 return new WebInfo(properties);
             };
 
@@ -4676,25 +5282,32 @@ $root.Wa6 = (function() {
              * @function encode
              * @memberof Wa6.ClientPayload.WebInfo
              * @static
-             * @param {Wa6.ClientPayload.IWebInfo} message WebInfo message or plain object to encode
+             * @param {Wa6.ClientPayload.WebInfo.$Properties} message WebInfo message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            WebInfo.encode = function encode(message, writer) {
+            WebInfo.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.refToken != null && Object.hasOwnProperty.call(message, "refToken"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.refToken != null && $Object.hasOwnProperty.call(message, "refToken"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.refToken);
-                if (message.version != null && Object.hasOwnProperty.call(message, "version"))
+                if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.version);
-                if (message.webdPayload != null && Object.hasOwnProperty.call(message, "webdPayload"))
-                    $root.Wa6.ClientPayload.WebInfo.WebdPayload.encode(message.webdPayload, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.webSubPlatform != null && Object.hasOwnProperty.call(message, "webSubPlatform"))
+                if (message.webdPayload != null && $Object.hasOwnProperty.call(message, "webdPayload"))
+                    $root.Wa6.ClientPayload.WebInfo.WebdPayload.encode(message.webdPayload, writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
+                if (message.webSubPlatform != null && $Object.hasOwnProperty.call(message, "webSubPlatform"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.webSubPlatform);
-                if (message.browser != null && Object.hasOwnProperty.call(message, "browser"))
+                if (message.browser != null && $Object.hasOwnProperty.call(message, "browser"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.browser);
-                if (message.browserVersion != null && Object.hasOwnProperty.call(message, "browserVersion"))
+                if (message.browserVersion != null && $Object.hasOwnProperty.call(message, "browserVersion"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.browserVersion);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -4703,12 +5316,12 @@ $root.Wa6 = (function() {
              * @function encodeDelimited
              * @memberof Wa6.ClientPayload.WebInfo
              * @static
-             * @param {Wa6.ClientPayload.IWebInfo} message WebInfo message or plain object to encode
+             * @param {Wa6.ClientPayload.WebInfo.$Properties} message WebInfo message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            WebInfo.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            WebInfo.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -4718,48 +5331,93 @@ $root.Wa6 = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {Wa6.ClientPayload.WebInfo} WebInfo
+             * @returns {Wa6.ClientPayload.WebInfo & Wa6.ClientPayload.WebInfo.$Shape} WebInfo
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            WebInfo.decode = function decode(reader, length, error) {
+            WebInfo.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.WebInfo();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message, value;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.Wa6.ClientPayload.WebInfo();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.refToken = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.version = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            message.webdPayload = $root.Wa6.ClientPayload.WebInfo.WebdPayload.decode(reader, reader.uint32());
-                            break;
-                        }
-                    case 4: {
-                            message.webSubPlatform = reader.int32();
-                            break;
-                        }
-                    case 5: {
-                            message.browser = reader.string();
-                            break;
-                        }
-                    case 6: {
-                            message.browserVersion = reader.string();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 2)
+                                break;
+                            message.refToken = reader.stringVerify();
+                            message._refToken = "refToken";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 2)
+                                break;
+                            message.version = reader.stringVerify();
+                            message._version = "version";
+                            continue;
+                        }
+                    case 3: {
+                            if (wireType !== 2)
+                                break;
+                            message.webdPayload = $root.Wa6.ClientPayload.WebInfo.WebdPayload.decode(reader, reader.size(), $undefined, _depth + 1, message.webdPayload);
+                            message._webdPayload = "webdPayload";
+                            continue;
+                        }
+                    case 4: {
+                            if (wireType !== 0)
+                                break;
+                            message.webSubPlatform = reader.int32();
+                            message._webSubPlatform = "webSubPlatform";
+                            continue;
+                        }
+                    case 5: {
+                            if (wireType !== 2)
+                                break;
+                            message.browser = reader.stringVerify();
+                            message._browser = "browser";
+                            continue;
+                        }
+                    case 6: {
+                            if (wireType !== 2)
+                                break;
+                            message.browserVersion = reader.stringVerify();
+                            message._browserVersion = "browserVersion";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -4769,14 +5427,14 @@ $root.Wa6 = (function() {
              * @memberof Wa6.ClientPayload.WebInfo
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {Wa6.ClientPayload.WebInfo} WebInfo
+             * @returns {Wa6.ClientPayload.WebInfo & Wa6.ClientPayload.WebInfo.$Shape} WebInfo
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            WebInfo.decodeDelimited = function decodeDelimited(reader) {
+            WebInfo.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -4787,48 +5445,43 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            WebInfo.verify = function verify(message) {
+            WebInfo.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message.refToken != null && message.hasOwnProperty("refToken")) {
+                if (message.refToken != null && $Object.hasOwnProperty.call(message, "refToken")) {
                     properties._refToken = 1;
                     if (!$util.isString(message.refToken))
                         return "refToken: string expected";
                 }
-                if (message.version != null && message.hasOwnProperty("version")) {
+                if (message.version != null && $Object.hasOwnProperty.call(message, "version")) {
                     properties._version = 1;
                     if (!$util.isString(message.version))
                         return "version: string expected";
                 }
-                if (message.webdPayload != null && message.hasOwnProperty("webdPayload")) {
+                if (message.webdPayload != null && $Object.hasOwnProperty.call(message, "webdPayload")) {
                     properties._webdPayload = 1;
                     {
-                        var error = $root.Wa6.ClientPayload.WebInfo.WebdPayload.verify(message.webdPayload);
+                        var error = $root.Wa6.ClientPayload.WebInfo.WebdPayload.verify(message.webdPayload, _depth + 1);
                         if (error)
                             return "webdPayload." + error;
                     }
                 }
-                if (message.webSubPlatform != null && message.hasOwnProperty("webSubPlatform")) {
+                if (message.webSubPlatform != null && $Object.hasOwnProperty.call(message, "webSubPlatform")) {
                     properties._webSubPlatform = 1;
-                    switch (message.webSubPlatform) {
-                    default:
+                    if (typeof message.webSubPlatform !== "number" || (message.webSubPlatform | 0) !== message.webSubPlatform)
                         return "webSubPlatform: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                        break;
-                    }
                 }
-                if (message.browser != null && message.hasOwnProperty("browser")) {
+                if (message.browser != null && $Object.hasOwnProperty.call(message, "browser")) {
                     properties._browser = 1;
                     if (!$util.isString(message.browser))
                         return "browser: string expected";
                 }
-                if (message.browserVersion != null && message.hasOwnProperty("browserVersion")) {
+                if (message.browserVersion != null && $Object.hasOwnProperty.call(message, "browserVersion")) {
                     properties._browserVersion = 1;
                     if (!$util.isString(message.browserVersion))
                         return "browserVersion: string expected";
@@ -4844,26 +5497,26 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {Wa6.ClientPayload.WebInfo} WebInfo
              */
-            WebInfo.fromObject = function fromObject(object) {
+            WebInfo.fromObject = function (object, _depth) {
                 if (object instanceof $root.Wa6.ClientPayload.WebInfo)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".Wa6.ClientPayload.WebInfo: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.Wa6.ClientPayload.WebInfo();
                 if (object.refToken != null)
-                    message.refToken = String(object.refToken);
+                    message.refToken = $String(object.refToken);
                 if (object.version != null)
-                    message.version = String(object.version);
+                    message.version = $String(object.version);
                 if (object.webdPayload != null) {
-                    if (typeof object.webdPayload !== "object")
-                        throw TypeError(".Wa6.ClientPayload.WebInfo.webdPayload: object expected");
-                    message.webdPayload = $root.Wa6.ClientPayload.WebInfo.WebdPayload.fromObject(object.webdPayload);
+                    if (!$util.isObject(object.webdPayload))
+                        throw $TypeError(".Wa6.ClientPayload.WebInfo.webdPayload: object expected");
+                    message.webdPayload = $root.Wa6.ClientPayload.WebInfo.WebdPayload.fromObject(object.webdPayload, _depth + 1);
                 }
                 switch (object.webSubPlatform) {
-                default:
-                    if (typeof object.webSubPlatform === "number") {
-                        message.webSubPlatform = object.webSubPlatform;
-                        break;
-                    }
-                    break;
                 case "WEB_BROWSER":
                 case 0:
                     message.webSubPlatform = 0;
@@ -4888,11 +5541,14 @@ $root.Wa6 = (function() {
                 case 5:
                     message.webSubPlatform = 5;
                     break;
+                default:
+                    if (typeof object.webSubPlatform === "number" && (object.webSubPlatform | 0) === object.webSubPlatform)
+                        message.webSubPlatform = object.webSubPlatform;
                 }
                 if (object.browser != null)
-                    message.browser = String(object.browser);
+                    message.browser = $String(object.browser);
                 if (object.browserVersion != null)
-                    message.browserVersion = String(object.browserVersion);
+                    message.browserVersion = $String(object.browserVersion);
                 return message;
             };
 
@@ -4905,40 +5561,26 @@ $root.Wa6 = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            WebInfo.toObject = function toObject(message, options) {
+            WebInfo.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
-                if (message.refToken != null && message.hasOwnProperty("refToken")) {
+                if (message.refToken != null && $Object.hasOwnProperty.call(message, "refToken"))
                     object.refToken = message.refToken;
-                    if (options.oneofs)
-                        object._refToken = "refToken";
-                }
-                if (message.version != null && message.hasOwnProperty("version")) {
+                if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
                     object.version = message.version;
-                    if (options.oneofs)
-                        object._version = "version";
-                }
-                if (message.webdPayload != null && message.hasOwnProperty("webdPayload")) {
-                    object.webdPayload = $root.Wa6.ClientPayload.WebInfo.WebdPayload.toObject(message.webdPayload, options);
-                    if (options.oneofs)
-                        object._webdPayload = "webdPayload";
-                }
-                if (message.webSubPlatform != null && message.hasOwnProperty("webSubPlatform")) {
-                    object.webSubPlatform = options.enums === String ? $root.Wa6.ClientPayload.WebInfo.WebSubPlatform[message.webSubPlatform] === undefined ? message.webSubPlatform : $root.Wa6.ClientPayload.WebInfo.WebSubPlatform[message.webSubPlatform] : message.webSubPlatform;
-                    if (options.oneofs)
-                        object._webSubPlatform = "webSubPlatform";
-                }
-                if (message.browser != null && message.hasOwnProperty("browser")) {
+                if (message.webdPayload != null && $Object.hasOwnProperty.call(message, "webdPayload"))
+                    object.webdPayload = $root.Wa6.ClientPayload.WebInfo.WebdPayload.toObject(message.webdPayload, options, _depth + 1);
+                if (message.webSubPlatform != null && $Object.hasOwnProperty.call(message, "webSubPlatform"))
+                    object.webSubPlatform = options.enums === $String ? $root.Wa6.ClientPayload.WebInfo.WebSubPlatform[message.webSubPlatform] === $undefined ? message.webSubPlatform : $root.Wa6.ClientPayload.WebInfo.WebSubPlatform[message.webSubPlatform] : message.webSubPlatform;
+                if (message.browser != null && $Object.hasOwnProperty.call(message, "browser"))
                     object.browser = message.browser;
-                    if (options.oneofs)
-                        object._browser = "browser";
-                }
-                if (message.browserVersion != null && message.hasOwnProperty("browserVersion")) {
+                if (message.browserVersion != null && $Object.hasOwnProperty.call(message, "browserVersion"))
                     object.browserVersion = message.browserVersion;
-                    if (options.oneofs)
-                        object._browserVersion = "browserVersion";
-                }
                 return object;
             };
 
@@ -4949,23 +5591,22 @@ $root.Wa6 = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            WebInfo.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            WebInfo.prototype.toJSON = function() {
+                return WebInfo.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for WebInfo
+             * Gets the type url for WebInfo
              * @function getTypeUrl
              * @memberof Wa6.ClientPayload.WebInfo
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            WebInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/Wa6.ClientPayload.WebInfo";
+            WebInfo.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/Wa6.ClientPayload.WebInfo";
             };
 
             /**
@@ -4980,7 +5621,7 @@ $root.Wa6 = (function() {
              * @property {number} WIN_HYBRID=5 WIN_HYBRID value
              */
             WebInfo.WebSubPlatform = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
+                var valuesById = $Object.create(null), values = $Object.create(valuesById);
                 values[valuesById[0] = "WEB_BROWSER"] = 0;
                 values[valuesById[1] = "APP_STORE"] = 1;
                 values[valuesById[2] = "WIN_STORE"] = 2;
@@ -4994,8 +5635,7 @@ $root.Wa6 = (function() {
 
                 /**
                  * Properties of a WebdPayload.
-                 * @memberof Wa6.ClientPayload.WebInfo
-                 * @interface IWebdPayload
+                 * @typedef {Object} Wa6.ClientPayload.WebInfo.WebdPayload.$Properties
                  * @property {boolean|null} [usesParticipantInKey] WebdPayload usesParticipantInKey
                  * @property {boolean|null} [supportsStarredMessages] WebdPayload supportsStarredMessages
                  * @property {boolean|null} [supportsDocumentMessages] WebdPayload supportsDocumentMessages
@@ -5007,22 +5647,36 @@ $root.Wa6 = (function() {
                  * @property {boolean|null} [supportsE2EDocument] WebdPayload supportsE2EDocument
                  * @property {string|null} [documentTypes] WebdPayload documentTypes
                  * @property {Uint8Array|null} [features] WebdPayload features
+                 * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+                 */
+
+                /**
+                 * Properties of a WebdPayload.
+                 * @memberof Wa6.ClientPayload.WebInfo
+                 * @interface IWebdPayload
+                 * @augments Wa6.ClientPayload.WebInfo.WebdPayload.$Properties
+                 * @deprecated Use Wa6.ClientPayload.WebInfo.WebdPayload.$Properties instead.
+                 */
+
+                /**
+                 * Shape of a WebdPayload.
+                 * @typedef {Wa6.ClientPayload.WebInfo.WebdPayload.$Properties} Wa6.ClientPayload.WebInfo.WebdPayload.$Shape
                  */
 
                 /**
                  * Constructs a new WebdPayload.
                  * @memberof Wa6.ClientPayload.WebInfo
                  * @classdesc Represents a WebdPayload.
-                 * @implements IWebdPayload
                  * @constructor
-                 * @param {Wa6.ClientPayload.WebInfo.IWebdPayload=} [properties] Properties to set
+                 * @param {Wa6.ClientPayload.WebInfo.WebdPayload.$Properties=} [properties] Properties to set
+                 * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
                  */
-                function WebdPayload(properties) {
+                var WebdPayload = function (properties) {
                     if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
+                        for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null && keys[i] !== "__proto__")
                                 this[keys[i]] = properties[keys[i]];
-                }
+                };
 
                 /**
                  * WebdPayload usesParticipantInKey.
@@ -5116,67 +5770,67 @@ $root.Wa6 = (function() {
                 var $oneOfFields;
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(WebdPayload.prototype, "_usesParticipantInKey", {
+                $Object.defineProperty(WebdPayload.prototype, "_usesParticipantInKey", {
                     get: $util.oneOfGetter($oneOfFields = ["usesParticipantInKey"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(WebdPayload.prototype, "_supportsStarredMessages", {
+                $Object.defineProperty(WebdPayload.prototype, "_supportsStarredMessages", {
                     get: $util.oneOfGetter($oneOfFields = ["supportsStarredMessages"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(WebdPayload.prototype, "_supportsDocumentMessages", {
+                $Object.defineProperty(WebdPayload.prototype, "_supportsDocumentMessages", {
                     get: $util.oneOfGetter($oneOfFields = ["supportsDocumentMessages"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(WebdPayload.prototype, "_supportsUrlMessages", {
+                $Object.defineProperty(WebdPayload.prototype, "_supportsUrlMessages", {
                     get: $util.oneOfGetter($oneOfFields = ["supportsUrlMessages"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(WebdPayload.prototype, "_supportsMediaRetry", {
+                $Object.defineProperty(WebdPayload.prototype, "_supportsMediaRetry", {
                     get: $util.oneOfGetter($oneOfFields = ["supportsMediaRetry"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(WebdPayload.prototype, "_supportsE2EImage", {
+                $Object.defineProperty(WebdPayload.prototype, "_supportsE2EImage", {
                     get: $util.oneOfGetter($oneOfFields = ["supportsE2EImage"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(WebdPayload.prototype, "_supportsE2EVideo", {
+                $Object.defineProperty(WebdPayload.prototype, "_supportsE2EVideo", {
                     get: $util.oneOfGetter($oneOfFields = ["supportsE2EVideo"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(WebdPayload.prototype, "_supportsE2EAudio", {
+                $Object.defineProperty(WebdPayload.prototype, "_supportsE2EAudio", {
                     get: $util.oneOfGetter($oneOfFields = ["supportsE2EAudio"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(WebdPayload.prototype, "_supportsE2EDocument", {
+                $Object.defineProperty(WebdPayload.prototype, "_supportsE2EDocument", {
                     get: $util.oneOfGetter($oneOfFields = ["supportsE2EDocument"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(WebdPayload.prototype, "_documentTypes", {
+                $Object.defineProperty(WebdPayload.prototype, "_documentTypes", {
                     get: $util.oneOfGetter($oneOfFields = ["documentTypes"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 // Virtual OneOf for proto3 optional field
-                Object.defineProperty(WebdPayload.prototype, "_features", {
+                $Object.defineProperty(WebdPayload.prototype, "_features", {
                     get: $util.oneOfGetter($oneOfFields = ["features"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
@@ -5186,10 +5840,14 @@ $root.Wa6 = (function() {
                  * @function create
                  * @memberof Wa6.ClientPayload.WebInfo.WebdPayload
                  * @static
-                 * @param {Wa6.ClientPayload.WebInfo.IWebdPayload=} [properties] Properties to set
+                 * @param {Wa6.ClientPayload.WebInfo.WebdPayload.$Properties=} [properties] Properties to set
                  * @returns {Wa6.ClientPayload.WebInfo.WebdPayload} WebdPayload instance
+                 * @type {{
+                 *   (properties: Wa6.ClientPayload.WebInfo.WebdPayload.$Shape): Wa6.ClientPayload.WebInfo.WebdPayload & Wa6.ClientPayload.WebInfo.WebdPayload.$Shape;
+                 *   (properties?: Wa6.ClientPayload.WebInfo.WebdPayload.$Properties): Wa6.ClientPayload.WebInfo.WebdPayload;
+                 * }}
                  */
-                WebdPayload.create = function create(properties) {
+                WebdPayload.create = function(properties) {
                     return new WebdPayload(properties);
                 };
 
@@ -5198,35 +5856,42 @@ $root.Wa6 = (function() {
                  * @function encode
                  * @memberof Wa6.ClientPayload.WebInfo.WebdPayload
                  * @static
-                 * @param {Wa6.ClientPayload.WebInfo.IWebdPayload} message WebdPayload message or plain object to encode
+                 * @param {Wa6.ClientPayload.WebInfo.WebdPayload.$Properties} message WebdPayload message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                WebdPayload.encode = function encode(message, writer) {
+                WebdPayload.encode = function (message, writer, _depth) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.usesParticipantInKey != null && Object.hasOwnProperty.call(message, "usesParticipantInKey"))
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $util.recursionLimit)
+                        throw $Error("max depth exceeded");
+                    if (message.usesParticipantInKey != null && $Object.hasOwnProperty.call(message, "usesParticipantInKey"))
                         writer.uint32(/* id 1, wireType 0 =*/8).bool(message.usesParticipantInKey);
-                    if (message.supportsStarredMessages != null && Object.hasOwnProperty.call(message, "supportsStarredMessages"))
+                    if (message.supportsStarredMessages != null && $Object.hasOwnProperty.call(message, "supportsStarredMessages"))
                         writer.uint32(/* id 2, wireType 0 =*/16).bool(message.supportsStarredMessages);
-                    if (message.supportsDocumentMessages != null && Object.hasOwnProperty.call(message, "supportsDocumentMessages"))
+                    if (message.supportsDocumentMessages != null && $Object.hasOwnProperty.call(message, "supportsDocumentMessages"))
                         writer.uint32(/* id 3, wireType 0 =*/24).bool(message.supportsDocumentMessages);
-                    if (message.supportsUrlMessages != null && Object.hasOwnProperty.call(message, "supportsUrlMessages"))
+                    if (message.supportsUrlMessages != null && $Object.hasOwnProperty.call(message, "supportsUrlMessages"))
                         writer.uint32(/* id 4, wireType 0 =*/32).bool(message.supportsUrlMessages);
-                    if (message.supportsMediaRetry != null && Object.hasOwnProperty.call(message, "supportsMediaRetry"))
+                    if (message.supportsMediaRetry != null && $Object.hasOwnProperty.call(message, "supportsMediaRetry"))
                         writer.uint32(/* id 5, wireType 0 =*/40).bool(message.supportsMediaRetry);
-                    if (message.supportsE2EImage != null && Object.hasOwnProperty.call(message, "supportsE2EImage"))
+                    if (message.supportsE2EImage != null && $Object.hasOwnProperty.call(message, "supportsE2EImage"))
                         writer.uint32(/* id 6, wireType 0 =*/48).bool(message.supportsE2EImage);
-                    if (message.supportsE2EVideo != null && Object.hasOwnProperty.call(message, "supportsE2EVideo"))
+                    if (message.supportsE2EVideo != null && $Object.hasOwnProperty.call(message, "supportsE2EVideo"))
                         writer.uint32(/* id 7, wireType 0 =*/56).bool(message.supportsE2EVideo);
-                    if (message.supportsE2EAudio != null && Object.hasOwnProperty.call(message, "supportsE2EAudio"))
+                    if (message.supportsE2EAudio != null && $Object.hasOwnProperty.call(message, "supportsE2EAudio"))
                         writer.uint32(/* id 8, wireType 0 =*/64).bool(message.supportsE2EAudio);
-                    if (message.supportsE2EDocument != null && Object.hasOwnProperty.call(message, "supportsE2EDocument"))
+                    if (message.supportsE2EDocument != null && $Object.hasOwnProperty.call(message, "supportsE2EDocument"))
                         writer.uint32(/* id 9, wireType 0 =*/72).bool(message.supportsE2EDocument);
-                    if (message.documentTypes != null && Object.hasOwnProperty.call(message, "documentTypes"))
+                    if (message.documentTypes != null && $Object.hasOwnProperty.call(message, "documentTypes"))
                         writer.uint32(/* id 10, wireType 2 =*/82).string(message.documentTypes);
-                    if (message.features != null && Object.hasOwnProperty.call(message, "features"))
+                    if (message.features != null && $Object.hasOwnProperty.call(message, "features"))
                         writer.uint32(/* id 11, wireType 2 =*/90).bytes(message.features);
+                    if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                        for (var i = 0; i < message.$unknowns.length; ++i)
+                            writer.raw(message.$unknowns[i]);
                     return writer;
                 };
 
@@ -5235,12 +5900,12 @@ $root.Wa6 = (function() {
                  * @function encodeDelimited
                  * @memberof Wa6.ClientPayload.WebInfo.WebdPayload
                  * @static
-                 * @param {Wa6.ClientPayload.WebInfo.IWebdPayload} message WebdPayload message or plain object to encode
+                 * @param {Wa6.ClientPayload.WebInfo.WebdPayload.$Properties} message WebdPayload message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                WebdPayload.encodeDelimited = function encodeDelimited(message, writer) {
-                    return this.encode(message, writer).ldelim();
+                WebdPayload.encodeDelimited = function(message, writer) {
+                    return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
                 };
 
                 /**
@@ -5250,68 +5915,128 @@ $root.Wa6 = (function() {
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {Wa6.ClientPayload.WebInfo.WebdPayload} WebdPayload
+                 * @returns {Wa6.ClientPayload.WebInfo.WebdPayload & Wa6.ClientPayload.WebInfo.WebdPayload.$Shape} WebdPayload
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                WebdPayload.decode = function decode(reader, length, error) {
+                WebdPayload.decode = function (reader, length, _end, _depth, _target) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.WebInfo.WebdPayload();
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $Reader.recursionLimit)
+                        throw $Error("max depth exceeded");
+                    var end, message;
+                    if (length === $undefined)
+                        end = reader.len;
+                    else {
+                        end = reader.pos + length;
+                        if (end > reader.len)
+                            throw $RangeError("index out of range");
+                        length = reader.len;
+                        reader.len = end;
+                    }
+                    message = _target || new $root.Wa6.ClientPayload.WebInfo.WebdPayload();
                     while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        if (tag === error)
-                            break;
-                        switch (tag >>> 3) {
-                        case 1: {
-                                message.usesParticipantInKey = reader.bool();
-                                break;
-                            }
-                        case 2: {
-                                message.supportsStarredMessages = reader.bool();
-                                break;
-                            }
-                        case 3: {
-                                message.supportsDocumentMessages = reader.bool();
-                                break;
-                            }
-                        case 4: {
-                                message.supportsUrlMessages = reader.bool();
-                                break;
-                            }
-                        case 5: {
-                                message.supportsMediaRetry = reader.bool();
-                                break;
-                            }
-                        case 6: {
-                                message.supportsE2EImage = reader.bool();
-                                break;
-                            }
-                        case 7: {
-                                message.supportsE2EVideo = reader.bool();
-                                break;
-                            }
-                        case 8: {
-                                message.supportsE2EAudio = reader.bool();
-                                break;
-                            }
-                        case 9: {
-                                message.supportsE2EDocument = reader.bool();
-                                break;
-                            }
-                        case 10: {
-                                message.documentTypes = reader.string();
-                                break;
-                            }
-                        case 11: {
-                                message.features = reader.bytes();
-                                break;
-                            }
-                        default:
-                            reader.skipType(tag & 7);
+                        var start = reader.pos;
+                        var tag = reader.tag();
+                        if (tag === _end) {
+                            _end = $undefined;
                             break;
                         }
+                        var wireType = tag & 7;
+                        switch (tag >>>= 3) {
+                        case 1: {
+                                if (wireType !== 0)
+                                    break;
+                                message.usesParticipantInKey = reader.bool();
+                                message._usesParticipantInKey = "usesParticipantInKey";
+                                continue;
+                            }
+                        case 2: {
+                                if (wireType !== 0)
+                                    break;
+                                message.supportsStarredMessages = reader.bool();
+                                message._supportsStarredMessages = "supportsStarredMessages";
+                                continue;
+                            }
+                        case 3: {
+                                if (wireType !== 0)
+                                    break;
+                                message.supportsDocumentMessages = reader.bool();
+                                message._supportsDocumentMessages = "supportsDocumentMessages";
+                                continue;
+                            }
+                        case 4: {
+                                if (wireType !== 0)
+                                    break;
+                                message.supportsUrlMessages = reader.bool();
+                                message._supportsUrlMessages = "supportsUrlMessages";
+                                continue;
+                            }
+                        case 5: {
+                                if (wireType !== 0)
+                                    break;
+                                message.supportsMediaRetry = reader.bool();
+                                message._supportsMediaRetry = "supportsMediaRetry";
+                                continue;
+                            }
+                        case 6: {
+                                if (wireType !== 0)
+                                    break;
+                                message.supportsE2EImage = reader.bool();
+                                message._supportsE2EImage = "supportsE2EImage";
+                                continue;
+                            }
+                        case 7: {
+                                if (wireType !== 0)
+                                    break;
+                                message.supportsE2EVideo = reader.bool();
+                                message._supportsE2EVideo = "supportsE2EVideo";
+                                continue;
+                            }
+                        case 8: {
+                                if (wireType !== 0)
+                                    break;
+                                message.supportsE2EAudio = reader.bool();
+                                message._supportsE2EAudio = "supportsE2EAudio";
+                                continue;
+                            }
+                        case 9: {
+                                if (wireType !== 0)
+                                    break;
+                                message.supportsE2EDocument = reader.bool();
+                                message._supportsE2EDocument = "supportsE2EDocument";
+                                continue;
+                            }
+                        case 10: {
+                                if (wireType !== 2)
+                                    break;
+                                message.documentTypes = reader.stringVerify();
+                                message._documentTypes = "documentTypes";
+                                continue;
+                            }
+                        case 11: {
+                                if (wireType !== 2)
+                                    break;
+                                message.features = reader.bytes();
+                                message._features = "features";
+                                continue;
+                            }
+                        }
+                        reader.skipType(wireType, _depth, tag);
+                        if (!reader.discardUnknown) {
+                            $util.makeProp(message, "$unknowns", false);
+                            (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                        }
                     }
+                    if (length !== $undefined) {
+                        if (reader.pos !== end)
+                            throw $RangeError("index out of range");
+                        reader.len = length;
+                    }
+                    if (_end !== $undefined)
+                        throw $Error("missing end group");
                     return message;
                 };
 
@@ -5321,14 +6046,14 @@ $root.Wa6 = (function() {
                  * @memberof Wa6.ClientPayload.WebInfo.WebdPayload
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {Wa6.ClientPayload.WebInfo.WebdPayload} WebdPayload
+                 * @returns {Wa6.ClientPayload.WebInfo.WebdPayload & Wa6.ClientPayload.WebInfo.WebdPayload.$Shape} WebdPayload
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                WebdPayload.decodeDelimited = function decodeDelimited(reader) {
+                WebdPayload.decodeDelimited = function(reader) {
                     if (!(reader instanceof $Reader))
                         reader = new $Reader(reader);
-                    return this.decode(reader, reader.uint32());
+                    return this.decode(reader, reader.size());
                 };
 
                 /**
@@ -5339,61 +6064,65 @@ $root.Wa6 = (function() {
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                WebdPayload.verify = function verify(message) {
+                WebdPayload.verify = function (message, _depth) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $util.recursionLimit)
+                        return "max depth exceeded";
                     var properties = {};
-                    if (message.usesParticipantInKey != null && message.hasOwnProperty("usesParticipantInKey")) {
+                    if (message.usesParticipantInKey != null && $Object.hasOwnProperty.call(message, "usesParticipantInKey")) {
                         properties._usesParticipantInKey = 1;
                         if (typeof message.usesParticipantInKey !== "boolean")
                             return "usesParticipantInKey: boolean expected";
                     }
-                    if (message.supportsStarredMessages != null && message.hasOwnProperty("supportsStarredMessages")) {
+                    if (message.supportsStarredMessages != null && $Object.hasOwnProperty.call(message, "supportsStarredMessages")) {
                         properties._supportsStarredMessages = 1;
                         if (typeof message.supportsStarredMessages !== "boolean")
                             return "supportsStarredMessages: boolean expected";
                     }
-                    if (message.supportsDocumentMessages != null && message.hasOwnProperty("supportsDocumentMessages")) {
+                    if (message.supportsDocumentMessages != null && $Object.hasOwnProperty.call(message, "supportsDocumentMessages")) {
                         properties._supportsDocumentMessages = 1;
                         if (typeof message.supportsDocumentMessages !== "boolean")
                             return "supportsDocumentMessages: boolean expected";
                     }
-                    if (message.supportsUrlMessages != null && message.hasOwnProperty("supportsUrlMessages")) {
+                    if (message.supportsUrlMessages != null && $Object.hasOwnProperty.call(message, "supportsUrlMessages")) {
                         properties._supportsUrlMessages = 1;
                         if (typeof message.supportsUrlMessages !== "boolean")
                             return "supportsUrlMessages: boolean expected";
                     }
-                    if (message.supportsMediaRetry != null && message.hasOwnProperty("supportsMediaRetry")) {
+                    if (message.supportsMediaRetry != null && $Object.hasOwnProperty.call(message, "supportsMediaRetry")) {
                         properties._supportsMediaRetry = 1;
                         if (typeof message.supportsMediaRetry !== "boolean")
                             return "supportsMediaRetry: boolean expected";
                     }
-                    if (message.supportsE2EImage != null && message.hasOwnProperty("supportsE2EImage")) {
+                    if (message.supportsE2EImage != null && $Object.hasOwnProperty.call(message, "supportsE2EImage")) {
                         properties._supportsE2EImage = 1;
                         if (typeof message.supportsE2EImage !== "boolean")
                             return "supportsE2EImage: boolean expected";
                     }
-                    if (message.supportsE2EVideo != null && message.hasOwnProperty("supportsE2EVideo")) {
+                    if (message.supportsE2EVideo != null && $Object.hasOwnProperty.call(message, "supportsE2EVideo")) {
                         properties._supportsE2EVideo = 1;
                         if (typeof message.supportsE2EVideo !== "boolean")
                             return "supportsE2EVideo: boolean expected";
                     }
-                    if (message.supportsE2EAudio != null && message.hasOwnProperty("supportsE2EAudio")) {
+                    if (message.supportsE2EAudio != null && $Object.hasOwnProperty.call(message, "supportsE2EAudio")) {
                         properties._supportsE2EAudio = 1;
                         if (typeof message.supportsE2EAudio !== "boolean")
                             return "supportsE2EAudio: boolean expected";
                     }
-                    if (message.supportsE2EDocument != null && message.hasOwnProperty("supportsE2EDocument")) {
+                    if (message.supportsE2EDocument != null && $Object.hasOwnProperty.call(message, "supportsE2EDocument")) {
                         properties._supportsE2EDocument = 1;
                         if (typeof message.supportsE2EDocument !== "boolean")
                             return "supportsE2EDocument: boolean expected";
                     }
-                    if (message.documentTypes != null && message.hasOwnProperty("documentTypes")) {
+                    if (message.documentTypes != null && $Object.hasOwnProperty.call(message, "documentTypes")) {
                         properties._documentTypes = 1;
                         if (!$util.isString(message.documentTypes))
                             return "documentTypes: string expected";
                     }
-                    if (message.features != null && message.hasOwnProperty("features")) {
+                    if (message.features != null && $Object.hasOwnProperty.call(message, "features")) {
                         properties._features = 1;
                         if (!(message.features && typeof message.features.length === "number" || $util.isString(message.features)))
                             return "features: buffer expected";
@@ -5409,30 +6138,36 @@ $root.Wa6 = (function() {
                  * @param {Object.<string,*>} object Plain object
                  * @returns {Wa6.ClientPayload.WebInfo.WebdPayload} WebdPayload
                  */
-                WebdPayload.fromObject = function fromObject(object) {
+                WebdPayload.fromObject = function (object, _depth) {
                     if (object instanceof $root.Wa6.ClientPayload.WebInfo.WebdPayload)
                         return object;
+                    if (!$util.isObject(object))
+                        throw $TypeError(".Wa6.ClientPayload.WebInfo.WebdPayload: object expected");
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $util.recursionLimit)
+                        throw $Error("max depth exceeded");
                     var message = new $root.Wa6.ClientPayload.WebInfo.WebdPayload();
                     if (object.usesParticipantInKey != null)
-                        message.usesParticipantInKey = Boolean(object.usesParticipantInKey);
+                        message.usesParticipantInKey = $Boolean(object.usesParticipantInKey);
                     if (object.supportsStarredMessages != null)
-                        message.supportsStarredMessages = Boolean(object.supportsStarredMessages);
+                        message.supportsStarredMessages = $Boolean(object.supportsStarredMessages);
                     if (object.supportsDocumentMessages != null)
-                        message.supportsDocumentMessages = Boolean(object.supportsDocumentMessages);
+                        message.supportsDocumentMessages = $Boolean(object.supportsDocumentMessages);
                     if (object.supportsUrlMessages != null)
-                        message.supportsUrlMessages = Boolean(object.supportsUrlMessages);
+                        message.supportsUrlMessages = $Boolean(object.supportsUrlMessages);
                     if (object.supportsMediaRetry != null)
-                        message.supportsMediaRetry = Boolean(object.supportsMediaRetry);
+                        message.supportsMediaRetry = $Boolean(object.supportsMediaRetry);
                     if (object.supportsE2EImage != null)
-                        message.supportsE2EImage = Boolean(object.supportsE2EImage);
+                        message.supportsE2EImage = $Boolean(object.supportsE2EImage);
                     if (object.supportsE2EVideo != null)
-                        message.supportsE2EVideo = Boolean(object.supportsE2EVideo);
+                        message.supportsE2EVideo = $Boolean(object.supportsE2EVideo);
                     if (object.supportsE2EAudio != null)
-                        message.supportsE2EAudio = Boolean(object.supportsE2EAudio);
+                        message.supportsE2EAudio = $Boolean(object.supportsE2EAudio);
                     if (object.supportsE2EDocument != null)
-                        message.supportsE2EDocument = Boolean(object.supportsE2EDocument);
+                        message.supportsE2EDocument = $Boolean(object.supportsE2EDocument);
                     if (object.documentTypes != null)
-                        message.documentTypes = String(object.documentTypes);
+                        message.documentTypes = $String(object.documentTypes);
                     if (object.features != null)
                         if (typeof object.features === "string")
                             $util.base64.decode(object.features, message.features = $util.newBuffer($util.base64.length(object.features)), 0);
@@ -5450,65 +6185,36 @@ $root.Wa6 = (function() {
                  * @param {$protobuf.IConversionOptions} [options] Conversion options
                  * @returns {Object.<string,*>} Plain object
                  */
-                WebdPayload.toObject = function toObject(message, options) {
+                WebdPayload.toObject = function (message, options, _depth) {
                     if (!options)
                         options = {};
+                    if (_depth === $undefined)
+                        _depth = 0;
+                    if (_depth > $util.recursionLimit)
+                        throw $Error("max depth exceeded");
                     var object = {};
-                    if (message.usesParticipantInKey != null && message.hasOwnProperty("usesParticipantInKey")) {
+                    if (message.usesParticipantInKey != null && $Object.hasOwnProperty.call(message, "usesParticipantInKey"))
                         object.usesParticipantInKey = message.usesParticipantInKey;
-                        if (options.oneofs)
-                            object._usesParticipantInKey = "usesParticipantInKey";
-                    }
-                    if (message.supportsStarredMessages != null && message.hasOwnProperty("supportsStarredMessages")) {
+                    if (message.supportsStarredMessages != null && $Object.hasOwnProperty.call(message, "supportsStarredMessages"))
                         object.supportsStarredMessages = message.supportsStarredMessages;
-                        if (options.oneofs)
-                            object._supportsStarredMessages = "supportsStarredMessages";
-                    }
-                    if (message.supportsDocumentMessages != null && message.hasOwnProperty("supportsDocumentMessages")) {
+                    if (message.supportsDocumentMessages != null && $Object.hasOwnProperty.call(message, "supportsDocumentMessages"))
                         object.supportsDocumentMessages = message.supportsDocumentMessages;
-                        if (options.oneofs)
-                            object._supportsDocumentMessages = "supportsDocumentMessages";
-                    }
-                    if (message.supportsUrlMessages != null && message.hasOwnProperty("supportsUrlMessages")) {
+                    if (message.supportsUrlMessages != null && $Object.hasOwnProperty.call(message, "supportsUrlMessages"))
                         object.supportsUrlMessages = message.supportsUrlMessages;
-                        if (options.oneofs)
-                            object._supportsUrlMessages = "supportsUrlMessages";
-                    }
-                    if (message.supportsMediaRetry != null && message.hasOwnProperty("supportsMediaRetry")) {
+                    if (message.supportsMediaRetry != null && $Object.hasOwnProperty.call(message, "supportsMediaRetry"))
                         object.supportsMediaRetry = message.supportsMediaRetry;
-                        if (options.oneofs)
-                            object._supportsMediaRetry = "supportsMediaRetry";
-                    }
-                    if (message.supportsE2EImage != null && message.hasOwnProperty("supportsE2EImage")) {
+                    if (message.supportsE2EImage != null && $Object.hasOwnProperty.call(message, "supportsE2EImage"))
                         object.supportsE2EImage = message.supportsE2EImage;
-                        if (options.oneofs)
-                            object._supportsE2EImage = "supportsE2EImage";
-                    }
-                    if (message.supportsE2EVideo != null && message.hasOwnProperty("supportsE2EVideo")) {
+                    if (message.supportsE2EVideo != null && $Object.hasOwnProperty.call(message, "supportsE2EVideo"))
                         object.supportsE2EVideo = message.supportsE2EVideo;
-                        if (options.oneofs)
-                            object._supportsE2EVideo = "supportsE2EVideo";
-                    }
-                    if (message.supportsE2EAudio != null && message.hasOwnProperty("supportsE2EAudio")) {
+                    if (message.supportsE2EAudio != null && $Object.hasOwnProperty.call(message, "supportsE2EAudio"))
                         object.supportsE2EAudio = message.supportsE2EAudio;
-                        if (options.oneofs)
-                            object._supportsE2EAudio = "supportsE2EAudio";
-                    }
-                    if (message.supportsE2EDocument != null && message.hasOwnProperty("supportsE2EDocument")) {
+                    if (message.supportsE2EDocument != null && $Object.hasOwnProperty.call(message, "supportsE2EDocument"))
                         object.supportsE2EDocument = message.supportsE2EDocument;
-                        if (options.oneofs)
-                            object._supportsE2EDocument = "supportsE2EDocument";
-                    }
-                    if (message.documentTypes != null && message.hasOwnProperty("documentTypes")) {
+                    if (message.documentTypes != null && $Object.hasOwnProperty.call(message, "documentTypes"))
                         object.documentTypes = message.documentTypes;
-                        if (options.oneofs)
-                            object._documentTypes = "documentTypes";
-                    }
-                    if (message.features != null && message.hasOwnProperty("features")) {
-                        object.features = options.bytes === String ? $util.base64.encode(message.features, 0, message.features.length) : options.bytes === Array ? Array.prototype.slice.call(message.features) : message.features;
-                        if (options.oneofs)
-                            object._features = "features";
-                    }
+                    if (message.features != null && $Object.hasOwnProperty.call(message, "features"))
+                        object.features = options.bytes === $String ? $util.base64.encode(message.features, 0, message.features.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.features) : message.features;
                     return object;
                 };
 
@@ -5519,23 +6225,22 @@ $root.Wa6 = (function() {
                  * @instance
                  * @returns {Object.<string,*>} JSON object
                  */
-                WebdPayload.prototype.toJSON = function toJSON() {
-                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                WebdPayload.prototype.toJSON = function() {
+                    return WebdPayload.toObject(this, $protobuf.util.toJSONOptions);
                 };
 
                 /**
-                 * Gets the default type url for WebdPayload
+                 * Gets the type url for WebdPayload
                  * @function getTypeUrl
                  * @memberof Wa6.ClientPayload.WebInfo.WebdPayload
                  * @static
-                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns {string} The default type url
+                 * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+                 * @returns {string} The type url
                  */
-                WebdPayload.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                    if (typeUrlPrefix === undefined) {
-                        typeUrlPrefix = "type.googleapis.com";
-                    }
-                    return typeUrlPrefix + "/Wa6.ClientPayload.WebInfo.WebdPayload";
+                WebdPayload.getTypeUrl = function(prefix) {
+                    if (prefix === $undefined)
+                        prefix = "type.googleapis.com";
+                    return prefix + "/Wa6.ClientPayload.WebInfo.WebdPayload";
                 };
 
                 return WebdPayload;
@@ -5551,31 +6256,44 @@ $root.Wa6 = (function() {
 
         /**
          * Properties of a HandshakeMessage.
+         * @typedef {Object} Wa6.HandshakeMessage.$Properties
+         * @property {Wa6.HandshakeMessage.ClientHello.$Properties|null} [clientHello] HandshakeMessage clientHello
+         * @property {Wa6.HandshakeMessage.ServerHello.$Properties|null} [serverHello] HandshakeMessage serverHello
+         * @property {Wa6.HandshakeMessage.ClientFinish.$Properties|null} [clientFinish] HandshakeMessage clientFinish
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a HandshakeMessage.
          * @memberof Wa6
          * @interface IHandshakeMessage
-         * @property {Wa6.HandshakeMessage.IClientHello|null} [clientHello] HandshakeMessage clientHello
-         * @property {Wa6.HandshakeMessage.IServerHello|null} [serverHello] HandshakeMessage serverHello
-         * @property {Wa6.HandshakeMessage.IClientFinish|null} [clientFinish] HandshakeMessage clientFinish
+         * @augments Wa6.HandshakeMessage.$Properties
+         * @deprecated Use Wa6.HandshakeMessage.$Properties instead.
+         */
+
+        /**
+         * Shape of a HandshakeMessage.
+         * @typedef {Wa6.HandshakeMessage.$Properties} Wa6.HandshakeMessage.$Shape
          */
 
         /**
          * Constructs a new HandshakeMessage.
          * @memberof Wa6
          * @classdesc Represents a HandshakeMessage.
-         * @implements IHandshakeMessage
          * @constructor
-         * @param {Wa6.IHandshakeMessage=} [properties] Properties to set
+         * @param {Wa6.HandshakeMessage.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function HandshakeMessage(properties) {
+        var HandshakeMessage = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * HandshakeMessage clientHello.
-         * @member {Wa6.HandshakeMessage.IClientHello|null|undefined} clientHello
+         * @member {Wa6.HandshakeMessage.ClientHello.$Properties|null|undefined} clientHello
          * @memberof Wa6.HandshakeMessage
          * @instance
          */
@@ -5583,7 +6301,7 @@ $root.Wa6 = (function() {
 
         /**
          * HandshakeMessage serverHello.
-         * @member {Wa6.HandshakeMessage.IServerHello|null|undefined} serverHello
+         * @member {Wa6.HandshakeMessage.ServerHello.$Properties|null|undefined} serverHello
          * @memberof Wa6.HandshakeMessage
          * @instance
          */
@@ -5591,7 +6309,7 @@ $root.Wa6 = (function() {
 
         /**
          * HandshakeMessage clientFinish.
-         * @member {Wa6.HandshakeMessage.IClientFinish|null|undefined} clientFinish
+         * @member {Wa6.HandshakeMessage.ClientFinish.$Properties|null|undefined} clientFinish
          * @memberof Wa6.HandshakeMessage
          * @instance
          */
@@ -5601,19 +6319,19 @@ $root.Wa6 = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(HandshakeMessage.prototype, "_clientHello", {
+        $Object.defineProperty(HandshakeMessage.prototype, "_clientHello", {
             get: $util.oneOfGetter($oneOfFields = ["clientHello"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(HandshakeMessage.prototype, "_serverHello", {
+        $Object.defineProperty(HandshakeMessage.prototype, "_serverHello", {
             get: $util.oneOfGetter($oneOfFields = ["serverHello"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(HandshakeMessage.prototype, "_clientFinish", {
+        $Object.defineProperty(HandshakeMessage.prototype, "_clientFinish", {
             get: $util.oneOfGetter($oneOfFields = ["clientFinish"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -5623,10 +6341,14 @@ $root.Wa6 = (function() {
          * @function create
          * @memberof Wa6.HandshakeMessage
          * @static
-         * @param {Wa6.IHandshakeMessage=} [properties] Properties to set
+         * @param {Wa6.HandshakeMessage.$Properties=} [properties] Properties to set
          * @returns {Wa6.HandshakeMessage} HandshakeMessage instance
+         * @type {{
+         *   (properties: Wa6.HandshakeMessage.$Shape): Wa6.HandshakeMessage & Wa6.HandshakeMessage.$Shape;
+         *   (properties?: Wa6.HandshakeMessage.$Properties): Wa6.HandshakeMessage;
+         * }}
          */
-        HandshakeMessage.create = function create(properties) {
+        HandshakeMessage.create = function(properties) {
             return new HandshakeMessage(properties);
         };
 
@@ -5635,19 +6357,26 @@ $root.Wa6 = (function() {
          * @function encode
          * @memberof Wa6.HandshakeMessage
          * @static
-         * @param {Wa6.IHandshakeMessage} message HandshakeMessage message or plain object to encode
+         * @param {Wa6.HandshakeMessage.$Properties} message HandshakeMessage message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        HandshakeMessage.encode = function encode(message, writer) {
+        HandshakeMessage.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.clientHello != null && Object.hasOwnProperty.call(message, "clientHello"))
-                $root.Wa6.HandshakeMessage.ClientHello.encode(message.clientHello, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            if (message.serverHello != null && Object.hasOwnProperty.call(message, "serverHello"))
-                $root.Wa6.HandshakeMessage.ServerHello.encode(message.serverHello, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-            if (message.clientFinish != null && Object.hasOwnProperty.call(message, "clientFinish"))
-                $root.Wa6.HandshakeMessage.ClientFinish.encode(message.clientFinish, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.clientHello != null && $Object.hasOwnProperty.call(message, "clientHello"))
+                $root.Wa6.HandshakeMessage.ClientHello.encode(message.clientHello, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+            if (message.serverHello != null && $Object.hasOwnProperty.call(message, "serverHello"))
+                $root.Wa6.HandshakeMessage.ServerHello.encode(message.serverHello, writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
+            if (message.clientFinish != null && $Object.hasOwnProperty.call(message, "clientFinish"))
+                $root.Wa6.HandshakeMessage.ClientFinish.encode(message.clientFinish, writer.uint32(/* id 4, wireType 2 =*/34).fork(), _depth + 1).ldelim();
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -5656,12 +6385,12 @@ $root.Wa6 = (function() {
          * @function encodeDelimited
          * @memberof Wa6.HandshakeMessage
          * @static
-         * @param {Wa6.IHandshakeMessage} message HandshakeMessage message or plain object to encode
+         * @param {Wa6.HandshakeMessage.$Properties} message HandshakeMessage message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        HandshakeMessage.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        HandshakeMessage.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -5671,36 +6400,72 @@ $root.Wa6 = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {Wa6.HandshakeMessage} HandshakeMessage
+         * @returns {Wa6.HandshakeMessage & Wa6.HandshakeMessage.$Shape} HandshakeMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        HandshakeMessage.decode = function decode(reader, length, error) {
+        HandshakeMessage.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.HandshakeMessage();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.Wa6.HandshakeMessage();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 2: {
-                        message.clientHello = $root.Wa6.HandshakeMessage.ClientHello.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 3: {
-                        message.serverHello = $root.Wa6.HandshakeMessage.ServerHello.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 4: {
-                        message.clientFinish = $root.Wa6.HandshakeMessage.ClientFinish.decode(reader, reader.uint32());
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.clientHello = $root.Wa6.HandshakeMessage.ClientHello.decode(reader, reader.size(), $undefined, _depth + 1, message.clientHello);
+                        message._clientHello = "clientHello";
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 2)
+                            break;
+                        message.serverHello = $root.Wa6.HandshakeMessage.ServerHello.decode(reader, reader.size(), $undefined, _depth + 1, message.serverHello);
+                        message._serverHello = "serverHello";
+                        continue;
+                    }
+                case 4: {
+                        if (wireType !== 2)
+                            break;
+                        message.clientFinish = $root.Wa6.HandshakeMessage.ClientFinish.decode(reader, reader.size(), $undefined, _depth + 1, message.clientFinish);
+                        message._clientFinish = "clientFinish";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -5710,14 +6475,14 @@ $root.Wa6 = (function() {
          * @memberof Wa6.HandshakeMessage
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {Wa6.HandshakeMessage} HandshakeMessage
+         * @returns {Wa6.HandshakeMessage & Wa6.HandshakeMessage.$Shape} HandshakeMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        HandshakeMessage.decodeDelimited = function decodeDelimited(reader) {
+        HandshakeMessage.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -5728,30 +6493,34 @@ $root.Wa6 = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        HandshakeMessage.verify = function verify(message) {
+        HandshakeMessage.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.clientHello != null && message.hasOwnProperty("clientHello")) {
+            if (message.clientHello != null && $Object.hasOwnProperty.call(message, "clientHello")) {
                 properties._clientHello = 1;
                 {
-                    var error = $root.Wa6.HandshakeMessage.ClientHello.verify(message.clientHello);
+                    var error = $root.Wa6.HandshakeMessage.ClientHello.verify(message.clientHello, _depth + 1);
                     if (error)
                         return "clientHello." + error;
                 }
             }
-            if (message.serverHello != null && message.hasOwnProperty("serverHello")) {
+            if (message.serverHello != null && $Object.hasOwnProperty.call(message, "serverHello")) {
                 properties._serverHello = 1;
                 {
-                    var error = $root.Wa6.HandshakeMessage.ServerHello.verify(message.serverHello);
+                    var error = $root.Wa6.HandshakeMessage.ServerHello.verify(message.serverHello, _depth + 1);
                     if (error)
                         return "serverHello." + error;
                 }
             }
-            if (message.clientFinish != null && message.hasOwnProperty("clientFinish")) {
+            if (message.clientFinish != null && $Object.hasOwnProperty.call(message, "clientFinish")) {
                 properties._clientFinish = 1;
                 {
-                    var error = $root.Wa6.HandshakeMessage.ClientFinish.verify(message.clientFinish);
+                    var error = $root.Wa6.HandshakeMessage.ClientFinish.verify(message.clientFinish, _depth + 1);
                     if (error)
                         return "clientFinish." + error;
                 }
@@ -5767,24 +6536,30 @@ $root.Wa6 = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {Wa6.HandshakeMessage} HandshakeMessage
          */
-        HandshakeMessage.fromObject = function fromObject(object) {
+        HandshakeMessage.fromObject = function (object, _depth) {
             if (object instanceof $root.Wa6.HandshakeMessage)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".Wa6.HandshakeMessage: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.Wa6.HandshakeMessage();
             if (object.clientHello != null) {
-                if (typeof object.clientHello !== "object")
-                    throw TypeError(".Wa6.HandshakeMessage.clientHello: object expected");
-                message.clientHello = $root.Wa6.HandshakeMessage.ClientHello.fromObject(object.clientHello);
+                if (!$util.isObject(object.clientHello))
+                    throw $TypeError(".Wa6.HandshakeMessage.clientHello: object expected");
+                message.clientHello = $root.Wa6.HandshakeMessage.ClientHello.fromObject(object.clientHello, _depth + 1);
             }
             if (object.serverHello != null) {
-                if (typeof object.serverHello !== "object")
-                    throw TypeError(".Wa6.HandshakeMessage.serverHello: object expected");
-                message.serverHello = $root.Wa6.HandshakeMessage.ServerHello.fromObject(object.serverHello);
+                if (!$util.isObject(object.serverHello))
+                    throw $TypeError(".Wa6.HandshakeMessage.serverHello: object expected");
+                message.serverHello = $root.Wa6.HandshakeMessage.ServerHello.fromObject(object.serverHello, _depth + 1);
             }
             if (object.clientFinish != null) {
-                if (typeof object.clientFinish !== "object")
-                    throw TypeError(".Wa6.HandshakeMessage.clientFinish: object expected");
-                message.clientFinish = $root.Wa6.HandshakeMessage.ClientFinish.fromObject(object.clientFinish);
+                if (!$util.isObject(object.clientFinish))
+                    throw $TypeError(".Wa6.HandshakeMessage.clientFinish: object expected");
+                message.clientFinish = $root.Wa6.HandshakeMessage.ClientFinish.fromObject(object.clientFinish, _depth + 1);
             }
             return message;
         };
@@ -5798,25 +6573,20 @@ $root.Wa6 = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        HandshakeMessage.toObject = function toObject(message, options) {
+        HandshakeMessage.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.clientHello != null && message.hasOwnProperty("clientHello")) {
-                object.clientHello = $root.Wa6.HandshakeMessage.ClientHello.toObject(message.clientHello, options);
-                if (options.oneofs)
-                    object._clientHello = "clientHello";
-            }
-            if (message.serverHello != null && message.hasOwnProperty("serverHello")) {
-                object.serverHello = $root.Wa6.HandshakeMessage.ServerHello.toObject(message.serverHello, options);
-                if (options.oneofs)
-                    object._serverHello = "serverHello";
-            }
-            if (message.clientFinish != null && message.hasOwnProperty("clientFinish")) {
-                object.clientFinish = $root.Wa6.HandshakeMessage.ClientFinish.toObject(message.clientFinish, options);
-                if (options.oneofs)
-                    object._clientFinish = "clientFinish";
-            }
+            if (message.clientHello != null && $Object.hasOwnProperty.call(message, "clientHello"))
+                object.clientHello = $root.Wa6.HandshakeMessage.ClientHello.toObject(message.clientHello, options, _depth + 1);
+            if (message.serverHello != null && $Object.hasOwnProperty.call(message, "serverHello"))
+                object.serverHello = $root.Wa6.HandshakeMessage.ServerHello.toObject(message.serverHello, options, _depth + 1);
+            if (message.clientFinish != null && $Object.hasOwnProperty.call(message, "clientFinish"))
+                object.clientFinish = $root.Wa6.HandshakeMessage.ClientFinish.toObject(message.clientFinish, options, _depth + 1);
             return object;
         };
 
@@ -5827,52 +6597,64 @@ $root.Wa6 = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        HandshakeMessage.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        HandshakeMessage.prototype.toJSON = function() {
+            return HandshakeMessage.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for HandshakeMessage
+         * Gets the type url for HandshakeMessage
          * @function getTypeUrl
          * @memberof Wa6.HandshakeMessage
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        HandshakeMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Wa6.HandshakeMessage";
+        HandshakeMessage.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/Wa6.HandshakeMessage";
         };
 
         HandshakeMessage.ClientFinish = (function() {
 
             /**
              * Properties of a ClientFinish.
-             * @memberof Wa6.HandshakeMessage
-             * @interface IClientFinish
+             * @typedef {Object} Wa6.HandshakeMessage.ClientFinish.$Properties
              * @property {Uint8Array|null} ["static"] ClientFinish static
              * @property {Uint8Array|null} [payload] ClientFinish payload
              * @property {Uint8Array|null} [extendedCiphertext] ClientFinish extendedCiphertext
              * @property {Uint8Array|null} [paddedBytes] ClientFinish paddedBytes
              * @property {boolean|null} [simulateXxkemFs] ClientFinish simulateXxkemFs
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a ClientFinish.
+             * @memberof Wa6.HandshakeMessage
+             * @interface IClientFinish
+             * @augments Wa6.HandshakeMessage.ClientFinish.$Properties
+             * @deprecated Use Wa6.HandshakeMessage.ClientFinish.$Properties instead.
+             */
+
+            /**
+             * Shape of a ClientFinish.
+             * @typedef {Wa6.HandshakeMessage.ClientFinish.$Properties} Wa6.HandshakeMessage.ClientFinish.$Shape
              */
 
             /**
              * Constructs a new ClientFinish.
              * @memberof Wa6.HandshakeMessage
              * @classdesc Represents a ClientFinish.
-             * @implements IClientFinish
              * @constructor
-             * @param {Wa6.HandshakeMessage.IClientFinish=} [properties] Properties to set
+             * @param {Wa6.HandshakeMessage.ClientFinish.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function ClientFinish(properties) {
+            var ClientFinish = function (properties) {
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * ClientFinish static.
@@ -5918,31 +6700,31 @@ $root.Wa6 = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientFinish.prototype, "_static", {
+            $Object.defineProperty(ClientFinish.prototype, "_static", {
                 get: $util.oneOfGetter($oneOfFields = ["static"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientFinish.prototype, "_payload", {
+            $Object.defineProperty(ClientFinish.prototype, "_payload", {
                 get: $util.oneOfGetter($oneOfFields = ["payload"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientFinish.prototype, "_extendedCiphertext", {
+            $Object.defineProperty(ClientFinish.prototype, "_extendedCiphertext", {
                 get: $util.oneOfGetter($oneOfFields = ["extendedCiphertext"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientFinish.prototype, "_paddedBytes", {
+            $Object.defineProperty(ClientFinish.prototype, "_paddedBytes", {
                 get: $util.oneOfGetter($oneOfFields = ["paddedBytes"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientFinish.prototype, "_simulateXxkemFs", {
+            $Object.defineProperty(ClientFinish.prototype, "_simulateXxkemFs", {
                 get: $util.oneOfGetter($oneOfFields = ["simulateXxkemFs"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -5952,10 +6734,14 @@ $root.Wa6 = (function() {
              * @function create
              * @memberof Wa6.HandshakeMessage.ClientFinish
              * @static
-             * @param {Wa6.HandshakeMessage.IClientFinish=} [properties] Properties to set
+             * @param {Wa6.HandshakeMessage.ClientFinish.$Properties=} [properties] Properties to set
              * @returns {Wa6.HandshakeMessage.ClientFinish} ClientFinish instance
+             * @type {{
+             *   (properties: Wa6.HandshakeMessage.ClientFinish.$Shape): Wa6.HandshakeMessage.ClientFinish & Wa6.HandshakeMessage.ClientFinish.$Shape;
+             *   (properties?: Wa6.HandshakeMessage.ClientFinish.$Properties): Wa6.HandshakeMessage.ClientFinish;
+             * }}
              */
-            ClientFinish.create = function create(properties) {
+            ClientFinish.create = function(properties) {
                 return new ClientFinish(properties);
             };
 
@@ -5964,23 +6750,30 @@ $root.Wa6 = (function() {
              * @function encode
              * @memberof Wa6.HandshakeMessage.ClientFinish
              * @static
-             * @param {Wa6.HandshakeMessage.IClientFinish} message ClientFinish message or plain object to encode
+             * @param {Wa6.HandshakeMessage.ClientFinish.$Properties} message ClientFinish message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ClientFinish.encode = function encode(message, writer) {
+            ClientFinish.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message["static"] != null && Object.hasOwnProperty.call(message, "static"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message["static"] != null && $Object.hasOwnProperty.call(message, "static"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message["static"]);
-                if (message.payload != null && Object.hasOwnProperty.call(message, "payload"))
+                if (message.payload != null && $Object.hasOwnProperty.call(message, "payload"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.payload);
-                if (message.extendedCiphertext != null && Object.hasOwnProperty.call(message, "extendedCiphertext"))
+                if (message.extendedCiphertext != null && $Object.hasOwnProperty.call(message, "extendedCiphertext"))
                     writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.extendedCiphertext);
-                if (message.paddedBytes != null && Object.hasOwnProperty.call(message, "paddedBytes"))
+                if (message.paddedBytes != null && $Object.hasOwnProperty.call(message, "paddedBytes"))
                     writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.paddedBytes);
-                if (message.simulateXxkemFs != null && Object.hasOwnProperty.call(message, "simulateXxkemFs"))
+                if (message.simulateXxkemFs != null && $Object.hasOwnProperty.call(message, "simulateXxkemFs"))
                     writer.uint32(/* id 5, wireType 0 =*/40).bool(message.simulateXxkemFs);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -5989,12 +6782,12 @@ $root.Wa6 = (function() {
              * @function encodeDelimited
              * @memberof Wa6.HandshakeMessage.ClientFinish
              * @static
-             * @param {Wa6.HandshakeMessage.IClientFinish} message ClientFinish message or plain object to encode
+             * @param {Wa6.HandshakeMessage.ClientFinish.$Properties} message ClientFinish message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ClientFinish.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            ClientFinish.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -6004,44 +6797,86 @@ $root.Wa6 = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {Wa6.HandshakeMessage.ClientFinish} ClientFinish
+             * @returns {Wa6.HandshakeMessage.ClientFinish & Wa6.HandshakeMessage.ClientFinish.$Shape} ClientFinish
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ClientFinish.decode = function decode(reader, length, error) {
+            ClientFinish.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.HandshakeMessage.ClientFinish();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.Wa6.HandshakeMessage.ClientFinish();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message["static"] = reader.bytes();
-                            break;
-                        }
-                    case 2: {
-                            message.payload = reader.bytes();
-                            break;
-                        }
-                    case 3: {
-                            message.extendedCiphertext = reader.bytes();
-                            break;
-                        }
-                    case 4: {
-                            message.paddedBytes = reader.bytes();
-                            break;
-                        }
-                    case 5: {
-                            message.simulateXxkemFs = reader.bool();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 2)
+                                break;
+                            message["static"] = reader.bytes();
+                            message._static = "static";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 2)
+                                break;
+                            message.payload = reader.bytes();
+                            message._payload = "payload";
+                            continue;
+                        }
+                    case 3: {
+                            if (wireType !== 2)
+                                break;
+                            message.extendedCiphertext = reader.bytes();
+                            message._extendedCiphertext = "extendedCiphertext";
+                            continue;
+                        }
+                    case 4: {
+                            if (wireType !== 2)
+                                break;
+                            message.paddedBytes = reader.bytes();
+                            message._paddedBytes = "paddedBytes";
+                            continue;
+                        }
+                    case 5: {
+                            if (wireType !== 0)
+                                break;
+                            message.simulateXxkemFs = reader.bool();
+                            message._simulateXxkemFs = "simulateXxkemFs";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -6051,14 +6886,14 @@ $root.Wa6 = (function() {
              * @memberof Wa6.HandshakeMessage.ClientFinish
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {Wa6.HandshakeMessage.ClientFinish} ClientFinish
+             * @returns {Wa6.HandshakeMessage.ClientFinish & Wa6.HandshakeMessage.ClientFinish.$Shape} ClientFinish
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ClientFinish.decodeDelimited = function decodeDelimited(reader) {
+            ClientFinish.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -6069,31 +6904,35 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ClientFinish.verify = function verify(message) {
+            ClientFinish.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message["static"] != null && message.hasOwnProperty("static")) {
+                if (message["static"] != null && $Object.hasOwnProperty.call(message, "static")) {
                     properties._static = 1;
                     if (!(message["static"] && typeof message["static"].length === "number" || $util.isString(message["static"])))
                         return "static: buffer expected";
                 }
-                if (message.payload != null && message.hasOwnProperty("payload")) {
+                if (message.payload != null && $Object.hasOwnProperty.call(message, "payload")) {
                     properties._payload = 1;
                     if (!(message.payload && typeof message.payload.length === "number" || $util.isString(message.payload)))
                         return "payload: buffer expected";
                 }
-                if (message.extendedCiphertext != null && message.hasOwnProperty("extendedCiphertext")) {
+                if (message.extendedCiphertext != null && $Object.hasOwnProperty.call(message, "extendedCiphertext")) {
                     properties._extendedCiphertext = 1;
                     if (!(message.extendedCiphertext && typeof message.extendedCiphertext.length === "number" || $util.isString(message.extendedCiphertext)))
                         return "extendedCiphertext: buffer expected";
                 }
-                if (message.paddedBytes != null && message.hasOwnProperty("paddedBytes")) {
+                if (message.paddedBytes != null && $Object.hasOwnProperty.call(message, "paddedBytes")) {
                     properties._paddedBytes = 1;
                     if (!(message.paddedBytes && typeof message.paddedBytes.length === "number" || $util.isString(message.paddedBytes)))
                         return "paddedBytes: buffer expected";
                 }
-                if (message.simulateXxkemFs != null && message.hasOwnProperty("simulateXxkemFs")) {
+                if (message.simulateXxkemFs != null && $Object.hasOwnProperty.call(message, "simulateXxkemFs")) {
                     properties._simulateXxkemFs = 1;
                     if (typeof message.simulateXxkemFs !== "boolean")
                         return "simulateXxkemFs: boolean expected";
@@ -6109,9 +6948,15 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {Wa6.HandshakeMessage.ClientFinish} ClientFinish
              */
-            ClientFinish.fromObject = function fromObject(object) {
+            ClientFinish.fromObject = function (object, _depth) {
                 if (object instanceof $root.Wa6.HandshakeMessage.ClientFinish)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".Wa6.HandshakeMessage.ClientFinish: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.Wa6.HandshakeMessage.ClientFinish();
                 if (object["static"] != null)
                     if (typeof object["static"] === "string")
@@ -6134,7 +6979,7 @@ $root.Wa6 = (function() {
                     else if (object.paddedBytes.length >= 0)
                         message.paddedBytes = object.paddedBytes;
                 if (object.simulateXxkemFs != null)
-                    message.simulateXxkemFs = Boolean(object.simulateXxkemFs);
+                    message.simulateXxkemFs = $Boolean(object.simulateXxkemFs);
                 return message;
             };
 
@@ -6147,35 +6992,24 @@ $root.Wa6 = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            ClientFinish.toObject = function toObject(message, options) {
+            ClientFinish.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
-                if (message["static"] != null && message.hasOwnProperty("static")) {
-                    object["static"] = options.bytes === String ? $util.base64.encode(message["static"], 0, message["static"].length) : options.bytes === Array ? Array.prototype.slice.call(message["static"]) : message["static"];
-                    if (options.oneofs)
-                        object._static = "static";
-                }
-                if (message.payload != null && message.hasOwnProperty("payload")) {
-                    object.payload = options.bytes === String ? $util.base64.encode(message.payload, 0, message.payload.length) : options.bytes === Array ? Array.prototype.slice.call(message.payload) : message.payload;
-                    if (options.oneofs)
-                        object._payload = "payload";
-                }
-                if (message.extendedCiphertext != null && message.hasOwnProperty("extendedCiphertext")) {
-                    object.extendedCiphertext = options.bytes === String ? $util.base64.encode(message.extendedCiphertext, 0, message.extendedCiphertext.length) : options.bytes === Array ? Array.prototype.slice.call(message.extendedCiphertext) : message.extendedCiphertext;
-                    if (options.oneofs)
-                        object._extendedCiphertext = "extendedCiphertext";
-                }
-                if (message.paddedBytes != null && message.hasOwnProperty("paddedBytes")) {
-                    object.paddedBytes = options.bytes === String ? $util.base64.encode(message.paddedBytes, 0, message.paddedBytes.length) : options.bytes === Array ? Array.prototype.slice.call(message.paddedBytes) : message.paddedBytes;
-                    if (options.oneofs)
-                        object._paddedBytes = "paddedBytes";
-                }
-                if (message.simulateXxkemFs != null && message.hasOwnProperty("simulateXxkemFs")) {
+                if (message["static"] != null && $Object.hasOwnProperty.call(message, "static"))
+                    object["static"] = options.bytes === $String ? $util.base64.encode(message["static"], 0, message["static"].length) : options.bytes === $Array ? $Array.prototype.slice.call(message["static"]) : message["static"];
+                if (message.payload != null && $Object.hasOwnProperty.call(message, "payload"))
+                    object.payload = options.bytes === $String ? $util.base64.encode(message.payload, 0, message.payload.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.payload) : message.payload;
+                if (message.extendedCiphertext != null && $Object.hasOwnProperty.call(message, "extendedCiphertext"))
+                    object.extendedCiphertext = options.bytes === $String ? $util.base64.encode(message.extendedCiphertext, 0, message.extendedCiphertext.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.extendedCiphertext) : message.extendedCiphertext;
+                if (message.paddedBytes != null && $Object.hasOwnProperty.call(message, "paddedBytes"))
+                    object.paddedBytes = options.bytes === $String ? $util.base64.encode(message.paddedBytes, 0, message.paddedBytes.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.paddedBytes) : message.paddedBytes;
+                if (message.simulateXxkemFs != null && $Object.hasOwnProperty.call(message, "simulateXxkemFs"))
                     object.simulateXxkemFs = message.simulateXxkemFs;
-                    if (options.oneofs)
-                        object._simulateXxkemFs = "simulateXxkemFs";
-                }
                 return object;
             };
 
@@ -6186,23 +7020,22 @@ $root.Wa6 = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            ClientFinish.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            ClientFinish.prototype.toJSON = function() {
+                return ClientFinish.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for ClientFinish
+             * Gets the type url for ClientFinish
              * @function getTypeUrl
              * @memberof Wa6.HandshakeMessage.ClientFinish
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            ClientFinish.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/Wa6.HandshakeMessage.ClientFinish";
+            ClientFinish.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/Wa6.HandshakeMessage.ClientFinish";
             };
 
             return ClientFinish;
@@ -6212,8 +7045,7 @@ $root.Wa6 = (function() {
 
             /**
              * Properties of a ClientHello.
-             * @memberof Wa6.HandshakeMessage
-             * @interface IClientHello
+             * @typedef {Object} Wa6.HandshakeMessage.ClientHello.$Properties
              * @property {Uint8Array|null} [ephemeral] ClientHello ephemeral
              * @property {Uint8Array|null} ["static"] ClientHello static
              * @property {Uint8Array|null} [payload] ClientHello payload
@@ -6224,22 +7056,36 @@ $root.Wa6 = (function() {
              * @property {boolean|null} [simulateXxkemFs] ClientHello simulateXxkemFs
              * @property {Wa6.HandshakeMessage.HandshakePqMode|null} [pqMode] ClientHello pqMode
              * @property {Uint8Array|null} [extendedEphemeral] ClientHello extendedEphemeral
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a ClientHello.
+             * @memberof Wa6.HandshakeMessage
+             * @interface IClientHello
+             * @augments Wa6.HandshakeMessage.ClientHello.$Properties
+             * @deprecated Use Wa6.HandshakeMessage.ClientHello.$Properties instead.
+             */
+
+            /**
+             * Shape of a ClientHello.
+             * @typedef {Wa6.HandshakeMessage.ClientHello.$Properties} Wa6.HandshakeMessage.ClientHello.$Shape
              */
 
             /**
              * Constructs a new ClientHello.
              * @memberof Wa6.HandshakeMessage
              * @classdesc Represents a ClientHello.
-             * @implements IClientHello
              * @constructor
-             * @param {Wa6.HandshakeMessage.IClientHello=} [properties] Properties to set
+             * @param {Wa6.HandshakeMessage.ClientHello.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function ClientHello(properties) {
+            var ClientHello = function (properties) {
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * ClientHello ephemeral.
@@ -6325,61 +7171,61 @@ $root.Wa6 = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientHello.prototype, "_ephemeral", {
+            $Object.defineProperty(ClientHello.prototype, "_ephemeral", {
                 get: $util.oneOfGetter($oneOfFields = ["ephemeral"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientHello.prototype, "_static", {
+            $Object.defineProperty(ClientHello.prototype, "_static", {
                 get: $util.oneOfGetter($oneOfFields = ["static"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientHello.prototype, "_payload", {
+            $Object.defineProperty(ClientHello.prototype, "_payload", {
                 get: $util.oneOfGetter($oneOfFields = ["payload"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientHello.prototype, "_useExtended", {
+            $Object.defineProperty(ClientHello.prototype, "_useExtended", {
                 get: $util.oneOfGetter($oneOfFields = ["useExtended"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientHello.prototype, "_extendedCiphertext", {
+            $Object.defineProperty(ClientHello.prototype, "_extendedCiphertext", {
                 get: $util.oneOfGetter($oneOfFields = ["extendedCiphertext"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientHello.prototype, "_paddedBytes", {
+            $Object.defineProperty(ClientHello.prototype, "_paddedBytes", {
                 get: $util.oneOfGetter($oneOfFields = ["paddedBytes"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientHello.prototype, "_sendServerHelloPaddedBytes", {
+            $Object.defineProperty(ClientHello.prototype, "_sendServerHelloPaddedBytes", {
                 get: $util.oneOfGetter($oneOfFields = ["sendServerHelloPaddedBytes"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientHello.prototype, "_simulateXxkemFs", {
+            $Object.defineProperty(ClientHello.prototype, "_simulateXxkemFs", {
                 get: $util.oneOfGetter($oneOfFields = ["simulateXxkemFs"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientHello.prototype, "_pqMode", {
+            $Object.defineProperty(ClientHello.prototype, "_pqMode", {
                 get: $util.oneOfGetter($oneOfFields = ["pqMode"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ClientHello.prototype, "_extendedEphemeral", {
+            $Object.defineProperty(ClientHello.prototype, "_extendedEphemeral", {
                 get: $util.oneOfGetter($oneOfFields = ["extendedEphemeral"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -6389,10 +7235,14 @@ $root.Wa6 = (function() {
              * @function create
              * @memberof Wa6.HandshakeMessage.ClientHello
              * @static
-             * @param {Wa6.HandshakeMessage.IClientHello=} [properties] Properties to set
+             * @param {Wa6.HandshakeMessage.ClientHello.$Properties=} [properties] Properties to set
              * @returns {Wa6.HandshakeMessage.ClientHello} ClientHello instance
+             * @type {{
+             *   (properties: Wa6.HandshakeMessage.ClientHello.$Shape): Wa6.HandshakeMessage.ClientHello & Wa6.HandshakeMessage.ClientHello.$Shape;
+             *   (properties?: Wa6.HandshakeMessage.ClientHello.$Properties): Wa6.HandshakeMessage.ClientHello;
+             * }}
              */
-            ClientHello.create = function create(properties) {
+            ClientHello.create = function(properties) {
                 return new ClientHello(properties);
             };
 
@@ -6401,33 +7251,40 @@ $root.Wa6 = (function() {
              * @function encode
              * @memberof Wa6.HandshakeMessage.ClientHello
              * @static
-             * @param {Wa6.HandshakeMessage.IClientHello} message ClientHello message or plain object to encode
+             * @param {Wa6.HandshakeMessage.ClientHello.$Properties} message ClientHello message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ClientHello.encode = function encode(message, writer) {
+            ClientHello.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.ephemeral != null && Object.hasOwnProperty.call(message, "ephemeral"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.ephemeral != null && $Object.hasOwnProperty.call(message, "ephemeral"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.ephemeral);
-                if (message["static"] != null && Object.hasOwnProperty.call(message, "static"))
+                if (message["static"] != null && $Object.hasOwnProperty.call(message, "static"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message["static"]);
-                if (message.payload != null && Object.hasOwnProperty.call(message, "payload"))
+                if (message.payload != null && $Object.hasOwnProperty.call(message, "payload"))
                     writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.payload);
-                if (message.useExtended != null && Object.hasOwnProperty.call(message, "useExtended"))
+                if (message.useExtended != null && $Object.hasOwnProperty.call(message, "useExtended"))
                     writer.uint32(/* id 4, wireType 0 =*/32).bool(message.useExtended);
-                if (message.extendedCiphertext != null && Object.hasOwnProperty.call(message, "extendedCiphertext"))
+                if (message.extendedCiphertext != null && $Object.hasOwnProperty.call(message, "extendedCiphertext"))
                     writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.extendedCiphertext);
-                if (message.paddedBytes != null && Object.hasOwnProperty.call(message, "paddedBytes"))
+                if (message.paddedBytes != null && $Object.hasOwnProperty.call(message, "paddedBytes"))
                     writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.paddedBytes);
-                if (message.sendServerHelloPaddedBytes != null && Object.hasOwnProperty.call(message, "sendServerHelloPaddedBytes"))
+                if (message.sendServerHelloPaddedBytes != null && $Object.hasOwnProperty.call(message, "sendServerHelloPaddedBytes"))
                     writer.uint32(/* id 7, wireType 0 =*/56).bool(message.sendServerHelloPaddedBytes);
-                if (message.simulateXxkemFs != null && Object.hasOwnProperty.call(message, "simulateXxkemFs"))
+                if (message.simulateXxkemFs != null && $Object.hasOwnProperty.call(message, "simulateXxkemFs"))
                     writer.uint32(/* id 8, wireType 0 =*/64).bool(message.simulateXxkemFs);
-                if (message.pqMode != null && Object.hasOwnProperty.call(message, "pqMode"))
+                if (message.pqMode != null && $Object.hasOwnProperty.call(message, "pqMode"))
                     writer.uint32(/* id 9, wireType 0 =*/72).int32(message.pqMode);
-                if (message.extendedEphemeral != null && Object.hasOwnProperty.call(message, "extendedEphemeral"))
+                if (message.extendedEphemeral != null && $Object.hasOwnProperty.call(message, "extendedEphemeral"))
                     writer.uint32(/* id 10, wireType 2 =*/82).bytes(message.extendedEphemeral);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -6436,12 +7293,12 @@ $root.Wa6 = (function() {
              * @function encodeDelimited
              * @memberof Wa6.HandshakeMessage.ClientHello
              * @static
-             * @param {Wa6.HandshakeMessage.IClientHello} message ClientHello message or plain object to encode
+             * @param {Wa6.HandshakeMessage.ClientHello.$Properties} message ClientHello message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ClientHello.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            ClientHello.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -6451,64 +7308,121 @@ $root.Wa6 = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {Wa6.HandshakeMessage.ClientHello} ClientHello
+             * @returns {Wa6.HandshakeMessage.ClientHello & Wa6.HandshakeMessage.ClientHello.$Shape} ClientHello
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ClientHello.decode = function decode(reader, length, error) {
+            ClientHello.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.HandshakeMessage.ClientHello();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message, value;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.Wa6.HandshakeMessage.ClientHello();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.ephemeral = reader.bytes();
-                            break;
-                        }
-                    case 2: {
-                            message["static"] = reader.bytes();
-                            break;
-                        }
-                    case 3: {
-                            message.payload = reader.bytes();
-                            break;
-                        }
-                    case 4: {
-                            message.useExtended = reader.bool();
-                            break;
-                        }
-                    case 5: {
-                            message.extendedCiphertext = reader.bytes();
-                            break;
-                        }
-                    case 6: {
-                            message.paddedBytes = reader.bytes();
-                            break;
-                        }
-                    case 7: {
-                            message.sendServerHelloPaddedBytes = reader.bool();
-                            break;
-                        }
-                    case 8: {
-                            message.simulateXxkemFs = reader.bool();
-                            break;
-                        }
-                    case 9: {
-                            message.pqMode = reader.int32();
-                            break;
-                        }
-                    case 10: {
-                            message.extendedEphemeral = reader.bytes();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 2)
+                                break;
+                            message.ephemeral = reader.bytes();
+                            message._ephemeral = "ephemeral";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 2)
+                                break;
+                            message["static"] = reader.bytes();
+                            message._static = "static";
+                            continue;
+                        }
+                    case 3: {
+                            if (wireType !== 2)
+                                break;
+                            message.payload = reader.bytes();
+                            message._payload = "payload";
+                            continue;
+                        }
+                    case 4: {
+                            if (wireType !== 0)
+                                break;
+                            message.useExtended = reader.bool();
+                            message._useExtended = "useExtended";
+                            continue;
+                        }
+                    case 5: {
+                            if (wireType !== 2)
+                                break;
+                            message.extendedCiphertext = reader.bytes();
+                            message._extendedCiphertext = "extendedCiphertext";
+                            continue;
+                        }
+                    case 6: {
+                            if (wireType !== 2)
+                                break;
+                            message.paddedBytes = reader.bytes();
+                            message._paddedBytes = "paddedBytes";
+                            continue;
+                        }
+                    case 7: {
+                            if (wireType !== 0)
+                                break;
+                            message.sendServerHelloPaddedBytes = reader.bool();
+                            message._sendServerHelloPaddedBytes = "sendServerHelloPaddedBytes";
+                            continue;
+                        }
+                    case 8: {
+                            if (wireType !== 0)
+                                break;
+                            message.simulateXxkemFs = reader.bool();
+                            message._simulateXxkemFs = "simulateXxkemFs";
+                            continue;
+                        }
+                    case 9: {
+                            if (wireType !== 0)
+                                break;
+                            message.pqMode = reader.int32();
+                            message._pqMode = "pqMode";
+                            continue;
+                        }
+                    case 10: {
+                            if (wireType !== 2)
+                                break;
+                            message.extendedEphemeral = reader.bytes();
+                            message._extendedEphemeral = "extendedEphemeral";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -6518,14 +7432,14 @@ $root.Wa6 = (function() {
              * @memberof Wa6.HandshakeMessage.ClientHello
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {Wa6.HandshakeMessage.ClientHello} ClientHello
+             * @returns {Wa6.HandshakeMessage.ClientHello & Wa6.HandshakeMessage.ClientHello.$Shape} ClientHello
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ClientHello.decodeDelimited = function decodeDelimited(reader) {
+            ClientHello.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -6536,69 +7450,60 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ClientHello.verify = function verify(message) {
+            ClientHello.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message.ephemeral != null && message.hasOwnProperty("ephemeral")) {
+                if (message.ephemeral != null && $Object.hasOwnProperty.call(message, "ephemeral")) {
                     properties._ephemeral = 1;
                     if (!(message.ephemeral && typeof message.ephemeral.length === "number" || $util.isString(message.ephemeral)))
                         return "ephemeral: buffer expected";
                 }
-                if (message["static"] != null && message.hasOwnProperty("static")) {
+                if (message["static"] != null && $Object.hasOwnProperty.call(message, "static")) {
                     properties._static = 1;
                     if (!(message["static"] && typeof message["static"].length === "number" || $util.isString(message["static"])))
                         return "static: buffer expected";
                 }
-                if (message.payload != null && message.hasOwnProperty("payload")) {
+                if (message.payload != null && $Object.hasOwnProperty.call(message, "payload")) {
                     properties._payload = 1;
                     if (!(message.payload && typeof message.payload.length === "number" || $util.isString(message.payload)))
                         return "payload: buffer expected";
                 }
-                if (message.useExtended != null && message.hasOwnProperty("useExtended")) {
+                if (message.useExtended != null && $Object.hasOwnProperty.call(message, "useExtended")) {
                     properties._useExtended = 1;
                     if (typeof message.useExtended !== "boolean")
                         return "useExtended: boolean expected";
                 }
-                if (message.extendedCiphertext != null && message.hasOwnProperty("extendedCiphertext")) {
+                if (message.extendedCiphertext != null && $Object.hasOwnProperty.call(message, "extendedCiphertext")) {
                     properties._extendedCiphertext = 1;
                     if (!(message.extendedCiphertext && typeof message.extendedCiphertext.length === "number" || $util.isString(message.extendedCiphertext)))
                         return "extendedCiphertext: buffer expected";
                 }
-                if (message.paddedBytes != null && message.hasOwnProperty("paddedBytes")) {
+                if (message.paddedBytes != null && $Object.hasOwnProperty.call(message, "paddedBytes")) {
                     properties._paddedBytes = 1;
                     if (!(message.paddedBytes && typeof message.paddedBytes.length === "number" || $util.isString(message.paddedBytes)))
                         return "paddedBytes: buffer expected";
                 }
-                if (message.sendServerHelloPaddedBytes != null && message.hasOwnProperty("sendServerHelloPaddedBytes")) {
+                if (message.sendServerHelloPaddedBytes != null && $Object.hasOwnProperty.call(message, "sendServerHelloPaddedBytes")) {
                     properties._sendServerHelloPaddedBytes = 1;
                     if (typeof message.sendServerHelloPaddedBytes !== "boolean")
                         return "sendServerHelloPaddedBytes: boolean expected";
                 }
-                if (message.simulateXxkemFs != null && message.hasOwnProperty("simulateXxkemFs")) {
+                if (message.simulateXxkemFs != null && $Object.hasOwnProperty.call(message, "simulateXxkemFs")) {
                     properties._simulateXxkemFs = 1;
                     if (typeof message.simulateXxkemFs !== "boolean")
                         return "simulateXxkemFs: boolean expected";
                 }
-                if (message.pqMode != null && message.hasOwnProperty("pqMode")) {
+                if (message.pqMode != null && $Object.hasOwnProperty.call(message, "pqMode")) {
                     properties._pqMode = 1;
-                    switch (message.pqMode) {
-                    default:
+                    if (typeof message.pqMode !== "number" || (message.pqMode | 0) !== message.pqMode)
                         return "pqMode: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 9:
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                    case 7:
-                    case 8:
-                        break;
-                    }
                 }
-                if (message.extendedEphemeral != null && message.hasOwnProperty("extendedEphemeral")) {
+                if (message.extendedEphemeral != null && $Object.hasOwnProperty.call(message, "extendedEphemeral")) {
                     properties._extendedEphemeral = 1;
                     if (!(message.extendedEphemeral && typeof message.extendedEphemeral.length === "number" || $util.isString(message.extendedEphemeral)))
                         return "extendedEphemeral: buffer expected";
@@ -6614,9 +7519,15 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {Wa6.HandshakeMessage.ClientHello} ClientHello
              */
-            ClientHello.fromObject = function fromObject(object) {
+            ClientHello.fromObject = function (object, _depth) {
                 if (object instanceof $root.Wa6.HandshakeMessage.ClientHello)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".Wa6.HandshakeMessage.ClientHello: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.Wa6.HandshakeMessage.ClientHello();
                 if (object.ephemeral != null)
                     if (typeof object.ephemeral === "string")
@@ -6634,7 +7545,7 @@ $root.Wa6 = (function() {
                     else if (object.payload.length >= 0)
                         message.payload = object.payload;
                 if (object.useExtended != null)
-                    message.useExtended = Boolean(object.useExtended);
+                    message.useExtended = $Boolean(object.useExtended);
                 if (object.extendedCiphertext != null)
                     if (typeof object.extendedCiphertext === "string")
                         $util.base64.decode(object.extendedCiphertext, message.extendedCiphertext = $util.newBuffer($util.base64.length(object.extendedCiphertext)), 0);
@@ -6646,16 +7557,10 @@ $root.Wa6 = (function() {
                     else if (object.paddedBytes.length >= 0)
                         message.paddedBytes = object.paddedBytes;
                 if (object.sendServerHelloPaddedBytes != null)
-                    message.sendServerHelloPaddedBytes = Boolean(object.sendServerHelloPaddedBytes);
+                    message.sendServerHelloPaddedBytes = $Boolean(object.sendServerHelloPaddedBytes);
                 if (object.simulateXxkemFs != null)
-                    message.simulateXxkemFs = Boolean(object.simulateXxkemFs);
+                    message.simulateXxkemFs = $Boolean(object.simulateXxkemFs);
                 switch (object.pqMode) {
-                default:
-                    if (typeof object.pqMode === "number") {
-                        message.pqMode = object.pqMode;
-                        break;
-                    }
-                    break;
                 case "HANDSHAKE_PQ_MODE_UNKNOWN":
                 case 0:
                     message.pqMode = 0;
@@ -6696,6 +7601,9 @@ $root.Wa6 = (function() {
                 case 8:
                     message.pqMode = 8;
                     break;
+                default:
+                    if (typeof object.pqMode === "number" && (object.pqMode | 0) === object.pqMode)
+                        message.pqMode = object.pqMode;
                 }
                 if (object.extendedEphemeral != null)
                     if (typeof object.extendedEphemeral === "string")
@@ -6714,60 +7622,34 @@ $root.Wa6 = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            ClientHello.toObject = function toObject(message, options) {
+            ClientHello.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
-                if (message.ephemeral != null && message.hasOwnProperty("ephemeral")) {
-                    object.ephemeral = options.bytes === String ? $util.base64.encode(message.ephemeral, 0, message.ephemeral.length) : options.bytes === Array ? Array.prototype.slice.call(message.ephemeral) : message.ephemeral;
-                    if (options.oneofs)
-                        object._ephemeral = "ephemeral";
-                }
-                if (message["static"] != null && message.hasOwnProperty("static")) {
-                    object["static"] = options.bytes === String ? $util.base64.encode(message["static"], 0, message["static"].length) : options.bytes === Array ? Array.prototype.slice.call(message["static"]) : message["static"];
-                    if (options.oneofs)
-                        object._static = "static";
-                }
-                if (message.payload != null && message.hasOwnProperty("payload")) {
-                    object.payload = options.bytes === String ? $util.base64.encode(message.payload, 0, message.payload.length) : options.bytes === Array ? Array.prototype.slice.call(message.payload) : message.payload;
-                    if (options.oneofs)
-                        object._payload = "payload";
-                }
-                if (message.useExtended != null && message.hasOwnProperty("useExtended")) {
+                if (message.ephemeral != null && $Object.hasOwnProperty.call(message, "ephemeral"))
+                    object.ephemeral = options.bytes === $String ? $util.base64.encode(message.ephemeral, 0, message.ephemeral.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.ephemeral) : message.ephemeral;
+                if (message["static"] != null && $Object.hasOwnProperty.call(message, "static"))
+                    object["static"] = options.bytes === $String ? $util.base64.encode(message["static"], 0, message["static"].length) : options.bytes === $Array ? $Array.prototype.slice.call(message["static"]) : message["static"];
+                if (message.payload != null && $Object.hasOwnProperty.call(message, "payload"))
+                    object.payload = options.bytes === $String ? $util.base64.encode(message.payload, 0, message.payload.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.payload) : message.payload;
+                if (message.useExtended != null && $Object.hasOwnProperty.call(message, "useExtended"))
                     object.useExtended = message.useExtended;
-                    if (options.oneofs)
-                        object._useExtended = "useExtended";
-                }
-                if (message.extendedCiphertext != null && message.hasOwnProperty("extendedCiphertext")) {
-                    object.extendedCiphertext = options.bytes === String ? $util.base64.encode(message.extendedCiphertext, 0, message.extendedCiphertext.length) : options.bytes === Array ? Array.prototype.slice.call(message.extendedCiphertext) : message.extendedCiphertext;
-                    if (options.oneofs)
-                        object._extendedCiphertext = "extendedCiphertext";
-                }
-                if (message.paddedBytes != null && message.hasOwnProperty("paddedBytes")) {
-                    object.paddedBytes = options.bytes === String ? $util.base64.encode(message.paddedBytes, 0, message.paddedBytes.length) : options.bytes === Array ? Array.prototype.slice.call(message.paddedBytes) : message.paddedBytes;
-                    if (options.oneofs)
-                        object._paddedBytes = "paddedBytes";
-                }
-                if (message.sendServerHelloPaddedBytes != null && message.hasOwnProperty("sendServerHelloPaddedBytes")) {
+                if (message.extendedCiphertext != null && $Object.hasOwnProperty.call(message, "extendedCiphertext"))
+                    object.extendedCiphertext = options.bytes === $String ? $util.base64.encode(message.extendedCiphertext, 0, message.extendedCiphertext.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.extendedCiphertext) : message.extendedCiphertext;
+                if (message.paddedBytes != null && $Object.hasOwnProperty.call(message, "paddedBytes"))
+                    object.paddedBytes = options.bytes === $String ? $util.base64.encode(message.paddedBytes, 0, message.paddedBytes.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.paddedBytes) : message.paddedBytes;
+                if (message.sendServerHelloPaddedBytes != null && $Object.hasOwnProperty.call(message, "sendServerHelloPaddedBytes"))
                     object.sendServerHelloPaddedBytes = message.sendServerHelloPaddedBytes;
-                    if (options.oneofs)
-                        object._sendServerHelloPaddedBytes = "sendServerHelloPaddedBytes";
-                }
-                if (message.simulateXxkemFs != null && message.hasOwnProperty("simulateXxkemFs")) {
+                if (message.simulateXxkemFs != null && $Object.hasOwnProperty.call(message, "simulateXxkemFs"))
                     object.simulateXxkemFs = message.simulateXxkemFs;
-                    if (options.oneofs)
-                        object._simulateXxkemFs = "simulateXxkemFs";
-                }
-                if (message.pqMode != null && message.hasOwnProperty("pqMode")) {
-                    object.pqMode = options.enums === String ? $root.Wa6.HandshakeMessage.HandshakePqMode[message.pqMode] === undefined ? message.pqMode : $root.Wa6.HandshakeMessage.HandshakePqMode[message.pqMode] : message.pqMode;
-                    if (options.oneofs)
-                        object._pqMode = "pqMode";
-                }
-                if (message.extendedEphemeral != null && message.hasOwnProperty("extendedEphemeral")) {
-                    object.extendedEphemeral = options.bytes === String ? $util.base64.encode(message.extendedEphemeral, 0, message.extendedEphemeral.length) : options.bytes === Array ? Array.prototype.slice.call(message.extendedEphemeral) : message.extendedEphemeral;
-                    if (options.oneofs)
-                        object._extendedEphemeral = "extendedEphemeral";
-                }
+                if (message.pqMode != null && $Object.hasOwnProperty.call(message, "pqMode"))
+                    object.pqMode = options.enums === $String ? $root.Wa6.HandshakeMessage.HandshakePqMode[message.pqMode] === $undefined ? message.pqMode : $root.Wa6.HandshakeMessage.HandshakePqMode[message.pqMode] : message.pqMode;
+                if (message.extendedEphemeral != null && $Object.hasOwnProperty.call(message, "extendedEphemeral"))
+                    object.extendedEphemeral = options.bytes === $String ? $util.base64.encode(message.extendedEphemeral, 0, message.extendedEphemeral.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.extendedEphemeral) : message.extendedEphemeral;
                 return object;
             };
 
@@ -6778,23 +7660,22 @@ $root.Wa6 = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            ClientHello.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            ClientHello.prototype.toJSON = function() {
+                return ClientHello.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for ClientHello
+             * Gets the type url for ClientHello
              * @function getTypeUrl
              * @memberof Wa6.HandshakeMessage.ClientHello
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            ClientHello.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/Wa6.HandshakeMessage.ClientHello";
+            ClientHello.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/Wa6.HandshakeMessage.ClientHello";
             };
 
             return ClientHello;
@@ -6816,7 +7697,7 @@ $root.Wa6 = (function() {
          * @property {number} IKKEM_2=8 IKKEM_2 value
          */
         HandshakeMessage.HandshakePqMode = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
+            var valuesById = $Object.create(null), values = $Object.create(valuesById);
             values[valuesById[0] = "HANDSHAKE_PQ_MODE_UNKNOWN"] = 0;
             values[valuesById[1] = "XXKEM"] = 1;
             values[valuesById[2] = "XXKEM_FS"] = 2;
@@ -6834,30 +7715,43 @@ $root.Wa6 = (function() {
 
             /**
              * Properties of a ServerHello.
-             * @memberof Wa6.HandshakeMessage
-             * @interface IServerHello
+             * @typedef {Object} Wa6.HandshakeMessage.ServerHello.$Properties
              * @property {Uint8Array|null} [ephemeral] ServerHello ephemeral
              * @property {Uint8Array|null} ["static"] ServerHello static
              * @property {Uint8Array|null} [payload] ServerHello payload
              * @property {Uint8Array|null} [extendedStatic] ServerHello extendedStatic
              * @property {Uint8Array|null} [paddingBytes] ServerHello paddingBytes
              * @property {Uint8Array|null} [extendedCiphertext] ServerHello extendedCiphertext
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a ServerHello.
+             * @memberof Wa6.HandshakeMessage
+             * @interface IServerHello
+             * @augments Wa6.HandshakeMessage.ServerHello.$Properties
+             * @deprecated Use Wa6.HandshakeMessage.ServerHello.$Properties instead.
+             */
+
+            /**
+             * Shape of a ServerHello.
+             * @typedef {Wa6.HandshakeMessage.ServerHello.$Properties} Wa6.HandshakeMessage.ServerHello.$Shape
              */
 
             /**
              * Constructs a new ServerHello.
              * @memberof Wa6.HandshakeMessage
              * @classdesc Represents a ServerHello.
-             * @implements IServerHello
              * @constructor
-             * @param {Wa6.HandshakeMessage.IServerHello=} [properties] Properties to set
+             * @param {Wa6.HandshakeMessage.ServerHello.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function ServerHello(properties) {
+            var ServerHello = function (properties) {
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * ServerHello ephemeral.
@@ -6911,37 +7805,37 @@ $root.Wa6 = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ServerHello.prototype, "_ephemeral", {
+            $Object.defineProperty(ServerHello.prototype, "_ephemeral", {
                 get: $util.oneOfGetter($oneOfFields = ["ephemeral"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ServerHello.prototype, "_static", {
+            $Object.defineProperty(ServerHello.prototype, "_static", {
                 get: $util.oneOfGetter($oneOfFields = ["static"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ServerHello.prototype, "_payload", {
+            $Object.defineProperty(ServerHello.prototype, "_payload", {
                 get: $util.oneOfGetter($oneOfFields = ["payload"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ServerHello.prototype, "_extendedStatic", {
+            $Object.defineProperty(ServerHello.prototype, "_extendedStatic", {
                 get: $util.oneOfGetter($oneOfFields = ["extendedStatic"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ServerHello.prototype, "_paddingBytes", {
+            $Object.defineProperty(ServerHello.prototype, "_paddingBytes", {
                 get: $util.oneOfGetter($oneOfFields = ["paddingBytes"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(ServerHello.prototype, "_extendedCiphertext", {
+            $Object.defineProperty(ServerHello.prototype, "_extendedCiphertext", {
                 get: $util.oneOfGetter($oneOfFields = ["extendedCiphertext"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -6951,10 +7845,14 @@ $root.Wa6 = (function() {
              * @function create
              * @memberof Wa6.HandshakeMessage.ServerHello
              * @static
-             * @param {Wa6.HandshakeMessage.IServerHello=} [properties] Properties to set
+             * @param {Wa6.HandshakeMessage.ServerHello.$Properties=} [properties] Properties to set
              * @returns {Wa6.HandshakeMessage.ServerHello} ServerHello instance
+             * @type {{
+             *   (properties: Wa6.HandshakeMessage.ServerHello.$Shape): Wa6.HandshakeMessage.ServerHello & Wa6.HandshakeMessage.ServerHello.$Shape;
+             *   (properties?: Wa6.HandshakeMessage.ServerHello.$Properties): Wa6.HandshakeMessage.ServerHello;
+             * }}
              */
-            ServerHello.create = function create(properties) {
+            ServerHello.create = function(properties) {
                 return new ServerHello(properties);
             };
 
@@ -6963,25 +7861,32 @@ $root.Wa6 = (function() {
              * @function encode
              * @memberof Wa6.HandshakeMessage.ServerHello
              * @static
-             * @param {Wa6.HandshakeMessage.IServerHello} message ServerHello message or plain object to encode
+             * @param {Wa6.HandshakeMessage.ServerHello.$Properties} message ServerHello message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ServerHello.encode = function encode(message, writer) {
+            ServerHello.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.ephemeral != null && Object.hasOwnProperty.call(message, "ephemeral"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.ephemeral != null && $Object.hasOwnProperty.call(message, "ephemeral"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.ephemeral);
-                if (message["static"] != null && Object.hasOwnProperty.call(message, "static"))
+                if (message["static"] != null && $Object.hasOwnProperty.call(message, "static"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message["static"]);
-                if (message.payload != null && Object.hasOwnProperty.call(message, "payload"))
+                if (message.payload != null && $Object.hasOwnProperty.call(message, "payload"))
                     writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.payload);
-                if (message.extendedStatic != null && Object.hasOwnProperty.call(message, "extendedStatic"))
+                if (message.extendedStatic != null && $Object.hasOwnProperty.call(message, "extendedStatic"))
                     writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.extendedStatic);
-                if (message.paddingBytes != null && Object.hasOwnProperty.call(message, "paddingBytes"))
+                if (message.paddingBytes != null && $Object.hasOwnProperty.call(message, "paddingBytes"))
                     writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.paddingBytes);
-                if (message.extendedCiphertext != null && Object.hasOwnProperty.call(message, "extendedCiphertext"))
+                if (message.extendedCiphertext != null && $Object.hasOwnProperty.call(message, "extendedCiphertext"))
                     writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.extendedCiphertext);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -6990,12 +7895,12 @@ $root.Wa6 = (function() {
              * @function encodeDelimited
              * @memberof Wa6.HandshakeMessage.ServerHello
              * @static
-             * @param {Wa6.HandshakeMessage.IServerHello} message ServerHello message or plain object to encode
+             * @param {Wa6.HandshakeMessage.ServerHello.$Properties} message ServerHello message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ServerHello.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            ServerHello.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -7005,48 +7910,93 @@ $root.Wa6 = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {Wa6.HandshakeMessage.ServerHello} ServerHello
+             * @returns {Wa6.HandshakeMessage.ServerHello & Wa6.HandshakeMessage.ServerHello.$Shape} ServerHello
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ServerHello.decode = function decode(reader, length, error) {
+            ServerHello.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.HandshakeMessage.ServerHello();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.Wa6.HandshakeMessage.ServerHello();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.ephemeral = reader.bytes();
-                            break;
-                        }
-                    case 2: {
-                            message["static"] = reader.bytes();
-                            break;
-                        }
-                    case 3: {
-                            message.payload = reader.bytes();
-                            break;
-                        }
-                    case 4: {
-                            message.extendedStatic = reader.bytes();
-                            break;
-                        }
-                    case 5: {
-                            message.paddingBytes = reader.bytes();
-                            break;
-                        }
-                    case 6: {
-                            message.extendedCiphertext = reader.bytes();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 2)
+                                break;
+                            message.ephemeral = reader.bytes();
+                            message._ephemeral = "ephemeral";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 2)
+                                break;
+                            message["static"] = reader.bytes();
+                            message._static = "static";
+                            continue;
+                        }
+                    case 3: {
+                            if (wireType !== 2)
+                                break;
+                            message.payload = reader.bytes();
+                            message._payload = "payload";
+                            continue;
+                        }
+                    case 4: {
+                            if (wireType !== 2)
+                                break;
+                            message.extendedStatic = reader.bytes();
+                            message._extendedStatic = "extendedStatic";
+                            continue;
+                        }
+                    case 5: {
+                            if (wireType !== 2)
+                                break;
+                            message.paddingBytes = reader.bytes();
+                            message._paddingBytes = "paddingBytes";
+                            continue;
+                        }
+                    case 6: {
+                            if (wireType !== 2)
+                                break;
+                            message.extendedCiphertext = reader.bytes();
+                            message._extendedCiphertext = "extendedCiphertext";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -7056,14 +8006,14 @@ $root.Wa6 = (function() {
              * @memberof Wa6.HandshakeMessage.ServerHello
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {Wa6.HandshakeMessage.ServerHello} ServerHello
+             * @returns {Wa6.HandshakeMessage.ServerHello & Wa6.HandshakeMessage.ServerHello.$Shape} ServerHello
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ServerHello.decodeDelimited = function decodeDelimited(reader) {
+            ServerHello.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -7074,36 +8024,40 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ServerHello.verify = function verify(message) {
+            ServerHello.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message.ephemeral != null && message.hasOwnProperty("ephemeral")) {
+                if (message.ephemeral != null && $Object.hasOwnProperty.call(message, "ephemeral")) {
                     properties._ephemeral = 1;
                     if (!(message.ephemeral && typeof message.ephemeral.length === "number" || $util.isString(message.ephemeral)))
                         return "ephemeral: buffer expected";
                 }
-                if (message["static"] != null && message.hasOwnProperty("static")) {
+                if (message["static"] != null && $Object.hasOwnProperty.call(message, "static")) {
                     properties._static = 1;
                     if (!(message["static"] && typeof message["static"].length === "number" || $util.isString(message["static"])))
                         return "static: buffer expected";
                 }
-                if (message.payload != null && message.hasOwnProperty("payload")) {
+                if (message.payload != null && $Object.hasOwnProperty.call(message, "payload")) {
                     properties._payload = 1;
                     if (!(message.payload && typeof message.payload.length === "number" || $util.isString(message.payload)))
                         return "payload: buffer expected";
                 }
-                if (message.extendedStatic != null && message.hasOwnProperty("extendedStatic")) {
+                if (message.extendedStatic != null && $Object.hasOwnProperty.call(message, "extendedStatic")) {
                     properties._extendedStatic = 1;
                     if (!(message.extendedStatic && typeof message.extendedStatic.length === "number" || $util.isString(message.extendedStatic)))
                         return "extendedStatic: buffer expected";
                 }
-                if (message.paddingBytes != null && message.hasOwnProperty("paddingBytes")) {
+                if (message.paddingBytes != null && $Object.hasOwnProperty.call(message, "paddingBytes")) {
                     properties._paddingBytes = 1;
                     if (!(message.paddingBytes && typeof message.paddingBytes.length === "number" || $util.isString(message.paddingBytes)))
                         return "paddingBytes: buffer expected";
                 }
-                if (message.extendedCiphertext != null && message.hasOwnProperty("extendedCiphertext")) {
+                if (message.extendedCiphertext != null && $Object.hasOwnProperty.call(message, "extendedCiphertext")) {
                     properties._extendedCiphertext = 1;
                     if (!(message.extendedCiphertext && typeof message.extendedCiphertext.length === "number" || $util.isString(message.extendedCiphertext)))
                         return "extendedCiphertext: buffer expected";
@@ -7119,9 +8073,15 @@ $root.Wa6 = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {Wa6.HandshakeMessage.ServerHello} ServerHello
              */
-            ServerHello.fromObject = function fromObject(object) {
+            ServerHello.fromObject = function (object, _depth) {
                 if (object instanceof $root.Wa6.HandshakeMessage.ServerHello)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".Wa6.HandshakeMessage.ServerHello: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.Wa6.HandshakeMessage.ServerHello();
                 if (object.ephemeral != null)
                     if (typeof object.ephemeral === "string")
@@ -7165,40 +8125,26 @@ $root.Wa6 = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            ServerHello.toObject = function toObject(message, options) {
+            ServerHello.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
-                if (message.ephemeral != null && message.hasOwnProperty("ephemeral")) {
-                    object.ephemeral = options.bytes === String ? $util.base64.encode(message.ephemeral, 0, message.ephemeral.length) : options.bytes === Array ? Array.prototype.slice.call(message.ephemeral) : message.ephemeral;
-                    if (options.oneofs)
-                        object._ephemeral = "ephemeral";
-                }
-                if (message["static"] != null && message.hasOwnProperty("static")) {
-                    object["static"] = options.bytes === String ? $util.base64.encode(message["static"], 0, message["static"].length) : options.bytes === Array ? Array.prototype.slice.call(message["static"]) : message["static"];
-                    if (options.oneofs)
-                        object._static = "static";
-                }
-                if (message.payload != null && message.hasOwnProperty("payload")) {
-                    object.payload = options.bytes === String ? $util.base64.encode(message.payload, 0, message.payload.length) : options.bytes === Array ? Array.prototype.slice.call(message.payload) : message.payload;
-                    if (options.oneofs)
-                        object._payload = "payload";
-                }
-                if (message.extendedStatic != null && message.hasOwnProperty("extendedStatic")) {
-                    object.extendedStatic = options.bytes === String ? $util.base64.encode(message.extendedStatic, 0, message.extendedStatic.length) : options.bytes === Array ? Array.prototype.slice.call(message.extendedStatic) : message.extendedStatic;
-                    if (options.oneofs)
-                        object._extendedStatic = "extendedStatic";
-                }
-                if (message.paddingBytes != null && message.hasOwnProperty("paddingBytes")) {
-                    object.paddingBytes = options.bytes === String ? $util.base64.encode(message.paddingBytes, 0, message.paddingBytes.length) : options.bytes === Array ? Array.prototype.slice.call(message.paddingBytes) : message.paddingBytes;
-                    if (options.oneofs)
-                        object._paddingBytes = "paddingBytes";
-                }
-                if (message.extendedCiphertext != null && message.hasOwnProperty("extendedCiphertext")) {
-                    object.extendedCiphertext = options.bytes === String ? $util.base64.encode(message.extendedCiphertext, 0, message.extendedCiphertext.length) : options.bytes === Array ? Array.prototype.slice.call(message.extendedCiphertext) : message.extendedCiphertext;
-                    if (options.oneofs)
-                        object._extendedCiphertext = "extendedCiphertext";
-                }
+                if (message.ephemeral != null && $Object.hasOwnProperty.call(message, "ephemeral"))
+                    object.ephemeral = options.bytes === $String ? $util.base64.encode(message.ephemeral, 0, message.ephemeral.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.ephemeral) : message.ephemeral;
+                if (message["static"] != null && $Object.hasOwnProperty.call(message, "static"))
+                    object["static"] = options.bytes === $String ? $util.base64.encode(message["static"], 0, message["static"].length) : options.bytes === $Array ? $Array.prototype.slice.call(message["static"]) : message["static"];
+                if (message.payload != null && $Object.hasOwnProperty.call(message, "payload"))
+                    object.payload = options.bytes === $String ? $util.base64.encode(message.payload, 0, message.payload.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.payload) : message.payload;
+                if (message.extendedStatic != null && $Object.hasOwnProperty.call(message, "extendedStatic"))
+                    object.extendedStatic = options.bytes === $String ? $util.base64.encode(message.extendedStatic, 0, message.extendedStatic.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.extendedStatic) : message.extendedStatic;
+                if (message.paddingBytes != null && $Object.hasOwnProperty.call(message, "paddingBytes"))
+                    object.paddingBytes = options.bytes === $String ? $util.base64.encode(message.paddingBytes, 0, message.paddingBytes.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.paddingBytes) : message.paddingBytes;
+                if (message.extendedCiphertext != null && $Object.hasOwnProperty.call(message, "extendedCiphertext"))
+                    object.extendedCiphertext = options.bytes === $String ? $util.base64.encode(message.extendedCiphertext, 0, message.extendedCiphertext.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.extendedCiphertext) : message.extendedCiphertext;
                 return object;
             };
 
@@ -7209,23 +8155,22 @@ $root.Wa6 = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            ServerHello.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            ServerHello.prototype.toJSON = function() {
+                return ServerHello.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for ServerHello
+             * Gets the type url for ServerHello
              * @function getTypeUrl
              * @memberof Wa6.HandshakeMessage.ServerHello
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            ServerHello.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/Wa6.HandshakeMessage.ServerHello";
+            ServerHello.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/Wa6.HandshakeMessage.ServerHello";
             };
 
             return ServerHello;

@@ -1,51 +1,47 @@
 import * as $protobuf from "protobufjs";
 import Long = require("long");
+
 /** Namespace UserPassword. */
 export namespace UserPassword {
 
-    /** Properties of a UserPassword. */
-    interface IUserPassword {
-
-        /** UserPassword encoding */
-        encoding?: (UserPassword.UserPassword.Encoding|null);
-
-        /** UserPassword transformer */
-        transformer?: (UserPassword.UserPassword.Transformer|null);
-
-        /** UserPassword transformerArg */
-        transformerArg?: (UserPassword.UserPassword.ITransformerArg[]|null);
-
-        /** UserPassword transformedData */
-        transformedData?: (Uint8Array|null);
+    /**
+     * Properties of a UserPassword.
+     * @deprecated Use UserPassword.UserPassword.$Properties instead.
+     */
+    interface IUserPassword extends UserPassword.UserPassword.$Properties {
     }
 
     /** Represents a UserPassword. */
-    class UserPassword implements IUserPassword {
+    class UserPassword {
 
         /**
          * Constructs a new UserPassword.
          * @param [properties] Properties to set
          */
-        constructor(properties?: UserPassword.IUserPassword);
+        constructor(properties?: UserPassword.UserPassword.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** UserPassword encoding. */
-        public encoding?: (UserPassword.UserPassword.Encoding|null);
+        encoding?: (UserPassword.UserPassword.Encoding|null);
 
         /** UserPassword transformer. */
-        public transformer?: (UserPassword.UserPassword.Transformer|null);
+        transformer?: (UserPassword.UserPassword.Transformer|null);
 
         /** UserPassword transformerArg. */
-        public transformerArg: UserPassword.UserPassword.ITransformerArg[];
+        transformerArg: UserPassword.UserPassword.TransformerArg.$Properties[];
 
         /** UserPassword transformedData. */
-        public transformedData?: (Uint8Array|null);
+        transformedData?: (Uint8Array|null);
 
         /**
          * Creates a new UserPassword instance using the specified properties.
          * @param [properties] Properties to set
          * @returns UserPassword instance
          */
-        public static create(properties?: UserPassword.IUserPassword): UserPassword.UserPassword;
+        static create(properties: UserPassword.UserPassword.$Shape): UserPassword.UserPassword & UserPassword.UserPassword.$Shape;
+        static create(properties?: UserPassword.UserPassword.$Properties): UserPassword.UserPassword;
 
         /**
          * Encodes the specified UserPassword message. Does not implicitly {@link UserPassword.UserPassword.verify|verify} messages.
@@ -53,7 +49,7 @@ export namespace UserPassword {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: UserPassword.IUserPassword, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: UserPassword.UserPassword.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified UserPassword message, length delimited. Does not implicitly {@link UserPassword.UserPassword.verify|verify} messages.
@@ -61,40 +57,40 @@ export namespace UserPassword {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: UserPassword.IUserPassword, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: UserPassword.UserPassword.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a UserPassword message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns UserPassword
+         * @returns {UserPassword.UserPassword & UserPassword.UserPassword.$Shape} UserPassword
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): UserPassword.UserPassword;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): UserPassword.UserPassword & UserPassword.UserPassword.$Shape;
 
         /**
          * Decodes a UserPassword message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns UserPassword
+         * @returns {UserPassword.UserPassword & UserPassword.UserPassword.$Shape} UserPassword
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): UserPassword.UserPassword;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): UserPassword.UserPassword & UserPassword.UserPassword.$Shape;
 
         /**
          * Verifies a UserPassword message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a UserPassword message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns UserPassword
          */
-        public static fromObject(object: { [k: string]: any }): UserPassword.UserPassword;
+        static fromObject(object: { [k: string]: any }): UserPassword.UserPassword;
 
         /**
          * Creates a plain object from a UserPassword message. Also converts values to other types if specified.
@@ -102,68 +98,107 @@ export namespace UserPassword {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: UserPassword.UserPassword, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: UserPassword.UserPassword, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this UserPassword to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for UserPassword
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for UserPassword
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace UserPassword {
 
+        /** Properties of a UserPassword. */
+        interface $Properties {
+
+            /** UserPassword encoding */
+            encoding?: (UserPassword.UserPassword.Encoding|null);
+
+            /** UserPassword transformer */
+            transformer?: (UserPassword.UserPassword.Transformer|null);
+
+            /** UserPassword transformerArg */
+            transformerArg?: (UserPassword.UserPassword.TransformerArg.$Properties[]|null);
+
+            /** UserPassword transformedData */
+            transformedData?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a UserPassword. */
+        type $Shape = {
+          encoding?: UserPassword.UserPassword.Encoding|null;
+          transformer?: UserPassword.UserPassword.Transformer|null;
+          transformerArg?: UserPassword.UserPassword.TransformerArg.$Shape[]|null;
+          transformedData?: Uint8Array|null;
+          $unknowns?: Uint8Array[];
+        };
+
         /** Encoding enum. */
         enum Encoding {
+
+            /** UTF8 value */
             UTF8 = 0,
+
+            /** UTF8_BROKEN value */
             UTF8_BROKEN = 1
         }
 
         /** Transformer enum. */
         enum Transformer {
+
+            /** NONE value */
             NONE = 0,
+
+            /** PBKDF2_HMAC_SHA512 value */
             PBKDF2_HMAC_SHA512 = 1,
+
+            /** PBKDF2_HMAC_SHA384 value */
             PBKDF2_HMAC_SHA384 = 2
         }
 
-        /** Properties of a TransformerArg. */
-        interface ITransformerArg {
-
-            /** TransformerArg key */
-            key?: (string|null);
-
-            /** TransformerArg value */
-            value?: (UserPassword.UserPassword.TransformerArg.IValue|null);
+        /**
+         * Properties of a TransformerArg.
+         * @deprecated Use UserPassword.UserPassword.TransformerArg.$Properties instead.
+         */
+        interface ITransformerArg extends UserPassword.UserPassword.TransformerArg.$Properties {
         }
 
         /** Represents a TransformerArg. */
-        class TransformerArg implements ITransformerArg {
+        class TransformerArg {
 
             /**
              * Constructs a new TransformerArg.
              * @param [properties] Properties to set
              */
-            constructor(properties?: UserPassword.UserPassword.ITransformerArg);
+            constructor(properties?: UserPassword.UserPassword.TransformerArg.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** TransformerArg key. */
-            public key?: (string|null);
+            key?: (string|null);
 
             /** TransformerArg value. */
-            public value?: (UserPassword.UserPassword.TransformerArg.IValue|null);
+            value?: (UserPassword.UserPassword.TransformerArg.Value.$Properties|null);
 
             /**
              * Creates a new TransformerArg instance using the specified properties.
              * @param [properties] Properties to set
              * @returns TransformerArg instance
              */
-            public static create(properties?: UserPassword.UserPassword.ITransformerArg): UserPassword.UserPassword.TransformerArg;
+            static create(properties: UserPassword.UserPassword.TransformerArg.$Shape): UserPassword.UserPassword.TransformerArg & UserPassword.UserPassword.TransformerArg.$Shape;
+            static create(properties?: UserPassword.UserPassword.TransformerArg.$Properties): UserPassword.UserPassword.TransformerArg;
 
             /**
              * Encodes the specified TransformerArg message. Does not implicitly {@link UserPassword.UserPassword.TransformerArg.verify|verify} messages.
@@ -171,7 +206,7 @@ export namespace UserPassword {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: UserPassword.UserPassword.ITransformerArg, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: UserPassword.UserPassword.TransformerArg.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified TransformerArg message, length delimited. Does not implicitly {@link UserPassword.UserPassword.TransformerArg.verify|verify} messages.
@@ -179,40 +214,40 @@ export namespace UserPassword {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: UserPassword.UserPassword.ITransformerArg, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: UserPassword.UserPassword.TransformerArg.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a TransformerArg message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns TransformerArg
+             * @returns {UserPassword.UserPassword.TransformerArg & UserPassword.UserPassword.TransformerArg.$Shape} TransformerArg
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): UserPassword.UserPassword.TransformerArg;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): UserPassword.UserPassword.TransformerArg & UserPassword.UserPassword.TransformerArg.$Shape;
 
             /**
              * Decodes a TransformerArg message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns TransformerArg
+             * @returns {UserPassword.UserPassword.TransformerArg & UserPassword.UserPassword.TransformerArg.$Shape} TransformerArg
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): UserPassword.UserPassword.TransformerArg;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): UserPassword.UserPassword.TransformerArg & UserPassword.UserPassword.TransformerArg.$Shape;
 
             /**
              * Verifies a TransformerArg message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a TransformerArg message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns TransformerArg
              */
-            public static fromObject(object: { [k: string]: any }): UserPassword.UserPassword.TransformerArg;
+            static fromObject(object: { [k: string]: any }): UserPassword.UserPassword.TransformerArg;
 
             /**
              * Creates a plain object from a TransformerArg message. Also converts values to other types if specified.
@@ -220,58 +255,79 @@ export namespace UserPassword {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: UserPassword.UserPassword.TransformerArg, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: UserPassword.UserPassword.TransformerArg, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this TransformerArg to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for TransformerArg
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for TransformerArg
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
         }
 
         namespace TransformerArg {
 
-            /** Properties of a Value. */
-            interface IValue {
+            /** Properties of a TransformerArg. */
+            interface $Properties {
 
-                /** Value asBlob */
-                asBlob?: (Uint8Array|null);
+                /** TransformerArg key */
+                key?: (string|null);
 
-                /** Value asUnsignedInteger */
-                asUnsignedInteger?: (number|null);
+                /** TransformerArg value */
+                value?: (UserPassword.UserPassword.TransformerArg.Value.$Properties|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of a TransformerArg. */
+            type $Shape = {
+              key?: string|null;
+              value?: UserPassword.UserPassword.TransformerArg.Value.$Shape|null;
+              $unknowns?: Uint8Array[];
+            };
+
+            /**
+             * Properties of a Value.
+             * @deprecated Use UserPassword.UserPassword.TransformerArg.Value.$Properties instead.
+             */
+            interface IValue extends UserPassword.UserPassword.TransformerArg.Value.$Properties {
             }
 
             /** Represents a Value. */
-            class Value implements IValue {
+            class Value {
 
                 /**
                  * Constructs a new Value.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: UserPassword.UserPassword.TransformerArg.IValue);
+                constructor(properties?: UserPassword.UserPassword.TransformerArg.Value.$Properties);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
 
                 /** Value asBlob. */
-                public asBlob?: (Uint8Array|null);
+                asBlob?: (Uint8Array|null);
 
                 /** Value asUnsignedInteger. */
-                public asUnsignedInteger?: (number|null);
+                asUnsignedInteger?: (number|null);
 
                 /** Value value. */
-                public value?: ("asBlob"|"asUnsignedInteger");
+                value?: ("asBlob"|"asUnsignedInteger");
 
                 /**
                  * Creates a new Value instance using the specified properties.
                  * @param [properties] Properties to set
                  * @returns Value instance
                  */
-                public static create(properties?: UserPassword.UserPassword.TransformerArg.IValue): UserPassword.UserPassword.TransformerArg.Value;
+                static create(properties: UserPassword.UserPassword.TransformerArg.Value.$Shape): UserPassword.UserPassword.TransformerArg.Value & UserPassword.UserPassword.TransformerArg.Value.$Shape;
+                static create(properties?: UserPassword.UserPassword.TransformerArg.Value.$Properties): UserPassword.UserPassword.TransformerArg.Value;
 
                 /**
                  * Encodes the specified Value message. Does not implicitly {@link UserPassword.UserPassword.TransformerArg.Value.verify|verify} messages.
@@ -279,7 +335,7 @@ export namespace UserPassword {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: UserPassword.UserPassword.TransformerArg.IValue, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encode(message: UserPassword.UserPassword.TransformerArg.Value.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Encodes the specified Value message, length delimited. Does not implicitly {@link UserPassword.UserPassword.TransformerArg.Value.verify|verify} messages.
@@ -287,40 +343,40 @@ export namespace UserPassword {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: UserPassword.UserPassword.TransformerArg.IValue, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encodeDelimited(message: UserPassword.UserPassword.TransformerArg.Value.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Decodes a Value message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns Value
+                 * @returns {UserPassword.UserPassword.TransformerArg.Value & UserPassword.UserPassword.TransformerArg.Value.$Shape} Value
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): UserPassword.UserPassword.TransformerArg.Value;
+                static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): UserPassword.UserPassword.TransformerArg.Value & UserPassword.UserPassword.TransformerArg.Value.$Shape;
 
                 /**
                  * Decodes a Value message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns Value
+                 * @returns {UserPassword.UserPassword.TransformerArg.Value & UserPassword.UserPassword.TransformerArg.Value.$Shape} Value
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): UserPassword.UserPassword.TransformerArg.Value;
+                static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): UserPassword.UserPassword.TransformerArg.Value & UserPassword.UserPassword.TransformerArg.Value.$Shape;
 
                 /**
                  * Verifies a Value message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
-                public static verify(message: { [k: string]: any }): (string|null);
+                static verify(message: { [k: string]: any }): (string|null);
 
                 /**
                  * Creates a Value message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
                  * @returns Value
                  */
-                public static fromObject(object: { [k: string]: any }): UserPassword.UserPassword.TransformerArg.Value;
+                static fromObject(object: { [k: string]: any }): UserPassword.UserPassword.TransformerArg.Value;
 
                 /**
                  * Creates a plain object from a Value message. Also converts values to other types if specified.
@@ -328,20 +384,48 @@ export namespace UserPassword {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: UserPassword.UserPassword.TransformerArg.Value, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                static toObject(message: UserPassword.UserPassword.TransformerArg.Value, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this Value to JSON.
                  * @returns JSON object
                  */
-                public toJSON(): { [k: string]: any };
+                toJSON(): { [k: string]: any };
 
                 /**
-                 * Gets the default type url for Value
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
+                 * Gets the type url for Value
+                 * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+                 * @returns The type url
                  */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
+                static getTypeUrl(prefix?: string): string;
+            }
+
+            namespace Value {
+
+                /** Properties of a Value. */
+                interface $Properties {
+
+                    /** Value asBlob */
+                    asBlob?: (Uint8Array|null);
+
+                    /** Value asUnsignedInteger */
+                    asUnsignedInteger?: (number|null);
+
+                    /** Value value */
+                    value?: ("asBlob"|"asUnsignedInteger");
+
+                    /** Unknown fields preserved while decoding when enabled */
+                    $unknowns?: Uint8Array[];
+                }
+
+                /** Narrowed shape of a Value. */
+                type $Shape = {
+                  asBlob?: Uint8Array|null;
+                  asUnsignedInteger?: number|null;
+                  $unknowns?: Uint8Array[];
+                } & (
+                  ({ value?: undefined; asBlob?: null; asUnsignedInteger?: null }|{ value?: "asBlob"; asBlob: Uint8Array; asUnsignedInteger?: null }|{ value?: "asUnsignedInteger"; asBlob?: null; asUnsignedInteger: number })
+                );
             }
         }
     }

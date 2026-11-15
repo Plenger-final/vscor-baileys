@@ -1,213 +1,128 @@
 import * as $protobuf from "protobufjs";
 import Long = require("long");
+
 /** Namespace BotMetadata. */
 export namespace BotMetadata {
 
-    /** Properties of a BotMetadata. */
-    interface IBotMetadata {
-
-        /** BotMetadata avatarMetadata */
-        avatarMetadata?: (BotMetadata.IBotAvatarMetadata|null);
-
-        /** BotMetadata personaId */
-        personaId?: (string|null);
-
-        /** BotMetadata pluginMetadata */
-        pluginMetadata?: (BotMetadata.IBotPluginMetadata|null);
-
-        /** BotMetadata suggestedPromptMetadata */
-        suggestedPromptMetadata?: (BotMetadata.IBotSuggestedPromptMetadata|null);
-
-        /** BotMetadata invokerJid */
-        invokerJid?: (string|null);
-
-        /** BotMetadata sessionMetadata */
-        sessionMetadata?: (BotMetadata.IBotSessionMetadata|null);
-
-        /** BotMetadata memuMetadata */
-        memuMetadata?: (BotMetadata.IBotMemuMetadata|null);
-
-        /** BotMetadata timezone */
-        timezone?: (string|null);
-
-        /** BotMetadata reminderMetadata */
-        reminderMetadata?: (BotMetadata.IBotReminderMetadata|null);
-
-        /** BotMetadata modelMetadata */
-        modelMetadata?: (BotMetadata.IBotModelMetadata|null);
-
-        /** BotMetadata messageDisclaimerText */
-        messageDisclaimerText?: (string|null);
-
-        /** BotMetadata progressIndicatorMetadata */
-        progressIndicatorMetadata?: (BotMetadata.IBotProgressIndicatorMetadata|null);
-
-        /** BotMetadata capabilityMetadata */
-        capabilityMetadata?: (BotMetadata.IBotCapabilityMetadata|null);
-
-        /** BotMetadata imagineMetadata */
-        imagineMetadata?: (BotMetadata.IBotImagineMetadata|null);
-
-        /** BotMetadata memoryMetadata */
-        memoryMetadata?: (BotMetadata.IBotMemoryMetadata|null);
-
-        /** BotMetadata renderingMetadata */
-        renderingMetadata?: (BotMetadata.IBotRenderingMetadata|null);
-
-        /** BotMetadata botMetricsMetadata */
-        botMetricsMetadata?: (BotMetadata.IBotMetricsMetadata|null);
-
-        /** BotMetadata botLinkedAccountsMetadata */
-        botLinkedAccountsMetadata?: (BotMetadata.IBotLinkedAccountsMetadata|null);
-
-        /** BotMetadata richResponseSourcesMetadata */
-        richResponseSourcesMetadata?: (BotMetadata.IBotSourcesMetadata|null);
-
-        /** BotMetadata aiConversationContext */
-        aiConversationContext?: (Uint8Array|null);
-
-        /** BotMetadata botPromotionMessageMetadata */
-        botPromotionMessageMetadata?: (BotMetadata.IBotPromotionMessageMetadata|null);
-
-        /** BotMetadata botModeSelectionMetadata */
-        botModeSelectionMetadata?: (BotMetadata.IBotModeSelectionMetadata|null);
-
-        /** BotMetadata botQuotaMetadata */
-        botQuotaMetadata?: (BotMetadata.IBotQuotaMetadata|null);
-
-        /** BotMetadata botAgeCollectionMetadata */
-        botAgeCollectionMetadata?: (BotMetadata.IBotAgeCollectionMetadata|null);
-
-        /** BotMetadata conversationStarterPromptId */
-        conversationStarterPromptId?: (string|null);
-
-        /** BotMetadata botResponseId */
-        botResponseId?: (string|null);
-
-        /** BotMetadata verificationMetadata */
-        verificationMetadata?: (BotMetadata.IBotSignatureVerificationMetadata|null);
-
-        /** BotMetadata unifiedResponseMutation */
-        unifiedResponseMutation?: (BotMetadata.IBotUnifiedResponseMutation|null);
-
-        /** BotMetadata botMessageOriginMetadata */
-        botMessageOriginMetadata?: (BotMetadata.IBotMessageOriginMetadata|null);
-
-        /** BotMetadata inThreadSurveyMetadata */
-        inThreadSurveyMetadata?: (BotMetadata.IInThreadSurveyMetadata|null);
-
-        /** BotMetadata botThreadInfo */
-        botThreadInfo?: (BotMetadata.IAIThreadInfo|null);
+    /**
+     * Properties of a BotMetadata.
+     * @deprecated Use BotMetadata.BotMetadata.$Properties instead.
+     */
+    interface IBotMetadata extends BotMetadata.BotMetadata.$Properties {
     }
 
     /** Represents a BotMetadata. */
-    class BotMetadata implements IBotMetadata {
+    class BotMetadata {
 
         /**
          * Constructs a new BotMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotMetadata);
+        constructor(properties?: BotMetadata.BotMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotMetadata avatarMetadata. */
-        public avatarMetadata?: (BotMetadata.IBotAvatarMetadata|null);
+        avatarMetadata?: (BotMetadata.BotAvatarMetadata.$Properties|null);
 
         /** BotMetadata personaId. */
-        public personaId?: (string|null);
+        personaId?: (string|null);
 
         /** BotMetadata pluginMetadata. */
-        public pluginMetadata?: (BotMetadata.IBotPluginMetadata|null);
+        pluginMetadata?: (BotMetadata.BotPluginMetadata.$Properties|null);
 
         /** BotMetadata suggestedPromptMetadata. */
-        public suggestedPromptMetadata?: (BotMetadata.IBotSuggestedPromptMetadata|null);
+        suggestedPromptMetadata?: (BotMetadata.BotSuggestedPromptMetadata.$Properties|null);
 
         /** BotMetadata invokerJid. */
-        public invokerJid?: (string|null);
+        invokerJid?: (string|null);
 
         /** BotMetadata sessionMetadata. */
-        public sessionMetadata?: (BotMetadata.IBotSessionMetadata|null);
+        sessionMetadata?: (BotMetadata.BotSessionMetadata.$Properties|null);
 
         /** BotMetadata memuMetadata. */
-        public memuMetadata?: (BotMetadata.IBotMemuMetadata|null);
+        memuMetadata?: (BotMetadata.BotMemuMetadata.$Properties|null);
 
         /** BotMetadata timezone. */
-        public timezone?: (string|null);
+        timezone?: (string|null);
 
         /** BotMetadata reminderMetadata. */
-        public reminderMetadata?: (BotMetadata.IBotReminderMetadata|null);
+        reminderMetadata?: (BotMetadata.BotReminderMetadata.$Properties|null);
 
         /** BotMetadata modelMetadata. */
-        public modelMetadata?: (BotMetadata.IBotModelMetadata|null);
+        modelMetadata?: (BotMetadata.BotModelMetadata.$Properties|null);
 
         /** BotMetadata messageDisclaimerText. */
-        public messageDisclaimerText?: (string|null);
+        messageDisclaimerText?: (string|null);
 
         /** BotMetadata progressIndicatorMetadata. */
-        public progressIndicatorMetadata?: (BotMetadata.IBotProgressIndicatorMetadata|null);
+        progressIndicatorMetadata?: (BotMetadata.BotProgressIndicatorMetadata.$Properties|null);
 
         /** BotMetadata capabilityMetadata. */
-        public capabilityMetadata?: (BotMetadata.IBotCapabilityMetadata|null);
+        capabilityMetadata?: (BotMetadata.BotCapabilityMetadata.$Properties|null);
 
         /** BotMetadata imagineMetadata. */
-        public imagineMetadata?: (BotMetadata.IBotImagineMetadata|null);
+        imagineMetadata?: (BotMetadata.BotImagineMetadata.$Properties|null);
 
         /** BotMetadata memoryMetadata. */
-        public memoryMetadata?: (BotMetadata.IBotMemoryMetadata|null);
+        memoryMetadata?: (BotMetadata.BotMemoryMetadata.$Properties|null);
 
         /** BotMetadata renderingMetadata. */
-        public renderingMetadata?: (BotMetadata.IBotRenderingMetadata|null);
+        renderingMetadata?: (BotMetadata.BotRenderingMetadata.$Properties|null);
 
         /** BotMetadata botMetricsMetadata. */
-        public botMetricsMetadata?: (BotMetadata.IBotMetricsMetadata|null);
+        botMetricsMetadata?: (BotMetadata.BotMetricsMetadata.$Properties|null);
 
         /** BotMetadata botLinkedAccountsMetadata. */
-        public botLinkedAccountsMetadata?: (BotMetadata.IBotLinkedAccountsMetadata|null);
+        botLinkedAccountsMetadata?: (BotMetadata.BotLinkedAccountsMetadata.$Properties|null);
 
         /** BotMetadata richResponseSourcesMetadata. */
-        public richResponseSourcesMetadata?: (BotMetadata.IBotSourcesMetadata|null);
+        richResponseSourcesMetadata?: (BotMetadata.BotSourcesMetadata.$Properties|null);
 
         /** BotMetadata aiConversationContext. */
-        public aiConversationContext?: (Uint8Array|null);
+        aiConversationContext?: (Uint8Array|null);
 
         /** BotMetadata botPromotionMessageMetadata. */
-        public botPromotionMessageMetadata?: (BotMetadata.IBotPromotionMessageMetadata|null);
+        botPromotionMessageMetadata?: (BotMetadata.BotPromotionMessageMetadata.$Properties|null);
 
         /** BotMetadata botModeSelectionMetadata. */
-        public botModeSelectionMetadata?: (BotMetadata.IBotModeSelectionMetadata|null);
+        botModeSelectionMetadata?: (BotMetadata.BotModeSelectionMetadata.$Properties|null);
 
         /** BotMetadata botQuotaMetadata. */
-        public botQuotaMetadata?: (BotMetadata.IBotQuotaMetadata|null);
+        botQuotaMetadata?: (BotMetadata.BotQuotaMetadata.$Properties|null);
 
         /** BotMetadata botAgeCollectionMetadata. */
-        public botAgeCollectionMetadata?: (BotMetadata.IBotAgeCollectionMetadata|null);
+        botAgeCollectionMetadata?: (BotMetadata.BotAgeCollectionMetadata.$Properties|null);
 
         /** BotMetadata conversationStarterPromptId. */
-        public conversationStarterPromptId?: (string|null);
+        conversationStarterPromptId?: (string|null);
 
         /** BotMetadata botResponseId. */
-        public botResponseId?: (string|null);
+        botResponseId?: (string|null);
 
         /** BotMetadata verificationMetadata. */
-        public verificationMetadata?: (BotMetadata.IBotSignatureVerificationMetadata|null);
+        verificationMetadata?: (BotMetadata.BotSignatureVerificationMetadata.$Properties|null);
 
         /** BotMetadata unifiedResponseMutation. */
-        public unifiedResponseMutation?: (BotMetadata.IBotUnifiedResponseMutation|null);
+        unifiedResponseMutation?: (BotMetadata.BotUnifiedResponseMutation.$Properties|null);
 
         /** BotMetadata botMessageOriginMetadata. */
-        public botMessageOriginMetadata?: (BotMetadata.IBotMessageOriginMetadata|null);
+        botMessageOriginMetadata?: (BotMetadata.BotMessageOriginMetadata.$Properties|null);
 
         /** BotMetadata inThreadSurveyMetadata. */
-        public inThreadSurveyMetadata?: (BotMetadata.IInThreadSurveyMetadata|null);
+        inThreadSurveyMetadata?: (BotMetadata.InThreadSurveyMetadata.$Properties|null);
 
         /** BotMetadata botThreadInfo. */
-        public botThreadInfo?: (BotMetadata.IAIThreadInfo|null);
+        botThreadInfo?: (BotMetadata.AIThreadInfo.$Properties|null);
 
         /**
          * Creates a new BotMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotMetadata): BotMetadata.BotMetadata;
+        static create(properties: BotMetadata.BotMetadata.$Shape): BotMetadata.BotMetadata & BotMetadata.BotMetadata.$Shape;
+        static create(properties?: BotMetadata.BotMetadata.$Properties): BotMetadata.BotMetadata;
 
         /**
          * Encodes the specified BotMetadata message. Does not implicitly {@link BotMetadata.BotMetadata.verify|verify} messages.
@@ -215,7 +130,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotMetadata.verify|verify} messages.
@@ -223,40 +138,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotMetadata
+         * @returns {BotMetadata.BotMetadata & BotMetadata.BotMetadata.$Shape} BotMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMetadata & BotMetadata.BotMetadata.$Shape;
 
         /**
          * Decodes a BotMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotMetadata
+         * @returns {BotMetadata.BotMetadata & BotMetadata.BotMetadata.$Shape} BotMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMetadata & BotMetadata.BotMetadata.$Shape;
 
         /**
          * Verifies a BotMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotMetadata;
 
         /**
          * Creates a plain object from a BotMetadata message. Also converts values to other types if specified.
@@ -264,53 +179,160 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a AIThreadInfo. */
-    interface IAIThreadInfo {
+    namespace BotMetadata {
 
-        /** AIThreadInfo serverInfo */
-        serverInfo?: (BotMetadata.AIThreadInfo.IAIThreadServerInfo|null);
+        /** Properties of a BotMetadata. */
+        interface $Properties {
 
-        /** AIThreadInfo clientInfo */
-        clientInfo?: (BotMetadata.AIThreadInfo.IAIThreadClientInfo|null);
+            /** BotMetadata avatarMetadata */
+            avatarMetadata?: (BotMetadata.BotAvatarMetadata.$Properties|null);
+
+            /** BotMetadata personaId */
+            personaId?: (string|null);
+
+            /** BotMetadata pluginMetadata */
+            pluginMetadata?: (BotMetadata.BotPluginMetadata.$Properties|null);
+
+            /** BotMetadata suggestedPromptMetadata */
+            suggestedPromptMetadata?: (BotMetadata.BotSuggestedPromptMetadata.$Properties|null);
+
+            /** BotMetadata invokerJid */
+            invokerJid?: (string|null);
+
+            /** BotMetadata sessionMetadata */
+            sessionMetadata?: (BotMetadata.BotSessionMetadata.$Properties|null);
+
+            /** BotMetadata memuMetadata */
+            memuMetadata?: (BotMetadata.BotMemuMetadata.$Properties|null);
+
+            /** BotMetadata timezone */
+            timezone?: (string|null);
+
+            /** BotMetadata reminderMetadata */
+            reminderMetadata?: (BotMetadata.BotReminderMetadata.$Properties|null);
+
+            /** BotMetadata modelMetadata */
+            modelMetadata?: (BotMetadata.BotModelMetadata.$Properties|null);
+
+            /** BotMetadata messageDisclaimerText */
+            messageDisclaimerText?: (string|null);
+
+            /** BotMetadata progressIndicatorMetadata */
+            progressIndicatorMetadata?: (BotMetadata.BotProgressIndicatorMetadata.$Properties|null);
+
+            /** BotMetadata capabilityMetadata */
+            capabilityMetadata?: (BotMetadata.BotCapabilityMetadata.$Properties|null);
+
+            /** BotMetadata imagineMetadata */
+            imagineMetadata?: (BotMetadata.BotImagineMetadata.$Properties|null);
+
+            /** BotMetadata memoryMetadata */
+            memoryMetadata?: (BotMetadata.BotMemoryMetadata.$Properties|null);
+
+            /** BotMetadata renderingMetadata */
+            renderingMetadata?: (BotMetadata.BotRenderingMetadata.$Properties|null);
+
+            /** BotMetadata botMetricsMetadata */
+            botMetricsMetadata?: (BotMetadata.BotMetricsMetadata.$Properties|null);
+
+            /** BotMetadata botLinkedAccountsMetadata */
+            botLinkedAccountsMetadata?: (BotMetadata.BotLinkedAccountsMetadata.$Properties|null);
+
+            /** BotMetadata richResponseSourcesMetadata */
+            richResponseSourcesMetadata?: (BotMetadata.BotSourcesMetadata.$Properties|null);
+
+            /** BotMetadata aiConversationContext */
+            aiConversationContext?: (Uint8Array|null);
+
+            /** BotMetadata botPromotionMessageMetadata */
+            botPromotionMessageMetadata?: (BotMetadata.BotPromotionMessageMetadata.$Properties|null);
+
+            /** BotMetadata botModeSelectionMetadata */
+            botModeSelectionMetadata?: (BotMetadata.BotModeSelectionMetadata.$Properties|null);
+
+            /** BotMetadata botQuotaMetadata */
+            botQuotaMetadata?: (BotMetadata.BotQuotaMetadata.$Properties|null);
+
+            /** BotMetadata botAgeCollectionMetadata */
+            botAgeCollectionMetadata?: (BotMetadata.BotAgeCollectionMetadata.$Properties|null);
+
+            /** BotMetadata conversationStarterPromptId */
+            conversationStarterPromptId?: (string|null);
+
+            /** BotMetadata botResponseId */
+            botResponseId?: (string|null);
+
+            /** BotMetadata verificationMetadata */
+            verificationMetadata?: (BotMetadata.BotSignatureVerificationMetadata.$Properties|null);
+
+            /** BotMetadata unifiedResponseMutation */
+            unifiedResponseMutation?: (BotMetadata.BotUnifiedResponseMutation.$Properties|null);
+
+            /** BotMetadata botMessageOriginMetadata */
+            botMessageOriginMetadata?: (BotMetadata.BotMessageOriginMetadata.$Properties|null);
+
+            /** BotMetadata inThreadSurveyMetadata */
+            inThreadSurveyMetadata?: (BotMetadata.InThreadSurveyMetadata.$Properties|null);
+
+            /** BotMetadata botThreadInfo */
+            botThreadInfo?: (BotMetadata.AIThreadInfo.$Properties|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotMetadata. */
+        type $Shape = BotMetadata.BotMetadata.$Properties;
+    }
+
+    /**
+     * Properties of a AIThreadInfo.
+     * @deprecated Use BotMetadata.AIThreadInfo.$Properties instead.
+     */
+    interface IAIThreadInfo extends BotMetadata.AIThreadInfo.$Properties {
     }
 
     /** Represents a AIThreadInfo. */
-    class AIThreadInfo implements IAIThreadInfo {
+    class AIThreadInfo {
 
         /**
          * Constructs a new AIThreadInfo.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IAIThreadInfo);
+        constructor(properties?: BotMetadata.AIThreadInfo.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** AIThreadInfo serverInfo. */
-        public serverInfo?: (BotMetadata.AIThreadInfo.IAIThreadServerInfo|null);
+        serverInfo?: (BotMetadata.AIThreadInfo.AIThreadServerInfo.$Properties|null);
 
         /** AIThreadInfo clientInfo. */
-        public clientInfo?: (BotMetadata.AIThreadInfo.IAIThreadClientInfo|null);
+        clientInfo?: (BotMetadata.AIThreadInfo.AIThreadClientInfo.$Properties|null);
 
         /**
          * Creates a new AIThreadInfo instance using the specified properties.
          * @param [properties] Properties to set
          * @returns AIThreadInfo instance
          */
-        public static create(properties?: BotMetadata.IAIThreadInfo): BotMetadata.AIThreadInfo;
+        static create(properties: BotMetadata.AIThreadInfo.$Shape): BotMetadata.AIThreadInfo & BotMetadata.AIThreadInfo.$Shape;
+        static create(properties?: BotMetadata.AIThreadInfo.$Properties): BotMetadata.AIThreadInfo;
 
         /**
          * Encodes the specified AIThreadInfo message. Does not implicitly {@link BotMetadata.AIThreadInfo.verify|verify} messages.
@@ -318,7 +340,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IAIThreadInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.AIThreadInfo.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified AIThreadInfo message, length delimited. Does not implicitly {@link BotMetadata.AIThreadInfo.verify|verify} messages.
@@ -326,40 +348,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IAIThreadInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.AIThreadInfo.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a AIThreadInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns AIThreadInfo
+         * @returns {BotMetadata.AIThreadInfo & BotMetadata.AIThreadInfo.$Shape} AIThreadInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.AIThreadInfo;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.AIThreadInfo & BotMetadata.AIThreadInfo.$Shape;
 
         /**
          * Decodes a AIThreadInfo message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns AIThreadInfo
+         * @returns {BotMetadata.AIThreadInfo & BotMetadata.AIThreadInfo.$Shape} AIThreadInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.AIThreadInfo;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.AIThreadInfo & BotMetadata.AIThreadInfo.$Shape;
 
         /**
          * Verifies a AIThreadInfo message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a AIThreadInfo message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns AIThreadInfo
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.AIThreadInfo;
+        static fromObject(object: { [k: string]: any }): BotMetadata.AIThreadInfo;
 
         /**
          * Creates a plain object from a AIThreadInfo message. Also converts values to other types if specified.
@@ -367,49 +389,69 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.AIThreadInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.AIThreadInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this AIThreadInfo to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for AIThreadInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for AIThreadInfo
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace AIThreadInfo {
 
-        /** Properties of a AIThreadClientInfo. */
-        interface IAIThreadClientInfo {
+        /** Properties of a AIThreadInfo. */
+        interface $Properties {
 
-            /** AIThreadClientInfo type */
-            type?: (BotMetadata.AIThreadInfo.AIThreadClientInfo.AIThreadType|null);
+            /** AIThreadInfo serverInfo */
+            serverInfo?: (BotMetadata.AIThreadInfo.AIThreadServerInfo.$Properties|null);
+
+            /** AIThreadInfo clientInfo */
+            clientInfo?: (BotMetadata.AIThreadInfo.AIThreadClientInfo.$Properties|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a AIThreadInfo. */
+        type $Shape = BotMetadata.AIThreadInfo.$Properties;
+
+        /**
+         * Properties of a AIThreadClientInfo.
+         * @deprecated Use BotMetadata.AIThreadInfo.AIThreadClientInfo.$Properties instead.
+         */
+        interface IAIThreadClientInfo extends BotMetadata.AIThreadInfo.AIThreadClientInfo.$Properties {
         }
 
         /** Represents a AIThreadClientInfo. */
-        class AIThreadClientInfo implements IAIThreadClientInfo {
+        class AIThreadClientInfo {
 
             /**
              * Constructs a new AIThreadClientInfo.
              * @param [properties] Properties to set
              */
-            constructor(properties?: BotMetadata.AIThreadInfo.IAIThreadClientInfo);
+            constructor(properties?: BotMetadata.AIThreadInfo.AIThreadClientInfo.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** AIThreadClientInfo type. */
-            public type?: (BotMetadata.AIThreadInfo.AIThreadClientInfo.AIThreadType|null);
+            type?: (BotMetadata.AIThreadInfo.AIThreadClientInfo.AIThreadType|null);
 
             /**
              * Creates a new AIThreadClientInfo instance using the specified properties.
              * @param [properties] Properties to set
              * @returns AIThreadClientInfo instance
              */
-            public static create(properties?: BotMetadata.AIThreadInfo.IAIThreadClientInfo): BotMetadata.AIThreadInfo.AIThreadClientInfo;
+            static create(properties: BotMetadata.AIThreadInfo.AIThreadClientInfo.$Shape): BotMetadata.AIThreadInfo.AIThreadClientInfo & BotMetadata.AIThreadInfo.AIThreadClientInfo.$Shape;
+            static create(properties?: BotMetadata.AIThreadInfo.AIThreadClientInfo.$Properties): BotMetadata.AIThreadInfo.AIThreadClientInfo;
 
             /**
              * Encodes the specified AIThreadClientInfo message. Does not implicitly {@link BotMetadata.AIThreadInfo.AIThreadClientInfo.verify|verify} messages.
@@ -417,7 +459,7 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: BotMetadata.AIThreadInfo.IAIThreadClientInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: BotMetadata.AIThreadInfo.AIThreadClientInfo.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified AIThreadClientInfo message, length delimited. Does not implicitly {@link BotMetadata.AIThreadInfo.AIThreadClientInfo.verify|verify} messages.
@@ -425,40 +467,40 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: BotMetadata.AIThreadInfo.IAIThreadClientInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: BotMetadata.AIThreadInfo.AIThreadClientInfo.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a AIThreadClientInfo message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns AIThreadClientInfo
+             * @returns {BotMetadata.AIThreadInfo.AIThreadClientInfo & BotMetadata.AIThreadInfo.AIThreadClientInfo.$Shape} AIThreadClientInfo
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.AIThreadInfo.AIThreadClientInfo;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.AIThreadInfo.AIThreadClientInfo & BotMetadata.AIThreadInfo.AIThreadClientInfo.$Shape;
 
             /**
              * Decodes a AIThreadClientInfo message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns AIThreadClientInfo
+             * @returns {BotMetadata.AIThreadInfo.AIThreadClientInfo & BotMetadata.AIThreadInfo.AIThreadClientInfo.$Shape} AIThreadClientInfo
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.AIThreadInfo.AIThreadClientInfo;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.AIThreadInfo.AIThreadClientInfo & BotMetadata.AIThreadInfo.AIThreadClientInfo.$Shape;
 
             /**
              * Verifies a AIThreadClientInfo message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a AIThreadClientInfo message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns AIThreadClientInfo
              */
-            public static fromObject(object: { [k: string]: any }): BotMetadata.AIThreadInfo.AIThreadClientInfo;
+            static fromObject(object: { [k: string]: any }): BotMetadata.AIThreadInfo.AIThreadClientInfo;
 
             /**
              * Creates a plain object from a AIThreadClientInfo message. Also converts values to other types if specified.
@@ -466,57 +508,80 @@ export namespace BotMetadata {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: BotMetadata.AIThreadInfo.AIThreadClientInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: BotMetadata.AIThreadInfo.AIThreadClientInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this AIThreadClientInfo to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for AIThreadClientInfo
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for AIThreadClientInfo
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
         }
 
         namespace AIThreadClientInfo {
 
+            /** Properties of a AIThreadClientInfo. */
+            interface $Properties {
+
+                /** AIThreadClientInfo type */
+                type?: (BotMetadata.AIThreadInfo.AIThreadClientInfo.AIThreadType|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of a AIThreadClientInfo. */
+            type $Shape = BotMetadata.AIThreadInfo.AIThreadClientInfo.$Properties;
+
             /** AIThreadType enum. */
             enum AIThreadType {
+
+                /** UNKNOWN value */
                 UNKNOWN = 0,
+
+                /** DEFAULT value */
                 DEFAULT = 1,
+
+                /** INCOGNITO value */
                 INCOGNITO = 2
             }
         }
 
-        /** Properties of a AIThreadServerInfo. */
-        interface IAIThreadServerInfo {
-
-            /** AIThreadServerInfo title */
-            title?: (string|null);
+        /**
+         * Properties of a AIThreadServerInfo.
+         * @deprecated Use BotMetadata.AIThreadInfo.AIThreadServerInfo.$Properties instead.
+         */
+        interface IAIThreadServerInfo extends BotMetadata.AIThreadInfo.AIThreadServerInfo.$Properties {
         }
 
         /** Represents a AIThreadServerInfo. */
-        class AIThreadServerInfo implements IAIThreadServerInfo {
+        class AIThreadServerInfo {
 
             /**
              * Constructs a new AIThreadServerInfo.
              * @param [properties] Properties to set
              */
-            constructor(properties?: BotMetadata.AIThreadInfo.IAIThreadServerInfo);
+            constructor(properties?: BotMetadata.AIThreadInfo.AIThreadServerInfo.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** AIThreadServerInfo title. */
-            public title?: (string|null);
+            title?: (string|null);
 
             /**
              * Creates a new AIThreadServerInfo instance using the specified properties.
              * @param [properties] Properties to set
              * @returns AIThreadServerInfo instance
              */
-            public static create(properties?: BotMetadata.AIThreadInfo.IAIThreadServerInfo): BotMetadata.AIThreadInfo.AIThreadServerInfo;
+            static create(properties: BotMetadata.AIThreadInfo.AIThreadServerInfo.$Shape): BotMetadata.AIThreadInfo.AIThreadServerInfo & BotMetadata.AIThreadInfo.AIThreadServerInfo.$Shape;
+            static create(properties?: BotMetadata.AIThreadInfo.AIThreadServerInfo.$Properties): BotMetadata.AIThreadInfo.AIThreadServerInfo;
 
             /**
              * Encodes the specified AIThreadServerInfo message. Does not implicitly {@link BotMetadata.AIThreadInfo.AIThreadServerInfo.verify|verify} messages.
@@ -524,7 +589,7 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: BotMetadata.AIThreadInfo.IAIThreadServerInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: BotMetadata.AIThreadInfo.AIThreadServerInfo.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified AIThreadServerInfo message, length delimited. Does not implicitly {@link BotMetadata.AIThreadInfo.AIThreadServerInfo.verify|verify} messages.
@@ -532,40 +597,40 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: BotMetadata.AIThreadInfo.IAIThreadServerInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: BotMetadata.AIThreadInfo.AIThreadServerInfo.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a AIThreadServerInfo message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns AIThreadServerInfo
+             * @returns {BotMetadata.AIThreadInfo.AIThreadServerInfo & BotMetadata.AIThreadInfo.AIThreadServerInfo.$Shape} AIThreadServerInfo
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.AIThreadInfo.AIThreadServerInfo;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.AIThreadInfo.AIThreadServerInfo & BotMetadata.AIThreadInfo.AIThreadServerInfo.$Shape;
 
             /**
              * Decodes a AIThreadServerInfo message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns AIThreadServerInfo
+             * @returns {BotMetadata.AIThreadInfo.AIThreadServerInfo & BotMetadata.AIThreadInfo.AIThreadServerInfo.$Shape} AIThreadServerInfo
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.AIThreadInfo.AIThreadServerInfo;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.AIThreadInfo.AIThreadServerInfo & BotMetadata.AIThreadInfo.AIThreadServerInfo.$Shape;
 
             /**
              * Verifies a AIThreadServerInfo message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a AIThreadServerInfo message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns AIThreadServerInfo
              */
-            public static fromObject(object: { [k: string]: any }): BotMetadata.AIThreadInfo.AIThreadServerInfo;
+            static fromObject(object: { [k: string]: any }): BotMetadata.AIThreadInfo.AIThreadServerInfo;
 
             /**
              * Creates a plain object from a AIThreadServerInfo message. Also converts values to other types if specified.
@@ -573,48 +638,68 @@ export namespace BotMetadata {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: BotMetadata.AIThreadInfo.AIThreadServerInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: BotMetadata.AIThreadInfo.AIThreadServerInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this AIThreadServerInfo to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for AIThreadServerInfo
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for AIThreadServerInfo
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
+        }
+
+        namespace AIThreadServerInfo {
+
+            /** Properties of a AIThreadServerInfo. */
+            interface $Properties {
+
+                /** AIThreadServerInfo title */
+                title?: (string|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of a AIThreadServerInfo. */
+            type $Shape = BotMetadata.AIThreadInfo.AIThreadServerInfo.$Properties;
         }
     }
 
-    /** Properties of a BotUnifiedResponseMutation. */
-    interface IBotUnifiedResponseMutation {
-
-        /** BotUnifiedResponseMutation sbsMetadata */
-        sbsMetadata?: (BotMetadata.BotUnifiedResponseMutation.ISideBySideMetadata|null);
+    /**
+     * Properties of a BotUnifiedResponseMutation.
+     * @deprecated Use BotMetadata.BotUnifiedResponseMutation.$Properties instead.
+     */
+    interface IBotUnifiedResponseMutation extends BotMetadata.BotUnifiedResponseMutation.$Properties {
     }
 
     /** Represents a BotUnifiedResponseMutation. */
-    class BotUnifiedResponseMutation implements IBotUnifiedResponseMutation {
+    class BotUnifiedResponseMutation {
 
         /**
          * Constructs a new BotUnifiedResponseMutation.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotUnifiedResponseMutation);
+        constructor(properties?: BotMetadata.BotUnifiedResponseMutation.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotUnifiedResponseMutation sbsMetadata. */
-        public sbsMetadata?: (BotMetadata.BotUnifiedResponseMutation.ISideBySideMetadata|null);
+        sbsMetadata?: (BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Properties|null);
 
         /**
          * Creates a new BotUnifiedResponseMutation instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotUnifiedResponseMutation instance
          */
-        public static create(properties?: BotMetadata.IBotUnifiedResponseMutation): BotMetadata.BotUnifiedResponseMutation;
+        static create(properties: BotMetadata.BotUnifiedResponseMutation.$Shape): BotMetadata.BotUnifiedResponseMutation & BotMetadata.BotUnifiedResponseMutation.$Shape;
+        static create(properties?: BotMetadata.BotUnifiedResponseMutation.$Properties): BotMetadata.BotUnifiedResponseMutation;
 
         /**
          * Encodes the specified BotUnifiedResponseMutation message. Does not implicitly {@link BotMetadata.BotUnifiedResponseMutation.verify|verify} messages.
@@ -622,7 +707,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotUnifiedResponseMutation, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotUnifiedResponseMutation.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotUnifiedResponseMutation message, length delimited. Does not implicitly {@link BotMetadata.BotUnifiedResponseMutation.verify|verify} messages.
@@ -630,40 +715,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotUnifiedResponseMutation, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotUnifiedResponseMutation.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotUnifiedResponseMutation message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotUnifiedResponseMutation
+         * @returns {BotMetadata.BotUnifiedResponseMutation & BotMetadata.BotUnifiedResponseMutation.$Shape} BotUnifiedResponseMutation
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotUnifiedResponseMutation;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotUnifiedResponseMutation & BotMetadata.BotUnifiedResponseMutation.$Shape;
 
         /**
          * Decodes a BotUnifiedResponseMutation message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotUnifiedResponseMutation
+         * @returns {BotMetadata.BotUnifiedResponseMutation & BotMetadata.BotUnifiedResponseMutation.$Shape} BotUnifiedResponseMutation
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotUnifiedResponseMutation;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotUnifiedResponseMutation & BotMetadata.BotUnifiedResponseMutation.$Shape;
 
         /**
          * Verifies a BotUnifiedResponseMutation message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotUnifiedResponseMutation message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotUnifiedResponseMutation
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotUnifiedResponseMutation;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotUnifiedResponseMutation;
 
         /**
          * Creates a plain object from a BotUnifiedResponseMutation message. Also converts values to other types if specified.
@@ -671,49 +756,66 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotUnifiedResponseMutation, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotUnifiedResponseMutation, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotUnifiedResponseMutation to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotUnifiedResponseMutation
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotUnifiedResponseMutation
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotUnifiedResponseMutation {
 
-        /** Properties of a SideBySideMetadata. */
-        interface ISideBySideMetadata {
+        /** Properties of a BotUnifiedResponseMutation. */
+        interface $Properties {
 
-            /** SideBySideMetadata primaryResponseId */
-            primaryResponseId?: (string|null);
+            /** BotUnifiedResponseMutation sbsMetadata */
+            sbsMetadata?: (BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Properties|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotUnifiedResponseMutation. */
+        type $Shape = BotMetadata.BotUnifiedResponseMutation.$Properties;
+
+        /**
+         * Properties of a SideBySideMetadata.
+         * @deprecated Use BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Properties instead.
+         */
+        interface ISideBySideMetadata extends BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Properties {
         }
 
         /** Represents a SideBySideMetadata. */
-        class SideBySideMetadata implements ISideBySideMetadata {
+        class SideBySideMetadata {
 
             /**
              * Constructs a new SideBySideMetadata.
              * @param [properties] Properties to set
              */
-            constructor(properties?: BotMetadata.BotUnifiedResponseMutation.ISideBySideMetadata);
+            constructor(properties?: BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** SideBySideMetadata primaryResponseId. */
-            public primaryResponseId?: (string|null);
+            primaryResponseId?: (string|null);
 
             /**
              * Creates a new SideBySideMetadata instance using the specified properties.
              * @param [properties] Properties to set
              * @returns SideBySideMetadata instance
              */
-            public static create(properties?: BotMetadata.BotUnifiedResponseMutation.ISideBySideMetadata): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata;
+            static create(properties: BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Shape): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata & BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Shape;
+            static create(properties?: BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Properties): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata;
 
             /**
              * Encodes the specified SideBySideMetadata message. Does not implicitly {@link BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.verify|verify} messages.
@@ -721,7 +823,7 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: BotMetadata.BotUnifiedResponseMutation.ISideBySideMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified SideBySideMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.verify|verify} messages.
@@ -729,40 +831,40 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: BotMetadata.BotUnifiedResponseMutation.ISideBySideMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a SideBySideMetadata message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns SideBySideMetadata
+             * @returns {BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata & BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Shape} SideBySideMetadata
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata & BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Shape;
 
             /**
              * Decodes a SideBySideMetadata message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns SideBySideMetadata
+             * @returns {BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata & BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Shape} SideBySideMetadata
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata & BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Shape;
 
             /**
              * Verifies a SideBySideMetadata message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a SideBySideMetadata message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns SideBySideMetadata
              */
-            public static fromObject(object: { [k: string]: any }): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata;
+            static fromObject(object: { [k: string]: any }): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata;
 
             /**
              * Creates a plain object from a SideBySideMetadata message. Also converts values to other types if specified.
@@ -770,48 +872,68 @@ export namespace BotMetadata {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this SideBySideMetadata to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for SideBySideMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for SideBySideMetadata
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
+        }
+
+        namespace SideBySideMetadata {
+
+            /** Properties of a SideBySideMetadata. */
+            interface $Properties {
+
+                /** SideBySideMetadata primaryResponseId */
+                primaryResponseId?: (string|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of a SideBySideMetadata. */
+            type $Shape = BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.$Properties;
         }
     }
 
-    /** Properties of a BotMessageOrigin. */
-    interface IBotMessageOrigin {
-
-        /** BotMessageOrigin type */
-        type?: (BotMetadata.BotMessageOrigin.BotMessageOriginType|null);
+    /**
+     * Properties of a BotMessageOrigin.
+     * @deprecated Use BotMetadata.BotMessageOrigin.$Properties instead.
+     */
+    interface IBotMessageOrigin extends BotMetadata.BotMessageOrigin.$Properties {
     }
 
     /** Represents a BotMessageOrigin. */
-    class BotMessageOrigin implements IBotMessageOrigin {
+    class BotMessageOrigin {
 
         /**
          * Constructs a new BotMessageOrigin.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotMessageOrigin);
+        constructor(properties?: BotMetadata.BotMessageOrigin.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotMessageOrigin type. */
-        public type?: (BotMetadata.BotMessageOrigin.BotMessageOriginType|null);
+        type?: (BotMetadata.BotMessageOrigin.BotMessageOriginType|null);
 
         /**
          * Creates a new BotMessageOrigin instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotMessageOrigin instance
          */
-        public static create(properties?: BotMetadata.IBotMessageOrigin): BotMetadata.BotMessageOrigin;
+        static create(properties: BotMetadata.BotMessageOrigin.$Shape): BotMetadata.BotMessageOrigin & BotMetadata.BotMessageOrigin.$Shape;
+        static create(properties?: BotMetadata.BotMessageOrigin.$Properties): BotMetadata.BotMessageOrigin;
 
         /**
          * Encodes the specified BotMessageOrigin message. Does not implicitly {@link BotMetadata.BotMessageOrigin.verify|verify} messages.
@@ -819,7 +941,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotMessageOrigin, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotMessageOrigin.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotMessageOrigin message, length delimited. Does not implicitly {@link BotMetadata.BotMessageOrigin.verify|verify} messages.
@@ -827,40 +949,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotMessageOrigin, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotMessageOrigin.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotMessageOrigin message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotMessageOrigin
+         * @returns {BotMetadata.BotMessageOrigin & BotMetadata.BotMessageOrigin.$Shape} BotMessageOrigin
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMessageOrigin;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMessageOrigin & BotMetadata.BotMessageOrigin.$Shape;
 
         /**
          * Decodes a BotMessageOrigin message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotMessageOrigin
+         * @returns {BotMetadata.BotMessageOrigin & BotMetadata.BotMessageOrigin.$Shape} BotMessageOrigin
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMessageOrigin;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMessageOrigin & BotMetadata.BotMessageOrigin.$Shape;
 
         /**
          * Verifies a BotMessageOrigin message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotMessageOrigin message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotMessageOrigin
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMessageOrigin;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotMessageOrigin;
 
         /**
          * Creates a plain object from a BotMessageOrigin message. Also converts values to other types if specified.
@@ -868,55 +990,74 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotMessageOrigin, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotMessageOrigin, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotMessageOrigin to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotMessageOrigin
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotMessageOrigin
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotMessageOrigin {
 
+        /** Properties of a BotMessageOrigin. */
+        interface $Properties {
+
+            /** BotMessageOrigin type */
+            type?: (BotMetadata.BotMessageOrigin.BotMessageOriginType|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotMessageOrigin. */
+        type $Shape = BotMetadata.BotMessageOrigin.$Properties;
+
         /** BotMessageOriginType enum. */
         enum BotMessageOriginType {
+
+            /** BOT_MESSAGE_ORIGIN_TYPE_AI_INITIATED value */
             BOT_MESSAGE_ORIGIN_TYPE_AI_INITIATED = 0
         }
     }
 
-    /** Properties of a BotMessageOriginMetadata. */
-    interface IBotMessageOriginMetadata {
-
-        /** BotMessageOriginMetadata origins */
-        origins?: (BotMetadata.IBotMessageOrigin[]|null);
+    /**
+     * Properties of a BotMessageOriginMetadata.
+     * @deprecated Use BotMetadata.BotMessageOriginMetadata.$Properties instead.
+     */
+    interface IBotMessageOriginMetadata extends BotMetadata.BotMessageOriginMetadata.$Properties {
     }
 
     /** Represents a BotMessageOriginMetadata. */
-    class BotMessageOriginMetadata implements IBotMessageOriginMetadata {
+    class BotMessageOriginMetadata {
 
         /**
          * Constructs a new BotMessageOriginMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotMessageOriginMetadata);
+        constructor(properties?: BotMetadata.BotMessageOriginMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotMessageOriginMetadata origins. */
-        public origins: BotMetadata.IBotMessageOrigin[];
+        origins: BotMetadata.BotMessageOrigin.$Properties[];
 
         /**
          * Creates a new BotMessageOriginMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotMessageOriginMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotMessageOriginMetadata): BotMetadata.BotMessageOriginMetadata;
+        static create(properties: BotMetadata.BotMessageOriginMetadata.$Shape): BotMetadata.BotMessageOriginMetadata & BotMetadata.BotMessageOriginMetadata.$Shape;
+        static create(properties?: BotMetadata.BotMessageOriginMetadata.$Properties): BotMetadata.BotMessageOriginMetadata;
 
         /**
          * Encodes the specified BotMessageOriginMetadata message. Does not implicitly {@link BotMetadata.BotMessageOriginMetadata.verify|verify} messages.
@@ -924,7 +1065,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotMessageOriginMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotMessageOriginMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotMessageOriginMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotMessageOriginMetadata.verify|verify} messages.
@@ -932,40 +1073,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotMessageOriginMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotMessageOriginMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotMessageOriginMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotMessageOriginMetadata
+         * @returns {BotMetadata.BotMessageOriginMetadata & BotMetadata.BotMessageOriginMetadata.$Shape} BotMessageOriginMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMessageOriginMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMessageOriginMetadata & BotMetadata.BotMessageOriginMetadata.$Shape;
 
         /**
          * Decodes a BotMessageOriginMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotMessageOriginMetadata
+         * @returns {BotMetadata.BotMessageOriginMetadata & BotMetadata.BotMessageOriginMetadata.$Shape} BotMessageOriginMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMessageOriginMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMessageOriginMetadata & BotMetadata.BotMessageOriginMetadata.$Shape;
 
         /**
          * Verifies a BotMessageOriginMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotMessageOriginMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotMessageOriginMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMessageOriginMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotMessageOriginMetadata;
 
         /**
          * Creates a plain object from a BotMessageOriginMetadata message. Also converts values to other types if specified.
@@ -973,143 +1114,115 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotMessageOriginMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotMessageOriginMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotMessageOriginMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotMessageOriginMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotMessageOriginMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of an InThreadSurveyMetadata. */
-    interface IInThreadSurveyMetadata {
+    namespace BotMessageOriginMetadata {
 
-        /** InThreadSurveyMetadata tessaSessionId */
-        tessaSessionId?: (string|null);
+        /** Properties of a BotMessageOriginMetadata. */
+        interface $Properties {
 
-        /** InThreadSurveyMetadata simonSessionId */
-        simonSessionId?: (string|null);
+            /** BotMessageOriginMetadata origins */
+            origins?: (BotMetadata.BotMessageOrigin.$Properties[]|null);
 
-        /** InThreadSurveyMetadata simonSurveyId */
-        simonSurveyId?: (string|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
 
-        /** InThreadSurveyMetadata tessaRootId */
-        tessaRootId?: (string|null);
+        /** Shape of a BotMessageOriginMetadata. */
+        type $Shape = BotMetadata.BotMessageOriginMetadata.$Properties;
+    }
 
-        /** InThreadSurveyMetadata requestId */
-        requestId?: (string|null);
-
-        /** InThreadSurveyMetadata tessaEvent */
-        tessaEvent?: (string|null);
-
-        /** InThreadSurveyMetadata invitationHeaderText */
-        invitationHeaderText?: (string|null);
-
-        /** InThreadSurveyMetadata invitationBodyText */
-        invitationBodyText?: (string|null);
-
-        /** InThreadSurveyMetadata invitationCtaText */
-        invitationCtaText?: (string|null);
-
-        /** InThreadSurveyMetadata invitationCtaUrl */
-        invitationCtaUrl?: (string|null);
-
-        /** InThreadSurveyMetadata surveyTitle */
-        surveyTitle?: (string|null);
-
-        /** InThreadSurveyMetadata questions */
-        questions?: (BotMetadata.InThreadSurveyMetadata.IInThreadSurveyQuestion[]|null);
-
-        /** InThreadSurveyMetadata surveyContinueButtonText */
-        surveyContinueButtonText?: (string|null);
-
-        /** InThreadSurveyMetadata surveySubmitButtonText */
-        surveySubmitButtonText?: (string|null);
-
-        /** InThreadSurveyMetadata privacyStatementFull */
-        privacyStatementFull?: (string|null);
-
-        /** InThreadSurveyMetadata privacyStatementParts */
-        privacyStatementParts?: (BotMetadata.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart[]|null);
-
-        /** InThreadSurveyMetadata feedbackToastText */
-        feedbackToastText?: (string|null);
+    /**
+     * Properties of an InThreadSurveyMetadata.
+     * @deprecated Use BotMetadata.InThreadSurveyMetadata.$Properties instead.
+     */
+    interface IInThreadSurveyMetadata extends BotMetadata.InThreadSurveyMetadata.$Properties {
     }
 
     /** Represents an InThreadSurveyMetadata. */
-    class InThreadSurveyMetadata implements IInThreadSurveyMetadata {
+    class InThreadSurveyMetadata {
 
         /**
          * Constructs a new InThreadSurveyMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IInThreadSurveyMetadata);
+        constructor(properties?: BotMetadata.InThreadSurveyMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** InThreadSurveyMetadata tessaSessionId. */
-        public tessaSessionId?: (string|null);
+        tessaSessionId?: (string|null);
 
         /** InThreadSurveyMetadata simonSessionId. */
-        public simonSessionId?: (string|null);
+        simonSessionId?: (string|null);
 
         /** InThreadSurveyMetadata simonSurveyId. */
-        public simonSurveyId?: (string|null);
+        simonSurveyId?: (string|null);
 
         /** InThreadSurveyMetadata tessaRootId. */
-        public tessaRootId?: (string|null);
+        tessaRootId?: (string|null);
 
         /** InThreadSurveyMetadata requestId. */
-        public requestId?: (string|null);
+        requestId?: (string|null);
 
         /** InThreadSurveyMetadata tessaEvent. */
-        public tessaEvent?: (string|null);
+        tessaEvent?: (string|null);
 
         /** InThreadSurveyMetadata invitationHeaderText. */
-        public invitationHeaderText?: (string|null);
+        invitationHeaderText?: (string|null);
 
         /** InThreadSurveyMetadata invitationBodyText. */
-        public invitationBodyText?: (string|null);
+        invitationBodyText?: (string|null);
 
         /** InThreadSurveyMetadata invitationCtaText. */
-        public invitationCtaText?: (string|null);
+        invitationCtaText?: (string|null);
 
         /** InThreadSurveyMetadata invitationCtaUrl. */
-        public invitationCtaUrl?: (string|null);
+        invitationCtaUrl?: (string|null);
 
         /** InThreadSurveyMetadata surveyTitle. */
-        public surveyTitle?: (string|null);
+        surveyTitle?: (string|null);
 
         /** InThreadSurveyMetadata questions. */
-        public questions: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyQuestion[];
+        questions: BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Properties[];
 
         /** InThreadSurveyMetadata surveyContinueButtonText. */
-        public surveyContinueButtonText?: (string|null);
+        surveyContinueButtonText?: (string|null);
 
         /** InThreadSurveyMetadata surveySubmitButtonText. */
-        public surveySubmitButtonText?: (string|null);
+        surveySubmitButtonText?: (string|null);
 
         /** InThreadSurveyMetadata privacyStatementFull. */
-        public privacyStatementFull?: (string|null);
+        privacyStatementFull?: (string|null);
 
         /** InThreadSurveyMetadata privacyStatementParts. */
-        public privacyStatementParts: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart[];
+        privacyStatementParts: BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Properties[];
 
         /** InThreadSurveyMetadata feedbackToastText. */
-        public feedbackToastText?: (string|null);
+        feedbackToastText?: (string|null);
 
         /**
          * Creates a new InThreadSurveyMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns InThreadSurveyMetadata instance
          */
-        public static create(properties?: BotMetadata.IInThreadSurveyMetadata): BotMetadata.InThreadSurveyMetadata;
+        static create(properties: BotMetadata.InThreadSurveyMetadata.$Shape): BotMetadata.InThreadSurveyMetadata & BotMetadata.InThreadSurveyMetadata.$Shape;
+        static create(properties?: BotMetadata.InThreadSurveyMetadata.$Properties): BotMetadata.InThreadSurveyMetadata;
 
         /**
          * Encodes the specified InThreadSurveyMetadata message. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.verify|verify} messages.
@@ -1117,7 +1230,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IInThreadSurveyMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.InThreadSurveyMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified InThreadSurveyMetadata message, length delimited. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.verify|verify} messages.
@@ -1125,40 +1238,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IInThreadSurveyMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.InThreadSurveyMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an InThreadSurveyMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns InThreadSurveyMetadata
+         * @returns {BotMetadata.InThreadSurveyMetadata & BotMetadata.InThreadSurveyMetadata.$Shape} InThreadSurveyMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.InThreadSurveyMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.InThreadSurveyMetadata & BotMetadata.InThreadSurveyMetadata.$Shape;
 
         /**
          * Decodes an InThreadSurveyMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns InThreadSurveyMetadata
+         * @returns {BotMetadata.InThreadSurveyMetadata & BotMetadata.InThreadSurveyMetadata.$Shape} InThreadSurveyMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.InThreadSurveyMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.InThreadSurveyMetadata & BotMetadata.InThreadSurveyMetadata.$Shape;
 
         /**
          * Verifies an InThreadSurveyMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates an InThreadSurveyMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns InThreadSurveyMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.InThreadSurveyMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.InThreadSurveyMetadata;
 
         /**
          * Creates a plain object from an InThreadSurveyMetadata message. Also converts values to other types if specified.
@@ -1166,61 +1279,120 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.InThreadSurveyMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.InThreadSurveyMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this InThreadSurveyMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for InThreadSurveyMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for InThreadSurveyMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace InThreadSurveyMetadata {
 
-        /** Properties of an InThreadSurveyOption. */
-        interface IInThreadSurveyOption {
+        /** Properties of an InThreadSurveyMetadata. */
+        interface $Properties {
 
-            /** InThreadSurveyOption stringValue */
-            stringValue?: (string|null);
+            /** InThreadSurveyMetadata tessaSessionId */
+            tessaSessionId?: (string|null);
 
-            /** InThreadSurveyOption numericValue */
-            numericValue?: (number|null);
+            /** InThreadSurveyMetadata simonSessionId */
+            simonSessionId?: (string|null);
 
-            /** InThreadSurveyOption textTranslated */
-            textTranslated?: (string|null);
+            /** InThreadSurveyMetadata simonSurveyId */
+            simonSurveyId?: (string|null);
+
+            /** InThreadSurveyMetadata tessaRootId */
+            tessaRootId?: (string|null);
+
+            /** InThreadSurveyMetadata requestId */
+            requestId?: (string|null);
+
+            /** InThreadSurveyMetadata tessaEvent */
+            tessaEvent?: (string|null);
+
+            /** InThreadSurveyMetadata invitationHeaderText */
+            invitationHeaderText?: (string|null);
+
+            /** InThreadSurveyMetadata invitationBodyText */
+            invitationBodyText?: (string|null);
+
+            /** InThreadSurveyMetadata invitationCtaText */
+            invitationCtaText?: (string|null);
+
+            /** InThreadSurveyMetadata invitationCtaUrl */
+            invitationCtaUrl?: (string|null);
+
+            /** InThreadSurveyMetadata surveyTitle */
+            surveyTitle?: (string|null);
+
+            /** InThreadSurveyMetadata questions */
+            questions?: (BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Properties[]|null);
+
+            /** InThreadSurveyMetadata surveyContinueButtonText */
+            surveyContinueButtonText?: (string|null);
+
+            /** InThreadSurveyMetadata surveySubmitButtonText */
+            surveySubmitButtonText?: (string|null);
+
+            /** InThreadSurveyMetadata privacyStatementFull */
+            privacyStatementFull?: (string|null);
+
+            /** InThreadSurveyMetadata privacyStatementParts */
+            privacyStatementParts?: (BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Properties[]|null);
+
+            /** InThreadSurveyMetadata feedbackToastText */
+            feedbackToastText?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an InThreadSurveyMetadata. */
+        type $Shape = BotMetadata.InThreadSurveyMetadata.$Properties;
+
+        /**
+         * Properties of an InThreadSurveyOption.
+         * @deprecated Use BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Properties instead.
+         */
+        interface IInThreadSurveyOption extends BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Properties {
         }
 
         /** Represents an InThreadSurveyOption. */
-        class InThreadSurveyOption implements IInThreadSurveyOption {
+        class InThreadSurveyOption {
 
             /**
              * Constructs a new InThreadSurveyOption.
              * @param [properties] Properties to set
              */
-            constructor(properties?: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyOption);
+            constructor(properties?: BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** InThreadSurveyOption stringValue. */
-            public stringValue?: (string|null);
+            stringValue?: (string|null);
 
             /** InThreadSurveyOption numericValue. */
-            public numericValue?: (number|null);
+            numericValue?: (number|null);
 
             /** InThreadSurveyOption textTranslated. */
-            public textTranslated?: (string|null);
+            textTranslated?: (string|null);
 
             /**
              * Creates a new InThreadSurveyOption instance using the specified properties.
              * @param [properties] Properties to set
              * @returns InThreadSurveyOption instance
              */
-            public static create(properties?: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyOption): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption;
+            static create(properties: BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Shape): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption & BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Shape;
+            static create(properties?: BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Properties): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption;
 
             /**
              * Encodes the specified InThreadSurveyOption message. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.verify|verify} messages.
@@ -1228,7 +1400,7 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyOption, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified InThreadSurveyOption message, length delimited. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.verify|verify} messages.
@@ -1236,40 +1408,40 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyOption, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes an InThreadSurveyOption message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns InThreadSurveyOption
+             * @returns {BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption & BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Shape} InThreadSurveyOption
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption & BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Shape;
 
             /**
              * Decodes an InThreadSurveyOption message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns InThreadSurveyOption
+             * @returns {BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption & BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Shape} InThreadSurveyOption
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption & BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Shape;
 
             /**
              * Verifies an InThreadSurveyOption message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates an InThreadSurveyOption message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns InThreadSurveyOption
              */
-            public static fromObject(object: { [k: string]: any }): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption;
+            static fromObject(object: { [k: string]: any }): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption;
 
             /**
              * Creates a plain object from an InThreadSurveyOption message. Also converts values to other types if specified.
@@ -1277,53 +1449,76 @@ export namespace BotMetadata {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this InThreadSurveyOption to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for InThreadSurveyOption
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for InThreadSurveyOption
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
         }
 
-        /** Properties of an InThreadSurveyPrivacyStatementPart. */
-        interface IInThreadSurveyPrivacyStatementPart {
+        namespace InThreadSurveyOption {
 
-            /** InThreadSurveyPrivacyStatementPart text */
-            text?: (string|null);
+            /** Properties of an InThreadSurveyOption. */
+            interface $Properties {
 
-            /** InThreadSurveyPrivacyStatementPart url */
-            url?: (string|null);
+                /** InThreadSurveyOption stringValue */
+                stringValue?: (string|null);
+
+                /** InThreadSurveyOption numericValue */
+                numericValue?: (number|null);
+
+                /** InThreadSurveyOption textTranslated */
+                textTranslated?: (string|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of an InThreadSurveyOption. */
+            type $Shape = BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Properties;
+        }
+
+        /**
+         * Properties of an InThreadSurveyPrivacyStatementPart.
+         * @deprecated Use BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Properties instead.
+         */
+        interface IInThreadSurveyPrivacyStatementPart extends BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Properties {
         }
 
         /** Represents an InThreadSurveyPrivacyStatementPart. */
-        class InThreadSurveyPrivacyStatementPart implements IInThreadSurveyPrivacyStatementPart {
+        class InThreadSurveyPrivacyStatementPart {
 
             /**
              * Constructs a new InThreadSurveyPrivacyStatementPart.
              * @param [properties] Properties to set
              */
-            constructor(properties?: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart);
+            constructor(properties?: BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** InThreadSurveyPrivacyStatementPart text. */
-            public text?: (string|null);
+            text?: (string|null);
 
             /** InThreadSurveyPrivacyStatementPart url. */
-            public url?: (string|null);
+            url?: (string|null);
 
             /**
              * Creates a new InThreadSurveyPrivacyStatementPart instance using the specified properties.
              * @param [properties] Properties to set
              * @returns InThreadSurveyPrivacyStatementPart instance
              */
-            public static create(properties?: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart;
+            static create(properties: BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Shape): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart & BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Shape;
+            static create(properties?: BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Properties): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart;
 
             /**
              * Encodes the specified InThreadSurveyPrivacyStatementPart message. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.verify|verify} messages.
@@ -1331,7 +1526,7 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified InThreadSurveyPrivacyStatementPart message, length delimited. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.verify|verify} messages.
@@ -1339,40 +1534,40 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes an InThreadSurveyPrivacyStatementPart message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns InThreadSurveyPrivacyStatementPart
+             * @returns {BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart & BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Shape} InThreadSurveyPrivacyStatementPart
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart & BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Shape;
 
             /**
              * Decodes an InThreadSurveyPrivacyStatementPart message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns InThreadSurveyPrivacyStatementPart
+             * @returns {BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart & BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Shape} InThreadSurveyPrivacyStatementPart
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart & BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Shape;
 
             /**
              * Verifies an InThreadSurveyPrivacyStatementPart message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates an InThreadSurveyPrivacyStatementPart message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns InThreadSurveyPrivacyStatementPart
              */
-            public static fromObject(object: { [k: string]: any }): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart;
+            static fromObject(object: { [k: string]: any }): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart;
 
             /**
              * Creates a plain object from an InThreadSurveyPrivacyStatementPart message. Also converts values to other types if specified.
@@ -1380,59 +1575,76 @@ export namespace BotMetadata {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this InThreadSurveyPrivacyStatementPart to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for InThreadSurveyPrivacyStatementPart
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for InThreadSurveyPrivacyStatementPart
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
         }
 
-        /** Properties of an InThreadSurveyQuestion. */
-        interface IInThreadSurveyQuestion {
+        namespace InThreadSurveyPrivacyStatementPart {
 
-            /** InThreadSurveyQuestion questionText */
-            questionText?: (string|null);
+            /** Properties of an InThreadSurveyPrivacyStatementPart. */
+            interface $Properties {
 
-            /** InThreadSurveyQuestion questionId */
-            questionId?: (string|null);
+                /** InThreadSurveyPrivacyStatementPart text */
+                text?: (string|null);
 
-            /** InThreadSurveyQuestion questionOptions */
-            questionOptions?: (BotMetadata.InThreadSurveyMetadata.IInThreadSurveyOption[]|null);
+                /** InThreadSurveyPrivacyStatementPart url */
+                url?: (string|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of an InThreadSurveyPrivacyStatementPart. */
+            type $Shape = BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Properties;
+        }
+
+        /**
+         * Properties of an InThreadSurveyQuestion.
+         * @deprecated Use BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Properties instead.
+         */
+        interface IInThreadSurveyQuestion extends BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Properties {
         }
 
         /** Represents an InThreadSurveyQuestion. */
-        class InThreadSurveyQuestion implements IInThreadSurveyQuestion {
+        class InThreadSurveyQuestion {
 
             /**
              * Constructs a new InThreadSurveyQuestion.
              * @param [properties] Properties to set
              */
-            constructor(properties?: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyQuestion);
+            constructor(properties?: BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** InThreadSurveyQuestion questionText. */
-            public questionText?: (string|null);
+            questionText?: (string|null);
 
             /** InThreadSurveyQuestion questionId. */
-            public questionId?: (string|null);
+            questionId?: (string|null);
 
             /** InThreadSurveyQuestion questionOptions. */
-            public questionOptions: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyOption[];
+            questionOptions: BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Properties[];
 
             /**
              * Creates a new InThreadSurveyQuestion instance using the specified properties.
              * @param [properties] Properties to set
              * @returns InThreadSurveyQuestion instance
              */
-            public static create(properties?: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyQuestion): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion;
+            static create(properties: BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Shape): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion & BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Shape;
+            static create(properties?: BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Properties): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion;
 
             /**
              * Encodes the specified InThreadSurveyQuestion message. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.verify|verify} messages.
@@ -1440,7 +1652,7 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyQuestion, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified InThreadSurveyQuestion message, length delimited. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.verify|verify} messages.
@@ -1448,40 +1660,40 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyQuestion, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes an InThreadSurveyQuestion message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns InThreadSurveyQuestion
+             * @returns {BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion & BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Shape} InThreadSurveyQuestion
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion & BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Shape;
 
             /**
              * Decodes an InThreadSurveyQuestion message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns InThreadSurveyQuestion
+             * @returns {BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion & BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Shape} InThreadSurveyQuestion
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion & BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Shape;
 
             /**
              * Verifies an InThreadSurveyQuestion message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates an InThreadSurveyQuestion message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns InThreadSurveyQuestion
              */
-            public static fromObject(object: { [k: string]: any }): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion;
+            static fromObject(object: { [k: string]: any }): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion;
 
             /**
              * Creates a plain object from an InThreadSurveyQuestion message. Also converts values to other types if specified.
@@ -1489,48 +1701,74 @@ export namespace BotMetadata {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this InThreadSurveyQuestion to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for InThreadSurveyQuestion
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for InThreadSurveyQuestion
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
+        }
+
+        namespace InThreadSurveyQuestion {
+
+            /** Properties of an InThreadSurveyQuestion. */
+            interface $Properties {
+
+                /** InThreadSurveyQuestion questionText */
+                questionText?: (string|null);
+
+                /** InThreadSurveyQuestion questionId */
+                questionId?: (string|null);
+
+                /** InThreadSurveyQuestion questionOptions */
+                questionOptions?: (BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.$Properties[]|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of an InThreadSurveyQuestion. */
+            type $Shape = BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.$Properties;
         }
     }
 
-    /** Properties of a BotSourcesMetadata. */
-    interface IBotSourcesMetadata {
-
-        /** BotSourcesMetadata sources */
-        sources?: (BotMetadata.BotSourcesMetadata.IBotSourceItem[]|null);
+    /**
+     * Properties of a BotSourcesMetadata.
+     * @deprecated Use BotMetadata.BotSourcesMetadata.$Properties instead.
+     */
+    interface IBotSourcesMetadata extends BotMetadata.BotSourcesMetadata.$Properties {
     }
 
     /** Represents a BotSourcesMetadata. */
-    class BotSourcesMetadata implements IBotSourcesMetadata {
+    class BotSourcesMetadata {
 
         /**
          * Constructs a new BotSourcesMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotSourcesMetadata);
+        constructor(properties?: BotMetadata.BotSourcesMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotSourcesMetadata sources. */
-        public sources: BotMetadata.BotSourcesMetadata.IBotSourceItem[];
+        sources: BotMetadata.BotSourcesMetadata.BotSourceItem.$Properties[];
 
         /**
          * Creates a new BotSourcesMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotSourcesMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotSourcesMetadata): BotMetadata.BotSourcesMetadata;
+        static create(properties: BotMetadata.BotSourcesMetadata.$Shape): BotMetadata.BotSourcesMetadata & BotMetadata.BotSourcesMetadata.$Shape;
+        static create(properties?: BotMetadata.BotSourcesMetadata.$Properties): BotMetadata.BotSourcesMetadata;
 
         /**
          * Encodes the specified BotSourcesMetadata message. Does not implicitly {@link BotMetadata.BotSourcesMetadata.verify|verify} messages.
@@ -1538,7 +1776,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotSourcesMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotSourcesMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotSourcesMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotSourcesMetadata.verify|verify} messages.
@@ -1546,40 +1784,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotSourcesMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotSourcesMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotSourcesMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotSourcesMetadata
+         * @returns {BotMetadata.BotSourcesMetadata & BotMetadata.BotSourcesMetadata.$Shape} BotSourcesMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSourcesMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSourcesMetadata & BotMetadata.BotSourcesMetadata.$Shape;
 
         /**
          * Decodes a BotSourcesMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotSourcesMetadata
+         * @returns {BotMetadata.BotSourcesMetadata & BotMetadata.BotSourcesMetadata.$Shape} BotSourcesMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSourcesMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSourcesMetadata & BotMetadata.BotSourcesMetadata.$Shape;
 
         /**
          * Verifies a BotSourcesMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotSourcesMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotSourcesMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotSourcesMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotSourcesMetadata;
 
         /**
          * Creates a plain object from a BotSourcesMetadata message. Also converts values to other types if specified.
@@ -1587,85 +1825,84 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotSourcesMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotSourcesMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotSourcesMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotSourcesMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotSourcesMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotSourcesMetadata {
 
-        /** Properties of a BotSourceItem. */
-        interface IBotSourceItem {
+        /** Properties of a BotSourcesMetadata. */
+        interface $Properties {
 
-            /** BotSourceItem provider */
-            provider?: (BotMetadata.BotSourcesMetadata.BotSourceItem.SourceProvider|null);
+            /** BotSourcesMetadata sources */
+            sources?: (BotMetadata.BotSourcesMetadata.BotSourceItem.$Properties[]|null);
 
-            /** BotSourceItem thumbnailCdnUrl */
-            thumbnailCdnUrl?: (string|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
 
-            /** BotSourceItem sourceProviderUrl */
-            sourceProviderUrl?: (string|null);
+        /** Shape of a BotSourcesMetadata. */
+        type $Shape = BotMetadata.BotSourcesMetadata.$Properties;
 
-            /** BotSourceItem sourceQuery */
-            sourceQuery?: (string|null);
-
-            /** BotSourceItem faviconCdnUrl */
-            faviconCdnUrl?: (string|null);
-
-            /** BotSourceItem citationNumber */
-            citationNumber?: (number|null);
-
-            /** BotSourceItem sourceTitle */
-            sourceTitle?: (string|null);
+        /**
+         * Properties of a BotSourceItem.
+         * @deprecated Use BotMetadata.BotSourcesMetadata.BotSourceItem.$Properties instead.
+         */
+        interface IBotSourceItem extends BotMetadata.BotSourcesMetadata.BotSourceItem.$Properties {
         }
 
         /** Represents a BotSourceItem. */
-        class BotSourceItem implements IBotSourceItem {
+        class BotSourceItem {
 
             /**
              * Constructs a new BotSourceItem.
              * @param [properties] Properties to set
              */
-            constructor(properties?: BotMetadata.BotSourcesMetadata.IBotSourceItem);
+            constructor(properties?: BotMetadata.BotSourcesMetadata.BotSourceItem.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** BotSourceItem provider. */
-            public provider?: (BotMetadata.BotSourcesMetadata.BotSourceItem.SourceProvider|null);
+            provider?: (BotMetadata.BotSourcesMetadata.BotSourceItem.SourceProvider|null);
 
             /** BotSourceItem thumbnailCdnUrl. */
-            public thumbnailCdnUrl?: (string|null);
+            thumbnailCdnUrl?: (string|null);
 
             /** BotSourceItem sourceProviderUrl. */
-            public sourceProviderUrl?: (string|null);
+            sourceProviderUrl?: (string|null);
 
             /** BotSourceItem sourceQuery. */
-            public sourceQuery?: (string|null);
+            sourceQuery?: (string|null);
 
             /** BotSourceItem faviconCdnUrl. */
-            public faviconCdnUrl?: (string|null);
+            faviconCdnUrl?: (string|null);
 
             /** BotSourceItem citationNumber. */
-            public citationNumber?: (number|null);
+            citationNumber?: (number|null);
 
             /** BotSourceItem sourceTitle. */
-            public sourceTitle?: (string|null);
+            sourceTitle?: (string|null);
 
             /**
              * Creates a new BotSourceItem instance using the specified properties.
              * @param [properties] Properties to set
              * @returns BotSourceItem instance
              */
-            public static create(properties?: BotMetadata.BotSourcesMetadata.IBotSourceItem): BotMetadata.BotSourcesMetadata.BotSourceItem;
+            static create(properties: BotMetadata.BotSourcesMetadata.BotSourceItem.$Shape): BotMetadata.BotSourcesMetadata.BotSourceItem & BotMetadata.BotSourcesMetadata.BotSourceItem.$Shape;
+            static create(properties?: BotMetadata.BotSourcesMetadata.BotSourceItem.$Properties): BotMetadata.BotSourcesMetadata.BotSourceItem;
 
             /**
              * Encodes the specified BotSourceItem message. Does not implicitly {@link BotMetadata.BotSourcesMetadata.BotSourceItem.verify|verify} messages.
@@ -1673,7 +1910,7 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: BotMetadata.BotSourcesMetadata.IBotSourceItem, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: BotMetadata.BotSourcesMetadata.BotSourceItem.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified BotSourceItem message, length delimited. Does not implicitly {@link BotMetadata.BotSourcesMetadata.BotSourceItem.verify|verify} messages.
@@ -1681,40 +1918,40 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: BotMetadata.BotSourcesMetadata.IBotSourceItem, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: BotMetadata.BotSourcesMetadata.BotSourceItem.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a BotSourceItem message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns BotSourceItem
+             * @returns {BotMetadata.BotSourcesMetadata.BotSourceItem & BotMetadata.BotSourcesMetadata.BotSourceItem.$Shape} BotSourceItem
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSourcesMetadata.BotSourceItem;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSourcesMetadata.BotSourceItem & BotMetadata.BotSourcesMetadata.BotSourceItem.$Shape;
 
             /**
              * Decodes a BotSourceItem message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns BotSourceItem
+             * @returns {BotMetadata.BotSourcesMetadata.BotSourceItem & BotMetadata.BotSourcesMetadata.BotSourceItem.$Shape} BotSourceItem
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSourcesMetadata.BotSourceItem;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSourcesMetadata.BotSourceItem & BotMetadata.BotSourcesMetadata.BotSourceItem.$Shape;
 
             /**
              * Verifies a BotSourceItem message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a BotSourceItem message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns BotSourceItem
              */
-            public static fromObject(object: { [k: string]: any }): BotMetadata.BotSourcesMetadata.BotSourceItem;
+            static fromObject(object: { [k: string]: any }): BotMetadata.BotSourcesMetadata.BotSourceItem;
 
             /**
              * Creates a plain object from a BotSourceItem message. Also converts values to other types if specified.
@@ -1722,66 +1959,108 @@ export namespace BotMetadata {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: BotMetadata.BotSourcesMetadata.BotSourceItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: BotMetadata.BotSourcesMetadata.BotSourceItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this BotSourceItem to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for BotSourceItem
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for BotSourceItem
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
         }
 
         namespace BotSourceItem {
 
+            /** Properties of a BotSourceItem. */
+            interface $Properties {
+
+                /** BotSourceItem provider */
+                provider?: (BotMetadata.BotSourcesMetadata.BotSourceItem.SourceProvider|null);
+
+                /** BotSourceItem thumbnailCdnUrl */
+                thumbnailCdnUrl?: (string|null);
+
+                /** BotSourceItem sourceProviderUrl */
+                sourceProviderUrl?: (string|null);
+
+                /** BotSourceItem sourceQuery */
+                sourceQuery?: (string|null);
+
+                /** BotSourceItem faviconCdnUrl */
+                faviconCdnUrl?: (string|null);
+
+                /** BotSourceItem citationNumber */
+                citationNumber?: (number|null);
+
+                /** BotSourceItem sourceTitle */
+                sourceTitle?: (string|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of a BotSourceItem. */
+            type $Shape = BotMetadata.BotSourcesMetadata.BotSourceItem.$Properties;
+
             /** SourceProvider enum. */
             enum SourceProvider {
+
+                /** UNKNOWN value */
                 UNKNOWN = 0,
+
+                /** BING value */
                 BING = 1,
+
+                /** GOOGLE value */
                 GOOGLE = 2,
+
+                /** SUPPORT value */
                 SUPPORT = 3,
+
+                /** OTHER value */
                 OTHER = 4
             }
         }
     }
 
-    /** Properties of a BotAgeCollectionMetadata. */
-    interface IBotAgeCollectionMetadata {
-
-        /** BotAgeCollectionMetadata ageCollectionEligible */
-        ageCollectionEligible?: (boolean|null);
-
-        /** BotAgeCollectionMetadata shouldTriggerAgeCollectionOnClient */
-        shouldTriggerAgeCollectionOnClient?: (boolean|null);
+    /**
+     * Properties of a BotAgeCollectionMetadata.
+     * @deprecated Use BotMetadata.BotAgeCollectionMetadata.$Properties instead.
+     */
+    interface IBotAgeCollectionMetadata extends BotMetadata.BotAgeCollectionMetadata.$Properties {
     }
 
     /** Represents a BotAgeCollectionMetadata. */
-    class BotAgeCollectionMetadata implements IBotAgeCollectionMetadata {
+    class BotAgeCollectionMetadata {
 
         /**
          * Constructs a new BotAgeCollectionMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotAgeCollectionMetadata);
+        constructor(properties?: BotMetadata.BotAgeCollectionMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotAgeCollectionMetadata ageCollectionEligible. */
-        public ageCollectionEligible?: (boolean|null);
+        ageCollectionEligible?: (boolean|null);
 
         /** BotAgeCollectionMetadata shouldTriggerAgeCollectionOnClient. */
-        public shouldTriggerAgeCollectionOnClient?: (boolean|null);
+        shouldTriggerAgeCollectionOnClient?: (boolean|null);
 
         /**
          * Creates a new BotAgeCollectionMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotAgeCollectionMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotAgeCollectionMetadata): BotMetadata.BotAgeCollectionMetadata;
+        static create(properties: BotMetadata.BotAgeCollectionMetadata.$Shape): BotMetadata.BotAgeCollectionMetadata & BotMetadata.BotAgeCollectionMetadata.$Shape;
+        static create(properties?: BotMetadata.BotAgeCollectionMetadata.$Properties): BotMetadata.BotAgeCollectionMetadata;
 
         /**
          * Encodes the specified BotAgeCollectionMetadata message. Does not implicitly {@link BotMetadata.BotAgeCollectionMetadata.verify|verify} messages.
@@ -1789,7 +2068,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotAgeCollectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotAgeCollectionMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotAgeCollectionMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotAgeCollectionMetadata.verify|verify} messages.
@@ -1797,40 +2076,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotAgeCollectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotAgeCollectionMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotAgeCollectionMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotAgeCollectionMetadata
+         * @returns {BotMetadata.BotAgeCollectionMetadata & BotMetadata.BotAgeCollectionMetadata.$Shape} BotAgeCollectionMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotAgeCollectionMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotAgeCollectionMetadata & BotMetadata.BotAgeCollectionMetadata.$Shape;
 
         /**
          * Decodes a BotAgeCollectionMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotAgeCollectionMetadata
+         * @returns {BotMetadata.BotAgeCollectionMetadata & BotMetadata.BotAgeCollectionMetadata.$Shape} BotAgeCollectionMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotAgeCollectionMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotAgeCollectionMetadata & BotMetadata.BotAgeCollectionMetadata.$Shape;
 
         /**
          * Verifies a BotAgeCollectionMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotAgeCollectionMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotAgeCollectionMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotAgeCollectionMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotAgeCollectionMetadata;
 
         /**
          * Creates a plain object from a BotAgeCollectionMetadata message. Also converts values to other types if specified.
@@ -1838,47 +2117,70 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotAgeCollectionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotAgeCollectionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotAgeCollectionMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotAgeCollectionMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotAgeCollectionMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a BotImagineMetadata. */
-    interface IBotImagineMetadata {
+    namespace BotAgeCollectionMetadata {
 
-        /** BotImagineMetadata imagineType */
-        imagineType?: (BotMetadata.BotImagineMetadata.ImagineType|null);
+        /** Properties of a BotAgeCollectionMetadata. */
+        interface $Properties {
+
+            /** BotAgeCollectionMetadata ageCollectionEligible */
+            ageCollectionEligible?: (boolean|null);
+
+            /** BotAgeCollectionMetadata shouldTriggerAgeCollectionOnClient */
+            shouldTriggerAgeCollectionOnClient?: (boolean|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotAgeCollectionMetadata. */
+        type $Shape = BotMetadata.BotAgeCollectionMetadata.$Properties;
+    }
+
+    /**
+     * Properties of a BotImagineMetadata.
+     * @deprecated Use BotMetadata.BotImagineMetadata.$Properties instead.
+     */
+    interface IBotImagineMetadata extends BotMetadata.BotImagineMetadata.$Properties {
     }
 
     /** Represents a BotImagineMetadata. */
-    class BotImagineMetadata implements IBotImagineMetadata {
+    class BotImagineMetadata {
 
         /**
          * Constructs a new BotImagineMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotImagineMetadata);
+        constructor(properties?: BotMetadata.BotImagineMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotImagineMetadata imagineType. */
-        public imagineType?: (BotMetadata.BotImagineMetadata.ImagineType|null);
+        imagineType?: (BotMetadata.BotImagineMetadata.ImagineType|null);
 
         /**
          * Creates a new BotImagineMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotImagineMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotImagineMetadata): BotMetadata.BotImagineMetadata;
+        static create(properties: BotMetadata.BotImagineMetadata.$Shape): BotMetadata.BotImagineMetadata & BotMetadata.BotImagineMetadata.$Shape;
+        static create(properties?: BotMetadata.BotImagineMetadata.$Properties): BotMetadata.BotImagineMetadata;
 
         /**
          * Encodes the specified BotImagineMetadata message. Does not implicitly {@link BotMetadata.BotImagineMetadata.verify|verify} messages.
@@ -1886,7 +2188,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotImagineMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotImagineMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotImagineMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotImagineMetadata.verify|verify} messages.
@@ -1894,40 +2196,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotImagineMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotImagineMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotImagineMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotImagineMetadata
+         * @returns {BotMetadata.BotImagineMetadata & BotMetadata.BotImagineMetadata.$Shape} BotImagineMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotImagineMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotImagineMetadata & BotMetadata.BotImagineMetadata.$Shape;
 
         /**
          * Decodes a BotImagineMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotImagineMetadata
+         * @returns {BotMetadata.BotImagineMetadata & BotMetadata.BotImagineMetadata.$Shape} BotImagineMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotImagineMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotImagineMetadata & BotMetadata.BotImagineMetadata.$Shape;
 
         /**
          * Verifies a BotImagineMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotImagineMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotImagineMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotImagineMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotImagineMetadata;
 
         /**
          * Creates a plain object from a BotImagineMetadata message. Also converts values to other types if specified.
@@ -1935,59 +2237,86 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotImagineMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotImagineMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotImagineMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotImagineMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotImagineMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotImagineMetadata {
 
+        /** Properties of a BotImagineMetadata. */
+        interface $Properties {
+
+            /** BotImagineMetadata imagineType */
+            imagineType?: (BotMetadata.BotImagineMetadata.ImagineType|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotImagineMetadata. */
+        type $Shape = BotMetadata.BotImagineMetadata.$Properties;
+
         /** ImagineType enum. */
         enum ImagineType {
+
+            /** UNKNOWN value */
             UNKNOWN = 0,
+
+            /** IMAGINE value */
             IMAGINE = 1,
+
+            /** MEMU value */
             MEMU = 2,
+
+            /** FLASH value */
             FLASH = 3,
+
+            /** EDIT value */
             EDIT = 4
         }
     }
 
-    /** Properties of a BotQuotaMetadata. */
-    interface IBotQuotaMetadata {
-
-        /** BotQuotaMetadata botFeatureQuotaMetadata */
-        botFeatureQuotaMetadata?: (BotMetadata.BotQuotaMetadata.IBotFeatureQuotaMetadata[]|null);
+    /**
+     * Properties of a BotQuotaMetadata.
+     * @deprecated Use BotMetadata.BotQuotaMetadata.$Properties instead.
+     */
+    interface IBotQuotaMetadata extends BotMetadata.BotQuotaMetadata.$Properties {
     }
 
     /** Represents a BotQuotaMetadata. */
-    class BotQuotaMetadata implements IBotQuotaMetadata {
+    class BotQuotaMetadata {
 
         /**
          * Constructs a new BotQuotaMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotQuotaMetadata);
+        constructor(properties?: BotMetadata.BotQuotaMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotQuotaMetadata botFeatureQuotaMetadata. */
-        public botFeatureQuotaMetadata: BotMetadata.BotQuotaMetadata.IBotFeatureQuotaMetadata[];
+        botFeatureQuotaMetadata: BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties[];
 
         /**
          * Creates a new BotQuotaMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotQuotaMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotQuotaMetadata): BotMetadata.BotQuotaMetadata;
+        static create(properties: BotMetadata.BotQuotaMetadata.$Shape): BotMetadata.BotQuotaMetadata & BotMetadata.BotQuotaMetadata.$Shape;
+        static create(properties?: BotMetadata.BotQuotaMetadata.$Properties): BotMetadata.BotQuotaMetadata;
 
         /**
          * Encodes the specified BotQuotaMetadata message. Does not implicitly {@link BotMetadata.BotQuotaMetadata.verify|verify} messages.
@@ -1995,7 +2324,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotQuotaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotQuotaMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotQuotaMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotQuotaMetadata.verify|verify} messages.
@@ -2003,40 +2332,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotQuotaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotQuotaMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotQuotaMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotQuotaMetadata
+         * @returns {BotMetadata.BotQuotaMetadata & BotMetadata.BotQuotaMetadata.$Shape} BotQuotaMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotQuotaMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotQuotaMetadata & BotMetadata.BotQuotaMetadata.$Shape;
 
         /**
          * Decodes a BotQuotaMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotQuotaMetadata
+         * @returns {BotMetadata.BotQuotaMetadata & BotMetadata.BotQuotaMetadata.$Shape} BotQuotaMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotQuotaMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotQuotaMetadata & BotMetadata.BotQuotaMetadata.$Shape;
 
         /**
          * Verifies a BotQuotaMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotQuotaMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotQuotaMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotQuotaMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotQuotaMetadata;
 
         /**
          * Creates a plain object from a BotQuotaMetadata message. Also converts values to other types if specified.
@@ -2044,61 +2373,72 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotQuotaMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotQuotaMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotQuotaMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotQuotaMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotQuotaMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotQuotaMetadata {
 
-        /** Properties of a BotFeatureQuotaMetadata. */
-        interface IBotFeatureQuotaMetadata {
+        /** Properties of a BotQuotaMetadata. */
+        interface $Properties {
 
-            /** BotFeatureQuotaMetadata featureType */
-            featureType?: (BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType|null);
+            /** BotQuotaMetadata botFeatureQuotaMetadata */
+            botFeatureQuotaMetadata?: (BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties[]|null);
 
-            /** BotFeatureQuotaMetadata remainingQuota */
-            remainingQuota?: (number|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
 
-            /** BotFeatureQuotaMetadata expirationTimestamp */
-            expirationTimestamp?: (number|Long|null);
+        /** Shape of a BotQuotaMetadata. */
+        type $Shape = BotMetadata.BotQuotaMetadata.$Properties;
+
+        /**
+         * Properties of a BotFeatureQuotaMetadata.
+         * @deprecated Use BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties instead.
+         */
+        interface IBotFeatureQuotaMetadata extends BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties {
         }
 
         /** Represents a BotFeatureQuotaMetadata. */
-        class BotFeatureQuotaMetadata implements IBotFeatureQuotaMetadata {
+        class BotFeatureQuotaMetadata {
 
             /**
              * Constructs a new BotFeatureQuotaMetadata.
              * @param [properties] Properties to set
              */
-            constructor(properties?: BotMetadata.BotQuotaMetadata.IBotFeatureQuotaMetadata);
+            constructor(properties?: BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** BotFeatureQuotaMetadata featureType. */
-            public featureType?: (BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType|null);
+            featureType?: (BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType|null);
 
             /** BotFeatureQuotaMetadata remainingQuota. */
-            public remainingQuota?: (number|null);
+            remainingQuota?: (number|null);
 
             /** BotFeatureQuotaMetadata expirationTimestamp. */
-            public expirationTimestamp?: (number|Long|null);
+            expirationTimestamp?: (number|Long|null);
 
             /**
              * Creates a new BotFeatureQuotaMetadata instance using the specified properties.
              * @param [properties] Properties to set
              * @returns BotFeatureQuotaMetadata instance
              */
-            public static create(properties?: BotMetadata.BotQuotaMetadata.IBotFeatureQuotaMetadata): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata;
+            static create(properties: BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Shape): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata & BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Shape;
+            static create(properties?: BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata;
 
             /**
              * Encodes the specified BotFeatureQuotaMetadata message. Does not implicitly {@link BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.verify|verify} messages.
@@ -2106,7 +2446,7 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: BotMetadata.BotQuotaMetadata.IBotFeatureQuotaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified BotFeatureQuotaMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.verify|verify} messages.
@@ -2114,40 +2454,40 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: BotMetadata.BotQuotaMetadata.IBotFeatureQuotaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a BotFeatureQuotaMetadata message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns BotFeatureQuotaMetadata
+             * @returns {BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata & BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Shape} BotFeatureQuotaMetadata
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata & BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Shape;
 
             /**
              * Decodes a BotFeatureQuotaMetadata message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns BotFeatureQuotaMetadata
+             * @returns {BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata & BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Shape} BotFeatureQuotaMetadata
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata & BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Shape;
 
             /**
              * Verifies a BotFeatureQuotaMetadata message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a BotFeatureQuotaMetadata message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns BotFeatureQuotaMetadata
              */
-            public static fromObject(object: { [k: string]: any }): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata;
+            static fromObject(object: { [k: string]: any }): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata;
 
             /**
              * Creates a plain object from a BotFeatureQuotaMetadata message. Also converts values to other types if specified.
@@ -2155,57 +2495,84 @@ export namespace BotMetadata {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this BotFeatureQuotaMetadata to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for BotFeatureQuotaMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for BotFeatureQuotaMetadata
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
         }
 
         namespace BotFeatureQuotaMetadata {
 
+            /** Properties of a BotFeatureQuotaMetadata. */
+            interface $Properties {
+
+                /** BotFeatureQuotaMetadata featureType */
+                featureType?: (BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType|null);
+
+                /** BotFeatureQuotaMetadata remainingQuota */
+                remainingQuota?: (number|null);
+
+                /** BotFeatureQuotaMetadata expirationTimestamp */
+                expirationTimestamp?: (number|Long|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of a BotFeatureQuotaMetadata. */
+            type $Shape = BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties;
+
             /** BotFeatureType enum. */
             enum BotFeatureType {
+
+                /** UNKNOWN_FEATURE value */
                 UNKNOWN_FEATURE = 0,
+
+                /** REASONING_FEATURE value */
                 REASONING_FEATURE = 1
             }
         }
     }
 
-    /** Properties of a BotModeSelectionMetadata. */
-    interface IBotModeSelectionMetadata {
-
-        /** BotModeSelectionMetadata mode */
-        mode?: (BotMetadata.BotModeSelectionMetadata.BotUserSelectionMode[]|null);
+    /**
+     * Properties of a BotModeSelectionMetadata.
+     * @deprecated Use BotMetadata.BotModeSelectionMetadata.$Properties instead.
+     */
+    interface IBotModeSelectionMetadata extends BotMetadata.BotModeSelectionMetadata.$Properties {
     }
 
     /** Represents a BotModeSelectionMetadata. */
-    class BotModeSelectionMetadata implements IBotModeSelectionMetadata {
+    class BotModeSelectionMetadata {
 
         /**
          * Constructs a new BotModeSelectionMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotModeSelectionMetadata);
+        constructor(properties?: BotMetadata.BotModeSelectionMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotModeSelectionMetadata mode. */
-        public mode: BotMetadata.BotModeSelectionMetadata.BotUserSelectionMode[];
+        mode: BotMetadata.BotModeSelectionMetadata.BotUserSelectionMode[];
 
         /**
          * Creates a new BotModeSelectionMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotModeSelectionMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotModeSelectionMetadata): BotMetadata.BotModeSelectionMetadata;
+        static create(properties: BotMetadata.BotModeSelectionMetadata.$Shape): BotMetadata.BotModeSelectionMetadata & BotMetadata.BotModeSelectionMetadata.$Shape;
+        static create(properties?: BotMetadata.BotModeSelectionMetadata.$Properties): BotMetadata.BotModeSelectionMetadata;
 
         /**
          * Encodes the specified BotModeSelectionMetadata message. Does not implicitly {@link BotMetadata.BotModeSelectionMetadata.verify|verify} messages.
@@ -2213,7 +2580,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotModeSelectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotModeSelectionMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotModeSelectionMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotModeSelectionMetadata.verify|verify} messages.
@@ -2221,40 +2588,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotModeSelectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotModeSelectionMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotModeSelectionMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotModeSelectionMetadata
+         * @returns {BotMetadata.BotModeSelectionMetadata & BotMetadata.BotModeSelectionMetadata.$Shape} BotModeSelectionMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotModeSelectionMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotModeSelectionMetadata & BotMetadata.BotModeSelectionMetadata.$Shape;
 
         /**
          * Decodes a BotModeSelectionMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotModeSelectionMetadata
+         * @returns {BotMetadata.BotModeSelectionMetadata & BotMetadata.BotModeSelectionMetadata.$Shape} BotModeSelectionMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotModeSelectionMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotModeSelectionMetadata & BotMetadata.BotModeSelectionMetadata.$Shape;
 
         /**
          * Verifies a BotModeSelectionMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotModeSelectionMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotModeSelectionMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotModeSelectionMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotModeSelectionMetadata;
 
         /**
          * Creates a plain object from a BotModeSelectionMetadata message. Also converts values to other types if specified.
@@ -2262,56 +2629,77 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotModeSelectionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotModeSelectionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotModeSelectionMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotModeSelectionMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotModeSelectionMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotModeSelectionMetadata {
 
+        /** Properties of a BotModeSelectionMetadata. */
+        interface $Properties {
+
+            /** BotModeSelectionMetadata mode */
+            mode?: (BotMetadata.BotModeSelectionMetadata.BotUserSelectionMode[]|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotModeSelectionMetadata. */
+        type $Shape = BotMetadata.BotModeSelectionMetadata.$Properties;
+
         /** BotUserSelectionMode enum. */
         enum BotUserSelectionMode {
+
+            /** UNKNOWN_MODE value */
             UNKNOWN_MODE = 0,
+
+            /** REASONING_MODE value */
             REASONING_MODE = 1
         }
     }
 
-    /** Properties of a BotCapabilityMetadata. */
-    interface IBotCapabilityMetadata {
-
-        /** BotCapabilityMetadata capabilities */
-        capabilities?: (BotMetadata.BotCapabilityMetadata.BotCapabilityType[]|null);
+    /**
+     * Properties of a BotCapabilityMetadata.
+     * @deprecated Use BotMetadata.BotCapabilityMetadata.$Properties instead.
+     */
+    interface IBotCapabilityMetadata extends BotMetadata.BotCapabilityMetadata.$Properties {
     }
 
     /** Represents a BotCapabilityMetadata. */
-    class BotCapabilityMetadata implements IBotCapabilityMetadata {
+    class BotCapabilityMetadata {
 
         /**
          * Constructs a new BotCapabilityMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotCapabilityMetadata);
+        constructor(properties?: BotMetadata.BotCapabilityMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotCapabilityMetadata capabilities. */
-        public capabilities: BotMetadata.BotCapabilityMetadata.BotCapabilityType[];
+        capabilities: BotMetadata.BotCapabilityMetadata.BotCapabilityType[];
 
         /**
          * Creates a new BotCapabilityMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotCapabilityMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotCapabilityMetadata): BotMetadata.BotCapabilityMetadata;
+        static create(properties: BotMetadata.BotCapabilityMetadata.$Shape): BotMetadata.BotCapabilityMetadata & BotMetadata.BotCapabilityMetadata.$Shape;
+        static create(properties?: BotMetadata.BotCapabilityMetadata.$Properties): BotMetadata.BotCapabilityMetadata;
 
         /**
          * Encodes the specified BotCapabilityMetadata message. Does not implicitly {@link BotMetadata.BotCapabilityMetadata.verify|verify} messages.
@@ -2319,7 +2707,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotCapabilityMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotCapabilityMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotCapabilityMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotCapabilityMetadata.verify|verify} messages.
@@ -2327,40 +2715,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotCapabilityMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotCapabilityMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotCapabilityMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotCapabilityMetadata
+         * @returns {BotMetadata.BotCapabilityMetadata & BotMetadata.BotCapabilityMetadata.$Shape} BotCapabilityMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotCapabilityMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotCapabilityMetadata & BotMetadata.BotCapabilityMetadata.$Shape;
 
         /**
          * Decodes a BotCapabilityMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotCapabilityMetadata
+         * @returns {BotMetadata.BotCapabilityMetadata & BotMetadata.BotCapabilityMetadata.$Shape} BotCapabilityMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotCapabilityMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotCapabilityMetadata & BotMetadata.BotCapabilityMetadata.$Shape;
 
         /**
          * Verifies a BotCapabilityMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotCapabilityMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotCapabilityMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotCapabilityMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotCapabilityMetadata;
 
         /**
          * Creates a plain object from a BotCapabilityMetadata message. Also converts values to other types if specified.
@@ -2368,103 +2756,203 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotCapabilityMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotCapabilityMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotCapabilityMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotCapabilityMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotCapabilityMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotCapabilityMetadata {
 
+        /** Properties of a BotCapabilityMetadata. */
+        interface $Properties {
+
+            /** BotCapabilityMetadata capabilities */
+            capabilities?: (BotMetadata.BotCapabilityMetadata.BotCapabilityType[]|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotCapabilityMetadata. */
+        type $Shape = BotMetadata.BotCapabilityMetadata.$Properties;
+
         /** BotCapabilityType enum. */
         enum BotCapabilityType {
+
+            /** UNKNOWN value */
             UNKNOWN = 0,
+
+            /** PROGRESS_INDICATOR value */
             PROGRESS_INDICATOR = 1,
+
+            /** RICH_RESPONSE_HEADING value */
             RICH_RESPONSE_HEADING = 2,
+
+            /** RICH_RESPONSE_NESTED_LIST value */
             RICH_RESPONSE_NESTED_LIST = 3,
+
+            /** AI_MEMORY value */
             AI_MEMORY = 4,
+
+            /** RICH_RESPONSE_THREAD_SURFING value */
             RICH_RESPONSE_THREAD_SURFING = 5,
+
+            /** RICH_RESPONSE_TABLE value */
             RICH_RESPONSE_TABLE = 6,
+
+            /** RICH_RESPONSE_CODE value */
             RICH_RESPONSE_CODE = 7,
+
+            /** RICH_RESPONSE_STRUCTURED_RESPONSE value */
             RICH_RESPONSE_STRUCTURED_RESPONSE = 8,
+
+            /** RICH_RESPONSE_INLINE_IMAGE value */
             RICH_RESPONSE_INLINE_IMAGE = 9,
+
+            /** WA_IG_1P_PLUGIN_RANKING_CONTROL value */
             WA_IG_1P_PLUGIN_RANKING_CONTROL = 10,
+
+            /** WA_IG_1P_PLUGIN_RANKING_UPDATE_1 value */
             WA_IG_1P_PLUGIN_RANKING_UPDATE_1 = 11,
+
+            /** WA_IG_1P_PLUGIN_RANKING_UPDATE_2 value */
             WA_IG_1P_PLUGIN_RANKING_UPDATE_2 = 12,
+
+            /** WA_IG_1P_PLUGIN_RANKING_UPDATE_3 value */
             WA_IG_1P_PLUGIN_RANKING_UPDATE_3 = 13,
+
+            /** WA_IG_1P_PLUGIN_RANKING_UPDATE_4 value */
             WA_IG_1P_PLUGIN_RANKING_UPDATE_4 = 14,
+
+            /** WA_IG_1P_PLUGIN_RANKING_UPDATE_5 value */
             WA_IG_1P_PLUGIN_RANKING_UPDATE_5 = 15,
+
+            /** WA_IG_1P_PLUGIN_RANKING_UPDATE_6 value */
             WA_IG_1P_PLUGIN_RANKING_UPDATE_6 = 16,
+
+            /** WA_IG_1P_PLUGIN_RANKING_UPDATE_7 value */
             WA_IG_1P_PLUGIN_RANKING_UPDATE_7 = 17,
+
+            /** WA_IG_1P_PLUGIN_RANKING_UPDATE_8 value */
             WA_IG_1P_PLUGIN_RANKING_UPDATE_8 = 18,
+
+            /** WA_IG_1P_PLUGIN_RANKING_UPDATE_9 value */
             WA_IG_1P_PLUGIN_RANKING_UPDATE_9 = 19,
+
+            /** WA_IG_1P_PLUGIN_RANKING_UPDATE_10 value */
             WA_IG_1P_PLUGIN_RANKING_UPDATE_10 = 20,
+
+            /** RICH_RESPONSE_SUB_HEADING value */
             RICH_RESPONSE_SUB_HEADING = 21,
+
+            /** RICH_RESPONSE_GRID_IMAGE value */
             RICH_RESPONSE_GRID_IMAGE = 22,
+
+            /** AI_STUDIO_UGC_MEMORY value */
             AI_STUDIO_UGC_MEMORY = 23,
+
+            /** RICH_RESPONSE_LATEX value */
             RICH_RESPONSE_LATEX = 24,
+
+            /** RICH_RESPONSE_MAPS value */
             RICH_RESPONSE_MAPS = 25,
+
+            /** RICH_RESPONSE_INLINE_REELS value */
             RICH_RESPONSE_INLINE_REELS = 26,
+
+            /** AGENTIC_PLANNING value */
             AGENTIC_PLANNING = 27,
+
+            /** ACCOUNT_LINKING value */
             ACCOUNT_LINKING = 28,
+
+            /** STREAMING_DISAGGREGATION value */
             STREAMING_DISAGGREGATION = 29,
+
+            /** RICH_RESPONSE_GRID_IMAGE_3P value */
             RICH_RESPONSE_GRID_IMAGE_3P = 30,
+
+            /** RICH_RESPONSE_LATEX_INLINE value */
             RICH_RESPONSE_LATEX_INLINE = 31,
+
+            /** QUERY_PLAN value */
             QUERY_PLAN = 32,
+
+            /** PROACTIVE_MESSAGE value */
             PROACTIVE_MESSAGE = 33,
+
+            /** RICH_RESPONSE_UNIFIED_RESPONSE value */
             RICH_RESPONSE_UNIFIED_RESPONSE = 34,
+
+            /** PROMOTION_MESSAGE value */
             PROMOTION_MESSAGE = 35,
+
+            /** SIMPLIFIED_PROFILE_PAGE value */
             SIMPLIFIED_PROFILE_PAGE = 36,
+
+            /** RICH_RESPONSE_SOURCES_IN_MESSAGE value */
             RICH_RESPONSE_SOURCES_IN_MESSAGE = 37,
+
+            /** RICH_RESPONSE_SIDE_BY_SIDE_SURVEY value */
             RICH_RESPONSE_SIDE_BY_SIDE_SURVEY = 38,
+
+            /** RICH_RESPONSE_UNIFIED_TEXT_COMPONENT value */
             RICH_RESPONSE_UNIFIED_TEXT_COMPONENT = 39,
+
+            /** AI_SHARED_MEMORY value */
             AI_SHARED_MEMORY = 40,
+
+            /** RICH_RESPONSE_UNIFIED_SOURCES value */
             RICH_RESPONSE_UNIFIED_SOURCES = 41,
+
+            /** RICH_RESPONSE_UNIFIED_DOMAIN_CITATIONS value */
             RICH_RESPONSE_UNIFIED_DOMAIN_CITATIONS = 42
         }
     }
 
-    /** Properties of a BotProgressIndicatorMetadata. */
-    interface IBotProgressIndicatorMetadata {
-
-        /** BotProgressIndicatorMetadata progressDescription */
-        progressDescription?: (string|null);
-
-        /** BotProgressIndicatorMetadata stepsMetadata */
-        stepsMetadata?: (BotMetadata.BotProgressIndicatorMetadata.IBotPlanningStepMetadata[]|null);
+    /**
+     * Properties of a BotProgressIndicatorMetadata.
+     * @deprecated Use BotMetadata.BotProgressIndicatorMetadata.$Properties instead.
+     */
+    interface IBotProgressIndicatorMetadata extends BotMetadata.BotProgressIndicatorMetadata.$Properties {
     }
 
     /** Represents a BotProgressIndicatorMetadata. */
-    class BotProgressIndicatorMetadata implements IBotProgressIndicatorMetadata {
+    class BotProgressIndicatorMetadata {
 
         /**
          * Constructs a new BotProgressIndicatorMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotProgressIndicatorMetadata);
+        constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotProgressIndicatorMetadata progressDescription. */
-        public progressDescription?: (string|null);
+        progressDescription?: (string|null);
 
         /** BotProgressIndicatorMetadata stepsMetadata. */
-        public stepsMetadata: BotMetadata.BotProgressIndicatorMetadata.IBotPlanningStepMetadata[];
+        stepsMetadata: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Properties[];
 
         /**
          * Creates a new BotProgressIndicatorMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotProgressIndicatorMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotProgressIndicatorMetadata): BotMetadata.BotProgressIndicatorMetadata;
+        static create(properties: BotMetadata.BotProgressIndicatorMetadata.$Shape): BotMetadata.BotProgressIndicatorMetadata & BotMetadata.BotProgressIndicatorMetadata.$Shape;
+        static create(properties?: BotMetadata.BotProgressIndicatorMetadata.$Properties): BotMetadata.BotProgressIndicatorMetadata;
 
         /**
          * Encodes the specified BotProgressIndicatorMetadata message. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.verify|verify} messages.
@@ -2472,7 +2960,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotProgressIndicatorMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotProgressIndicatorMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotProgressIndicatorMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.verify|verify} messages.
@@ -2480,40 +2968,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotProgressIndicatorMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotProgressIndicatorMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotProgressIndicatorMetadata
+         * @returns {BotMetadata.BotProgressIndicatorMetadata & BotMetadata.BotProgressIndicatorMetadata.$Shape} BotProgressIndicatorMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata & BotMetadata.BotProgressIndicatorMetadata.$Shape;
 
         /**
          * Decodes a BotProgressIndicatorMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotProgressIndicatorMetadata
+         * @returns {BotMetadata.BotProgressIndicatorMetadata & BotMetadata.BotProgressIndicatorMetadata.$Shape} BotProgressIndicatorMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata & BotMetadata.BotProgressIndicatorMetadata.$Shape;
 
         /**
          * Verifies a BotProgressIndicatorMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotProgressIndicatorMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotProgressIndicatorMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata;
 
         /**
          * Creates a plain object from a BotProgressIndicatorMetadata message. Also converts values to other types if specified.
@@ -2521,85 +3009,87 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotProgressIndicatorMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotProgressIndicatorMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotProgressIndicatorMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotProgressIndicatorMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotProgressIndicatorMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotProgressIndicatorMetadata {
 
-        /** Properties of a BotPlanningStepMetadata. */
-        interface IBotPlanningStepMetadata {
+        /** Properties of a BotProgressIndicatorMetadata. */
+        interface $Properties {
 
-            /** BotPlanningStepMetadata statusTitle */
-            statusTitle?: (string|null);
+            /** BotProgressIndicatorMetadata progressDescription */
+            progressDescription?: (string|null);
 
-            /** BotPlanningStepMetadata statusBody */
-            statusBody?: (string|null);
+            /** BotProgressIndicatorMetadata stepsMetadata */
+            stepsMetadata?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Properties[]|null);
 
-            /** BotPlanningStepMetadata sourcesMetadata */
-            sourcesMetadata?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata[]|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
 
-            /** BotPlanningStepMetadata status */
-            status?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus|null);
+        /** Shape of a BotProgressIndicatorMetadata. */
+        type $Shape = BotMetadata.BotProgressIndicatorMetadata.$Properties;
 
-            /** BotPlanningStepMetadata isReasoning */
-            isReasoning?: (boolean|null);
-
-            /** BotPlanningStepMetadata isEnhancedSearch */
-            isEnhancedSearch?: (boolean|null);
-
-            /** BotPlanningStepMetadata sections */
-            sections?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata[]|null);
+        /**
+         * Properties of a BotPlanningStepMetadata.
+         * @deprecated Use BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Properties instead.
+         */
+        interface IBotPlanningStepMetadata extends BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Properties {
         }
 
         /** Represents a BotPlanningStepMetadata. */
-        class BotPlanningStepMetadata implements IBotPlanningStepMetadata {
+        class BotPlanningStepMetadata {
 
             /**
              * Constructs a new BotPlanningStepMetadata.
              * @param [properties] Properties to set
              */
-            constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.IBotPlanningStepMetadata);
+            constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** BotPlanningStepMetadata statusTitle. */
-            public statusTitle?: (string|null);
+            statusTitle?: (string|null);
 
             /** BotPlanningStepMetadata statusBody. */
-            public statusBody?: (string|null);
+            statusBody?: (string|null);
 
             /** BotPlanningStepMetadata sourcesMetadata. */
-            public sourcesMetadata: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata[];
+            sourcesMetadata: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Properties[];
 
             /** BotPlanningStepMetadata status. */
-            public status?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus|null);
+            status?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus|null);
 
             /** BotPlanningStepMetadata isReasoning. */
-            public isReasoning?: (boolean|null);
+            isReasoning?: (boolean|null);
 
             /** BotPlanningStepMetadata isEnhancedSearch. */
-            public isEnhancedSearch?: (boolean|null);
+            isEnhancedSearch?: (boolean|null);
 
             /** BotPlanningStepMetadata sections. */
-            public sections: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata[];
+            sections: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties[];
 
             /**
              * Creates a new BotPlanningStepMetadata instance using the specified properties.
              * @param [properties] Properties to set
              * @returns BotPlanningStepMetadata instance
              */
-            public static create(properties?: BotMetadata.BotProgressIndicatorMetadata.IBotPlanningStepMetadata): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
+            static create(properties: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Shape): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Shape;
+            static create(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Properties): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
 
             /**
              * Encodes the specified BotPlanningStepMetadata message. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.verify|verify} messages.
@@ -2607,7 +3097,7 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: BotMetadata.BotProgressIndicatorMetadata.IBotPlanningStepMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified BotPlanningStepMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.verify|verify} messages.
@@ -2615,40 +3105,40 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.IBotPlanningStepMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a BotPlanningStepMetadata message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns BotPlanningStepMetadata
+             * @returns {BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Shape} BotPlanningStepMetadata
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Shape;
 
             /**
              * Decodes a BotPlanningStepMetadata message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns BotPlanningStepMetadata
+             * @returns {BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Shape} BotPlanningStepMetadata
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Shape;
 
             /**
              * Verifies a BotPlanningStepMetadata message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a BotPlanningStepMetadata message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns BotPlanningStepMetadata
              */
-            public static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
+            static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
 
             /**
              * Creates a plain object from a BotPlanningStepMetadata message. Also converts values to other types if specified.
@@ -2656,67 +3146,93 @@ export namespace BotMetadata {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this BotPlanningStepMetadata to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for BotPlanningStepMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for BotPlanningStepMetadata
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
         }
 
         namespace BotPlanningStepMetadata {
 
-            /** Properties of a BotPlanningSearchSourceMetadata. */
-            interface IBotPlanningSearchSourceMetadata {
+            /** Properties of a BotPlanningStepMetadata. */
+            interface $Properties {
 
-                /** BotPlanningSearchSourceMetadata title */
-                title?: (string|null);
+                /** BotPlanningStepMetadata statusTitle */
+                statusTitle?: (string|null);
 
-                /** BotPlanningSearchSourceMetadata provider */
-                provider?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider|null);
+                /** BotPlanningStepMetadata statusBody */
+                statusBody?: (string|null);
 
-                /** BotPlanningSearchSourceMetadata sourceUrl */
-                sourceUrl?: (string|null);
+                /** BotPlanningStepMetadata sourcesMetadata */
+                sourcesMetadata?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Properties[]|null);
 
-                /** BotPlanningSearchSourceMetadata favIconUrl */
-                favIconUrl?: (string|null);
+                /** BotPlanningStepMetadata status */
+                status?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus|null);
+
+                /** BotPlanningStepMetadata isReasoning */
+                isReasoning?: (boolean|null);
+
+                /** BotPlanningStepMetadata isEnhancedSearch */
+                isEnhancedSearch?: (boolean|null);
+
+                /** BotPlanningStepMetadata sections */
+                sections?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties[]|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of a BotPlanningStepMetadata. */
+            type $Shape = BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Properties;
+
+            /**
+             * Properties of a BotPlanningSearchSourceMetadata.
+             * @deprecated Use BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties instead.
+             */
+            interface IBotPlanningSearchSourceMetadata extends BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties {
             }
 
             /** Represents a BotPlanningSearchSourceMetadata. */
-            class BotPlanningSearchSourceMetadata implements IBotPlanningSearchSourceMetadata {
+            class BotPlanningSearchSourceMetadata {
 
                 /**
                  * Constructs a new BotPlanningSearchSourceMetadata.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata);
+                constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
 
                 /** BotPlanningSearchSourceMetadata title. */
-                public title?: (string|null);
+                title?: (string|null);
 
                 /** BotPlanningSearchSourceMetadata provider. */
-                public provider?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider|null);
+                provider?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider|null);
 
                 /** BotPlanningSearchSourceMetadata sourceUrl. */
-                public sourceUrl?: (string|null);
+                sourceUrl?: (string|null);
 
                 /** BotPlanningSearchSourceMetadata favIconUrl. */
-                public favIconUrl?: (string|null);
+                favIconUrl?: (string|null);
 
                 /**
                  * Creates a new BotPlanningSearchSourceMetadata instance using the specified properties.
                  * @param [properties] Properties to set
                  * @returns BotPlanningSearchSourceMetadata instance
                  */
-                public static create(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
+                static create(properties: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Shape): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Shape;
+                static create(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
 
                 /**
                  * Encodes the specified BotPlanningSearchSourceMetadata message. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.verify|verify} messages.
@@ -2724,7 +3240,7 @@ export namespace BotMetadata {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encode(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Encodes the specified BotPlanningSearchSourceMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.verify|verify} messages.
@@ -2732,40 +3248,40 @@ export namespace BotMetadata {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Decodes a BotPlanningSearchSourceMetadata message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns BotPlanningSearchSourceMetadata
+                 * @returns {BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Shape} BotPlanningSearchSourceMetadata
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
+                static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Shape;
 
                 /**
                  * Decodes a BotPlanningSearchSourceMetadata message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns BotPlanningSearchSourceMetadata
+                 * @returns {BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Shape} BotPlanningSearchSourceMetadata
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
+                static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Shape;
 
                 /**
                  * Verifies a BotPlanningSearchSourceMetadata message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
-                public static verify(message: { [k: string]: any }): (string|null);
+                static verify(message: { [k: string]: any }): (string|null);
 
                 /**
                  * Creates a BotPlanningSearchSourceMetadata message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
                  * @returns BotPlanningSearchSourceMetadata
                  */
-                public static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
+                static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
 
                 /**
                  * Creates a plain object from a BotPlanningSearchSourceMetadata message. Also converts values to other types if specified.
@@ -2773,59 +3289,82 @@ export namespace BotMetadata {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                static toObject(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this BotPlanningSearchSourceMetadata to JSON.
                  * @returns JSON object
                  */
-                public toJSON(): { [k: string]: any };
+                toJSON(): { [k: string]: any };
 
                 /**
-                 * Gets the default type url for BotPlanningSearchSourceMetadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
+                 * Gets the type url for BotPlanningSearchSourceMetadata
+                 * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+                 * @returns The type url
                  */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
+                static getTypeUrl(prefix?: string): string;
             }
 
-            /** Properties of a BotPlanningSearchSourcesMetadata. */
-            interface IBotPlanningSearchSourcesMetadata {
+            namespace BotPlanningSearchSourceMetadata {
 
-                /** BotPlanningSearchSourcesMetadata sourceTitle */
-                sourceTitle?: (string|null);
+                /** Properties of a BotPlanningSearchSourceMetadata. */
+                interface $Properties {
 
-                /** BotPlanningSearchSourcesMetadata provider */
-                provider?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider|null);
+                    /** BotPlanningSearchSourceMetadata title */
+                    title?: (string|null);
 
-                /** BotPlanningSearchSourcesMetadata sourceUrl */
-                sourceUrl?: (string|null);
+                    /** BotPlanningSearchSourceMetadata provider */
+                    provider?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider|null);
+
+                    /** BotPlanningSearchSourceMetadata sourceUrl */
+                    sourceUrl?: (string|null);
+
+                    /** BotPlanningSearchSourceMetadata favIconUrl */
+                    favIconUrl?: (string|null);
+
+                    /** Unknown fields preserved while decoding when enabled */
+                    $unknowns?: Uint8Array[];
+                }
+
+                /** Shape of a BotPlanningSearchSourceMetadata. */
+                type $Shape = BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties;
+            }
+
+            /**
+             * Properties of a BotPlanningSearchSourcesMetadata.
+             * @deprecated Use BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Properties instead.
+             */
+            interface IBotPlanningSearchSourcesMetadata extends BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Properties {
             }
 
             /** Represents a BotPlanningSearchSourcesMetadata. */
-            class BotPlanningSearchSourcesMetadata implements IBotPlanningSearchSourcesMetadata {
+            class BotPlanningSearchSourcesMetadata {
 
                 /**
                  * Constructs a new BotPlanningSearchSourcesMetadata.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata);
+                constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Properties);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
 
                 /** BotPlanningSearchSourcesMetadata sourceTitle. */
-                public sourceTitle?: (string|null);
+                sourceTitle?: (string|null);
 
                 /** BotPlanningSearchSourcesMetadata provider. */
-                public provider?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider|null);
+                provider?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider|null);
 
                 /** BotPlanningSearchSourcesMetadata sourceUrl. */
-                public sourceUrl?: (string|null);
+                sourceUrl?: (string|null);
 
                 /**
                  * Creates a new BotPlanningSearchSourcesMetadata instance using the specified properties.
                  * @param [properties] Properties to set
                  * @returns BotPlanningSearchSourcesMetadata instance
                  */
-                public static create(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
+                static create(properties: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Shape): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Shape;
+                static create(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Properties): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
 
                 /**
                  * Encodes the specified BotPlanningSearchSourcesMetadata message. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.verify|verify} messages.
@@ -2833,7 +3372,7 @@ export namespace BotMetadata {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encode(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Encodes the specified BotPlanningSearchSourcesMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.verify|verify} messages.
@@ -2841,40 +3380,40 @@ export namespace BotMetadata {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Decodes a BotPlanningSearchSourcesMetadata message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns BotPlanningSearchSourcesMetadata
+                 * @returns {BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Shape} BotPlanningSearchSourcesMetadata
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
+                static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Shape;
 
                 /**
                  * Decodes a BotPlanningSearchSourcesMetadata message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns BotPlanningSearchSourcesMetadata
+                 * @returns {BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Shape} BotPlanningSearchSourcesMetadata
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
+                static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Shape;
 
                 /**
                  * Verifies a BotPlanningSearchSourcesMetadata message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
-                public static verify(message: { [k: string]: any }): (string|null);
+                static verify(message: { [k: string]: any }): (string|null);
 
                 /**
                  * Creates a BotPlanningSearchSourcesMetadata message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
                  * @returns BotPlanningSearchSourcesMetadata
                  */
-                public static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
+                static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
 
                 /**
                  * Creates a plain object from a BotPlanningSearchSourcesMetadata message. Also converts values to other types if specified.
@@ -2882,70 +3421,95 @@ export namespace BotMetadata {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                static toObject(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this BotPlanningSearchSourcesMetadata to JSON.
                  * @returns JSON object
                  */
-                public toJSON(): { [k: string]: any };
+                toJSON(): { [k: string]: any };
 
                 /**
-                 * Gets the default type url for BotPlanningSearchSourcesMetadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
+                 * Gets the type url for BotPlanningSearchSourcesMetadata
+                 * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+                 * @returns The type url
                  */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
+                static getTypeUrl(prefix?: string): string;
             }
 
             namespace BotPlanningSearchSourcesMetadata {
 
+                /** Properties of a BotPlanningSearchSourcesMetadata. */
+                interface $Properties {
+
+                    /** BotPlanningSearchSourcesMetadata sourceTitle */
+                    sourceTitle?: (string|null);
+
+                    /** BotPlanningSearchSourcesMetadata provider */
+                    provider?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider|null);
+
+                    /** BotPlanningSearchSourcesMetadata sourceUrl */
+                    sourceUrl?: (string|null);
+
+                    /** Unknown fields preserved while decoding when enabled */
+                    $unknowns?: Uint8Array[];
+                }
+
+                /** Shape of a BotPlanningSearchSourcesMetadata. */
+                type $Shape = BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Properties;
+
                 /** BotPlanningSearchSourceProvider enum. */
                 enum BotPlanningSearchSourceProvider {
+
+                    /** UNKNOWN value */
                     UNKNOWN = 0,
+
+                    /** OTHER value */
                     OTHER = 1,
+
+                    /** GOOGLE value */
                     GOOGLE = 2,
+
+                    /** BING value */
                     BING = 3
                 }
             }
 
-            /** Properties of a BotPlanningStepSectionMetadata. */
-            interface IBotPlanningStepSectionMetadata {
-
-                /** BotPlanningStepSectionMetadata sectionTitle */
-                sectionTitle?: (string|null);
-
-                /** BotPlanningStepSectionMetadata sectionBody */
-                sectionBody?: (string|null);
-
-                /** BotPlanningStepSectionMetadata sourcesMetadata */
-                sourcesMetadata?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata[]|null);
+            /**
+             * Properties of a BotPlanningStepSectionMetadata.
+             * @deprecated Use BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties instead.
+             */
+            interface IBotPlanningStepSectionMetadata extends BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties {
             }
 
             /** Represents a BotPlanningStepSectionMetadata. */
-            class BotPlanningStepSectionMetadata implements IBotPlanningStepSectionMetadata {
+            class BotPlanningStepSectionMetadata {
 
                 /**
                  * Constructs a new BotPlanningStepSectionMetadata.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata);
+                constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
 
                 /** BotPlanningStepSectionMetadata sectionTitle. */
-                public sectionTitle?: (string|null);
+                sectionTitle?: (string|null);
 
                 /** BotPlanningStepSectionMetadata sectionBody. */
-                public sectionBody?: (string|null);
+                sectionBody?: (string|null);
 
                 /** BotPlanningStepSectionMetadata sourcesMetadata. */
-                public sourcesMetadata: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata[];
+                sourcesMetadata: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties[];
 
                 /**
                  * Creates a new BotPlanningStepSectionMetadata instance using the specified properties.
                  * @param [properties] Properties to set
                  * @returns BotPlanningStepSectionMetadata instance
                  */
-                public static create(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
+                static create(properties: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Shape): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Shape;
+                static create(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
 
                 /**
                  * Encodes the specified BotPlanningStepSectionMetadata message. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.verify|verify} messages.
@@ -2953,7 +3517,7 @@ export namespace BotMetadata {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encode(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Encodes the specified BotPlanningStepSectionMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.verify|verify} messages.
@@ -2961,40 +3525,40 @@ export namespace BotMetadata {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Decodes a BotPlanningStepSectionMetadata message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns BotPlanningStepSectionMetadata
+                 * @returns {BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Shape} BotPlanningStepSectionMetadata
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
+                static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Shape;
 
                 /**
                  * Decodes a BotPlanningStepSectionMetadata message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns BotPlanningStepSectionMetadata
+                 * @returns {BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Shape} BotPlanningStepSectionMetadata
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
+                static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata & BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Shape;
 
                 /**
                  * Verifies a BotPlanningStepSectionMetadata message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
-                public static verify(message: { [k: string]: any }): (string|null);
+                static verify(message: { [k: string]: any }): (string|null);
 
                 /**
                  * Creates a BotPlanningStepSectionMetadata message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
                  * @returns BotPlanningStepSectionMetadata
                  */
-                public static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
+                static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
 
                 /**
                  * Creates a plain object from a BotPlanningStepSectionMetadata message. Also converts values to other types if specified.
@@ -3002,71 +3566,110 @@ export namespace BotMetadata {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                static toObject(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this BotPlanningStepSectionMetadata to JSON.
                  * @returns JSON object
                  */
-                public toJSON(): { [k: string]: any };
+                toJSON(): { [k: string]: any };
 
                 /**
-                 * Gets the default type url for BotPlanningStepSectionMetadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
+                 * Gets the type url for BotPlanningStepSectionMetadata
+                 * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+                 * @returns The type url
                  */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
+                static getTypeUrl(prefix?: string): string;
+            }
+
+            namespace BotPlanningStepSectionMetadata {
+
+                /** Properties of a BotPlanningStepSectionMetadata. */
+                interface $Properties {
+
+                    /** BotPlanningStepSectionMetadata sectionTitle */
+                    sectionTitle?: (string|null);
+
+                    /** BotPlanningStepSectionMetadata sectionBody */
+                    sectionBody?: (string|null);
+
+                    /** BotPlanningStepSectionMetadata sourcesMetadata */
+                    sourcesMetadata?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties[]|null);
+
+                    /** Unknown fields preserved while decoding when enabled */
+                    $unknowns?: Uint8Array[];
+                }
+
+                /** Shape of a BotPlanningStepSectionMetadata. */
+                type $Shape = BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties;
             }
 
             /** BotSearchSourceProvider enum. */
             enum BotSearchSourceProvider {
+
+                /** UNKNOWN_PROVIDER value */
                 UNKNOWN_PROVIDER = 0,
+
+                /** OTHER value */
                 OTHER = 1,
+
+                /** GOOGLE value */
                 GOOGLE = 2,
+
+                /** BING value */
                 BING = 3
             }
 
             /** PlanningStepStatus enum. */
             enum PlanningStepStatus {
+
+                /** UNKNOWN value */
                 UNKNOWN = 0,
+
+                /** PLANNED value */
                 PLANNED = 1,
+
+                /** EXECUTING value */
                 EXECUTING = 2,
+
+                /** FINISHED value */
                 FINISHED = 3
             }
         }
     }
 
-    /** Properties of a BotModelMetadata. */
-    interface IBotModelMetadata {
-
-        /** BotModelMetadata modelType */
-        modelType?: (BotMetadata.BotModelMetadata.ModelType|null);
-
-        /** BotModelMetadata premiumModelStatus */
-        premiumModelStatus?: (BotMetadata.BotModelMetadata.PremiumModelStatus|null);
+    /**
+     * Properties of a BotModelMetadata.
+     * @deprecated Use BotMetadata.BotModelMetadata.$Properties instead.
+     */
+    interface IBotModelMetadata extends BotMetadata.BotModelMetadata.$Properties {
     }
 
     /** Represents a BotModelMetadata. */
-    class BotModelMetadata implements IBotModelMetadata {
+    class BotModelMetadata {
 
         /**
          * Constructs a new BotModelMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotModelMetadata);
+        constructor(properties?: BotMetadata.BotModelMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotModelMetadata modelType. */
-        public modelType?: (BotMetadata.BotModelMetadata.ModelType|null);
+        modelType?: (BotMetadata.BotModelMetadata.ModelType|null);
 
         /** BotModelMetadata premiumModelStatus. */
-        public premiumModelStatus?: (BotMetadata.BotModelMetadata.PremiumModelStatus|null);
+        premiumModelStatus?: (BotMetadata.BotModelMetadata.PremiumModelStatus|null);
 
         /**
          * Creates a new BotModelMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotModelMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotModelMetadata): BotMetadata.BotModelMetadata;
+        static create(properties: BotMetadata.BotModelMetadata.$Shape): BotMetadata.BotModelMetadata & BotMetadata.BotModelMetadata.$Shape;
+        static create(properties?: BotMetadata.BotModelMetadata.$Properties): BotMetadata.BotModelMetadata;
 
         /**
          * Encodes the specified BotModelMetadata message. Does not implicitly {@link BotMetadata.BotModelMetadata.verify|verify} messages.
@@ -3074,7 +3677,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotModelMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotModelMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotModelMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotModelMetadata.verify|verify} messages.
@@ -3082,40 +3685,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotModelMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotModelMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotModelMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotModelMetadata
+         * @returns {BotMetadata.BotModelMetadata & BotMetadata.BotModelMetadata.$Shape} BotModelMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotModelMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotModelMetadata & BotMetadata.BotModelMetadata.$Shape;
 
         /**
          * Decodes a BotModelMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotModelMetadata
+         * @returns {BotMetadata.BotModelMetadata & BotMetadata.BotModelMetadata.$Shape} BotModelMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotModelMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotModelMetadata & BotMetadata.BotModelMetadata.$Shape;
 
         /**
          * Verifies a BotModelMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotModelMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotModelMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotModelMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotModelMetadata;
 
         /**
          * Creates a plain object from a BotModelMetadata message. Also converts values to other types if specified.
@@ -3123,88 +3726,108 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotModelMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotModelMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotModelMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotModelMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotModelMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotModelMetadata {
 
+        /** Properties of a BotModelMetadata. */
+        interface $Properties {
+
+            /** BotModelMetadata modelType */
+            modelType?: (BotMetadata.BotModelMetadata.ModelType|null);
+
+            /** BotModelMetadata premiumModelStatus */
+            premiumModelStatus?: (BotMetadata.BotModelMetadata.PremiumModelStatus|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotModelMetadata. */
+        type $Shape = BotMetadata.BotModelMetadata.$Properties;
+
         /** ModelType enum. */
         enum ModelType {
+
+            /** UNKNOWN_TYPE value */
             UNKNOWN_TYPE = 0,
+
+            /** LLAMA_PROD value */
             LLAMA_PROD = 1,
+
+            /** LLAMA_PROD_PREMIUM value */
             LLAMA_PROD_PREMIUM = 2
         }
 
         /** PremiumModelStatus enum. */
         enum PremiumModelStatus {
+
+            /** UNKNOWN_STATUS value */
             UNKNOWN_STATUS = 0,
+
+            /** AVAILABLE value */
             AVAILABLE = 1,
+
+            /** QUOTA_EXCEED_LIMIT value */
             QUOTA_EXCEED_LIMIT = 2
         }
     }
 
-    /** Properties of a BotReminderMetadata. */
-    interface IBotReminderMetadata {
-
-        /** BotReminderMetadata requestMessageKey */
-        requestMessageKey?: (Protocol.IMessageKey|null);
-
-        /** BotReminderMetadata action */
-        action?: (BotMetadata.BotReminderMetadata.ReminderAction|null);
-
-        /** BotReminderMetadata name */
-        name?: (string|null);
-
-        /** BotReminderMetadata nextTriggerTimestamp */
-        nextTriggerTimestamp?: (number|Long|null);
-
-        /** BotReminderMetadata frequency */
-        frequency?: (BotMetadata.BotReminderMetadata.ReminderFrequency|null);
+    /**
+     * Properties of a BotReminderMetadata.
+     * @deprecated Use BotMetadata.BotReminderMetadata.$Properties instead.
+     */
+    interface IBotReminderMetadata extends BotMetadata.BotReminderMetadata.$Properties {
     }
 
     /** Represents a BotReminderMetadata. */
-    class BotReminderMetadata implements IBotReminderMetadata {
+    class BotReminderMetadata {
 
         /**
          * Constructs a new BotReminderMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotReminderMetadata);
+        constructor(properties?: BotMetadata.BotReminderMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotReminderMetadata requestMessageKey. */
-        public requestMessageKey?: (Protocol.IMessageKey|null);
+        requestMessageKey?: (Protocol.MessageKey.$Properties|null);
 
         /** BotReminderMetadata action. */
-        public action?: (BotMetadata.BotReminderMetadata.ReminderAction|null);
+        action?: (BotMetadata.BotReminderMetadata.ReminderAction|null);
 
         /** BotReminderMetadata name. */
-        public name?: (string|null);
+        name?: (string|null);
 
         /** BotReminderMetadata nextTriggerTimestamp. */
-        public nextTriggerTimestamp?: (number|Long|null);
+        nextTriggerTimestamp?: (number|Long|null);
 
         /** BotReminderMetadata frequency. */
-        public frequency?: (BotMetadata.BotReminderMetadata.ReminderFrequency|null);
+        frequency?: (BotMetadata.BotReminderMetadata.ReminderFrequency|null);
 
         /**
          * Creates a new BotReminderMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotReminderMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotReminderMetadata): BotMetadata.BotReminderMetadata;
+        static create(properties: BotMetadata.BotReminderMetadata.$Shape): BotMetadata.BotReminderMetadata & BotMetadata.BotReminderMetadata.$Shape;
+        static create(properties?: BotMetadata.BotReminderMetadata.$Properties): BotMetadata.BotReminderMetadata;
 
         /**
          * Encodes the specified BotReminderMetadata message. Does not implicitly {@link BotMetadata.BotReminderMetadata.verify|verify} messages.
@@ -3212,7 +3835,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotReminderMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotReminderMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotReminderMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotReminderMetadata.verify|verify} messages.
@@ -3220,40 +3843,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotReminderMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotReminderMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotReminderMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotReminderMetadata
+         * @returns {BotMetadata.BotReminderMetadata & BotMetadata.BotReminderMetadata.$Shape} BotReminderMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotReminderMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotReminderMetadata & BotMetadata.BotReminderMetadata.$Shape;
 
         /**
          * Decodes a BotReminderMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotReminderMetadata
+         * @returns {BotMetadata.BotReminderMetadata & BotMetadata.BotReminderMetadata.$Shape} BotReminderMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotReminderMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotReminderMetadata & BotMetadata.BotReminderMetadata.$Shape;
 
         /**
          * Verifies a BotReminderMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotReminderMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotReminderMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotReminderMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotReminderMetadata;
 
         /**
          * Creates a plain object from a BotReminderMetadata message. Also converts values to other types if specified.
@@ -3261,67 +3884,114 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotReminderMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotReminderMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotReminderMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotReminderMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotReminderMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotReminderMetadata {
 
+        /** Properties of a BotReminderMetadata. */
+        interface $Properties {
+
+            /** BotReminderMetadata requestMessageKey */
+            requestMessageKey?: (Protocol.MessageKey.$Properties|null);
+
+            /** BotReminderMetadata action */
+            action?: (BotMetadata.BotReminderMetadata.ReminderAction|null);
+
+            /** BotReminderMetadata name */
+            name?: (string|null);
+
+            /** BotReminderMetadata nextTriggerTimestamp */
+            nextTriggerTimestamp?: (number|Long|null);
+
+            /** BotReminderMetadata frequency */
+            frequency?: (BotMetadata.BotReminderMetadata.ReminderFrequency|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotReminderMetadata. */
+        type $Shape = BotMetadata.BotReminderMetadata.$Properties;
+
         /** ReminderAction enum. */
         enum ReminderAction {
+
+            /** NOTIFY value */
             NOTIFY = 1,
+
+            /** CREATE value */
             CREATE = 2,
+
+            /** DELETE value */
             DELETE = 3,
+
+            /** UPDATE value */
             UPDATE = 4
         }
 
         /** ReminderFrequency enum. */
         enum ReminderFrequency {
+
+            /** ONCE value */
             ONCE = 1,
+
+            /** DAILY value */
             DAILY = 2,
+
+            /** WEEKLY value */
             WEEKLY = 3,
+
+            /** BIWEEKLY value */
             BIWEEKLY = 4,
+
+            /** MONTHLY value */
             MONTHLY = 5
         }
     }
 
-    /** Properties of a BotMemuMetadata. */
-    interface IBotMemuMetadata {
-
-        /** BotMemuMetadata faceImages */
-        faceImages?: (BotMetadata.IBotMediaMetadata[]|null);
+    /**
+     * Properties of a BotMemuMetadata.
+     * @deprecated Use BotMetadata.BotMemuMetadata.$Properties instead.
+     */
+    interface IBotMemuMetadata extends BotMetadata.BotMemuMetadata.$Properties {
     }
 
     /** Represents a BotMemuMetadata. */
-    class BotMemuMetadata implements IBotMemuMetadata {
+    class BotMemuMetadata {
 
         /**
          * Constructs a new BotMemuMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotMemuMetadata);
+        constructor(properties?: BotMetadata.BotMemuMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotMemuMetadata faceImages. */
-        public faceImages: BotMetadata.IBotMediaMetadata[];
+        faceImages: BotMetadata.BotMediaMetadata.$Properties[];
 
         /**
          * Creates a new BotMemuMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotMemuMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotMemuMetadata): BotMetadata.BotMemuMetadata;
+        static create(properties: BotMetadata.BotMemuMetadata.$Shape): BotMetadata.BotMemuMetadata & BotMetadata.BotMemuMetadata.$Shape;
+        static create(properties?: BotMetadata.BotMemuMetadata.$Properties): BotMetadata.BotMemuMetadata;
 
         /**
          * Encodes the specified BotMemuMetadata message. Does not implicitly {@link BotMetadata.BotMemuMetadata.verify|verify} messages.
@@ -3329,7 +3999,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotMemuMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotMemuMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotMemuMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotMemuMetadata.verify|verify} messages.
@@ -3337,40 +4007,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotMemuMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotMemuMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotMemuMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotMemuMetadata
+         * @returns {BotMetadata.BotMemuMetadata & BotMetadata.BotMemuMetadata.$Shape} BotMemuMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMemuMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMemuMetadata & BotMetadata.BotMemuMetadata.$Shape;
 
         /**
          * Decodes a BotMemuMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotMemuMetadata
+         * @returns {BotMetadata.BotMemuMetadata & BotMetadata.BotMemuMetadata.$Shape} BotMemuMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMemuMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMemuMetadata & BotMetadata.BotMemuMetadata.$Shape;
 
         /**
          * Verifies a BotMemuMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotMemuMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotMemuMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMemuMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotMemuMetadata;
 
         /**
          * Creates a plain object from a BotMemuMetadata message. Also converts values to other types if specified.
@@ -3378,83 +4048,85 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotMemuMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotMemuMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotMemuMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotMemuMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotMemuMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a BotMediaMetadata. */
-    interface IBotMediaMetadata {
+    namespace BotMemuMetadata {
 
-        /** BotMediaMetadata fileSha256 */
-        fileSha256?: (string|null);
+        /** Properties of a BotMemuMetadata. */
+        interface $Properties {
 
-        /** BotMediaMetadata mediaKey */
-        mediaKey?: (string|null);
+            /** BotMemuMetadata faceImages */
+            faceImages?: (BotMetadata.BotMediaMetadata.$Properties[]|null);
 
-        /** BotMediaMetadata fileEncSha256 */
-        fileEncSha256?: (string|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
 
-        /** BotMediaMetadata directPath */
-        directPath?: (string|null);
+        /** Shape of a BotMemuMetadata. */
+        type $Shape = BotMetadata.BotMemuMetadata.$Properties;
+    }
 
-        /** BotMediaMetadata mediaKeyTimestamp */
-        mediaKeyTimestamp?: (number|Long|null);
-
-        /** BotMediaMetadata mimetype */
-        mimetype?: (string|null);
-
-        /** BotMediaMetadata orientationType */
-        orientationType?: (BotMetadata.BotMediaMetadata.OrientationType|null);
+    /**
+     * Properties of a BotMediaMetadata.
+     * @deprecated Use BotMetadata.BotMediaMetadata.$Properties instead.
+     */
+    interface IBotMediaMetadata extends BotMetadata.BotMediaMetadata.$Properties {
     }
 
     /** Represents a BotMediaMetadata. */
-    class BotMediaMetadata implements IBotMediaMetadata {
+    class BotMediaMetadata {
 
         /**
          * Constructs a new BotMediaMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotMediaMetadata);
+        constructor(properties?: BotMetadata.BotMediaMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotMediaMetadata fileSha256. */
-        public fileSha256?: (string|null);
+        fileSha256?: (string|null);
 
         /** BotMediaMetadata mediaKey. */
-        public mediaKey?: (string|null);
+        mediaKey?: (string|null);
 
         /** BotMediaMetadata fileEncSha256. */
-        public fileEncSha256?: (string|null);
+        fileEncSha256?: (string|null);
 
         /** BotMediaMetadata directPath. */
-        public directPath?: (string|null);
+        directPath?: (string|null);
 
         /** BotMediaMetadata mediaKeyTimestamp. */
-        public mediaKeyTimestamp?: (number|Long|null);
+        mediaKeyTimestamp?: (number|Long|null);
 
         /** BotMediaMetadata mimetype. */
-        public mimetype?: (string|null);
+        mimetype?: (string|null);
 
         /** BotMediaMetadata orientationType. */
-        public orientationType?: (BotMetadata.BotMediaMetadata.OrientationType|null);
+        orientationType?: (BotMetadata.BotMediaMetadata.OrientationType|null);
 
         /**
          * Creates a new BotMediaMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotMediaMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotMediaMetadata): BotMetadata.BotMediaMetadata;
+        static create(properties: BotMetadata.BotMediaMetadata.$Shape): BotMetadata.BotMediaMetadata & BotMetadata.BotMediaMetadata.$Shape;
+        static create(properties?: BotMetadata.BotMediaMetadata.$Properties): BotMetadata.BotMediaMetadata;
 
         /**
          * Encodes the specified BotMediaMetadata message. Does not implicitly {@link BotMetadata.BotMediaMetadata.verify|verify} messages.
@@ -3462,7 +4134,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotMediaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotMediaMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotMediaMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotMediaMetadata.verify|verify} messages.
@@ -3470,40 +4142,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotMediaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotMediaMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotMediaMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotMediaMetadata
+         * @returns {BotMetadata.BotMediaMetadata & BotMetadata.BotMediaMetadata.$Shape} BotMediaMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMediaMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMediaMetadata & BotMetadata.BotMediaMetadata.$Shape;
 
         /**
          * Decodes a BotMediaMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotMediaMetadata
+         * @returns {BotMetadata.BotMediaMetadata & BotMetadata.BotMediaMetadata.$Shape} BotMediaMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMediaMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMediaMetadata & BotMetadata.BotMediaMetadata.$Shape;
 
         /**
          * Verifies a BotMediaMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotMediaMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotMediaMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMediaMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotMediaMetadata;
 
         /**
          * Creates a plain object from a BotMediaMetadata message. Also converts values to other types if specified.
@@ -3511,63 +4183,101 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotMediaMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotMediaMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotMediaMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotMediaMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotMediaMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotMediaMetadata {
 
+        /** Properties of a BotMediaMetadata. */
+        interface $Properties {
+
+            /** BotMediaMetadata fileSha256 */
+            fileSha256?: (string|null);
+
+            /** BotMediaMetadata mediaKey */
+            mediaKey?: (string|null);
+
+            /** BotMediaMetadata fileEncSha256 */
+            fileEncSha256?: (string|null);
+
+            /** BotMediaMetadata directPath */
+            directPath?: (string|null);
+
+            /** BotMediaMetadata mediaKeyTimestamp */
+            mediaKeyTimestamp?: (number|Long|null);
+
+            /** BotMediaMetadata mimetype */
+            mimetype?: (string|null);
+
+            /** BotMediaMetadata orientationType */
+            orientationType?: (BotMetadata.BotMediaMetadata.OrientationType|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotMediaMetadata. */
+        type $Shape = BotMetadata.BotMediaMetadata.$Properties;
+
         /** OrientationType enum. */
         enum OrientationType {
+
+            /** CENTER value */
             CENTER = 1,
+
+            /** LEFT value */
             LEFT = 2,
+
+            /** RIGHT value */
             RIGHT = 3
         }
     }
 
-    /** Properties of a BotSessionMetadata. */
-    interface IBotSessionMetadata {
-
-        /** BotSessionMetadata sessionId */
-        sessionId?: (string|null);
-
-        /** BotSessionMetadata sessionSource */
-        sessionSource?: (BotMetadata.BotSessionSource|null);
+    /**
+     * Properties of a BotSessionMetadata.
+     * @deprecated Use BotMetadata.BotSessionMetadata.$Properties instead.
+     */
+    interface IBotSessionMetadata extends BotMetadata.BotSessionMetadata.$Properties {
     }
 
     /** Represents a BotSessionMetadata. */
-    class BotSessionMetadata implements IBotSessionMetadata {
+    class BotSessionMetadata {
 
         /**
          * Constructs a new BotSessionMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotSessionMetadata);
+        constructor(properties?: BotMetadata.BotSessionMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotSessionMetadata sessionId. */
-        public sessionId?: (string|null);
+        sessionId?: (string|null);
 
         /** BotSessionMetadata sessionSource. */
-        public sessionSource?: (BotMetadata.BotSessionSource|null);
+        sessionSource?: (BotMetadata.BotSessionSource|null);
 
         /**
          * Creates a new BotSessionMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotSessionMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotSessionMetadata): BotMetadata.BotSessionMetadata;
+        static create(properties: BotMetadata.BotSessionMetadata.$Shape): BotMetadata.BotSessionMetadata & BotMetadata.BotSessionMetadata.$Shape;
+        static create(properties?: BotMetadata.BotSessionMetadata.$Properties): BotMetadata.BotSessionMetadata;
 
         /**
          * Encodes the specified BotSessionMetadata message. Does not implicitly {@link BotMetadata.BotSessionMetadata.verify|verify} messages.
@@ -3575,7 +4285,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotSessionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotSessionMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotSessionMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotSessionMetadata.verify|verify} messages.
@@ -3583,40 +4293,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotSessionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotSessionMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotSessionMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotSessionMetadata
+         * @returns {BotMetadata.BotSessionMetadata & BotMetadata.BotSessionMetadata.$Shape} BotSessionMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSessionMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSessionMetadata & BotMetadata.BotSessionMetadata.$Shape;
 
         /**
          * Decodes a BotSessionMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotSessionMetadata
+         * @returns {BotMetadata.BotSessionMetadata & BotMetadata.BotSessionMetadata.$Shape} BotSessionMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSessionMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSessionMetadata & BotMetadata.BotSessionMetadata.$Shape;
 
         /**
          * Verifies a BotSessionMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotSessionMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotSessionMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotSessionMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotSessionMetadata;
 
         /**
          * Creates a plain object from a BotSessionMetadata message. Also converts values to other types if specified.
@@ -3624,59 +4334,76 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotSessionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotSessionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotSessionMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotSessionMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotSessionMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a BotMetricsMetadata. */
-    interface IBotMetricsMetadata {
+    namespace BotSessionMetadata {
 
-        /** BotMetricsMetadata destinationId */
-        destinationId?: (string|null);
+        /** Properties of a BotSessionMetadata. */
+        interface $Properties {
 
-        /** BotMetricsMetadata destinationEntryPoint */
-        destinationEntryPoint?: (BotMetadata.BotMetricsEntryPoint|null);
+            /** BotSessionMetadata sessionId */
+            sessionId?: (string|null);
 
-        /** BotMetricsMetadata threadOrigin */
-        threadOrigin?: (BotMetadata.BotMetricsThreadEntryPoint|null);
+            /** BotSessionMetadata sessionSource */
+            sessionSource?: (BotMetadata.BotSessionSource|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotSessionMetadata. */
+        type $Shape = BotMetadata.BotSessionMetadata.$Properties;
+    }
+
+    /**
+     * Properties of a BotMetricsMetadata.
+     * @deprecated Use BotMetadata.BotMetricsMetadata.$Properties instead.
+     */
+    interface IBotMetricsMetadata extends BotMetadata.BotMetricsMetadata.$Properties {
     }
 
     /** Represents a BotMetricsMetadata. */
-    class BotMetricsMetadata implements IBotMetricsMetadata {
+    class BotMetricsMetadata {
 
         /**
          * Constructs a new BotMetricsMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotMetricsMetadata);
+        constructor(properties?: BotMetadata.BotMetricsMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotMetricsMetadata destinationId. */
-        public destinationId?: (string|null);
+        destinationId?: (string|null);
 
         /** BotMetricsMetadata destinationEntryPoint. */
-        public destinationEntryPoint?: (BotMetadata.BotMetricsEntryPoint|null);
+        destinationEntryPoint?: (BotMetadata.BotMetricsEntryPoint|null);
 
         /** BotMetricsMetadata threadOrigin. */
-        public threadOrigin?: (BotMetadata.BotMetricsThreadEntryPoint|null);
+        threadOrigin?: (BotMetadata.BotMetricsThreadEntryPoint|null);
 
         /**
          * Creates a new BotMetricsMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotMetricsMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotMetricsMetadata): BotMetadata.BotMetricsMetadata;
+        static create(properties: BotMetadata.BotMetricsMetadata.$Shape): BotMetadata.BotMetricsMetadata & BotMetadata.BotMetricsMetadata.$Shape;
+        static create(properties?: BotMetadata.BotMetricsMetadata.$Properties): BotMetadata.BotMetricsMetadata;
 
         /**
          * Encodes the specified BotMetricsMetadata message. Does not implicitly {@link BotMetadata.BotMetricsMetadata.verify|verify} messages.
@@ -3684,7 +4411,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotMetricsMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotMetricsMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotMetricsMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotMetricsMetadata.verify|verify} messages.
@@ -3692,40 +4419,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotMetricsMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotMetricsMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotMetricsMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotMetricsMetadata
+         * @returns {BotMetadata.BotMetricsMetadata & BotMetadata.BotMetricsMetadata.$Shape} BotMetricsMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMetricsMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMetricsMetadata & BotMetadata.BotMetricsMetadata.$Shape;
 
         /**
          * Decodes a BotMetricsMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotMetricsMetadata
+         * @returns {BotMetadata.BotMetricsMetadata & BotMetadata.BotMetricsMetadata.$Shape} BotMetricsMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMetricsMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMetricsMetadata & BotMetadata.BotMetricsMetadata.$Shape;
 
         /**
          * Verifies a BotMetricsMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotMetricsMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotMetricsMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMetricsMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotMetricsMetadata;
 
         /**
          * Creates a plain object from a BotMetricsMetadata message. Also converts values to other types if specified.
@@ -3733,47 +4460,73 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotMetricsMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotMetricsMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotMetricsMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotMetricsMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotMetricsMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a BotRenderingMetadata. */
-    interface IBotRenderingMetadata {
+    namespace BotMetricsMetadata {
 
-        /** BotRenderingMetadata keywords */
-        keywords?: (BotMetadata.BotRenderingMetadata.IKeyword[]|null);
+        /** Properties of a BotMetricsMetadata. */
+        interface $Properties {
+
+            /** BotMetricsMetadata destinationId */
+            destinationId?: (string|null);
+
+            /** BotMetricsMetadata destinationEntryPoint */
+            destinationEntryPoint?: (BotMetadata.BotMetricsEntryPoint|null);
+
+            /** BotMetricsMetadata threadOrigin */
+            threadOrigin?: (BotMetadata.BotMetricsThreadEntryPoint|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotMetricsMetadata. */
+        type $Shape = BotMetadata.BotMetricsMetadata.$Properties;
+    }
+
+    /**
+     * Properties of a BotRenderingMetadata.
+     * @deprecated Use BotMetadata.BotRenderingMetadata.$Properties instead.
+     */
+    interface IBotRenderingMetadata extends BotMetadata.BotRenderingMetadata.$Properties {
     }
 
     /** Represents a BotRenderingMetadata. */
-    class BotRenderingMetadata implements IBotRenderingMetadata {
+    class BotRenderingMetadata {
 
         /**
          * Constructs a new BotRenderingMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotRenderingMetadata);
+        constructor(properties?: BotMetadata.BotRenderingMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotRenderingMetadata keywords. */
-        public keywords: BotMetadata.BotRenderingMetadata.IKeyword[];
+        keywords: BotMetadata.BotRenderingMetadata.Keyword.$Properties[];
 
         /**
          * Creates a new BotRenderingMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotRenderingMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotRenderingMetadata): BotMetadata.BotRenderingMetadata;
+        static create(properties: BotMetadata.BotRenderingMetadata.$Shape): BotMetadata.BotRenderingMetadata & BotMetadata.BotRenderingMetadata.$Shape;
+        static create(properties?: BotMetadata.BotRenderingMetadata.$Properties): BotMetadata.BotRenderingMetadata;
 
         /**
          * Encodes the specified BotRenderingMetadata message. Does not implicitly {@link BotMetadata.BotRenderingMetadata.verify|verify} messages.
@@ -3781,7 +4534,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotRenderingMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotRenderingMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotRenderingMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotRenderingMetadata.verify|verify} messages.
@@ -3789,40 +4542,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotRenderingMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotRenderingMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotRenderingMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotRenderingMetadata
+         * @returns {BotMetadata.BotRenderingMetadata & BotMetadata.BotRenderingMetadata.$Shape} BotRenderingMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotRenderingMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotRenderingMetadata & BotMetadata.BotRenderingMetadata.$Shape;
 
         /**
          * Decodes a BotRenderingMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotRenderingMetadata
+         * @returns {BotMetadata.BotRenderingMetadata & BotMetadata.BotRenderingMetadata.$Shape} BotRenderingMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotRenderingMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotRenderingMetadata & BotMetadata.BotRenderingMetadata.$Shape;
 
         /**
          * Verifies a BotRenderingMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotRenderingMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotRenderingMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotRenderingMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotRenderingMetadata;
 
         /**
          * Creates a plain object from a BotRenderingMetadata message. Also converts values to other types if specified.
@@ -3830,55 +4583,69 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotRenderingMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotRenderingMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotRenderingMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotRenderingMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotRenderingMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotRenderingMetadata {
 
-        /** Properties of a Keyword. */
-        interface IKeyword {
+        /** Properties of a BotRenderingMetadata. */
+        interface $Properties {
 
-            /** Keyword value */
-            value?: (string|null);
+            /** BotRenderingMetadata keywords */
+            keywords?: (BotMetadata.BotRenderingMetadata.Keyword.$Properties[]|null);
 
-            /** Keyword associatedPrompts */
-            associatedPrompts?: (string[]|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotRenderingMetadata. */
+        type $Shape = BotMetadata.BotRenderingMetadata.$Properties;
+
+        /**
+         * Properties of a Keyword.
+         * @deprecated Use BotMetadata.BotRenderingMetadata.Keyword.$Properties instead.
+         */
+        interface IKeyword extends BotMetadata.BotRenderingMetadata.Keyword.$Properties {
         }
 
         /** Represents a Keyword. */
-        class Keyword implements IKeyword {
+        class Keyword {
 
             /**
              * Constructs a new Keyword.
              * @param [properties] Properties to set
              */
-            constructor(properties?: BotMetadata.BotRenderingMetadata.IKeyword);
+            constructor(properties?: BotMetadata.BotRenderingMetadata.Keyword.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** Keyword value. */
-            public value?: (string|null);
+            value?: (string|null);
 
             /** Keyword associatedPrompts. */
-            public associatedPrompts: string[];
+            associatedPrompts: string[];
 
             /**
              * Creates a new Keyword instance using the specified properties.
              * @param [properties] Properties to set
              * @returns Keyword instance
              */
-            public static create(properties?: BotMetadata.BotRenderingMetadata.IKeyword): BotMetadata.BotRenderingMetadata.Keyword;
+            static create(properties: BotMetadata.BotRenderingMetadata.Keyword.$Shape): BotMetadata.BotRenderingMetadata.Keyword & BotMetadata.BotRenderingMetadata.Keyword.$Shape;
+            static create(properties?: BotMetadata.BotRenderingMetadata.Keyword.$Properties): BotMetadata.BotRenderingMetadata.Keyword;
 
             /**
              * Encodes the specified Keyword message. Does not implicitly {@link BotMetadata.BotRenderingMetadata.Keyword.verify|verify} messages.
@@ -3886,7 +4653,7 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: BotMetadata.BotRenderingMetadata.IKeyword, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: BotMetadata.BotRenderingMetadata.Keyword.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified Keyword message, length delimited. Does not implicitly {@link BotMetadata.BotRenderingMetadata.Keyword.verify|verify} messages.
@@ -3894,40 +4661,40 @@ export namespace BotMetadata {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: BotMetadata.BotRenderingMetadata.IKeyword, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: BotMetadata.BotRenderingMetadata.Keyword.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Keyword message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns Keyword
+             * @returns {BotMetadata.BotRenderingMetadata.Keyword & BotMetadata.BotRenderingMetadata.Keyword.$Shape} Keyword
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotRenderingMetadata.Keyword;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotRenderingMetadata.Keyword & BotMetadata.BotRenderingMetadata.Keyword.$Shape;
 
             /**
              * Decodes a Keyword message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns Keyword
+             * @returns {BotMetadata.BotRenderingMetadata.Keyword & BotMetadata.BotRenderingMetadata.Keyword.$Shape} Keyword
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotRenderingMetadata.Keyword;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotRenderingMetadata.Keyword & BotMetadata.BotRenderingMetadata.Keyword.$Shape;
 
             /**
              * Verifies a Keyword message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a Keyword message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns Keyword
              */
-            public static fromObject(object: { [k: string]: any }): BotMetadata.BotRenderingMetadata.Keyword;
+            static fromObject(object: { [k: string]: any }): BotMetadata.BotRenderingMetadata.Keyword;
 
             /**
              * Creates a plain object from a Keyword message. Also converts values to other types if specified.
@@ -3935,54 +4702,74 @@ export namespace BotMetadata {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: BotMetadata.BotRenderingMetadata.Keyword, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: BotMetadata.BotRenderingMetadata.Keyword, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Keyword to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for Keyword
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for Keyword
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
+        }
+
+        namespace Keyword {
+
+            /** Properties of a Keyword. */
+            interface $Properties {
+
+                /** Keyword value */
+                value?: (string|null);
+
+                /** Keyword associatedPrompts */
+                associatedPrompts?: (string[]|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of a Keyword. */
+            type $Shape = BotMetadata.BotRenderingMetadata.Keyword.$Properties;
         }
     }
 
-    /** Properties of a BotPromotionMessageMetadata. */
-    interface IBotPromotionMessageMetadata {
-
-        /** BotPromotionMessageMetadata promotionType */
-        promotionType?: (BotMetadata.BotPromotionMessageMetadata.BotPromotionType|null);
-
-        /** BotPromotionMessageMetadata buttonTitle */
-        buttonTitle?: (string|null);
+    /**
+     * Properties of a BotPromotionMessageMetadata.
+     * @deprecated Use BotMetadata.BotPromotionMessageMetadata.$Properties instead.
+     */
+    interface IBotPromotionMessageMetadata extends BotMetadata.BotPromotionMessageMetadata.$Properties {
     }
 
     /** Represents a BotPromotionMessageMetadata. */
-    class BotPromotionMessageMetadata implements IBotPromotionMessageMetadata {
+    class BotPromotionMessageMetadata {
 
         /**
          * Constructs a new BotPromotionMessageMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotPromotionMessageMetadata);
+        constructor(properties?: BotMetadata.BotPromotionMessageMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotPromotionMessageMetadata promotionType. */
-        public promotionType?: (BotMetadata.BotPromotionMessageMetadata.BotPromotionType|null);
+        promotionType?: (BotMetadata.BotPromotionMessageMetadata.BotPromotionType|null);
 
         /** BotPromotionMessageMetadata buttonTitle. */
-        public buttonTitle?: (string|null);
+        buttonTitle?: (string|null);
 
         /**
          * Creates a new BotPromotionMessageMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotPromotionMessageMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotPromotionMessageMetadata): BotMetadata.BotPromotionMessageMetadata;
+        static create(properties: BotMetadata.BotPromotionMessageMetadata.$Shape): BotMetadata.BotPromotionMessageMetadata & BotMetadata.BotPromotionMessageMetadata.$Shape;
+        static create(properties?: BotMetadata.BotPromotionMessageMetadata.$Properties): BotMetadata.BotPromotionMessageMetadata;
 
         /**
          * Encodes the specified BotPromotionMessageMetadata message. Does not implicitly {@link BotMetadata.BotPromotionMessageMetadata.verify|verify} messages.
@@ -3990,7 +4777,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotPromotionMessageMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotPromotionMessageMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotPromotionMessageMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotPromotionMessageMetadata.verify|verify} messages.
@@ -3998,40 +4785,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotPromotionMessageMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotPromotionMessageMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotPromotionMessageMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotPromotionMessageMetadata
+         * @returns {BotMetadata.BotPromotionMessageMetadata & BotMetadata.BotPromotionMessageMetadata.$Shape} BotPromotionMessageMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotPromotionMessageMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotPromotionMessageMetadata & BotMetadata.BotPromotionMessageMetadata.$Shape;
 
         /**
          * Decodes a BotPromotionMessageMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotPromotionMessageMetadata
+         * @returns {BotMetadata.BotPromotionMessageMetadata & BotMetadata.BotPromotionMessageMetadata.$Shape} BotPromotionMessageMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotPromotionMessageMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotPromotionMessageMetadata & BotMetadata.BotPromotionMessageMetadata.$Shape;
 
         /**
          * Verifies a BotPromotionMessageMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotPromotionMessageMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotPromotionMessageMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotPromotionMessageMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotPromotionMessageMetadata;
 
         /**
          * Creates a plain object from a BotPromotionMessageMetadata message. Also converts values to other types if specified.
@@ -4039,75 +4826,92 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotPromotionMessageMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotPromotionMessageMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotPromotionMessageMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotPromotionMessageMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotPromotionMessageMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotPromotionMessageMetadata {
 
+        /** Properties of a BotPromotionMessageMetadata. */
+        interface $Properties {
+
+            /** BotPromotionMessageMetadata promotionType */
+            promotionType?: (BotMetadata.BotPromotionMessageMetadata.BotPromotionType|null);
+
+            /** BotPromotionMessageMetadata buttonTitle */
+            buttonTitle?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotPromotionMessageMetadata. */
+        type $Shape = BotMetadata.BotPromotionMessageMetadata.$Properties;
+
         /** BotPromotionType enum. */
         enum BotPromotionType {
+
+            /** UNKNOWN_TYPE value */
             UNKNOWN_TYPE = 0,
+
+            /** C50 value */
             C50 = 1,
+
+            /** SURVEY_PLATFORM value */
             SURVEY_PLATFORM = 2
         }
     }
 
-    /** Properties of a BotSignatureVerificationUseCaseProof. */
-    interface IBotSignatureVerificationUseCaseProof {
-
-        /** BotSignatureVerificationUseCaseProof version */
-        version?: (number|null);
-
-        /** BotSignatureVerificationUseCaseProof useCase */
-        useCase?: (BotMetadata.BotSignatureVerificationUseCaseProof.BotSignatureUseCase|null);
-
-        /** BotSignatureVerificationUseCaseProof signature */
-        signature?: (Uint8Array|null);
-
-        /** BotSignatureVerificationUseCaseProof certificateChain */
-        certificateChain?: (Uint8Array|null);
+    /**
+     * Properties of a BotSignatureVerificationUseCaseProof.
+     * @deprecated Use BotMetadata.BotSignatureVerificationUseCaseProof.$Properties instead.
+     */
+    interface IBotSignatureVerificationUseCaseProof extends BotMetadata.BotSignatureVerificationUseCaseProof.$Properties {
     }
 
     /** Represents a BotSignatureVerificationUseCaseProof. */
-    class BotSignatureVerificationUseCaseProof implements IBotSignatureVerificationUseCaseProof {
+    class BotSignatureVerificationUseCaseProof {
 
         /**
          * Constructs a new BotSignatureVerificationUseCaseProof.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotSignatureVerificationUseCaseProof);
+        constructor(properties?: BotMetadata.BotSignatureVerificationUseCaseProof.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotSignatureVerificationUseCaseProof version. */
-        public version?: (number|null);
+        version?: (number|null);
 
         /** BotSignatureVerificationUseCaseProof useCase. */
-        public useCase?: (BotMetadata.BotSignatureVerificationUseCaseProof.BotSignatureUseCase|null);
+        useCase?: (BotMetadata.BotSignatureVerificationUseCaseProof.BotSignatureUseCase|null);
 
         /** BotSignatureVerificationUseCaseProof signature. */
-        public signature?: (Uint8Array|null);
+        signature?: (Uint8Array|null);
 
         /** BotSignatureVerificationUseCaseProof certificateChain. */
-        public certificateChain?: (Uint8Array|null);
+        certificateChain?: (Uint8Array|null);
 
         /**
          * Creates a new BotSignatureVerificationUseCaseProof instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotSignatureVerificationUseCaseProof instance
          */
-        public static create(properties?: BotMetadata.IBotSignatureVerificationUseCaseProof): BotMetadata.BotSignatureVerificationUseCaseProof;
+        static create(properties: BotMetadata.BotSignatureVerificationUseCaseProof.$Shape): BotMetadata.BotSignatureVerificationUseCaseProof & BotMetadata.BotSignatureVerificationUseCaseProof.$Shape;
+        static create(properties?: BotMetadata.BotSignatureVerificationUseCaseProof.$Properties): BotMetadata.BotSignatureVerificationUseCaseProof;
 
         /**
          * Encodes the specified BotSignatureVerificationUseCaseProof message. Does not implicitly {@link BotMetadata.BotSignatureVerificationUseCaseProof.verify|verify} messages.
@@ -4115,7 +4919,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotSignatureVerificationUseCaseProof, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotSignatureVerificationUseCaseProof.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotSignatureVerificationUseCaseProof message, length delimited. Does not implicitly {@link BotMetadata.BotSignatureVerificationUseCaseProof.verify|verify} messages.
@@ -4123,40 +4927,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotSignatureVerificationUseCaseProof, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotSignatureVerificationUseCaseProof.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotSignatureVerificationUseCaseProof message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotSignatureVerificationUseCaseProof
+         * @returns {BotMetadata.BotSignatureVerificationUseCaseProof & BotMetadata.BotSignatureVerificationUseCaseProof.$Shape} BotSignatureVerificationUseCaseProof
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSignatureVerificationUseCaseProof;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSignatureVerificationUseCaseProof & BotMetadata.BotSignatureVerificationUseCaseProof.$Shape;
 
         /**
          * Decodes a BotSignatureVerificationUseCaseProof message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotSignatureVerificationUseCaseProof
+         * @returns {BotMetadata.BotSignatureVerificationUseCaseProof & BotMetadata.BotSignatureVerificationUseCaseProof.$Shape} BotSignatureVerificationUseCaseProof
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSignatureVerificationUseCaseProof;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSignatureVerificationUseCaseProof & BotMetadata.BotSignatureVerificationUseCaseProof.$Shape;
 
         /**
          * Verifies a BotSignatureVerificationUseCaseProof message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotSignatureVerificationUseCaseProof message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotSignatureVerificationUseCaseProof
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotSignatureVerificationUseCaseProof;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotSignatureVerificationUseCaseProof;
 
         /**
          * Creates a plain object from a BotSignatureVerificationUseCaseProof message. Also converts values to other types if specified.
@@ -4164,55 +4968,83 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotSignatureVerificationUseCaseProof, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotSignatureVerificationUseCaseProof, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotSignatureVerificationUseCaseProof to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotSignatureVerificationUseCaseProof
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotSignatureVerificationUseCaseProof
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotSignatureVerificationUseCaseProof {
 
+        /** Properties of a BotSignatureVerificationUseCaseProof. */
+        interface $Properties {
+
+            /** BotSignatureVerificationUseCaseProof version */
+            version?: (number|null);
+
+            /** BotSignatureVerificationUseCaseProof useCase */
+            useCase?: (BotMetadata.BotSignatureVerificationUseCaseProof.BotSignatureUseCase|null);
+
+            /** BotSignatureVerificationUseCaseProof signature */
+            signature?: (Uint8Array|null);
+
+            /** BotSignatureVerificationUseCaseProof certificateChain */
+            certificateChain?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotSignatureVerificationUseCaseProof. */
+        type $Shape = BotMetadata.BotSignatureVerificationUseCaseProof.$Properties;
+
         /** BotSignatureUseCase enum. */
         enum BotSignatureUseCase {
+
+            /** WA_BOT_MSG value */
             WA_BOT_MSG = 0
         }
     }
 
-    /** Properties of a BotSignatureVerificationMetadata. */
-    interface IBotSignatureVerificationMetadata {
-
-        /** BotSignatureVerificationMetadata proofs */
-        proofs?: (BotMetadata.IBotSignatureVerificationUseCaseProof[]|null);
+    /**
+     * Properties of a BotSignatureVerificationMetadata.
+     * @deprecated Use BotMetadata.BotSignatureVerificationMetadata.$Properties instead.
+     */
+    interface IBotSignatureVerificationMetadata extends BotMetadata.BotSignatureVerificationMetadata.$Properties {
     }
 
     /** Represents a BotSignatureVerificationMetadata. */
-    class BotSignatureVerificationMetadata implements IBotSignatureVerificationMetadata {
+    class BotSignatureVerificationMetadata {
 
         /**
          * Constructs a new BotSignatureVerificationMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotSignatureVerificationMetadata);
+        constructor(properties?: BotMetadata.BotSignatureVerificationMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotSignatureVerificationMetadata proofs. */
-        public proofs: BotMetadata.IBotSignatureVerificationUseCaseProof[];
+        proofs: BotMetadata.BotSignatureVerificationUseCaseProof.$Properties[];
 
         /**
          * Creates a new BotSignatureVerificationMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotSignatureVerificationMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotSignatureVerificationMetadata): BotMetadata.BotSignatureVerificationMetadata;
+        static create(properties: BotMetadata.BotSignatureVerificationMetadata.$Shape): BotMetadata.BotSignatureVerificationMetadata & BotMetadata.BotSignatureVerificationMetadata.$Shape;
+        static create(properties?: BotMetadata.BotSignatureVerificationMetadata.$Properties): BotMetadata.BotSignatureVerificationMetadata;
 
         /**
          * Encodes the specified BotSignatureVerificationMetadata message. Does not implicitly {@link BotMetadata.BotSignatureVerificationMetadata.verify|verify} messages.
@@ -4220,7 +5052,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotSignatureVerificationMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotSignatureVerificationMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotSignatureVerificationMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotSignatureVerificationMetadata.verify|verify} messages.
@@ -4228,40 +5060,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotSignatureVerificationMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotSignatureVerificationMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotSignatureVerificationMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotSignatureVerificationMetadata
+         * @returns {BotMetadata.BotSignatureVerificationMetadata & BotMetadata.BotSignatureVerificationMetadata.$Shape} BotSignatureVerificationMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSignatureVerificationMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSignatureVerificationMetadata & BotMetadata.BotSignatureVerificationMetadata.$Shape;
 
         /**
          * Decodes a BotSignatureVerificationMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotSignatureVerificationMetadata
+         * @returns {BotMetadata.BotSignatureVerificationMetadata & BotMetadata.BotSignatureVerificationMetadata.$Shape} BotSignatureVerificationMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSignatureVerificationMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSignatureVerificationMetadata & BotMetadata.BotSignatureVerificationMetadata.$Shape;
 
         /**
          * Verifies a BotSignatureVerificationMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotSignatureVerificationMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotSignatureVerificationMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotSignatureVerificationMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotSignatureVerificationMetadata;
 
         /**
          * Creates a plain object from a BotSignatureVerificationMetadata message. Also converts values to other types if specified.
@@ -4269,53 +5101,70 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotSignatureVerificationMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotSignatureVerificationMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotSignatureVerificationMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotSignatureVerificationMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotSignatureVerificationMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a BotMemoryFact. */
-    interface IBotMemoryFact {
+    namespace BotSignatureVerificationMetadata {
 
-        /** BotMemoryFact fact */
-        fact?: (string|null);
+        /** Properties of a BotSignatureVerificationMetadata. */
+        interface $Properties {
 
-        /** BotMemoryFact factId */
-        factId?: (string|null);
+            /** BotSignatureVerificationMetadata proofs */
+            proofs?: (BotMetadata.BotSignatureVerificationUseCaseProof.$Properties[]|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotSignatureVerificationMetadata. */
+        type $Shape = BotMetadata.BotSignatureVerificationMetadata.$Properties;
+    }
+
+    /**
+     * Properties of a BotMemoryFact.
+     * @deprecated Use BotMetadata.BotMemoryFact.$Properties instead.
+     */
+    interface IBotMemoryFact extends BotMetadata.BotMemoryFact.$Properties {
     }
 
     /** Represents a BotMemoryFact. */
-    class BotMemoryFact implements IBotMemoryFact {
+    class BotMemoryFact {
 
         /**
          * Constructs a new BotMemoryFact.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotMemoryFact);
+        constructor(properties?: BotMetadata.BotMemoryFact.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotMemoryFact fact. */
-        public fact?: (string|null);
+        fact?: (string|null);
 
         /** BotMemoryFact factId. */
-        public factId?: (string|null);
+        factId?: (string|null);
 
         /**
          * Creates a new BotMemoryFact instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotMemoryFact instance
          */
-        public static create(properties?: BotMetadata.IBotMemoryFact): BotMetadata.BotMemoryFact;
+        static create(properties: BotMetadata.BotMemoryFact.$Shape): BotMetadata.BotMemoryFact & BotMetadata.BotMemoryFact.$Shape;
+        static create(properties?: BotMetadata.BotMemoryFact.$Properties): BotMetadata.BotMemoryFact;
 
         /**
          * Encodes the specified BotMemoryFact message. Does not implicitly {@link BotMetadata.BotMemoryFact.verify|verify} messages.
@@ -4323,7 +5172,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotMemoryFact, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotMemoryFact.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotMemoryFact message, length delimited. Does not implicitly {@link BotMetadata.BotMemoryFact.verify|verify} messages.
@@ -4331,40 +5180,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotMemoryFact, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotMemoryFact.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotMemoryFact message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotMemoryFact
+         * @returns {BotMetadata.BotMemoryFact & BotMetadata.BotMemoryFact.$Shape} BotMemoryFact
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMemoryFact;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMemoryFact & BotMetadata.BotMemoryFact.$Shape;
 
         /**
          * Decodes a BotMemoryFact message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotMemoryFact
+         * @returns {BotMetadata.BotMemoryFact & BotMetadata.BotMemoryFact.$Shape} BotMemoryFact
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMemoryFact;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMemoryFact & BotMetadata.BotMemoryFact.$Shape;
 
         /**
          * Verifies a BotMemoryFact message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotMemoryFact message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotMemoryFact
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMemoryFact;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotMemoryFact;
 
         /**
          * Creates a plain object from a BotMemoryFact message. Also converts values to other types if specified.
@@ -4372,59 +5221,76 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotMemoryFact, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotMemoryFact, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotMemoryFact to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotMemoryFact
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotMemoryFact
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a BotMemoryMetadata. */
-    interface IBotMemoryMetadata {
+    namespace BotMemoryFact {
 
-        /** BotMemoryMetadata addedFacts */
-        addedFacts?: (BotMetadata.IBotMemoryFact[]|null);
+        /** Properties of a BotMemoryFact. */
+        interface $Properties {
 
-        /** BotMemoryMetadata removedFacts */
-        removedFacts?: (BotMetadata.IBotMemoryFact[]|null);
+            /** BotMemoryFact fact */
+            fact?: (string|null);
 
-        /** BotMemoryMetadata disclaimer */
-        disclaimer?: (string|null);
+            /** BotMemoryFact factId */
+            factId?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotMemoryFact. */
+        type $Shape = BotMetadata.BotMemoryFact.$Properties;
+    }
+
+    /**
+     * Properties of a BotMemoryMetadata.
+     * @deprecated Use BotMetadata.BotMemoryMetadata.$Properties instead.
+     */
+    interface IBotMemoryMetadata extends BotMetadata.BotMemoryMetadata.$Properties {
     }
 
     /** Represents a BotMemoryMetadata. */
-    class BotMemoryMetadata implements IBotMemoryMetadata {
+    class BotMemoryMetadata {
 
         /**
          * Constructs a new BotMemoryMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotMemoryMetadata);
+        constructor(properties?: BotMetadata.BotMemoryMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotMemoryMetadata addedFacts. */
-        public addedFacts: BotMetadata.IBotMemoryFact[];
+        addedFacts: BotMetadata.BotMemoryFact.$Properties[];
 
         /** BotMemoryMetadata removedFacts. */
-        public removedFacts: BotMetadata.IBotMemoryFact[];
+        removedFacts: BotMetadata.BotMemoryFact.$Properties[];
 
         /** BotMemoryMetadata disclaimer. */
-        public disclaimer?: (string|null);
+        disclaimer?: (string|null);
 
         /**
          * Creates a new BotMemoryMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotMemoryMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotMemoryMetadata): BotMetadata.BotMemoryMetadata;
+        static create(properties: BotMetadata.BotMemoryMetadata.$Shape): BotMetadata.BotMemoryMetadata & BotMetadata.BotMemoryMetadata.$Shape;
+        static create(properties?: BotMetadata.BotMemoryMetadata.$Properties): BotMetadata.BotMemoryMetadata;
 
         /**
          * Encodes the specified BotMemoryMetadata message. Does not implicitly {@link BotMetadata.BotMemoryMetadata.verify|verify} messages.
@@ -4432,7 +5298,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotMemoryMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotMemoryMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotMemoryMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotMemoryMetadata.verify|verify} messages.
@@ -4440,40 +5306,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotMemoryMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotMemoryMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotMemoryMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotMemoryMetadata
+         * @returns {BotMetadata.BotMemoryMetadata & BotMetadata.BotMemoryMetadata.$Shape} BotMemoryMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMemoryMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMemoryMetadata & BotMetadata.BotMemoryMetadata.$Shape;
 
         /**
          * Decodes a BotMemoryMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotMemoryMetadata
+         * @returns {BotMetadata.BotMemoryMetadata & BotMetadata.BotMemoryMetadata.$Shape} BotMemoryMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMemoryMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMemoryMetadata & BotMetadata.BotMemoryMetadata.$Shape;
 
         /**
          * Verifies a BotMemoryMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotMemoryMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotMemoryMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMemoryMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotMemoryMetadata;
 
         /**
          * Creates a plain object from a BotMemoryMetadata message. Also converts values to other types if specified.
@@ -4481,47 +5347,73 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotMemoryMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotMemoryMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotMemoryMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotMemoryMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotMemoryMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a BotLinkedAccount. */
-    interface IBotLinkedAccount {
+    namespace BotMemoryMetadata {
 
-        /** BotLinkedAccount type */
-        type?: (BotMetadata.BotLinkedAccount.BotLinkedAccountType|null);
+        /** Properties of a BotMemoryMetadata. */
+        interface $Properties {
+
+            /** BotMemoryMetadata addedFacts */
+            addedFacts?: (BotMetadata.BotMemoryFact.$Properties[]|null);
+
+            /** BotMemoryMetadata removedFacts */
+            removedFacts?: (BotMetadata.BotMemoryFact.$Properties[]|null);
+
+            /** BotMemoryMetadata disclaimer */
+            disclaimer?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotMemoryMetadata. */
+        type $Shape = BotMetadata.BotMemoryMetadata.$Properties;
+    }
+
+    /**
+     * Properties of a BotLinkedAccount.
+     * @deprecated Use BotMetadata.BotLinkedAccount.$Properties instead.
+     */
+    interface IBotLinkedAccount extends BotMetadata.BotLinkedAccount.$Properties {
     }
 
     /** Represents a BotLinkedAccount. */
-    class BotLinkedAccount implements IBotLinkedAccount {
+    class BotLinkedAccount {
 
         /**
          * Constructs a new BotLinkedAccount.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotLinkedAccount);
+        constructor(properties?: BotMetadata.BotLinkedAccount.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotLinkedAccount type. */
-        public type?: (BotMetadata.BotLinkedAccount.BotLinkedAccountType|null);
+        type?: (BotMetadata.BotLinkedAccount.BotLinkedAccountType|null);
 
         /**
          * Creates a new BotLinkedAccount instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotLinkedAccount instance
          */
-        public static create(properties?: BotMetadata.IBotLinkedAccount): BotMetadata.BotLinkedAccount;
+        static create(properties: BotMetadata.BotLinkedAccount.$Shape): BotMetadata.BotLinkedAccount & BotMetadata.BotLinkedAccount.$Shape;
+        static create(properties?: BotMetadata.BotLinkedAccount.$Properties): BotMetadata.BotLinkedAccount;
 
         /**
          * Encodes the specified BotLinkedAccount message. Does not implicitly {@link BotMetadata.BotLinkedAccount.verify|verify} messages.
@@ -4529,7 +5421,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotLinkedAccount, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotLinkedAccount.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotLinkedAccount message, length delimited. Does not implicitly {@link BotMetadata.BotLinkedAccount.verify|verify} messages.
@@ -4537,40 +5429,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotLinkedAccount, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotLinkedAccount.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotLinkedAccount message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotLinkedAccount
+         * @returns {BotMetadata.BotLinkedAccount & BotMetadata.BotLinkedAccount.$Shape} BotLinkedAccount
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotLinkedAccount;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotLinkedAccount & BotMetadata.BotLinkedAccount.$Shape;
 
         /**
          * Decodes a BotLinkedAccount message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotLinkedAccount
+         * @returns {BotMetadata.BotLinkedAccount & BotMetadata.BotLinkedAccount.$Shape} BotLinkedAccount
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotLinkedAccount;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotLinkedAccount & BotMetadata.BotLinkedAccount.$Shape;
 
         /**
          * Verifies a BotLinkedAccount message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotLinkedAccount message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotLinkedAccount
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotLinkedAccount;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotLinkedAccount;
 
         /**
          * Creates a plain object from a BotLinkedAccount message. Also converts values to other types if specified.
@@ -4578,67 +5470,80 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotLinkedAccount, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotLinkedAccount, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotLinkedAccount to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotLinkedAccount
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotLinkedAccount
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotLinkedAccount {
 
+        /** Properties of a BotLinkedAccount. */
+        interface $Properties {
+
+            /** BotLinkedAccount type */
+            type?: (BotMetadata.BotLinkedAccount.BotLinkedAccountType|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotLinkedAccount. */
+        type $Shape = BotMetadata.BotLinkedAccount.$Properties;
+
         /** BotLinkedAccountType enum. */
         enum BotLinkedAccountType {
+
+            /** BOT_LINKED_ACCOUNT_TYPE_1P value */
             BOT_LINKED_ACCOUNT_TYPE_1P = 0
         }
     }
 
-    /** Properties of a BotLinkedAccountsMetadata. */
-    interface IBotLinkedAccountsMetadata {
-
-        /** BotLinkedAccountsMetadata accounts */
-        accounts?: (BotMetadata.IBotLinkedAccount[]|null);
-
-        /** BotLinkedAccountsMetadata acAuthTokens */
-        acAuthTokens?: (Uint8Array|null);
-
-        /** BotLinkedAccountsMetadata acErrorCode */
-        acErrorCode?: (number|null);
+    /**
+     * Properties of a BotLinkedAccountsMetadata.
+     * @deprecated Use BotMetadata.BotLinkedAccountsMetadata.$Properties instead.
+     */
+    interface IBotLinkedAccountsMetadata extends BotMetadata.BotLinkedAccountsMetadata.$Properties {
     }
 
     /** Represents a BotLinkedAccountsMetadata. */
-    class BotLinkedAccountsMetadata implements IBotLinkedAccountsMetadata {
+    class BotLinkedAccountsMetadata {
 
         /**
          * Constructs a new BotLinkedAccountsMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotLinkedAccountsMetadata);
+        constructor(properties?: BotMetadata.BotLinkedAccountsMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotLinkedAccountsMetadata accounts. */
-        public accounts: BotMetadata.IBotLinkedAccount[];
+        accounts: BotMetadata.BotLinkedAccount.$Properties[];
 
         /** BotLinkedAccountsMetadata acAuthTokens. */
-        public acAuthTokens?: (Uint8Array|null);
+        acAuthTokens?: (Uint8Array|null);
 
         /** BotLinkedAccountsMetadata acErrorCode. */
-        public acErrorCode?: (number|null);
+        acErrorCode?: (number|null);
 
         /**
          * Creates a new BotLinkedAccountsMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotLinkedAccountsMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotLinkedAccountsMetadata): BotMetadata.BotLinkedAccountsMetadata;
+        static create(properties: BotMetadata.BotLinkedAccountsMetadata.$Shape): BotMetadata.BotLinkedAccountsMetadata & BotMetadata.BotLinkedAccountsMetadata.$Shape;
+        static create(properties?: BotMetadata.BotLinkedAccountsMetadata.$Properties): BotMetadata.BotLinkedAccountsMetadata;
 
         /**
          * Encodes the specified BotLinkedAccountsMetadata message. Does not implicitly {@link BotMetadata.BotLinkedAccountsMetadata.verify|verify} messages.
@@ -4646,7 +5551,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotLinkedAccountsMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotLinkedAccountsMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotLinkedAccountsMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotLinkedAccountsMetadata.verify|verify} messages.
@@ -4654,40 +5559,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotLinkedAccountsMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotLinkedAccountsMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotLinkedAccountsMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotLinkedAccountsMetadata
+         * @returns {BotMetadata.BotLinkedAccountsMetadata & BotMetadata.BotLinkedAccountsMetadata.$Shape} BotLinkedAccountsMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotLinkedAccountsMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotLinkedAccountsMetadata & BotMetadata.BotLinkedAccountsMetadata.$Shape;
 
         /**
          * Decodes a BotLinkedAccountsMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotLinkedAccountsMetadata
+         * @returns {BotMetadata.BotLinkedAccountsMetadata & BotMetadata.BotLinkedAccountsMetadata.$Shape} BotLinkedAccountsMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotLinkedAccountsMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotLinkedAccountsMetadata & BotMetadata.BotLinkedAccountsMetadata.$Shape;
 
         /**
          * Verifies a BotLinkedAccountsMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotLinkedAccountsMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotLinkedAccountsMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotLinkedAccountsMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotLinkedAccountsMetadata;
 
         /**
          * Creates a plain object from a BotLinkedAccountsMetadata message. Also converts values to other types if specified.
@@ -4695,53 +5600,76 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotLinkedAccountsMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotLinkedAccountsMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotLinkedAccountsMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotLinkedAccountsMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotLinkedAccountsMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a BotPromptSuggestion. */
-    interface IBotPromptSuggestion {
+    namespace BotLinkedAccountsMetadata {
 
-        /** BotPromptSuggestion prompt */
-        prompt?: (string|null);
+        /** Properties of a BotLinkedAccountsMetadata. */
+        interface $Properties {
 
-        /** BotPromptSuggestion promptId */
-        promptId?: (string|null);
+            /** BotLinkedAccountsMetadata accounts */
+            accounts?: (BotMetadata.BotLinkedAccount.$Properties[]|null);
+
+            /** BotLinkedAccountsMetadata acAuthTokens */
+            acAuthTokens?: (Uint8Array|null);
+
+            /** BotLinkedAccountsMetadata acErrorCode */
+            acErrorCode?: (number|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotLinkedAccountsMetadata. */
+        type $Shape = BotMetadata.BotLinkedAccountsMetadata.$Properties;
+    }
+
+    /**
+     * Properties of a BotPromptSuggestion.
+     * @deprecated Use BotMetadata.BotPromptSuggestion.$Properties instead.
+     */
+    interface IBotPromptSuggestion extends BotMetadata.BotPromptSuggestion.$Properties {
     }
 
     /** Represents a BotPromptSuggestion. */
-    class BotPromptSuggestion implements IBotPromptSuggestion {
+    class BotPromptSuggestion {
 
         /**
          * Constructs a new BotPromptSuggestion.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotPromptSuggestion);
+        constructor(properties?: BotMetadata.BotPromptSuggestion.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotPromptSuggestion prompt. */
-        public prompt?: (string|null);
+        prompt?: (string|null);
 
         /** BotPromptSuggestion promptId. */
-        public promptId?: (string|null);
+        promptId?: (string|null);
 
         /**
          * Creates a new BotPromptSuggestion instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotPromptSuggestion instance
          */
-        public static create(properties?: BotMetadata.IBotPromptSuggestion): BotMetadata.BotPromptSuggestion;
+        static create(properties: BotMetadata.BotPromptSuggestion.$Shape): BotMetadata.BotPromptSuggestion & BotMetadata.BotPromptSuggestion.$Shape;
+        static create(properties?: BotMetadata.BotPromptSuggestion.$Properties): BotMetadata.BotPromptSuggestion;
 
         /**
          * Encodes the specified BotPromptSuggestion message. Does not implicitly {@link BotMetadata.BotPromptSuggestion.verify|verify} messages.
@@ -4749,7 +5677,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotPromptSuggestion, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotPromptSuggestion.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotPromptSuggestion message, length delimited. Does not implicitly {@link BotMetadata.BotPromptSuggestion.verify|verify} messages.
@@ -4757,40 +5685,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotPromptSuggestion, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotPromptSuggestion.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotPromptSuggestion message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotPromptSuggestion
+         * @returns {BotMetadata.BotPromptSuggestion & BotMetadata.BotPromptSuggestion.$Shape} BotPromptSuggestion
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotPromptSuggestion;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotPromptSuggestion & BotMetadata.BotPromptSuggestion.$Shape;
 
         /**
          * Decodes a BotPromptSuggestion message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotPromptSuggestion
+         * @returns {BotMetadata.BotPromptSuggestion & BotMetadata.BotPromptSuggestion.$Shape} BotPromptSuggestion
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotPromptSuggestion;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotPromptSuggestion & BotMetadata.BotPromptSuggestion.$Shape;
 
         /**
          * Verifies a BotPromptSuggestion message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotPromptSuggestion message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotPromptSuggestion
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotPromptSuggestion;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotPromptSuggestion;
 
         /**
          * Creates a plain object from a BotPromptSuggestion message. Also converts values to other types if specified.
@@ -4798,47 +5726,70 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotPromptSuggestion, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotPromptSuggestion, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotPromptSuggestion to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotPromptSuggestion
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotPromptSuggestion
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a BotPromptSuggestions. */
-    interface IBotPromptSuggestions {
+    namespace BotPromptSuggestion {
 
-        /** BotPromptSuggestions suggestions */
-        suggestions?: (BotMetadata.IBotPromptSuggestion[]|null);
+        /** Properties of a BotPromptSuggestion. */
+        interface $Properties {
+
+            /** BotPromptSuggestion prompt */
+            prompt?: (string|null);
+
+            /** BotPromptSuggestion promptId */
+            promptId?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotPromptSuggestion. */
+        type $Shape = BotMetadata.BotPromptSuggestion.$Properties;
+    }
+
+    /**
+     * Properties of a BotPromptSuggestions.
+     * @deprecated Use BotMetadata.BotPromptSuggestions.$Properties instead.
+     */
+    interface IBotPromptSuggestions extends BotMetadata.BotPromptSuggestions.$Properties {
     }
 
     /** Represents a BotPromptSuggestions. */
-    class BotPromptSuggestions implements IBotPromptSuggestions {
+    class BotPromptSuggestions {
 
         /**
          * Constructs a new BotPromptSuggestions.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotPromptSuggestions);
+        constructor(properties?: BotMetadata.BotPromptSuggestions.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotPromptSuggestions suggestions. */
-        public suggestions: BotMetadata.IBotPromptSuggestion[];
+        suggestions: BotMetadata.BotPromptSuggestion.$Properties[];
 
         /**
          * Creates a new BotPromptSuggestions instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotPromptSuggestions instance
          */
-        public static create(properties?: BotMetadata.IBotPromptSuggestions): BotMetadata.BotPromptSuggestions;
+        static create(properties: BotMetadata.BotPromptSuggestions.$Shape): BotMetadata.BotPromptSuggestions & BotMetadata.BotPromptSuggestions.$Shape;
+        static create(properties?: BotMetadata.BotPromptSuggestions.$Properties): BotMetadata.BotPromptSuggestions;
 
         /**
          * Encodes the specified BotPromptSuggestions message. Does not implicitly {@link BotMetadata.BotPromptSuggestions.verify|verify} messages.
@@ -4846,7 +5797,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotPromptSuggestions, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotPromptSuggestions.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotPromptSuggestions message, length delimited. Does not implicitly {@link BotMetadata.BotPromptSuggestions.verify|verify} messages.
@@ -4854,40 +5805,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotPromptSuggestions, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotPromptSuggestions.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotPromptSuggestions message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotPromptSuggestions
+         * @returns {BotMetadata.BotPromptSuggestions & BotMetadata.BotPromptSuggestions.$Shape} BotPromptSuggestions
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotPromptSuggestions;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotPromptSuggestions & BotMetadata.BotPromptSuggestions.$Shape;
 
         /**
          * Decodes a BotPromptSuggestions message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotPromptSuggestions
+         * @returns {BotMetadata.BotPromptSuggestions & BotMetadata.BotPromptSuggestions.$Shape} BotPromptSuggestions
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotPromptSuggestions;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotPromptSuggestions & BotMetadata.BotPromptSuggestions.$Shape;
 
         /**
          * Verifies a BotPromptSuggestions message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotPromptSuggestions message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotPromptSuggestions
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotPromptSuggestions;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotPromptSuggestions;
 
         /**
          * Creates a plain object from a BotPromptSuggestions message. Also converts values to other types if specified.
@@ -4895,65 +5846,76 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotPromptSuggestions, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotPromptSuggestions, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotPromptSuggestions to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotPromptSuggestions
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotPromptSuggestions
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a BotSuggestedPromptMetadata. */
-    interface IBotSuggestedPromptMetadata {
+    namespace BotPromptSuggestions {
 
-        /** BotSuggestedPromptMetadata suggestedPrompts */
-        suggestedPrompts?: (string[]|null);
+        /** Properties of a BotPromptSuggestions. */
+        interface $Properties {
 
-        /** BotSuggestedPromptMetadata selectedPromptIndex */
-        selectedPromptIndex?: (number|null);
+            /** BotPromptSuggestions suggestions */
+            suggestions?: (BotMetadata.BotPromptSuggestion.$Properties[]|null);
 
-        /** BotSuggestedPromptMetadata promptSuggestions */
-        promptSuggestions?: (BotMetadata.IBotPromptSuggestions|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
 
-        /** BotSuggestedPromptMetadata selectedPromptId */
-        selectedPromptId?: (string|null);
+        /** Shape of a BotPromptSuggestions. */
+        type $Shape = BotMetadata.BotPromptSuggestions.$Properties;
+    }
+
+    /**
+     * Properties of a BotSuggestedPromptMetadata.
+     * @deprecated Use BotMetadata.BotSuggestedPromptMetadata.$Properties instead.
+     */
+    interface IBotSuggestedPromptMetadata extends BotMetadata.BotSuggestedPromptMetadata.$Properties {
     }
 
     /** Represents a BotSuggestedPromptMetadata. */
-    class BotSuggestedPromptMetadata implements IBotSuggestedPromptMetadata {
+    class BotSuggestedPromptMetadata {
 
         /**
          * Constructs a new BotSuggestedPromptMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotSuggestedPromptMetadata);
+        constructor(properties?: BotMetadata.BotSuggestedPromptMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotSuggestedPromptMetadata suggestedPrompts. */
-        public suggestedPrompts: string[];
+        suggestedPrompts: string[];
 
         /** BotSuggestedPromptMetadata selectedPromptIndex. */
-        public selectedPromptIndex?: (number|null);
+        selectedPromptIndex?: (number|null);
 
         /** BotSuggestedPromptMetadata promptSuggestions. */
-        public promptSuggestions?: (BotMetadata.IBotPromptSuggestions|null);
+        promptSuggestions?: (BotMetadata.BotPromptSuggestions.$Properties|null);
 
         /** BotSuggestedPromptMetadata selectedPromptId. */
-        public selectedPromptId?: (string|null);
+        selectedPromptId?: (string|null);
 
         /**
          * Creates a new BotSuggestedPromptMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotSuggestedPromptMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotSuggestedPromptMetadata): BotMetadata.BotSuggestedPromptMetadata;
+        static create(properties: BotMetadata.BotSuggestedPromptMetadata.$Shape): BotMetadata.BotSuggestedPromptMetadata & BotMetadata.BotSuggestedPromptMetadata.$Shape;
+        static create(properties?: BotMetadata.BotSuggestedPromptMetadata.$Properties): BotMetadata.BotSuggestedPromptMetadata;
 
         /**
          * Encodes the specified BotSuggestedPromptMetadata message. Does not implicitly {@link BotMetadata.BotSuggestedPromptMetadata.verify|verify} messages.
@@ -4961,7 +5923,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotSuggestedPromptMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotSuggestedPromptMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotSuggestedPromptMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotSuggestedPromptMetadata.verify|verify} messages.
@@ -4969,40 +5931,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotSuggestedPromptMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotSuggestedPromptMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotSuggestedPromptMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotSuggestedPromptMetadata
+         * @returns {BotMetadata.BotSuggestedPromptMetadata & BotMetadata.BotSuggestedPromptMetadata.$Shape} BotSuggestedPromptMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSuggestedPromptMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSuggestedPromptMetadata & BotMetadata.BotSuggestedPromptMetadata.$Shape;
 
         /**
          * Decodes a BotSuggestedPromptMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotSuggestedPromptMetadata
+         * @returns {BotMetadata.BotSuggestedPromptMetadata & BotMetadata.BotSuggestedPromptMetadata.$Shape} BotSuggestedPromptMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSuggestedPromptMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSuggestedPromptMetadata & BotMetadata.BotSuggestedPromptMetadata.$Shape;
 
         /**
          * Verifies a BotSuggestedPromptMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotSuggestedPromptMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotSuggestedPromptMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotSuggestedPromptMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotSuggestedPromptMetadata;
 
         /**
          * Creates a plain object from a BotSuggestedPromptMetadata message. Also converts values to other types if specified.
@@ -5010,113 +5972,109 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotSuggestedPromptMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotSuggestedPromptMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotSuggestedPromptMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotSuggestedPromptMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotSuggestedPromptMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a BotPluginMetadata. */
-    interface IBotPluginMetadata {
+    namespace BotSuggestedPromptMetadata {
 
-        /** BotPluginMetadata provider */
-        provider?: (BotMetadata.BotPluginMetadata.SearchProvider|null);
+        /** Properties of a BotSuggestedPromptMetadata. */
+        interface $Properties {
 
-        /** BotPluginMetadata pluginType */
-        pluginType?: (BotMetadata.BotPluginMetadata.PluginType|null);
+            /** BotSuggestedPromptMetadata suggestedPrompts */
+            suggestedPrompts?: (string[]|null);
 
-        /** BotPluginMetadata thumbnailCdnUrl */
-        thumbnailCdnUrl?: (string|null);
+            /** BotSuggestedPromptMetadata selectedPromptIndex */
+            selectedPromptIndex?: (number|null);
 
-        /** BotPluginMetadata profilePhotoCdnUrl */
-        profilePhotoCdnUrl?: (string|null);
+            /** BotSuggestedPromptMetadata promptSuggestions */
+            promptSuggestions?: (BotMetadata.BotPromptSuggestions.$Properties|null);
 
-        /** BotPluginMetadata searchProviderUrl */
-        searchProviderUrl?: (string|null);
+            /** BotSuggestedPromptMetadata selectedPromptId */
+            selectedPromptId?: (string|null);
 
-        /** BotPluginMetadata referenceIndex */
-        referenceIndex?: (number|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
 
-        /** BotPluginMetadata expectedLinksCount */
-        expectedLinksCount?: (number|null);
+        /** Shape of a BotSuggestedPromptMetadata. */
+        type $Shape = BotMetadata.BotSuggestedPromptMetadata.$Properties;
+    }
 
-        /** BotPluginMetadata searchQuery */
-        searchQuery?: (string|null);
-
-        /** BotPluginMetadata parentPluginMessageKey */
-        parentPluginMessageKey?: (Protocol.IMessageKey|null);
-
-        /** BotPluginMetadata deprecatedField */
-        deprecatedField?: (BotMetadata.BotPluginMetadata.PluginType|null);
-
-        /** BotPluginMetadata parentPluginType */
-        parentPluginType?: (BotMetadata.BotPluginMetadata.PluginType|null);
-
-        /** BotPluginMetadata faviconCdnUrl */
-        faviconCdnUrl?: (string|null);
+    /**
+     * Properties of a BotPluginMetadata.
+     * @deprecated Use BotMetadata.BotPluginMetadata.$Properties instead.
+     */
+    interface IBotPluginMetadata extends BotMetadata.BotPluginMetadata.$Properties {
     }
 
     /** Represents a BotPluginMetadata. */
-    class BotPluginMetadata implements IBotPluginMetadata {
+    class BotPluginMetadata {
 
         /**
          * Constructs a new BotPluginMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotPluginMetadata);
+        constructor(properties?: BotMetadata.BotPluginMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotPluginMetadata provider. */
-        public provider?: (BotMetadata.BotPluginMetadata.SearchProvider|null);
+        provider?: (BotMetadata.BotPluginMetadata.SearchProvider|null);
 
         /** BotPluginMetadata pluginType. */
-        public pluginType?: (BotMetadata.BotPluginMetadata.PluginType|null);
+        pluginType?: (BotMetadata.BotPluginMetadata.PluginType|null);
 
         /** BotPluginMetadata thumbnailCdnUrl. */
-        public thumbnailCdnUrl?: (string|null);
+        thumbnailCdnUrl?: (string|null);
 
         /** BotPluginMetadata profilePhotoCdnUrl. */
-        public profilePhotoCdnUrl?: (string|null);
+        profilePhotoCdnUrl?: (string|null);
 
         /** BotPluginMetadata searchProviderUrl. */
-        public searchProviderUrl?: (string|null);
+        searchProviderUrl?: (string|null);
 
         /** BotPluginMetadata referenceIndex. */
-        public referenceIndex?: (number|null);
+        referenceIndex?: (number|null);
 
         /** BotPluginMetadata expectedLinksCount. */
-        public expectedLinksCount?: (number|null);
+        expectedLinksCount?: (number|null);
 
         /** BotPluginMetadata searchQuery. */
-        public searchQuery?: (string|null);
+        searchQuery?: (string|null);
 
         /** BotPluginMetadata parentPluginMessageKey. */
-        public parentPluginMessageKey?: (Protocol.IMessageKey|null);
+        parentPluginMessageKey?: (Protocol.MessageKey.$Properties|null);
 
         /** BotPluginMetadata deprecatedField. */
-        public deprecatedField?: (BotMetadata.BotPluginMetadata.PluginType|null);
+        deprecatedField?: (BotMetadata.BotPluginMetadata.PluginType|null);
 
         /** BotPluginMetadata parentPluginType. */
-        public parentPluginType?: (BotMetadata.BotPluginMetadata.PluginType|null);
+        parentPluginType?: (BotMetadata.BotPluginMetadata.PluginType|null);
 
         /** BotPluginMetadata faviconCdnUrl. */
-        public faviconCdnUrl?: (string|null);
+        faviconCdnUrl?: (string|null);
 
         /**
          * Creates a new BotPluginMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotPluginMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotPluginMetadata): BotMetadata.BotPluginMetadata;
+        static create(properties: BotMetadata.BotPluginMetadata.$Shape): BotMetadata.BotPluginMetadata & BotMetadata.BotPluginMetadata.$Shape;
+        static create(properties?: BotMetadata.BotPluginMetadata.$Properties): BotMetadata.BotPluginMetadata;
 
         /**
          * Encodes the specified BotPluginMetadata message. Does not implicitly {@link BotMetadata.BotPluginMetadata.verify|verify} messages.
@@ -5124,7 +6082,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotPluginMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotPluginMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotPluginMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotPluginMetadata.verify|verify} messages.
@@ -5132,40 +6090,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotPluginMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotPluginMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotPluginMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotPluginMetadata
+         * @returns {BotMetadata.BotPluginMetadata & BotMetadata.BotPluginMetadata.$Shape} BotPluginMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotPluginMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotPluginMetadata & BotMetadata.BotPluginMetadata.$Shape;
 
         /**
          * Decodes a BotPluginMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotPluginMetadata
+         * @returns {BotMetadata.BotPluginMetadata & BotMetadata.BotPluginMetadata.$Shape} BotPluginMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotPluginMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotPluginMetadata & BotMetadata.BotPluginMetadata.$Shape;
 
         /**
          * Verifies a BotPluginMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotPluginMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotPluginMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotPluginMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotPluginMetadata;
 
         /**
          * Creates a plain object from a BotPluginMetadata message. Also converts values to other types if specified.
@@ -5173,89 +6131,141 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotPluginMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotPluginMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotPluginMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotPluginMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotPluginMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace BotPluginMetadata {
 
+        /** Properties of a BotPluginMetadata. */
+        interface $Properties {
+
+            /** BotPluginMetadata provider */
+            provider?: (BotMetadata.BotPluginMetadata.SearchProvider|null);
+
+            /** BotPluginMetadata pluginType */
+            pluginType?: (BotMetadata.BotPluginMetadata.PluginType|null);
+
+            /** BotPluginMetadata thumbnailCdnUrl */
+            thumbnailCdnUrl?: (string|null);
+
+            /** BotPluginMetadata profilePhotoCdnUrl */
+            profilePhotoCdnUrl?: (string|null);
+
+            /** BotPluginMetadata searchProviderUrl */
+            searchProviderUrl?: (string|null);
+
+            /** BotPluginMetadata referenceIndex */
+            referenceIndex?: (number|null);
+
+            /** BotPluginMetadata expectedLinksCount */
+            expectedLinksCount?: (number|null);
+
+            /** BotPluginMetadata searchQuery */
+            searchQuery?: (string|null);
+
+            /** BotPluginMetadata parentPluginMessageKey */
+            parentPluginMessageKey?: (Protocol.MessageKey.$Properties|null);
+
+            /** BotPluginMetadata deprecatedField */
+            deprecatedField?: (BotMetadata.BotPluginMetadata.PluginType|null);
+
+            /** BotPluginMetadata parentPluginType */
+            parentPluginType?: (BotMetadata.BotPluginMetadata.PluginType|null);
+
+            /** BotPluginMetadata faviconCdnUrl */
+            faviconCdnUrl?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotPluginMetadata. */
+        type $Shape = BotMetadata.BotPluginMetadata.$Properties;
+
         /** PluginType enum. */
         enum PluginType {
+
+            /** UNKNOWN_PLUGIN value */
             UNKNOWN_PLUGIN = 0,
+
+            /** REELS value */
             REELS = 1,
+
+            /** SEARCH value */
             SEARCH = 2
         }
 
         /** SearchProvider enum. */
         enum SearchProvider {
+
+            /** UNKNOWN value */
             UNKNOWN = 0,
+
+            /** BING value */
             BING = 1,
+
+            /** GOOGLE value */
             GOOGLE = 2,
+
+            /** SUPPORT value */
             SUPPORT = 3
         }
     }
 
-    /** Properties of a BotAvatarMetadata. */
-    interface IBotAvatarMetadata {
-
-        /** BotAvatarMetadata sentiment */
-        sentiment?: (number|null);
-
-        /** BotAvatarMetadata behaviorGraph */
-        behaviorGraph?: (string|null);
-
-        /** BotAvatarMetadata action */
-        action?: (number|null);
-
-        /** BotAvatarMetadata intensity */
-        intensity?: (number|null);
-
-        /** BotAvatarMetadata wordCount */
-        wordCount?: (number|null);
+    /**
+     * Properties of a BotAvatarMetadata.
+     * @deprecated Use BotMetadata.BotAvatarMetadata.$Properties instead.
+     */
+    interface IBotAvatarMetadata extends BotMetadata.BotAvatarMetadata.$Properties {
     }
 
     /** Represents a BotAvatarMetadata. */
-    class BotAvatarMetadata implements IBotAvatarMetadata {
+    class BotAvatarMetadata {
 
         /**
          * Constructs a new BotAvatarMetadata.
          * @param [properties] Properties to set
          */
-        constructor(properties?: BotMetadata.IBotAvatarMetadata);
+        constructor(properties?: BotMetadata.BotAvatarMetadata.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** BotAvatarMetadata sentiment. */
-        public sentiment?: (number|null);
+        sentiment?: (number|null);
 
         /** BotAvatarMetadata behaviorGraph. */
-        public behaviorGraph?: (string|null);
+        behaviorGraph?: (string|null);
 
         /** BotAvatarMetadata action. */
-        public action?: (number|null);
+        action?: (number|null);
 
         /** BotAvatarMetadata intensity. */
-        public intensity?: (number|null);
+        intensity?: (number|null);
 
         /** BotAvatarMetadata wordCount. */
-        public wordCount?: (number|null);
+        wordCount?: (number|null);
 
         /**
          * Creates a new BotAvatarMetadata instance using the specified properties.
          * @param [properties] Properties to set
          * @returns BotAvatarMetadata instance
          */
-        public static create(properties?: BotMetadata.IBotAvatarMetadata): BotMetadata.BotAvatarMetadata;
+        static create(properties: BotMetadata.BotAvatarMetadata.$Shape): BotMetadata.BotAvatarMetadata & BotMetadata.BotAvatarMetadata.$Shape;
+        static create(properties?: BotMetadata.BotAvatarMetadata.$Properties): BotMetadata.BotAvatarMetadata;
 
         /**
          * Encodes the specified BotAvatarMetadata message. Does not implicitly {@link BotMetadata.BotAvatarMetadata.verify|verify} messages.
@@ -5263,7 +6273,7 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: BotMetadata.IBotAvatarMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: BotMetadata.BotAvatarMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BotAvatarMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotAvatarMetadata.verify|verify} messages.
@@ -5271,40 +6281,40 @@ export namespace BotMetadata {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: BotMetadata.IBotAvatarMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: BotMetadata.BotAvatarMetadata.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BotAvatarMetadata message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns BotAvatarMetadata
+         * @returns {BotMetadata.BotAvatarMetadata & BotMetadata.BotAvatarMetadata.$Shape} BotAvatarMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotAvatarMetadata;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotAvatarMetadata & BotMetadata.BotAvatarMetadata.$Shape;
 
         /**
          * Decodes a BotAvatarMetadata message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns BotAvatarMetadata
+         * @returns {BotMetadata.BotAvatarMetadata & BotMetadata.BotAvatarMetadata.$Shape} BotAvatarMetadata
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotAvatarMetadata;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotAvatarMetadata & BotMetadata.BotAvatarMetadata.$Shape;
 
         /**
          * Verifies a BotAvatarMetadata message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a BotAvatarMetadata message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns BotAvatarMetadata
          */
-        public static fromObject(object: { [k: string]: any }): BotMetadata.BotAvatarMetadata;
+        static fromObject(object: { [k: string]: any }): BotMetadata.BotAvatarMetadata;
 
         /**
          * Creates a plain object from a BotAvatarMetadata message. Also converts values to other types if specified.
@@ -5312,74 +6322,188 @@ export namespace BotMetadata {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: BotMetadata.BotAvatarMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: BotMetadata.BotAvatarMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this BotAvatarMetadata to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for BotAvatarMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for BotAvatarMetadata
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace BotAvatarMetadata {
+
+        /** Properties of a BotAvatarMetadata. */
+        interface $Properties {
+
+            /** BotAvatarMetadata sentiment */
+            sentiment?: (number|null);
+
+            /** BotAvatarMetadata behaviorGraph */
+            behaviorGraph?: (string|null);
+
+            /** BotAvatarMetadata action */
+            action?: (number|null);
+
+            /** BotAvatarMetadata intensity */
+            intensity?: (number|null);
+
+            /** BotAvatarMetadata wordCount */
+            wordCount?: (number|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BotAvatarMetadata. */
+        type $Shape = BotMetadata.BotAvatarMetadata.$Properties;
     }
 
     /** BotSessionSource enum. */
     enum BotSessionSource {
+
+        /** NONE value */
         NONE = 0,
+
+        /** NULL_STATE value */
         NULL_STATE = 1,
+
+        /** TYPEAHEAD value */
         TYPEAHEAD = 2,
+
+        /** USER_INPUT value */
         USER_INPUT = 3,
+
+        /** EMU_FLASH value */
         EMU_FLASH = 4,
+
+        /** EMU_FLASH_FOLLOWUP value */
         EMU_FLASH_FOLLOWUP = 5,
+
+        /** VOICE value */
         VOICE = 6
     }
 
     /** BotMetricsThreadEntryPoint enum. */
     enum BotMetricsThreadEntryPoint {
+
+        /** AI_TAB_THREAD value */
         AI_TAB_THREAD = 1,
+
+        /** AI_HOME_THREAD value */
         AI_HOME_THREAD = 2,
+
+        /** AI_DEEPLINK_IMMERSIVE_THREAD value */
         AI_DEEPLINK_IMMERSIVE_THREAD = 3,
+
+        /** AI_DEEPLINK_THREAD value */
         AI_DEEPLINK_THREAD = 4,
+
+        /** ASK_META_AI_CONTEXT_MENU_THREAD value */
         ASK_META_AI_CONTEXT_MENU_THREAD = 5
     }
 
     /** BotMetricsEntryPoint enum. */
     enum BotMetricsEntryPoint {
+
+        /** FAVICON value */
         FAVICON = 1,
+
+        /** CHATLIST value */
         CHATLIST = 2,
+
+        /** AISEARCH_NULL_STATE_PAPER_PLANE value */
         AISEARCH_NULL_STATE_PAPER_PLANE = 3,
+
+        /** AISEARCH_NULL_STATE_SUGGESTION value */
         AISEARCH_NULL_STATE_SUGGESTION = 4,
+
+        /** AISEARCH_TYPE_AHEAD_SUGGESTION value */
         AISEARCH_TYPE_AHEAD_SUGGESTION = 5,
+
+        /** AISEARCH_TYPE_AHEAD_PAPER_PLANE value */
         AISEARCH_TYPE_AHEAD_PAPER_PLANE = 6,
+
+        /** AISEARCH_TYPE_AHEAD_RESULT_CHATLIST value */
         AISEARCH_TYPE_AHEAD_RESULT_CHATLIST = 7,
+
+        /** AISEARCH_TYPE_AHEAD_RESULT_MESSAGES value */
         AISEARCH_TYPE_AHEAD_RESULT_MESSAGES = 8,
+
+        /** AIVOICE_SEARCH_BAR value */
         AIVOICE_SEARCH_BAR = 9,
+
+        /** AIVOICE_FAVICON value */
         AIVOICE_FAVICON = 10,
+
+        /** AISTUDIO value */
         AISTUDIO = 11,
+
+        /** DEEPLINK value */
         DEEPLINK = 12,
+
+        /** NOTIFICATION value */
         NOTIFICATION = 13,
+
+        /** PROFILE_MESSAGE_BUTTON value */
         PROFILE_MESSAGE_BUTTON = 14,
+
+        /** FORWARD value */
         FORWARD = 15,
+
+        /** APP_SHORTCUT value */
         APP_SHORTCUT = 16,
+
+        /** FF_FAMILY value */
         FF_FAMILY = 17,
+
+        /** AI_TAB value */
         AI_TAB = 18,
+
+        /** AI_HOME value */
         AI_HOME = 19,
+
+        /** AI_DEEPLINK_IMMERSIVE value */
         AI_DEEPLINK_IMMERSIVE = 20,
+
+        /** AI_DEEPLINK value */
         AI_DEEPLINK = 21,
+
+        /** META_AI_CHAT_SHORTCUT_AI_STUDIO value */
         META_AI_CHAT_SHORTCUT_AI_STUDIO = 22,
+
+        /** UGC_CHAT_SHORTCUT_AI_STUDIO value */
         UGC_CHAT_SHORTCUT_AI_STUDIO = 23,
+
+        /** NEW_CHAT_AI_STUDIO value */
         NEW_CHAT_AI_STUDIO = 24,
+
+        /** AIVOICE_FAVICON_CALL_HISTORY value */
         AIVOICE_FAVICON_CALL_HISTORY = 25,
+
+        /** ASK_META_AI_CONTEXT_MENU value */
         ASK_META_AI_CONTEXT_MENU = 26,
+
+        /** ASK_META_AI_CONTEXT_MENU_1ON1 value */
         ASK_META_AI_CONTEXT_MENU_1ON1 = 27,
+
+        /** ASK_META_AI_CONTEXT_MENU_GROUP value */
         ASK_META_AI_CONTEXT_MENU_GROUP = 28,
+
+        /** INVOKE_META_AI_1ON1 value */
         INVOKE_META_AI_1ON1 = 29,
+
+        /** INVOKE_META_AI_GROUP value */
         INVOKE_META_AI_GROUP = 30,
+
+        /** META_AI_FORWARD value */
         META_AI_FORWARD = 31
     }
 }
@@ -5387,49 +6511,44 @@ export namespace BotMetadata {
 /** Namespace Protocol. */
 export namespace Protocol {
 
-    /** Properties of a ACP2Setting. */
-    interface IACP2Setting {
-
-        /** ACP2Setting enabled */
-        enabled?: (boolean|null);
-
-        /** ACP2Setting trigger */
-        trigger?: (Protocol.LimitSharing.TriggerType|null);
-
-        /** ACP2Setting settingTimestamp */
-        settingTimestamp?: (number|Long|null);
-
-        /** ACP2Setting initiatedByMe */
-        initiatedByMe?: (boolean|null);
+    /**
+     * Properties of a ACP2Setting.
+     * @deprecated Use Protocol.ACP2Setting.$Properties instead.
+     */
+    interface IACP2Setting extends Protocol.ACP2Setting.$Properties {
     }
 
     /** Represents a ACP2Setting. */
-    class ACP2Setting implements IACP2Setting {
+    class ACP2Setting {
 
         /**
          * Constructs a new ACP2Setting.
          * @param [properties] Properties to set
          */
-        constructor(properties?: Protocol.IACP2Setting);
+        constructor(properties?: Protocol.ACP2Setting.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** ACP2Setting enabled. */
-        public enabled?: (boolean|null);
+        enabled?: (boolean|null);
 
         /** ACP2Setting trigger. */
-        public trigger?: (Protocol.LimitSharing.TriggerType|null);
+        trigger?: (Protocol.LimitSharing.TriggerType|null);
 
         /** ACP2Setting settingTimestamp. */
-        public settingTimestamp?: (number|Long|null);
+        settingTimestamp?: (number|Long|null);
 
         /** ACP2Setting initiatedByMe. */
-        public initiatedByMe?: (boolean|null);
+        initiatedByMe?: (boolean|null);
 
         /**
          * Creates a new ACP2Setting instance using the specified properties.
          * @param [properties] Properties to set
          * @returns ACP2Setting instance
          */
-        public static create(properties?: Protocol.IACP2Setting): Protocol.ACP2Setting;
+        static create(properties: Protocol.ACP2Setting.$Shape): Protocol.ACP2Setting & Protocol.ACP2Setting.$Shape;
+        static create(properties?: Protocol.ACP2Setting.$Properties): Protocol.ACP2Setting;
 
         /**
          * Encodes the specified ACP2Setting message. Does not implicitly {@link Protocol.ACP2Setting.verify|verify} messages.
@@ -5437,7 +6556,7 @@ export namespace Protocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: Protocol.IACP2Setting, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: Protocol.ACP2Setting.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ACP2Setting message, length delimited. Does not implicitly {@link Protocol.ACP2Setting.verify|verify} messages.
@@ -5445,40 +6564,40 @@ export namespace Protocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: Protocol.IACP2Setting, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: Protocol.ACP2Setting.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ACP2Setting message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns ACP2Setting
+         * @returns {Protocol.ACP2Setting & Protocol.ACP2Setting.$Shape} ACP2Setting
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Protocol.ACP2Setting;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Protocol.ACP2Setting & Protocol.ACP2Setting.$Shape;
 
         /**
          * Decodes a ACP2Setting message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns ACP2Setting
+         * @returns {Protocol.ACP2Setting & Protocol.ACP2Setting.$Shape} ACP2Setting
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Protocol.ACP2Setting;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Protocol.ACP2Setting & Protocol.ACP2Setting.$Shape;
 
         /**
          * Verifies a ACP2Setting message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a ACP2Setting message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns ACP2Setting
          */
-        public static fromObject(object: { [k: string]: any }): Protocol.ACP2Setting;
+        static fromObject(object: { [k: string]: any }): Protocol.ACP2Setting;
 
         /**
          * Creates a plain object from a ACP2Setting message. Also converts values to other types if specified.
@@ -5486,65 +6605,85 @@ export namespace Protocol {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: Protocol.ACP2Setting, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: Protocol.ACP2Setting, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ACP2Setting to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for ACP2Setting
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for ACP2Setting
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a LimitSharing. */
-    interface ILimitSharing {
+    namespace ACP2Setting {
 
-        /** LimitSharing sharingLimited */
-        sharingLimited?: (boolean|null);
+        /** Properties of a ACP2Setting. */
+        interface $Properties {
 
-        /** LimitSharing trigger */
-        trigger?: (Protocol.LimitSharing.TriggerType|null);
+            /** ACP2Setting enabled */
+            enabled?: (boolean|null);
 
-        /** LimitSharing limitSharingSettingTimestamp */
-        limitSharingSettingTimestamp?: (number|Long|null);
+            /** ACP2Setting trigger */
+            trigger?: (Protocol.LimitSharing.TriggerType|null);
 
-        /** LimitSharing initiatedByMe */
-        initiatedByMe?: (boolean|null);
+            /** ACP2Setting settingTimestamp */
+            settingTimestamp?: (number|Long|null);
+
+            /** ACP2Setting initiatedByMe */
+            initiatedByMe?: (boolean|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a ACP2Setting. */
+        type $Shape = Protocol.ACP2Setting.$Properties;
+    }
+
+    /**
+     * Properties of a LimitSharing.
+     * @deprecated Use Protocol.LimitSharing.$Properties instead.
+     */
+    interface ILimitSharing extends Protocol.LimitSharing.$Properties {
     }
 
     /** Represents a LimitSharing. */
-    class LimitSharing implements ILimitSharing {
+    class LimitSharing {
 
         /**
          * Constructs a new LimitSharing.
          * @param [properties] Properties to set
          */
-        constructor(properties?: Protocol.ILimitSharing);
+        constructor(properties?: Protocol.LimitSharing.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** LimitSharing sharingLimited. */
-        public sharingLimited?: (boolean|null);
+        sharingLimited?: (boolean|null);
 
         /** LimitSharing trigger. */
-        public trigger?: (Protocol.LimitSharing.TriggerType|null);
+        trigger?: (Protocol.LimitSharing.TriggerType|null);
 
         /** LimitSharing limitSharingSettingTimestamp. */
-        public limitSharingSettingTimestamp?: (number|Long|null);
+        limitSharingSettingTimestamp?: (number|Long|null);
 
         /** LimitSharing initiatedByMe. */
-        public initiatedByMe?: (boolean|null);
+        initiatedByMe?: (boolean|null);
 
         /**
          * Creates a new LimitSharing instance using the specified properties.
          * @param [properties] Properties to set
          * @returns LimitSharing instance
          */
-        public static create(properties?: Protocol.ILimitSharing): Protocol.LimitSharing;
+        static create(properties: Protocol.LimitSharing.$Shape): Protocol.LimitSharing & Protocol.LimitSharing.$Shape;
+        static create(properties?: Protocol.LimitSharing.$Properties): Protocol.LimitSharing;
 
         /**
          * Encodes the specified LimitSharing message. Does not implicitly {@link Protocol.LimitSharing.verify|verify} messages.
@@ -5552,7 +6691,7 @@ export namespace Protocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: Protocol.ILimitSharing, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: Protocol.LimitSharing.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified LimitSharing message, length delimited. Does not implicitly {@link Protocol.LimitSharing.verify|verify} messages.
@@ -5560,40 +6699,40 @@ export namespace Protocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: Protocol.ILimitSharing, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: Protocol.LimitSharing.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a LimitSharing message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns LimitSharing
+         * @returns {Protocol.LimitSharing & Protocol.LimitSharing.$Shape} LimitSharing
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Protocol.LimitSharing;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Protocol.LimitSharing & Protocol.LimitSharing.$Shape;
 
         /**
          * Decodes a LimitSharing message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns LimitSharing
+         * @returns {Protocol.LimitSharing & Protocol.LimitSharing.$Shape} LimitSharing
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Protocol.LimitSharing;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Protocol.LimitSharing & Protocol.LimitSharing.$Shape;
 
         /**
          * Verifies a LimitSharing message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a LimitSharing message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns LimitSharing
          */
-        public static fromObject(object: { [k: string]: any }): Protocol.LimitSharing;
+        static fromObject(object: { [k: string]: any }): Protocol.LimitSharing;
 
         /**
          * Creates a plain object from a LimitSharing message. Also converts values to other types if specified.
@@ -5601,76 +6740,101 @@ export namespace Protocol {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: Protocol.LimitSharing, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: Protocol.LimitSharing, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this LimitSharing to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for LimitSharing
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for LimitSharing
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace LimitSharing {
 
+        /** Properties of a LimitSharing. */
+        interface $Properties {
+
+            /** LimitSharing sharingLimited */
+            sharingLimited?: (boolean|null);
+
+            /** LimitSharing trigger */
+            trigger?: (Protocol.LimitSharing.TriggerType|null);
+
+            /** LimitSharing limitSharingSettingTimestamp */
+            limitSharingSettingTimestamp?: (number|Long|null);
+
+            /** LimitSharing initiatedByMe */
+            initiatedByMe?: (boolean|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a LimitSharing. */
+        type $Shape = Protocol.LimitSharing.$Properties;
+
         /** TriggerType enum. */
         enum TriggerType {
+
+            /** UNKNOWN value */
             UNKNOWN = 0,
+
+            /** CHAT_SETTING value */
             CHAT_SETTING = 1,
+
+            /** BIZ_SUPPORTS_FB_HOSTING value */
             BIZ_SUPPORTS_FB_HOSTING = 2,
+
+            /** UNKNOWN_GROUP value */
             UNKNOWN_GROUP = 3
         }
     }
 
-    /** Properties of a MessageKey. */
-    interface IMessageKey {
-
-        /** MessageKey remoteJid */
-        remoteJid?: (string|null);
-
-        /** MessageKey fromMe */
-        fromMe?: (boolean|null);
-
-        /** MessageKey id */
-        id?: (string|null);
-
-        /** MessageKey participant */
-        participant?: (string|null);
+    /**
+     * Properties of a MessageKey.
+     * @deprecated Use Protocol.MessageKey.$Properties instead.
+     */
+    interface IMessageKey extends Protocol.MessageKey.$Properties {
     }
 
     /** Represents a MessageKey. */
-    class MessageKey implements IMessageKey {
+    class MessageKey {
 
         /**
          * Constructs a new MessageKey.
          * @param [properties] Properties to set
          */
-        constructor(properties?: Protocol.IMessageKey);
+        constructor(properties?: Protocol.MessageKey.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** MessageKey remoteJid. */
-        public remoteJid?: (string|null);
+        remoteJid?: (string|null);
 
         /** MessageKey fromMe. */
-        public fromMe?: (boolean|null);
+        fromMe?: (boolean|null);
 
         /** MessageKey id. */
-        public id?: (string|null);
+        id?: (string|null);
 
         /** MessageKey participant. */
-        public participant?: (string|null);
+        participant?: (string|null);
 
         /**
          * Creates a new MessageKey instance using the specified properties.
          * @param [properties] Properties to set
          * @returns MessageKey instance
          */
-        public static create(properties?: Protocol.IMessageKey): Protocol.MessageKey;
+        static create(properties: Protocol.MessageKey.$Shape): Protocol.MessageKey & Protocol.MessageKey.$Shape;
+        static create(properties?: Protocol.MessageKey.$Properties): Protocol.MessageKey;
 
         /**
          * Encodes the specified MessageKey message. Does not implicitly {@link Protocol.MessageKey.verify|verify} messages.
@@ -5678,7 +6842,7 @@ export namespace Protocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: Protocol.IMessageKey, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: Protocol.MessageKey.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified MessageKey message, length delimited. Does not implicitly {@link Protocol.MessageKey.verify|verify} messages.
@@ -5686,40 +6850,40 @@ export namespace Protocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: Protocol.IMessageKey, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: Protocol.MessageKey.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a MessageKey message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns MessageKey
+         * @returns {Protocol.MessageKey & Protocol.MessageKey.$Shape} MessageKey
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Protocol.MessageKey;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Protocol.MessageKey & Protocol.MessageKey.$Shape;
 
         /**
          * Decodes a MessageKey message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns MessageKey
+         * @returns {Protocol.MessageKey & Protocol.MessageKey.$Shape} MessageKey
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Protocol.MessageKey;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Protocol.MessageKey & Protocol.MessageKey.$Shape;
 
         /**
          * Verifies a MessageKey message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a MessageKey message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns MessageKey
          */
-        public static fromObject(object: { [k: string]: any }): Protocol.MessageKey;
+        static fromObject(object: { [k: string]: any }): Protocol.MessageKey;
 
         /**
          * Creates a plain object from a MessageKey message. Also converts values to other types if specified.
@@ -5727,19 +6891,44 @@ export namespace Protocol {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: Protocol.MessageKey, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: Protocol.MessageKey, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this MessageKey to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for MessageKey
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for MessageKey
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace MessageKey {
+
+        /** Properties of a MessageKey. */
+        interface $Properties {
+
+            /** MessageKey remoteJid */
+            remoteJid?: (string|null);
+
+            /** MessageKey fromMe */
+            fromMe?: (boolean|null);
+
+            /** MessageKey id */
+            id?: (string|null);
+
+            /** MessageKey participant */
+            participant?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a MessageKey. */
+        type $Shape = Protocol.MessageKey.$Properties;
     }
 }

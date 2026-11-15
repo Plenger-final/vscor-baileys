@@ -1,33 +1,38 @@
 import * as $protobuf from "protobufjs";
 import Long = require("long");
+
 /** Namespace MmsRetry. */
 export namespace MmsRetry {
 
-    /** Properties of a ServerErrorReceipt. */
-    interface IServerErrorReceipt {
-
-        /** ServerErrorReceipt stanzaId */
-        stanzaId?: (string|null);
+    /**
+     * Properties of a ServerErrorReceipt.
+     * @deprecated Use MmsRetry.ServerErrorReceipt.$Properties instead.
+     */
+    interface IServerErrorReceipt extends MmsRetry.ServerErrorReceipt.$Properties {
     }
 
     /** Represents a ServerErrorReceipt. */
-    class ServerErrorReceipt implements IServerErrorReceipt {
+    class ServerErrorReceipt {
 
         /**
          * Constructs a new ServerErrorReceipt.
          * @param [properties] Properties to set
          */
-        constructor(properties?: MmsRetry.IServerErrorReceipt);
+        constructor(properties?: MmsRetry.ServerErrorReceipt.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** ServerErrorReceipt stanzaId. */
-        public stanzaId?: (string|null);
+        stanzaId?: (string|null);
 
         /**
          * Creates a new ServerErrorReceipt instance using the specified properties.
          * @param [properties] Properties to set
          * @returns ServerErrorReceipt instance
          */
-        public static create(properties?: MmsRetry.IServerErrorReceipt): MmsRetry.ServerErrorReceipt;
+        static create(properties: MmsRetry.ServerErrorReceipt.$Shape): MmsRetry.ServerErrorReceipt & MmsRetry.ServerErrorReceipt.$Shape;
+        static create(properties?: MmsRetry.ServerErrorReceipt.$Properties): MmsRetry.ServerErrorReceipt;
 
         /**
          * Encodes the specified ServerErrorReceipt message. Does not implicitly {@link MmsRetry.ServerErrorReceipt.verify|verify} messages.
@@ -35,7 +40,7 @@ export namespace MmsRetry {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: MmsRetry.IServerErrorReceipt, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: MmsRetry.ServerErrorReceipt.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ServerErrorReceipt message, length delimited. Does not implicitly {@link MmsRetry.ServerErrorReceipt.verify|verify} messages.
@@ -43,40 +48,40 @@ export namespace MmsRetry {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: MmsRetry.IServerErrorReceipt, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: MmsRetry.ServerErrorReceipt.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ServerErrorReceipt message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns ServerErrorReceipt
+         * @returns {MmsRetry.ServerErrorReceipt & MmsRetry.ServerErrorReceipt.$Shape} ServerErrorReceipt
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): MmsRetry.ServerErrorReceipt;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): MmsRetry.ServerErrorReceipt & MmsRetry.ServerErrorReceipt.$Shape;
 
         /**
          * Decodes a ServerErrorReceipt message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns ServerErrorReceipt
+         * @returns {MmsRetry.ServerErrorReceipt & MmsRetry.ServerErrorReceipt.$Shape} ServerErrorReceipt
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): MmsRetry.ServerErrorReceipt;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): MmsRetry.ServerErrorReceipt & MmsRetry.ServerErrorReceipt.$Shape;
 
         /**
          * Verifies a ServerErrorReceipt message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a ServerErrorReceipt message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns ServerErrorReceipt
          */
-        public static fromObject(object: { [k: string]: any }): MmsRetry.ServerErrorReceipt;
+        static fromObject(object: { [k: string]: any }): MmsRetry.ServerErrorReceipt;
 
         /**
          * Creates a plain object from a ServerErrorReceipt message. Also converts values to other types if specified.
@@ -84,65 +89,76 @@ export namespace MmsRetry {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: MmsRetry.ServerErrorReceipt, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: MmsRetry.ServerErrorReceipt, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ServerErrorReceipt to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for ServerErrorReceipt
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for ServerErrorReceipt
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a MediaRetryNotification. */
-    interface IMediaRetryNotification {
+    namespace ServerErrorReceipt {
 
-        /** MediaRetryNotification stanzaId */
-        stanzaId?: (string|null);
+        /** Properties of a ServerErrorReceipt. */
+        interface $Properties {
 
-        /** MediaRetryNotification directPath */
-        directPath?: (string|null);
+            /** ServerErrorReceipt stanzaId */
+            stanzaId?: (string|null);
 
-        /** MediaRetryNotification result */
-        result?: (MmsRetry.MediaRetryNotification.ResultType|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
 
-        /** MediaRetryNotification messageSecret */
-        messageSecret?: (Uint8Array|null);
+        /** Shape of a ServerErrorReceipt. */
+        type $Shape = MmsRetry.ServerErrorReceipt.$Properties;
+    }
+
+    /**
+     * Properties of a MediaRetryNotification.
+     * @deprecated Use MmsRetry.MediaRetryNotification.$Properties instead.
+     */
+    interface IMediaRetryNotification extends MmsRetry.MediaRetryNotification.$Properties {
     }
 
     /** Represents a MediaRetryNotification. */
-    class MediaRetryNotification implements IMediaRetryNotification {
+    class MediaRetryNotification {
 
         /**
          * Constructs a new MediaRetryNotification.
          * @param [properties] Properties to set
          */
-        constructor(properties?: MmsRetry.IMediaRetryNotification);
+        constructor(properties?: MmsRetry.MediaRetryNotification.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** MediaRetryNotification stanzaId. */
-        public stanzaId?: (string|null);
+        stanzaId?: (string|null);
 
         /** MediaRetryNotification directPath. */
-        public directPath?: (string|null);
+        directPath?: (string|null);
 
         /** MediaRetryNotification result. */
-        public result?: (MmsRetry.MediaRetryNotification.ResultType|null);
+        result?: (MmsRetry.MediaRetryNotification.ResultType|null);
 
         /** MediaRetryNotification messageSecret. */
-        public messageSecret?: (Uint8Array|null);
+        messageSecret?: (Uint8Array|null);
 
         /**
          * Creates a new MediaRetryNotification instance using the specified properties.
          * @param [properties] Properties to set
          * @returns MediaRetryNotification instance
          */
-        public static create(properties?: MmsRetry.IMediaRetryNotification): MmsRetry.MediaRetryNotification;
+        static create(properties: MmsRetry.MediaRetryNotification.$Shape): MmsRetry.MediaRetryNotification & MmsRetry.MediaRetryNotification.$Shape;
+        static create(properties?: MmsRetry.MediaRetryNotification.$Properties): MmsRetry.MediaRetryNotification;
 
         /**
          * Encodes the specified MediaRetryNotification message. Does not implicitly {@link MmsRetry.MediaRetryNotification.verify|verify} messages.
@@ -150,7 +166,7 @@ export namespace MmsRetry {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: MmsRetry.IMediaRetryNotification, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: MmsRetry.MediaRetryNotification.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified MediaRetryNotification message, length delimited. Does not implicitly {@link MmsRetry.MediaRetryNotification.verify|verify} messages.
@@ -158,40 +174,40 @@ export namespace MmsRetry {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: MmsRetry.IMediaRetryNotification, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: MmsRetry.MediaRetryNotification.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a MediaRetryNotification message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns MediaRetryNotification
+         * @returns {MmsRetry.MediaRetryNotification & MmsRetry.MediaRetryNotification.$Shape} MediaRetryNotification
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): MmsRetry.MediaRetryNotification;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): MmsRetry.MediaRetryNotification & MmsRetry.MediaRetryNotification.$Shape;
 
         /**
          * Decodes a MediaRetryNotification message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns MediaRetryNotification
+         * @returns {MmsRetry.MediaRetryNotification & MmsRetry.MediaRetryNotification.$Shape} MediaRetryNotification
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): MmsRetry.MediaRetryNotification;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): MmsRetry.MediaRetryNotification & MmsRetry.MediaRetryNotification.$Shape;
 
         /**
          * Verifies a MediaRetryNotification message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a MediaRetryNotification message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns MediaRetryNotification
          */
-        public static fromObject(object: { [k: string]: any }): MmsRetry.MediaRetryNotification;
+        static fromObject(object: { [k: string]: any }): MmsRetry.MediaRetryNotification;
 
         /**
          * Creates a plain object from a MediaRetryNotification message. Also converts values to other types if specified.
@@ -199,29 +215,59 @@ export namespace MmsRetry {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: MmsRetry.MediaRetryNotification, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: MmsRetry.MediaRetryNotification, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this MediaRetryNotification to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for MediaRetryNotification
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for MediaRetryNotification
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace MediaRetryNotification {
 
+        /** Properties of a MediaRetryNotification. */
+        interface $Properties {
+
+            /** MediaRetryNotification stanzaId */
+            stanzaId?: (string|null);
+
+            /** MediaRetryNotification directPath */
+            directPath?: (string|null);
+
+            /** MediaRetryNotification result */
+            result?: (MmsRetry.MediaRetryNotification.ResultType|null);
+
+            /** MediaRetryNotification messageSecret */
+            messageSecret?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a MediaRetryNotification. */
+        type $Shape = MmsRetry.MediaRetryNotification.$Properties;
+
         /** ResultType enum. */
         enum ResultType {
+
+            /** GENERAL_ERROR value */
             GENERAL_ERROR = 0,
+
+            /** SUCCESS value */
             SUCCESS = 1,
+
+            /** NOT_FOUND value */
             NOT_FOUND = 2,
+
+            /** DECRYPTION_ERROR value */
             DECRYPTION_ERROR = 3
         }
     }

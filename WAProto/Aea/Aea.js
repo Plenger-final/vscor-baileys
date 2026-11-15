@@ -1,10 +1,11 @@
-/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
+/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-mixed-operators, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars, default-case, jsdoc/require-param*/
 "use strict";
 
 var $protobuf = require("protobufjs/minimal");
 
 // Common aliases
 var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
+var $Object = $util.global.Object, $undefined = $util.global.undefined, $Error = $util.global.Error, $RangeError = $util.global.RangeError, $TypeError = $util.global.TypeError, $String = $util.global.String;
 
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
@@ -22,25 +23,38 @@ $root.Aea = (function() {
 
         /**
          * Properties of a NonE2EEAttestation.
+         * @typedef {Object} Aea.NonE2EEAttestation.$Properties
+         * @property {Aea.NonE2EEAttestation.AccountType|null} [accountType] NonE2EEAttestation accountType
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a NonE2EEAttestation.
          * @memberof Aea
          * @interface INonE2EEAttestation
-         * @property {Aea.NonE2EEAttestation.AccountType|null} [accountType] NonE2EEAttestation accountType
+         * @augments Aea.NonE2EEAttestation.$Properties
+         * @deprecated Use Aea.NonE2EEAttestation.$Properties instead.
+         */
+
+        /**
+         * Shape of a NonE2EEAttestation.
+         * @typedef {Aea.NonE2EEAttestation.$Properties} Aea.NonE2EEAttestation.$Shape
          */
 
         /**
          * Constructs a new NonE2EEAttestation.
          * @memberof Aea
          * @classdesc Represents a NonE2EEAttestation.
-         * @implements INonE2EEAttestation
          * @constructor
-         * @param {Aea.INonE2EEAttestation=} [properties] Properties to set
+         * @param {Aea.NonE2EEAttestation.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function NonE2EEAttestation(properties) {
+        var NonE2EEAttestation = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * NonE2EEAttestation accountType.
@@ -54,7 +68,7 @@ $root.Aea = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(NonE2EEAttestation.prototype, "_accountType", {
+        $Object.defineProperty(NonE2EEAttestation.prototype, "_accountType", {
             get: $util.oneOfGetter($oneOfFields = ["accountType"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -64,10 +78,14 @@ $root.Aea = (function() {
          * @function create
          * @memberof Aea.NonE2EEAttestation
          * @static
-         * @param {Aea.INonE2EEAttestation=} [properties] Properties to set
+         * @param {Aea.NonE2EEAttestation.$Properties=} [properties] Properties to set
          * @returns {Aea.NonE2EEAttestation} NonE2EEAttestation instance
+         * @type {{
+         *   (properties: Aea.NonE2EEAttestation.$Shape): Aea.NonE2EEAttestation & Aea.NonE2EEAttestation.$Shape;
+         *   (properties?: Aea.NonE2EEAttestation.$Properties): Aea.NonE2EEAttestation;
+         * }}
          */
-        NonE2EEAttestation.create = function create(properties) {
+        NonE2EEAttestation.create = function(properties) {
             return new NonE2EEAttestation(properties);
         };
 
@@ -76,15 +94,22 @@ $root.Aea = (function() {
          * @function encode
          * @memberof Aea.NonE2EEAttestation
          * @static
-         * @param {Aea.INonE2EEAttestation} message NonE2EEAttestation message or plain object to encode
+         * @param {Aea.NonE2EEAttestation.$Properties} message NonE2EEAttestation message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        NonE2EEAttestation.encode = function encode(message, writer) {
+        NonE2EEAttestation.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.accountType != null && Object.hasOwnProperty.call(message, "accountType"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.accountType != null && $Object.hasOwnProperty.call(message, "accountType"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.accountType);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -93,12 +118,12 @@ $root.Aea = (function() {
          * @function encodeDelimited
          * @memberof Aea.NonE2EEAttestation
          * @static
-         * @param {Aea.INonE2EEAttestation} message NonE2EEAttestation message or plain object to encode
+         * @param {Aea.NonE2EEAttestation.$Properties} message NonE2EEAttestation message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        NonE2EEAttestation.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        NonE2EEAttestation.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -108,28 +133,58 @@ $root.Aea = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {Aea.NonE2EEAttestation} NonE2EEAttestation
+         * @returns {Aea.NonE2EEAttestation & Aea.NonE2EEAttestation.$Shape} NonE2EEAttestation
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        NonE2EEAttestation.decode = function decode(reader, length, error) {
+        NonE2EEAttestation.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Aea.NonE2EEAttestation();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message, value;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.Aea.NonE2EEAttestation();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.accountType = reader.int32();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 0)
+                            break;
+                        message.accountType = reader.int32();
+                        message._accountType = "accountType";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -139,14 +194,14 @@ $root.Aea = (function() {
          * @memberof Aea.NonE2EEAttestation
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {Aea.NonE2EEAttestation} NonE2EEAttestation
+         * @returns {Aea.NonE2EEAttestation & Aea.NonE2EEAttestation.$Shape} NonE2EEAttestation
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        NonE2EEAttestation.decodeDelimited = function decodeDelimited(reader) {
+        NonE2EEAttestation.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -157,20 +212,18 @@ $root.Aea = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        NonE2EEAttestation.verify = function verify(message) {
+        NonE2EEAttestation.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.accountType != null && message.hasOwnProperty("accountType")) {
+            if (message.accountType != null && $Object.hasOwnProperty.call(message, "accountType")) {
                 properties._accountType = 1;
-                switch (message.accountType) {
-                default:
+                if (typeof message.accountType !== "number" || (message.accountType | 0) !== message.accountType)
                     return "accountType: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                    break;
-                }
             }
             return null;
         };
@@ -183,17 +236,17 @@ $root.Aea = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {Aea.NonE2EEAttestation} NonE2EEAttestation
          */
-        NonE2EEAttestation.fromObject = function fromObject(object) {
+        NonE2EEAttestation.fromObject = function (object, _depth) {
             if (object instanceof $root.Aea.NonE2EEAttestation)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".Aea.NonE2EEAttestation: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.Aea.NonE2EEAttestation();
             switch (object.accountType) {
-            default:
-                if (typeof object.accountType === "number") {
-                    message.accountType = object.accountType;
-                    break;
-                }
-                break;
             case "E2EE":
             case 0:
                 message.accountType = 0;
@@ -206,6 +259,9 @@ $root.Aea = (function() {
             case 2:
                 message.accountType = 2;
                 break;
+            default:
+                if (typeof object.accountType === "number" && (object.accountType | 0) === object.accountType)
+                    message.accountType = object.accountType;
             }
             return message;
         };
@@ -219,15 +275,16 @@ $root.Aea = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        NonE2EEAttestation.toObject = function toObject(message, options) {
+        NonE2EEAttestation.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.accountType != null && message.hasOwnProperty("accountType")) {
-                object.accountType = options.enums === String ? $root.Aea.NonE2EEAttestation.AccountType[message.accountType] === undefined ? message.accountType : $root.Aea.NonE2EEAttestation.AccountType[message.accountType] : message.accountType;
-                if (options.oneofs)
-                    object._accountType = "accountType";
-            }
+            if (message.accountType != null && $Object.hasOwnProperty.call(message, "accountType"))
+                object.accountType = options.enums === $String ? $root.Aea.NonE2EEAttestation.AccountType[message.accountType] === $undefined ? message.accountType : $root.Aea.NonE2EEAttestation.AccountType[message.accountType] : message.accountType;
             return object;
         };
 
@@ -238,23 +295,22 @@ $root.Aea = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        NonE2EEAttestation.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        NonE2EEAttestation.prototype.toJSON = function() {
+            return NonE2EEAttestation.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for NonE2EEAttestation
+         * Gets the type url for NonE2EEAttestation
          * @function getTypeUrl
          * @memberof Aea.NonE2EEAttestation
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        NonE2EEAttestation.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Aea.NonE2EEAttestation";
+        NonE2EEAttestation.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/Aea.NonE2EEAttestation";
         };
 
         /**
@@ -266,7 +322,7 @@ $root.Aea = (function() {
          * @property {number} NON_E2EE=2 NON_E2EE value
          */
         NonE2EEAttestation.AccountType = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
+            var valuesById = $Object.create(null), values = $Object.create(valuesById);
             values[valuesById[0] = "E2EE"] = 0;
             values[valuesById[1] = "HYBRID_E2EE"] = 1;
             values[valuesById[2] = "NON_E2EE"] = 2;

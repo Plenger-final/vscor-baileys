@@ -1,33 +1,38 @@
 import * as $protobuf from "protobufjs";
 import Long = require("long");
+
 /** Namespace ServerSync. */
 export namespace ServerSync {
 
-    /** Properties of a CoexStateSync. */
-    interface ICoexStateSync {
-
-        /** CoexStateSync collectionMutations */
-        collectionMutations?: (ServerSync.CoexStateSync.ICollectionMutations[]|null);
+    /**
+     * Properties of a CoexStateSync.
+     * @deprecated Use ServerSync.CoexStateSync.$Properties instead.
+     */
+    interface ICoexStateSync extends ServerSync.CoexStateSync.$Properties {
     }
 
     /** Represents a CoexStateSync. */
-    class CoexStateSync implements ICoexStateSync {
+    class CoexStateSync {
 
         /**
          * Constructs a new CoexStateSync.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ServerSync.ICoexStateSync);
+        constructor(properties?: ServerSync.CoexStateSync.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** CoexStateSync collectionMutations. */
-        public collectionMutations: ServerSync.CoexStateSync.ICollectionMutations[];
+        collectionMutations: ServerSync.CoexStateSync.CollectionMutations.$Properties[];
 
         /**
          * Creates a new CoexStateSync instance using the specified properties.
          * @param [properties] Properties to set
          * @returns CoexStateSync instance
          */
-        public static create(properties?: ServerSync.ICoexStateSync): ServerSync.CoexStateSync;
+        static create(properties: ServerSync.CoexStateSync.$Shape): ServerSync.CoexStateSync & ServerSync.CoexStateSync.$Shape;
+        static create(properties?: ServerSync.CoexStateSync.$Properties): ServerSync.CoexStateSync;
 
         /**
          * Encodes the specified CoexStateSync message. Does not implicitly {@link ServerSync.CoexStateSync.verify|verify} messages.
@@ -35,7 +40,7 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ServerSync.ICoexStateSync, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: ServerSync.CoexStateSync.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified CoexStateSync message, length delimited. Does not implicitly {@link ServerSync.CoexStateSync.verify|verify} messages.
@@ -43,40 +48,40 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ServerSync.ICoexStateSync, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: ServerSync.CoexStateSync.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a CoexStateSync message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CoexStateSync
+         * @returns {ServerSync.CoexStateSync & ServerSync.CoexStateSync.$Shape} CoexStateSync
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.CoexStateSync;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.CoexStateSync & ServerSync.CoexStateSync.$Shape;
 
         /**
          * Decodes a CoexStateSync message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CoexStateSync
+         * @returns {ServerSync.CoexStateSync & ServerSync.CoexStateSync.$Shape} CoexStateSync
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.CoexStateSync;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.CoexStateSync & ServerSync.CoexStateSync.$Shape;
 
         /**
          * Verifies a CoexStateSync message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a CoexStateSync message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns CoexStateSync
          */
-        public static fromObject(object: { [k: string]: any }): ServerSync.CoexStateSync;
+        static fromObject(object: { [k: string]: any }): ServerSync.CoexStateSync;
 
         /**
          * Creates a plain object from a CoexStateSync message. Also converts values to other types if specified.
@@ -84,55 +89,69 @@ export namespace ServerSync {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ServerSync.CoexStateSync, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: ServerSync.CoexStateSync, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this CoexStateSync to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for CoexStateSync
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for CoexStateSync
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace CoexStateSync {
 
-        /** Properties of a CollectionMutations. */
-        interface ICollectionMutations {
+        /** Properties of a CoexStateSync. */
+        interface $Properties {
 
-            /** CollectionMutations collection */
-            collection?: (string|null);
+            /** CoexStateSync collectionMutations */
+            collectionMutations?: (ServerSync.CoexStateSync.CollectionMutations.$Properties[]|null);
 
-            /** CollectionMutations mutations */
-            mutations?: (ServerSync.CoexStateSync.IMutation[]|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a CoexStateSync. */
+        type $Shape = ServerSync.CoexStateSync.$Properties;
+
+        /**
+         * Properties of a CollectionMutations.
+         * @deprecated Use ServerSync.CoexStateSync.CollectionMutations.$Properties instead.
+         */
+        interface ICollectionMutations extends ServerSync.CoexStateSync.CollectionMutations.$Properties {
         }
 
         /** Represents a CollectionMutations. */
-        class CollectionMutations implements ICollectionMutations {
+        class CollectionMutations {
 
             /**
              * Constructs a new CollectionMutations.
              * @param [properties] Properties to set
              */
-            constructor(properties?: ServerSync.CoexStateSync.ICollectionMutations);
+            constructor(properties?: ServerSync.CoexStateSync.CollectionMutations.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** CollectionMutations collection. */
-            public collection?: (string|null);
+            collection?: (string|null);
 
             /** CollectionMutations mutations. */
-            public mutations: ServerSync.CoexStateSync.IMutation[];
+            mutations: ServerSync.CoexStateSync.Mutation.$Properties[];
 
             /**
              * Creates a new CollectionMutations instance using the specified properties.
              * @param [properties] Properties to set
              * @returns CollectionMutations instance
              */
-            public static create(properties?: ServerSync.CoexStateSync.ICollectionMutations): ServerSync.CoexStateSync.CollectionMutations;
+            static create(properties: ServerSync.CoexStateSync.CollectionMutations.$Shape): ServerSync.CoexStateSync.CollectionMutations & ServerSync.CoexStateSync.CollectionMutations.$Shape;
+            static create(properties?: ServerSync.CoexStateSync.CollectionMutations.$Properties): ServerSync.CoexStateSync.CollectionMutations;
 
             /**
              * Encodes the specified CollectionMutations message. Does not implicitly {@link ServerSync.CoexStateSync.CollectionMutations.verify|verify} messages.
@@ -140,7 +159,7 @@ export namespace ServerSync {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: ServerSync.CoexStateSync.ICollectionMutations, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: ServerSync.CoexStateSync.CollectionMutations.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified CollectionMutations message, length delimited. Does not implicitly {@link ServerSync.CoexStateSync.CollectionMutations.verify|verify} messages.
@@ -148,40 +167,40 @@ export namespace ServerSync {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: ServerSync.CoexStateSync.ICollectionMutations, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: ServerSync.CoexStateSync.CollectionMutations.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a CollectionMutations message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns CollectionMutations
+             * @returns {ServerSync.CoexStateSync.CollectionMutations & ServerSync.CoexStateSync.CollectionMutations.$Shape} CollectionMutations
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.CoexStateSync.CollectionMutations;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.CoexStateSync.CollectionMutations & ServerSync.CoexStateSync.CollectionMutations.$Shape;
 
             /**
              * Decodes a CollectionMutations message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns CollectionMutations
+             * @returns {ServerSync.CoexStateSync.CollectionMutations & ServerSync.CoexStateSync.CollectionMutations.$Shape} CollectionMutations
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.CoexStateSync.CollectionMutations;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.CoexStateSync.CollectionMutations & ServerSync.CoexStateSync.CollectionMutations.$Shape;
 
             /**
              * Verifies a CollectionMutations message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a CollectionMutations message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns CollectionMutations
              */
-            public static fromObject(object: { [k: string]: any }): ServerSync.CoexStateSync.CollectionMutations;
+            static fromObject(object: { [k: string]: any }): ServerSync.CoexStateSync.CollectionMutations;
 
             /**
              * Creates a plain object from a CollectionMutations message. Also converts values to other types if specified.
@@ -189,65 +208,79 @@ export namespace ServerSync {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: ServerSync.CoexStateSync.CollectionMutations, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: ServerSync.CoexStateSync.CollectionMutations, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this CollectionMutations to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for CollectionMutations
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for CollectionMutations
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
         }
 
-        /** Properties of a Mutation. */
-        interface IMutation {
+        namespace CollectionMutations {
 
-            /** Mutation index */
-            index?: (ServerSync.ISyncdIndex|null);
+            /** Properties of a CollectionMutations. */
+            interface $Properties {
 
-            /** Mutation value */
-            value?: (ServerSync.ISyncdValue|null);
+                /** CollectionMutations collection */
+                collection?: (string|null);
 
-            /** Mutation dirtyVersion */
-            dirtyVersion?: (number|Long|null);
+                /** CollectionMutations mutations */
+                mutations?: (ServerSync.CoexStateSync.Mutation.$Properties[]|null);
 
-            /** Mutation operation */
-            operation?: (ServerSync.SyncdMutation.SyncdOperation|null);
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of a CollectionMutations. */
+            type $Shape = ServerSync.CoexStateSync.CollectionMutations.$Properties;
+        }
+
+        /**
+         * Properties of a Mutation.
+         * @deprecated Use ServerSync.CoexStateSync.Mutation.$Properties instead.
+         */
+        interface IMutation extends ServerSync.CoexStateSync.Mutation.$Properties {
         }
 
         /** Represents a Mutation. */
-        class Mutation implements IMutation {
+        class Mutation {
 
             /**
              * Constructs a new Mutation.
              * @param [properties] Properties to set
              */
-            constructor(properties?: ServerSync.CoexStateSync.IMutation);
+            constructor(properties?: ServerSync.CoexStateSync.Mutation.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** Mutation index. */
-            public index?: (ServerSync.ISyncdIndex|null);
+            index?: (ServerSync.SyncdIndex.$Properties|null);
 
             /** Mutation value. */
-            public value?: (ServerSync.ISyncdValue|null);
+            value?: (ServerSync.SyncdValue.$Properties|null);
 
             /** Mutation dirtyVersion. */
-            public dirtyVersion?: (number|Long|null);
+            dirtyVersion?: (number|Long|null);
 
             /** Mutation operation. */
-            public operation?: (ServerSync.SyncdMutation.SyncdOperation|null);
+            operation?: (ServerSync.SyncdMutation.SyncdOperation|null);
 
             /**
              * Creates a new Mutation instance using the specified properties.
              * @param [properties] Properties to set
              * @returns Mutation instance
              */
-            public static create(properties?: ServerSync.CoexStateSync.IMutation): ServerSync.CoexStateSync.Mutation;
+            static create(properties: ServerSync.CoexStateSync.Mutation.$Shape): ServerSync.CoexStateSync.Mutation & ServerSync.CoexStateSync.Mutation.$Shape;
+            static create(properties?: ServerSync.CoexStateSync.Mutation.$Properties): ServerSync.CoexStateSync.Mutation;
 
             /**
              * Encodes the specified Mutation message. Does not implicitly {@link ServerSync.CoexStateSync.Mutation.verify|verify} messages.
@@ -255,7 +288,7 @@ export namespace ServerSync {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: ServerSync.CoexStateSync.IMutation, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: ServerSync.CoexStateSync.Mutation.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified Mutation message, length delimited. Does not implicitly {@link ServerSync.CoexStateSync.Mutation.verify|verify} messages.
@@ -263,40 +296,40 @@ export namespace ServerSync {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: ServerSync.CoexStateSync.IMutation, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: ServerSync.CoexStateSync.Mutation.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Mutation message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns Mutation
+             * @returns {ServerSync.CoexStateSync.Mutation & ServerSync.CoexStateSync.Mutation.$Shape} Mutation
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.CoexStateSync.Mutation;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.CoexStateSync.Mutation & ServerSync.CoexStateSync.Mutation.$Shape;
 
             /**
              * Decodes a Mutation message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns Mutation
+             * @returns {ServerSync.CoexStateSync.Mutation & ServerSync.CoexStateSync.Mutation.$Shape} Mutation
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.CoexStateSync.Mutation;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.CoexStateSync.Mutation & ServerSync.CoexStateSync.Mutation.$Shape;
 
             /**
              * Verifies a Mutation message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a Mutation message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns Mutation
              */
-            public static fromObject(object: { [k: string]: any }): ServerSync.CoexStateSync.Mutation;
+            static fromObject(object: { [k: string]: any }): ServerSync.CoexStateSync.Mutation;
 
             /**
              * Creates a plain object from a Mutation message. Also converts values to other types if specified.
@@ -304,96 +337,101 @@ export namespace ServerSync {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: ServerSync.CoexStateSync.Mutation, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: ServerSync.CoexStateSync.Mutation, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Mutation to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for Mutation
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for Mutation
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
+        }
+
+        namespace Mutation {
+
+            /** Properties of a Mutation. */
+            interface $Properties {
+
+                /** Mutation index */
+                index?: (ServerSync.SyncdIndex.$Properties|null);
+
+                /** Mutation value */
+                value?: (ServerSync.SyncdValue.$Properties|null);
+
+                /** Mutation dirtyVersion */
+                dirtyVersion?: (number|Long|null);
+
+                /** Mutation operation */
+                operation?: (ServerSync.SyncdMutation.SyncdOperation|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of a Mutation. */
+            type $Shape = ServerSync.CoexStateSync.Mutation.$Properties;
         }
     }
 
-    /** Properties of a SyncdPatch. */
-    interface ISyncdPatch {
-
-        /** SyncdPatch version */
-        version?: (ServerSync.ISyncdVersion|null);
-
-        /** SyncdPatch mutations */
-        mutations?: (ServerSync.ISyncdMutation[]|null);
-
-        /** SyncdPatch externalMutations */
-        externalMutations?: (ServerSync.IExternalBlobReference|null);
-
-        /** SyncdPatch snapshotMac */
-        snapshotMac?: (Uint8Array|null);
-
-        /** SyncdPatch patchMac */
-        patchMac?: (Uint8Array|null);
-
-        /** SyncdPatch keyId */
-        keyId?: (ServerSync.IKeyId|null);
-
-        /** SyncdPatch exitCode */
-        exitCode?: (ServerSync.IExitCode|null);
-
-        /** SyncdPatch deviceIndex */
-        deviceIndex?: (number|null);
-
-        /** SyncdPatch clientDebugData */
-        clientDebugData?: (Uint8Array|null);
+    /**
+     * Properties of a SyncdPatch.
+     * @deprecated Use ServerSync.SyncdPatch.$Properties instead.
+     */
+    interface ISyncdPatch extends ServerSync.SyncdPatch.$Properties {
     }
 
     /** Represents a SyncdPatch. */
-    class SyncdPatch implements ISyncdPatch {
+    class SyncdPatch {
 
         /**
          * Constructs a new SyncdPatch.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ServerSync.ISyncdPatch);
+        constructor(properties?: ServerSync.SyncdPatch.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** SyncdPatch version. */
-        public version?: (ServerSync.ISyncdVersion|null);
+        version?: (ServerSync.SyncdVersion.$Properties|null);
 
         /** SyncdPatch mutations. */
-        public mutations: ServerSync.ISyncdMutation[];
+        mutations: ServerSync.SyncdMutation.$Properties[];
 
         /** SyncdPatch externalMutations. */
-        public externalMutations?: (ServerSync.IExternalBlobReference|null);
+        externalMutations?: (ServerSync.ExternalBlobReference.$Properties|null);
 
         /** SyncdPatch snapshotMac. */
-        public snapshotMac?: (Uint8Array|null);
+        snapshotMac?: (Uint8Array|null);
 
         /** SyncdPatch patchMac. */
-        public patchMac?: (Uint8Array|null);
+        patchMac?: (Uint8Array|null);
 
         /** SyncdPatch keyId. */
-        public keyId?: (ServerSync.IKeyId|null);
+        keyId?: (ServerSync.KeyId.$Properties|null);
 
         /** SyncdPatch exitCode. */
-        public exitCode?: (ServerSync.IExitCode|null);
+        exitCode?: (ServerSync.ExitCode.$Properties|null);
 
         /** SyncdPatch deviceIndex. */
-        public deviceIndex?: (number|null);
+        deviceIndex?: (number|null);
 
         /** SyncdPatch clientDebugData. */
-        public clientDebugData?: (Uint8Array|null);
+        clientDebugData?: (Uint8Array|null);
 
         /**
          * Creates a new SyncdPatch instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SyncdPatch instance
          */
-        public static create(properties?: ServerSync.ISyncdPatch): ServerSync.SyncdPatch;
+        static create(properties: ServerSync.SyncdPatch.$Shape): ServerSync.SyncdPatch & ServerSync.SyncdPatch.$Shape;
+        static create(properties?: ServerSync.SyncdPatch.$Properties): ServerSync.SyncdPatch;
 
         /**
          * Encodes the specified SyncdPatch message. Does not implicitly {@link ServerSync.SyncdPatch.verify|verify} messages.
@@ -401,7 +439,7 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ServerSync.ISyncdPatch, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: ServerSync.SyncdPatch.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SyncdPatch message, length delimited. Does not implicitly {@link ServerSync.SyncdPatch.verify|verify} messages.
@@ -409,40 +447,40 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ServerSync.ISyncdPatch, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: ServerSync.SyncdPatch.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SyncdPatch message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns SyncdPatch
+         * @returns {ServerSync.SyncdPatch & ServerSync.SyncdPatch.$Shape} SyncdPatch
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdPatch;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdPatch & ServerSync.SyncdPatch.$Shape;
 
         /**
          * Decodes a SyncdPatch message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns SyncdPatch
+         * @returns {ServerSync.SyncdPatch & ServerSync.SyncdPatch.$Shape} SyncdPatch
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdPatch;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdPatch & ServerSync.SyncdPatch.$Shape;
 
         /**
          * Verifies a SyncdPatch message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a SyncdPatch message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns SyncdPatch
          */
-        public static fromObject(object: { [k: string]: any }): ServerSync.SyncdPatch;
+        static fromObject(object: { [k: string]: any }): ServerSync.SyncdPatch;
 
         /**
          * Creates a plain object from a SyncdPatch message. Also converts values to other types if specified.
@@ -450,53 +488,94 @@ export namespace ServerSync {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ServerSync.SyncdPatch, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: ServerSync.SyncdPatch, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SyncdPatch to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for SyncdPatch
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for SyncdPatch
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a SyncdMutation. */
-    interface ISyncdMutation {
+    namespace SyncdPatch {
 
-        /** SyncdMutation operation */
-        operation?: (ServerSync.SyncdMutation.SyncdOperation|null);
+        /** Properties of a SyncdPatch. */
+        interface $Properties {
 
-        /** SyncdMutation record */
-        record?: (ServerSync.ISyncdRecord|null);
+            /** SyncdPatch version */
+            version?: (ServerSync.SyncdVersion.$Properties|null);
+
+            /** SyncdPatch mutations */
+            mutations?: (ServerSync.SyncdMutation.$Properties[]|null);
+
+            /** SyncdPatch externalMutations */
+            externalMutations?: (ServerSync.ExternalBlobReference.$Properties|null);
+
+            /** SyncdPatch snapshotMac */
+            snapshotMac?: (Uint8Array|null);
+
+            /** SyncdPatch patchMac */
+            patchMac?: (Uint8Array|null);
+
+            /** SyncdPatch keyId */
+            keyId?: (ServerSync.KeyId.$Properties|null);
+
+            /** SyncdPatch exitCode */
+            exitCode?: (ServerSync.ExitCode.$Properties|null);
+
+            /** SyncdPatch deviceIndex */
+            deviceIndex?: (number|null);
+
+            /** SyncdPatch clientDebugData */
+            clientDebugData?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a SyncdPatch. */
+        type $Shape = ServerSync.SyncdPatch.$Properties;
+    }
+
+    /**
+     * Properties of a SyncdMutation.
+     * @deprecated Use ServerSync.SyncdMutation.$Properties instead.
+     */
+    interface ISyncdMutation extends ServerSync.SyncdMutation.$Properties {
     }
 
     /** Represents a SyncdMutation. */
-    class SyncdMutation implements ISyncdMutation {
+    class SyncdMutation {
 
         /**
          * Constructs a new SyncdMutation.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ServerSync.ISyncdMutation);
+        constructor(properties?: ServerSync.SyncdMutation.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** SyncdMutation operation. */
-        public operation?: (ServerSync.SyncdMutation.SyncdOperation|null);
+        operation?: (ServerSync.SyncdMutation.SyncdOperation|null);
 
         /** SyncdMutation record. */
-        public record?: (ServerSync.ISyncdRecord|null);
+        record?: (ServerSync.SyncdRecord.$Properties|null);
 
         /**
          * Creates a new SyncdMutation instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SyncdMutation instance
          */
-        public static create(properties?: ServerSync.ISyncdMutation): ServerSync.SyncdMutation;
+        static create(properties: ServerSync.SyncdMutation.$Shape): ServerSync.SyncdMutation & ServerSync.SyncdMutation.$Shape;
+        static create(properties?: ServerSync.SyncdMutation.$Properties): ServerSync.SyncdMutation;
 
         /**
          * Encodes the specified SyncdMutation message. Does not implicitly {@link ServerSync.SyncdMutation.verify|verify} messages.
@@ -504,7 +583,7 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ServerSync.ISyncdMutation, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: ServerSync.SyncdMutation.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SyncdMutation message, length delimited. Does not implicitly {@link ServerSync.SyncdMutation.verify|verify} messages.
@@ -512,40 +591,40 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ServerSync.ISyncdMutation, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: ServerSync.SyncdMutation.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SyncdMutation message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns SyncdMutation
+         * @returns {ServerSync.SyncdMutation & ServerSync.SyncdMutation.$Shape} SyncdMutation
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdMutation;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdMutation & ServerSync.SyncdMutation.$Shape;
 
         /**
          * Decodes a SyncdMutation message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns SyncdMutation
+         * @returns {ServerSync.SyncdMutation & ServerSync.SyncdMutation.$Shape} SyncdMutation
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdMutation;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdMutation & ServerSync.SyncdMutation.$Shape;
 
         /**
          * Verifies a SyncdMutation message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a SyncdMutation message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns SyncdMutation
          */
-        public static fromObject(object: { [k: string]: any }): ServerSync.SyncdMutation;
+        static fromObject(object: { [k: string]: any }): ServerSync.SyncdMutation;
 
         /**
          * Creates a plain object from a SyncdMutation message. Also converts values to other types if specified.
@@ -553,56 +632,80 @@ export namespace ServerSync {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ServerSync.SyncdMutation, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: ServerSync.SyncdMutation, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SyncdMutation to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for SyncdMutation
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for SyncdMutation
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace SyncdMutation {
 
+        /** Properties of a SyncdMutation. */
+        interface $Properties {
+
+            /** SyncdMutation operation */
+            operation?: (ServerSync.SyncdMutation.SyncdOperation|null);
+
+            /** SyncdMutation record */
+            record?: (ServerSync.SyncdRecord.$Properties|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a SyncdMutation. */
+        type $Shape = ServerSync.SyncdMutation.$Properties;
+
         /** SyncdOperation enum. */
         enum SyncdOperation {
+
+            /** SET value */
             SET = 0,
+
+            /** REMOVE value */
             REMOVE = 1
         }
     }
 
-    /** Properties of a SyncdMutations. */
-    interface ISyncdMutations {
-
-        /** SyncdMutations mutations */
-        mutations?: (ServerSync.ISyncdMutation[]|null);
+    /**
+     * Properties of a SyncdMutations.
+     * @deprecated Use ServerSync.SyncdMutations.$Properties instead.
+     */
+    interface ISyncdMutations extends ServerSync.SyncdMutations.$Properties {
     }
 
     /** Represents a SyncdMutations. */
-    class SyncdMutations implements ISyncdMutations {
+    class SyncdMutations {
 
         /**
          * Constructs a new SyncdMutations.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ServerSync.ISyncdMutations);
+        constructor(properties?: ServerSync.SyncdMutations.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** SyncdMutations mutations. */
-        public mutations: ServerSync.ISyncdMutation[];
+        mutations: ServerSync.SyncdMutation.$Properties[];
 
         /**
          * Creates a new SyncdMutations instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SyncdMutations instance
          */
-        public static create(properties?: ServerSync.ISyncdMutations): ServerSync.SyncdMutations;
+        static create(properties: ServerSync.SyncdMutations.$Shape): ServerSync.SyncdMutations & ServerSync.SyncdMutations.$Shape;
+        static create(properties?: ServerSync.SyncdMutations.$Properties): ServerSync.SyncdMutations;
 
         /**
          * Encodes the specified SyncdMutations message. Does not implicitly {@link ServerSync.SyncdMutations.verify|verify} messages.
@@ -610,7 +713,7 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ServerSync.ISyncdMutations, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: ServerSync.SyncdMutations.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SyncdMutations message, length delimited. Does not implicitly {@link ServerSync.SyncdMutations.verify|verify} messages.
@@ -618,40 +721,40 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ServerSync.ISyncdMutations, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: ServerSync.SyncdMutations.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SyncdMutations message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns SyncdMutations
+         * @returns {ServerSync.SyncdMutations & ServerSync.SyncdMutations.$Shape} SyncdMutations
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdMutations;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdMutations & ServerSync.SyncdMutations.$Shape;
 
         /**
          * Decodes a SyncdMutations message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns SyncdMutations
+         * @returns {ServerSync.SyncdMutations & ServerSync.SyncdMutations.$Shape} SyncdMutations
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdMutations;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdMutations & ServerSync.SyncdMutations.$Shape;
 
         /**
          * Verifies a SyncdMutations message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a SyncdMutations message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns SyncdMutations
          */
-        public static fromObject(object: { [k: string]: any }): ServerSync.SyncdMutations;
+        static fromObject(object: { [k: string]: any }): ServerSync.SyncdMutations;
 
         /**
          * Creates a plain object from a SyncdMutations message. Also converts values to other types if specified.
@@ -659,65 +762,76 @@ export namespace ServerSync {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ServerSync.SyncdMutations, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: ServerSync.SyncdMutations, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SyncdMutations to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for SyncdMutations
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for SyncdMutations
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a SyncdSnapshot. */
-    interface ISyncdSnapshot {
+    namespace SyncdMutations {
 
-        /** SyncdSnapshot version */
-        version?: (ServerSync.ISyncdVersion|null);
+        /** Properties of a SyncdMutations. */
+        interface $Properties {
 
-        /** SyncdSnapshot records */
-        records?: (ServerSync.ISyncdRecord[]|null);
+            /** SyncdMutations mutations */
+            mutations?: (ServerSync.SyncdMutation.$Properties[]|null);
 
-        /** SyncdSnapshot mac */
-        mac?: (Uint8Array|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
 
-        /** SyncdSnapshot keyId */
-        keyId?: (ServerSync.IKeyId|null);
+        /** Shape of a SyncdMutations. */
+        type $Shape = ServerSync.SyncdMutations.$Properties;
+    }
+
+    /**
+     * Properties of a SyncdSnapshot.
+     * @deprecated Use ServerSync.SyncdSnapshot.$Properties instead.
+     */
+    interface ISyncdSnapshot extends ServerSync.SyncdSnapshot.$Properties {
     }
 
     /** Represents a SyncdSnapshot. */
-    class SyncdSnapshot implements ISyncdSnapshot {
+    class SyncdSnapshot {
 
         /**
          * Constructs a new SyncdSnapshot.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ServerSync.ISyncdSnapshot);
+        constructor(properties?: ServerSync.SyncdSnapshot.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** SyncdSnapshot version. */
-        public version?: (ServerSync.ISyncdVersion|null);
+        version?: (ServerSync.SyncdVersion.$Properties|null);
 
         /** SyncdSnapshot records. */
-        public records: ServerSync.ISyncdRecord[];
+        records: ServerSync.SyncdRecord.$Properties[];
 
         /** SyncdSnapshot mac. */
-        public mac?: (Uint8Array|null);
+        mac?: (Uint8Array|null);
 
         /** SyncdSnapshot keyId. */
-        public keyId?: (ServerSync.IKeyId|null);
+        keyId?: (ServerSync.KeyId.$Properties|null);
 
         /**
          * Creates a new SyncdSnapshot instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SyncdSnapshot instance
          */
-        public static create(properties?: ServerSync.ISyncdSnapshot): ServerSync.SyncdSnapshot;
+        static create(properties: ServerSync.SyncdSnapshot.$Shape): ServerSync.SyncdSnapshot & ServerSync.SyncdSnapshot.$Shape;
+        static create(properties?: ServerSync.SyncdSnapshot.$Properties): ServerSync.SyncdSnapshot;
 
         /**
          * Encodes the specified SyncdSnapshot message. Does not implicitly {@link ServerSync.SyncdSnapshot.verify|verify} messages.
@@ -725,7 +839,7 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ServerSync.ISyncdSnapshot, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: ServerSync.SyncdSnapshot.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SyncdSnapshot message, length delimited. Does not implicitly {@link ServerSync.SyncdSnapshot.verify|verify} messages.
@@ -733,40 +847,40 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ServerSync.ISyncdSnapshot, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: ServerSync.SyncdSnapshot.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SyncdSnapshot message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns SyncdSnapshot
+         * @returns {ServerSync.SyncdSnapshot & ServerSync.SyncdSnapshot.$Shape} SyncdSnapshot
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdSnapshot;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdSnapshot & ServerSync.SyncdSnapshot.$Shape;
 
         /**
          * Decodes a SyncdSnapshot message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns SyncdSnapshot
+         * @returns {ServerSync.SyncdSnapshot & ServerSync.SyncdSnapshot.$Shape} SyncdSnapshot
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdSnapshot;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdSnapshot & ServerSync.SyncdSnapshot.$Shape;
 
         /**
          * Verifies a SyncdSnapshot message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a SyncdSnapshot message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns SyncdSnapshot
          */
-        public static fromObject(object: { [k: string]: any }): ServerSync.SyncdSnapshot;
+        static fromObject(object: { [k: string]: any }): ServerSync.SyncdSnapshot;
 
         /**
          * Creates a plain object from a SyncdSnapshot message. Also converts values to other types if specified.
@@ -774,77 +888,91 @@ export namespace ServerSync {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ServerSync.SyncdSnapshot, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: ServerSync.SyncdSnapshot, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SyncdSnapshot to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for SyncdSnapshot
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for SyncdSnapshot
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of an ExternalBlobReference. */
-    interface IExternalBlobReference {
+    namespace SyncdSnapshot {
 
-        /** ExternalBlobReference mediaKey */
-        mediaKey?: (Uint8Array|null);
+        /** Properties of a SyncdSnapshot. */
+        interface $Properties {
 
-        /** ExternalBlobReference directPath */
-        directPath?: (string|null);
+            /** SyncdSnapshot version */
+            version?: (ServerSync.SyncdVersion.$Properties|null);
 
-        /** ExternalBlobReference handle */
-        handle?: (string|null);
+            /** SyncdSnapshot records */
+            records?: (ServerSync.SyncdRecord.$Properties[]|null);
 
-        /** ExternalBlobReference fileSizeBytes */
-        fileSizeBytes?: (number|Long|null);
+            /** SyncdSnapshot mac */
+            mac?: (Uint8Array|null);
 
-        /** ExternalBlobReference fileSha256 */
-        fileSha256?: (Uint8Array|null);
+            /** SyncdSnapshot keyId */
+            keyId?: (ServerSync.KeyId.$Properties|null);
 
-        /** ExternalBlobReference fileEncSha256 */
-        fileEncSha256?: (Uint8Array|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a SyncdSnapshot. */
+        type $Shape = ServerSync.SyncdSnapshot.$Properties;
+    }
+
+    /**
+     * Properties of an ExternalBlobReference.
+     * @deprecated Use ServerSync.ExternalBlobReference.$Properties instead.
+     */
+    interface IExternalBlobReference extends ServerSync.ExternalBlobReference.$Properties {
     }
 
     /** Represents an ExternalBlobReference. */
-    class ExternalBlobReference implements IExternalBlobReference {
+    class ExternalBlobReference {
 
         /**
          * Constructs a new ExternalBlobReference.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ServerSync.IExternalBlobReference);
+        constructor(properties?: ServerSync.ExternalBlobReference.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** ExternalBlobReference mediaKey. */
-        public mediaKey?: (Uint8Array|null);
+        mediaKey?: (Uint8Array|null);
 
         /** ExternalBlobReference directPath. */
-        public directPath?: (string|null);
+        directPath?: (string|null);
 
         /** ExternalBlobReference handle. */
-        public handle?: (string|null);
+        handle?: (string|null);
 
         /** ExternalBlobReference fileSizeBytes. */
-        public fileSizeBytes?: (number|Long|null);
+        fileSizeBytes?: (number|Long|null);
 
         /** ExternalBlobReference fileSha256. */
-        public fileSha256?: (Uint8Array|null);
+        fileSha256?: (Uint8Array|null);
 
         /** ExternalBlobReference fileEncSha256. */
-        public fileEncSha256?: (Uint8Array|null);
+        fileEncSha256?: (Uint8Array|null);
 
         /**
          * Creates a new ExternalBlobReference instance using the specified properties.
          * @param [properties] Properties to set
          * @returns ExternalBlobReference instance
          */
-        public static create(properties?: ServerSync.IExternalBlobReference): ServerSync.ExternalBlobReference;
+        static create(properties: ServerSync.ExternalBlobReference.$Shape): ServerSync.ExternalBlobReference & ServerSync.ExternalBlobReference.$Shape;
+        static create(properties?: ServerSync.ExternalBlobReference.$Properties): ServerSync.ExternalBlobReference;
 
         /**
          * Encodes the specified ExternalBlobReference message. Does not implicitly {@link ServerSync.ExternalBlobReference.verify|verify} messages.
@@ -852,7 +980,7 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ServerSync.IExternalBlobReference, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: ServerSync.ExternalBlobReference.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ExternalBlobReference message, length delimited. Does not implicitly {@link ServerSync.ExternalBlobReference.verify|verify} messages.
@@ -860,40 +988,40 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ServerSync.IExternalBlobReference, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: ServerSync.ExternalBlobReference.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an ExternalBlobReference message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns ExternalBlobReference
+         * @returns {ServerSync.ExternalBlobReference & ServerSync.ExternalBlobReference.$Shape} ExternalBlobReference
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.ExternalBlobReference;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.ExternalBlobReference & ServerSync.ExternalBlobReference.$Shape;
 
         /**
          * Decodes an ExternalBlobReference message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns ExternalBlobReference
+         * @returns {ServerSync.ExternalBlobReference & ServerSync.ExternalBlobReference.$Shape} ExternalBlobReference
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.ExternalBlobReference;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.ExternalBlobReference & ServerSync.ExternalBlobReference.$Shape;
 
         /**
          * Verifies an ExternalBlobReference message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates an ExternalBlobReference message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns ExternalBlobReference
          */
-        public static fromObject(object: { [k: string]: any }): ServerSync.ExternalBlobReference;
+        static fromObject(object: { [k: string]: any }): ServerSync.ExternalBlobReference;
 
         /**
          * Creates a plain object from an ExternalBlobReference message. Also converts values to other types if specified.
@@ -901,59 +1029,88 @@ export namespace ServerSync {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ServerSync.ExternalBlobReference, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: ServerSync.ExternalBlobReference, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ExternalBlobReference to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for ExternalBlobReference
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for ExternalBlobReference
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a SyncdRecord. */
-    interface ISyncdRecord {
+    namespace ExternalBlobReference {
 
-        /** SyncdRecord index */
-        index?: (ServerSync.ISyncdIndex|null);
+        /** Properties of an ExternalBlobReference. */
+        interface $Properties {
 
-        /** SyncdRecord value */
-        value?: (ServerSync.ISyncdValue|null);
+            /** ExternalBlobReference mediaKey */
+            mediaKey?: (Uint8Array|null);
 
-        /** SyncdRecord keyId */
-        keyId?: (ServerSync.IKeyId|null);
+            /** ExternalBlobReference directPath */
+            directPath?: (string|null);
+
+            /** ExternalBlobReference handle */
+            handle?: (string|null);
+
+            /** ExternalBlobReference fileSizeBytes */
+            fileSizeBytes?: (number|Long|null);
+
+            /** ExternalBlobReference fileSha256 */
+            fileSha256?: (Uint8Array|null);
+
+            /** ExternalBlobReference fileEncSha256 */
+            fileEncSha256?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an ExternalBlobReference. */
+        type $Shape = ServerSync.ExternalBlobReference.$Properties;
+    }
+
+    /**
+     * Properties of a SyncdRecord.
+     * @deprecated Use ServerSync.SyncdRecord.$Properties instead.
+     */
+    interface ISyncdRecord extends ServerSync.SyncdRecord.$Properties {
     }
 
     /** Represents a SyncdRecord. */
-    class SyncdRecord implements ISyncdRecord {
+    class SyncdRecord {
 
         /**
          * Constructs a new SyncdRecord.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ServerSync.ISyncdRecord);
+        constructor(properties?: ServerSync.SyncdRecord.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** SyncdRecord index. */
-        public index?: (ServerSync.ISyncdIndex|null);
+        index?: (ServerSync.SyncdIndex.$Properties|null);
 
         /** SyncdRecord value. */
-        public value?: (ServerSync.ISyncdValue|null);
+        value?: (ServerSync.SyncdValue.$Properties|null);
 
         /** SyncdRecord keyId. */
-        public keyId?: (ServerSync.IKeyId|null);
+        keyId?: (ServerSync.KeyId.$Properties|null);
 
         /**
          * Creates a new SyncdRecord instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SyncdRecord instance
          */
-        public static create(properties?: ServerSync.ISyncdRecord): ServerSync.SyncdRecord;
+        static create(properties: ServerSync.SyncdRecord.$Shape): ServerSync.SyncdRecord & ServerSync.SyncdRecord.$Shape;
+        static create(properties?: ServerSync.SyncdRecord.$Properties): ServerSync.SyncdRecord;
 
         /**
          * Encodes the specified SyncdRecord message. Does not implicitly {@link ServerSync.SyncdRecord.verify|verify} messages.
@@ -961,7 +1118,7 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ServerSync.ISyncdRecord, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: ServerSync.SyncdRecord.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SyncdRecord message, length delimited. Does not implicitly {@link ServerSync.SyncdRecord.verify|verify} messages.
@@ -969,40 +1126,40 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ServerSync.ISyncdRecord, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: ServerSync.SyncdRecord.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SyncdRecord message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns SyncdRecord
+         * @returns {ServerSync.SyncdRecord & ServerSync.SyncdRecord.$Shape} SyncdRecord
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdRecord;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdRecord & ServerSync.SyncdRecord.$Shape;
 
         /**
          * Decodes a SyncdRecord message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns SyncdRecord
+         * @returns {ServerSync.SyncdRecord & ServerSync.SyncdRecord.$Shape} SyncdRecord
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdRecord;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdRecord & ServerSync.SyncdRecord.$Shape;
 
         /**
          * Verifies a SyncdRecord message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a SyncdRecord message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns SyncdRecord
          */
-        public static fromObject(object: { [k: string]: any }): ServerSync.SyncdRecord;
+        static fromObject(object: { [k: string]: any }): ServerSync.SyncdRecord;
 
         /**
          * Creates a plain object from a SyncdRecord message. Also converts values to other types if specified.
@@ -1010,47 +1167,73 @@ export namespace ServerSync {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ServerSync.SyncdRecord, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: ServerSync.SyncdRecord, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SyncdRecord to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for SyncdRecord
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for SyncdRecord
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a KeyId. */
-    interface IKeyId {
+    namespace SyncdRecord {
 
-        /** KeyId id */
-        id?: (Uint8Array|null);
+        /** Properties of a SyncdRecord. */
+        interface $Properties {
+
+            /** SyncdRecord index */
+            index?: (ServerSync.SyncdIndex.$Properties|null);
+
+            /** SyncdRecord value */
+            value?: (ServerSync.SyncdValue.$Properties|null);
+
+            /** SyncdRecord keyId */
+            keyId?: (ServerSync.KeyId.$Properties|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a SyncdRecord. */
+        type $Shape = ServerSync.SyncdRecord.$Properties;
+    }
+
+    /**
+     * Properties of a KeyId.
+     * @deprecated Use ServerSync.KeyId.$Properties instead.
+     */
+    interface IKeyId extends ServerSync.KeyId.$Properties {
     }
 
     /** Represents a KeyId. */
-    class KeyId implements IKeyId {
+    class KeyId {
 
         /**
          * Constructs a new KeyId.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ServerSync.IKeyId);
+        constructor(properties?: ServerSync.KeyId.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** KeyId id. */
-        public id?: (Uint8Array|null);
+        id?: (Uint8Array|null);
 
         /**
          * Creates a new KeyId instance using the specified properties.
          * @param [properties] Properties to set
          * @returns KeyId instance
          */
-        public static create(properties?: ServerSync.IKeyId): ServerSync.KeyId;
+        static create(properties: ServerSync.KeyId.$Shape): ServerSync.KeyId & ServerSync.KeyId.$Shape;
+        static create(properties?: ServerSync.KeyId.$Properties): ServerSync.KeyId;
 
         /**
          * Encodes the specified KeyId message. Does not implicitly {@link ServerSync.KeyId.verify|verify} messages.
@@ -1058,7 +1241,7 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ServerSync.IKeyId, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: ServerSync.KeyId.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified KeyId message, length delimited. Does not implicitly {@link ServerSync.KeyId.verify|verify} messages.
@@ -1066,40 +1249,40 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ServerSync.IKeyId, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: ServerSync.KeyId.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a KeyId message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns KeyId
+         * @returns {ServerSync.KeyId & ServerSync.KeyId.$Shape} KeyId
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.KeyId;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.KeyId & ServerSync.KeyId.$Shape;
 
         /**
          * Decodes a KeyId message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns KeyId
+         * @returns {ServerSync.KeyId & ServerSync.KeyId.$Shape} KeyId
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.KeyId;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.KeyId & ServerSync.KeyId.$Shape;
 
         /**
          * Verifies a KeyId message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a KeyId message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns KeyId
          */
-        public static fromObject(object: { [k: string]: any }): ServerSync.KeyId;
+        static fromObject(object: { [k: string]: any }): ServerSync.KeyId;
 
         /**
          * Creates a plain object from a KeyId message. Also converts values to other types if specified.
@@ -1107,47 +1290,67 @@ export namespace ServerSync {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ServerSync.KeyId, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: ServerSync.KeyId, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this KeyId to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for KeyId
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for KeyId
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a SyncdValue. */
-    interface ISyncdValue {
+    namespace KeyId {
 
-        /** SyncdValue blob */
-        blob?: (Uint8Array|null);
+        /** Properties of a KeyId. */
+        interface $Properties {
+
+            /** KeyId id */
+            id?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a KeyId. */
+        type $Shape = ServerSync.KeyId.$Properties;
+    }
+
+    /**
+     * Properties of a SyncdValue.
+     * @deprecated Use ServerSync.SyncdValue.$Properties instead.
+     */
+    interface ISyncdValue extends ServerSync.SyncdValue.$Properties {
     }
 
     /** Represents a SyncdValue. */
-    class SyncdValue implements ISyncdValue {
+    class SyncdValue {
 
         /**
          * Constructs a new SyncdValue.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ServerSync.ISyncdValue);
+        constructor(properties?: ServerSync.SyncdValue.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** SyncdValue blob. */
-        public blob?: (Uint8Array|null);
+        blob?: (Uint8Array|null);
 
         /**
          * Creates a new SyncdValue instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SyncdValue instance
          */
-        public static create(properties?: ServerSync.ISyncdValue): ServerSync.SyncdValue;
+        static create(properties: ServerSync.SyncdValue.$Shape): ServerSync.SyncdValue & ServerSync.SyncdValue.$Shape;
+        static create(properties?: ServerSync.SyncdValue.$Properties): ServerSync.SyncdValue;
 
         /**
          * Encodes the specified SyncdValue message. Does not implicitly {@link ServerSync.SyncdValue.verify|verify} messages.
@@ -1155,7 +1358,7 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ServerSync.ISyncdValue, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: ServerSync.SyncdValue.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SyncdValue message, length delimited. Does not implicitly {@link ServerSync.SyncdValue.verify|verify} messages.
@@ -1163,40 +1366,40 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ServerSync.ISyncdValue, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: ServerSync.SyncdValue.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SyncdValue message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns SyncdValue
+         * @returns {ServerSync.SyncdValue & ServerSync.SyncdValue.$Shape} SyncdValue
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdValue;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdValue & ServerSync.SyncdValue.$Shape;
 
         /**
          * Decodes a SyncdValue message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns SyncdValue
+         * @returns {ServerSync.SyncdValue & ServerSync.SyncdValue.$Shape} SyncdValue
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdValue;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdValue & ServerSync.SyncdValue.$Shape;
 
         /**
          * Verifies a SyncdValue message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a SyncdValue message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns SyncdValue
          */
-        public static fromObject(object: { [k: string]: any }): ServerSync.SyncdValue;
+        static fromObject(object: { [k: string]: any }): ServerSync.SyncdValue;
 
         /**
          * Creates a plain object from a SyncdValue message. Also converts values to other types if specified.
@@ -1204,47 +1407,67 @@ export namespace ServerSync {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ServerSync.SyncdValue, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: ServerSync.SyncdValue, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SyncdValue to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for SyncdValue
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for SyncdValue
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a SyncdIndex. */
-    interface ISyncdIndex {
+    namespace SyncdValue {
 
-        /** SyncdIndex blob */
-        blob?: (Uint8Array|null);
+        /** Properties of a SyncdValue. */
+        interface $Properties {
+
+            /** SyncdValue blob */
+            blob?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a SyncdValue. */
+        type $Shape = ServerSync.SyncdValue.$Properties;
+    }
+
+    /**
+     * Properties of a SyncdIndex.
+     * @deprecated Use ServerSync.SyncdIndex.$Properties instead.
+     */
+    interface ISyncdIndex extends ServerSync.SyncdIndex.$Properties {
     }
 
     /** Represents a SyncdIndex. */
-    class SyncdIndex implements ISyncdIndex {
+    class SyncdIndex {
 
         /**
          * Constructs a new SyncdIndex.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ServerSync.ISyncdIndex);
+        constructor(properties?: ServerSync.SyncdIndex.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** SyncdIndex blob. */
-        public blob?: (Uint8Array|null);
+        blob?: (Uint8Array|null);
 
         /**
          * Creates a new SyncdIndex instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SyncdIndex instance
          */
-        public static create(properties?: ServerSync.ISyncdIndex): ServerSync.SyncdIndex;
+        static create(properties: ServerSync.SyncdIndex.$Shape): ServerSync.SyncdIndex & ServerSync.SyncdIndex.$Shape;
+        static create(properties?: ServerSync.SyncdIndex.$Properties): ServerSync.SyncdIndex;
 
         /**
          * Encodes the specified SyncdIndex message. Does not implicitly {@link ServerSync.SyncdIndex.verify|verify} messages.
@@ -1252,7 +1475,7 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ServerSync.ISyncdIndex, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: ServerSync.SyncdIndex.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SyncdIndex message, length delimited. Does not implicitly {@link ServerSync.SyncdIndex.verify|verify} messages.
@@ -1260,40 +1483,40 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ServerSync.ISyncdIndex, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: ServerSync.SyncdIndex.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SyncdIndex message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns SyncdIndex
+         * @returns {ServerSync.SyncdIndex & ServerSync.SyncdIndex.$Shape} SyncdIndex
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdIndex;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdIndex & ServerSync.SyncdIndex.$Shape;
 
         /**
          * Decodes a SyncdIndex message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns SyncdIndex
+         * @returns {ServerSync.SyncdIndex & ServerSync.SyncdIndex.$Shape} SyncdIndex
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdIndex;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdIndex & ServerSync.SyncdIndex.$Shape;
 
         /**
          * Verifies a SyncdIndex message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a SyncdIndex message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns SyncdIndex
          */
-        public static fromObject(object: { [k: string]: any }): ServerSync.SyncdIndex;
+        static fromObject(object: { [k: string]: any }): ServerSync.SyncdIndex;
 
         /**
          * Creates a plain object from a SyncdIndex message. Also converts values to other types if specified.
@@ -1301,53 +1524,70 @@ export namespace ServerSync {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ServerSync.SyncdIndex, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: ServerSync.SyncdIndex, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SyncdIndex to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for SyncdIndex
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for SyncdIndex
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of an ExitCode. */
-    interface IExitCode {
+    namespace SyncdIndex {
 
-        /** ExitCode code */
-        code?: (number|Long|null);
+        /** Properties of a SyncdIndex. */
+        interface $Properties {
 
-        /** ExitCode text */
-        text?: (string|null);
+            /** SyncdIndex blob */
+            blob?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a SyncdIndex. */
+        type $Shape = ServerSync.SyncdIndex.$Properties;
+    }
+
+    /**
+     * Properties of an ExitCode.
+     * @deprecated Use ServerSync.ExitCode.$Properties instead.
+     */
+    interface IExitCode extends ServerSync.ExitCode.$Properties {
     }
 
     /** Represents an ExitCode. */
-    class ExitCode implements IExitCode {
+    class ExitCode {
 
         /**
          * Constructs a new ExitCode.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ServerSync.IExitCode);
+        constructor(properties?: ServerSync.ExitCode.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** ExitCode code. */
-        public code?: (number|Long|null);
+        code?: (number|Long|null);
 
         /** ExitCode text. */
-        public text?: (string|null);
+        text?: (string|null);
 
         /**
          * Creates a new ExitCode instance using the specified properties.
          * @param [properties] Properties to set
          * @returns ExitCode instance
          */
-        public static create(properties?: ServerSync.IExitCode): ServerSync.ExitCode;
+        static create(properties: ServerSync.ExitCode.$Shape): ServerSync.ExitCode & ServerSync.ExitCode.$Shape;
+        static create(properties?: ServerSync.ExitCode.$Properties): ServerSync.ExitCode;
 
         /**
          * Encodes the specified ExitCode message. Does not implicitly {@link ServerSync.ExitCode.verify|verify} messages.
@@ -1355,7 +1595,7 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ServerSync.IExitCode, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: ServerSync.ExitCode.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ExitCode message, length delimited. Does not implicitly {@link ServerSync.ExitCode.verify|verify} messages.
@@ -1363,40 +1603,40 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ServerSync.IExitCode, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: ServerSync.ExitCode.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an ExitCode message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns ExitCode
+         * @returns {ServerSync.ExitCode & ServerSync.ExitCode.$Shape} ExitCode
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.ExitCode;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.ExitCode & ServerSync.ExitCode.$Shape;
 
         /**
          * Decodes an ExitCode message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns ExitCode
+         * @returns {ServerSync.ExitCode & ServerSync.ExitCode.$Shape} ExitCode
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.ExitCode;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.ExitCode & ServerSync.ExitCode.$Shape;
 
         /**
          * Verifies an ExitCode message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates an ExitCode message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns ExitCode
          */
-        public static fromObject(object: { [k: string]: any }): ServerSync.ExitCode;
+        static fromObject(object: { [k: string]: any }): ServerSync.ExitCode;
 
         /**
          * Creates a plain object from an ExitCode message. Also converts values to other types if specified.
@@ -1404,47 +1644,70 @@ export namespace ServerSync {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ServerSync.ExitCode, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: ServerSync.ExitCode, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ExitCode to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for ExitCode
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for ExitCode
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a SyncdVersion. */
-    interface ISyncdVersion {
+    namespace ExitCode {
 
-        /** SyncdVersion version */
-        version?: (number|Long|null);
+        /** Properties of an ExitCode. */
+        interface $Properties {
+
+            /** ExitCode code */
+            code?: (number|Long|null);
+
+            /** ExitCode text */
+            text?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an ExitCode. */
+        type $Shape = ServerSync.ExitCode.$Properties;
+    }
+
+    /**
+     * Properties of a SyncdVersion.
+     * @deprecated Use ServerSync.SyncdVersion.$Properties instead.
+     */
+    interface ISyncdVersion extends ServerSync.SyncdVersion.$Properties {
     }
 
     /** Represents a SyncdVersion. */
-    class SyncdVersion implements ISyncdVersion {
+    class SyncdVersion {
 
         /**
          * Constructs a new SyncdVersion.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ServerSync.ISyncdVersion);
+        constructor(properties?: ServerSync.SyncdVersion.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** SyncdVersion version. */
-        public version?: (number|Long|null);
+        version?: (number|Long|null);
 
         /**
          * Creates a new SyncdVersion instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SyncdVersion instance
          */
-        public static create(properties?: ServerSync.ISyncdVersion): ServerSync.SyncdVersion;
+        static create(properties: ServerSync.SyncdVersion.$Shape): ServerSync.SyncdVersion & ServerSync.SyncdVersion.$Shape;
+        static create(properties?: ServerSync.SyncdVersion.$Properties): ServerSync.SyncdVersion;
 
         /**
          * Encodes the specified SyncdVersion message. Does not implicitly {@link ServerSync.SyncdVersion.verify|verify} messages.
@@ -1452,7 +1715,7 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ServerSync.ISyncdVersion, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: ServerSync.SyncdVersion.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SyncdVersion message, length delimited. Does not implicitly {@link ServerSync.SyncdVersion.verify|verify} messages.
@@ -1460,40 +1723,40 @@ export namespace ServerSync {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ServerSync.ISyncdVersion, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: ServerSync.SyncdVersion.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SyncdVersion message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns SyncdVersion
+         * @returns {ServerSync.SyncdVersion & ServerSync.SyncdVersion.$Shape} SyncdVersion
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdVersion;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ServerSync.SyncdVersion & ServerSync.SyncdVersion.$Shape;
 
         /**
          * Decodes a SyncdVersion message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns SyncdVersion
+         * @returns {ServerSync.SyncdVersion & ServerSync.SyncdVersion.$Shape} SyncdVersion
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdVersion;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ServerSync.SyncdVersion & ServerSync.SyncdVersion.$Shape;
 
         /**
          * Verifies a SyncdVersion message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a SyncdVersion message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns SyncdVersion
          */
-        public static fromObject(object: { [k: string]: any }): ServerSync.SyncdVersion;
+        static fromObject(object: { [k: string]: any }): ServerSync.SyncdVersion;
 
         /**
          * Creates a plain object from a SyncdVersion message. Also converts values to other types if specified.
@@ -1501,19 +1764,35 @@ export namespace ServerSync {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ServerSync.SyncdVersion, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: ServerSync.SyncdVersion, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SyncdVersion to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for SyncdVersion
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for SyncdVersion
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace SyncdVersion {
+
+        /** Properties of a SyncdVersion. */
+        interface $Properties {
+
+            /** SyncdVersion version */
+            version?: (number|Long|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a SyncdVersion. */
+        type $Shape = ServerSync.SyncdVersion.$Properties;
     }
 }

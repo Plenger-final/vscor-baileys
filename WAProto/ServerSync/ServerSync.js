@@ -1,10 +1,11 @@
-/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
+/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-mixed-operators, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars, default-case, jsdoc/require-param*/
 "use strict";
 
 var $protobuf = require("protobufjs/minimal");
 
 // Common aliases
 var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
+var $Object = $util.global.Object, $undefined = $util.global.undefined, $Error = $util.global.Error, $RangeError = $util.global.RangeError, $Array = $util.global.Array, $TypeError = $util.global.TypeError, $String = $util.global.String, $parseInt = $util.global.parseInt, $BigInt = $util.global.BigInt, $Number = $util.global.Number;
 
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
@@ -22,30 +23,43 @@ $root.ServerSync = (function() {
 
         /**
          * Properties of a CoexStateSync.
+         * @typedef {Object} ServerSync.CoexStateSync.$Properties
+         * @property {Array.<ServerSync.CoexStateSync.CollectionMutations.$Properties>|null} [collectionMutations] CoexStateSync collectionMutations
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a CoexStateSync.
          * @memberof ServerSync
          * @interface ICoexStateSync
-         * @property {Array.<ServerSync.CoexStateSync.ICollectionMutations>|null} [collectionMutations] CoexStateSync collectionMutations
+         * @augments ServerSync.CoexStateSync.$Properties
+         * @deprecated Use ServerSync.CoexStateSync.$Properties instead.
+         */
+
+        /**
+         * Shape of a CoexStateSync.
+         * @typedef {ServerSync.CoexStateSync.$Properties} ServerSync.CoexStateSync.$Shape
          */
 
         /**
          * Constructs a new CoexStateSync.
          * @memberof ServerSync
          * @classdesc Represents a CoexStateSync.
-         * @implements ICoexStateSync
          * @constructor
-         * @param {ServerSync.ICoexStateSync=} [properties] Properties to set
+         * @param {ServerSync.CoexStateSync.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function CoexStateSync(properties) {
+        var CoexStateSync = function (properties) {
             this.collectionMutations = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * CoexStateSync collectionMutations.
-         * @member {Array.<ServerSync.CoexStateSync.ICollectionMutations>} collectionMutations
+         * @member {Array.<ServerSync.CoexStateSync.CollectionMutations.$Properties>} collectionMutations
          * @memberof ServerSync.CoexStateSync
          * @instance
          */
@@ -56,10 +70,14 @@ $root.ServerSync = (function() {
          * @function create
          * @memberof ServerSync.CoexStateSync
          * @static
-         * @param {ServerSync.ICoexStateSync=} [properties] Properties to set
+         * @param {ServerSync.CoexStateSync.$Properties=} [properties] Properties to set
          * @returns {ServerSync.CoexStateSync} CoexStateSync instance
+         * @type {{
+         *   (properties: ServerSync.CoexStateSync.$Shape): ServerSync.CoexStateSync & ServerSync.CoexStateSync.$Shape;
+         *   (properties?: ServerSync.CoexStateSync.$Properties): ServerSync.CoexStateSync;
+         * }}
          */
-        CoexStateSync.create = function create(properties) {
+        CoexStateSync.create = function(properties) {
             return new CoexStateSync(properties);
         };
 
@@ -68,16 +86,23 @@ $root.ServerSync = (function() {
          * @function encode
          * @memberof ServerSync.CoexStateSync
          * @static
-         * @param {ServerSync.ICoexStateSync} message CoexStateSync message or plain object to encode
+         * @param {ServerSync.CoexStateSync.$Properties} message CoexStateSync message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CoexStateSync.encode = function encode(message, writer) {
+        CoexStateSync.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             if (message.collectionMutations != null && message.collectionMutations.length)
                 for (var i = 0; i < message.collectionMutations.length; ++i)
-                    $root.ServerSync.CoexStateSync.CollectionMutations.encode(message.collectionMutations[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    $root.ServerSync.CoexStateSync.CollectionMutations.encode(message.collectionMutations[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -86,12 +111,12 @@ $root.ServerSync = (function() {
          * @function encodeDelimited
          * @memberof ServerSync.CoexStateSync
          * @static
-         * @param {ServerSync.ICoexStateSync} message CoexStateSync message or plain object to encode
+         * @param {ServerSync.CoexStateSync.$Properties} message CoexStateSync message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CoexStateSync.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        CoexStateSync.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -101,30 +126,59 @@ $root.ServerSync = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ServerSync.CoexStateSync} CoexStateSync
+         * @returns {ServerSync.CoexStateSync & ServerSync.CoexStateSync.$Shape} CoexStateSync
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CoexStateSync.decode = function decode(reader, length, error) {
+        CoexStateSync.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.CoexStateSync();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ServerSync.CoexStateSync();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.collectionMutations && message.collectionMutations.length))
-                            message.collectionMutations = [];
-                        message.collectionMutations.push($root.ServerSync.CoexStateSync.CollectionMutations.decode(reader, reader.uint32()));
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        if (!(message.collectionMutations && message.collectionMutations.length))
+                            message.collectionMutations = [];
+                        message.collectionMutations.push($root.ServerSync.CoexStateSync.CollectionMutations.decode(reader, reader.size(), $undefined, _depth + 1));
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -134,14 +188,14 @@ $root.ServerSync = (function() {
          * @memberof ServerSync.CoexStateSync
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ServerSync.CoexStateSync} CoexStateSync
+         * @returns {ServerSync.CoexStateSync & ServerSync.CoexStateSync.$Shape} CoexStateSync
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CoexStateSync.decodeDelimited = function decodeDelimited(reader) {
+        CoexStateSync.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -152,14 +206,18 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CoexStateSync.verify = function verify(message) {
+        CoexStateSync.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (message.collectionMutations != null && message.hasOwnProperty("collectionMutations")) {
-                if (!Array.isArray(message.collectionMutations))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
+            if (message.collectionMutations != null && $Object.hasOwnProperty.call(message, "collectionMutations")) {
+                if (!$Array.isArray(message.collectionMutations))
                     return "collectionMutations: array expected";
                 for (var i = 0; i < message.collectionMutations.length; ++i) {
-                    var error = $root.ServerSync.CoexStateSync.CollectionMutations.verify(message.collectionMutations[i]);
+                    var error = $root.ServerSync.CoexStateSync.CollectionMutations.verify(message.collectionMutations[i], _depth + 1);
                     if (error)
                         return "collectionMutations." + error;
                 }
@@ -175,18 +233,24 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ServerSync.CoexStateSync} CoexStateSync
          */
-        CoexStateSync.fromObject = function fromObject(object) {
+        CoexStateSync.fromObject = function (object, _depth) {
             if (object instanceof $root.ServerSync.CoexStateSync)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ServerSync.CoexStateSync: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ServerSync.CoexStateSync();
             if (object.collectionMutations) {
-                if (!Array.isArray(object.collectionMutations))
-                    throw TypeError(".ServerSync.CoexStateSync.collectionMutations: array expected");
-                message.collectionMutations = [];
+                if (!$Array.isArray(object.collectionMutations))
+                    throw $TypeError(".ServerSync.CoexStateSync.collectionMutations: array expected");
+                message.collectionMutations = $Array(object.collectionMutations.length);
                 for (var i = 0; i < object.collectionMutations.length; ++i) {
-                    if (typeof object.collectionMutations[i] !== "object")
-                        throw TypeError(".ServerSync.CoexStateSync.collectionMutations: object expected");
-                    message.collectionMutations[i] = $root.ServerSync.CoexStateSync.CollectionMutations.fromObject(object.collectionMutations[i]);
+                    if (!$util.isObject(object.collectionMutations[i]))
+                        throw $TypeError(".ServerSync.CoexStateSync.collectionMutations: object expected");
+                    message.collectionMutations[i] = $root.ServerSync.CoexStateSync.CollectionMutations.fromObject(object.collectionMutations[i], _depth + 1);
                 }
             }
             return message;
@@ -201,16 +265,20 @@ $root.ServerSync = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CoexStateSync.toObject = function toObject(message, options) {
+        CoexStateSync.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
             if (options.arrays || options.defaults)
                 object.collectionMutations = [];
             if (message.collectionMutations && message.collectionMutations.length) {
-                object.collectionMutations = [];
+                object.collectionMutations = $Array(message.collectionMutations.length);
                 for (var j = 0; j < message.collectionMutations.length; ++j)
-                    object.collectionMutations[j] = $root.ServerSync.CoexStateSync.CollectionMutations.toObject(message.collectionMutations[j], options);
+                    object.collectionMutations[j] = $root.ServerSync.CoexStateSync.CollectionMutations.toObject(message.collectionMutations[j], options, _depth + 1);
             }
             return object;
         };
@@ -222,50 +290,62 @@ $root.ServerSync = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CoexStateSync.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        CoexStateSync.prototype.toJSON = function() {
+            return CoexStateSync.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for CoexStateSync
+         * Gets the type url for CoexStateSync
          * @function getTypeUrl
          * @memberof ServerSync.CoexStateSync
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        CoexStateSync.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ServerSync.CoexStateSync";
+        CoexStateSync.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ServerSync.CoexStateSync";
         };
 
         CoexStateSync.CollectionMutations = (function() {
 
             /**
              * Properties of a CollectionMutations.
+             * @typedef {Object} ServerSync.CoexStateSync.CollectionMutations.$Properties
+             * @property {string|null} [collection] CollectionMutations collection
+             * @property {Array.<ServerSync.CoexStateSync.Mutation.$Properties>|null} [mutations] CollectionMutations mutations
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a CollectionMutations.
              * @memberof ServerSync.CoexStateSync
              * @interface ICollectionMutations
-             * @property {string|null} [collection] CollectionMutations collection
-             * @property {Array.<ServerSync.CoexStateSync.IMutation>|null} [mutations] CollectionMutations mutations
+             * @augments ServerSync.CoexStateSync.CollectionMutations.$Properties
+             * @deprecated Use ServerSync.CoexStateSync.CollectionMutations.$Properties instead.
+             */
+
+            /**
+             * Shape of a CollectionMutations.
+             * @typedef {ServerSync.CoexStateSync.CollectionMutations.$Properties} ServerSync.CoexStateSync.CollectionMutations.$Shape
              */
 
             /**
              * Constructs a new CollectionMutations.
              * @memberof ServerSync.CoexStateSync
              * @classdesc Represents a CollectionMutations.
-             * @implements ICollectionMutations
              * @constructor
-             * @param {ServerSync.CoexStateSync.ICollectionMutations=} [properties] Properties to set
+             * @param {ServerSync.CoexStateSync.CollectionMutations.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function CollectionMutations(properties) {
+            var CollectionMutations = function (properties) {
                 this.mutations = [];
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * CollectionMutations collection.
@@ -277,7 +357,7 @@ $root.ServerSync = (function() {
 
             /**
              * CollectionMutations mutations.
-             * @member {Array.<ServerSync.CoexStateSync.IMutation>} mutations
+             * @member {Array.<ServerSync.CoexStateSync.Mutation.$Properties>} mutations
              * @memberof ServerSync.CoexStateSync.CollectionMutations
              * @instance
              */
@@ -287,7 +367,7 @@ $root.ServerSync = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(CollectionMutations.prototype, "_collection", {
+            $Object.defineProperty(CollectionMutations.prototype, "_collection", {
                 get: $util.oneOfGetter($oneOfFields = ["collection"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -297,10 +377,14 @@ $root.ServerSync = (function() {
              * @function create
              * @memberof ServerSync.CoexStateSync.CollectionMutations
              * @static
-             * @param {ServerSync.CoexStateSync.ICollectionMutations=} [properties] Properties to set
+             * @param {ServerSync.CoexStateSync.CollectionMutations.$Properties=} [properties] Properties to set
              * @returns {ServerSync.CoexStateSync.CollectionMutations} CollectionMutations instance
+             * @type {{
+             *   (properties: ServerSync.CoexStateSync.CollectionMutations.$Shape): ServerSync.CoexStateSync.CollectionMutations & ServerSync.CoexStateSync.CollectionMutations.$Shape;
+             *   (properties?: ServerSync.CoexStateSync.CollectionMutations.$Properties): ServerSync.CoexStateSync.CollectionMutations;
+             * }}
              */
-            CollectionMutations.create = function create(properties) {
+            CollectionMutations.create = function(properties) {
                 return new CollectionMutations(properties);
             };
 
@@ -309,18 +393,25 @@ $root.ServerSync = (function() {
              * @function encode
              * @memberof ServerSync.CoexStateSync.CollectionMutations
              * @static
-             * @param {ServerSync.CoexStateSync.ICollectionMutations} message CollectionMutations message or plain object to encode
+             * @param {ServerSync.CoexStateSync.CollectionMutations.$Properties} message CollectionMutations message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            CollectionMutations.encode = function encode(message, writer) {
+            CollectionMutations.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.collection != null && Object.hasOwnProperty.call(message, "collection"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.collection != null && $Object.hasOwnProperty.call(message, "collection"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.collection);
                 if (message.mutations != null && message.mutations.length)
                     for (var i = 0; i < message.mutations.length; ++i)
-                        $root.ServerSync.CoexStateSync.Mutation.encode(message.mutations[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                        $root.ServerSync.CoexStateSync.Mutation.encode(message.mutations[i], writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -329,12 +420,12 @@ $root.ServerSync = (function() {
              * @function encodeDelimited
              * @memberof ServerSync.CoexStateSync.CollectionMutations
              * @static
-             * @param {ServerSync.CoexStateSync.ICollectionMutations} message CollectionMutations message or plain object to encode
+             * @param {ServerSync.CoexStateSync.CollectionMutations.$Properties} message CollectionMutations message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            CollectionMutations.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            CollectionMutations.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -344,34 +435,66 @@ $root.ServerSync = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {ServerSync.CoexStateSync.CollectionMutations} CollectionMutations
+             * @returns {ServerSync.CoexStateSync.CollectionMutations & ServerSync.CoexStateSync.CollectionMutations.$Shape} CollectionMutations
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CollectionMutations.decode = function decode(reader, length, error) {
+            CollectionMutations.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.CoexStateSync.CollectionMutations();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.ServerSync.CoexStateSync.CollectionMutations();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.collection = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            if (!(message.mutations && message.mutations.length))
-                                message.mutations = [];
-                            message.mutations.push($root.ServerSync.CoexStateSync.Mutation.decode(reader, reader.uint32()));
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 2)
+                                break;
+                            message.collection = reader.stringVerify();
+                            message._collection = "collection";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 2)
+                                break;
+                            if (!(message.mutations && message.mutations.length))
+                                message.mutations = [];
+                            message.mutations.push($root.ServerSync.CoexStateSync.Mutation.decode(reader, reader.size(), $undefined, _depth + 1));
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -381,14 +504,14 @@ $root.ServerSync = (function() {
              * @memberof ServerSync.CoexStateSync.CollectionMutations
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {ServerSync.CoexStateSync.CollectionMutations} CollectionMutations
+             * @returns {ServerSync.CoexStateSync.CollectionMutations & ServerSync.CoexStateSync.CollectionMutations.$Shape} CollectionMutations
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CollectionMutations.decodeDelimited = function decodeDelimited(reader) {
+            CollectionMutations.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -399,20 +522,24 @@ $root.ServerSync = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            CollectionMutations.verify = function verify(message) {
+            CollectionMutations.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message.collection != null && message.hasOwnProperty("collection")) {
+                if (message.collection != null && $Object.hasOwnProperty.call(message, "collection")) {
                     properties._collection = 1;
                     if (!$util.isString(message.collection))
                         return "collection: string expected";
                 }
-                if (message.mutations != null && message.hasOwnProperty("mutations")) {
-                    if (!Array.isArray(message.mutations))
+                if (message.mutations != null && $Object.hasOwnProperty.call(message, "mutations")) {
+                    if (!$Array.isArray(message.mutations))
                         return "mutations: array expected";
                     for (var i = 0; i < message.mutations.length; ++i) {
-                        var error = $root.ServerSync.CoexStateSync.Mutation.verify(message.mutations[i]);
+                        var error = $root.ServerSync.CoexStateSync.Mutation.verify(message.mutations[i], _depth + 1);
                         if (error)
                             return "mutations." + error;
                     }
@@ -428,20 +555,26 @@ $root.ServerSync = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {ServerSync.CoexStateSync.CollectionMutations} CollectionMutations
              */
-            CollectionMutations.fromObject = function fromObject(object) {
+            CollectionMutations.fromObject = function (object, _depth) {
                 if (object instanceof $root.ServerSync.CoexStateSync.CollectionMutations)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".ServerSync.CoexStateSync.CollectionMutations: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.ServerSync.CoexStateSync.CollectionMutations();
                 if (object.collection != null)
-                    message.collection = String(object.collection);
+                    message.collection = $String(object.collection);
                 if (object.mutations) {
-                    if (!Array.isArray(object.mutations))
-                        throw TypeError(".ServerSync.CoexStateSync.CollectionMutations.mutations: array expected");
-                    message.mutations = [];
+                    if (!$Array.isArray(object.mutations))
+                        throw $TypeError(".ServerSync.CoexStateSync.CollectionMutations.mutations: array expected");
+                    message.mutations = $Array(object.mutations.length);
                     for (var i = 0; i < object.mutations.length; ++i) {
-                        if (typeof object.mutations[i] !== "object")
-                            throw TypeError(".ServerSync.CoexStateSync.CollectionMutations.mutations: object expected");
-                        message.mutations[i] = $root.ServerSync.CoexStateSync.Mutation.fromObject(object.mutations[i]);
+                        if (!$util.isObject(object.mutations[i]))
+                            throw $TypeError(".ServerSync.CoexStateSync.CollectionMutations.mutations: object expected");
+                        message.mutations[i] = $root.ServerSync.CoexStateSync.Mutation.fromObject(object.mutations[i], _depth + 1);
                     }
                 }
                 return message;
@@ -456,21 +589,22 @@ $root.ServerSync = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            CollectionMutations.toObject = function toObject(message, options) {
+            CollectionMutations.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
                 if (options.arrays || options.defaults)
                     object.mutations = [];
-                if (message.collection != null && message.hasOwnProperty("collection")) {
+                if (message.collection != null && $Object.hasOwnProperty.call(message, "collection"))
                     object.collection = message.collection;
-                    if (options.oneofs)
-                        object._collection = "collection";
-                }
                 if (message.mutations && message.mutations.length) {
-                    object.mutations = [];
+                    object.mutations = $Array(message.mutations.length);
                     for (var j = 0; j < message.mutations.length; ++j)
-                        object.mutations[j] = $root.ServerSync.CoexStateSync.Mutation.toObject(message.mutations[j], options);
+                        object.mutations[j] = $root.ServerSync.CoexStateSync.Mutation.toObject(message.mutations[j], options, _depth + 1);
                 }
                 return object;
             };
@@ -482,23 +616,22 @@ $root.ServerSync = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            CollectionMutations.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            CollectionMutations.prototype.toJSON = function() {
+                return CollectionMutations.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for CollectionMutations
+             * Gets the type url for CollectionMutations
              * @function getTypeUrl
              * @memberof ServerSync.CoexStateSync.CollectionMutations
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            CollectionMutations.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/ServerSync.CoexStateSync.CollectionMutations";
+            CollectionMutations.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/ServerSync.CoexStateSync.CollectionMutations";
             };
 
             return CollectionMutations;
@@ -508,32 +641,45 @@ $root.ServerSync = (function() {
 
             /**
              * Properties of a Mutation.
-             * @memberof ServerSync.CoexStateSync
-             * @interface IMutation
-             * @property {ServerSync.ISyncdIndex|null} [index] Mutation index
-             * @property {ServerSync.ISyncdValue|null} [value] Mutation value
+             * @typedef {Object} ServerSync.CoexStateSync.Mutation.$Properties
+             * @property {ServerSync.SyncdIndex.$Properties|null} [index] Mutation index
+             * @property {ServerSync.SyncdValue.$Properties|null} [value] Mutation value
              * @property {number|Long|null} [dirtyVersion] Mutation dirtyVersion
              * @property {ServerSync.SyncdMutation.SyncdOperation|null} [operation] Mutation operation
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a Mutation.
+             * @memberof ServerSync.CoexStateSync
+             * @interface IMutation
+             * @augments ServerSync.CoexStateSync.Mutation.$Properties
+             * @deprecated Use ServerSync.CoexStateSync.Mutation.$Properties instead.
+             */
+
+            /**
+             * Shape of a Mutation.
+             * @typedef {ServerSync.CoexStateSync.Mutation.$Properties} ServerSync.CoexStateSync.Mutation.$Shape
              */
 
             /**
              * Constructs a new Mutation.
              * @memberof ServerSync.CoexStateSync
              * @classdesc Represents a Mutation.
-             * @implements IMutation
              * @constructor
-             * @param {ServerSync.CoexStateSync.IMutation=} [properties] Properties to set
+             * @param {ServerSync.CoexStateSync.Mutation.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
-            function Mutation(properties) {
+            var Mutation = function (properties) {
                 if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
+                    for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
                             this[keys[i]] = properties[keys[i]];
-            }
+            };
 
             /**
              * Mutation index.
-             * @member {ServerSync.ISyncdIndex|null|undefined} index
+             * @member {ServerSync.SyncdIndex.$Properties|null|undefined} index
              * @memberof ServerSync.CoexStateSync.Mutation
              * @instance
              */
@@ -541,7 +687,7 @@ $root.ServerSync = (function() {
 
             /**
              * Mutation value.
-             * @member {ServerSync.ISyncdValue|null|undefined} value
+             * @member {ServerSync.SyncdValue.$Properties|null|undefined} value
              * @memberof ServerSync.CoexStateSync.Mutation
              * @instance
              */
@@ -567,25 +713,25 @@ $root.ServerSync = (function() {
             var $oneOfFields;
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(Mutation.prototype, "_index", {
+            $Object.defineProperty(Mutation.prototype, "_index", {
                 get: $util.oneOfGetter($oneOfFields = ["index"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(Mutation.prototype, "_value", {
+            $Object.defineProperty(Mutation.prototype, "_value", {
                 get: $util.oneOfGetter($oneOfFields = ["value"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(Mutation.prototype, "_dirtyVersion", {
+            $Object.defineProperty(Mutation.prototype, "_dirtyVersion", {
                 get: $util.oneOfGetter($oneOfFields = ["dirtyVersion"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             // Virtual OneOf for proto3 optional field
-            Object.defineProperty(Mutation.prototype, "_operation", {
+            $Object.defineProperty(Mutation.prototype, "_operation", {
                 get: $util.oneOfGetter($oneOfFields = ["operation"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
@@ -595,10 +741,14 @@ $root.ServerSync = (function() {
              * @function create
              * @memberof ServerSync.CoexStateSync.Mutation
              * @static
-             * @param {ServerSync.CoexStateSync.IMutation=} [properties] Properties to set
+             * @param {ServerSync.CoexStateSync.Mutation.$Properties=} [properties] Properties to set
              * @returns {ServerSync.CoexStateSync.Mutation} Mutation instance
+             * @type {{
+             *   (properties: ServerSync.CoexStateSync.Mutation.$Shape): ServerSync.CoexStateSync.Mutation & ServerSync.CoexStateSync.Mutation.$Shape;
+             *   (properties?: ServerSync.CoexStateSync.Mutation.$Properties): ServerSync.CoexStateSync.Mutation;
+             * }}
              */
-            Mutation.create = function create(properties) {
+            Mutation.create = function(properties) {
                 return new Mutation(properties);
             };
 
@@ -607,21 +757,28 @@ $root.ServerSync = (function() {
              * @function encode
              * @memberof ServerSync.CoexStateSync.Mutation
              * @static
-             * @param {ServerSync.CoexStateSync.IMutation} message Mutation message or plain object to encode
+             * @param {ServerSync.CoexStateSync.Mutation.$Properties} message Mutation message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            Mutation.encode = function encode(message, writer) {
+            Mutation.encode = function (message, writer, _depth) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.index != null && Object.hasOwnProperty.call(message, "index"))
-                    $root.ServerSync.SyncdIndex.encode(message.index, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.value != null && Object.hasOwnProperty.call(message, "value"))
-                    $root.ServerSync.SyncdValue.encode(message.value, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.dirtyVersion != null && Object.hasOwnProperty.call(message, "dirtyVersion"))
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.index != null && $Object.hasOwnProperty.call(message, "index"))
+                    $root.ServerSync.SyncdIndex.encode(message.index, writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                if (message.value != null && $Object.hasOwnProperty.call(message, "value"))
+                    $root.ServerSync.SyncdValue.encode(message.value, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+                if (message.dirtyVersion != null && $Object.hasOwnProperty.call(message, "dirtyVersion"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint64(message.dirtyVersion);
-                if (message.operation != null && Object.hasOwnProperty.call(message, "operation"))
+                if (message.operation != null && $Object.hasOwnProperty.call(message, "operation"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.operation);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (var i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
                 return writer;
             };
 
@@ -630,12 +787,12 @@ $root.ServerSync = (function() {
              * @function encodeDelimited
              * @memberof ServerSync.CoexStateSync.Mutation
              * @static
-             * @param {ServerSync.CoexStateSync.IMutation} message Mutation message or plain object to encode
+             * @param {ServerSync.CoexStateSync.Mutation.$Properties} message Mutation message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            Mutation.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
+            Mutation.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
             };
 
             /**
@@ -645,40 +802,79 @@ $root.ServerSync = (function() {
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {ServerSync.CoexStateSync.Mutation} Mutation
+             * @returns {ServerSync.CoexStateSync.Mutation & ServerSync.CoexStateSync.Mutation.$Shape} Mutation
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            Mutation.decode = function decode(reader, length, error) {
+            Mutation.decode = function (reader, length, _end, _depth, _target) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.CoexStateSync.Mutation();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                var end, message, value;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.ServerSync.CoexStateSync.Mutation();
                 while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.index = $root.ServerSync.SyncdIndex.decode(reader, reader.uint32());
-                            break;
-                        }
-                    case 2: {
-                            message.value = $root.ServerSync.SyncdValue.decode(reader, reader.uint32());
-                            break;
-                        }
-                    case 3: {
-                            message.dirtyVersion = reader.uint64();
-                            break;
-                        }
-                    case 4: {
-                            message.operation = reader.int32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
+                    var start = reader.pos;
+                    var tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
                         break;
                     }
+                    var wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 2)
+                                break;
+                            message.index = $root.ServerSync.SyncdIndex.decode(reader, reader.size(), $undefined, _depth + 1, message.index);
+                            message._index = "index";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 2)
+                                break;
+                            message.value = $root.ServerSync.SyncdValue.decode(reader, reader.size(), $undefined, _depth + 1, message.value);
+                            message._value = "value";
+                            continue;
+                        }
+                    case 3: {
+                            if (wireType !== 0)
+                                break;
+                            message.dirtyVersion = reader.uint64();
+                            message._dirtyVersion = "dirtyVersion";
+                            continue;
+                        }
+                    case 4: {
+                            if (wireType !== 0)
+                                break;
+                            message.operation = reader.int32();
+                            message._operation = "operation";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
                 }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
                 return message;
             };
 
@@ -688,14 +884,14 @@ $root.ServerSync = (function() {
              * @memberof ServerSync.CoexStateSync.Mutation
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {ServerSync.CoexStateSync.Mutation} Mutation
+             * @returns {ServerSync.CoexStateSync.Mutation & ServerSync.CoexStateSync.Mutation.$Shape} Mutation
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            Mutation.decodeDelimited = function decodeDelimited(reader) {
+            Mutation.decodeDelimited = function(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
+                return this.decode(reader, reader.size());
             };
 
             /**
@@ -706,40 +902,39 @@ $root.ServerSync = (function() {
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            Mutation.verify = function verify(message) {
+            Mutation.verify = function (message, _depth) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
                 var properties = {};
-                if (message.index != null && message.hasOwnProperty("index")) {
+                if (message.index != null && $Object.hasOwnProperty.call(message, "index")) {
                     properties._index = 1;
                     {
-                        var error = $root.ServerSync.SyncdIndex.verify(message.index);
+                        var error = $root.ServerSync.SyncdIndex.verify(message.index, _depth + 1);
                         if (error)
                             return "index." + error;
                     }
                 }
-                if (message.value != null && message.hasOwnProperty("value")) {
+                if (message.value != null && $Object.hasOwnProperty.call(message, "value")) {
                     properties._value = 1;
                     {
-                        var error = $root.ServerSync.SyncdValue.verify(message.value);
+                        var error = $root.ServerSync.SyncdValue.verify(message.value, _depth + 1);
                         if (error)
                             return "value." + error;
                     }
                 }
-                if (message.dirtyVersion != null && message.hasOwnProperty("dirtyVersion")) {
+                if (message.dirtyVersion != null && $Object.hasOwnProperty.call(message, "dirtyVersion")) {
                     properties._dirtyVersion = 1;
                     if (!$util.isInteger(message.dirtyVersion) && !(message.dirtyVersion && $util.isInteger(message.dirtyVersion.low) && $util.isInteger(message.dirtyVersion.high)))
                         return "dirtyVersion: integer|Long expected";
                 }
-                if (message.operation != null && message.hasOwnProperty("operation")) {
+                if (message.operation != null && $Object.hasOwnProperty.call(message, "operation")) {
                     properties._operation = 1;
-                    switch (message.operation) {
-                    default:
+                    if (typeof message.operation !== "number" || (message.operation | 0) !== message.operation)
                         return "operation: enum value expected";
-                    case 0:
-                    case 1:
-                        break;
-                    }
                 }
                 return null;
             };
@@ -752,36 +947,36 @@ $root.ServerSync = (function() {
              * @param {Object.<string,*>} object Plain object
              * @returns {ServerSync.CoexStateSync.Mutation} Mutation
              */
-            Mutation.fromObject = function fromObject(object) {
+            Mutation.fromObject = function (object, _depth) {
                 if (object instanceof $root.ServerSync.CoexStateSync.Mutation)
                     return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".ServerSync.CoexStateSync.Mutation: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var message = new $root.ServerSync.CoexStateSync.Mutation();
                 if (object.index != null) {
-                    if (typeof object.index !== "object")
-                        throw TypeError(".ServerSync.CoexStateSync.Mutation.index: object expected");
-                    message.index = $root.ServerSync.SyncdIndex.fromObject(object.index);
+                    if (!$util.isObject(object.index))
+                        throw $TypeError(".ServerSync.CoexStateSync.Mutation.index: object expected");
+                    message.index = $root.ServerSync.SyncdIndex.fromObject(object.index, _depth + 1);
                 }
                 if (object.value != null) {
-                    if (typeof object.value !== "object")
-                        throw TypeError(".ServerSync.CoexStateSync.Mutation.value: object expected");
-                    message.value = $root.ServerSync.SyncdValue.fromObject(object.value);
+                    if (!$util.isObject(object.value))
+                        throw $TypeError(".ServerSync.CoexStateSync.Mutation.value: object expected");
+                    message.value = $root.ServerSync.SyncdValue.fromObject(object.value, _depth + 1);
                 }
                 if (object.dirtyVersion != null)
                     if ($util.Long)
-                        (message.dirtyVersion = $util.Long.fromValue(object.dirtyVersion)).unsigned = true;
+                        message.dirtyVersion = $util.Long.fromValue(object.dirtyVersion, true);
                     else if (typeof object.dirtyVersion === "string")
-                        message.dirtyVersion = parseInt(object.dirtyVersion, 10);
+                        message.dirtyVersion = $parseInt(object.dirtyVersion, 10);
                     else if (typeof object.dirtyVersion === "number")
                         message.dirtyVersion = object.dirtyVersion;
                     else if (typeof object.dirtyVersion === "object")
                         message.dirtyVersion = new $util.LongBits(object.dirtyVersion.low >>> 0, object.dirtyVersion.high >>> 0).toNumber(true);
                 switch (object.operation) {
-                default:
-                    if (typeof object.operation === "number") {
-                        message.operation = object.operation;
-                        break;
-                    }
-                    break;
                 case "SET":
                 case 0:
                     message.operation = 0;
@@ -790,6 +985,9 @@ $root.ServerSync = (function() {
                 case 1:
                     message.operation = 1;
                     break;
+                default:
+                    if (typeof object.operation === "number" && (object.operation | 0) === object.operation)
+                        message.operation = object.operation;
                 }
                 return message;
             };
@@ -803,33 +1001,27 @@ $root.ServerSync = (function() {
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            Mutation.toObject = function toObject(message, options) {
+            Mutation.toObject = function (message, options, _depth) {
                 if (!options)
                     options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
                 var object = {};
-                if (message.index != null && message.hasOwnProperty("index")) {
-                    object.index = $root.ServerSync.SyncdIndex.toObject(message.index, options);
-                    if (options.oneofs)
-                        object._index = "index";
-                }
-                if (message.value != null && message.hasOwnProperty("value")) {
-                    object.value = $root.ServerSync.SyncdValue.toObject(message.value, options);
-                    if (options.oneofs)
-                        object._value = "value";
-                }
-                if (message.dirtyVersion != null && message.hasOwnProperty("dirtyVersion")) {
-                    if (typeof message.dirtyVersion === "number")
-                        object.dirtyVersion = options.longs === String ? String(message.dirtyVersion) : message.dirtyVersion;
+                if (message.index != null && $Object.hasOwnProperty.call(message, "index"))
+                    object.index = $root.ServerSync.SyncdIndex.toObject(message.index, options, _depth + 1);
+                if (message.value != null && $Object.hasOwnProperty.call(message, "value"))
+                    object.value = $root.ServerSync.SyncdValue.toObject(message.value, options, _depth + 1);
+                if (message.dirtyVersion != null && $Object.hasOwnProperty.call(message, "dirtyVersion"))
+                    if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
+                        object.dirtyVersion = typeof message.dirtyVersion === "number" ? $BigInt(message.dirtyVersion) : $util.Long.fromBits(message.dirtyVersion.low >>> 0, message.dirtyVersion.high >>> 0, true).toBigInt();
+                    else if (typeof message.dirtyVersion === "number")
+                        object.dirtyVersion = options.longs === $String ? $String(message.dirtyVersion) : message.dirtyVersion;
                     else
-                        object.dirtyVersion = options.longs === String ? $util.Long.prototype.toString.call(message.dirtyVersion) : options.longs === Number ? new $util.LongBits(message.dirtyVersion.low >>> 0, message.dirtyVersion.high >>> 0).toNumber(true) : message.dirtyVersion;
-                    if (options.oneofs)
-                        object._dirtyVersion = "dirtyVersion";
-                }
-                if (message.operation != null && message.hasOwnProperty("operation")) {
-                    object.operation = options.enums === String ? $root.ServerSync.SyncdMutation.SyncdOperation[message.operation] === undefined ? message.operation : $root.ServerSync.SyncdMutation.SyncdOperation[message.operation] : message.operation;
-                    if (options.oneofs)
-                        object._operation = "operation";
-                }
+                        object.dirtyVersion = options.longs === $String ? $util.Long.prototype.toString.call(message.dirtyVersion) : options.longs === $Number ? new $util.LongBits(message.dirtyVersion.low >>> 0, message.dirtyVersion.high >>> 0).toNumber(true) : message.dirtyVersion;
+                if (message.operation != null && $Object.hasOwnProperty.call(message, "operation"))
+                    object.operation = options.enums === $String ? $root.ServerSync.SyncdMutation.SyncdOperation[message.operation] === $undefined ? message.operation : $root.ServerSync.SyncdMutation.SyncdOperation[message.operation] : message.operation;
                 return object;
             };
 
@@ -840,23 +1032,22 @@ $root.ServerSync = (function() {
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            Mutation.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            Mutation.prototype.toJSON = function() {
+                return Mutation.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for Mutation
+             * Gets the type url for Mutation
              * @function getTypeUrl
              * @memberof ServerSync.CoexStateSync.Mutation
              * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
              */
-            Mutation.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/ServerSync.CoexStateSync.Mutation";
+            Mutation.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/ServerSync.CoexStateSync.Mutation";
             };
 
             return Mutation;
@@ -869,38 +1060,51 @@ $root.ServerSync = (function() {
 
         /**
          * Properties of a SyncdPatch.
-         * @memberof ServerSync
-         * @interface ISyncdPatch
-         * @property {ServerSync.ISyncdVersion|null} [version] SyncdPatch version
-         * @property {Array.<ServerSync.ISyncdMutation>|null} [mutations] SyncdPatch mutations
-         * @property {ServerSync.IExternalBlobReference|null} [externalMutations] SyncdPatch externalMutations
+         * @typedef {Object} ServerSync.SyncdPatch.$Properties
+         * @property {ServerSync.SyncdVersion.$Properties|null} [version] SyncdPatch version
+         * @property {Array.<ServerSync.SyncdMutation.$Properties>|null} [mutations] SyncdPatch mutations
+         * @property {ServerSync.ExternalBlobReference.$Properties|null} [externalMutations] SyncdPatch externalMutations
          * @property {Uint8Array|null} [snapshotMac] SyncdPatch snapshotMac
          * @property {Uint8Array|null} [patchMac] SyncdPatch patchMac
-         * @property {ServerSync.IKeyId|null} [keyId] SyncdPatch keyId
-         * @property {ServerSync.IExitCode|null} [exitCode] SyncdPatch exitCode
+         * @property {ServerSync.KeyId.$Properties|null} [keyId] SyncdPatch keyId
+         * @property {ServerSync.ExitCode.$Properties|null} [exitCode] SyncdPatch exitCode
          * @property {number|null} [deviceIndex] SyncdPatch deviceIndex
          * @property {Uint8Array|null} [clientDebugData] SyncdPatch clientDebugData
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a SyncdPatch.
+         * @memberof ServerSync
+         * @interface ISyncdPatch
+         * @augments ServerSync.SyncdPatch.$Properties
+         * @deprecated Use ServerSync.SyncdPatch.$Properties instead.
+         */
+
+        /**
+         * Shape of a SyncdPatch.
+         * @typedef {ServerSync.SyncdPatch.$Properties} ServerSync.SyncdPatch.$Shape
          */
 
         /**
          * Constructs a new SyncdPatch.
          * @memberof ServerSync
          * @classdesc Represents a SyncdPatch.
-         * @implements ISyncdPatch
          * @constructor
-         * @param {ServerSync.ISyncdPatch=} [properties] Properties to set
+         * @param {ServerSync.SyncdPatch.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function SyncdPatch(properties) {
+        var SyncdPatch = function (properties) {
             this.mutations = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * SyncdPatch version.
-         * @member {ServerSync.ISyncdVersion|null|undefined} version
+         * @member {ServerSync.SyncdVersion.$Properties|null|undefined} version
          * @memberof ServerSync.SyncdPatch
          * @instance
          */
@@ -908,7 +1112,7 @@ $root.ServerSync = (function() {
 
         /**
          * SyncdPatch mutations.
-         * @member {Array.<ServerSync.ISyncdMutation>} mutations
+         * @member {Array.<ServerSync.SyncdMutation.$Properties>} mutations
          * @memberof ServerSync.SyncdPatch
          * @instance
          */
@@ -916,7 +1120,7 @@ $root.ServerSync = (function() {
 
         /**
          * SyncdPatch externalMutations.
-         * @member {ServerSync.IExternalBlobReference|null|undefined} externalMutations
+         * @member {ServerSync.ExternalBlobReference.$Properties|null|undefined} externalMutations
          * @memberof ServerSync.SyncdPatch
          * @instance
          */
@@ -940,7 +1144,7 @@ $root.ServerSync = (function() {
 
         /**
          * SyncdPatch keyId.
-         * @member {ServerSync.IKeyId|null|undefined} keyId
+         * @member {ServerSync.KeyId.$Properties|null|undefined} keyId
          * @memberof ServerSync.SyncdPatch
          * @instance
          */
@@ -948,7 +1152,7 @@ $root.ServerSync = (function() {
 
         /**
          * SyncdPatch exitCode.
-         * @member {ServerSync.IExitCode|null|undefined} exitCode
+         * @member {ServerSync.ExitCode.$Properties|null|undefined} exitCode
          * @memberof ServerSync.SyncdPatch
          * @instance
          */
@@ -974,49 +1178,49 @@ $root.ServerSync = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdPatch.prototype, "_version", {
+        $Object.defineProperty(SyncdPatch.prototype, "_version", {
             get: $util.oneOfGetter($oneOfFields = ["version"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdPatch.prototype, "_externalMutations", {
+        $Object.defineProperty(SyncdPatch.prototype, "_externalMutations", {
             get: $util.oneOfGetter($oneOfFields = ["externalMutations"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdPatch.prototype, "_snapshotMac", {
+        $Object.defineProperty(SyncdPatch.prototype, "_snapshotMac", {
             get: $util.oneOfGetter($oneOfFields = ["snapshotMac"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdPatch.prototype, "_patchMac", {
+        $Object.defineProperty(SyncdPatch.prototype, "_patchMac", {
             get: $util.oneOfGetter($oneOfFields = ["patchMac"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdPatch.prototype, "_keyId", {
+        $Object.defineProperty(SyncdPatch.prototype, "_keyId", {
             get: $util.oneOfGetter($oneOfFields = ["keyId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdPatch.prototype, "_exitCode", {
+        $Object.defineProperty(SyncdPatch.prototype, "_exitCode", {
             get: $util.oneOfGetter($oneOfFields = ["exitCode"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdPatch.prototype, "_deviceIndex", {
+        $Object.defineProperty(SyncdPatch.prototype, "_deviceIndex", {
             get: $util.oneOfGetter($oneOfFields = ["deviceIndex"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdPatch.prototype, "_clientDebugData", {
+        $Object.defineProperty(SyncdPatch.prototype, "_clientDebugData", {
             get: $util.oneOfGetter($oneOfFields = ["clientDebugData"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -1026,10 +1230,14 @@ $root.ServerSync = (function() {
          * @function create
          * @memberof ServerSync.SyncdPatch
          * @static
-         * @param {ServerSync.ISyncdPatch=} [properties] Properties to set
+         * @param {ServerSync.SyncdPatch.$Properties=} [properties] Properties to set
          * @returns {ServerSync.SyncdPatch} SyncdPatch instance
+         * @type {{
+         *   (properties: ServerSync.SyncdPatch.$Shape): ServerSync.SyncdPatch & ServerSync.SyncdPatch.$Shape;
+         *   (properties?: ServerSync.SyncdPatch.$Properties): ServerSync.SyncdPatch;
+         * }}
          */
-        SyncdPatch.create = function create(properties) {
+        SyncdPatch.create = function(properties) {
             return new SyncdPatch(properties);
         };
 
@@ -1038,32 +1246,39 @@ $root.ServerSync = (function() {
          * @function encode
          * @memberof ServerSync.SyncdPatch
          * @static
-         * @param {ServerSync.ISyncdPatch} message SyncdPatch message or plain object to encode
+         * @param {ServerSync.SyncdPatch.$Properties} message SyncdPatch message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdPatch.encode = function encode(message, writer) {
+        SyncdPatch.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.version != null && Object.hasOwnProperty.call(message, "version"))
-                $root.ServerSync.SyncdVersion.encode(message.version, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
+                $root.ServerSync.SyncdVersion.encode(message.version, writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
             if (message.mutations != null && message.mutations.length)
                 for (var i = 0; i < message.mutations.length; ++i)
-                    $root.ServerSync.SyncdMutation.encode(message.mutations[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            if (message.externalMutations != null && Object.hasOwnProperty.call(message, "externalMutations"))
-                $root.ServerSync.ExternalBlobReference.encode(message.externalMutations, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-            if (message.snapshotMac != null && Object.hasOwnProperty.call(message, "snapshotMac"))
+                    $root.ServerSync.SyncdMutation.encode(message.mutations[i], writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+            if (message.externalMutations != null && $Object.hasOwnProperty.call(message, "externalMutations"))
+                $root.ServerSync.ExternalBlobReference.encode(message.externalMutations, writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
+            if (message.snapshotMac != null && $Object.hasOwnProperty.call(message, "snapshotMac"))
                 writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.snapshotMac);
-            if (message.patchMac != null && Object.hasOwnProperty.call(message, "patchMac"))
+            if (message.patchMac != null && $Object.hasOwnProperty.call(message, "patchMac"))
                 writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.patchMac);
-            if (message.keyId != null && Object.hasOwnProperty.call(message, "keyId"))
-                $root.ServerSync.KeyId.encode(message.keyId, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-            if (message.exitCode != null && Object.hasOwnProperty.call(message, "exitCode"))
-                $root.ServerSync.ExitCode.encode(message.exitCode, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-            if (message.deviceIndex != null && Object.hasOwnProperty.call(message, "deviceIndex"))
+            if (message.keyId != null && $Object.hasOwnProperty.call(message, "keyId"))
+                $root.ServerSync.KeyId.encode(message.keyId, writer.uint32(/* id 6, wireType 2 =*/50).fork(), _depth + 1).ldelim();
+            if (message.exitCode != null && $Object.hasOwnProperty.call(message, "exitCode"))
+                $root.ServerSync.ExitCode.encode(message.exitCode, writer.uint32(/* id 7, wireType 2 =*/58).fork(), _depth + 1).ldelim();
+            if (message.deviceIndex != null && $Object.hasOwnProperty.call(message, "deviceIndex"))
                 writer.uint32(/* id 8, wireType 0 =*/64).uint32(message.deviceIndex);
-            if (message.clientDebugData != null && Object.hasOwnProperty.call(message, "clientDebugData"))
+            if (message.clientDebugData != null && $Object.hasOwnProperty.call(message, "clientDebugData"))
                 writer.uint32(/* id 9, wireType 2 =*/74).bytes(message.clientDebugData);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -1072,12 +1287,12 @@ $root.ServerSync = (function() {
          * @function encodeDelimited
          * @memberof ServerSync.SyncdPatch
          * @static
-         * @param {ServerSync.ISyncdPatch} message SyncdPatch message or plain object to encode
+         * @param {ServerSync.SyncdPatch.$Properties} message SyncdPatch message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdPatch.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        SyncdPatch.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -1087,62 +1302,115 @@ $root.ServerSync = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ServerSync.SyncdPatch} SyncdPatch
+         * @returns {ServerSync.SyncdPatch & ServerSync.SyncdPatch.$Shape} SyncdPatch
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdPatch.decode = function decode(reader, length, error) {
+        SyncdPatch.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdPatch();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ServerSync.SyncdPatch();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.version = $root.ServerSync.SyncdVersion.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        if (!(message.mutations && message.mutations.length))
-                            message.mutations = [];
-                        message.mutations.push($root.ServerSync.SyncdMutation.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 3: {
-                        message.externalMutations = $root.ServerSync.ExternalBlobReference.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 4: {
-                        message.snapshotMac = reader.bytes();
-                        break;
-                    }
-                case 5: {
-                        message.patchMac = reader.bytes();
-                        break;
-                    }
-                case 6: {
-                        message.keyId = $root.ServerSync.KeyId.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 7: {
-                        message.exitCode = $root.ServerSync.ExitCode.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 8: {
-                        message.deviceIndex = reader.uint32();
-                        break;
-                    }
-                case 9: {
-                        message.clientDebugData = reader.bytes();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.version = $root.ServerSync.SyncdVersion.decode(reader, reader.size(), $undefined, _depth + 1, message.version);
+                        message._version = "version";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        if (!(message.mutations && message.mutations.length))
+                            message.mutations = [];
+                        message.mutations.push($root.ServerSync.SyncdMutation.decode(reader, reader.size(), $undefined, _depth + 1));
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 2)
+                            break;
+                        message.externalMutations = $root.ServerSync.ExternalBlobReference.decode(reader, reader.size(), $undefined, _depth + 1, message.externalMutations);
+                        message._externalMutations = "externalMutations";
+                        continue;
+                    }
+                case 4: {
+                        if (wireType !== 2)
+                            break;
+                        message.snapshotMac = reader.bytes();
+                        message._snapshotMac = "snapshotMac";
+                        continue;
+                    }
+                case 5: {
+                        if (wireType !== 2)
+                            break;
+                        message.patchMac = reader.bytes();
+                        message._patchMac = "patchMac";
+                        continue;
+                    }
+                case 6: {
+                        if (wireType !== 2)
+                            break;
+                        message.keyId = $root.ServerSync.KeyId.decode(reader, reader.size(), $undefined, _depth + 1, message.keyId);
+                        message._keyId = "keyId";
+                        continue;
+                    }
+                case 7: {
+                        if (wireType !== 2)
+                            break;
+                        message.exitCode = $root.ServerSync.ExitCode.decode(reader, reader.size(), $undefined, _depth + 1, message.exitCode);
+                        message._exitCode = "exitCode";
+                        continue;
+                    }
+                case 8: {
+                        if (wireType !== 0)
+                            break;
+                        message.deviceIndex = reader.uint32();
+                        message._deviceIndex = "deviceIndex";
+                        continue;
+                    }
+                case 9: {
+                        if (wireType !== 2)
+                            break;
+                        message.clientDebugData = reader.bytes();
+                        message._clientDebugData = "clientDebugData";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -1152,14 +1420,14 @@ $root.ServerSync = (function() {
          * @memberof ServerSync.SyncdPatch
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ServerSync.SyncdPatch} SyncdPatch
+         * @returns {ServerSync.SyncdPatch & ServerSync.SyncdPatch.$Shape} SyncdPatch
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdPatch.decodeDelimited = function decodeDelimited(reader) {
+        SyncdPatch.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -1170,67 +1438,71 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        SyncdPatch.verify = function verify(message) {
+        SyncdPatch.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.version != null && message.hasOwnProperty("version")) {
+            if (message.version != null && $Object.hasOwnProperty.call(message, "version")) {
                 properties._version = 1;
                 {
-                    var error = $root.ServerSync.SyncdVersion.verify(message.version);
+                    var error = $root.ServerSync.SyncdVersion.verify(message.version, _depth + 1);
                     if (error)
                         return "version." + error;
                 }
             }
-            if (message.mutations != null && message.hasOwnProperty("mutations")) {
-                if (!Array.isArray(message.mutations))
+            if (message.mutations != null && $Object.hasOwnProperty.call(message, "mutations")) {
+                if (!$Array.isArray(message.mutations))
                     return "mutations: array expected";
                 for (var i = 0; i < message.mutations.length; ++i) {
-                    var error = $root.ServerSync.SyncdMutation.verify(message.mutations[i]);
+                    var error = $root.ServerSync.SyncdMutation.verify(message.mutations[i], _depth + 1);
                     if (error)
                         return "mutations." + error;
                 }
             }
-            if (message.externalMutations != null && message.hasOwnProperty("externalMutations")) {
+            if (message.externalMutations != null && $Object.hasOwnProperty.call(message, "externalMutations")) {
                 properties._externalMutations = 1;
                 {
-                    var error = $root.ServerSync.ExternalBlobReference.verify(message.externalMutations);
+                    var error = $root.ServerSync.ExternalBlobReference.verify(message.externalMutations, _depth + 1);
                     if (error)
                         return "externalMutations." + error;
                 }
             }
-            if (message.snapshotMac != null && message.hasOwnProperty("snapshotMac")) {
+            if (message.snapshotMac != null && $Object.hasOwnProperty.call(message, "snapshotMac")) {
                 properties._snapshotMac = 1;
                 if (!(message.snapshotMac && typeof message.snapshotMac.length === "number" || $util.isString(message.snapshotMac)))
                     return "snapshotMac: buffer expected";
             }
-            if (message.patchMac != null && message.hasOwnProperty("patchMac")) {
+            if (message.patchMac != null && $Object.hasOwnProperty.call(message, "patchMac")) {
                 properties._patchMac = 1;
                 if (!(message.patchMac && typeof message.patchMac.length === "number" || $util.isString(message.patchMac)))
                     return "patchMac: buffer expected";
             }
-            if (message.keyId != null && message.hasOwnProperty("keyId")) {
+            if (message.keyId != null && $Object.hasOwnProperty.call(message, "keyId")) {
                 properties._keyId = 1;
                 {
-                    var error = $root.ServerSync.KeyId.verify(message.keyId);
+                    var error = $root.ServerSync.KeyId.verify(message.keyId, _depth + 1);
                     if (error)
                         return "keyId." + error;
                 }
             }
-            if (message.exitCode != null && message.hasOwnProperty("exitCode")) {
+            if (message.exitCode != null && $Object.hasOwnProperty.call(message, "exitCode")) {
                 properties._exitCode = 1;
                 {
-                    var error = $root.ServerSync.ExitCode.verify(message.exitCode);
+                    var error = $root.ServerSync.ExitCode.verify(message.exitCode, _depth + 1);
                     if (error)
                         return "exitCode." + error;
                 }
             }
-            if (message.deviceIndex != null && message.hasOwnProperty("deviceIndex")) {
+            if (message.deviceIndex != null && $Object.hasOwnProperty.call(message, "deviceIndex")) {
                 properties._deviceIndex = 1;
                 if (!$util.isInteger(message.deviceIndex))
                     return "deviceIndex: integer expected";
             }
-            if (message.clientDebugData != null && message.hasOwnProperty("clientDebugData")) {
+            if (message.clientDebugData != null && $Object.hasOwnProperty.call(message, "clientDebugData")) {
                 properties._clientDebugData = 1;
                 if (!(message.clientDebugData && typeof message.clientDebugData.length === "number" || $util.isString(message.clientDebugData)))
                     return "clientDebugData: buffer expected";
@@ -1246,29 +1518,35 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ServerSync.SyncdPatch} SyncdPatch
          */
-        SyncdPatch.fromObject = function fromObject(object) {
+        SyncdPatch.fromObject = function (object, _depth) {
             if (object instanceof $root.ServerSync.SyncdPatch)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ServerSync.SyncdPatch: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ServerSync.SyncdPatch();
             if (object.version != null) {
-                if (typeof object.version !== "object")
-                    throw TypeError(".ServerSync.SyncdPatch.version: object expected");
-                message.version = $root.ServerSync.SyncdVersion.fromObject(object.version);
+                if (!$util.isObject(object.version))
+                    throw $TypeError(".ServerSync.SyncdPatch.version: object expected");
+                message.version = $root.ServerSync.SyncdVersion.fromObject(object.version, _depth + 1);
             }
             if (object.mutations) {
-                if (!Array.isArray(object.mutations))
-                    throw TypeError(".ServerSync.SyncdPatch.mutations: array expected");
-                message.mutations = [];
+                if (!$Array.isArray(object.mutations))
+                    throw $TypeError(".ServerSync.SyncdPatch.mutations: array expected");
+                message.mutations = $Array(object.mutations.length);
                 for (var i = 0; i < object.mutations.length; ++i) {
-                    if (typeof object.mutations[i] !== "object")
-                        throw TypeError(".ServerSync.SyncdPatch.mutations: object expected");
-                    message.mutations[i] = $root.ServerSync.SyncdMutation.fromObject(object.mutations[i]);
+                    if (!$util.isObject(object.mutations[i]))
+                        throw $TypeError(".ServerSync.SyncdPatch.mutations: object expected");
+                    message.mutations[i] = $root.ServerSync.SyncdMutation.fromObject(object.mutations[i], _depth + 1);
                 }
             }
             if (object.externalMutations != null) {
-                if (typeof object.externalMutations !== "object")
-                    throw TypeError(".ServerSync.SyncdPatch.externalMutations: object expected");
-                message.externalMutations = $root.ServerSync.ExternalBlobReference.fromObject(object.externalMutations);
+                if (!$util.isObject(object.externalMutations))
+                    throw $TypeError(".ServerSync.SyncdPatch.externalMutations: object expected");
+                message.externalMutations = $root.ServerSync.ExternalBlobReference.fromObject(object.externalMutations, _depth + 1);
             }
             if (object.snapshotMac != null)
                 if (typeof object.snapshotMac === "string")
@@ -1281,14 +1559,14 @@ $root.ServerSync = (function() {
                 else if (object.patchMac.length >= 0)
                     message.patchMac = object.patchMac;
             if (object.keyId != null) {
-                if (typeof object.keyId !== "object")
-                    throw TypeError(".ServerSync.SyncdPatch.keyId: object expected");
-                message.keyId = $root.ServerSync.KeyId.fromObject(object.keyId);
+                if (!$util.isObject(object.keyId))
+                    throw $TypeError(".ServerSync.SyncdPatch.keyId: object expected");
+                message.keyId = $root.ServerSync.KeyId.fromObject(object.keyId, _depth + 1);
             }
             if (object.exitCode != null) {
-                if (typeof object.exitCode !== "object")
-                    throw TypeError(".ServerSync.SyncdPatch.exitCode: object expected");
-                message.exitCode = $root.ServerSync.ExitCode.fromObject(object.exitCode);
+                if (!$util.isObject(object.exitCode))
+                    throw $TypeError(".ServerSync.SyncdPatch.exitCode: object expected");
+                message.exitCode = $root.ServerSync.ExitCode.fromObject(object.exitCode, _depth + 1);
             }
             if (object.deviceIndex != null)
                 message.deviceIndex = object.deviceIndex >>> 0;
@@ -1309,57 +1587,37 @@ $root.ServerSync = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        SyncdPatch.toObject = function toObject(message, options) {
+        SyncdPatch.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
             if (options.arrays || options.defaults)
                 object.mutations = [];
-            if (message.version != null && message.hasOwnProperty("version")) {
-                object.version = $root.ServerSync.SyncdVersion.toObject(message.version, options);
-                if (options.oneofs)
-                    object._version = "version";
-            }
+            if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
+                object.version = $root.ServerSync.SyncdVersion.toObject(message.version, options, _depth + 1);
             if (message.mutations && message.mutations.length) {
-                object.mutations = [];
+                object.mutations = $Array(message.mutations.length);
                 for (var j = 0; j < message.mutations.length; ++j)
-                    object.mutations[j] = $root.ServerSync.SyncdMutation.toObject(message.mutations[j], options);
+                    object.mutations[j] = $root.ServerSync.SyncdMutation.toObject(message.mutations[j], options, _depth + 1);
             }
-            if (message.externalMutations != null && message.hasOwnProperty("externalMutations")) {
-                object.externalMutations = $root.ServerSync.ExternalBlobReference.toObject(message.externalMutations, options);
-                if (options.oneofs)
-                    object._externalMutations = "externalMutations";
-            }
-            if (message.snapshotMac != null && message.hasOwnProperty("snapshotMac")) {
-                object.snapshotMac = options.bytes === String ? $util.base64.encode(message.snapshotMac, 0, message.snapshotMac.length) : options.bytes === Array ? Array.prototype.slice.call(message.snapshotMac) : message.snapshotMac;
-                if (options.oneofs)
-                    object._snapshotMac = "snapshotMac";
-            }
-            if (message.patchMac != null && message.hasOwnProperty("patchMac")) {
-                object.patchMac = options.bytes === String ? $util.base64.encode(message.patchMac, 0, message.patchMac.length) : options.bytes === Array ? Array.prototype.slice.call(message.patchMac) : message.patchMac;
-                if (options.oneofs)
-                    object._patchMac = "patchMac";
-            }
-            if (message.keyId != null && message.hasOwnProperty("keyId")) {
-                object.keyId = $root.ServerSync.KeyId.toObject(message.keyId, options);
-                if (options.oneofs)
-                    object._keyId = "keyId";
-            }
-            if (message.exitCode != null && message.hasOwnProperty("exitCode")) {
-                object.exitCode = $root.ServerSync.ExitCode.toObject(message.exitCode, options);
-                if (options.oneofs)
-                    object._exitCode = "exitCode";
-            }
-            if (message.deviceIndex != null && message.hasOwnProperty("deviceIndex")) {
+            if (message.externalMutations != null && $Object.hasOwnProperty.call(message, "externalMutations"))
+                object.externalMutations = $root.ServerSync.ExternalBlobReference.toObject(message.externalMutations, options, _depth + 1);
+            if (message.snapshotMac != null && $Object.hasOwnProperty.call(message, "snapshotMac"))
+                object.snapshotMac = options.bytes === $String ? $util.base64.encode(message.snapshotMac, 0, message.snapshotMac.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.snapshotMac) : message.snapshotMac;
+            if (message.patchMac != null && $Object.hasOwnProperty.call(message, "patchMac"))
+                object.patchMac = options.bytes === $String ? $util.base64.encode(message.patchMac, 0, message.patchMac.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.patchMac) : message.patchMac;
+            if (message.keyId != null && $Object.hasOwnProperty.call(message, "keyId"))
+                object.keyId = $root.ServerSync.KeyId.toObject(message.keyId, options, _depth + 1);
+            if (message.exitCode != null && $Object.hasOwnProperty.call(message, "exitCode"))
+                object.exitCode = $root.ServerSync.ExitCode.toObject(message.exitCode, options, _depth + 1);
+            if (message.deviceIndex != null && $Object.hasOwnProperty.call(message, "deviceIndex"))
                 object.deviceIndex = message.deviceIndex;
-                if (options.oneofs)
-                    object._deviceIndex = "deviceIndex";
-            }
-            if (message.clientDebugData != null && message.hasOwnProperty("clientDebugData")) {
-                object.clientDebugData = options.bytes === String ? $util.base64.encode(message.clientDebugData, 0, message.clientDebugData.length) : options.bytes === Array ? Array.prototype.slice.call(message.clientDebugData) : message.clientDebugData;
-                if (options.oneofs)
-                    object._clientDebugData = "clientDebugData";
-            }
+            if (message.clientDebugData != null && $Object.hasOwnProperty.call(message, "clientDebugData"))
+                object.clientDebugData = options.bytes === $String ? $util.base64.encode(message.clientDebugData, 0, message.clientDebugData.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.clientDebugData) : message.clientDebugData;
             return object;
         };
 
@@ -1370,23 +1628,22 @@ $root.ServerSync = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        SyncdPatch.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        SyncdPatch.prototype.toJSON = function() {
+            return SyncdPatch.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for SyncdPatch
+         * Gets the type url for SyncdPatch
          * @function getTypeUrl
          * @memberof ServerSync.SyncdPatch
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        SyncdPatch.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ServerSync.SyncdPatch";
+        SyncdPatch.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ServerSync.SyncdPatch";
         };
 
         return SyncdPatch;
@@ -1396,26 +1653,39 @@ $root.ServerSync = (function() {
 
         /**
          * Properties of a SyncdMutation.
+         * @typedef {Object} ServerSync.SyncdMutation.$Properties
+         * @property {ServerSync.SyncdMutation.SyncdOperation|null} [operation] SyncdMutation operation
+         * @property {ServerSync.SyncdRecord.$Properties|null} [record] SyncdMutation record
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a SyncdMutation.
          * @memberof ServerSync
          * @interface ISyncdMutation
-         * @property {ServerSync.SyncdMutation.SyncdOperation|null} [operation] SyncdMutation operation
-         * @property {ServerSync.ISyncdRecord|null} [record] SyncdMutation record
+         * @augments ServerSync.SyncdMutation.$Properties
+         * @deprecated Use ServerSync.SyncdMutation.$Properties instead.
+         */
+
+        /**
+         * Shape of a SyncdMutation.
+         * @typedef {ServerSync.SyncdMutation.$Properties} ServerSync.SyncdMutation.$Shape
          */
 
         /**
          * Constructs a new SyncdMutation.
          * @memberof ServerSync
          * @classdesc Represents a SyncdMutation.
-         * @implements ISyncdMutation
          * @constructor
-         * @param {ServerSync.ISyncdMutation=} [properties] Properties to set
+         * @param {ServerSync.SyncdMutation.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function SyncdMutation(properties) {
+        var SyncdMutation = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * SyncdMutation operation.
@@ -1427,7 +1697,7 @@ $root.ServerSync = (function() {
 
         /**
          * SyncdMutation record.
-         * @member {ServerSync.ISyncdRecord|null|undefined} record
+         * @member {ServerSync.SyncdRecord.$Properties|null|undefined} record
          * @memberof ServerSync.SyncdMutation
          * @instance
          */
@@ -1437,13 +1707,13 @@ $root.ServerSync = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdMutation.prototype, "_operation", {
+        $Object.defineProperty(SyncdMutation.prototype, "_operation", {
             get: $util.oneOfGetter($oneOfFields = ["operation"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdMutation.prototype, "_record", {
+        $Object.defineProperty(SyncdMutation.prototype, "_record", {
             get: $util.oneOfGetter($oneOfFields = ["record"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -1453,10 +1723,14 @@ $root.ServerSync = (function() {
          * @function create
          * @memberof ServerSync.SyncdMutation
          * @static
-         * @param {ServerSync.ISyncdMutation=} [properties] Properties to set
+         * @param {ServerSync.SyncdMutation.$Properties=} [properties] Properties to set
          * @returns {ServerSync.SyncdMutation} SyncdMutation instance
+         * @type {{
+         *   (properties: ServerSync.SyncdMutation.$Shape): ServerSync.SyncdMutation & ServerSync.SyncdMutation.$Shape;
+         *   (properties?: ServerSync.SyncdMutation.$Properties): ServerSync.SyncdMutation;
+         * }}
          */
-        SyncdMutation.create = function create(properties) {
+        SyncdMutation.create = function(properties) {
             return new SyncdMutation(properties);
         };
 
@@ -1465,17 +1739,24 @@ $root.ServerSync = (function() {
          * @function encode
          * @memberof ServerSync.SyncdMutation
          * @static
-         * @param {ServerSync.ISyncdMutation} message SyncdMutation message or plain object to encode
+         * @param {ServerSync.SyncdMutation.$Properties} message SyncdMutation message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdMutation.encode = function encode(message, writer) {
+        SyncdMutation.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.operation != null && Object.hasOwnProperty.call(message, "operation"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.operation != null && $Object.hasOwnProperty.call(message, "operation"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.operation);
-            if (message.record != null && Object.hasOwnProperty.call(message, "record"))
-                $root.ServerSync.SyncdRecord.encode(message.record, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.record != null && $Object.hasOwnProperty.call(message, "record"))
+                $root.ServerSync.SyncdRecord.encode(message.record, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -1484,12 +1765,12 @@ $root.ServerSync = (function() {
          * @function encodeDelimited
          * @memberof ServerSync.SyncdMutation
          * @static
-         * @param {ServerSync.ISyncdMutation} message SyncdMutation message or plain object to encode
+         * @param {ServerSync.SyncdMutation.$Properties} message SyncdMutation message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdMutation.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        SyncdMutation.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -1499,32 +1780,65 @@ $root.ServerSync = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ServerSync.SyncdMutation} SyncdMutation
+         * @returns {ServerSync.SyncdMutation & ServerSync.SyncdMutation.$Shape} SyncdMutation
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdMutation.decode = function decode(reader, length, error) {
+        SyncdMutation.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdMutation();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message, value;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ServerSync.SyncdMutation();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.operation = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.record = $root.ServerSync.SyncdRecord.decode(reader, reader.uint32());
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 0)
+                            break;
+                        message.operation = reader.int32();
+                        message._operation = "operation";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.record = $root.ServerSync.SyncdRecord.decode(reader, reader.size(), $undefined, _depth + 1, message.record);
+                        message._record = "record";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -1534,14 +1848,14 @@ $root.ServerSync = (function() {
          * @memberof ServerSync.SyncdMutation
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ServerSync.SyncdMutation} SyncdMutation
+         * @returns {ServerSync.SyncdMutation & ServerSync.SyncdMutation.$Shape} SyncdMutation
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdMutation.decodeDelimited = function decodeDelimited(reader) {
+        SyncdMutation.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -1552,24 +1866,23 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        SyncdMutation.verify = function verify(message) {
+        SyncdMutation.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.operation != null && message.hasOwnProperty("operation")) {
+            if (message.operation != null && $Object.hasOwnProperty.call(message, "operation")) {
                 properties._operation = 1;
-                switch (message.operation) {
-                default:
+                if (typeof message.operation !== "number" || (message.operation | 0) !== message.operation)
                     return "operation: enum value expected";
-                case 0:
-                case 1:
-                    break;
-                }
             }
-            if (message.record != null && message.hasOwnProperty("record")) {
+            if (message.record != null && $Object.hasOwnProperty.call(message, "record")) {
                 properties._record = 1;
                 {
-                    var error = $root.ServerSync.SyncdRecord.verify(message.record);
+                    var error = $root.ServerSync.SyncdRecord.verify(message.record, _depth + 1);
                     if (error)
                         return "record." + error;
                 }
@@ -1585,17 +1898,17 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ServerSync.SyncdMutation} SyncdMutation
          */
-        SyncdMutation.fromObject = function fromObject(object) {
+        SyncdMutation.fromObject = function (object, _depth) {
             if (object instanceof $root.ServerSync.SyncdMutation)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ServerSync.SyncdMutation: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ServerSync.SyncdMutation();
             switch (object.operation) {
-            default:
-                if (typeof object.operation === "number") {
-                    message.operation = object.operation;
-                    break;
-                }
-                break;
             case "SET":
             case 0:
                 message.operation = 0;
@@ -1604,11 +1917,14 @@ $root.ServerSync = (function() {
             case 1:
                 message.operation = 1;
                 break;
+            default:
+                if (typeof object.operation === "number" && (object.operation | 0) === object.operation)
+                    message.operation = object.operation;
             }
             if (object.record != null) {
-                if (typeof object.record !== "object")
-                    throw TypeError(".ServerSync.SyncdMutation.record: object expected");
-                message.record = $root.ServerSync.SyncdRecord.fromObject(object.record);
+                if (!$util.isObject(object.record))
+                    throw $TypeError(".ServerSync.SyncdMutation.record: object expected");
+                message.record = $root.ServerSync.SyncdRecord.fromObject(object.record, _depth + 1);
             }
             return message;
         };
@@ -1622,20 +1938,18 @@ $root.ServerSync = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        SyncdMutation.toObject = function toObject(message, options) {
+        SyncdMutation.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.operation != null && message.hasOwnProperty("operation")) {
-                object.operation = options.enums === String ? $root.ServerSync.SyncdMutation.SyncdOperation[message.operation] === undefined ? message.operation : $root.ServerSync.SyncdMutation.SyncdOperation[message.operation] : message.operation;
-                if (options.oneofs)
-                    object._operation = "operation";
-            }
-            if (message.record != null && message.hasOwnProperty("record")) {
-                object.record = $root.ServerSync.SyncdRecord.toObject(message.record, options);
-                if (options.oneofs)
-                    object._record = "record";
-            }
+            if (message.operation != null && $Object.hasOwnProperty.call(message, "operation"))
+                object.operation = options.enums === $String ? $root.ServerSync.SyncdMutation.SyncdOperation[message.operation] === $undefined ? message.operation : $root.ServerSync.SyncdMutation.SyncdOperation[message.operation] : message.operation;
+            if (message.record != null && $Object.hasOwnProperty.call(message, "record"))
+                object.record = $root.ServerSync.SyncdRecord.toObject(message.record, options, _depth + 1);
             return object;
         };
 
@@ -1646,23 +1960,22 @@ $root.ServerSync = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        SyncdMutation.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        SyncdMutation.prototype.toJSON = function() {
+            return SyncdMutation.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for SyncdMutation
+         * Gets the type url for SyncdMutation
          * @function getTypeUrl
          * @memberof ServerSync.SyncdMutation
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        SyncdMutation.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ServerSync.SyncdMutation";
+        SyncdMutation.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ServerSync.SyncdMutation";
         };
 
         /**
@@ -1673,7 +1986,7 @@ $root.ServerSync = (function() {
          * @property {number} REMOVE=1 REMOVE value
          */
         SyncdMutation.SyncdOperation = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
+            var valuesById = $Object.create(null), values = $Object.create(valuesById);
             values[valuesById[0] = "SET"] = 0;
             values[valuesById[1] = "REMOVE"] = 1;
             return values;
@@ -1686,30 +1999,43 @@ $root.ServerSync = (function() {
 
         /**
          * Properties of a SyncdMutations.
+         * @typedef {Object} ServerSync.SyncdMutations.$Properties
+         * @property {Array.<ServerSync.SyncdMutation.$Properties>|null} [mutations] SyncdMutations mutations
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a SyncdMutations.
          * @memberof ServerSync
          * @interface ISyncdMutations
-         * @property {Array.<ServerSync.ISyncdMutation>|null} [mutations] SyncdMutations mutations
+         * @augments ServerSync.SyncdMutations.$Properties
+         * @deprecated Use ServerSync.SyncdMutations.$Properties instead.
+         */
+
+        /**
+         * Shape of a SyncdMutations.
+         * @typedef {ServerSync.SyncdMutations.$Properties} ServerSync.SyncdMutations.$Shape
          */
 
         /**
          * Constructs a new SyncdMutations.
          * @memberof ServerSync
          * @classdesc Represents a SyncdMutations.
-         * @implements ISyncdMutations
          * @constructor
-         * @param {ServerSync.ISyncdMutations=} [properties] Properties to set
+         * @param {ServerSync.SyncdMutations.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function SyncdMutations(properties) {
+        var SyncdMutations = function (properties) {
             this.mutations = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * SyncdMutations mutations.
-         * @member {Array.<ServerSync.ISyncdMutation>} mutations
+         * @member {Array.<ServerSync.SyncdMutation.$Properties>} mutations
          * @memberof ServerSync.SyncdMutations
          * @instance
          */
@@ -1720,10 +2046,14 @@ $root.ServerSync = (function() {
          * @function create
          * @memberof ServerSync.SyncdMutations
          * @static
-         * @param {ServerSync.ISyncdMutations=} [properties] Properties to set
+         * @param {ServerSync.SyncdMutations.$Properties=} [properties] Properties to set
          * @returns {ServerSync.SyncdMutations} SyncdMutations instance
+         * @type {{
+         *   (properties: ServerSync.SyncdMutations.$Shape): ServerSync.SyncdMutations & ServerSync.SyncdMutations.$Shape;
+         *   (properties?: ServerSync.SyncdMutations.$Properties): ServerSync.SyncdMutations;
+         * }}
          */
-        SyncdMutations.create = function create(properties) {
+        SyncdMutations.create = function(properties) {
             return new SyncdMutations(properties);
         };
 
@@ -1732,16 +2062,23 @@ $root.ServerSync = (function() {
          * @function encode
          * @memberof ServerSync.SyncdMutations
          * @static
-         * @param {ServerSync.ISyncdMutations} message SyncdMutations message or plain object to encode
+         * @param {ServerSync.SyncdMutations.$Properties} message SyncdMutations message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdMutations.encode = function encode(message, writer) {
+        SyncdMutations.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             if (message.mutations != null && message.mutations.length)
                 for (var i = 0; i < message.mutations.length; ++i)
-                    $root.ServerSync.SyncdMutation.encode(message.mutations[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    $root.ServerSync.SyncdMutation.encode(message.mutations[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -1750,12 +2087,12 @@ $root.ServerSync = (function() {
          * @function encodeDelimited
          * @memberof ServerSync.SyncdMutations
          * @static
-         * @param {ServerSync.ISyncdMutations} message SyncdMutations message or plain object to encode
+         * @param {ServerSync.SyncdMutations.$Properties} message SyncdMutations message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdMutations.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        SyncdMutations.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -1765,30 +2102,59 @@ $root.ServerSync = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ServerSync.SyncdMutations} SyncdMutations
+         * @returns {ServerSync.SyncdMutations & ServerSync.SyncdMutations.$Shape} SyncdMutations
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdMutations.decode = function decode(reader, length, error) {
+        SyncdMutations.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdMutations();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ServerSync.SyncdMutations();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.mutations && message.mutations.length))
-                            message.mutations = [];
-                        message.mutations.push($root.ServerSync.SyncdMutation.decode(reader, reader.uint32()));
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        if (!(message.mutations && message.mutations.length))
+                            message.mutations = [];
+                        message.mutations.push($root.ServerSync.SyncdMutation.decode(reader, reader.size(), $undefined, _depth + 1));
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -1798,14 +2164,14 @@ $root.ServerSync = (function() {
          * @memberof ServerSync.SyncdMutations
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ServerSync.SyncdMutations} SyncdMutations
+         * @returns {ServerSync.SyncdMutations & ServerSync.SyncdMutations.$Shape} SyncdMutations
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdMutations.decodeDelimited = function decodeDelimited(reader) {
+        SyncdMutations.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -1816,14 +2182,18 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        SyncdMutations.verify = function verify(message) {
+        SyncdMutations.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (message.mutations != null && message.hasOwnProperty("mutations")) {
-                if (!Array.isArray(message.mutations))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
+            if (message.mutations != null && $Object.hasOwnProperty.call(message, "mutations")) {
+                if (!$Array.isArray(message.mutations))
                     return "mutations: array expected";
                 for (var i = 0; i < message.mutations.length; ++i) {
-                    var error = $root.ServerSync.SyncdMutation.verify(message.mutations[i]);
+                    var error = $root.ServerSync.SyncdMutation.verify(message.mutations[i], _depth + 1);
                     if (error)
                         return "mutations." + error;
                 }
@@ -1839,18 +2209,24 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ServerSync.SyncdMutations} SyncdMutations
          */
-        SyncdMutations.fromObject = function fromObject(object) {
+        SyncdMutations.fromObject = function (object, _depth) {
             if (object instanceof $root.ServerSync.SyncdMutations)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ServerSync.SyncdMutations: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ServerSync.SyncdMutations();
             if (object.mutations) {
-                if (!Array.isArray(object.mutations))
-                    throw TypeError(".ServerSync.SyncdMutations.mutations: array expected");
-                message.mutations = [];
+                if (!$Array.isArray(object.mutations))
+                    throw $TypeError(".ServerSync.SyncdMutations.mutations: array expected");
+                message.mutations = $Array(object.mutations.length);
                 for (var i = 0; i < object.mutations.length; ++i) {
-                    if (typeof object.mutations[i] !== "object")
-                        throw TypeError(".ServerSync.SyncdMutations.mutations: object expected");
-                    message.mutations[i] = $root.ServerSync.SyncdMutation.fromObject(object.mutations[i]);
+                    if (!$util.isObject(object.mutations[i]))
+                        throw $TypeError(".ServerSync.SyncdMutations.mutations: object expected");
+                    message.mutations[i] = $root.ServerSync.SyncdMutation.fromObject(object.mutations[i], _depth + 1);
                 }
             }
             return message;
@@ -1865,16 +2241,20 @@ $root.ServerSync = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        SyncdMutations.toObject = function toObject(message, options) {
+        SyncdMutations.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
             if (options.arrays || options.defaults)
                 object.mutations = [];
             if (message.mutations && message.mutations.length) {
-                object.mutations = [];
+                object.mutations = $Array(message.mutations.length);
                 for (var j = 0; j < message.mutations.length; ++j)
-                    object.mutations[j] = $root.ServerSync.SyncdMutation.toObject(message.mutations[j], options);
+                    object.mutations[j] = $root.ServerSync.SyncdMutation.toObject(message.mutations[j], options, _depth + 1);
             }
             return object;
         };
@@ -1886,23 +2266,22 @@ $root.ServerSync = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        SyncdMutations.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        SyncdMutations.prototype.toJSON = function() {
+            return SyncdMutations.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for SyncdMutations
+         * Gets the type url for SyncdMutations
          * @function getTypeUrl
          * @memberof ServerSync.SyncdMutations
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        SyncdMutations.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ServerSync.SyncdMutations";
+        SyncdMutations.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ServerSync.SyncdMutations";
         };
 
         return SyncdMutations;
@@ -1912,33 +2291,46 @@ $root.ServerSync = (function() {
 
         /**
          * Properties of a SyncdSnapshot.
+         * @typedef {Object} ServerSync.SyncdSnapshot.$Properties
+         * @property {ServerSync.SyncdVersion.$Properties|null} [version] SyncdSnapshot version
+         * @property {Array.<ServerSync.SyncdRecord.$Properties>|null} [records] SyncdSnapshot records
+         * @property {Uint8Array|null} [mac] SyncdSnapshot mac
+         * @property {ServerSync.KeyId.$Properties|null} [keyId] SyncdSnapshot keyId
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a SyncdSnapshot.
          * @memberof ServerSync
          * @interface ISyncdSnapshot
-         * @property {ServerSync.ISyncdVersion|null} [version] SyncdSnapshot version
-         * @property {Array.<ServerSync.ISyncdRecord>|null} [records] SyncdSnapshot records
-         * @property {Uint8Array|null} [mac] SyncdSnapshot mac
-         * @property {ServerSync.IKeyId|null} [keyId] SyncdSnapshot keyId
+         * @augments ServerSync.SyncdSnapshot.$Properties
+         * @deprecated Use ServerSync.SyncdSnapshot.$Properties instead.
+         */
+
+        /**
+         * Shape of a SyncdSnapshot.
+         * @typedef {ServerSync.SyncdSnapshot.$Properties} ServerSync.SyncdSnapshot.$Shape
          */
 
         /**
          * Constructs a new SyncdSnapshot.
          * @memberof ServerSync
          * @classdesc Represents a SyncdSnapshot.
-         * @implements ISyncdSnapshot
          * @constructor
-         * @param {ServerSync.ISyncdSnapshot=} [properties] Properties to set
+         * @param {ServerSync.SyncdSnapshot.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function SyncdSnapshot(properties) {
+        var SyncdSnapshot = function (properties) {
             this.records = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * SyncdSnapshot version.
-         * @member {ServerSync.ISyncdVersion|null|undefined} version
+         * @member {ServerSync.SyncdVersion.$Properties|null|undefined} version
          * @memberof ServerSync.SyncdSnapshot
          * @instance
          */
@@ -1946,7 +2338,7 @@ $root.ServerSync = (function() {
 
         /**
          * SyncdSnapshot records.
-         * @member {Array.<ServerSync.ISyncdRecord>} records
+         * @member {Array.<ServerSync.SyncdRecord.$Properties>} records
          * @memberof ServerSync.SyncdSnapshot
          * @instance
          */
@@ -1962,7 +2354,7 @@ $root.ServerSync = (function() {
 
         /**
          * SyncdSnapshot keyId.
-         * @member {ServerSync.IKeyId|null|undefined} keyId
+         * @member {ServerSync.KeyId.$Properties|null|undefined} keyId
          * @memberof ServerSync.SyncdSnapshot
          * @instance
          */
@@ -1972,19 +2364,19 @@ $root.ServerSync = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdSnapshot.prototype, "_version", {
+        $Object.defineProperty(SyncdSnapshot.prototype, "_version", {
             get: $util.oneOfGetter($oneOfFields = ["version"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdSnapshot.prototype, "_mac", {
+        $Object.defineProperty(SyncdSnapshot.prototype, "_mac", {
             get: $util.oneOfGetter($oneOfFields = ["mac"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdSnapshot.prototype, "_keyId", {
+        $Object.defineProperty(SyncdSnapshot.prototype, "_keyId", {
             get: $util.oneOfGetter($oneOfFields = ["keyId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -1994,10 +2386,14 @@ $root.ServerSync = (function() {
          * @function create
          * @memberof ServerSync.SyncdSnapshot
          * @static
-         * @param {ServerSync.ISyncdSnapshot=} [properties] Properties to set
+         * @param {ServerSync.SyncdSnapshot.$Properties=} [properties] Properties to set
          * @returns {ServerSync.SyncdSnapshot} SyncdSnapshot instance
+         * @type {{
+         *   (properties: ServerSync.SyncdSnapshot.$Shape): ServerSync.SyncdSnapshot & ServerSync.SyncdSnapshot.$Shape;
+         *   (properties?: ServerSync.SyncdSnapshot.$Properties): ServerSync.SyncdSnapshot;
+         * }}
          */
-        SyncdSnapshot.create = function create(properties) {
+        SyncdSnapshot.create = function(properties) {
             return new SyncdSnapshot(properties);
         };
 
@@ -2006,22 +2402,29 @@ $root.ServerSync = (function() {
          * @function encode
          * @memberof ServerSync.SyncdSnapshot
          * @static
-         * @param {ServerSync.ISyncdSnapshot} message SyncdSnapshot message or plain object to encode
+         * @param {ServerSync.SyncdSnapshot.$Properties} message SyncdSnapshot message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdSnapshot.encode = function encode(message, writer) {
+        SyncdSnapshot.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.version != null && Object.hasOwnProperty.call(message, "version"))
-                $root.ServerSync.SyncdVersion.encode(message.version, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
+                $root.ServerSync.SyncdVersion.encode(message.version, writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
             if (message.records != null && message.records.length)
                 for (var i = 0; i < message.records.length; ++i)
-                    $root.ServerSync.SyncdRecord.encode(message.records[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            if (message.mac != null && Object.hasOwnProperty.call(message, "mac"))
+                    $root.ServerSync.SyncdRecord.encode(message.records[i], writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+            if (message.mac != null && $Object.hasOwnProperty.call(message, "mac"))
                 writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.mac);
-            if (message.keyId != null && Object.hasOwnProperty.call(message, "keyId"))
-                $root.ServerSync.KeyId.encode(message.keyId, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+            if (message.keyId != null && $Object.hasOwnProperty.call(message, "keyId"))
+                $root.ServerSync.KeyId.encode(message.keyId, writer.uint32(/* id 4, wireType 2 =*/34).fork(), _depth + 1).ldelim();
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -2030,12 +2433,12 @@ $root.ServerSync = (function() {
          * @function encodeDelimited
          * @memberof ServerSync.SyncdSnapshot
          * @static
-         * @param {ServerSync.ISyncdSnapshot} message SyncdSnapshot message or plain object to encode
+         * @param {ServerSync.SyncdSnapshot.$Properties} message SyncdSnapshot message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdSnapshot.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        SyncdSnapshot.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -2045,42 +2448,80 @@ $root.ServerSync = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ServerSync.SyncdSnapshot} SyncdSnapshot
+         * @returns {ServerSync.SyncdSnapshot & ServerSync.SyncdSnapshot.$Shape} SyncdSnapshot
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdSnapshot.decode = function decode(reader, length, error) {
+        SyncdSnapshot.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdSnapshot();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ServerSync.SyncdSnapshot();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.version = $root.ServerSync.SyncdVersion.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        if (!(message.records && message.records.length))
-                            message.records = [];
-                        message.records.push($root.ServerSync.SyncdRecord.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 3: {
-                        message.mac = reader.bytes();
-                        break;
-                    }
-                case 4: {
-                        message.keyId = $root.ServerSync.KeyId.decode(reader, reader.uint32());
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.version = $root.ServerSync.SyncdVersion.decode(reader, reader.size(), $undefined, _depth + 1, message.version);
+                        message._version = "version";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        if (!(message.records && message.records.length))
+                            message.records = [];
+                        message.records.push($root.ServerSync.SyncdRecord.decode(reader, reader.size(), $undefined, _depth + 1));
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 2)
+                            break;
+                        message.mac = reader.bytes();
+                        message._mac = "mac";
+                        continue;
+                    }
+                case 4: {
+                        if (wireType !== 2)
+                            break;
+                        message.keyId = $root.ServerSync.KeyId.decode(reader, reader.size(), $undefined, _depth + 1, message.keyId);
+                        message._keyId = "keyId";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -2090,14 +2531,14 @@ $root.ServerSync = (function() {
          * @memberof ServerSync.SyncdSnapshot
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ServerSync.SyncdSnapshot} SyncdSnapshot
+         * @returns {ServerSync.SyncdSnapshot & ServerSync.SyncdSnapshot.$Shape} SyncdSnapshot
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdSnapshot.decodeDelimited = function decodeDelimited(reader) {
+        SyncdSnapshot.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -2108,36 +2549,40 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        SyncdSnapshot.verify = function verify(message) {
+        SyncdSnapshot.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.version != null && message.hasOwnProperty("version")) {
+            if (message.version != null && $Object.hasOwnProperty.call(message, "version")) {
                 properties._version = 1;
                 {
-                    var error = $root.ServerSync.SyncdVersion.verify(message.version);
+                    var error = $root.ServerSync.SyncdVersion.verify(message.version, _depth + 1);
                     if (error)
                         return "version." + error;
                 }
             }
-            if (message.records != null && message.hasOwnProperty("records")) {
-                if (!Array.isArray(message.records))
+            if (message.records != null && $Object.hasOwnProperty.call(message, "records")) {
+                if (!$Array.isArray(message.records))
                     return "records: array expected";
                 for (var i = 0; i < message.records.length; ++i) {
-                    var error = $root.ServerSync.SyncdRecord.verify(message.records[i]);
+                    var error = $root.ServerSync.SyncdRecord.verify(message.records[i], _depth + 1);
                     if (error)
                         return "records." + error;
                 }
             }
-            if (message.mac != null && message.hasOwnProperty("mac")) {
+            if (message.mac != null && $Object.hasOwnProperty.call(message, "mac")) {
                 properties._mac = 1;
                 if (!(message.mac && typeof message.mac.length === "number" || $util.isString(message.mac)))
                     return "mac: buffer expected";
             }
-            if (message.keyId != null && message.hasOwnProperty("keyId")) {
+            if (message.keyId != null && $Object.hasOwnProperty.call(message, "keyId")) {
                 properties._keyId = 1;
                 {
-                    var error = $root.ServerSync.KeyId.verify(message.keyId);
+                    var error = $root.ServerSync.KeyId.verify(message.keyId, _depth + 1);
                     if (error)
                         return "keyId." + error;
                 }
@@ -2153,23 +2598,29 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ServerSync.SyncdSnapshot} SyncdSnapshot
          */
-        SyncdSnapshot.fromObject = function fromObject(object) {
+        SyncdSnapshot.fromObject = function (object, _depth) {
             if (object instanceof $root.ServerSync.SyncdSnapshot)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ServerSync.SyncdSnapshot: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ServerSync.SyncdSnapshot();
             if (object.version != null) {
-                if (typeof object.version !== "object")
-                    throw TypeError(".ServerSync.SyncdSnapshot.version: object expected");
-                message.version = $root.ServerSync.SyncdVersion.fromObject(object.version);
+                if (!$util.isObject(object.version))
+                    throw $TypeError(".ServerSync.SyncdSnapshot.version: object expected");
+                message.version = $root.ServerSync.SyncdVersion.fromObject(object.version, _depth + 1);
             }
             if (object.records) {
-                if (!Array.isArray(object.records))
-                    throw TypeError(".ServerSync.SyncdSnapshot.records: array expected");
-                message.records = [];
+                if (!$Array.isArray(object.records))
+                    throw $TypeError(".ServerSync.SyncdSnapshot.records: array expected");
+                message.records = $Array(object.records.length);
                 for (var i = 0; i < object.records.length; ++i) {
-                    if (typeof object.records[i] !== "object")
-                        throw TypeError(".ServerSync.SyncdSnapshot.records: object expected");
-                    message.records[i] = $root.ServerSync.SyncdRecord.fromObject(object.records[i]);
+                    if (!$util.isObject(object.records[i]))
+                        throw $TypeError(".ServerSync.SyncdSnapshot.records: object expected");
+                    message.records[i] = $root.ServerSync.SyncdRecord.fromObject(object.records[i], _depth + 1);
                 }
             }
             if (object.mac != null)
@@ -2178,9 +2629,9 @@ $root.ServerSync = (function() {
                 else if (object.mac.length >= 0)
                     message.mac = object.mac;
             if (object.keyId != null) {
-                if (typeof object.keyId !== "object")
-                    throw TypeError(".ServerSync.SyncdSnapshot.keyId: object expected");
-                message.keyId = $root.ServerSync.KeyId.fromObject(object.keyId);
+                if (!$util.isObject(object.keyId))
+                    throw $TypeError(".ServerSync.SyncdSnapshot.keyId: object expected");
+                message.keyId = $root.ServerSync.KeyId.fromObject(object.keyId, _depth + 1);
             }
             return message;
         };
@@ -2194,32 +2645,27 @@ $root.ServerSync = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        SyncdSnapshot.toObject = function toObject(message, options) {
+        SyncdSnapshot.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
             if (options.arrays || options.defaults)
                 object.records = [];
-            if (message.version != null && message.hasOwnProperty("version")) {
-                object.version = $root.ServerSync.SyncdVersion.toObject(message.version, options);
-                if (options.oneofs)
-                    object._version = "version";
-            }
+            if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
+                object.version = $root.ServerSync.SyncdVersion.toObject(message.version, options, _depth + 1);
             if (message.records && message.records.length) {
-                object.records = [];
+                object.records = $Array(message.records.length);
                 for (var j = 0; j < message.records.length; ++j)
-                    object.records[j] = $root.ServerSync.SyncdRecord.toObject(message.records[j], options);
+                    object.records[j] = $root.ServerSync.SyncdRecord.toObject(message.records[j], options, _depth + 1);
             }
-            if (message.mac != null && message.hasOwnProperty("mac")) {
-                object.mac = options.bytes === String ? $util.base64.encode(message.mac, 0, message.mac.length) : options.bytes === Array ? Array.prototype.slice.call(message.mac) : message.mac;
-                if (options.oneofs)
-                    object._mac = "mac";
-            }
-            if (message.keyId != null && message.hasOwnProperty("keyId")) {
-                object.keyId = $root.ServerSync.KeyId.toObject(message.keyId, options);
-                if (options.oneofs)
-                    object._keyId = "keyId";
-            }
+            if (message.mac != null && $Object.hasOwnProperty.call(message, "mac"))
+                object.mac = options.bytes === $String ? $util.base64.encode(message.mac, 0, message.mac.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.mac) : message.mac;
+            if (message.keyId != null && $Object.hasOwnProperty.call(message, "keyId"))
+                object.keyId = $root.ServerSync.KeyId.toObject(message.keyId, options, _depth + 1);
             return object;
         };
 
@@ -2230,23 +2676,22 @@ $root.ServerSync = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        SyncdSnapshot.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        SyncdSnapshot.prototype.toJSON = function() {
+            return SyncdSnapshot.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for SyncdSnapshot
+         * Gets the type url for SyncdSnapshot
          * @function getTypeUrl
          * @memberof ServerSync.SyncdSnapshot
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        SyncdSnapshot.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ServerSync.SyncdSnapshot";
+        SyncdSnapshot.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ServerSync.SyncdSnapshot";
         };
 
         return SyncdSnapshot;
@@ -2256,30 +2701,43 @@ $root.ServerSync = (function() {
 
         /**
          * Properties of an ExternalBlobReference.
-         * @memberof ServerSync
-         * @interface IExternalBlobReference
+         * @typedef {Object} ServerSync.ExternalBlobReference.$Properties
          * @property {Uint8Array|null} [mediaKey] ExternalBlobReference mediaKey
          * @property {string|null} [directPath] ExternalBlobReference directPath
          * @property {string|null} [handle] ExternalBlobReference handle
          * @property {number|Long|null} [fileSizeBytes] ExternalBlobReference fileSizeBytes
          * @property {Uint8Array|null} [fileSha256] ExternalBlobReference fileSha256
          * @property {Uint8Array|null} [fileEncSha256] ExternalBlobReference fileEncSha256
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of an ExternalBlobReference.
+         * @memberof ServerSync
+         * @interface IExternalBlobReference
+         * @augments ServerSync.ExternalBlobReference.$Properties
+         * @deprecated Use ServerSync.ExternalBlobReference.$Properties instead.
+         */
+
+        /**
+         * Shape of an ExternalBlobReference.
+         * @typedef {ServerSync.ExternalBlobReference.$Properties} ServerSync.ExternalBlobReference.$Shape
          */
 
         /**
          * Constructs a new ExternalBlobReference.
          * @memberof ServerSync
          * @classdesc Represents an ExternalBlobReference.
-         * @implements IExternalBlobReference
          * @constructor
-         * @param {ServerSync.IExternalBlobReference=} [properties] Properties to set
+         * @param {ServerSync.ExternalBlobReference.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function ExternalBlobReference(properties) {
+        var ExternalBlobReference = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * ExternalBlobReference mediaKey.
@@ -2333,37 +2791,37 @@ $root.ServerSync = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ExternalBlobReference.prototype, "_mediaKey", {
+        $Object.defineProperty(ExternalBlobReference.prototype, "_mediaKey", {
             get: $util.oneOfGetter($oneOfFields = ["mediaKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ExternalBlobReference.prototype, "_directPath", {
+        $Object.defineProperty(ExternalBlobReference.prototype, "_directPath", {
             get: $util.oneOfGetter($oneOfFields = ["directPath"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ExternalBlobReference.prototype, "_handle", {
+        $Object.defineProperty(ExternalBlobReference.prototype, "_handle", {
             get: $util.oneOfGetter($oneOfFields = ["handle"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ExternalBlobReference.prototype, "_fileSizeBytes", {
+        $Object.defineProperty(ExternalBlobReference.prototype, "_fileSizeBytes", {
             get: $util.oneOfGetter($oneOfFields = ["fileSizeBytes"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ExternalBlobReference.prototype, "_fileSha256", {
+        $Object.defineProperty(ExternalBlobReference.prototype, "_fileSha256", {
             get: $util.oneOfGetter($oneOfFields = ["fileSha256"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ExternalBlobReference.prototype, "_fileEncSha256", {
+        $Object.defineProperty(ExternalBlobReference.prototype, "_fileEncSha256", {
             get: $util.oneOfGetter($oneOfFields = ["fileEncSha256"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -2373,10 +2831,14 @@ $root.ServerSync = (function() {
          * @function create
          * @memberof ServerSync.ExternalBlobReference
          * @static
-         * @param {ServerSync.IExternalBlobReference=} [properties] Properties to set
+         * @param {ServerSync.ExternalBlobReference.$Properties=} [properties] Properties to set
          * @returns {ServerSync.ExternalBlobReference} ExternalBlobReference instance
+         * @type {{
+         *   (properties: ServerSync.ExternalBlobReference.$Shape): ServerSync.ExternalBlobReference & ServerSync.ExternalBlobReference.$Shape;
+         *   (properties?: ServerSync.ExternalBlobReference.$Properties): ServerSync.ExternalBlobReference;
+         * }}
          */
-        ExternalBlobReference.create = function create(properties) {
+        ExternalBlobReference.create = function(properties) {
             return new ExternalBlobReference(properties);
         };
 
@@ -2385,25 +2847,32 @@ $root.ServerSync = (function() {
          * @function encode
          * @memberof ServerSync.ExternalBlobReference
          * @static
-         * @param {ServerSync.IExternalBlobReference} message ExternalBlobReference message or plain object to encode
+         * @param {ServerSync.ExternalBlobReference.$Properties} message ExternalBlobReference message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ExternalBlobReference.encode = function encode(message, writer) {
+        ExternalBlobReference.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.mediaKey != null && Object.hasOwnProperty.call(message, "mediaKey"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.mediaKey != null && $Object.hasOwnProperty.call(message, "mediaKey"))
                 writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.mediaKey);
-            if (message.directPath != null && Object.hasOwnProperty.call(message, "directPath"))
+            if (message.directPath != null && $Object.hasOwnProperty.call(message, "directPath"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.directPath);
-            if (message.handle != null && Object.hasOwnProperty.call(message, "handle"))
+            if (message.handle != null && $Object.hasOwnProperty.call(message, "handle"))
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.handle);
-            if (message.fileSizeBytes != null && Object.hasOwnProperty.call(message, "fileSizeBytes"))
+            if (message.fileSizeBytes != null && $Object.hasOwnProperty.call(message, "fileSizeBytes"))
                 writer.uint32(/* id 4, wireType 0 =*/32).uint64(message.fileSizeBytes);
-            if (message.fileSha256 != null && Object.hasOwnProperty.call(message, "fileSha256"))
+            if (message.fileSha256 != null && $Object.hasOwnProperty.call(message, "fileSha256"))
                 writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.fileSha256);
-            if (message.fileEncSha256 != null && Object.hasOwnProperty.call(message, "fileEncSha256"))
+            if (message.fileEncSha256 != null && $Object.hasOwnProperty.call(message, "fileEncSha256"))
                 writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.fileEncSha256);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -2412,12 +2881,12 @@ $root.ServerSync = (function() {
          * @function encodeDelimited
          * @memberof ServerSync.ExternalBlobReference
          * @static
-         * @param {ServerSync.IExternalBlobReference} message ExternalBlobReference message or plain object to encode
+         * @param {ServerSync.ExternalBlobReference.$Properties} message ExternalBlobReference message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ExternalBlobReference.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        ExternalBlobReference.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -2427,48 +2896,93 @@ $root.ServerSync = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ServerSync.ExternalBlobReference} ExternalBlobReference
+         * @returns {ServerSync.ExternalBlobReference & ServerSync.ExternalBlobReference.$Shape} ExternalBlobReference
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ExternalBlobReference.decode = function decode(reader, length, error) {
+        ExternalBlobReference.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.ExternalBlobReference();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ServerSync.ExternalBlobReference();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.mediaKey = reader.bytes();
-                        break;
-                    }
-                case 2: {
-                        message.directPath = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.handle = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.fileSizeBytes = reader.uint64();
-                        break;
-                    }
-                case 5: {
-                        message.fileSha256 = reader.bytes();
-                        break;
-                    }
-                case 6: {
-                        message.fileEncSha256 = reader.bytes();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.mediaKey = reader.bytes();
+                        message._mediaKey = "mediaKey";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.directPath = reader.stringVerify();
+                        message._directPath = "directPath";
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 2)
+                            break;
+                        message.handle = reader.stringVerify();
+                        message._handle = "handle";
+                        continue;
+                    }
+                case 4: {
+                        if (wireType !== 0)
+                            break;
+                        message.fileSizeBytes = reader.uint64();
+                        message._fileSizeBytes = "fileSizeBytes";
+                        continue;
+                    }
+                case 5: {
+                        if (wireType !== 2)
+                            break;
+                        message.fileSha256 = reader.bytes();
+                        message._fileSha256 = "fileSha256";
+                        continue;
+                    }
+                case 6: {
+                        if (wireType !== 2)
+                            break;
+                        message.fileEncSha256 = reader.bytes();
+                        message._fileEncSha256 = "fileEncSha256";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -2478,14 +2992,14 @@ $root.ServerSync = (function() {
          * @memberof ServerSync.ExternalBlobReference
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ServerSync.ExternalBlobReference} ExternalBlobReference
+         * @returns {ServerSync.ExternalBlobReference & ServerSync.ExternalBlobReference.$Shape} ExternalBlobReference
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ExternalBlobReference.decodeDelimited = function decodeDelimited(reader) {
+        ExternalBlobReference.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -2496,36 +3010,40 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        ExternalBlobReference.verify = function verify(message) {
+        ExternalBlobReference.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.mediaKey != null && message.hasOwnProperty("mediaKey")) {
+            if (message.mediaKey != null && $Object.hasOwnProperty.call(message, "mediaKey")) {
                 properties._mediaKey = 1;
                 if (!(message.mediaKey && typeof message.mediaKey.length === "number" || $util.isString(message.mediaKey)))
                     return "mediaKey: buffer expected";
             }
-            if (message.directPath != null && message.hasOwnProperty("directPath")) {
+            if (message.directPath != null && $Object.hasOwnProperty.call(message, "directPath")) {
                 properties._directPath = 1;
                 if (!$util.isString(message.directPath))
                     return "directPath: string expected";
             }
-            if (message.handle != null && message.hasOwnProperty("handle")) {
+            if (message.handle != null && $Object.hasOwnProperty.call(message, "handle")) {
                 properties._handle = 1;
                 if (!$util.isString(message.handle))
                     return "handle: string expected";
             }
-            if (message.fileSizeBytes != null && message.hasOwnProperty("fileSizeBytes")) {
+            if (message.fileSizeBytes != null && $Object.hasOwnProperty.call(message, "fileSizeBytes")) {
                 properties._fileSizeBytes = 1;
                 if (!$util.isInteger(message.fileSizeBytes) && !(message.fileSizeBytes && $util.isInteger(message.fileSizeBytes.low) && $util.isInteger(message.fileSizeBytes.high)))
                     return "fileSizeBytes: integer|Long expected";
             }
-            if (message.fileSha256 != null && message.hasOwnProperty("fileSha256")) {
+            if (message.fileSha256 != null && $Object.hasOwnProperty.call(message, "fileSha256")) {
                 properties._fileSha256 = 1;
                 if (!(message.fileSha256 && typeof message.fileSha256.length === "number" || $util.isString(message.fileSha256)))
                     return "fileSha256: buffer expected";
             }
-            if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256")) {
+            if (message.fileEncSha256 != null && $Object.hasOwnProperty.call(message, "fileEncSha256")) {
                 properties._fileEncSha256 = 1;
                 if (!(message.fileEncSha256 && typeof message.fileEncSha256.length === "number" || $util.isString(message.fileEncSha256)))
                     return "fileEncSha256: buffer expected";
@@ -2541,9 +3059,15 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ServerSync.ExternalBlobReference} ExternalBlobReference
          */
-        ExternalBlobReference.fromObject = function fromObject(object) {
+        ExternalBlobReference.fromObject = function (object, _depth) {
             if (object instanceof $root.ServerSync.ExternalBlobReference)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ServerSync.ExternalBlobReference: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ServerSync.ExternalBlobReference();
             if (object.mediaKey != null)
                 if (typeof object.mediaKey === "string")
@@ -2551,14 +3075,14 @@ $root.ServerSync = (function() {
                 else if (object.mediaKey.length >= 0)
                     message.mediaKey = object.mediaKey;
             if (object.directPath != null)
-                message.directPath = String(object.directPath);
+                message.directPath = $String(object.directPath);
             if (object.handle != null)
-                message.handle = String(object.handle);
+                message.handle = $String(object.handle);
             if (object.fileSizeBytes != null)
                 if ($util.Long)
-                    (message.fileSizeBytes = $util.Long.fromValue(object.fileSizeBytes)).unsigned = true;
+                    message.fileSizeBytes = $util.Long.fromValue(object.fileSizeBytes, true);
                 else if (typeof object.fileSizeBytes === "string")
-                    message.fileSizeBytes = parseInt(object.fileSizeBytes, 10);
+                    message.fileSizeBytes = $parseInt(object.fileSizeBytes, 10);
                 else if (typeof object.fileSizeBytes === "number")
                     message.fileSizeBytes = object.fileSizeBytes;
                 else if (typeof object.fileSizeBytes === "object")
@@ -2585,43 +3109,31 @@ $root.ServerSync = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        ExternalBlobReference.toObject = function toObject(message, options) {
+        ExternalBlobReference.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.mediaKey != null && message.hasOwnProperty("mediaKey")) {
-                object.mediaKey = options.bytes === String ? $util.base64.encode(message.mediaKey, 0, message.mediaKey.length) : options.bytes === Array ? Array.prototype.slice.call(message.mediaKey) : message.mediaKey;
-                if (options.oneofs)
-                    object._mediaKey = "mediaKey";
-            }
-            if (message.directPath != null && message.hasOwnProperty("directPath")) {
+            if (message.mediaKey != null && $Object.hasOwnProperty.call(message, "mediaKey"))
+                object.mediaKey = options.bytes === $String ? $util.base64.encode(message.mediaKey, 0, message.mediaKey.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.mediaKey) : message.mediaKey;
+            if (message.directPath != null && $Object.hasOwnProperty.call(message, "directPath"))
                 object.directPath = message.directPath;
-                if (options.oneofs)
-                    object._directPath = "directPath";
-            }
-            if (message.handle != null && message.hasOwnProperty("handle")) {
+            if (message.handle != null && $Object.hasOwnProperty.call(message, "handle"))
                 object.handle = message.handle;
-                if (options.oneofs)
-                    object._handle = "handle";
-            }
-            if (message.fileSizeBytes != null && message.hasOwnProperty("fileSizeBytes")) {
-                if (typeof message.fileSizeBytes === "number")
-                    object.fileSizeBytes = options.longs === String ? String(message.fileSizeBytes) : message.fileSizeBytes;
+            if (message.fileSizeBytes != null && $Object.hasOwnProperty.call(message, "fileSizeBytes"))
+                if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
+                    object.fileSizeBytes = typeof message.fileSizeBytes === "number" ? $BigInt(message.fileSizeBytes) : $util.Long.fromBits(message.fileSizeBytes.low >>> 0, message.fileSizeBytes.high >>> 0, true).toBigInt();
+                else if (typeof message.fileSizeBytes === "number")
+                    object.fileSizeBytes = options.longs === $String ? $String(message.fileSizeBytes) : message.fileSizeBytes;
                 else
-                    object.fileSizeBytes = options.longs === String ? $util.Long.prototype.toString.call(message.fileSizeBytes) : options.longs === Number ? new $util.LongBits(message.fileSizeBytes.low >>> 0, message.fileSizeBytes.high >>> 0).toNumber(true) : message.fileSizeBytes;
-                if (options.oneofs)
-                    object._fileSizeBytes = "fileSizeBytes";
-            }
-            if (message.fileSha256 != null && message.hasOwnProperty("fileSha256")) {
-                object.fileSha256 = options.bytes === String ? $util.base64.encode(message.fileSha256, 0, message.fileSha256.length) : options.bytes === Array ? Array.prototype.slice.call(message.fileSha256) : message.fileSha256;
-                if (options.oneofs)
-                    object._fileSha256 = "fileSha256";
-            }
-            if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256")) {
-                object.fileEncSha256 = options.bytes === String ? $util.base64.encode(message.fileEncSha256, 0, message.fileEncSha256.length) : options.bytes === Array ? Array.prototype.slice.call(message.fileEncSha256) : message.fileEncSha256;
-                if (options.oneofs)
-                    object._fileEncSha256 = "fileEncSha256";
-            }
+                    object.fileSizeBytes = options.longs === $String ? $util.Long.prototype.toString.call(message.fileSizeBytes) : options.longs === $Number ? new $util.LongBits(message.fileSizeBytes.low >>> 0, message.fileSizeBytes.high >>> 0).toNumber(true) : message.fileSizeBytes;
+            if (message.fileSha256 != null && $Object.hasOwnProperty.call(message, "fileSha256"))
+                object.fileSha256 = options.bytes === $String ? $util.base64.encode(message.fileSha256, 0, message.fileSha256.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.fileSha256) : message.fileSha256;
+            if (message.fileEncSha256 != null && $Object.hasOwnProperty.call(message, "fileEncSha256"))
+                object.fileEncSha256 = options.bytes === $String ? $util.base64.encode(message.fileEncSha256, 0, message.fileEncSha256.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.fileEncSha256) : message.fileEncSha256;
             return object;
         };
 
@@ -2632,23 +3144,22 @@ $root.ServerSync = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        ExternalBlobReference.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        ExternalBlobReference.prototype.toJSON = function() {
+            return ExternalBlobReference.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for ExternalBlobReference
+         * Gets the type url for ExternalBlobReference
          * @function getTypeUrl
          * @memberof ServerSync.ExternalBlobReference
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        ExternalBlobReference.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ServerSync.ExternalBlobReference";
+        ExternalBlobReference.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ServerSync.ExternalBlobReference";
         };
 
         return ExternalBlobReference;
@@ -2658,31 +3169,44 @@ $root.ServerSync = (function() {
 
         /**
          * Properties of a SyncdRecord.
+         * @typedef {Object} ServerSync.SyncdRecord.$Properties
+         * @property {ServerSync.SyncdIndex.$Properties|null} [index] SyncdRecord index
+         * @property {ServerSync.SyncdValue.$Properties|null} [value] SyncdRecord value
+         * @property {ServerSync.KeyId.$Properties|null} [keyId] SyncdRecord keyId
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a SyncdRecord.
          * @memberof ServerSync
          * @interface ISyncdRecord
-         * @property {ServerSync.ISyncdIndex|null} [index] SyncdRecord index
-         * @property {ServerSync.ISyncdValue|null} [value] SyncdRecord value
-         * @property {ServerSync.IKeyId|null} [keyId] SyncdRecord keyId
+         * @augments ServerSync.SyncdRecord.$Properties
+         * @deprecated Use ServerSync.SyncdRecord.$Properties instead.
+         */
+
+        /**
+         * Shape of a SyncdRecord.
+         * @typedef {ServerSync.SyncdRecord.$Properties} ServerSync.SyncdRecord.$Shape
          */
 
         /**
          * Constructs a new SyncdRecord.
          * @memberof ServerSync
          * @classdesc Represents a SyncdRecord.
-         * @implements ISyncdRecord
          * @constructor
-         * @param {ServerSync.ISyncdRecord=} [properties] Properties to set
+         * @param {ServerSync.SyncdRecord.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function SyncdRecord(properties) {
+        var SyncdRecord = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * SyncdRecord index.
-         * @member {ServerSync.ISyncdIndex|null|undefined} index
+         * @member {ServerSync.SyncdIndex.$Properties|null|undefined} index
          * @memberof ServerSync.SyncdRecord
          * @instance
          */
@@ -2690,7 +3214,7 @@ $root.ServerSync = (function() {
 
         /**
          * SyncdRecord value.
-         * @member {ServerSync.ISyncdValue|null|undefined} value
+         * @member {ServerSync.SyncdValue.$Properties|null|undefined} value
          * @memberof ServerSync.SyncdRecord
          * @instance
          */
@@ -2698,7 +3222,7 @@ $root.ServerSync = (function() {
 
         /**
          * SyncdRecord keyId.
-         * @member {ServerSync.IKeyId|null|undefined} keyId
+         * @member {ServerSync.KeyId.$Properties|null|undefined} keyId
          * @memberof ServerSync.SyncdRecord
          * @instance
          */
@@ -2708,19 +3232,19 @@ $root.ServerSync = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdRecord.prototype, "_index", {
+        $Object.defineProperty(SyncdRecord.prototype, "_index", {
             get: $util.oneOfGetter($oneOfFields = ["index"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdRecord.prototype, "_value", {
+        $Object.defineProperty(SyncdRecord.prototype, "_value", {
             get: $util.oneOfGetter($oneOfFields = ["value"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdRecord.prototype, "_keyId", {
+        $Object.defineProperty(SyncdRecord.prototype, "_keyId", {
             get: $util.oneOfGetter($oneOfFields = ["keyId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -2730,10 +3254,14 @@ $root.ServerSync = (function() {
          * @function create
          * @memberof ServerSync.SyncdRecord
          * @static
-         * @param {ServerSync.ISyncdRecord=} [properties] Properties to set
+         * @param {ServerSync.SyncdRecord.$Properties=} [properties] Properties to set
          * @returns {ServerSync.SyncdRecord} SyncdRecord instance
+         * @type {{
+         *   (properties: ServerSync.SyncdRecord.$Shape): ServerSync.SyncdRecord & ServerSync.SyncdRecord.$Shape;
+         *   (properties?: ServerSync.SyncdRecord.$Properties): ServerSync.SyncdRecord;
+         * }}
          */
-        SyncdRecord.create = function create(properties) {
+        SyncdRecord.create = function(properties) {
             return new SyncdRecord(properties);
         };
 
@@ -2742,19 +3270,26 @@ $root.ServerSync = (function() {
          * @function encode
          * @memberof ServerSync.SyncdRecord
          * @static
-         * @param {ServerSync.ISyncdRecord} message SyncdRecord message or plain object to encode
+         * @param {ServerSync.SyncdRecord.$Properties} message SyncdRecord message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdRecord.encode = function encode(message, writer) {
+        SyncdRecord.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.index != null && Object.hasOwnProperty.call(message, "index"))
-                $root.ServerSync.SyncdIndex.encode(message.index, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.value != null && Object.hasOwnProperty.call(message, "value"))
-                $root.ServerSync.SyncdValue.encode(message.value, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            if (message.keyId != null && Object.hasOwnProperty.call(message, "keyId"))
-                $root.ServerSync.KeyId.encode(message.keyId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.index != null && $Object.hasOwnProperty.call(message, "index"))
+                $root.ServerSync.SyncdIndex.encode(message.index, writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+            if (message.value != null && $Object.hasOwnProperty.call(message, "value"))
+                $root.ServerSync.SyncdValue.encode(message.value, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+            if (message.keyId != null && $Object.hasOwnProperty.call(message, "keyId"))
+                $root.ServerSync.KeyId.encode(message.keyId, writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -2763,12 +3298,12 @@ $root.ServerSync = (function() {
          * @function encodeDelimited
          * @memberof ServerSync.SyncdRecord
          * @static
-         * @param {ServerSync.ISyncdRecord} message SyncdRecord message or plain object to encode
+         * @param {ServerSync.SyncdRecord.$Properties} message SyncdRecord message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdRecord.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        SyncdRecord.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -2778,36 +3313,72 @@ $root.ServerSync = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ServerSync.SyncdRecord} SyncdRecord
+         * @returns {ServerSync.SyncdRecord & ServerSync.SyncdRecord.$Shape} SyncdRecord
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdRecord.decode = function decode(reader, length, error) {
+        SyncdRecord.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdRecord();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ServerSync.SyncdRecord();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.index = $root.ServerSync.SyncdIndex.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        message.value = $root.ServerSync.SyncdValue.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 3: {
-                        message.keyId = $root.ServerSync.KeyId.decode(reader, reader.uint32());
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.index = $root.ServerSync.SyncdIndex.decode(reader, reader.size(), $undefined, _depth + 1, message.index);
+                        message._index = "index";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.value = $root.ServerSync.SyncdValue.decode(reader, reader.size(), $undefined, _depth + 1, message.value);
+                        message._value = "value";
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 2)
+                            break;
+                        message.keyId = $root.ServerSync.KeyId.decode(reader, reader.size(), $undefined, _depth + 1, message.keyId);
+                        message._keyId = "keyId";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -2817,14 +3388,14 @@ $root.ServerSync = (function() {
          * @memberof ServerSync.SyncdRecord
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ServerSync.SyncdRecord} SyncdRecord
+         * @returns {ServerSync.SyncdRecord & ServerSync.SyncdRecord.$Shape} SyncdRecord
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdRecord.decodeDelimited = function decodeDelimited(reader) {
+        SyncdRecord.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -2835,30 +3406,34 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        SyncdRecord.verify = function verify(message) {
+        SyncdRecord.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.index != null && message.hasOwnProperty("index")) {
+            if (message.index != null && $Object.hasOwnProperty.call(message, "index")) {
                 properties._index = 1;
                 {
-                    var error = $root.ServerSync.SyncdIndex.verify(message.index);
+                    var error = $root.ServerSync.SyncdIndex.verify(message.index, _depth + 1);
                     if (error)
                         return "index." + error;
                 }
             }
-            if (message.value != null && message.hasOwnProperty("value")) {
+            if (message.value != null && $Object.hasOwnProperty.call(message, "value")) {
                 properties._value = 1;
                 {
-                    var error = $root.ServerSync.SyncdValue.verify(message.value);
+                    var error = $root.ServerSync.SyncdValue.verify(message.value, _depth + 1);
                     if (error)
                         return "value." + error;
                 }
             }
-            if (message.keyId != null && message.hasOwnProperty("keyId")) {
+            if (message.keyId != null && $Object.hasOwnProperty.call(message, "keyId")) {
                 properties._keyId = 1;
                 {
-                    var error = $root.ServerSync.KeyId.verify(message.keyId);
+                    var error = $root.ServerSync.KeyId.verify(message.keyId, _depth + 1);
                     if (error)
                         return "keyId." + error;
                 }
@@ -2874,24 +3449,30 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ServerSync.SyncdRecord} SyncdRecord
          */
-        SyncdRecord.fromObject = function fromObject(object) {
+        SyncdRecord.fromObject = function (object, _depth) {
             if (object instanceof $root.ServerSync.SyncdRecord)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ServerSync.SyncdRecord: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ServerSync.SyncdRecord();
             if (object.index != null) {
-                if (typeof object.index !== "object")
-                    throw TypeError(".ServerSync.SyncdRecord.index: object expected");
-                message.index = $root.ServerSync.SyncdIndex.fromObject(object.index);
+                if (!$util.isObject(object.index))
+                    throw $TypeError(".ServerSync.SyncdRecord.index: object expected");
+                message.index = $root.ServerSync.SyncdIndex.fromObject(object.index, _depth + 1);
             }
             if (object.value != null) {
-                if (typeof object.value !== "object")
-                    throw TypeError(".ServerSync.SyncdRecord.value: object expected");
-                message.value = $root.ServerSync.SyncdValue.fromObject(object.value);
+                if (!$util.isObject(object.value))
+                    throw $TypeError(".ServerSync.SyncdRecord.value: object expected");
+                message.value = $root.ServerSync.SyncdValue.fromObject(object.value, _depth + 1);
             }
             if (object.keyId != null) {
-                if (typeof object.keyId !== "object")
-                    throw TypeError(".ServerSync.SyncdRecord.keyId: object expected");
-                message.keyId = $root.ServerSync.KeyId.fromObject(object.keyId);
+                if (!$util.isObject(object.keyId))
+                    throw $TypeError(".ServerSync.SyncdRecord.keyId: object expected");
+                message.keyId = $root.ServerSync.KeyId.fromObject(object.keyId, _depth + 1);
             }
             return message;
         };
@@ -2905,25 +3486,20 @@ $root.ServerSync = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        SyncdRecord.toObject = function toObject(message, options) {
+        SyncdRecord.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.index != null && message.hasOwnProperty("index")) {
-                object.index = $root.ServerSync.SyncdIndex.toObject(message.index, options);
-                if (options.oneofs)
-                    object._index = "index";
-            }
-            if (message.value != null && message.hasOwnProperty("value")) {
-                object.value = $root.ServerSync.SyncdValue.toObject(message.value, options);
-                if (options.oneofs)
-                    object._value = "value";
-            }
-            if (message.keyId != null && message.hasOwnProperty("keyId")) {
-                object.keyId = $root.ServerSync.KeyId.toObject(message.keyId, options);
-                if (options.oneofs)
-                    object._keyId = "keyId";
-            }
+            if (message.index != null && $Object.hasOwnProperty.call(message, "index"))
+                object.index = $root.ServerSync.SyncdIndex.toObject(message.index, options, _depth + 1);
+            if (message.value != null && $Object.hasOwnProperty.call(message, "value"))
+                object.value = $root.ServerSync.SyncdValue.toObject(message.value, options, _depth + 1);
+            if (message.keyId != null && $Object.hasOwnProperty.call(message, "keyId"))
+                object.keyId = $root.ServerSync.KeyId.toObject(message.keyId, options, _depth + 1);
             return object;
         };
 
@@ -2934,23 +3510,22 @@ $root.ServerSync = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        SyncdRecord.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        SyncdRecord.prototype.toJSON = function() {
+            return SyncdRecord.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for SyncdRecord
+         * Gets the type url for SyncdRecord
          * @function getTypeUrl
          * @memberof ServerSync.SyncdRecord
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        SyncdRecord.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ServerSync.SyncdRecord";
+        SyncdRecord.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ServerSync.SyncdRecord";
         };
 
         return SyncdRecord;
@@ -2960,25 +3535,38 @@ $root.ServerSync = (function() {
 
         /**
          * Properties of a KeyId.
+         * @typedef {Object} ServerSync.KeyId.$Properties
+         * @property {Uint8Array|null} [id] KeyId id
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a KeyId.
          * @memberof ServerSync
          * @interface IKeyId
-         * @property {Uint8Array|null} [id] KeyId id
+         * @augments ServerSync.KeyId.$Properties
+         * @deprecated Use ServerSync.KeyId.$Properties instead.
+         */
+
+        /**
+         * Shape of a KeyId.
+         * @typedef {ServerSync.KeyId.$Properties} ServerSync.KeyId.$Shape
          */
 
         /**
          * Constructs a new KeyId.
          * @memberof ServerSync
          * @classdesc Represents a KeyId.
-         * @implements IKeyId
          * @constructor
-         * @param {ServerSync.IKeyId=} [properties] Properties to set
+         * @param {ServerSync.KeyId.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function KeyId(properties) {
+        var KeyId = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * KeyId id.
@@ -2992,7 +3580,7 @@ $root.ServerSync = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(KeyId.prototype, "_id", {
+        $Object.defineProperty(KeyId.prototype, "_id", {
             get: $util.oneOfGetter($oneOfFields = ["id"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -3002,10 +3590,14 @@ $root.ServerSync = (function() {
          * @function create
          * @memberof ServerSync.KeyId
          * @static
-         * @param {ServerSync.IKeyId=} [properties] Properties to set
+         * @param {ServerSync.KeyId.$Properties=} [properties] Properties to set
          * @returns {ServerSync.KeyId} KeyId instance
+         * @type {{
+         *   (properties: ServerSync.KeyId.$Shape): ServerSync.KeyId & ServerSync.KeyId.$Shape;
+         *   (properties?: ServerSync.KeyId.$Properties): ServerSync.KeyId;
+         * }}
          */
-        KeyId.create = function create(properties) {
+        KeyId.create = function(properties) {
             return new KeyId(properties);
         };
 
@@ -3014,15 +3606,22 @@ $root.ServerSync = (function() {
          * @function encode
          * @memberof ServerSync.KeyId
          * @static
-         * @param {ServerSync.IKeyId} message KeyId message or plain object to encode
+         * @param {ServerSync.KeyId.$Properties} message KeyId message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        KeyId.encode = function encode(message, writer) {
+        KeyId.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.id);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -3031,12 +3630,12 @@ $root.ServerSync = (function() {
          * @function encodeDelimited
          * @memberof ServerSync.KeyId
          * @static
-         * @param {ServerSync.IKeyId} message KeyId message or plain object to encode
+         * @param {ServerSync.KeyId.$Properties} message KeyId message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        KeyId.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        KeyId.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -3046,28 +3645,58 @@ $root.ServerSync = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ServerSync.KeyId} KeyId
+         * @returns {ServerSync.KeyId & ServerSync.KeyId.$Shape} KeyId
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        KeyId.decode = function decode(reader, length, error) {
+        KeyId.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.KeyId();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ServerSync.KeyId();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.id = reader.bytes();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.id = reader.bytes();
+                        message._id = "id";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -3077,14 +3706,14 @@ $root.ServerSync = (function() {
          * @memberof ServerSync.KeyId
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ServerSync.KeyId} KeyId
+         * @returns {ServerSync.KeyId & ServerSync.KeyId.$Shape} KeyId
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        KeyId.decodeDelimited = function decodeDelimited(reader) {
+        KeyId.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -3095,11 +3724,15 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        KeyId.verify = function verify(message) {
+        KeyId.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.id != null && message.hasOwnProperty("id")) {
+            if (message.id != null && $Object.hasOwnProperty.call(message, "id")) {
                 properties._id = 1;
                 if (!(message.id && typeof message.id.length === "number" || $util.isString(message.id)))
                     return "id: buffer expected";
@@ -3115,9 +3748,15 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ServerSync.KeyId} KeyId
          */
-        KeyId.fromObject = function fromObject(object) {
+        KeyId.fromObject = function (object, _depth) {
             if (object instanceof $root.ServerSync.KeyId)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ServerSync.KeyId: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ServerSync.KeyId();
             if (object.id != null)
                 if (typeof object.id === "string")
@@ -3136,15 +3775,16 @@ $root.ServerSync = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        KeyId.toObject = function toObject(message, options) {
+        KeyId.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.id != null && message.hasOwnProperty("id")) {
-                object.id = options.bytes === String ? $util.base64.encode(message.id, 0, message.id.length) : options.bytes === Array ? Array.prototype.slice.call(message.id) : message.id;
-                if (options.oneofs)
-                    object._id = "id";
-            }
+            if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
+                object.id = options.bytes === $String ? $util.base64.encode(message.id, 0, message.id.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.id) : message.id;
             return object;
         };
 
@@ -3155,23 +3795,22 @@ $root.ServerSync = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        KeyId.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        KeyId.prototype.toJSON = function() {
+            return KeyId.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for KeyId
+         * Gets the type url for KeyId
          * @function getTypeUrl
          * @memberof ServerSync.KeyId
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        KeyId.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ServerSync.KeyId";
+        KeyId.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ServerSync.KeyId";
         };
 
         return KeyId;
@@ -3181,25 +3820,38 @@ $root.ServerSync = (function() {
 
         /**
          * Properties of a SyncdValue.
+         * @typedef {Object} ServerSync.SyncdValue.$Properties
+         * @property {Uint8Array|null} [blob] SyncdValue blob
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a SyncdValue.
          * @memberof ServerSync
          * @interface ISyncdValue
-         * @property {Uint8Array|null} [blob] SyncdValue blob
+         * @augments ServerSync.SyncdValue.$Properties
+         * @deprecated Use ServerSync.SyncdValue.$Properties instead.
+         */
+
+        /**
+         * Shape of a SyncdValue.
+         * @typedef {ServerSync.SyncdValue.$Properties} ServerSync.SyncdValue.$Shape
          */
 
         /**
          * Constructs a new SyncdValue.
          * @memberof ServerSync
          * @classdesc Represents a SyncdValue.
-         * @implements ISyncdValue
          * @constructor
-         * @param {ServerSync.ISyncdValue=} [properties] Properties to set
+         * @param {ServerSync.SyncdValue.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function SyncdValue(properties) {
+        var SyncdValue = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * SyncdValue blob.
@@ -3213,7 +3865,7 @@ $root.ServerSync = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdValue.prototype, "_blob", {
+        $Object.defineProperty(SyncdValue.prototype, "_blob", {
             get: $util.oneOfGetter($oneOfFields = ["blob"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -3223,10 +3875,14 @@ $root.ServerSync = (function() {
          * @function create
          * @memberof ServerSync.SyncdValue
          * @static
-         * @param {ServerSync.ISyncdValue=} [properties] Properties to set
+         * @param {ServerSync.SyncdValue.$Properties=} [properties] Properties to set
          * @returns {ServerSync.SyncdValue} SyncdValue instance
+         * @type {{
+         *   (properties: ServerSync.SyncdValue.$Shape): ServerSync.SyncdValue & ServerSync.SyncdValue.$Shape;
+         *   (properties?: ServerSync.SyncdValue.$Properties): ServerSync.SyncdValue;
+         * }}
          */
-        SyncdValue.create = function create(properties) {
+        SyncdValue.create = function(properties) {
             return new SyncdValue(properties);
         };
 
@@ -3235,15 +3891,22 @@ $root.ServerSync = (function() {
          * @function encode
          * @memberof ServerSync.SyncdValue
          * @static
-         * @param {ServerSync.ISyncdValue} message SyncdValue message or plain object to encode
+         * @param {ServerSync.SyncdValue.$Properties} message SyncdValue message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdValue.encode = function encode(message, writer) {
+        SyncdValue.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.blob != null && Object.hasOwnProperty.call(message, "blob"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.blob != null && $Object.hasOwnProperty.call(message, "blob"))
                 writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.blob);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -3252,12 +3915,12 @@ $root.ServerSync = (function() {
          * @function encodeDelimited
          * @memberof ServerSync.SyncdValue
          * @static
-         * @param {ServerSync.ISyncdValue} message SyncdValue message or plain object to encode
+         * @param {ServerSync.SyncdValue.$Properties} message SyncdValue message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdValue.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        SyncdValue.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -3267,28 +3930,58 @@ $root.ServerSync = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ServerSync.SyncdValue} SyncdValue
+         * @returns {ServerSync.SyncdValue & ServerSync.SyncdValue.$Shape} SyncdValue
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdValue.decode = function decode(reader, length, error) {
+        SyncdValue.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdValue();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ServerSync.SyncdValue();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.blob = reader.bytes();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.blob = reader.bytes();
+                        message._blob = "blob";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -3298,14 +3991,14 @@ $root.ServerSync = (function() {
          * @memberof ServerSync.SyncdValue
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ServerSync.SyncdValue} SyncdValue
+         * @returns {ServerSync.SyncdValue & ServerSync.SyncdValue.$Shape} SyncdValue
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdValue.decodeDelimited = function decodeDelimited(reader) {
+        SyncdValue.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -3316,11 +4009,15 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        SyncdValue.verify = function verify(message) {
+        SyncdValue.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.blob != null && message.hasOwnProperty("blob")) {
+            if (message.blob != null && $Object.hasOwnProperty.call(message, "blob")) {
                 properties._blob = 1;
                 if (!(message.blob && typeof message.blob.length === "number" || $util.isString(message.blob)))
                     return "blob: buffer expected";
@@ -3336,9 +4033,15 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ServerSync.SyncdValue} SyncdValue
          */
-        SyncdValue.fromObject = function fromObject(object) {
+        SyncdValue.fromObject = function (object, _depth) {
             if (object instanceof $root.ServerSync.SyncdValue)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ServerSync.SyncdValue: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ServerSync.SyncdValue();
             if (object.blob != null)
                 if (typeof object.blob === "string")
@@ -3357,15 +4060,16 @@ $root.ServerSync = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        SyncdValue.toObject = function toObject(message, options) {
+        SyncdValue.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.blob != null && message.hasOwnProperty("blob")) {
-                object.blob = options.bytes === String ? $util.base64.encode(message.blob, 0, message.blob.length) : options.bytes === Array ? Array.prototype.slice.call(message.blob) : message.blob;
-                if (options.oneofs)
-                    object._blob = "blob";
-            }
+            if (message.blob != null && $Object.hasOwnProperty.call(message, "blob"))
+                object.blob = options.bytes === $String ? $util.base64.encode(message.blob, 0, message.blob.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.blob) : message.blob;
             return object;
         };
 
@@ -3376,23 +4080,22 @@ $root.ServerSync = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        SyncdValue.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        SyncdValue.prototype.toJSON = function() {
+            return SyncdValue.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for SyncdValue
+         * Gets the type url for SyncdValue
          * @function getTypeUrl
          * @memberof ServerSync.SyncdValue
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        SyncdValue.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ServerSync.SyncdValue";
+        SyncdValue.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ServerSync.SyncdValue";
         };
 
         return SyncdValue;
@@ -3402,25 +4105,38 @@ $root.ServerSync = (function() {
 
         /**
          * Properties of a SyncdIndex.
+         * @typedef {Object} ServerSync.SyncdIndex.$Properties
+         * @property {Uint8Array|null} [blob] SyncdIndex blob
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a SyncdIndex.
          * @memberof ServerSync
          * @interface ISyncdIndex
-         * @property {Uint8Array|null} [blob] SyncdIndex blob
+         * @augments ServerSync.SyncdIndex.$Properties
+         * @deprecated Use ServerSync.SyncdIndex.$Properties instead.
+         */
+
+        /**
+         * Shape of a SyncdIndex.
+         * @typedef {ServerSync.SyncdIndex.$Properties} ServerSync.SyncdIndex.$Shape
          */
 
         /**
          * Constructs a new SyncdIndex.
          * @memberof ServerSync
          * @classdesc Represents a SyncdIndex.
-         * @implements ISyncdIndex
          * @constructor
-         * @param {ServerSync.ISyncdIndex=} [properties] Properties to set
+         * @param {ServerSync.SyncdIndex.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function SyncdIndex(properties) {
+        var SyncdIndex = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * SyncdIndex blob.
@@ -3434,7 +4150,7 @@ $root.ServerSync = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdIndex.prototype, "_blob", {
+        $Object.defineProperty(SyncdIndex.prototype, "_blob", {
             get: $util.oneOfGetter($oneOfFields = ["blob"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -3444,10 +4160,14 @@ $root.ServerSync = (function() {
          * @function create
          * @memberof ServerSync.SyncdIndex
          * @static
-         * @param {ServerSync.ISyncdIndex=} [properties] Properties to set
+         * @param {ServerSync.SyncdIndex.$Properties=} [properties] Properties to set
          * @returns {ServerSync.SyncdIndex} SyncdIndex instance
+         * @type {{
+         *   (properties: ServerSync.SyncdIndex.$Shape): ServerSync.SyncdIndex & ServerSync.SyncdIndex.$Shape;
+         *   (properties?: ServerSync.SyncdIndex.$Properties): ServerSync.SyncdIndex;
+         * }}
          */
-        SyncdIndex.create = function create(properties) {
+        SyncdIndex.create = function(properties) {
             return new SyncdIndex(properties);
         };
 
@@ -3456,15 +4176,22 @@ $root.ServerSync = (function() {
          * @function encode
          * @memberof ServerSync.SyncdIndex
          * @static
-         * @param {ServerSync.ISyncdIndex} message SyncdIndex message or plain object to encode
+         * @param {ServerSync.SyncdIndex.$Properties} message SyncdIndex message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdIndex.encode = function encode(message, writer) {
+        SyncdIndex.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.blob != null && Object.hasOwnProperty.call(message, "blob"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.blob != null && $Object.hasOwnProperty.call(message, "blob"))
                 writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.blob);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -3473,12 +4200,12 @@ $root.ServerSync = (function() {
          * @function encodeDelimited
          * @memberof ServerSync.SyncdIndex
          * @static
-         * @param {ServerSync.ISyncdIndex} message SyncdIndex message or plain object to encode
+         * @param {ServerSync.SyncdIndex.$Properties} message SyncdIndex message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdIndex.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        SyncdIndex.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -3488,28 +4215,58 @@ $root.ServerSync = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ServerSync.SyncdIndex} SyncdIndex
+         * @returns {ServerSync.SyncdIndex & ServerSync.SyncdIndex.$Shape} SyncdIndex
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdIndex.decode = function decode(reader, length, error) {
+        SyncdIndex.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdIndex();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ServerSync.SyncdIndex();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.blob = reader.bytes();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.blob = reader.bytes();
+                        message._blob = "blob";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -3519,14 +4276,14 @@ $root.ServerSync = (function() {
          * @memberof ServerSync.SyncdIndex
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ServerSync.SyncdIndex} SyncdIndex
+         * @returns {ServerSync.SyncdIndex & ServerSync.SyncdIndex.$Shape} SyncdIndex
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdIndex.decodeDelimited = function decodeDelimited(reader) {
+        SyncdIndex.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -3537,11 +4294,15 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        SyncdIndex.verify = function verify(message) {
+        SyncdIndex.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.blob != null && message.hasOwnProperty("blob")) {
+            if (message.blob != null && $Object.hasOwnProperty.call(message, "blob")) {
                 properties._blob = 1;
                 if (!(message.blob && typeof message.blob.length === "number" || $util.isString(message.blob)))
                     return "blob: buffer expected";
@@ -3557,9 +4318,15 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ServerSync.SyncdIndex} SyncdIndex
          */
-        SyncdIndex.fromObject = function fromObject(object) {
+        SyncdIndex.fromObject = function (object, _depth) {
             if (object instanceof $root.ServerSync.SyncdIndex)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ServerSync.SyncdIndex: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ServerSync.SyncdIndex();
             if (object.blob != null)
                 if (typeof object.blob === "string")
@@ -3578,15 +4345,16 @@ $root.ServerSync = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        SyncdIndex.toObject = function toObject(message, options) {
+        SyncdIndex.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.blob != null && message.hasOwnProperty("blob")) {
-                object.blob = options.bytes === String ? $util.base64.encode(message.blob, 0, message.blob.length) : options.bytes === Array ? Array.prototype.slice.call(message.blob) : message.blob;
-                if (options.oneofs)
-                    object._blob = "blob";
-            }
+            if (message.blob != null && $Object.hasOwnProperty.call(message, "blob"))
+                object.blob = options.bytes === $String ? $util.base64.encode(message.blob, 0, message.blob.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.blob) : message.blob;
             return object;
         };
 
@@ -3597,23 +4365,22 @@ $root.ServerSync = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        SyncdIndex.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        SyncdIndex.prototype.toJSON = function() {
+            return SyncdIndex.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for SyncdIndex
+         * Gets the type url for SyncdIndex
          * @function getTypeUrl
          * @memberof ServerSync.SyncdIndex
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        SyncdIndex.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ServerSync.SyncdIndex";
+        SyncdIndex.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ServerSync.SyncdIndex";
         };
 
         return SyncdIndex;
@@ -3623,26 +4390,39 @@ $root.ServerSync = (function() {
 
         /**
          * Properties of an ExitCode.
-         * @memberof ServerSync
-         * @interface IExitCode
+         * @typedef {Object} ServerSync.ExitCode.$Properties
          * @property {number|Long|null} [code] ExitCode code
          * @property {string|null} [text] ExitCode text
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of an ExitCode.
+         * @memberof ServerSync
+         * @interface IExitCode
+         * @augments ServerSync.ExitCode.$Properties
+         * @deprecated Use ServerSync.ExitCode.$Properties instead.
+         */
+
+        /**
+         * Shape of an ExitCode.
+         * @typedef {ServerSync.ExitCode.$Properties} ServerSync.ExitCode.$Shape
          */
 
         /**
          * Constructs a new ExitCode.
          * @memberof ServerSync
          * @classdesc Represents an ExitCode.
-         * @implements IExitCode
          * @constructor
-         * @param {ServerSync.IExitCode=} [properties] Properties to set
+         * @param {ServerSync.ExitCode.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function ExitCode(properties) {
+        var ExitCode = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * ExitCode code.
@@ -3664,13 +4444,13 @@ $root.ServerSync = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ExitCode.prototype, "_code", {
+        $Object.defineProperty(ExitCode.prototype, "_code", {
             get: $util.oneOfGetter($oneOfFields = ["code"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(ExitCode.prototype, "_text", {
+        $Object.defineProperty(ExitCode.prototype, "_text", {
             get: $util.oneOfGetter($oneOfFields = ["text"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -3680,10 +4460,14 @@ $root.ServerSync = (function() {
          * @function create
          * @memberof ServerSync.ExitCode
          * @static
-         * @param {ServerSync.IExitCode=} [properties] Properties to set
+         * @param {ServerSync.ExitCode.$Properties=} [properties] Properties to set
          * @returns {ServerSync.ExitCode} ExitCode instance
+         * @type {{
+         *   (properties: ServerSync.ExitCode.$Shape): ServerSync.ExitCode & ServerSync.ExitCode.$Shape;
+         *   (properties?: ServerSync.ExitCode.$Properties): ServerSync.ExitCode;
+         * }}
          */
-        ExitCode.create = function create(properties) {
+        ExitCode.create = function(properties) {
             return new ExitCode(properties);
         };
 
@@ -3692,17 +4476,24 @@ $root.ServerSync = (function() {
          * @function encode
          * @memberof ServerSync.ExitCode
          * @static
-         * @param {ServerSync.IExitCode} message ExitCode message or plain object to encode
+         * @param {ServerSync.ExitCode.$Properties} message ExitCode message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ExitCode.encode = function encode(message, writer) {
+        ExitCode.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.code != null && Object.hasOwnProperty.call(message, "code"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.code != null && $Object.hasOwnProperty.call(message, "code"))
                 writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.code);
-            if (message.text != null && Object.hasOwnProperty.call(message, "text"))
+            if (message.text != null && $Object.hasOwnProperty.call(message, "text"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.text);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -3711,12 +4502,12 @@ $root.ServerSync = (function() {
          * @function encodeDelimited
          * @memberof ServerSync.ExitCode
          * @static
-         * @param {ServerSync.IExitCode} message ExitCode message or plain object to encode
+         * @param {ServerSync.ExitCode.$Properties} message ExitCode message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        ExitCode.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        ExitCode.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -3726,32 +4517,65 @@ $root.ServerSync = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ServerSync.ExitCode} ExitCode
+         * @returns {ServerSync.ExitCode & ServerSync.ExitCode.$Shape} ExitCode
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ExitCode.decode = function decode(reader, length, error) {
+        ExitCode.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.ExitCode();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ServerSync.ExitCode();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.code = reader.uint64();
-                        break;
-                    }
-                case 2: {
-                        message.text = reader.string();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 0)
+                            break;
+                        message.code = reader.uint64();
+                        message._code = "code";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.text = reader.stringVerify();
+                        message._text = "text";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -3761,14 +4585,14 @@ $root.ServerSync = (function() {
          * @memberof ServerSync.ExitCode
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ServerSync.ExitCode} ExitCode
+         * @returns {ServerSync.ExitCode & ServerSync.ExitCode.$Shape} ExitCode
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ExitCode.decodeDelimited = function decodeDelimited(reader) {
+        ExitCode.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -3779,16 +4603,20 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        ExitCode.verify = function verify(message) {
+        ExitCode.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.code != null && message.hasOwnProperty("code")) {
+            if (message.code != null && $Object.hasOwnProperty.call(message, "code")) {
                 properties._code = 1;
                 if (!$util.isInteger(message.code) && !(message.code && $util.isInteger(message.code.low) && $util.isInteger(message.code.high)))
                     return "code: integer|Long expected";
             }
-            if (message.text != null && message.hasOwnProperty("text")) {
+            if (message.text != null && $Object.hasOwnProperty.call(message, "text")) {
                 properties._text = 1;
                 if (!$util.isString(message.text))
                     return "text: string expected";
@@ -3804,21 +4632,27 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ServerSync.ExitCode} ExitCode
          */
-        ExitCode.fromObject = function fromObject(object) {
+        ExitCode.fromObject = function (object, _depth) {
             if (object instanceof $root.ServerSync.ExitCode)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ServerSync.ExitCode: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ServerSync.ExitCode();
             if (object.code != null)
                 if ($util.Long)
-                    (message.code = $util.Long.fromValue(object.code)).unsigned = true;
+                    message.code = $util.Long.fromValue(object.code, true);
                 else if (typeof object.code === "string")
-                    message.code = parseInt(object.code, 10);
+                    message.code = $parseInt(object.code, 10);
                 else if (typeof object.code === "number")
                     message.code = object.code;
                 else if (typeof object.code === "object")
                     message.code = new $util.LongBits(object.code.low >>> 0, object.code.high >>> 0).toNumber(true);
             if (object.text != null)
-                message.text = String(object.text);
+                message.text = $String(object.text);
             return message;
         };
 
@@ -3831,23 +4665,23 @@ $root.ServerSync = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        ExitCode.toObject = function toObject(message, options) {
+        ExitCode.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.code != null && message.hasOwnProperty("code")) {
-                if (typeof message.code === "number")
-                    object.code = options.longs === String ? String(message.code) : message.code;
+            if (message.code != null && $Object.hasOwnProperty.call(message, "code"))
+                if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
+                    object.code = typeof message.code === "number" ? $BigInt(message.code) : $util.Long.fromBits(message.code.low >>> 0, message.code.high >>> 0, true).toBigInt();
+                else if (typeof message.code === "number")
+                    object.code = options.longs === $String ? $String(message.code) : message.code;
                 else
-                    object.code = options.longs === String ? $util.Long.prototype.toString.call(message.code) : options.longs === Number ? new $util.LongBits(message.code.low >>> 0, message.code.high >>> 0).toNumber(true) : message.code;
-                if (options.oneofs)
-                    object._code = "code";
-            }
-            if (message.text != null && message.hasOwnProperty("text")) {
+                    object.code = options.longs === $String ? $util.Long.prototype.toString.call(message.code) : options.longs === $Number ? new $util.LongBits(message.code.low >>> 0, message.code.high >>> 0).toNumber(true) : message.code;
+            if (message.text != null && $Object.hasOwnProperty.call(message, "text"))
                 object.text = message.text;
-                if (options.oneofs)
-                    object._text = "text";
-            }
             return object;
         };
 
@@ -3858,23 +4692,22 @@ $root.ServerSync = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        ExitCode.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        ExitCode.prototype.toJSON = function() {
+            return ExitCode.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for ExitCode
+         * Gets the type url for ExitCode
          * @function getTypeUrl
          * @memberof ServerSync.ExitCode
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        ExitCode.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ServerSync.ExitCode";
+        ExitCode.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ServerSync.ExitCode";
         };
 
         return ExitCode;
@@ -3884,25 +4717,38 @@ $root.ServerSync = (function() {
 
         /**
          * Properties of a SyncdVersion.
+         * @typedef {Object} ServerSync.SyncdVersion.$Properties
+         * @property {number|Long|null} [version] SyncdVersion version
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a SyncdVersion.
          * @memberof ServerSync
          * @interface ISyncdVersion
-         * @property {number|Long|null} [version] SyncdVersion version
+         * @augments ServerSync.SyncdVersion.$Properties
+         * @deprecated Use ServerSync.SyncdVersion.$Properties instead.
+         */
+
+        /**
+         * Shape of a SyncdVersion.
+         * @typedef {ServerSync.SyncdVersion.$Properties} ServerSync.SyncdVersion.$Shape
          */
 
         /**
          * Constructs a new SyncdVersion.
          * @memberof ServerSync
          * @classdesc Represents a SyncdVersion.
-         * @implements ISyncdVersion
          * @constructor
-         * @param {ServerSync.ISyncdVersion=} [properties] Properties to set
+         * @param {ServerSync.SyncdVersion.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
-        function SyncdVersion(properties) {
+        var SyncdVersion = function (properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
+                for (var keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
-        }
+        };
 
         /**
          * SyncdVersion version.
@@ -3916,7 +4762,7 @@ $root.ServerSync = (function() {
         var $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
-        Object.defineProperty(SyncdVersion.prototype, "_version", {
+        $Object.defineProperty(SyncdVersion.prototype, "_version", {
             get: $util.oneOfGetter($oneOfFields = ["version"]),
             set: $util.oneOfSetter($oneOfFields)
         });
@@ -3926,10 +4772,14 @@ $root.ServerSync = (function() {
          * @function create
          * @memberof ServerSync.SyncdVersion
          * @static
-         * @param {ServerSync.ISyncdVersion=} [properties] Properties to set
+         * @param {ServerSync.SyncdVersion.$Properties=} [properties] Properties to set
          * @returns {ServerSync.SyncdVersion} SyncdVersion instance
+         * @type {{
+         *   (properties: ServerSync.SyncdVersion.$Shape): ServerSync.SyncdVersion & ServerSync.SyncdVersion.$Shape;
+         *   (properties?: ServerSync.SyncdVersion.$Properties): ServerSync.SyncdVersion;
+         * }}
          */
-        SyncdVersion.create = function create(properties) {
+        SyncdVersion.create = function(properties) {
             return new SyncdVersion(properties);
         };
 
@@ -3938,15 +4788,22 @@ $root.ServerSync = (function() {
          * @function encode
          * @memberof ServerSync.SyncdVersion
          * @static
-         * @param {ServerSync.ISyncdVersion} message SyncdVersion message or plain object to encode
+         * @param {ServerSync.SyncdVersion.$Properties} message SyncdVersion message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdVersion.encode = function encode(message, writer) {
+        SyncdVersion.encode = function (message, writer, _depth) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.version != null && Object.hasOwnProperty.call(message, "version"))
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
                 writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.version);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (var i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
             return writer;
         };
 
@@ -3955,12 +4812,12 @@ $root.ServerSync = (function() {
          * @function encodeDelimited
          * @memberof ServerSync.SyncdVersion
          * @static
-         * @param {ServerSync.ISyncdVersion} message SyncdVersion message or plain object to encode
+         * @param {ServerSync.SyncdVersion.$Properties} message SyncdVersion message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        SyncdVersion.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
+        SyncdVersion.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
         };
 
         /**
@@ -3970,28 +4827,58 @@ $root.ServerSync = (function() {
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ServerSync.SyncdVersion} SyncdVersion
+         * @returns {ServerSync.SyncdVersion & ServerSync.SyncdVersion.$Shape} SyncdVersion
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdVersion.decode = function decode(reader, length, error) {
+        SyncdVersion.decode = function (reader, length, _end, _depth, _target) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdVersion();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            var end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.ServerSync.SyncdVersion();
             while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.version = reader.uint64();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
+                var start = reader.pos;
+                var tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
                     break;
                 }
+                var wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 0)
+                            break;
+                        message.version = reader.uint64();
+                        message._version = "version";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
             }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
             return message;
         };
 
@@ -4001,14 +4888,14 @@ $root.ServerSync = (function() {
          * @memberof ServerSync.SyncdVersion
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ServerSync.SyncdVersion} SyncdVersion
+         * @returns {ServerSync.SyncdVersion & ServerSync.SyncdVersion.$Shape} SyncdVersion
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdVersion.decodeDelimited = function decodeDelimited(reader) {
+        SyncdVersion.decodeDelimited = function(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+            return this.decode(reader, reader.size());
         };
 
         /**
@@ -4019,11 +4906,15 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        SyncdVersion.verify = function verify(message) {
+        SyncdVersion.verify = function (message, _depth) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
             var properties = {};
-            if (message.version != null && message.hasOwnProperty("version")) {
+            if (message.version != null && $Object.hasOwnProperty.call(message, "version")) {
                 properties._version = 1;
                 if (!$util.isInteger(message.version) && !(message.version && $util.isInteger(message.version.low) && $util.isInteger(message.version.high)))
                     return "version: integer|Long expected";
@@ -4039,15 +4930,21 @@ $root.ServerSync = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {ServerSync.SyncdVersion} SyncdVersion
          */
-        SyncdVersion.fromObject = function fromObject(object) {
+        SyncdVersion.fromObject = function (object, _depth) {
             if (object instanceof $root.ServerSync.SyncdVersion)
                 return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".ServerSync.SyncdVersion: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var message = new $root.ServerSync.SyncdVersion();
             if (object.version != null)
                 if ($util.Long)
-                    (message.version = $util.Long.fromValue(object.version)).unsigned = true;
+                    message.version = $util.Long.fromValue(object.version, true);
                 else if (typeof object.version === "string")
-                    message.version = parseInt(object.version, 10);
+                    message.version = $parseInt(object.version, 10);
                 else if (typeof object.version === "number")
                     message.version = object.version;
                 else if (typeof object.version === "object")
@@ -4064,18 +4961,21 @@ $root.ServerSync = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        SyncdVersion.toObject = function toObject(message, options) {
+        SyncdVersion.toObject = function (message, options, _depth) {
             if (!options)
                 options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
             var object = {};
-            if (message.version != null && message.hasOwnProperty("version")) {
-                if (typeof message.version === "number")
-                    object.version = options.longs === String ? String(message.version) : message.version;
+            if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
+                if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
+                    object.version = typeof message.version === "number" ? $BigInt(message.version) : $util.Long.fromBits(message.version.low >>> 0, message.version.high >>> 0, true).toBigInt();
+                else if (typeof message.version === "number")
+                    object.version = options.longs === $String ? $String(message.version) : message.version;
                 else
-                    object.version = options.longs === String ? $util.Long.prototype.toString.call(message.version) : options.longs === Number ? new $util.LongBits(message.version.low >>> 0, message.version.high >>> 0).toNumber(true) : message.version;
-                if (options.oneofs)
-                    object._version = "version";
-            }
+                    object.version = options.longs === $String ? $util.Long.prototype.toString.call(message.version) : options.longs === $Number ? new $util.LongBits(message.version.low >>> 0, message.version.high >>> 0).toNumber(true) : message.version;
             return object;
         };
 
@@ -4086,23 +4986,22 @@ $root.ServerSync = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        SyncdVersion.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        SyncdVersion.prototype.toJSON = function() {
+            return SyncdVersion.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for SyncdVersion
+         * Gets the type url for SyncdVersion
          * @function getTypeUrl
          * @memberof ServerSync.SyncdVersion
          * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
          */
-        SyncdVersion.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/ServerSync.SyncdVersion";
+        SyncdVersion.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/ServerSync.SyncdVersion";
         };
 
         return SyncdVersion;

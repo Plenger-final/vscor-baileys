@@ -1,33 +1,38 @@
 import * as $protobuf from "protobufjs";
 import Long = require("long");
+
 /** Namespace MdStorageChatRowOpaqueData. */
 export namespace MdStorageChatRowOpaqueData {
 
-    /** Properties of a ChatRowOpaqueData. */
-    interface IChatRowOpaqueData {
-
-        /** ChatRowOpaqueData draftMessage */
-        draftMessage?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.IDraftMessage|null);
+    /**
+     * Properties of a ChatRowOpaqueData.
+     * @deprecated Use MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Properties instead.
+     */
+    interface IChatRowOpaqueData extends MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Properties {
     }
 
     /** Represents a ChatRowOpaqueData. */
-    class ChatRowOpaqueData implements IChatRowOpaqueData {
+    class ChatRowOpaqueData {
 
         /**
          * Constructs a new ChatRowOpaqueData.
          * @param [properties] Properties to set
          */
-        constructor(properties?: MdStorageChatRowOpaqueData.IChatRowOpaqueData);
+        constructor(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** ChatRowOpaqueData draftMessage. */
-        public draftMessage?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.IDraftMessage|null);
+        draftMessage?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Properties|null);
 
         /**
          * Creates a new ChatRowOpaqueData instance using the specified properties.
          * @param [properties] Properties to set
          * @returns ChatRowOpaqueData instance
          */
-        public static create(properties?: MdStorageChatRowOpaqueData.IChatRowOpaqueData): MdStorageChatRowOpaqueData.ChatRowOpaqueData;
+        static create(properties: MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Shape): MdStorageChatRowOpaqueData.ChatRowOpaqueData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Shape;
+        static create(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Properties): MdStorageChatRowOpaqueData.ChatRowOpaqueData;
 
         /**
          * Encodes the specified ChatRowOpaqueData message. Does not implicitly {@link MdStorageChatRowOpaqueData.ChatRowOpaqueData.verify|verify} messages.
@@ -35,7 +40,7 @@ export namespace MdStorageChatRowOpaqueData {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: MdStorageChatRowOpaqueData.IChatRowOpaqueData, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ChatRowOpaqueData message, length delimited. Does not implicitly {@link MdStorageChatRowOpaqueData.ChatRowOpaqueData.verify|verify} messages.
@@ -43,40 +48,40 @@ export namespace MdStorageChatRowOpaqueData {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: MdStorageChatRowOpaqueData.IChatRowOpaqueData, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ChatRowOpaqueData message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns ChatRowOpaqueData
+         * @returns {MdStorageChatRowOpaqueData.ChatRowOpaqueData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Shape} ChatRowOpaqueData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): MdStorageChatRowOpaqueData.ChatRowOpaqueData;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): MdStorageChatRowOpaqueData.ChatRowOpaqueData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Shape;
 
         /**
          * Decodes a ChatRowOpaqueData message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns ChatRowOpaqueData
+         * @returns {MdStorageChatRowOpaqueData.ChatRowOpaqueData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Shape} ChatRowOpaqueData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): MdStorageChatRowOpaqueData.ChatRowOpaqueData;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): MdStorageChatRowOpaqueData.ChatRowOpaqueData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Shape;
 
         /**
          * Verifies a ChatRowOpaqueData message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a ChatRowOpaqueData message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns ChatRowOpaqueData
          */
-        public static fromObject(object: { [k: string]: any }): MdStorageChatRowOpaqueData.ChatRowOpaqueData;
+        static fromObject(object: { [k: string]: any }): MdStorageChatRowOpaqueData.ChatRowOpaqueData;
 
         /**
          * Creates a plain object from a ChatRowOpaqueData message. Also converts values to other types if specified.
@@ -84,73 +89,78 @@ export namespace MdStorageChatRowOpaqueData {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ChatRowOpaqueData to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for ChatRowOpaqueData
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for ChatRowOpaqueData
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
     namespace ChatRowOpaqueData {
 
-        /** Properties of a DraftMessage. */
-        interface IDraftMessage {
+        /** Properties of a ChatRowOpaqueData. */
+        interface $Properties {
 
-            /** DraftMessage text */
-            text?: (string|null);
+            /** ChatRowOpaqueData draftMessage */
+            draftMessage?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Properties|null);
 
-            /** DraftMessage omittedUrl */
-            omittedUrl?: (string|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
 
-            /** DraftMessage ctwaContextLinkData */
-            ctwaContextLinkData?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.ICtwaContextLinkData|null);
+        /** Shape of a ChatRowOpaqueData. */
+        type $Shape = MdStorageChatRowOpaqueData.ChatRowOpaqueData.$Properties;
 
-            /** DraftMessage ctwaContext */
-            ctwaContext?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.ICtwaContextData|null);
-
-            /** DraftMessage timestamp */
-            timestamp?: (number|Long|null);
+        /**
+         * Properties of a DraftMessage.
+         * @deprecated Use MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Properties instead.
+         */
+        interface IDraftMessage extends MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Properties {
         }
 
         /** Represents a DraftMessage. */
-        class DraftMessage implements IDraftMessage {
+        class DraftMessage {
 
             /**
              * Constructs a new DraftMessage.
              * @param [properties] Properties to set
              */
-            constructor(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.IDraftMessage);
+            constructor(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
 
             /** DraftMessage text. */
-            public text?: (string|null);
+            text?: (string|null);
 
             /** DraftMessage omittedUrl. */
-            public omittedUrl?: (string|null);
+            omittedUrl?: (string|null);
 
             /** DraftMessage ctwaContextLinkData. */
-            public ctwaContextLinkData?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.ICtwaContextLinkData|null);
+            ctwaContextLinkData?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Properties|null);
 
             /** DraftMessage ctwaContext. */
-            public ctwaContext?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.ICtwaContextData|null);
+            ctwaContext?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Properties|null);
 
             /** DraftMessage timestamp. */
-            public timestamp?: (number|Long|null);
+            timestamp?: (number|Long|null);
 
             /**
              * Creates a new DraftMessage instance using the specified properties.
              * @param [properties] Properties to set
              * @returns DraftMessage instance
              */
-            public static create(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.IDraftMessage): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage;
+            static create(properties: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Shape): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Shape;
+            static create(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Properties): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage;
 
             /**
              * Encodes the specified DraftMessage message. Does not implicitly {@link MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.verify|verify} messages.
@@ -158,7 +168,7 @@ export namespace MdStorageChatRowOpaqueData {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.IDraftMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified DraftMessage message, length delimited. Does not implicitly {@link MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.verify|verify} messages.
@@ -166,40 +176,40 @@ export namespace MdStorageChatRowOpaqueData {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.IDraftMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encodeDelimited(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a DraftMessage message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns DraftMessage
+             * @returns {MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Shape} DraftMessage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Shape;
 
             /**
              * Decodes a DraftMessage message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns DraftMessage
+             * @returns {MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Shape} DraftMessage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage;
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Shape;
 
             /**
              * Verifies a DraftMessage message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string|null);
+            static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a DraftMessage message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns DraftMessage
              */
-            public static fromObject(object: { [k: string]: any }): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage;
+            static fromObject(object: { [k: string]: any }): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage;
 
             /**
              * Creates a plain object from a DraftMessage message. Also converts values to other types if specified.
@@ -207,115 +217,111 @@ export namespace MdStorageChatRowOpaqueData {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this DraftMessage to JSON.
              * @returns JSON object
              */
-            public toJSON(): { [k: string]: any };
+            toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for DraftMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
+             * Gets the type url for DraftMessage
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
              */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
+            static getTypeUrl(prefix?: string): string;
         }
 
         namespace DraftMessage {
 
-            /** Properties of a CtwaContextData. */
-            interface ICtwaContextData {
+            /** Properties of a DraftMessage. */
+            interface $Properties {
 
-                /** CtwaContextData conversionSource */
-                conversionSource?: (string|null);
+                /** DraftMessage text */
+                text?: (string|null);
 
-                /** CtwaContextData conversionData */
-                conversionData?: (Uint8Array|null);
+                /** DraftMessage omittedUrl */
+                omittedUrl?: (string|null);
 
-                /** CtwaContextData sourceUrl */
-                sourceUrl?: (string|null);
+                /** DraftMessage ctwaContextLinkData */
+                ctwaContextLinkData?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Properties|null);
 
-                /** CtwaContextData sourceId */
-                sourceId?: (string|null);
+                /** DraftMessage ctwaContext */
+                ctwaContext?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Properties|null);
 
-                /** CtwaContextData sourceType */
-                sourceType?: (string|null);
+                /** DraftMessage timestamp */
+                timestamp?: (number|Long|null);
 
-                /** CtwaContextData title */
-                title?: (string|null);
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
 
-                /** CtwaContextData description */
-                description?: (string|null);
+            /** Shape of a DraftMessage. */
+            type $Shape = MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.$Properties;
 
-                /** CtwaContextData thumbnail */
-                thumbnail?: (string|null);
-
-                /** CtwaContextData thumbnailUrl */
-                thumbnailUrl?: (string|null);
-
-                /** CtwaContextData mediaType */
-                mediaType?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.ContextInfoExternalAdReplyInfoMediaType|null);
-
-                /** CtwaContextData mediaUrl */
-                mediaUrl?: (string|null);
-
-                /** CtwaContextData isSuspiciousLink */
-                isSuspiciousLink?: (boolean|null);
+            /**
+             * Properties of a CtwaContextData.
+             * @deprecated Use MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Properties instead.
+             */
+            interface ICtwaContextData extends MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Properties {
             }
 
             /** Represents a CtwaContextData. */
-            class CtwaContextData implements ICtwaContextData {
+            class CtwaContextData {
 
                 /**
                  * Constructs a new CtwaContextData.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.ICtwaContextData);
+                constructor(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Properties);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
 
                 /** CtwaContextData conversionSource. */
-                public conversionSource?: (string|null);
+                conversionSource?: (string|null);
 
                 /** CtwaContextData conversionData. */
-                public conversionData?: (Uint8Array|null);
+                conversionData?: (Uint8Array|null);
 
                 /** CtwaContextData sourceUrl. */
-                public sourceUrl?: (string|null);
+                sourceUrl?: (string|null);
 
                 /** CtwaContextData sourceId. */
-                public sourceId?: (string|null);
+                sourceId?: (string|null);
 
                 /** CtwaContextData sourceType. */
-                public sourceType?: (string|null);
+                sourceType?: (string|null);
 
                 /** CtwaContextData title. */
-                public title?: (string|null);
+                title?: (string|null);
 
                 /** CtwaContextData description. */
-                public description?: (string|null);
+                description?: (string|null);
 
                 /** CtwaContextData thumbnail. */
-                public thumbnail?: (string|null);
+                thumbnail?: (string|null);
 
                 /** CtwaContextData thumbnailUrl. */
-                public thumbnailUrl?: (string|null);
+                thumbnailUrl?: (string|null);
 
                 /** CtwaContextData mediaType. */
-                public mediaType?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.ContextInfoExternalAdReplyInfoMediaType|null);
+                mediaType?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.ContextInfoExternalAdReplyInfoMediaType|null);
 
                 /** CtwaContextData mediaUrl. */
-                public mediaUrl?: (string|null);
+                mediaUrl?: (string|null);
 
                 /** CtwaContextData isSuspiciousLink. */
-                public isSuspiciousLink?: (boolean|null);
+                isSuspiciousLink?: (boolean|null);
 
                 /**
                  * Creates a new CtwaContextData instance using the specified properties.
                  * @param [properties] Properties to set
                  * @returns CtwaContextData instance
                  */
-                public static create(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.ICtwaContextData): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData;
+                static create(properties: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Shape): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Shape;
+                static create(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Properties): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData;
 
                 /**
                  * Encodes the specified CtwaContextData message. Does not implicitly {@link MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.verify|verify} messages.
@@ -323,7 +329,7 @@ export namespace MdStorageChatRowOpaqueData {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.ICtwaContextData, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encode(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Encodes the specified CtwaContextData message, length delimited. Does not implicitly {@link MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.verify|verify} messages.
@@ -331,40 +337,40 @@ export namespace MdStorageChatRowOpaqueData {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.ICtwaContextData, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encodeDelimited(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Decodes a CtwaContextData message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns CtwaContextData
+                 * @returns {MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Shape} CtwaContextData
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData;
+                static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Shape;
 
                 /**
                  * Decodes a CtwaContextData message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns CtwaContextData
+                 * @returns {MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Shape} CtwaContextData
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData;
+                static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Shape;
 
                 /**
                  * Verifies a CtwaContextData message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
-                public static verify(message: { [k: string]: any }): (string|null);
+                static verify(message: { [k: string]: any }): (string|null);
 
                 /**
                  * Creates a CtwaContextData message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
                  * @returns CtwaContextData
                  */
-                public static fromObject(object: { [k: string]: any }): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData;
+                static fromObject(object: { [k: string]: any }): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData;
 
                 /**
                  * Creates a plain object from a CtwaContextData message. Also converts values to other types if specified.
@@ -372,75 +378,122 @@ export namespace MdStorageChatRowOpaqueData {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                static toObject(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this CtwaContextData to JSON.
                  * @returns JSON object
                  */
-                public toJSON(): { [k: string]: any };
+                toJSON(): { [k: string]: any };
 
                 /**
-                 * Gets the default type url for CtwaContextData
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
+                 * Gets the type url for CtwaContextData
+                 * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+                 * @returns The type url
                  */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
+                static getTypeUrl(prefix?: string): string;
             }
 
             namespace CtwaContextData {
 
+                /** Properties of a CtwaContextData. */
+                interface $Properties {
+
+                    /** CtwaContextData conversionSource */
+                    conversionSource?: (string|null);
+
+                    /** CtwaContextData conversionData */
+                    conversionData?: (Uint8Array|null);
+
+                    /** CtwaContextData sourceUrl */
+                    sourceUrl?: (string|null);
+
+                    /** CtwaContextData sourceId */
+                    sourceId?: (string|null);
+
+                    /** CtwaContextData sourceType */
+                    sourceType?: (string|null);
+
+                    /** CtwaContextData title */
+                    title?: (string|null);
+
+                    /** CtwaContextData description */
+                    description?: (string|null);
+
+                    /** CtwaContextData thumbnail */
+                    thumbnail?: (string|null);
+
+                    /** CtwaContextData thumbnailUrl */
+                    thumbnailUrl?: (string|null);
+
+                    /** CtwaContextData mediaType */
+                    mediaType?: (MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.ContextInfoExternalAdReplyInfoMediaType|null);
+
+                    /** CtwaContextData mediaUrl */
+                    mediaUrl?: (string|null);
+
+                    /** CtwaContextData isSuspiciousLink */
+                    isSuspiciousLink?: (boolean|null);
+
+                    /** Unknown fields preserved while decoding when enabled */
+                    $unknowns?: Uint8Array[];
+                }
+
+                /** Shape of a CtwaContextData. */
+                type $Shape = MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Properties;
+
                 /** ContextInfoExternalAdReplyInfoMediaType enum. */
                 enum ContextInfoExternalAdReplyInfoMediaType {
+
+                    /** NONE value */
                     NONE = 0,
+
+                    /** IMAGE value */
                     IMAGE = 1,
+
+                    /** VIDEO value */
                     VIDEO = 2
                 }
             }
 
-            /** Properties of a CtwaContextLinkData. */
-            interface ICtwaContextLinkData {
-
-                /** CtwaContextLinkData context */
-                context?: (string|null);
-
-                /** CtwaContextLinkData sourceUrl */
-                sourceUrl?: (string|null);
-
-                /** CtwaContextLinkData icebreaker */
-                icebreaker?: (string|null);
-
-                /** CtwaContextLinkData phone */
-                phone?: (string|null);
+            /**
+             * Properties of a CtwaContextLinkData.
+             * @deprecated Use MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Properties instead.
+             */
+            interface ICtwaContextLinkData extends MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Properties {
             }
 
             /** Represents a CtwaContextLinkData. */
-            class CtwaContextLinkData implements ICtwaContextLinkData {
+            class CtwaContextLinkData {
 
                 /**
                  * Constructs a new CtwaContextLinkData.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.ICtwaContextLinkData);
+                constructor(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Properties);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
 
                 /** CtwaContextLinkData context. */
-                public context?: (string|null);
+                context?: (string|null);
 
                 /** CtwaContextLinkData sourceUrl. */
-                public sourceUrl?: (string|null);
+                sourceUrl?: (string|null);
 
                 /** CtwaContextLinkData icebreaker. */
-                public icebreaker?: (string|null);
+                icebreaker?: (string|null);
 
                 /** CtwaContextLinkData phone. */
-                public phone?: (string|null);
+                phone?: (string|null);
 
                 /**
                  * Creates a new CtwaContextLinkData instance using the specified properties.
                  * @param [properties] Properties to set
                  * @returns CtwaContextLinkData instance
                  */
-                public static create(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.ICtwaContextLinkData): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData;
+                static create(properties: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Shape): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Shape;
+                static create(properties?: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Properties): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData;
 
                 /**
                  * Encodes the specified CtwaContextLinkData message. Does not implicitly {@link MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.verify|verify} messages.
@@ -448,7 +501,7 @@ export namespace MdStorageChatRowOpaqueData {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.ICtwaContextLinkData, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encode(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Encodes the specified CtwaContextLinkData message, length delimited. Does not implicitly {@link MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.verify|verify} messages.
@@ -456,40 +509,40 @@ export namespace MdStorageChatRowOpaqueData {
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.ICtwaContextLinkData, writer?: $protobuf.Writer): $protobuf.Writer;
+                static encodeDelimited(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Decodes a CtwaContextLinkData message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns CtwaContextLinkData
+                 * @returns {MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Shape} CtwaContextLinkData
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData;
+                static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Shape;
 
                 /**
                  * Decodes a CtwaContextLinkData message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns CtwaContextLinkData
+                 * @returns {MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Shape} CtwaContextLinkData
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData;
+                static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData & MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Shape;
 
                 /**
                  * Verifies a CtwaContextLinkData message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
-                public static verify(message: { [k: string]: any }): (string|null);
+                static verify(message: { [k: string]: any }): (string|null);
 
                 /**
                  * Creates a CtwaContextLinkData message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
                  * @returns CtwaContextLinkData
                  */
-                public static fromObject(object: { [k: string]: any }): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData;
+                static fromObject(object: { [k: string]: any }): MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData;
 
                 /**
                  * Creates a plain object from a CtwaContextLinkData message. Also converts values to other types if specified.
@@ -497,20 +550,45 @@ export namespace MdStorageChatRowOpaqueData {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                static toObject(message: MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this CtwaContextLinkData to JSON.
                  * @returns JSON object
                  */
-                public toJSON(): { [k: string]: any };
+                toJSON(): { [k: string]: any };
 
                 /**
-                 * Gets the default type url for CtwaContextLinkData
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
+                 * Gets the type url for CtwaContextLinkData
+                 * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+                 * @returns The type url
                  */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
+                static getTypeUrl(prefix?: string): string;
+            }
+
+            namespace CtwaContextLinkData {
+
+                /** Properties of a CtwaContextLinkData. */
+                interface $Properties {
+
+                    /** CtwaContextLinkData context */
+                    context?: (string|null);
+
+                    /** CtwaContextLinkData sourceUrl */
+                    sourceUrl?: (string|null);
+
+                    /** CtwaContextLinkData icebreaker */
+                    icebreaker?: (string|null);
+
+                    /** CtwaContextLinkData phone */
+                    phone?: (string|null);
+
+                    /** Unknown fields preserved while decoding when enabled */
+                    $unknowns?: Uint8Array[];
+                }
+
+                /** Shape of a CtwaContextLinkData. */
+                type $Shape = MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Properties;
             }
         }
     }

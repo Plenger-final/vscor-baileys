@@ -1,39 +1,41 @@
 import * as $protobuf from "protobufjs";
 import Long = require("long");
+
 /** Namespace SignalWhisperTextProtocol. */
 export namespace SignalWhisperTextProtocol {
 
-    /** Properties of a DeviceConsistencyCodeMessage. */
-    interface IDeviceConsistencyCodeMessage {
-
-        /** DeviceConsistencyCodeMessage generation */
-        generation?: (number|null);
-
-        /** DeviceConsistencyCodeMessage signature */
-        signature?: (Uint8Array|null);
+    /**
+     * Properties of a DeviceConsistencyCodeMessage.
+     * @deprecated Use SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Properties instead.
+     */
+    interface IDeviceConsistencyCodeMessage extends SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Properties {
     }
 
     /** Represents a DeviceConsistencyCodeMessage. */
-    class DeviceConsistencyCodeMessage implements IDeviceConsistencyCodeMessage {
+    class DeviceConsistencyCodeMessage {
 
         /**
          * Constructs a new DeviceConsistencyCodeMessage.
          * @param [properties] Properties to set
          */
-        constructor(properties?: SignalWhisperTextProtocol.IDeviceConsistencyCodeMessage);
+        constructor(properties?: SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** DeviceConsistencyCodeMessage generation. */
-        public generation?: (number|null);
+        generation?: (number|null);
 
         /** DeviceConsistencyCodeMessage signature. */
-        public signature?: (Uint8Array|null);
+        signature?: (Uint8Array|null);
 
         /**
          * Creates a new DeviceConsistencyCodeMessage instance using the specified properties.
          * @param [properties] Properties to set
          * @returns DeviceConsistencyCodeMessage instance
          */
-        public static create(properties?: SignalWhisperTextProtocol.IDeviceConsistencyCodeMessage): SignalWhisperTextProtocol.DeviceConsistencyCodeMessage;
+        static create(properties: SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Shape): SignalWhisperTextProtocol.DeviceConsistencyCodeMessage & SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Shape;
+        static create(properties?: SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Properties): SignalWhisperTextProtocol.DeviceConsistencyCodeMessage;
 
         /**
          * Encodes the specified DeviceConsistencyCodeMessage message. Does not implicitly {@link SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.verify|verify} messages.
@@ -41,7 +43,7 @@ export namespace SignalWhisperTextProtocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: SignalWhisperTextProtocol.IDeviceConsistencyCodeMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified DeviceConsistencyCodeMessage message, length delimited. Does not implicitly {@link SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.verify|verify} messages.
@@ -49,40 +51,40 @@ export namespace SignalWhisperTextProtocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: SignalWhisperTextProtocol.IDeviceConsistencyCodeMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a DeviceConsistencyCodeMessage message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns DeviceConsistencyCodeMessage
+         * @returns {SignalWhisperTextProtocol.DeviceConsistencyCodeMessage & SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Shape} DeviceConsistencyCodeMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SignalWhisperTextProtocol.DeviceConsistencyCodeMessage;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SignalWhisperTextProtocol.DeviceConsistencyCodeMessage & SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Shape;
 
         /**
          * Decodes a DeviceConsistencyCodeMessage message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns DeviceConsistencyCodeMessage
+         * @returns {SignalWhisperTextProtocol.DeviceConsistencyCodeMessage & SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Shape} DeviceConsistencyCodeMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SignalWhisperTextProtocol.DeviceConsistencyCodeMessage;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SignalWhisperTextProtocol.DeviceConsistencyCodeMessage & SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Shape;
 
         /**
          * Verifies a DeviceConsistencyCodeMessage message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a DeviceConsistencyCodeMessage message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns DeviceConsistencyCodeMessage
          */
-        public static fromObject(object: { [k: string]: any }): SignalWhisperTextProtocol.DeviceConsistencyCodeMessage;
+        static fromObject(object: { [k: string]: any }): SignalWhisperTextProtocol.DeviceConsistencyCodeMessage;
 
         /**
          * Creates a plain object from a DeviceConsistencyCodeMessage message. Also converts values to other types if specified.
@@ -90,65 +92,79 @@ export namespace SignalWhisperTextProtocol {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: SignalWhisperTextProtocol.DeviceConsistencyCodeMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: SignalWhisperTextProtocol.DeviceConsistencyCodeMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this DeviceConsistencyCodeMessage to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for DeviceConsistencyCodeMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for DeviceConsistencyCodeMessage
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a SenderKeyDistributionMessage. */
-    interface ISenderKeyDistributionMessage {
+    namespace DeviceConsistencyCodeMessage {
 
-        /** SenderKeyDistributionMessage id */
-        id?: (number|null);
+        /** Properties of a DeviceConsistencyCodeMessage. */
+        interface $Properties {
 
-        /** SenderKeyDistributionMessage iteration */
-        iteration?: (number|null);
+            /** DeviceConsistencyCodeMessage generation */
+            generation?: (number|null);
 
-        /** SenderKeyDistributionMessage chainKey */
-        chainKey?: (Uint8Array|null);
+            /** DeviceConsistencyCodeMessage signature */
+            signature?: (Uint8Array|null);
 
-        /** SenderKeyDistributionMessage signingKey */
-        signingKey?: (Uint8Array|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a DeviceConsistencyCodeMessage. */
+        type $Shape = SignalWhisperTextProtocol.DeviceConsistencyCodeMessage.$Properties;
+    }
+
+    /**
+     * Properties of a SenderKeyDistributionMessage.
+     * @deprecated Use SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Properties instead.
+     */
+    interface ISenderKeyDistributionMessage extends SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Properties {
     }
 
     /** Represents a SenderKeyDistributionMessage. */
-    class SenderKeyDistributionMessage implements ISenderKeyDistributionMessage {
+    class SenderKeyDistributionMessage {
 
         /**
          * Constructs a new SenderKeyDistributionMessage.
          * @param [properties] Properties to set
          */
-        constructor(properties?: SignalWhisperTextProtocol.ISenderKeyDistributionMessage);
+        constructor(properties?: SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** SenderKeyDistributionMessage id. */
-        public id?: (number|null);
+        id?: (number|null);
 
         /** SenderKeyDistributionMessage iteration. */
-        public iteration?: (number|null);
+        iteration?: (number|null);
 
         /** SenderKeyDistributionMessage chainKey. */
-        public chainKey?: (Uint8Array|null);
+        chainKey?: (Uint8Array|null);
 
         /** SenderKeyDistributionMessage signingKey. */
-        public signingKey?: (Uint8Array|null);
+        signingKey?: (Uint8Array|null);
 
         /**
          * Creates a new SenderKeyDistributionMessage instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SenderKeyDistributionMessage instance
          */
-        public static create(properties?: SignalWhisperTextProtocol.ISenderKeyDistributionMessage): SignalWhisperTextProtocol.SenderKeyDistributionMessage;
+        static create(properties: SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Shape): SignalWhisperTextProtocol.SenderKeyDistributionMessage & SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Shape;
+        static create(properties?: SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Properties): SignalWhisperTextProtocol.SenderKeyDistributionMessage;
 
         /**
          * Encodes the specified SenderKeyDistributionMessage message. Does not implicitly {@link SignalWhisperTextProtocol.SenderKeyDistributionMessage.verify|verify} messages.
@@ -156,7 +172,7 @@ export namespace SignalWhisperTextProtocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: SignalWhisperTextProtocol.ISenderKeyDistributionMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SenderKeyDistributionMessage message, length delimited. Does not implicitly {@link SignalWhisperTextProtocol.SenderKeyDistributionMessage.verify|verify} messages.
@@ -164,40 +180,40 @@ export namespace SignalWhisperTextProtocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: SignalWhisperTextProtocol.ISenderKeyDistributionMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SenderKeyDistributionMessage message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns SenderKeyDistributionMessage
+         * @returns {SignalWhisperTextProtocol.SenderKeyDistributionMessage & SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Shape} SenderKeyDistributionMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SignalWhisperTextProtocol.SenderKeyDistributionMessage;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SignalWhisperTextProtocol.SenderKeyDistributionMessage & SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Shape;
 
         /**
          * Decodes a SenderKeyDistributionMessage message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns SenderKeyDistributionMessage
+         * @returns {SignalWhisperTextProtocol.SenderKeyDistributionMessage & SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Shape} SenderKeyDistributionMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SignalWhisperTextProtocol.SenderKeyDistributionMessage;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SignalWhisperTextProtocol.SenderKeyDistributionMessage & SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Shape;
 
         /**
          * Verifies a SenderKeyDistributionMessage message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a SenderKeyDistributionMessage message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns SenderKeyDistributionMessage
          */
-        public static fromObject(object: { [k: string]: any }): SignalWhisperTextProtocol.SenderKeyDistributionMessage;
+        static fromObject(object: { [k: string]: any }): SignalWhisperTextProtocol.SenderKeyDistributionMessage;
 
         /**
          * Creates a plain object from a SenderKeyDistributionMessage message. Also converts values to other types if specified.
@@ -205,59 +221,82 @@ export namespace SignalWhisperTextProtocol {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: SignalWhisperTextProtocol.SenderKeyDistributionMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: SignalWhisperTextProtocol.SenderKeyDistributionMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SenderKeyDistributionMessage to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for SenderKeyDistributionMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for SenderKeyDistributionMessage
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a SenderKeyMessage. */
-    interface ISenderKeyMessage {
+    namespace SenderKeyDistributionMessage {
 
-        /** SenderKeyMessage id */
-        id?: (number|null);
+        /** Properties of a SenderKeyDistributionMessage. */
+        interface $Properties {
 
-        /** SenderKeyMessage iteration */
-        iteration?: (number|null);
+            /** SenderKeyDistributionMessage id */
+            id?: (number|null);
 
-        /** SenderKeyMessage ciphertext */
-        ciphertext?: (Uint8Array|null);
+            /** SenderKeyDistributionMessage iteration */
+            iteration?: (number|null);
+
+            /** SenderKeyDistributionMessage chainKey */
+            chainKey?: (Uint8Array|null);
+
+            /** SenderKeyDistributionMessage signingKey */
+            signingKey?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a SenderKeyDistributionMessage. */
+        type $Shape = SignalWhisperTextProtocol.SenderKeyDistributionMessage.$Properties;
+    }
+
+    /**
+     * Properties of a SenderKeyMessage.
+     * @deprecated Use SignalWhisperTextProtocol.SenderKeyMessage.$Properties instead.
+     */
+    interface ISenderKeyMessage extends SignalWhisperTextProtocol.SenderKeyMessage.$Properties {
     }
 
     /** Represents a SenderKeyMessage. */
-    class SenderKeyMessage implements ISenderKeyMessage {
+    class SenderKeyMessage {
 
         /**
          * Constructs a new SenderKeyMessage.
          * @param [properties] Properties to set
          */
-        constructor(properties?: SignalWhisperTextProtocol.ISenderKeyMessage);
+        constructor(properties?: SignalWhisperTextProtocol.SenderKeyMessage.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** SenderKeyMessage id. */
-        public id?: (number|null);
+        id?: (number|null);
 
         /** SenderKeyMessage iteration. */
-        public iteration?: (number|null);
+        iteration?: (number|null);
 
         /** SenderKeyMessage ciphertext. */
-        public ciphertext?: (Uint8Array|null);
+        ciphertext?: (Uint8Array|null);
 
         /**
          * Creates a new SenderKeyMessage instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SenderKeyMessage instance
          */
-        public static create(properties?: SignalWhisperTextProtocol.ISenderKeyMessage): SignalWhisperTextProtocol.SenderKeyMessage;
+        static create(properties: SignalWhisperTextProtocol.SenderKeyMessage.$Shape): SignalWhisperTextProtocol.SenderKeyMessage & SignalWhisperTextProtocol.SenderKeyMessage.$Shape;
+        static create(properties?: SignalWhisperTextProtocol.SenderKeyMessage.$Properties): SignalWhisperTextProtocol.SenderKeyMessage;
 
         /**
          * Encodes the specified SenderKeyMessage message. Does not implicitly {@link SignalWhisperTextProtocol.SenderKeyMessage.verify|verify} messages.
@@ -265,7 +304,7 @@ export namespace SignalWhisperTextProtocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: SignalWhisperTextProtocol.ISenderKeyMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: SignalWhisperTextProtocol.SenderKeyMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SenderKeyMessage message, length delimited. Does not implicitly {@link SignalWhisperTextProtocol.SenderKeyMessage.verify|verify} messages.
@@ -273,40 +312,40 @@ export namespace SignalWhisperTextProtocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: SignalWhisperTextProtocol.ISenderKeyMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: SignalWhisperTextProtocol.SenderKeyMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SenderKeyMessage message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns SenderKeyMessage
+         * @returns {SignalWhisperTextProtocol.SenderKeyMessage & SignalWhisperTextProtocol.SenderKeyMessage.$Shape} SenderKeyMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SignalWhisperTextProtocol.SenderKeyMessage;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SignalWhisperTextProtocol.SenderKeyMessage & SignalWhisperTextProtocol.SenderKeyMessage.$Shape;
 
         /**
          * Decodes a SenderKeyMessage message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns SenderKeyMessage
+         * @returns {SignalWhisperTextProtocol.SenderKeyMessage & SignalWhisperTextProtocol.SenderKeyMessage.$Shape} SenderKeyMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SignalWhisperTextProtocol.SenderKeyMessage;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SignalWhisperTextProtocol.SenderKeyMessage & SignalWhisperTextProtocol.SenderKeyMessage.$Shape;
 
         /**
          * Verifies a SenderKeyMessage message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a SenderKeyMessage message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns SenderKeyMessage
          */
-        public static fromObject(object: { [k: string]: any }): SignalWhisperTextProtocol.SenderKeyMessage;
+        static fromObject(object: { [k: string]: any }): SignalWhisperTextProtocol.SenderKeyMessage;
 
         /**
          * Creates a plain object from a SenderKeyMessage message. Also converts values to other types if specified.
@@ -314,71 +353,85 @@ export namespace SignalWhisperTextProtocol {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: SignalWhisperTextProtocol.SenderKeyMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: SignalWhisperTextProtocol.SenderKeyMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SenderKeyMessage to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for SenderKeyMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for SenderKeyMessage
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a KeyExchangeMessage. */
-    interface IKeyExchangeMessage {
+    namespace SenderKeyMessage {
 
-        /** KeyExchangeMessage id */
-        id?: (number|null);
+        /** Properties of a SenderKeyMessage. */
+        interface $Properties {
 
-        /** KeyExchangeMessage baseKey */
-        baseKey?: (Uint8Array|null);
+            /** SenderKeyMessage id */
+            id?: (number|null);
 
-        /** KeyExchangeMessage ratchetKey */
-        ratchetKey?: (Uint8Array|null);
+            /** SenderKeyMessage iteration */
+            iteration?: (number|null);
 
-        /** KeyExchangeMessage identityKey */
-        identityKey?: (Uint8Array|null);
+            /** SenderKeyMessage ciphertext */
+            ciphertext?: (Uint8Array|null);
 
-        /** KeyExchangeMessage baseKeySignature */
-        baseKeySignature?: (Uint8Array|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a SenderKeyMessage. */
+        type $Shape = SignalWhisperTextProtocol.SenderKeyMessage.$Properties;
+    }
+
+    /**
+     * Properties of a KeyExchangeMessage.
+     * @deprecated Use SignalWhisperTextProtocol.KeyExchangeMessage.$Properties instead.
+     */
+    interface IKeyExchangeMessage extends SignalWhisperTextProtocol.KeyExchangeMessage.$Properties {
     }
 
     /** Represents a KeyExchangeMessage. */
-    class KeyExchangeMessage implements IKeyExchangeMessage {
+    class KeyExchangeMessage {
 
         /**
          * Constructs a new KeyExchangeMessage.
          * @param [properties] Properties to set
          */
-        constructor(properties?: SignalWhisperTextProtocol.IKeyExchangeMessage);
+        constructor(properties?: SignalWhisperTextProtocol.KeyExchangeMessage.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** KeyExchangeMessage id. */
-        public id?: (number|null);
+        id?: (number|null);
 
         /** KeyExchangeMessage baseKey. */
-        public baseKey?: (Uint8Array|null);
+        baseKey?: (Uint8Array|null);
 
         /** KeyExchangeMessage ratchetKey. */
-        public ratchetKey?: (Uint8Array|null);
+        ratchetKey?: (Uint8Array|null);
 
         /** KeyExchangeMessage identityKey. */
-        public identityKey?: (Uint8Array|null);
+        identityKey?: (Uint8Array|null);
 
         /** KeyExchangeMessage baseKeySignature. */
-        public baseKeySignature?: (Uint8Array|null);
+        baseKeySignature?: (Uint8Array|null);
 
         /**
          * Creates a new KeyExchangeMessage instance using the specified properties.
          * @param [properties] Properties to set
          * @returns KeyExchangeMessage instance
          */
-        public static create(properties?: SignalWhisperTextProtocol.IKeyExchangeMessage): SignalWhisperTextProtocol.KeyExchangeMessage;
+        static create(properties: SignalWhisperTextProtocol.KeyExchangeMessage.$Shape): SignalWhisperTextProtocol.KeyExchangeMessage & SignalWhisperTextProtocol.KeyExchangeMessage.$Shape;
+        static create(properties?: SignalWhisperTextProtocol.KeyExchangeMessage.$Properties): SignalWhisperTextProtocol.KeyExchangeMessage;
 
         /**
          * Encodes the specified KeyExchangeMessage message. Does not implicitly {@link SignalWhisperTextProtocol.KeyExchangeMessage.verify|verify} messages.
@@ -386,7 +439,7 @@ export namespace SignalWhisperTextProtocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: SignalWhisperTextProtocol.IKeyExchangeMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: SignalWhisperTextProtocol.KeyExchangeMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified KeyExchangeMessage message, length delimited. Does not implicitly {@link SignalWhisperTextProtocol.KeyExchangeMessage.verify|verify} messages.
@@ -394,40 +447,40 @@ export namespace SignalWhisperTextProtocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: SignalWhisperTextProtocol.IKeyExchangeMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: SignalWhisperTextProtocol.KeyExchangeMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a KeyExchangeMessage message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns KeyExchangeMessage
+         * @returns {SignalWhisperTextProtocol.KeyExchangeMessage & SignalWhisperTextProtocol.KeyExchangeMessage.$Shape} KeyExchangeMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SignalWhisperTextProtocol.KeyExchangeMessage;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SignalWhisperTextProtocol.KeyExchangeMessage & SignalWhisperTextProtocol.KeyExchangeMessage.$Shape;
 
         /**
          * Decodes a KeyExchangeMessage message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns KeyExchangeMessage
+         * @returns {SignalWhisperTextProtocol.KeyExchangeMessage & SignalWhisperTextProtocol.KeyExchangeMessage.$Shape} KeyExchangeMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SignalWhisperTextProtocol.KeyExchangeMessage;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SignalWhisperTextProtocol.KeyExchangeMessage & SignalWhisperTextProtocol.KeyExchangeMessage.$Shape;
 
         /**
          * Verifies a KeyExchangeMessage message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a KeyExchangeMessage message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns KeyExchangeMessage
          */
-        public static fromObject(object: { [k: string]: any }): SignalWhisperTextProtocol.KeyExchangeMessage;
+        static fromObject(object: { [k: string]: any }): SignalWhisperTextProtocol.KeyExchangeMessage;
 
         /**
          * Creates a plain object from a KeyExchangeMessage message. Also converts values to other types if specified.
@@ -435,89 +488,100 @@ export namespace SignalWhisperTextProtocol {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: SignalWhisperTextProtocol.KeyExchangeMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: SignalWhisperTextProtocol.KeyExchangeMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this KeyExchangeMessage to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for KeyExchangeMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for KeyExchangeMessage
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a PreKeySignalMessage. */
-    interface IPreKeySignalMessage {
+    namespace KeyExchangeMessage {
 
-        /** PreKeySignalMessage registrationId */
-        registrationId?: (number|null);
+        /** Properties of a KeyExchangeMessage. */
+        interface $Properties {
 
-        /** PreKeySignalMessage preKeyId */
-        preKeyId?: (number|null);
+            /** KeyExchangeMessage id */
+            id?: (number|null);
 
-        /** PreKeySignalMessage signedPreKeyId */
-        signedPreKeyId?: (number|null);
+            /** KeyExchangeMessage baseKey */
+            baseKey?: (Uint8Array|null);
 
-        /** PreKeySignalMessage baseKey */
-        baseKey?: (Uint8Array|null);
+            /** KeyExchangeMessage ratchetKey */
+            ratchetKey?: (Uint8Array|null);
 
-        /** PreKeySignalMessage identityKey */
-        identityKey?: (Uint8Array|null);
+            /** KeyExchangeMessage identityKey */
+            identityKey?: (Uint8Array|null);
 
-        /** PreKeySignalMessage message */
-        message?: (Uint8Array|null);
+            /** KeyExchangeMessage baseKeySignature */
+            baseKeySignature?: (Uint8Array|null);
 
-        /** PreKeySignalMessage kyberPreKeyId */
-        kyberPreKeyId?: (number|null);
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
 
-        /** PreKeySignalMessage kyberCiphertext */
-        kyberCiphertext?: (Uint8Array|null);
+        /** Shape of a KeyExchangeMessage. */
+        type $Shape = SignalWhisperTextProtocol.KeyExchangeMessage.$Properties;
+    }
+
+    /**
+     * Properties of a PreKeySignalMessage.
+     * @deprecated Use SignalWhisperTextProtocol.PreKeySignalMessage.$Properties instead.
+     */
+    interface IPreKeySignalMessage extends SignalWhisperTextProtocol.PreKeySignalMessage.$Properties {
     }
 
     /** Represents a PreKeySignalMessage. */
-    class PreKeySignalMessage implements IPreKeySignalMessage {
+    class PreKeySignalMessage {
 
         /**
          * Constructs a new PreKeySignalMessage.
          * @param [properties] Properties to set
          */
-        constructor(properties?: SignalWhisperTextProtocol.IPreKeySignalMessage);
+        constructor(properties?: SignalWhisperTextProtocol.PreKeySignalMessage.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** PreKeySignalMessage registrationId. */
-        public registrationId?: (number|null);
+        registrationId?: (number|null);
 
         /** PreKeySignalMessage preKeyId. */
-        public preKeyId?: (number|null);
+        preKeyId?: (number|null);
 
         /** PreKeySignalMessage signedPreKeyId. */
-        public signedPreKeyId?: (number|null);
+        signedPreKeyId?: (number|null);
 
         /** PreKeySignalMessage baseKey. */
-        public baseKey?: (Uint8Array|null);
+        baseKey?: (Uint8Array|null);
 
         /** PreKeySignalMessage identityKey. */
-        public identityKey?: (Uint8Array|null);
+        identityKey?: (Uint8Array|null);
 
         /** PreKeySignalMessage message. */
-        public message?: (Uint8Array|null);
+        message?: (Uint8Array|null);
 
         /** PreKeySignalMessage kyberPreKeyId. */
-        public kyberPreKeyId?: (number|null);
+        kyberPreKeyId?: (number|null);
 
         /** PreKeySignalMessage kyberCiphertext. */
-        public kyberCiphertext?: (Uint8Array|null);
+        kyberCiphertext?: (Uint8Array|null);
 
         /**
          * Creates a new PreKeySignalMessage instance using the specified properties.
          * @param [properties] Properties to set
          * @returns PreKeySignalMessage instance
          */
-        public static create(properties?: SignalWhisperTextProtocol.IPreKeySignalMessage): SignalWhisperTextProtocol.PreKeySignalMessage;
+        static create(properties: SignalWhisperTextProtocol.PreKeySignalMessage.$Shape): SignalWhisperTextProtocol.PreKeySignalMessage & SignalWhisperTextProtocol.PreKeySignalMessage.$Shape;
+        static create(properties?: SignalWhisperTextProtocol.PreKeySignalMessage.$Properties): SignalWhisperTextProtocol.PreKeySignalMessage;
 
         /**
          * Encodes the specified PreKeySignalMessage message. Does not implicitly {@link SignalWhisperTextProtocol.PreKeySignalMessage.verify|verify} messages.
@@ -525,7 +589,7 @@ export namespace SignalWhisperTextProtocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: SignalWhisperTextProtocol.IPreKeySignalMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: SignalWhisperTextProtocol.PreKeySignalMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PreKeySignalMessage message, length delimited. Does not implicitly {@link SignalWhisperTextProtocol.PreKeySignalMessage.verify|verify} messages.
@@ -533,40 +597,40 @@ export namespace SignalWhisperTextProtocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: SignalWhisperTextProtocol.IPreKeySignalMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: SignalWhisperTextProtocol.PreKeySignalMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PreKeySignalMessage message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns PreKeySignalMessage
+         * @returns {SignalWhisperTextProtocol.PreKeySignalMessage & SignalWhisperTextProtocol.PreKeySignalMessage.$Shape} PreKeySignalMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SignalWhisperTextProtocol.PreKeySignalMessage;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SignalWhisperTextProtocol.PreKeySignalMessage & SignalWhisperTextProtocol.PreKeySignalMessage.$Shape;
 
         /**
          * Decodes a PreKeySignalMessage message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns PreKeySignalMessage
+         * @returns {SignalWhisperTextProtocol.PreKeySignalMessage & SignalWhisperTextProtocol.PreKeySignalMessage.$Shape} PreKeySignalMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SignalWhisperTextProtocol.PreKeySignalMessage;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SignalWhisperTextProtocol.PreKeySignalMessage & SignalWhisperTextProtocol.PreKeySignalMessage.$Shape;
 
         /**
          * Verifies a PreKeySignalMessage message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a PreKeySignalMessage message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns PreKeySignalMessage
          */
-        public static fromObject(object: { [k: string]: any }): SignalWhisperTextProtocol.PreKeySignalMessage;
+        static fromObject(object: { [k: string]: any }): SignalWhisperTextProtocol.PreKeySignalMessage;
 
         /**
          * Creates a plain object from a PreKeySignalMessage message. Also converts values to other types if specified.
@@ -574,65 +638,97 @@ export namespace SignalWhisperTextProtocol {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: SignalWhisperTextProtocol.PreKeySignalMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: SignalWhisperTextProtocol.PreKeySignalMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this PreKeySignalMessage to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for PreKeySignalMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for PreKeySignalMessage
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
     }
 
-    /** Properties of a SignalMessage. */
-    interface ISignalMessage {
+    namespace PreKeySignalMessage {
 
-        /** SignalMessage ratchetKey */
-        ratchetKey?: (Uint8Array|null);
+        /** Properties of a PreKeySignalMessage. */
+        interface $Properties {
 
-        /** SignalMessage counter */
-        counter?: (number|null);
+            /** PreKeySignalMessage registrationId */
+            registrationId?: (number|null);
 
-        /** SignalMessage previousCounter */
-        previousCounter?: (number|null);
+            /** PreKeySignalMessage preKeyId */
+            preKeyId?: (number|null);
 
-        /** SignalMessage ciphertext */
-        ciphertext?: (Uint8Array|null);
+            /** PreKeySignalMessage signedPreKeyId */
+            signedPreKeyId?: (number|null);
+
+            /** PreKeySignalMessage baseKey */
+            baseKey?: (Uint8Array|null);
+
+            /** PreKeySignalMessage identityKey */
+            identityKey?: (Uint8Array|null);
+
+            /** PreKeySignalMessage message */
+            message?: (Uint8Array|null);
+
+            /** PreKeySignalMessage kyberPreKeyId */
+            kyberPreKeyId?: (number|null);
+
+            /** PreKeySignalMessage kyberCiphertext */
+            kyberCiphertext?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a PreKeySignalMessage. */
+        type $Shape = SignalWhisperTextProtocol.PreKeySignalMessage.$Properties;
+    }
+
+    /**
+     * Properties of a SignalMessage.
+     * @deprecated Use SignalWhisperTextProtocol.SignalMessage.$Properties instead.
+     */
+    interface ISignalMessage extends SignalWhisperTextProtocol.SignalMessage.$Properties {
     }
 
     /** Represents a SignalMessage. */
-    class SignalMessage implements ISignalMessage {
+    class SignalMessage {
 
         /**
          * Constructs a new SignalMessage.
          * @param [properties] Properties to set
          */
-        constructor(properties?: SignalWhisperTextProtocol.ISignalMessage);
+        constructor(properties?: SignalWhisperTextProtocol.SignalMessage.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
 
         /** SignalMessage ratchetKey. */
-        public ratchetKey?: (Uint8Array|null);
+        ratchetKey?: (Uint8Array|null);
 
         /** SignalMessage counter. */
-        public counter?: (number|null);
+        counter?: (number|null);
 
         /** SignalMessage previousCounter. */
-        public previousCounter?: (number|null);
+        previousCounter?: (number|null);
 
         /** SignalMessage ciphertext. */
-        public ciphertext?: (Uint8Array|null);
+        ciphertext?: (Uint8Array|null);
 
         /**
          * Creates a new SignalMessage instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SignalMessage instance
          */
-        public static create(properties?: SignalWhisperTextProtocol.ISignalMessage): SignalWhisperTextProtocol.SignalMessage;
+        static create(properties: SignalWhisperTextProtocol.SignalMessage.$Shape): SignalWhisperTextProtocol.SignalMessage & SignalWhisperTextProtocol.SignalMessage.$Shape;
+        static create(properties?: SignalWhisperTextProtocol.SignalMessage.$Properties): SignalWhisperTextProtocol.SignalMessage;
 
         /**
          * Encodes the specified SignalMessage message. Does not implicitly {@link SignalWhisperTextProtocol.SignalMessage.verify|verify} messages.
@@ -640,7 +736,7 @@ export namespace SignalWhisperTextProtocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: SignalWhisperTextProtocol.ISignalMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encode(message: SignalWhisperTextProtocol.SignalMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SignalMessage message, length delimited. Does not implicitly {@link SignalWhisperTextProtocol.SignalMessage.verify|verify} messages.
@@ -648,40 +744,40 @@ export namespace SignalWhisperTextProtocol {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: SignalWhisperTextProtocol.ISignalMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        static encodeDelimited(message: SignalWhisperTextProtocol.SignalMessage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SignalMessage message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns SignalMessage
+         * @returns {SignalWhisperTextProtocol.SignalMessage & SignalWhisperTextProtocol.SignalMessage.$Shape} SignalMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SignalWhisperTextProtocol.SignalMessage;
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): SignalWhisperTextProtocol.SignalMessage & SignalWhisperTextProtocol.SignalMessage.$Shape;
 
         /**
          * Decodes a SignalMessage message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns SignalMessage
+         * @returns {SignalWhisperTextProtocol.SignalMessage & SignalWhisperTextProtocol.SignalMessage.$Shape} SignalMessage
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SignalWhisperTextProtocol.SignalMessage;
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): SignalWhisperTextProtocol.SignalMessage & SignalWhisperTextProtocol.SignalMessage.$Shape;
 
         /**
          * Verifies a SignalMessage message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
-        public static verify(message: { [k: string]: any }): (string|null);
+        static verify(message: { [k: string]: any }): (string|null);
 
         /**
          * Creates a SignalMessage message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
          * @returns SignalMessage
          */
-        public static fromObject(object: { [k: string]: any }): SignalWhisperTextProtocol.SignalMessage;
+        static fromObject(object: { [k: string]: any }): SignalWhisperTextProtocol.SignalMessage;
 
         /**
          * Creates a plain object from a SignalMessage message. Also converts values to other types if specified.
@@ -689,19 +785,44 @@ export namespace SignalWhisperTextProtocol {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: SignalWhisperTextProtocol.SignalMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        static toObject(message: SignalWhisperTextProtocol.SignalMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SignalMessage to JSON.
          * @returns JSON object
          */
-        public toJSON(): { [k: string]: any };
+        toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for SignalMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
+         * Gets the type url for SignalMessage
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
          */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace SignalMessage {
+
+        /** Properties of a SignalMessage. */
+        interface $Properties {
+
+            /** SignalMessage ratchetKey */
+            ratchetKey?: (Uint8Array|null);
+
+            /** SignalMessage counter */
+            counter?: (number|null);
+
+            /** SignalMessage previousCounter */
+            previousCounter?: (number|null);
+
+            /** SignalMessage ciphertext */
+            ciphertext?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a SignalMessage. */
+        type $Shape = SignalWhisperTextProtocol.SignalMessage.$Properties;
     }
 }
